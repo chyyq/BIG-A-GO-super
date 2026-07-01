@@ -338,20 +338,27 @@ def evaluate_stock_snapshot(quote: dict[str, Any], board: dict[str, Any]) -> dic
     amount = quote.get("amount") or 0
     range_position = intraday_position(quote)
     high = quote.get("high") or price
+    low = quote.get("low") or price
+    avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
     distance_to_high = ((high - price) / price) * 100 if price else 99
+    close_to_high = price / high if high else 0
+    price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
+    open_to_price = ((price / open_price) - 1) * 100 if open_price else 0
+    intraday_reversal = ((price / low) - 1) * 100 if low else 0
 
     criteria = [
         ("Board stays hot into the late session", (board.get("passed") or 0) >= 4),
-        ("T+1 impulse room remains", 2.0 <= pct <= 7.6),
-        ("Volume expands without exhaustion", 1.25 <= volume_ratio <= 5.2),
+        ("Successful-sample gain zone is matched", 4.2 <= pct <= 7.2),
+        ("Volume expands without exhaustion", 1.35 <= volume_ratio <= 5.8),
         ("Main or super capital is net inflow", main_net > 0 or super_net > 0),
-        ("Turnover is active but not overheated", 5 <= turnover <= 28),
-        ("Price holds the upper intraday range", range_position >= 0.62 and distance_to_high <= 3.5),
-        ("Late price is above the opening area", price >= open_price * 1.003),
-        ("Deal amount supports next-morning liquidity", amount >= 150_000_000),
+        ("Turnover matches strong T+1 samples", 10 <= turnover <= 34),
+        ("Close is near the intraday high", range_position >= 0.76 and close_to_high >= 0.982),
+        ("Price stays clearly above VWAP", price_vs_avg >= 1.2),
+        ("Late session has upward price spread", open_to_price >= 2.2 or intraday_reversal >= 6.0),
+        ("Deal amount supports next-morning liquidity", amount >= 300_000_000),
     ]
     passed_labels = [label for label, ok in criteria if ok]
-    if len(passed_labels) < 6:
+    if len(passed_labels) < 7:
         return None
 
     buy_plan = choose_buy_plan_snapshot(quote)
@@ -440,56 +447,67 @@ def choose_buy_plan_snapshot(quote: dict[str, Any]) -> dict[str, Any] | None:
     high = quote.get("high") or price
     low = quote.get("low") or price
     distance_to_high = ((high - price) / price) * 100 if price else 99
+    close_to_high = price / high if high else 0
+    amount = quote.get("amount") or 0
+    avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
+    price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
+    open_to_price = ((price / open_price) - 1) * 100 if open_price else 0
+    intraday_reversal = ((price / low) - 1) * 100 if low else 0
     gap = (open_price / pre_close - 1) * 100
-    day_floor_ok = low >= pre_close * 0.985
 
     if (
-        2.6 <= pct <= 6.8
-        and 1.35 <= volume_ratio <= 4.2
-        and 6 <= turnover <= 22
-        and range_position >= 0.74
-        and distance_to_high <= 2.2
-        and price >= open_price * 1.006
+        4.6 <= pct <= 6.9
+        and 1.45 <= volume_ratio <= 5.6
+        and 14 <= turnover <= 34
+        and range_position >= 0.82
+        and close_to_high >= 0.985
+        and price_vs_avg >= 1.4
+        and open_to_price >= 2.5
     ):
         return make_buy_plan(
-            "14:00 tail strength entry",
+            "14:00 sample-strength tail entry",
             price,
             "14:00-14:15",
-            "Use the 14:00 quote as anchor; buy only inside the late-session opportunity range.",
+            "Match the successful samples: 5%-7% day gain, high close, strong turnover, and price above VWAP.",
+            24,
+            8,
+            quote,
+        )
+    if (
+        4.0 <= pct <= 7.3
+        and 1.35 <= volume_ratio <= 5.8
+        and 10 <= turnover <= 36
+        and range_position >= 0.78
+        and distance_to_high <= 2.3
+        and price_vs_avg >= 1.0
+        and (open_to_price >= 2.0 or intraday_reversal >= 7.0)
+    ):
+        return make_buy_plan(
+            "14:00 high-platform hold entry",
+            price,
+            "14:00-14:15",
+            "Buy only if the afternoon platform stays high and price does not fall back under VWAP.",
             20,
-            7,
+            6,
             quote,
         )
     if (
-        2.0 <= pct <= 5.8
-        and 1.25 <= volume_ratio <= 3.8
-        and day_floor_ok
-        and range_position >= 0.66
-        and price >= open_price * 1.002
-    ):
-        return make_buy_plan(
-            "14:00 controlled pullback entry",
-            price,
-            "14:00-14:15",
-            "Prefer a mild pullback from the intraday high while price stays above the opening area.",
-            17,
-            5,
-            quote,
-        )
-    if (
-        3.2 <= pct <= 7.4
-        and 1.4 <= volume_ratio <= 5.2
+        4.2 <= pct <= 7.6
+        and 1.5 <= volume_ratio <= 6.2
+        and 12 <= turnover <= 38
         and gap <= 4.8
-        and range_position >= 0.70
-        and distance_to_high <= 3.0
+        and range_position >= 0.80
+        and distance_to_high <= 2.6
+        and price_vs_avg >= 1.6
+        and intraday_reversal >= 6.5
     ):
         return make_buy_plan(
-            "14:00 breakout hold entry",
+            "14:00 afternoon reversal-step entry",
             price,
             "14:00-14:15",
-            "Buy only if the late-session breakout holds; skip if it fades under the range low.",
-            16,
-            4,
+            "Use only the afternoon step-up pattern: intraday reversal, high close, and enough turnover.",
+            19,
+            5,
             quote,
         )
     return None
@@ -523,7 +541,7 @@ def estimate_target_snapshot(
     board: dict[str, Any],
     buy_plan: dict[str, Any],
 ) -> dict[str, Any]:
-    base_gain = 0.045
+    base_gain = 0.052
     volume_ratio = quote.get("volumeRatio") or 0
     turnover = quote.get("turnover") or 0
     pct = quote.get("pct") or 0
@@ -531,6 +549,10 @@ def estimate_target_snapshot(
     main_net = max(0, quote.get("mainNet") or 0) + max(0, quote.get("superNet") or 0)
     net_ratio = main_net / amount if amount else 0
     range_position = intraday_position(quote)
+    high = quote.get("high") or price
+    avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
+    close_to_high = price / high if high else 0
+    price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
     float_cap = quote.get("floatMarketCap") or 0
 
     if (board.get("passed") or 0) >= 5:
@@ -539,37 +561,47 @@ def estimate_target_snapshot(
         base_gain += 0.008
     elif (board.get("limitUpCount") or 0) >= 1:
         base_gain += 0.005
-    if 1.5 <= volume_ratio <= 3.5:
+    if 1.6 <= volume_ratio <= 4.8:
         base_gain += 0.012
-    elif 3.5 < volume_ratio <= 5.2:
+    elif 4.8 < volume_ratio <= 6.2:
         base_gain += 0.005
-    elif volume_ratio > 5.8:
+    elif volume_ratio > 6.5:
         base_gain -= 0.008
-    if 6 <= turnover <= 16:
-        base_gain += 0.012
-    elif 16 < turnover <= 26:
-        base_gain += 0.004
-    elif turnover > 28:
+    if 14 <= turnover <= 30:
+        base_gain += 0.016
+    elif 10 <= turnover < 14 or 30 < turnover <= 36:
+        base_gain += 0.006
+    elif turnover > 38:
         base_gain -= 0.006
     if main_net > 0:
         base_gain += clamp(net_ratio * 0.7, 0, 0.014)
-    if range_position >= 0.78:
-        base_gain += 0.008
-    if 3 <= pct <= 6.5:
-        base_gain += 0.01
-    elif pct > 7.2:
+    if range_position >= 0.84 and close_to_high >= 0.985:
+        base_gain += 0.012
+    elif range_position >= 0.78:
+        base_gain += 0.006
+    if price_vs_avg >= 3.0:
+        base_gain += 0.012
+    elif price_vs_avg >= 1.2:
+        base_gain += 0.006
+    if 4.6 <= pct <= 6.9:
+        base_gain += 0.014
+    elif 4.0 <= pct < 4.6 or 6.9 < pct <= 7.6:
+        base_gain += 0.005
+    elif pct > 7.6:
         base_gain -= 0.006
     if 3_000_000_000 <= float_cap <= 45_000_000_000:
         base_gain += 0.004
-    if buy_plan["priority"] >= 6:
+    if buy_plan["priority"] >= 8:
+        base_gain += 0.012
+    elif buy_plan["priority"] >= 6:
         base_gain += 0.008
 
-    target_gain = clamp(base_gain, 0.048, 0.095)
-    target_price = round2(min(max(entry * (1 + target_gain), price * 1.018), entry * 1.098))
+    target_gain = clamp(base_gain, 0.058, 0.102)
+    target_price = round2(min(max(entry * (1 + target_gain), price * 1.03), entry * 1.102))
     return {
         "targetPrice": target_price,
-        "targetTime": "Next trading day 09:35-10:00; sell before 10:00 unless it quickly seals limit-up.",
-        "strategy": "Prioritize the T+1 morning impulse; take profit near the personalized target or on early weakness.",
+        "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless it quickly seals limit-up.",
+        "strategy": "Target the sample-style T+1 morning spike; take profit into 5%-10% strength or hold only if limit-up is sealed.",
     }
 
 
@@ -581,17 +613,24 @@ def pre_rank_candidate(quote: dict[str, Any], board: dict[str, Any]) -> float:
     main_net = max(0, quote.get("mainNet") or 0) + max(0, quote.get("superNet") or 0)
     net_ratio = main_net / amount if amount else 0
     range_position = intraday_position(quote)
-    sweet_gain = 1 - min(abs(pct - 5.0) / 4.0, 1)
-    sweet_turnover = 1 - min(abs(turnover - 12.0) / 20.0, 1)
-    sweet_volume = 1 - min(abs(volume_ratio - 2.4) / 4.0, 1)
+    high = quote.get("high") or quote.get("price") or 0
+    price = quote.get("price") or 0
+    avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
+    close_to_high = price / high if high else 0
+    price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
+    sweet_gain = 1 - min(abs(pct - 5.7) / 2.3, 1)
+    sweet_turnover = 1 - min(abs(turnover - 22.0) / 16.0, 1)
+    sweet_volume = 1 - min(abs(volume_ratio - 3.0) / 3.8, 1)
     return round2(
         (board.get("score") or 0) * 0.35
-        + sweet_gain * 18
-        + sweet_turnover * 12
+        + sweet_gain * 24
+        + sweet_turnover * 16
         + sweet_volume * 10
-        + range_position * 12
+        + range_position * 15
+        + clamp((close_to_high - 0.97) * 260, 0, 8)
+        + clamp(price_vs_avg * 2.0, 0, 12)
         + clamp(net_ratio * 280, 0, 10)
-        + min(amount / 1_000_000_000, 8)
+        + min(amount / 800_000_000, 10)
     )
 
 
@@ -636,16 +675,26 @@ def estimate_t1_edge_score(
     net_ratio = main_net / amount if amount else 0
     reward_risk = expected_return / max(risk_pct, 0.8)
     pct = quote.get("pct") or 0
-    pct_bonus = max(0, 1 - abs(pct - 5.2) / 4.2) * 8
+    turnover = quote.get("turnover") or 0
+    price = quote.get("price") or 0
+    high = quote.get("high") or price
+    avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
+    close_to_high = price / high if high else 0
+    price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
+    pct_bonus = max(0, 1 - abs(pct - 5.7) / 2.4) * 10
+    turnover_bonus = max(0, 1 - abs(turnover - 22.0) / 16.0) * 8
     return round2(
-        expected_return * 6.8
-        + reward_risk * 9.5
+        expected_return * 7.4
+        + reward_risk * 9.0
         + (board.get("score") or 0) * 0.16
         + buy_plan["quality"] * 1.1
         + passed_count * 2.2
-        + intraday_position(quote) * 7
+        + intraday_position(quote) * 9
+        + clamp((close_to_high - 0.975) * 300, 0, 9)
+        + clamp(price_vs_avg * 2.2, 0, 12)
         + clamp(net_ratio * 220, 0, 8)
         + pct_bonus
+        + turnover_bonus
         - max(0, risk_pct - 3.8) * 4
     )
 
@@ -689,6 +738,8 @@ def fetch_board_members(board_code: str) -> list[dict[str, Any]]:
 
 def normalize_stock_quote(row: dict[str, Any]) -> dict[str, Any]:
     code = str(row.get("f12") or "")
+    volume = number(row.get("f5"))
+    amount = number(row.get("f6"))
     return {
         "code": code,
         "name": text(row.get("f14")),
@@ -696,8 +747,9 @@ def normalize_stock_quote(row: dict[str, Any]) -> dict[str, Any]:
         "price": number(row.get("f2")),
         "pct": number(row.get("f3")),
         "change": number(row.get("f4")),
-        "volume": number(row.get("f5")),
-        "amount": number(row.get("f6")),
+        "volume": volume,
+        "amount": amount,
+        "avgPrice": average_price(amount, volume),
         "amplitude": number(row.get("f7")),
         "turnover": number(row.get("f8")),
         "volumeRatio": number(row.get("f10")),
@@ -723,11 +775,11 @@ def stock_prefilter(item: dict[str, Any]) -> bool:
     pct = item.get("pct") or 0
     amount = item.get("amount") or 0
     volume_ratio = item.get("volumeRatio") or 0
-    if turnover is None or turnover < 5 or turnover > 32:
+    if turnover is None or turnover < 8 or turnover > 38:
         return False
     if is_late_chase(item):
         return False
-    return 2.0 <= pct <= 7.8 and amount >= 150_000_000 and volume_ratio >= 1.15
+    return 3.8 <= pct <= 7.9 and amount >= 250_000_000 and volume_ratio >= 1.25
 
 
 def fetch_news() -> list[dict[str, Any]]:
@@ -870,6 +922,12 @@ def weighted_average(items: list[dict[str, Any]], value_key: str, weight_key: st
     if simple_values:
         return round2(sum(simple_values) / len(simple_values))
     return None
+
+
+def average_price(amount: float | None, volume: float | None) -> float | None:
+    if not amount or not volume:
+        return None
+    return round2(amount / (volume * 100))
 
 
 def strip_members(boards: list[dict[str, Any]]) -> list[dict[str, Any]]:
