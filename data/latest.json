@@ -1,0 +1,37 @@
+{
+  "meta": {
+    "schemaVersion": 4,
+    "generatedAt": null,
+    "tradingDate": null,
+    "mode": "waiting-first-action",
+    "sourceHealth": [
+      {
+        "name": "Eastmoney",
+        "ok": false,
+        "url": "https://quote.eastmoney.com/",
+        "note": "Waiting for the first GitHub Action run to write live quote data."
+      },
+      {
+        "name": "10jqka",
+        "ok": true,
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source; quote data does not depend on it."
+      },
+      {
+        "name": "Yicai",
+        "ok": true,
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source; quote data does not depend on it."
+      }
+    ],
+    "errors": [],
+    "runtimeSeconds": 0
+  },
+  "market": {
+    "recommendationCount": 0,
+    "qualifiedBoardCount": 0
+  },
+  "boards": [],
+  "recommendations": [],
+  "news": []
+}
