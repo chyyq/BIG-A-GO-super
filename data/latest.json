@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-01T22:04:36.599542+08:00",
+    "generatedAt": "2026-07-01T22:49:13.510511+08:00",
     "tradingDate": "2026-07-01",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -20,21 +20,21 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 17.67
+    "runtimeSeconds": 26.03
   },
   "market": {
-    "recommendationCount": 1,
+    "recommendationCount": 0,
     "qualifiedBoardCount": 6
   },
   "boards": [
@@ -311,136 +311,48 @@
       "bigUpCount": 0
     }
   ],
-  "recommendations": [
-    {
-      "rank": 1,
-      "code": "002915",
-      "name": "中欣氟材",
-      "market": "SZ",
-      "price": 22.02,
-      "pct": 7.36,
-      "amount": 762231235.57,
-      "turnover": 12.17,
-      "confidence": 96,
-      "winRate": 96,
-      "t1EdgeScore": 152.06,
-      "expectedReturnPct": 9.48,
-      "riskPct": 4.24,
-      "board": {
-        "code": "BK1424",
-        "name": "氟化工",
-        "passed": 5,
-        "score": 99.65
-      },
-      "criteria": {
-        "board": [
-          "Board rank is strong or improving",
-          "Limit-up or large-gain members are active",
-          "Board turnover amount is active",
-          "Leader stocks are visible",
-          "Board momentum is positive"
-        ],
-        "stock": [
-          "Board stays hot into the late session",
-          "T+1 impulse room remains",
-          "Volume expands without exhaustion",
-          "Main or super capital is net inflow",
-          "Turnover is active but not overheated",
-          "Price holds the upper intraday range",
-          "Late price is above the opening area",
-          "Deal amount supports next-morning liquidity"
-        ]
-      },
-      "buyPlan": {
-        "type": "14:00 breakout hold entry",
-        "timeWindow": "14:00-14:15",
-        "trigger": "Buy only if the late-session breakout holds; skip if it fades under the range low.",
-        "priceRange": [
-          21.62,
-          22.08
-        ],
-        "quality": 16,
-        "priority": 4
-      },
-      "sellPlan": {
-        "targetPrice": 23.67,
-        "targetTime": "Next trading day 09:35-10:00; sell before 10:00 unless it quickly seals limit-up.",
-        "strategy": "Prioritize the T+1 morning impulse; take profit near the personalized target or on early weakness.",
-        "takeProfit": 23.67,
-        "timeWindow": "Next trading day 09:35-10:00; sell before 10:00 unless it quickly seals limit-up."
-      },
-      "stopPlan": {
-        "stopLoss": 20.74,
-        "rules": [
-          "Next morning weak open and cannot reclaim the late-session platform",
-          "Break the personalized stop or the 14:00 entry trigger",
-          "Avoid widening the stop after purchase"
-        ]
-      },
-      "sourceLinks": [
-        {
-          "name": "Eastmoney quote",
-          "url": "https://quote.eastmoney.com/sz002915.html"
-        },
-        {
-          "name": "10jqka stock page",
-          "url": "https://stockpage.10jqka.com.cn/002915/"
-        },
-        {
-          "name": "Yicai news",
-          "url": "https://www.yicai.com/news/"
-        }
-      ],
-      "sparkline": []
-    }
-  ],
+  "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "事关万亿赛道！工业互联网再迎政策利好 多只绩优概念股获资金关注(名单)",
-      "url": "https://finance.eastmoney.com/a/202607013788940482.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股交易新规将于7月6日起正式施行 主板ST股涨跌幅提至10%",
-      "url": "https://finance.eastmoney.com/a/202607013790184331.html",
+      "source": "Yicai",
+      "title": "一财社论：国内AI企业需要新增长叙事中国AI企业要借此将政策的托举力快速蜕变成市场的驱动力，为用户打造出更具领先性的产品。  1小时前",
+      "url": "https://www.yicai.com/news/103256092.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "67家A股公司公告提示风险 回应玻璃基板、AI、存储等热点",
-      "url": "https://finance.eastmoney.com/a/202606303788690066.html",
+      "source": "Yicai",
+      "title": "上半年ETF格局剧变，半导体主题包揽“翻倍基” 极致分化行情带来的新格局，未来或将因行情切换再度变化  1小时前",
+      "url": "https://www.yicai.com/news/103256012.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "沪指小幅收涨 逾4300只股飘红 罕见超220只股涨停",
-      "url": "https://finance.eastmoney.com/a/202607013790135761.html",
+      "source": "Yicai",
+      "title": "上半年1.85万亿元撤离宽基，A股千亿ETF归零宽基“失血”万亿，主题“造血”千亿；千亿ETF时代暂告一段落。  1小时前",
+      "url": "https://www.yicai.com/news/103256015.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "利好扎堆！暴增超4200% A股公司密集公告！多个赛道业绩大爆发",
-      "url": "https://finance.eastmoney.com/a/202607013789272317.html",
+      "source": "Yicai",
+      "title": "上半年59家A股公司被立案，十余名责任人被查在“退市不免责”的背景下，部分退市公司也被立案调查。  2小时前",
+      "url": "https://www.yicai.com/news/103255953.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "AI交易全线大跌！今日市场风格切换原因找到了",
-      "url": "https://finance.eastmoney.com/a/202607013790216845.html",
+      "source": "Yicai",
+      "title": "一批科技股狂飙后拉响警报，A股行情从极致分化走向均衡？背后传递出何种市场信号？  2小时前",
+      "url": "https://www.yicai.com/news/103255965.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股上半年收官！科创50指数大涨超64% 科技股一骑绝尘",
-      "url": "https://topic.eastmoney.com/detail/zbscnzpd2026.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：美伊冲突降温 亚太新兴经济体通胀风险仍在",
-      "url": "https://finance.eastmoney.com/a/202607013789055233.html",
+      "source": "Yicai",
+      "title": "上半年AI算力成核心主线，PCB赛道迎600亿扩产潮上半年行情收官，AI算力基础设施产业链是核心主线。  3小时前",
+      "url": "https://www.yicai.com/news/103255872.html",
       "time": ""
     }
   ]
