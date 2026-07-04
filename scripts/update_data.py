@@ -23,6 +23,7 @@ UA = (
 EASTMONEY_UT = "bd1d9ddb04089700cf9c27f6f7426281"
 EASTMONEY_HOSTS = (
     "push2.eastmoney.com",
+    "push2delay.eastmoney.com",
     "4.push2.eastmoney.com",
     "60.push2.eastmoney.com",
     "61.push2.eastmoney.com",
