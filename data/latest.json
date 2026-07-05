@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-05T17:21:29.665140+08:00",
+    "generatedAt": "2026-07-05T17:22:32.462129+08:00",
     "tradingDate": "2026-07-05",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -20,18 +20,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 18.54
+    "runtimeSeconds": 17.92
   },
   "market": {
     "recommendationCount": 0,
@@ -318,27 +318,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "三星再传涨价！A股存储龙头股高位跳水，市场分歧增大江波龙预计上半年实现归母净利润92亿至110亿元，同比至少增长622倍。 热点追踪  2小时前",
-      "url": "https://www.yicai.com/news/103260678.html",
+      "source": "Eastmoney News",
+      "title": "重要调整！下周一A股交易规则要变了 主板ST/*ST涨跌幅由5%调至10%",
+      "url": "https://finance.eastmoney.com/a/202607043794166814.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "美股点金丨资金连续出逃，美股芯片股大跌冲击波会否扩散围绕人工智能高估值的质疑持续冲击芯片股，费城半导体指数过去两个交易日内累计下跌11%。  6小时前",
-      "url": "https://www.yicai.com/news/103260649.html",
+      "source": "Eastmoney News",
+      "title": "全链路覆盖！一图看懂A股科技股",
+      "url": "https://finance.eastmoney.com/a/202607043794208560.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "下周关注丨6月CPI数据即将公布，这些投资机会最靠谱6月CPI数据即将公布；A股交易新规正式实施，主板ST股涨跌幅限制由5%提至10%。  8小时前",
-      "url": "https://www.yicai.com/news/103260632.html",
+      "source": "Eastmoney News",
+      "title": "巨头联手！抢滩玻璃基板核心材料 A股公司加速布局",
+      "url": "https://finance.eastmoney.com/a/202607043794208253.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "欧洲车市变天：中国品牌首次击败日本对手燃油车在欧洲的市场空间正加速收缩。  昨天 20:59",
-      "url": "https://www.yicai.com/news/103260579.html",
+      "source": "Eastmoney News",
+      "title": "A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊",
+      "url": "https://finance.eastmoney.com/a/202605073730389683.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股交易新规！7月6日正式施行",
+      "url": "https://topic.eastmoney.com/detail/agjyxg2026.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股上半年收官！科创50指数大涨超64% 科技股一骑绝尘",
+      "url": "https://topic.eastmoney.com/detail/zbscnzpd2026.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中泰证券：市场风格出现反转 科技扩散而非蓝筹切换",
+      "url": "https://finance.eastmoney.com/a/202607053794247116.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中原证券：A股市场流动性预期未变 未来结构将趋于优化",
+      "url": "https://finance.eastmoney.com/a/202607053794245412.html",
       "time": ""
     }
   ]
