@@ -1,14 +1,14 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-03T18:11:21.768165+08:00",
-    "tradingDate": "2026-07-03",
+    "generatedAt": "2026-07-05T17:21:29.665140+08:00",
+    "tradingDate": "2026-07-05",
     "mode": "fast-snapshot",
     "sourceHealth": [
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1232%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
       },
       {
@@ -20,29 +20,22 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 33.13
+    "errors": [],
+    "runtimeSeconds": 18.54
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 0
+    "qualifiedBoardCount": 6
   },
   "boards": [
     {
@@ -57,16 +50,18 @@
       "preClose": 10891.15,
       "mainNet": 1990612224.0,
       "rank": 1,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.85,
+      "passed": 5,
+      "qualified": true,
+      "score": 99.65,
       "criteria": [
         "Board rank is strong or improving",
+        "Limit-up or large-gain members are active",
         "Board turnover amount is active",
+        "Leader stocks are visible",
         "Board momentum is positive"
       ],
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 6,
+      "bigUpCount": 14
     },
     {
       "code": "BK1617",
@@ -80,16 +75,18 @@
       "preClose": 5201.99,
       "mainNet": 2444934352.0,
       "rank": 2,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.5,
+      "passed": 5,
+      "qualified": true,
+      "score": 99.3,
       "criteria": [
         "Board rank is strong or improving",
+        "Limit-up or large-gain members are active",
         "Board turnover amount is active",
+        "Leader stocks are visible",
         "Board momentum is positive"
       ],
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 5,
+      "bigUpCount": 9
     },
     {
       "code": "BK1145",
@@ -103,16 +100,18 @@
       "preClose": 2271.06,
       "mainNet": 6472684544.0,
       "rank": 3,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.15,
+      "passed": 5,
+      "qualified": true,
+      "score": 98.95,
       "criteria": [
         "Board rank is strong or improving",
+        "Limit-up or large-gain members are active",
         "Board turnover amount is active",
+        "Leader stocks are visible",
         "Board momentum is positive"
       ],
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 9,
+      "bigUpCount": 25
     },
     {
       "code": "BK0732",
@@ -126,16 +125,18 @@
       "preClose": 2018.41,
       "mainNet": 2744684624.0,
       "rank": 4,
-      "passed": 3,
-      "qualified": false,
-      "score": 65.8,
+      "passed": 5,
+      "qualified": true,
+      "score": 98.6,
       "criteria": [
         "Board rank is strong or improving",
+        "Limit-up or large-gain members are active",
         "Board turnover amount is active",
+        "Leader stocks are visible",
         "Board momentum is positive"
       ],
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 5,
+      "bigUpCount": 9
     },
     {
       "code": "BK1385",
@@ -149,16 +150,18 @@
       "preClose": 5539.95,
       "mainNet": 1639994592.0,
       "rank": 5,
-      "passed": 3,
-      "qualified": false,
-      "score": 65.45,
+      "passed": 5,
+      "qualified": true,
+      "score": 98.25,
       "criteria": [
         "Board rank is strong or improving",
+        "Limit-up or large-gain members are active",
         "Board turnover amount is active",
+        "Leader stocks are visible",
         "Board momentum is positive"
       ],
       "limitUpCount": 0,
-      "bigUpCount": 0
+      "bigUpCount": 5
     },
     {
       "code": "BK1232",
@@ -172,16 +175,18 @@
       "preClose": 5539.95,
       "mainNet": 1639994592.0,
       "rank": 6,
-      "passed": 3,
-      "qualified": false,
-      "score": 65.1,
+      "passed": 5,
+      "qualified": true,
+      "score": 97.9,
       "criteria": [
         "Board rank is strong or improving",
+        "Limit-up or large-gain members are active",
         "Board turnover amount is active",
+        "Leader stocks are visible",
         "Board momentum is positive"
       ],
       "limitUpCount": 0,
-      "bigUpCount": 0
+      "bigUpCount": 5
     },
     {
       "code": "BK1100",
@@ -313,51 +318,27 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "A股半导体设备板块迎调整 解读来了",
-      "url": "https://finance.eastmoney.com/a/202607023792303439.html",
+      "source": "Yicai",
+      "title": "三星再传涨价！A股存储龙头股高位跳水，市场分歧增大江波龙预计上半年实现归母净利润92亿至110亿元，同比至少增长622倍。 热点追踪  2小时前",
+      "url": "https://www.yicai.com/news/103260678.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "102家A股公司提示风险 回应AI、机器人、六氟化钨等热点",
-      "url": "https://finance.eastmoney.com/a/202607023792280166.html",
+      "source": "Yicai",
+      "title": "美股点金丨资金连续出逃，美股芯片股大跌冲击波会否扩散围绕人工智能高估值的质疑持续冲击芯片股，费城半导体指数过去两个交易日内累计下跌11%。  6小时前",
+      "url": "https://www.yicai.com/news/103260649.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "Meta“卖算力”震动AI市场：算力过剩 还是过度恐慌？",
-      "url": "https://finance.eastmoney.com/a/202607023792300438.html",
+      "source": "Yicai",
+      "title": "下周关注丨6月CPI数据即将公布，这些投资机会最靠谱6月CPI数据即将公布；A股交易新规正式实施，主板ST股涨跌幅限制由5%提至10%。  8小时前",
+      "url": "https://www.yicai.com/news/103260632.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美国6月非农仅增5.7万人远逊预期 市场削减美联储加息押注",
-      "url": "https://finance.eastmoney.com/a/202607023792111182.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "创业板指与科创50指数冲高回落 机器人概念股爆发",
-      "url": "https://finance.eastmoney.com/a/202607033793524741.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊",
-      "url": "https://finance.eastmoney.com/a/202605073730389683.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股交易新规！7月6日正式施行",
-      "url": "https://topic.eastmoney.com/detail/agjyxg2026.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股上半年收官！科创50指数大涨超64% 科技股一骑绝尘",
-      "url": "https://topic.eastmoney.com/detail/zbscnzpd2026.html",
+      "source": "Yicai",
+      "title": "欧洲车市变天：中国品牌首次击败日本对手燃油车在欧洲的市场空间正加速收缩。  昨天 20:59",
+      "url": "https://www.yicai.com/news/103260579.html",
       "time": ""
     }
   ]
