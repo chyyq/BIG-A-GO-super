@@ -39,6 +39,8 @@ MAX_STOCK_CANDIDATES = 45
 MAX_RECOMMENDATIONS = 10
 ALLOW_GROWTH_BOARDS = False
 GROWTH_BOARD_PREFIXES = ("30", "68")
+STRATEGY_TAIL_MAIN = "TAIL_MAIN"
+STRATEGY_AM_TOP = "AM_TOP"
 
 errors: list[str] = []
 source_health: dict[str, dict[str, Any]] = {}
@@ -60,7 +62,7 @@ def main() -> None:
     rank_map = {board["code"]: index + 1 for index, board in enumerate(boards)}
     evaluated_boards = evaluate_boards(boards, rank_map, history)
     qualified_boards = [board for board in evaluated_boards if board["qualified"]]
-    recommendations = build_recommendations(qualified_boards)
+    recommendations = build_recommendations(qualified_boards, now)
     news = fetch_news() if remaining_seconds() > 25 else []
 
     latest = {
@@ -277,7 +279,11 @@ def evaluate_boards(
     return evaluated
 
 
-def build_recommendations(qualified_boards: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def build_recommendations(
+    qualified_boards: list[dict[str, Any]],
+    now: datetime | None = None,
+) -> list[dict[str, Any]]:
+    active_strategies = active_strategy_windows(now or datetime.now(CN_TZ))
     seen: set[str] = set()
     candidates: list[tuple[dict[str, Any], dict[str, Any]]] = []
     for board in qualified_boards[:MAX_BOARDS_FOR_MEMBERS]:
@@ -286,12 +292,12 @@ def build_recommendations(qualified_boards: list[dict[str, Any]]) -> list[dict[s
             if not code or code in seen:
                 continue
             seen.add(code)
-            if stock_prefilter(member):
+            if stock_prefilter(member, active_strategies):
                 candidates.append((member, board))
 
     candidates.sort(
         key=lambda pair: (
-            pre_rank_candidate(pair[0], pair[1]),
+            pre_rank_candidate(pair[0], pair[1], active_strategies),
             pair[1].get("score") or 0,
             pair[0].get("amount") or 0,
         ),
@@ -300,7 +306,7 @@ def build_recommendations(qualified_boards: list[dict[str, Any]]) -> list[dict[s
 
     recommendations = []
     for quote, board in candidates[:MAX_STOCK_CANDIDATES]:
-        item = evaluate_stock_snapshot(quote, board)
+        item = evaluate_stock_snapshot(quote, board, active_strategies)
         if item:
             recommendations.append(item)
     recommendations.sort(
@@ -319,7 +325,13 @@ def build_recommendations(qualified_boards: list[dict[str, Any]]) -> list[dict[s
     return recommendations
 
 
-def evaluate_stock_snapshot(quote: dict[str, Any], board: dict[str, Any]) -> dict[str, Any] | None:
+def evaluate_stock_snapshot(
+    quote: dict[str, Any],
+    board: dict[str, Any],
+    active_strategies: set[str] | None = None,
+) -> dict[str, Any] | None:
+    if active_strategies is None:
+        active_strategies = {STRATEGY_TAIL_MAIN, STRATEGY_AM_TOP}
     price = quote.get("price")
     pre_close = quote.get("preClose")
     open_price = quote.get("open")
@@ -329,7 +341,11 @@ def evaluate_stock_snapshot(quote: dict[str, Any], board: dict[str, Any]) -> dic
         return None
 
     pct = quote.get("pct") or 0
+    if STRATEGY_AM_TOP in active_strategies and is_morning_top_setup(quote, board):
+        return evaluate_morning_top_snapshot(quote, board)
     if is_late_chase(quote):
+        return None
+    if STRATEGY_TAIL_MAIN not in active_strategies:
         return None
 
     volume_ratio = quote.get("volumeRatio") or 0
@@ -403,6 +419,7 @@ def evaluate_stock_snapshot(quote: dict[str, Any], board: dict[str, Any]) -> dic
         "turnover": turnover,
         "confidence": win_rate,
         "winRate": win_rate,
+        "strategyTag": STRATEGY_TAIL_MAIN,
         "t1EdgeScore": t1_edge_score,
         "expectedReturnPct": round2(expected_return),
         "riskPct": round2(risk_pct),
@@ -414,7 +431,7 @@ def evaluate_stock_snapshot(quote: dict[str, Any], board: dict[str, Any]) -> dic
         },
         "criteria": {
             "board": board.get("criteria", []),
-            "stock": passed_labels,
+            "stock": [f"[{STRATEGY_TAIL_MAIN}] Main tail setup", *passed_labels],
         },
         "buyPlan": buy_plan,
         "sellPlan": {
@@ -430,6 +447,119 @@ def evaluate_stock_snapshot(quote: dict[str, Any], board: dict[str, Any]) -> dic
                 "Next morning weak open and cannot reclaim the late-session platform",
                 "Break the personalized stop or the 14:00 entry trigger",
                 "Avoid widening the stop after purchase",
+            ],
+        },
+        "sourceLinks": stock_source_links(quote["code"]),
+        "sparkline": [],
+    }
+
+
+def evaluate_morning_top_snapshot(quote: dict[str, Any], board: dict[str, Any]) -> dict[str, Any] | None:
+    price = quote.get("price")
+    pre_close = quote.get("preClose")
+    open_price = quote.get("open")
+    if not price or not pre_close or not open_price:
+        return None
+
+    pct = quote.get("pct") or 0
+    volume_ratio = quote.get("volumeRatio") or 0
+    turnover = quote.get("turnover") or 0
+    main_net = quote.get("mainNet") or 0
+    super_net = quote.get("superNet") or 0
+    amount = quote.get("amount") or 0
+    range_position = intraday_position(quote)
+    high = quote.get("high") or price
+    low = quote.get("low") or price
+    avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
+    close_to_high = price / high if high else 0
+    price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
+    intraday_reversal = ((price / low) - 1) * 100 if low else 0
+    open_to_price = ((price / open_price) - 1) * 100 if open_price else 0
+
+    criteria = [
+        ("Board is hot enough for morning top capture", (board.get("passed") or 0) >= 4),
+        ("Morning top gain zone is matched", 8.4 <= pct <= 10.3),
+        ("Price is pinned near the intraday high", range_position >= 0.82 and close_to_high >= 0.985),
+        ("Price is far above VWAP", price_vs_avg >= 2.0),
+        ("Turnover can support a seal or reseal", 8 <= turnover <= 42),
+        ("Volume is active without obvious exhaustion", 1.0 <= volume_ratio <= 7.5),
+        ("Main or super capital is net inflow", main_net > 0 or super_net > 0),
+        ("Deal amount supports fast T+1 exit", amount >= 300_000_000),
+        ("Morning run has enough vertical spread", open_to_price >= 5.5 or intraday_reversal >= 8.0),
+    ]
+    passed_labels = [label for label, ok in criteria if ok]
+    if len(passed_labels) < 7:
+        return None
+
+    buy_plan = choose_morning_top_buy_plan_snapshot(quote)
+    if not buy_plan:
+        return None
+
+    entry = buy_plan["priceRange"][0]
+    stop_loss = estimate_morning_top_stop_snapshot(entry, quote)
+    target = estimate_morning_top_target_snapshot(entry, price, pre_close, quote, board, buy_plan)
+    expected_return = ((target["targetPrice"] / entry) - 1) * 100 if entry else 0
+    risk_pct = ((entry / stop_loss) - 1) * 100 if stop_loss else 0
+    t1_edge_score = estimate_morning_top_edge_score(
+        quote,
+        board,
+        buy_plan,
+        expected_return,
+        risk_pct,
+        len(passed_labels),
+    )
+    win_rate = round(
+        min(
+            95,
+            46
+            + len(passed_labels) * 4.0
+            + (board.get("passed") or 0) * 2.2
+            + buy_plan["quality"] * 0.8
+            + min(8, t1_edge_score / 13)
+            - max(0, risk_pct - 4.0) * 1.8,
+        ),
+        1,
+    )
+
+    return {
+        "rank": None,
+        "code": quote["code"],
+        "name": quote["name"],
+        "market": quote.get("market"),
+        "price": round2(price),
+        "pct": pct,
+        "amount": quote.get("amount"),
+        "turnover": turnover,
+        "confidence": win_rate,
+        "winRate": win_rate,
+        "strategyTag": STRATEGY_AM_TOP,
+        "t1EdgeScore": t1_edge_score,
+        "expectedReturnPct": round2(expected_return),
+        "riskPct": round2(risk_pct),
+        "board": {
+            "code": board["code"],
+            "name": board["name"],
+            "passed": board.get("passed"),
+            "score": board.get("score"),
+        },
+        "criteria": {
+            "board": board.get("criteria", []),
+            "stock": [f"[{STRATEGY_AM_TOP}] Morning top setup", *passed_labels],
+        },
+        "buyPlan": buy_plan,
+        "sellPlan": {
+            "targetPrice": target["targetPrice"],
+            "targetTime": target["targetTime"],
+            "strategy": target["strategy"],
+            "takeProfit": target["targetPrice"],
+            "timeWindow": target["targetTime"],
+        },
+        "stopPlan": {
+            "stopLoss": stop_loss,
+            "rules": [
+                "Morning top weakens and fails to reseal or hold the high platform",
+                "Break the personalized stop or fall back under VWAP with volume",
+                "Do not chase after the 09:40-10:00 decision window",
             ],
         },
         "sourceLinks": stock_source_links(quote["code"]),
@@ -466,13 +596,14 @@ def choose_buy_plan_snapshot(quote: dict[str, Any]) -> dict[str, Any] | None:
         and open_to_price >= 2.5
     ):
         return make_buy_plan(
-            "14:00 sample-strength tail entry",
+            "[TAIL_MAIN] 13:30 sample-strength tracking",
             price,
-            "14:00-14:15",
-            "Match the successful samples: 5%-7% day gain, high close, strong turnover, and price above VWAP.",
+            "13:30-14:15; prefer 14:00 confirmation",
+            "Track from 13:30; buy near 14:00 only if it still matches the successful sample shape.",
             24,
             8,
             quote,
+            STRATEGY_TAIL_MAIN,
         )
     if (
         4.0 <= pct <= 7.3
@@ -484,13 +615,14 @@ def choose_buy_plan_snapshot(quote: dict[str, Any]) -> dict[str, Any] | None:
         and (open_to_price >= 2.0 or intraday_reversal >= 7.0)
     ):
         return make_buy_plan(
-            "14:00 high-platform hold entry",
+            "[TAIL_MAIN] 13:30 high-platform tracking",
             price,
-            "14:00-14:15",
-            "Buy only if the afternoon platform stays high and price does not fall back under VWAP.",
+            "13:30-14:15; prefer 14:00 confirmation",
+            "Track the high platform from 13:30; buy near 14:00 if price stays above VWAP.",
             20,
             6,
             quote,
+            STRATEGY_TAIL_MAIN,
         )
     if (
         4.2 <= pct <= 7.6
@@ -503,13 +635,14 @@ def choose_buy_plan_snapshot(quote: dict[str, Any]) -> dict[str, Any] | None:
         and intraday_reversal >= 6.5
     ):
         return make_buy_plan(
-            "14:00 afternoon reversal-step entry",
+            "[TAIL_MAIN] 13:30 afternoon reversal-step tracking",
             price,
-            "14:00-14:15",
-            "Use only the afternoon step-up pattern: intraday reversal, high close, and enough turnover.",
+            "13:30-14:15; prefer 14:00 confirmation",
+            "Track the afternoon step-up from 13:30; buy near 14:00 if the platform keeps lifting.",
             19,
             5,
             quote,
+            STRATEGY_TAIL_MAIN,
         )
     return None
 
@@ -522,6 +655,7 @@ def make_buy_plan(
     quality: int,
     priority: int,
     quote: dict[str, Any] | None = None,
+    strategy_tag: str = STRATEGY_TAIL_MAIN,
 ) -> dict[str, Any]:
     lower_offset, upper_offset = buy_range_offsets(quote)
     return {
@@ -531,6 +665,73 @@ def make_buy_plan(
         "priceRange": [round2(anchor_price * (1 - lower_offset)), round2(anchor_price * (1 + upper_offset))],
         "quality": quality,
         "priority": priority,
+        "strategyTag": strategy_tag,
+    }
+
+
+def choose_morning_top_buy_plan_snapshot(quote: dict[str, Any]) -> dict[str, Any] | None:
+    price = quote["price"]
+    pct = quote.get("pct") or 0
+    volume_ratio = quote.get("volumeRatio") or 0
+    turnover = quote.get("turnover") or 0
+    range_position = intraday_position(quote)
+    high = quote.get("high") or price
+    amount = quote.get("amount") or 0
+    avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
+    close_to_high = price / high if high else 0
+    price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
+
+    if (
+        9.2 <= pct <= 10.3
+        and 8 <= turnover <= 38
+        and 1.0 <= volume_ratio <= 6.8
+        and range_position >= 0.86
+        and close_to_high >= 0.988
+        and price_vs_avg >= 2.2
+    ):
+        return make_top_buy_plan(
+            "[AM_TOP] 09:40 morning top entry",
+            price,
+            "09:40-10:00",
+            "Use only a morning top or near-limit shape; skip if it cannot hold the high platform.",
+            22,
+            7,
+        )
+    if (
+        8.4 <= pct <= 10.3
+        and 10 <= turnover <= 42
+        and 1.1 <= volume_ratio <= 7.5
+        and range_position >= 0.82
+        and close_to_high >= 0.985
+        and price_vs_avg >= 2.0
+    ):
+        return make_top_buy_plan(
+            "[AM_TOP] 09:40 high-board capture",
+            price,
+            "09:40-10:00",
+            "Capture only the early high-board shape; do not chase after the decision window.",
+            20,
+            6,
+        )
+    return None
+
+
+def make_top_buy_plan(
+    label: str,
+    anchor_price: float,
+    window: str,
+    trigger: str,
+    quality: int,
+    priority: int,
+) -> dict[str, Any]:
+    return {
+        "type": label,
+        "timeWindow": window,
+        "trigger": trigger,
+        "priceRange": [round2(anchor_price * 0.996), round2(anchor_price * 1.002)],
+        "quality": quality,
+        "priority": priority,
+        "strategyTag": STRATEGY_AM_TOP,
     }
 
 
@@ -606,7 +807,64 @@ def estimate_target_snapshot(
     }
 
 
-def pre_rank_candidate(quote: dict[str, Any], board: dict[str, Any]) -> float:
+def estimate_morning_top_target_snapshot(
+    entry: float,
+    price: float,
+    pre_close: float,
+    quote: dict[str, Any],
+    board: dict[str, Any],
+    buy_plan: dict[str, Any],
+) -> dict[str, Any]:
+    base_gain = 0.048
+    pct = quote.get("pct") or 0
+    turnover = quote.get("turnover") or 0
+    volume_ratio = quote.get("volumeRatio") or 0
+    amount = quote.get("amount") or 0
+    main_net = max(0, quote.get("mainNet") or 0) + max(0, quote.get("superNet") or 0)
+    net_ratio = main_net / amount if amount else 0
+    range_position = intraday_position(quote)
+    high = quote.get("high") or price
+    avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
+    close_to_high = price / high if high else 0
+    price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
+
+    if (board.get("passed") or 0) >= 5:
+        base_gain += 0.01
+    if (board.get("limitUpCount") or 0) >= 1:
+        base_gain += 0.008
+    if 9.5 <= pct <= 10.3:
+        base_gain += 0.012
+    if 12 <= turnover <= 28:
+        base_gain += 0.01
+    elif 28 < turnover <= 42:
+        base_gain += 0.004
+    if 1.2 <= volume_ratio <= 4.5:
+        base_gain += 0.008
+    if range_position >= 0.9 and close_to_high >= 0.99:
+        base_gain += 0.01
+    if price_vs_avg >= 3.0:
+        base_gain += 0.008
+    if main_net > 0:
+        base_gain += clamp(net_ratio * 0.5, 0, 0.012)
+    if buy_plan["priority"] >= 7:
+        base_gain += 0.008
+
+    target_gain = clamp(base_gain, 0.052, 0.098)
+    target_price = round2(min(max(entry * (1 + target_gain), price * 1.018), entry * 1.102))
+    return {
+        "targetPrice": target_price,
+        "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed.",
+        "strategy": "AM_TOP setup: catch the next-morning premium after a morning top or limit-up hold; exit fast on failure.",
+    }
+
+
+def pre_rank_candidate(
+    quote: dict[str, Any],
+    board: dict[str, Any],
+    active_strategies: set[str] | None = None,
+) -> float:
+    if active_strategies is None:
+        active_strategies = {STRATEGY_TAIL_MAIN, STRATEGY_AM_TOP}
     pct = quote.get("pct") or 0
     turnover = quote.get("turnover") or 0
     volume_ratio = quote.get("volumeRatio") or 0
@@ -622,7 +880,7 @@ def pre_rank_candidate(quote: dict[str, Any], board: dict[str, Any]) -> float:
     sweet_gain = 1 - min(abs(pct - 5.7) / 2.3, 1)
     sweet_turnover = 1 - min(abs(turnover - 22.0) / 16.0, 1)
     sweet_volume = 1 - min(abs(volume_ratio - 3.0) / 3.8, 1)
-    return round2(
+    tail_score = (
         (board.get("score") or 0) * 0.35
         + sweet_gain * 24
         + sweet_turnover * 16
@@ -633,6 +891,25 @@ def pre_rank_candidate(quote: dict[str, Any], board: dict[str, Any]) -> float:
         + clamp(net_ratio * 280, 0, 10)
         + min(amount / 800_000_000, 10)
     )
+    top_gain = 1 - min(abs(pct - 9.9) / 1.6, 1)
+    top_turnover = 1 - min(abs(turnover - 18.0) / 20.0, 1)
+    top_score = (
+        (board.get("score") or 0) * 0.32
+        + top_gain * 26
+        + top_turnover * 12
+        + clamp(volume_ratio * 2.0, 0, 9)
+        + range_position * 16
+        + clamp((close_to_high - 0.98) * 360, 0, 10)
+        + clamp(price_vs_avg * 1.8, 0, 12)
+        + clamp(net_ratio * 240, 0, 8)
+        + min(amount / 1_000_000_000, 10)
+    )
+    scores = []
+    if STRATEGY_TAIL_MAIN in active_strategies:
+        scores.append(tail_score)
+    if STRATEGY_AM_TOP in active_strategies:
+        scores.append(top_score)
+    return round2(max(scores) if scores else 0)
 
 
 def estimate_stop_snapshot(entry: float, quote: dict[str, Any]) -> float:
@@ -661,6 +938,56 @@ def estimate_stop_snapshot(entry: float, quote: dict[str, Any]) -> float:
     floor = entry * 0.955
     stop_loss = max(floor, volatility_stop, min(ceiling, structure_stop))
     return round2(min(ceiling, stop_loss))
+
+
+def estimate_morning_top_stop_snapshot(entry: float, quote: dict[str, Any]) -> float:
+    price = quote.get("price") or entry
+    pre_close = quote.get("preClose") or price
+    open_price = quote.get("open") or price
+    amount = quote.get("amount") or 0
+    avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
+    high_platform_stop = max(avg_price * 0.992, open_price * 1.025, pre_close * 1.055)
+    ceiling = entry * 0.986
+    floor = entry * 0.955
+    stop_loss = max(floor, min(ceiling, high_platform_stop))
+    return round2(stop_loss)
+
+
+def estimate_morning_top_edge_score(
+    quote: dict[str, Any],
+    board: dict[str, Any],
+    buy_plan: dict[str, Any],
+    expected_return: float,
+    risk_pct: float,
+    passed_count: int,
+) -> float:
+    amount = quote.get("amount") or 0
+    main_net = max(0, quote.get("mainNet") or 0) + max(0, quote.get("superNet") or 0)
+    net_ratio = main_net / amount if amount else 0
+    reward_risk = expected_return / max(risk_pct, 0.8)
+    pct = quote.get("pct") or 0
+    turnover = quote.get("turnover") or 0
+    price = quote.get("price") or 0
+    high = quote.get("high") or price
+    avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
+    close_to_high = price / high if high else 0
+    price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
+    pct_bonus = max(0, 1 - abs(pct - 9.9) / 1.4) * 12
+    turnover_bonus = max(0, 1 - abs(turnover - 18.0) / 20.0) * 8
+    return round2(
+        expected_return * 7.0
+        + reward_risk * 8.5
+        + (board.get("score") or 0) * 0.15
+        + buy_plan["quality"] * 1.1
+        + passed_count * 2.0
+        + intraday_position(quote) * 9
+        + clamp((close_to_high - 0.985) * 380, 0, 10)
+        + clamp(price_vs_avg * 2.0, 0, 12)
+        + clamp(net_ratio * 220, 0, 8)
+        + pct_bonus
+        + turnover_bonus
+        - max(0, risk_pct - 4.2) * 4
+    )
 
 
 def estimate_t1_edge_score(
@@ -728,6 +1055,32 @@ def stock_universe_allowed(code: str) -> bool:
     return True
 
 
+def active_strategy_windows(now: datetime) -> set[str]:
+    minute_of_day = now.hour * 60 + now.minute
+    active: set[str] = set()
+    if 9 * 60 + 35 <= minute_of_day <= 10 * 60 + 30:
+        active.add(STRATEGY_AM_TOP)
+    if 13 * 60 + 25 <= minute_of_day <= 15 * 60 + 35:
+        active.add(STRATEGY_TAIL_MAIN)
+    return active
+
+
+def is_morning_top_setup(quote: dict[str, Any], board: dict[str, Any]) -> bool:
+    if (board.get("passed") or 0) < 4:
+        return False
+    if not morning_top_prefilter(quote):
+        return False
+    price = quote.get("price")
+    high = quote.get("high") or price
+    amount = quote.get("amount") or 0
+    avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
+    if not price or not high or not avg_price:
+        return False
+    close_to_high = price / high if high else 0
+    price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
+    return intraday_position(quote) >= 0.82 and close_to_high >= 0.985 and price_vs_avg >= 2.0
+
+
 def fetch_board_members(board_code: str) -> list[dict[str, Any]]:
     fields = "f12,f13,f14,f2,f3,f4,f5,f6,f7,f8,f10,f15,f16,f17,f18,f20,f21,f62,f66,f100"
     rows = safe_clist("Eastmoney", f"b:{board_code}+f:!50", fields, page_size=MAX_MEMBERS_PER_BOARD)
@@ -765,7 +1118,16 @@ def normalize_stock_quote(row: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def stock_prefilter(item: dict[str, Any]) -> bool:
+def stock_prefilter(item: dict[str, Any], active_strategies: set[str] | None = None) -> bool:
+    if active_strategies is None:
+        active_strategies = {STRATEGY_TAIL_MAIN, STRATEGY_AM_TOP}
+    return (
+        (STRATEGY_TAIL_MAIN in active_strategies and tail_prefilter(item))
+        or (STRATEGY_AM_TOP in active_strategies and morning_top_prefilter(item))
+    )
+
+
+def tail_prefilter(item: dict[str, Any]) -> bool:
     code = item.get("code") or ""
     name = item.get("name") or ""
     if not stock_universe_allowed(code):
@@ -781,6 +1143,22 @@ def stock_prefilter(item: dict[str, Any]) -> bool:
     if is_late_chase(item):
         return False
     return 3.8 <= pct <= 7.9 and amount >= 250_000_000 and volume_ratio >= 1.25
+
+
+def morning_top_prefilter(item: dict[str, Any]) -> bool:
+    code = item.get("code") or ""
+    name = item.get("name") or ""
+    if not stock_universe_allowed(code):
+        return False
+    if any(flag in name.upper() for flag in ("ST", "*ST", "閫€")):
+        return False
+    turnover = item.get("turnover")
+    pct = item.get("pct") or 0
+    amount = item.get("amount") or 0
+    volume_ratio = item.get("volumeRatio") or 0
+    if turnover is None or turnover < 8 or turnover > 42:
+        return False
+    return 8.4 <= pct <= 10.3 and amount >= 300_000_000 and volume_ratio >= 1.0
 
 
 def fetch_news() -> list[dict[str, Any]]:
