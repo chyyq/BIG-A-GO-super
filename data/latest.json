@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-06T17:36:36.620744+08:00",
+    "generatedAt": "2026-07-06T17:40:20.861387+08:00",
     "tradingDate": "2026-07-06",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -31,7 +31,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 18.89
+    "runtimeSeconds": 24.94
   },
   "market": {
     "recommendationCount": 0,
@@ -319,7 +319,7 @@
     },
     {
       "source": "Yicai",
-      "title": "安联：未来十年中国保险市场将以7.3%增速领跑全球，寿险深度已接近北美稳居全球第二大保险市场宝座，在过去十年间几乎增长了50%。  57分钟前",
+      "title": "安联：未来十年中国保险市场将以7.3%增速领跑全球，寿险深度已接近北美稳居全球第二大保险市场宝座，在过去十年间几乎增长了50%。  1小时前",
       "url": "https://www.yicai.com/news/103262080.html",
       "time": ""
     },
@@ -349,7 +349,7 @@
     },
     {
       "source": "Yicai",
-      "title": "A股四大指数集体高开，市场逾2500股上涨盘面上，内存芯片、半导体、HBM方向涨幅居前。  7小时前",
+      "title": "A股四大指数集体高开，市场逾2500股上涨盘面上，内存芯片、半导体、HBM方向涨幅居前。  8小时前",
       "url": "https://www.yicai.com/news/103261098.html",
       "time": ""
     }
