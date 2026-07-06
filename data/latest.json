@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-06T17:46:44.034301+08:00",
+    "generatedAt": "2026-07-06T19:44:21.776114+08:00",
     "tradingDate": "2026-07-06",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -20,18 +20,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 24.42
+    "runtimeSeconds": 21.85
   },
   "market": {
     "recommendationCount": 0,
@@ -312,45 +312,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "告别5%涨跌停板！今起A股交易规则重要调整 影响个股全名单来了",
+      "url": "https://finance.eastmoney.com/a/202607063794375980.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "安联：未来十年中国保险市场将以7.3%增速领跑全球，寿险深度已接近北美稳居全球第二大保险市场宝座，在过去十年间几乎增长了50%。  1小时前",
-      "url": "https://www.yicai.com/news/103262080.html",
+      "source": "Eastmoney News",
+      "title": "78家A股公司预告半年报 其中68家公司业绩预喜 江波龙净利暴增超622倍",
+      "url": "https://finance.eastmoney.com/a/202607053794304492.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共73只个股涨停 恒尚节能收获5连板机器人概念股晋拓股份、先锋电子2连板。一图速览今日连板股&gt;&gt;  1小时前",
-      "url": "https://www.yicai.com/news/103262054.html",
+      "source": "Eastmoney News",
+      "title": "沪指震荡整理 创业板指跌近2% 煤炭与银行涨幅居前",
+      "url": "https://finance.eastmoney.com/a/202607063795095248.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "上海 “竖店” 对接中东欧: 微短剧是下一个国际交流新切口？中东欧市场比很多人想象中更接近短剧用户。  2小时前",
-      "url": "https://www.yicai.com/news/103261915.html",
+      "source": "Eastmoney News",
+      "title": "利好不断+BD高增！创新药板块连续爆发 中长期布局良机已至？(附股)",
+      "url": "https://finance.eastmoney.com/a/202607063794951373.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜创业板指跌1.77% 煤炭板块逆市走强全市场超3500只个股下跌。  2小时前",
-      "url": "https://www.yicai.com/news/103261919.html",
+      "source": "Eastmoney News",
+      "title": "A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊",
+      "url": "https://finance.eastmoney.com/a/202605073730389683.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "英特尔确认CPU涨价，电脑整机进入提价周期英特尔表示，价格调整是基于不断变化的市场动态定期对供应链以及与之相关成本的持续监控。  5小时前",
-      "url": "https://www.yicai.com/news/103261612.html",
+      "source": "Eastmoney News",
+      "title": "A股交易新规！7月6日正式施行",
+      "url": "https://topic.eastmoney.com/detail/agjyxg2026.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股四大指数集体高开，市场逾2500股上涨盘面上，内存芯片、半导体、HBM方向涨幅居前。  8小时前",
-      "url": "https://www.yicai.com/news/103261098.html",
+      "source": "Eastmoney News",
+      "title": "银河证券：油价逐步回落 第三季度出行链有望迎来修复",
+      "url": "https://finance.eastmoney.com/a/202607063794379479.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信证券：底部期待黄金板块估值与盈利的双击",
+      "url": "https://finance.eastmoney.com/a/202607063794379555.html",
       "time": ""
     }
   ]
