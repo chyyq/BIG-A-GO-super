@@ -63,8 +63,10 @@ def main() -> None:
     rank_map = {board["code"]: index + 1 for index, board in enumerate(boards)}
     evaluated_boards = evaluate_boards(boards, rank_map, history)
     qualified_boards = [board for board in evaluated_boards if board["qualified"]]
+    active_strategies = active_strategy_windows(now)
     recommendation_board_pool = select_recommendation_boards(evaluated_boards)
-    recommendations = build_recommendations(recommendation_board_pool, now)
+    am_top_quotes = fetch_all_a_shares() if STRATEGY_AM_TOP in active_strategies and remaining_seconds() > 35 else []
+    recommendations = build_recommendations(recommendation_board_pool, now, am_top_quotes)
     news = fetch_news() if remaining_seconds() > 25 else []
 
     latest = {
@@ -294,6 +296,7 @@ def select_recommendation_boards(boards: list[dict[str, Any]]) -> list[dict[str,
 def build_recommendations(
     qualified_boards: list[dict[str, Any]],
     now: datetime | None = None,
+    am_top_quotes: list[dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
     active_strategies = active_strategy_windows(now or datetime.now(CN_TZ))
     seen: set[str] = set()
@@ -306,6 +309,14 @@ def build_recommendations(
             seen.add(code)
             if stock_prefilter(member, active_strategies):
                 candidates.append((member, board))
+    if STRATEGY_AM_TOP in active_strategies:
+        for quote in am_top_quotes or []:
+            code = quote.get("code")
+            if not code or code in seen:
+                continue
+            seen.add(code)
+            if morning_top_prefilter(quote):
+                candidates.append((quote, am_top_board_for_quote(quote)))
 
     candidates.sort(
         key=lambda pair: (
@@ -354,6 +365,20 @@ def diversify_recommendations(items: list[dict[str, Any]]) -> list[dict[str, Any
 
 def recommendation_industry_key(item: dict[str, Any]) -> str:
     return text(item.get("industry") or item.get("board", {}).get("name") or item.get("code") or "Unknown")
+
+
+def am_top_board_for_quote(quote: dict[str, Any]) -> dict[str, Any]:
+    industry = quote.get("industry") or "AM_TOP market scan"
+    return {
+        "code": "AM_TOP_" + hashlib.md5(industry.encode("utf-8")).hexdigest()[:8],
+        "name": industry,
+        "passed": 4,
+        "qualified": True,
+        "score": 82,
+        "criteria": ["AM_TOP all-main-board scan", "Morning top candidate is evaluated by stock shape"],
+        "limitUpCount": 0,
+        "bigUpCount": 0,
+    }
 
 
 def evaluate_stock_snapshot(
@@ -514,10 +539,10 @@ def evaluate_morning_top_snapshot(quote: dict[str, Any], board: dict[str, Any]) 
         ("Morning top gain zone is matched", 8.4 <= pct <= 10.3),
         ("Price is pinned near the intraday high", range_position >= 0.82 and close_to_high >= 0.985),
         ("Price is far above VWAP", price_vs_avg >= 2.0),
-        ("Turnover can support a seal or reseal", 8 <= turnover <= 42),
-        ("Volume is active without obvious exhaustion", 1.0 <= volume_ratio <= 7.5),
+        ("Turnover can support a seal or reseal", 2 <= turnover <= 45),
+        ("Volume is active without obvious exhaustion", 0.4 <= volume_ratio <= 8.0),
         ("Main or super capital is net inflow", main_net > 0 or super_net > 0),
-        ("Deal amount supports fast T+1 exit", amount >= 300_000_000),
+        ("Deal amount supports fast T+1 exit", amount >= 250_000_000),
         ("Morning run has enough vertical spread", open_to_price >= 5.5 or intraday_reversal >= 8.0),
     ]
     passed_labels = [label for label, ok in criteria if ok]
@@ -736,11 +761,11 @@ def choose_morning_top_buy_plan_snapshot(quote: dict[str, Any]) -> dict[str, Any
 
     if (
         9.2 <= pct <= 10.3
-        and 8 <= turnover <= 38
-        and 1.0 <= volume_ratio <= 6.8
+        and 2 <= turnover <= 45
+        and 0.4 <= volume_ratio <= 8.0
         and range_position >= 0.86
         and close_to_high >= 0.988
-        and price_vs_avg >= 2.2
+        and price_vs_avg >= 1.0
     ):
         return make_top_buy_plan(
             "[AM_TOP] 09:40 morning top entry",
@@ -752,11 +777,11 @@ def choose_morning_top_buy_plan_snapshot(quote: dict[str, Any]) -> dict[str, Any
         )
     if (
         8.4 <= pct <= 10.3
-        and 10 <= turnover <= 42
-        and 1.1 <= volume_ratio <= 7.5
+        and 2 <= turnover <= 45
+        and 0.4 <= volume_ratio <= 8.0
         and range_position >= 0.82
         and close_to_high >= 0.985
-        and price_vs_avg >= 2.0
+        and price_vs_avg >= 0.8
     ):
         return make_top_buy_plan(
             "[AM_TOP] 09:40 high-board capture",
@@ -1131,7 +1156,7 @@ def is_morning_top_setup(quote: dict[str, Any], board: dict[str, Any]) -> bool:
         return False
     close_to_high = price / high if high else 0
     price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
-    return intraday_position(quote) >= 0.82 and close_to_high >= 0.985 and price_vs_avg >= 2.0
+    return intraday_position(quote) >= 0.82 and close_to_high >= 0.985 and price_vs_avg >= 0.8
 
 
 def fetch_board_members(board_code: str) -> list[dict[str, Any]]:
@@ -1209,9 +1234,9 @@ def morning_top_prefilter(item: dict[str, Any]) -> bool:
     pct = item.get("pct") or 0
     amount = item.get("amount") or 0
     volume_ratio = item.get("volumeRatio") or 0
-    if turnover is None or turnover < 8 or turnover > 42:
+    if turnover is None or turnover < 2 or turnover > 45:
         return False
-    return 8.4 <= pct <= 10.3 and amount >= 300_000_000 and volume_ratio >= 1.0
+    return 8.4 <= pct <= 10.3 and amount >= 250_000_000 and volume_ratio >= 0.4
 
 
 def fetch_news() -> list[dict[str, Any]]:
