@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-07T16:58:42.121511+08:00",
+    "generatedAt": "2026-07-07T17:59:12.153889+08:00",
     "tradingDate": "2026-07-07",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -31,7 +31,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 33.22
+    "runtimeSeconds": 34.71
   },
   "market": {
     "recommendationCount": 10,
@@ -144,7 +144,7 @@
       "price": 5952.88,
       "pct": 2.24,
       "amount": 4371260959.0,
-      "turnover": 75.28,
+      "turnover": 10.6,
       "open": 6023.74,
       "preClose": 5822.45,
       "mainNet": -520156064.0,
@@ -1194,6 +1194,12 @@
       "source": "Eastmoney News",
       "title": "央视网评：斩断“低俗赌约” 莫把股市当赌场",
       "url": "https://finance.eastmoney.com/a/202607073796533575.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
