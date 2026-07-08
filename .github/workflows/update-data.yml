@@ -3,6 +3,10 @@ name: Update A-share recommendations
 on:
   workflow_dispatch:
   schedule:
+    - cron: "26 1 * * 1-5"
+    - cron: "31 1 * * 1-5"
+    - cron: "35 1 * * 1-5"
+    - cron: "38 1 * * 1-5"
     - cron: "40 1 * * 1-5"
     - cron: "0 2 * * 1-5"
     - cron: "30 5 * * 1-5"
