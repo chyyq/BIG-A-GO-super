@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-08T16:01:59.122356+08:00",
+    "generatedAt": "2026-07-08T16:42:56.179315+08:00",
     "tradingDate": "2026-07-08",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -20,18 +20,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 37.6
+    "runtimeSeconds": 25.02
   },
   "market": {
     "recommendationCount": 10,
@@ -145,7 +145,7 @@
       "price": 27013.88,
       "pct": 3.32,
       "amount": 9506956530.0,
-      "turnover": 3.16,
+      "turnover": 1.16,
       "open": 26575.02,
       "preClose": 26146.66,
       "mainNet": -252885200.0,
@@ -1169,45 +1169,51 @@
   ],
   "news": [
     {
-      "source": "Yicai",
-      "title": "阿里港股大涨，财报前瞻显示云增长、闪购减亏好于市场预期阿里云收入增长加速至45%左右。  35分钟前",
-      "url": "https://www.yicai.com/news/103265659.html",
+      "source": "Eastmoney News",
+      "title": "业绩翻倍甚至好几倍 11家A股公司公布大利好！6倍光通信大牛股在列",
+      "url": "https://finance.eastmoney.com/a/202607073797114545.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜沪指跌0.49% 人形机器人概念跌幅居前全市场超3700只个股下跌。  46分钟前",
-      "url": "https://www.yicai.com/news/103265633.html",
+      "source": "Eastmoney News",
+      "title": "A股三大指数收跌 深成指与创业板指跌近2% 国资云概念股逆市大涨",
+      "url": "https://finance.eastmoney.com/a/202607083798321635.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "慢阻肺药物市场掀起交易热潮，阿斯利康19亿美元拿下这款中国创新药总交易额创国内呼吸领域近三年单产品对外授权之最。  2小时前",
-      "url": "https://www.yicai.com/news/103265409.html",
+      "source": "Eastmoney News",
+      "title": "又一批A股公司预增！6倍光通信大牛股业绩翻倍",
+      "url": "https://finance.eastmoney.com/a/202607073796881165.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "硬科技行业租赁活跃，深圳甲级写字楼空置率回落业主方的定价策略与市场预期也开始发生悄然变化。  4小时前",
-      "url": "https://www.yicai.com/news/103265292.html",
+      "source": "Eastmoney News",
+      "title": "外围市场利空突袭！股市“吹哨人”突然预警",
+      "url": "https://finance.eastmoney.com/a/202607073796804285.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "15万亿城市更新“大蛋糕”来了，资金平衡仍是最大痛点除了“钱从哪儿来”，城市更新要处理好项目分类、收益来源、风险分担和退出路径。  5小时前",
-      "url": "https://www.yicai.com/news/103265071.html",
+      "source": "Eastmoney News",
+      "title": "A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊",
+      "url": "https://finance.eastmoney.com/a/202605073730389683.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股四大股指集体高开，油气板块走强，浪潮信息一字涨停盘面上，电脑硬件、餐饮旅游、油气板块走强。  6小时前",
-      "url": "https://www.yicai.com/news/103264835.html",
+      "source": "Eastmoney News",
+      "title": "掘金2026年A股中报季",
+      "url": "https://topic.eastmoney.com/detail/agzbj2026.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "从“有没有”到“好不好”，上海再保险中心建设顶层设计再完善在监管体系上，形成了“总局-地方-要素市场”三个层级。  6小时前",
-      "url": "https://www.yicai.com/news/103264506.html",
+      "source": "Eastmoney News",
+      "title": "A股交易新规！7月6日正式施行",
+      "url": "https://topic.eastmoney.com/detail/agjyxg2026.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信证券：大幅波动不改AI超级周期 重视国产算力“Plan B”",
+      "url": "https://finance.eastmoney.com/a/202607083797406338.html",
       "time": ""
     }
   ]
