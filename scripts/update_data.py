@@ -44,7 +44,7 @@ STRATEGY_TAIL_MAIN = "TAIL_MAIN"
 STRATEGY_AM_TOP = "AM_TOP"
 AM_TOP_BUY_WINDOW = "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only"
 AM_TOP_MIN_AMOUNT = 80_000_000
-TAIL_BUY_WINDOW = "13:50-14:25; confirm 14:10-14:35"
+TAIL_BUY_WINDOW = "13:30 watch; 14:10-14:30 primary entry; 14:35 risk check"
 TAIL_TARGET_TIME = "Next trading day 09:30-10:00; sell before 10:00 unless it quickly seals limit-up."
 TAIL_MIN_AMOUNT = 150_000_000
 TAIL_HARD_MAX_TURNOVER = 40.0
@@ -77,7 +77,9 @@ def main() -> None:
     active_strategies = active_strategy_windows(now)
     recommendation_board_pool = select_recommendation_boards(evaluated_boards)
     am_top_quotes = fetch_all_a_shares() if STRATEGY_AM_TOP in active_strategies and remaining_seconds() > 35 else []
-    recommendations = build_recommendations(recommendation_board_pool, now, am_top_quotes)
+    market_quotes = am_top_quotes or (fetch_all_a_shares() if remaining_seconds() > 35 else [])
+    market_monitor = build_market_monitor(market_quotes, evaluated_boards)
+    recommendations = build_recommendations(recommendation_board_pool, now, am_top_quotes, market_monitor)
     news = fetch_news() if remaining_seconds() > 25 else []
 
     latest = {
@@ -93,6 +95,7 @@ def main() -> None:
         "market": {
             "recommendationCount": len(recommendations),
             "qualifiedBoardCount": len(qualified_boards),
+            "monitor": market_monitor,
         },
         "boards": strip_members(evaluated_boards[:12]),
         "recommendations": recommendations,
@@ -128,6 +131,7 @@ def write_fallback(now: datetime, today: str, previous: dict[str, Any]) -> None:
         "market": {
             "recommendationCount": len(previous_recs),
             "qualifiedBoardCount": len(previous_boards),
+            "monitor": previous.get("market", {}).get("monitor", {}),
         },
         "boards": previous_boards[:12],
         "recommendations": previous_recs[:MAX_RECOMMENDATIONS],
@@ -192,6 +196,66 @@ def fetch_all_a_shares() -> list[dict[str, Any]]:
     stocks = [item for item in stocks if item.get("code") and item.get("price")]
     stocks.sort(key=lambda item: (item.get("pct") or -999, item.get("amount") or 0), reverse=True)
     return stocks
+
+
+def build_market_monitor(stocks: list[dict[str, Any]], boards: list[dict[str, Any]]) -> dict[str, Any]:
+    if not stocks:
+        hot_boards = sum(1 for board in boards[:12] if (board.get("passed") or 0) >= 4)
+        score = 50 + min(25, hot_boards * 4)
+        return {
+            "emotionScore": clamp(score, 0, 100),
+            "riskLevel": "NORMAL" if score >= 60 else "CAUTION",
+            "limitUpCount": None,
+            "limitDownCount": None,
+            "brokenBoardRate": None,
+            "note": "Market monitor fell back to board strength.",
+        }
+
+    limit_up_count = sum(1 for item in stocks if is_limit_up(item))
+    limit_down_count = sum(1 for item in stocks if is_limit_down(item))
+    big_down_count = sum(1 for item in stocks if (item.get("pct") or 0) <= -7)
+    limit_touch_count = sum(1 for item in stocks if touched_limit_up(item))
+    broken_count = sum(1 for item in stocks if touched_limit_up(item) and not is_limit_up(item))
+    broken_rate = broken_count / limit_touch_count if limit_touch_count else 0
+    top_board_pct = boards[0].get("pct") if boards else 0
+
+    score = 50
+    if limit_up_count >= 30:
+        score += 15
+    elif limit_up_count >= 18:
+        score += 8
+    else:
+        score -= 8
+    if limit_down_count <= 10:
+        score += 10
+    elif limit_down_count >= 25:
+        score -= 12
+    if broken_rate <= 0.35:
+        score += 15
+    elif broken_rate >= 0.50:
+        score -= 15
+    if big_down_count <= 20:
+        score += 8
+    elif big_down_count >= 50:
+        score -= 12
+    if (top_board_pct or 0) >= 1.2:
+        score += 8
+    elif (top_board_pct or 0) < 0:
+        score -= 8
+    score = round(clamp(score, 0, 100), 1)
+    risk_level = "NORMAL" if score >= 60 else "CAUTION" if score >= 40 else "RISK_OFF"
+    return {
+        "emotionScore": score,
+        "riskLevel": risk_level,
+        "limitUpCount": limit_up_count,
+        "limitDownCount": limit_down_count,
+        "bigDownCount": big_down_count,
+        "limitTouchCount": limit_touch_count,
+        "brokenBoardCount": broken_count,
+        "brokenBoardRate": round(broken_rate, 3),
+        "topBoardPct": round2(top_board_pct or 0),
+        "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates.",
+    }
 
 
 def boards_from_a_shares(stocks: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -315,8 +379,12 @@ def build_recommendations(
     qualified_boards: list[dict[str, Any]],
     now: datetime | None = None,
     am_top_quotes: list[dict[str, Any]] | None = None,
+    market_monitor: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
     active_strategies = active_strategy_windows(now or datetime.now(CN_TZ))
+    if market_monitor and market_monitor.get("riskLevel") == "RISK_OFF":
+        errors.append("Market monitor is RISK_OFF; no new buy recommendation generated.")
+        return []
     seen: set[str] = set()
     candidates: list[tuple[dict[str, Any], dict[str, Any]]] = []
     for board in qualified_boards[:MAX_BOARDS_FOR_MEMBERS]:
@@ -360,6 +428,12 @@ def build_recommendations(
         reverse=True,
     )
     recommendations = diversify_recommendations(recommendations)
+    if market_monitor and market_monitor.get("riskLevel") == "CAUTION":
+        recommendations = [
+            item
+            for item in recommendations
+            if (item.get("t1EdgeScore") or 0) >= 170 and (item.get("riskPct") or 99) <= 4.2
+        ]
     recommendations = recommendations[:MAX_RECOMMENDATIONS]
 
     for index, item in enumerate(recommendations, start=1):
@@ -793,7 +867,7 @@ def choose_buy_plan_snapshot(quote: dict[str, Any]) -> dict[str, Any] | None:
             "[TAIL_MAIN] T1 tail breakout confirmation",
             price,
             TAIL_BUY_WINDOW,
-            "Buy before 14:25 only if price stays above VWAP and the breakout platform; skip late pull-ups after 14:40.",
+            "Buy before 14:30 only if price stays above VWAP and the breakout platform; skip late pull-ups after 14:40.",
             24,
             8,
             quote,
@@ -1333,7 +1407,7 @@ def active_strategy_windows(now: datetime) -> set[str]:
     active: set[str] = set()
     if 9 * 60 + 25 <= minute_of_day <= 10 * 60 + 10:
         active.add(STRATEGY_AM_TOP)
-    if 13 * 60 + 25 <= minute_of_day <= 14 * 60 + 25:
+    if 13 * 60 + 25 <= minute_of_day <= 14 * 60 + 40:
         active.add(STRATEGY_TAIL_MAIN)
     return active or {STRATEGY_TAIL_MAIN, STRATEGY_AM_TOP}
 
@@ -1641,6 +1715,30 @@ def is_limit_up(item: dict[str, Any]) -> bool:
     if code.startswith(("30", "68")):
         return pct >= 19.5
     return pct >= 9.8
+
+
+def is_limit_down(item: dict[str, Any]) -> bool:
+    pct = item.get("pct")
+    code = item.get("code") or ""
+    name = item.get("name") or ""
+    if pct is None:
+        return False
+    if "ST" in name.upper():
+        return pct <= -4.8
+    if code.startswith(("30", "68")):
+        return pct <= -19.5
+    return pct <= -9.8
+
+
+def touched_limit_up(item: dict[str, Any]) -> bool:
+    high = item.get("high")
+    pre_close = item.get("preClose")
+    code = item.get("code") or ""
+    name = item.get("name") or ""
+    if not high or not pre_close:
+        return is_limit_up(item)
+    limit_rate = 0.05 if "ST" in name.upper() else 0.20 if code.startswith(("30", "68")) else 0.10
+    return high >= pre_close * (1 + limit_rate * 0.985)
 
 
 def dedupe_news(news: list[dict[str, Any]]) -> list[dict[str, Any]]:
