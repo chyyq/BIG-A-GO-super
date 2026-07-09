@@ -321,9 +321,7 @@ a:hover {
 }
 
 .card-body {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.45fr);
-  gap: 14px;
+  display: block;
   margin-top: 14px;
 }
 
@@ -360,14 +358,6 @@ a:hover {
 
 .stop-box strong {
   color: var(--green);
-}
-
-.sparkline {
-  width: 100%;
-  height: 76px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: linear-gradient(180deg, #ffffff, #f8faf9);
 }
 
 .criteria-list,

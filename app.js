@@ -37,6 +37,8 @@ function bindEvents() {
   $("#tradeForm").addEventListener("submit", saveTradeFromForm);
   $("#clearClosedButton").addEventListener("click", clearClosedTrades);
   $("#reviewRefreshButton")?.addEventListener("click", refreshReviewNow);
+  $("#exportTradesButton")?.addEventListener("click", exportTradesForSync);
+  $("#importTradesButton")?.addEventListener("click", importTradesFromSync);
   $("#rulesToggle").addEventListener("click", toggleRules);
   $$(".segment").forEach((button) => {
     button.addEventListener("click", () => switchRecommendationView(button.dataset.view));
@@ -155,7 +157,6 @@ function renderRecommendations() {
       recordRecommendationBuy(recommendation);
     });
   });
-  drawSparklines();
 }
 
 function renderRecommendationCard(item, index) {
@@ -208,12 +209,11 @@ function renderRecommendationCard(item, index) {
             ${links.map((link) => `<a class="tag" href="${link.url}" target="_blank" rel="noopener">${escapeHtml(link.name)}</a>`).join("")}
           </div>
         </div>
-        <canvas class="sparkline" data-code="${item.code}" width="420" height="152"></canvas>
       </div>
       <div class="card-actions">
         <button class="ghost-button" type="button" data-action="buy" data-code="${item.code}" ${recorded ? "disabled" : ""}>
           <i data-lucide="${recorded ? "check" : "square-pen"}"></i>
-          记为买入
+          ${recorded ? "已记录" : "一键记录买入"}
         </button>
       </div>
     </article>
@@ -737,6 +737,97 @@ function persistTrades() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state.trades));
 }
 
+async function exportTradesForSync() {
+  const payload = {
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    trades: state.trades,
+  };
+  const syncCode = encodeSyncPayload(payload);
+  const message = "已生成同步码。请在手机端打开网页，点击“导入同步码”后粘贴。";
+  try {
+    await navigator.clipboard.writeText(syncCode);
+    alert(`${message}\n同步码已复制到剪贴板。`);
+  } catch {
+    window.prompt(message, syncCode);
+  }
+}
+
+function importTradesFromSync() {
+  const syncCode = window.prompt("粘贴从另一台设备导出的同步码");
+  if (!syncCode) return;
+  try {
+    const payload = decodeSyncPayload(syncCode);
+    const importedTrades = normalizeImportedTrades(payload?.trades);
+    if (!importedTrades.length) {
+      alert("同步码里没有可导入的交易记录。");
+      return;
+    }
+    mergeImportedTrades(importedTrades);
+    persistTrades();
+    refreshPositionQuotes().then(() => {
+      render();
+      alert(`已导入 ${importedTrades.length} 条记录，持仓和晚间复盘已刷新。`);
+    });
+  } catch {
+    alert("同步码无法识别，请确认完整复制后再导入。");
+  }
+}
+
+function encodeSyncPayload(payload) {
+  const json = JSON.stringify(payload);
+  const bytes = new TextEncoder().encode(json);
+  let binary = "";
+  bytes.forEach((byte) => {
+    binary += String.fromCharCode(byte);
+  });
+  return btoa(binary);
+}
+
+function decodeSyncPayload(syncCode) {
+  const binary = atob(syncCode.trim());
+  const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
+  return JSON.parse(new TextDecoder().decode(bytes));
+}
+
+function normalizeImportedTrades(trades) {
+  if (!Array.isArray(trades)) return [];
+  return trades
+    .filter((trade) => trade && trade.code && trade.name)
+    .map((trade) => ({
+      ...trade,
+      id: trade.id || createId(),
+      code: String(trade.code).trim(),
+      name: String(trade.name).trim(),
+      buyPrice: Number(trade.buyPrice) || 0,
+      quantity: Number(trade.quantity) || null,
+      stopLoss: Number(trade.stopLoss) || null,
+      takeProfit: Number(trade.takeProfit) || null,
+      status: trade.status || "open",
+      importedAt: new Date().toISOString(),
+    }));
+}
+
+function mergeImportedTrades(importedTrades) {
+  const merged = [...state.trades];
+  importedTrades.forEach((incoming) => {
+    const sameId = merged.findIndex((trade) => trade.id === incoming.id);
+    if (sameId >= 0) {
+      merged[sameId] = { ...merged[sameId], ...incoming };
+      return;
+    }
+    const sameOpenCode = merged.findIndex(
+      (trade) => trade.code === incoming.code && trade.status !== "sold" && incoming.status !== "sold",
+    );
+    if (sameOpenCode >= 0) {
+      merged[sameOpenCode] = { ...merged[sameOpenCode], ...incoming, id: merged[sameOpenCode].id };
+      return;
+    }
+    merged.unshift(incoming);
+  });
+  state.trades = merged;
+}
+
 function markTradeSold(id) {
   const trade = state.trades.find((item) => item.id === id);
   if (!trade) return;
@@ -926,48 +1017,6 @@ function notifyAlerts(alerts) {
       tag: `${trade.id}-${alert}`,
     });
   });
-}
-
-function drawSparklines() {
-  const recommendations = state.data?.recommendations || [];
-  $$(".sparkline").forEach((canvas) => {
-    const item = recommendations.find((recommendation) => recommendation.code === canvas.dataset.code);
-    const values = item?.sparkline || [];
-    drawSparkline(canvas, values);
-  });
-}
-
-function drawSparkline(canvas, values) {
-  const ctx = canvas.getContext("2d");
-  const width = canvas.width;
-  const height = canvas.height;
-  ctx.clearRect(0, 0, width, height);
-  ctx.strokeStyle = "#dce4df";
-  ctx.lineWidth = 1;
-  ctx.beginPath();
-  ctx.moveTo(0, height * 0.68);
-  ctx.lineTo(width, height * 0.68);
-  ctx.stroke();
-  if (!values.length) {
-    ctx.fillStyle = "#63706a";
-    ctx.font = "22px sans-serif";
-    ctx.fillText("等待K线", 22, 72);
-    return;
-  }
-  const min = Math.min(...values);
-  const max = Math.max(...values);
-  const span = max - min || 1;
-  ctx.strokeStyle = values[values.length - 1] >= values[0] ? "#c43f3f" : "#197a55";
-  ctx.lineWidth = 4;
-  ctx.lineJoin = "round";
-  ctx.beginPath();
-  values.forEach((value, index) => {
-    const x = (index / Math.max(1, values.length - 1)) * (width - 28) + 14;
-    const y = height - 18 - ((value - min) / span) * (height - 36);
-    if (index === 0) ctx.moveTo(x, y);
-    else ctx.lineTo(x, y);
-  });
-  ctx.stroke();
 }
 
 function getSecid(code) {
