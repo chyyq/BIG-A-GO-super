@@ -5,6 +5,7 @@ const state = {
   data: null,
   trades: [],
   liveQuotes: new Map(),
+  historyQuotes: new Map(),
   isRefreshing: false,
 };
 
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadData();
   await refreshPositionQuotes();
   render();
+  scheduleNightlyReviewRefresh();
   refreshIcons();
 });
 
@@ -34,6 +36,7 @@ function bindEvents() {
   });
   $("#tradeForm").addEventListener("submit", saveTradeFromForm);
   $("#clearClosedButton").addEventListener("click", clearClosedTrades);
+  $("#reviewRefreshButton")?.addEventListener("click", refreshReviewNow);
   $("#rulesToggle").addEventListener("click", toggleRules);
   $$(".segment").forEach((button) => {
     button.addEventListener("click", () => switchRecommendationView(button.dataset.view));
@@ -63,6 +66,21 @@ async function refreshLatestData() {
   button.disabled = false;
   state.isRefreshing = false;
   refreshIcons();
+}
+
+async function refreshReviewNow() {
+  await refreshLatestData();
+}
+
+function scheduleNightlyReviewRefresh() {
+  const now = new Date();
+  const target = new Date();
+  target.setHours(20, 0, 0, 0);
+  if (target <= now) target.setDate(target.getDate() + 1);
+  window.setTimeout(async () => {
+    await refreshLatestData();
+    scheduleNightlyReviewRefresh();
+  }, target.getTime() - now.getTime());
 }
 
 async function loadData() {
@@ -99,6 +117,7 @@ function render() {
   renderRecommendationTable();
   renderSectors();
   renderPositions();
+  renderT1Reviews();
   renderNews();
   renderSources();
   refreshIcons();
@@ -133,7 +152,7 @@ function renderRecommendations() {
   root.querySelectorAll("[data-action='buy']").forEach((button) => {
     button.addEventListener("click", () => {
       const recommendation = recommendations.find((item) => item.code === button.dataset.code);
-      openTradeModal(recommendation);
+      recordRecommendationBuy(recommendation);
     });
   });
   drawSparklines();
@@ -146,6 +165,7 @@ function renderRecommendationCard(item, index) {
   const targetPrice = item.sellPlan?.targetPrice ?? item.sellPlan?.takeProfit;
   const targetTime = item.sellPlan?.targetTime ?? item.sellPlan?.timeWindow ?? "--";
   const stopLoss = item.stopPlan?.stopLoss ?? item.sellPlan?.stopLoss;
+  const recorded = isOpenTradeRecorded(item.code);
 
   return `
     <article class="recommendation-card">
@@ -191,8 +211,8 @@ function renderRecommendationCard(item, index) {
         <canvas class="sparkline" data-code="${item.code}" width="420" height="152"></canvas>
       </div>
       <div class="card-actions">
-        <button class="ghost-button" type="button" data-action="buy" data-code="${item.code}">
-          <i data-lucide="square-pen"></i>
+        <button class="ghost-button" type="button" data-action="buy" data-code="${item.code}" ${recorded ? "disabled" : ""}>
+          <i data-lucide="${recorded ? "check" : "square-pen"}"></i>
           记为买入
         </button>
       </div>
@@ -226,6 +246,52 @@ function renderRecommendationTable() {
       `;
     })
     .join("");
+}
+
+function recordRecommendationBuy(recommendation) {
+  if (!recommendation) return;
+  const targetPrice = recommendation.sellPlan?.targetPrice ?? recommendation.sellPlan?.takeProfit;
+  const stopLoss = recommendation.stopPlan?.stopLoss ?? recommendation.sellPlan?.stopLoss;
+  const buyPrice = estimateRecordedBuyPrice(recommendation);
+  const existing = state.trades.find((item) => item.code === recommendation.code && item.status !== "sold");
+  const trade = {
+    id: existing?.id || createId(),
+    code: recommendation.code,
+    name: recommendation.name,
+    buyPrice,
+    quantity: null,
+    stopLoss: stopLoss || round2(buyPrice * 0.96),
+    takeProfit: targetPrice || round2(buyPrice * 1.03),
+    note: buildRecommendationNote(recommendation),
+    status: "open",
+    strategyTag: recommendation.strategyTag || recommendation.buyPlan?.strategyTag || "",
+    source: "one_click_recommendation",
+    planSnapshot: {
+      buyPlan: recommendation.buyPlan,
+      sellPlan: recommendation.sellPlan,
+      stopPlan: recommendation.stopPlan,
+      board: recommendation.board,
+    },
+    createdAt: existing?.createdAt || new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  };
+  if (existing) {
+    state.trades = state.trades.map((item) => (item.id === existing.id ? { ...item, ...trade } : item));
+  } else {
+    state.trades.unshift(trade);
+  }
+  persistTrades();
+  refreshPositionQuotes().then(render);
+}
+
+function estimateRecordedBuyPrice(recommendation) {
+  const range = recommendation?.buyPlan?.priceRange;
+  if (Array.isArray(range) && range.length >= 2) return round2((Number(range[0]) + Number(range[1])) / 2);
+  return round2(recommendation?.price || 0);
+}
+
+function isOpenTradeRecorded(code) {
+  return state.trades.some((trade) => trade.code === code && trade.status !== "sold");
 }
 
 function renderSectors() {
@@ -278,7 +344,7 @@ function renderPositions() {
 function renderPositionItem(trade) {
   const quote = getQuoteForTrade(trade);
   const currentPrice = quote?.price || trade.lastPrice || trade.buyPrice;
-  const pnlPct = ((currentPrice - trade.buyPrice) / trade.buyPrice) * 100;
+  const pnlPct = trade.buyPrice ? ((currentPrice - trade.buyPrice) / trade.buyPrice) * 100 : 0;
   const alert = getAlertForTrade(trade, currentPrice);
   const statusClass = trade.status === "sold" ? "warn" : alert ? "alert-pill" : "pass";
 
@@ -312,6 +378,237 @@ function renderPositionItem(trade) {
       </div>
     </article>
   `;
+}
+
+function renderT1Reviews() {
+  const root = $("#t1ReviewList");
+  const meta = $("#reviewMeta");
+  if (!root || !meta) return;
+  const openTrades = state.trades.filter((trade) => trade.status !== "sold");
+  const generatedAt = state.data?.meta?.generatedAt ? new Date(state.data.meta.generatedAt) : null;
+  meta.textContent = generatedAt
+    ? `行情快照 ${generatedAt.toLocaleString("zh-CN", { hour12: false })}；按 20:00 复盘纪律生成`
+    : "等待 20:00 行情快照或手动刷新";
+
+  if (!openTrades.length) {
+    root.innerHTML = `<div class="empty-state">暂无已记录买入。推荐卡片点“一键记录买入”后，这里会生成明天 T+1 卖出策略。</div>`;
+    return;
+  }
+
+  const reviews = openTrades.map(buildT1Review);
+  root.innerHTML = reviews.map(renderT1ReviewCard).join("");
+}
+
+function buildT1Review(trade) {
+  const quote = getQuoteForTrade(trade) || {};
+  const buyPrice = Number(trade.buyPrice || quote.price || 0);
+  const closePrice = Number(quote.price || trade.lastPrice || buyPrice);
+  const openPrice = Number(quote.open || closePrice);
+  const highPrice = Number(quote.high || Math.max(openPrice, closePrice));
+  const lowPrice = Number(quote.low || Math.min(openPrice, closePrice));
+  const preClose = Number(quote.preClose || buyPrice || closePrice);
+  const avgPrice = Number(quote.avgPrice || quote.ma5 || (highPrice + lowPrice + closePrice) / 3 || closePrice);
+  const ma5 = Number(quote.ma5 || avgPrice || closePrice);
+  const ma10 = Number(quote.ma10 || ma5 || closePrice);
+  const amount = Number(quote.amount || 0);
+  const amountMA5 = Number(quote.amountMA5 || amount || 1);
+  const turnover = Number(quote.turnover || 0);
+  const mainNet = Number(quote.mainNet || 0);
+  const superNet = Number(quote.superNet || 0);
+  const rangePosition = calcRangePosition(closePrice, highPrice, lowPrice);
+  const tailDrawdown = highPrice ? Math.max(0, (highPrice - closePrice) / highPrice) : 0;
+  const upperShadow = calcUpperShadowRatio(openPrice, closePrice, highPrice, preClose);
+  const limitUpPrice = calcLimitUpPrice(trade.code, closePrice);
+  const marketScore = getMarketEmotionScore();
+  const sectorScore = calcReviewSectorScore(trade, quote);
+  const tailSupportScore = calcReviewTailSupportScore({ closePrice, avgPrice, tailDrawdown, mainNet, superNet });
+  const positionRiskScore = calcReviewPositionRiskScore({
+    openPrice,
+    closePrice,
+    ma5,
+    turnover,
+    amount,
+    amountMA5,
+    tailDrawdown,
+    upperShadow,
+  });
+  const structureScore = calcReviewStructureScore({ closePrice, lowPrice, highPrice, ma5, ma10, avgPrice, buyPrice });
+  const scores = {
+    marketEmotionScore: marketScore,
+    sectorStrengthScore: sectorScore,
+    tailSupportScore,
+    positionRiskScore,
+    structureIntegrityScore: structureScore,
+  };
+  const stockState = classifyT1ReviewState(trade, scores);
+  const pricePlan = buildT1PricePlan({ buyPrice, closePrice, ma5, avgPrice, limitUpPrice, trade });
+  return {
+    trade,
+    quote,
+    buyPrice,
+    closePrice,
+    pnlPct: buyPrice ? ((closePrice - buyPrice) / buyPrice) * 100 : 0,
+    stockState,
+    scores,
+    pricePlan,
+    action: buildNextMorningAction(stockState, pricePlan),
+    reasonTags: buildReviewReasonTags(scores, rangePosition, tailDrawdown),
+    hardTags: buildReviewHardTags(scores),
+  };
+}
+
+function renderT1ReviewCard(review) {
+  const stateClass =
+    review.stockState === "T1_PREMIUM" || review.stockState === "REBUY_READY"
+      ? "pass"
+      : review.stockState === "REMOVE"
+        ? "alert-pill"
+        : "warn";
+  return `
+    <article class="review-card">
+      <div class="review-head">
+        <div>
+          <strong>${escapeHtml(review.trade.name)} <span class="stock-code">${review.trade.code}</span></strong>
+          <div class="stock-code">买入 ${formatPrice(review.buyPrice)} · 收盘/现价 ${formatPrice(review.closePrice)} · 浮盈 ${formatPct(review.pnlPct, false)}</div>
+        </div>
+        <span class="${stateClass === "alert-pill" ? "alert-pill" : `tag ${stateClass}`}">${review.stockState}</span>
+      </div>
+      <div class="review-score-grid">
+        <div><span>市场</span><strong>${review.scores.marketEmotionScore}</strong></div>
+        <div><span>板块</span><strong>${review.scores.sectorStrengthScore}</strong></div>
+        <div><span>承接</span><strong>${review.scores.tailSupportScore}</strong></div>
+        <div><span>风险</span><strong>${review.scores.positionRiskScore}</strong></div>
+        <div><span>结构</span><strong>${review.scores.structureIntegrityScore}</strong></div>
+      </div>
+      <div class="review-plan">
+        <div><span>TP1 50%</span><strong>${formatPrice(review.pricePlan.tp1)}</strong></div>
+        <div><span>TP2 30%</span><strong>${formatPrice(review.pricePlan.tp2)}</strong></div>
+        <div><span>强势余仓</span><strong>${formatPrice(review.pricePlan.tp3)}</strong></div>
+        <div><span>最终止损</span><strong>${formatPrice(review.pricePlan.finalStop)}</strong></div>
+      </div>
+      <p class="review-action">${escapeHtml(review.action)}</p>
+      <div class="criteria-list">
+        ${review.reasonTags.map((tag) => `<span class="tag pass">${escapeHtml(tag)}</span>`).join("")}
+        ${review.hardTags.map((tag) => `<span class="tag warn">${escapeHtml(tag)}</span>`).join("")}
+      </div>
+    </article>
+  `;
+}
+
+function calcReviewSectorScore(trade, quote) {
+  const recommendation = (state.data?.recommendations || []).find((item) => item.code === trade.code);
+  const board = recommendation?.board || trade.planSnapshot?.board;
+  const boardScore = Number(board?.score || 0);
+  const boardPassed = Number(board?.passed || 0);
+  let score = boardScore ? Math.min(75, boardScore * 0.75) : 45;
+  if (boardPassed >= 5) score += 15;
+  else if (boardPassed >= 4) score += 10;
+  if ((quote?.mainNet || 0) > 0) score += 5;
+  return clampScore(score);
+}
+
+function calcReviewTailSupportScore({ closePrice, avgPrice, tailDrawdown, mainNet, superNet }) {
+  let score = 0;
+  if (closePrice >= avgPrice) score += 55;
+  if (tailDrawdown <= 0.02) score += 20;
+  else if (tailDrawdown <= 0.035) score += 10;
+  if (mainNet > 0) score += 15;
+  if (superNet > 0) score += 10;
+  return clampScore(score);
+}
+
+function calcReviewPositionRiskScore({ openPrice, closePrice, ma5, turnover, amount, amountMA5, tailDrawdown, upperShadow }) {
+  let score = 0;
+  if (upperShadow >= 1.0) score += 25;
+  if (amountMA5 && amount / amountMA5 >= 2.5 && openPrice && (closePrice - openPrice) / openPrice < 0.03) score += 25;
+  if (ma5 && (closePrice - ma5) / ma5 >= 0.12) score += 20;
+  if (turnover >= 35) score += 15;
+  if (tailDrawdown >= 0.04) score += 15;
+  return clampScore(score);
+}
+
+function calcReviewStructureScore({ closePrice, lowPrice, highPrice, ma5, ma10, avgPrice, buyPrice }) {
+  const breakoutLevel = Math.max(buyPrice || 0, avgPrice || 0);
+  const keySupport = Math.max(ma5 || 0, avgPrice || 0, buyPrice || 0);
+  let score = 0;
+  if (closePrice >= breakoutLevel) score += 30;
+  if (closePrice >= ma5) score += 25;
+  if (closePrice >= ma10) score += 20;
+  if (lowPrice >= keySupport * 0.98) score += 15;
+  if (closePrice >= lowPrice + (highPrice - lowPrice) * 0.5) score += 10;
+  return clampScore(score);
+}
+
+function classifyT1ReviewState(trade, scores) {
+  const status = trade.positionStatus || trade.status || "open";
+  const stoppedOrWatch = status === "stopped" || status === "watch";
+  const hardKill =
+    scores.marketEmotionScore < 40 ||
+    scores.positionRiskScore > 75 ||
+    scores.structureIntegrityScore < 45;
+  if (hardKill) return stoppedOrWatch ? "REMOVE" : "T1_WEAK";
+  if (stoppedOrWatch) {
+    if (scores.structureIntegrityScore >= 60 && scores.sectorStrengthScore >= 50) return "REENTRY_WATCH";
+    return "REMOVE";
+  }
+  if (
+    scores.marketEmotionScore >= 60 &&
+    scores.sectorStrengthScore >= 60 &&
+    scores.tailSupportScore >= 60 &&
+    scores.positionRiskScore <= 60 &&
+    scores.structureIntegrityScore >= 65
+  ) {
+    return "T1_PREMIUM";
+  }
+  return "T1_WEAK";
+}
+
+function buildT1PricePlan({ buyPrice, closePrice, ma5, avgPrice, limitUpPrice, trade }) {
+  const base = buyPrice || closePrice;
+  const costStop = base * 0.96;
+  const structureStop = Math.max(Number(trade.stopLoss || 0), ma5 || 0, avgPrice || 0) * 0.992;
+  return {
+    tp1: round2(base * 1.03),
+    tp2: round2(base * 1.06),
+    tp3: round2(Math.min(base * 1.1, limitUpPrice || base * 1.1)),
+    finalStop: round2(Math.max(costStop, structureStop || costStop)),
+  };
+}
+
+function buildNextMorningAction(stockState, pricePlan) {
+  if (stockState === "T1_PREMIUM") {
+    return `明早高开>=3%且承接强：${formatPrice(pricePlan.tp1)}先卖50%，${formatPrice(pricePlan.tp2)}再卖30%，余20%看是否封板；平开小高开等到09:45，不达TP1则逐步退出；10:00前不强制封板就清仓。`;
+  }
+  if (stockState === "T1_WEAK") {
+    return `按弱T+1处理：低开或5分钟不能站回均价线/VWAP就卖；若有反抽，反抽5分钟不继续走强也卖，明早不加仓。最终止损 ${formatPrice(pricePlan.finalStop)}。`;
+  }
+  if (stockState === "REENTRY_WATCH") {
+    return "止损观察池：明早竞价不直接买回，只观察是否重新站回均价线和关键位；最多观察2个交易日。";
+  }
+  if (stockState === "REBUY_READY") {
+    return "回补候选：只在09:35后站稳均价线且突破前高，再等尾盘二次确认，小仓30%-50%。";
+  }
+  return "移出策略池：结构已破或市场风险过高，明早不做回补，手动删除即可。";
+}
+
+function buildReviewReasonTags(scores, rangePosition, tailDrawdown) {
+  const tags = [];
+  if (scores.marketEmotionScore >= 60) tags.push("market_ok");
+  if (scores.sectorStrengthScore >= 60) tags.push("sector_supported");
+  if (scores.tailSupportScore >= 60) tags.push("tail_support");
+  if (scores.structureIntegrityScore >= 65) tags.push("structure_valid");
+  if (scores.positionRiskScore <= 60) tags.push("risk_controlled");
+  if (rangePosition >= 0.65) tags.push("close_upper_half");
+  if (tailDrawdown <= 0.03) tags.push("no_tail_fade");
+  return tags.slice(0, 8);
+}
+
+function buildReviewHardTags(scores) {
+  const tags = [];
+  if (scores.marketEmotionScore < 40) tags.push("market_risk_off");
+  if (scores.positionRiskScore > 75) tags.push("position_overheated");
+  if (scores.structureIntegrityScore < 45) tags.push("structure_broken");
+  return tags;
 }
 
 function renderNews() {
@@ -396,11 +693,13 @@ function saveTradeFromForm(event) {
   event.preventDefault();
   const existingId = $("#tradeId").value;
   const existing = state.trades.find((item) => item.id === existingId);
-  const buyPrice = Number($("#tradeBuyPrice").value);
-  const stopLoss = Number($("#tradeStopLoss").value) || round2(buyPrice * 0.95);
+  const code = $("#tradeCode").value.trim();
+  const quote = state.liveQuotes.get(code) || findRecommendationQuote(code) || {};
+  const buyPrice = Number($("#tradeBuyPrice").value) || existing?.buyPrice || quote.price || 0;
+  const stopLoss = Number($("#tradeStopLoss").value) || round2(buyPrice * 0.96);
   const trade = {
     id: existingId || createId(),
-    code: $("#tradeCode").value.trim(),
+    code,
     name: $("#tradeName").value.trim(),
     buyPrice,
     quantity: Number($("#tradeQuantity").value) || null,
@@ -462,6 +761,7 @@ function clearClosedTrades() {
 async function refreshPositionQuotes() {
   const openCodes = state.trades.filter((trade) => trade.status !== "sold").map((trade) => trade.code);
   await Promise.all(openCodes.map(fetchLiveQuote).slice(0, 20));
+  await Promise.all(openCodes.map(fetchHistoryQuote).slice(0, 20));
   const alerts = getPositionAlerts();
   if (alerts.length) notifyAlerts(alerts);
 }
@@ -469,19 +769,76 @@ async function refreshPositionQuotes() {
 async function fetchLiveQuote(code) {
   if (!code || state.liveQuotes.has(code)) return state.liveQuotes.get(code);
   const secid = getSecid(code);
-  const url = `https://push2.eastmoney.com/api/qt/stock/get?secid=${secid}&fields=f43,f44,f45,f46,f47,f48,f49,f57,f58,f60,f170`;
+  const url = `https://push2.eastmoney.com/api/qt/stock/get?secid=${secid}&fields=f43,f44,f45,f46,f47,f48,f50,f57,f58,f60,f62,f66,f168,f170`;
   try {
     const data = await jsonp(url);
     const item = data?.data;
     if (!item) return null;
+    const volume = Number(item.f47) || 0;
+    const amount = Number(item.f48) || 0;
     const quote = {
       code,
       price: normalizeEastMoneyPrice(item.f43),
+      high: normalizeEastMoneyPrice(item.f44),
+      low: normalizeEastMoneyPrice(item.f45),
+      open: normalizeEastMoneyPrice(item.f46),
+      volume,
+      amount,
+      avgPrice: averagePrice(amount, volume),
       pct: normalizeEastMoneyPrice(item.f170),
+      turnover: normalizeEastMoneyPrice(item.f168),
+      volumeRatio: normalizeEastMoneyPrice(item.f50),
+      preClose: normalizeEastMoneyPrice(item.f60),
+      mainNet: Number(item.f62) || 0,
+      superNet: Number(item.f66) || 0,
       name: item.f58,
     };
     state.liveQuotes.set(code, quote);
     return quote;
+  } catch {
+    return null;
+  }
+}
+
+async function fetchHistoryQuote(code) {
+  if (!code || state.historyQuotes.has(code)) return state.historyQuotes.get(code);
+  const secid = getSecid(code);
+  const url = `https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=${secid}&fields1=f1,f2,f3,f4,f5,f6&fields2=f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61&klt=101&fqt=1&end=20500101&lmt=20`;
+  try {
+    const data = await jsonp(url);
+    const rows = data?.data?.klines || [];
+    const parsed = rows
+      .map((line) => {
+        const parts = String(line).split(",");
+        return {
+          date: parts[0],
+          open: Number(parts[1]),
+          close: Number(parts[2]),
+          high: Number(parts[3]),
+          low: Number(parts[4]),
+          volume: Number(parts[5]),
+          amount: Number(parts[6]),
+          turnover: Number(parts[10]),
+        };
+      })
+      .filter((item) => item.close);
+    if (!parsed.length) return null;
+    const closes = parsed.map((item) => item.close);
+    const amounts = parsed.map((item) => item.amount || 0);
+    const latest = parsed[parsed.length - 1];
+    const history = {
+      ma5: average(closes.slice(-5)),
+      ma10: average(closes.slice(-10)),
+      amountMA5: average(amounts.slice(-5)),
+      prevClose: parsed.length >= 2 ? parsed[parsed.length - 2].close : null,
+      historyClose: latest.close,
+      historyOpen: latest.open,
+      historyHigh: latest.high,
+      historyLow: latest.low,
+      historyTurnover: latest.turnover,
+    };
+    state.historyQuotes.set(code, history);
+    return history;
   } catch {
     return null;
   }
@@ -529,12 +886,25 @@ function getAlertForTrade(trade, currentPrice) {
 }
 
 function getQuoteForTrade(trade) {
-  return state.liveQuotes.get(trade.code) || findRecommendationQuote(trade.code);
+  const recommendation = findRecommendationQuote(trade.code) || {};
+  const history = state.historyQuotes.get(trade.code) || {};
+  const live = state.liveQuotes.get(trade.code) || {};
+  const merged = { ...recommendation, ...history, ...live };
+  return Object.keys(merged).length ? merged : null;
 }
 
 function findRecommendationQuote(code) {
   const item = (state.data?.recommendations || []).find((recommendation) => recommendation.code === code);
-  return item ? { price: item.price, pct: item.pct, name: item.name } : null;
+  return item
+    ? {
+        price: item.price,
+        pct: item.pct,
+        name: item.name,
+        amount: item.amount,
+        turnover: item.turnover,
+        industry: item.industry,
+      }
+    : null;
 }
 
 function requestNotifications() {
@@ -608,6 +978,52 @@ function getSecid(code) {
 function normalizeEastMoneyPrice(value) {
   if (value === undefined || value === null || value === "-") return null;
   return Number(value) / 100;
+}
+
+function averagePrice(amount, volume) {
+  if (!amount || !volume) return null;
+  return round2(amount / (volume * 100));
+}
+
+function average(values) {
+  const valid = values.filter((value) => Number.isFinite(value));
+  if (!valid.length) return null;
+  return round2(valid.reduce((sum, value) => sum + value, 0) / valid.length);
+}
+
+function getMarketEmotionScore() {
+  const monitor = state.data?.market?.monitor;
+  if (monitor?.emotionScore !== undefined) return Number(monitor.emotionScore);
+  let score = 50;
+  const recommendationCount = state.data?.market?.recommendationCount || state.data?.recommendations?.length || 0;
+  const qualifiedBoardCount = state.data?.market?.qualifiedBoardCount || 0;
+  if (recommendationCount >= 8) score += 10;
+  if (qualifiedBoardCount >= 6) score += 10;
+  if ((state.data?.boards || [])[0]?.pct > 1) score += 10;
+  return clampScore(score);
+}
+
+function calcRangePosition(price, high, low) {
+  if (!price || !high || !low || high <= low) return 0.5;
+  return Math.max(0, Math.min(1, (price - low) / (high - low)));
+}
+
+function calcUpperShadowRatio(openPrice, closePrice, highPrice, preClose) {
+  if (!openPrice || !closePrice || !highPrice) return 0;
+  const body = Math.abs(closePrice - openPrice);
+  const upper = Math.max(0, highPrice - Math.max(openPrice, closePrice));
+  const minBody = Math.max((preClose || closePrice) * 0.002, 0.01);
+  return upper / Math.max(body, minBody);
+}
+
+function calcLimitUpPrice(code, preClose) {
+  if (!preClose) return null;
+  if (/^(30|68)/.test(code)) return round2(preClose * 1.2);
+  return round2(preClose * 1.1);
+}
+
+function clampScore(value) {
+  return Math.round(Math.max(0, Math.min(100, Number(value) || 0)));
 }
 
 function valueForInput(value) {

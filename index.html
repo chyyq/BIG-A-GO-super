@@ -120,6 +120,21 @@
             <section class="section-block">
               <div class="section-title">
                 <div>
+                  <p class="eyebrow">20:00 T+1 Review</p>
+                  <h2>晚间复盘</h2>
+                </div>
+                <button class="ghost-button" id="reviewRefreshButton" type="button">
+                  <i data-lucide="rotate-cw"></i>
+                  刷新复盘
+                </button>
+              </div>
+              <div id="reviewMeta" class="review-meta">等待持仓记录</div>
+              <div id="t1ReviewList" class="review-list"></div>
+            </section>
+
+            <section class="section-block">
+              <div class="section-title">
+                <div>
                   <p class="eyebrow">市场资讯</p>
                   <h2>新闻线索</h2>
                 </div>
@@ -192,7 +207,7 @@
           </label>
           <label>
             买入价
-            <input id="tradeBuyPrice" required type="number" step="0.01" min="0" />
+            <input id="tradeBuyPrice" type="number" step="0.01" min="0" placeholder="可空，默认取现价/推荐价" />
           </label>
           <label>
             数量
