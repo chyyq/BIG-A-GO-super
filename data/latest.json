@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-09T17:55:55.166887+08:00",
+    "generatedAt": "2026-07-09T23:48:41.085203+08:00",
     "tradingDate": "2026-07-09",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -31,11 +31,23 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 43.13
+    "runtimeSeconds": 37.51
   },
   "market": {
     "recommendationCount": 10,
-    "qualifiedBoardCount": 9
+    "qualifiedBoardCount": 9,
+    "monitor": {
+      "emotionScore": 99,
+      "riskLevel": "NORMAL",
+      "limitUpCount": 29,
+      "limitDownCount": 0,
+      "bigDownCount": 0,
+      "limitTouchCount": 36,
+      "brokenBoardCount": 7,
+      "brokenBoardRate": 0.194,
+      "topBoardPct": 9.69,
+      "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
+    }
   },
   "boards": [
     {
@@ -377,8 +389,8 @@
       },
       "buyPlan": {
         "type": "[TAIL_MAIN] T1 tail breakout confirmation",
-        "timeWindow": "13:50-14:25; confirm 14:10-14:35",
-        "trigger": "Buy before 14:25 only if price stays above VWAP and the breakout platform; skip late pull-ups after 14:40.",
+        "timeWindow": "13:30 watch; 14:10-14:30 primary entry; 14:35 risk check",
+        "trigger": "Buy before 14:30 only if price stays above VWAP and the breakout platform; skip late pull-ups after 14:40.",
         "priceRange": [
           86.31,
           87.39
@@ -465,7 +477,7 @@
       },
       "buyPlan": {
         "type": "[TAIL_MAIN] T2 first pullback reclaim",
-        "timeWindow": "13:50-14:25; confirm 14:10-14:35",
+        "timeWindow": "13:30 watch; 14:10-14:30 primary entry; 14:35 risk check",
         "trigger": "Use only the first orderly pullback to VWAP or breakout support; skip repeated VWAP breaks.",
         "priceRange": [
           19.95,
@@ -1206,20 +1218,20 @@
     },
     {
       "source": "Yicai",
-      "title": "连板股追踪丨A股今日共75只个股涨停 恒尚节能收获8连板AI服务器概念股浪潮信息2连板，油气股山东墨龙2连板。一图速览今日连板股&gt;&gt;  1小时前",
-      "url": "https://www.yicai.com/news/103267610.html",
+      "title": "年内新基业绩首尾相差逾120个百分点，科技板块加仓空间还有多少？风格切换还是补涨尾声？  2小时前",
+      "url": "https://www.yicai.com/news/103268081.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "收盘丨科创50指数涨8.41% 半导体产业链爆发全市场近2900只个股下跌。  2小时前",
-      "url": "https://www.yicai.com/news/103267488.html",
+      "title": "夏季北瓜南运的困局：一车西瓜成本几千，物流费用上万受种植规模扩张、气候因素及市场供需失衡等多重影响，今年河南等地西瓜出现集中上市与价格下跌现象。  3小时前",
+      "url": "https://www.yicai.com/news/103267986.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "下半年新模型竞赛启动前，智谱授权配售新H股募资公司需要充足资金储备支撑研发投入。  2小时前",
-      "url": "https://www.yicai.com/news/103267452.html",
+      "title": "外资看好中国股市“下半场”，高盛、渣打喊出超配A股大摩认为，7月底至8月将是中国市场实现可持续复苏的关键时期。  4小时前",
+      "url": "https://www.yicai.com/news/103267937.html",
       "time": ""
     }
   ]
