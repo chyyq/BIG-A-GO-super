@@ -1,14 +1,14 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-09T14:15:41.266531+08:00",
+    "generatedAt": "2026-07-09T16:53:20.695589+08:00",
     "tradingDate": "2026-07-09",
     "mode": "fast-snapshot",
     "sourceHealth": [
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1036%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=5000&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
       },
       {
@@ -31,10 +31,10 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 32.85
+    "runtimeSeconds": 27.85
   },
   "market": {
-    "recommendationCount": 3,
+    "recommendationCount": 10,
     "qualifiedBoardCount": 9
   },
   "boards": [
@@ -42,13 +42,13 @@
       "code": "BK1325",
       "name": "半导体材料",
       "kind": "Industry board",
-      "price": 18569.06,
-      "pct": 9.4,
-      "amount": 66677630210.0,
-      "turnover": 8.03,
+      "price": 18618.34,
+      "pct": 9.69,
+      "amount": 75571208832.0,
+      "turnover": 8.97,
       "open": 17342.36,
       "preClose": 16973.1,
-      "mainNet": 2417013760.0,
+      "mainNet": 2937654272.0,
       "rank": 1,
       "passed": 5,
       "qualified": true,
@@ -61,19 +61,19 @@
         "[SectorGate] Board momentum remains top-15 positive"
       ],
       "limitUpCount": 7,
-      "bigUpCount": 27
+      "bigUpCount": 26
     },
     {
       "code": "BK1328",
       "name": "集成电路封测",
       "kind": "Industry board",
-      "price": 11874.65,
-      "pct": 8.83,
-      "amount": 58744327394.0,
-      "turnover": 11.29,
+      "price": 11925.43,
+      "pct": 9.29,
+      "amount": 62723179915.0,
+      "turnover": 12.14,
       "open": 11119.06,
       "preClose": 10911.3,
-      "mainNet": 7787917056.0,
+      "mainNet": 8323472640.0,
       "rank": 2,
       "passed": 5,
       "qualified": true,
@@ -86,19 +86,19 @@
         "[SectorGate] Board momentum remains top-15 positive"
       ],
       "limitUpCount": 4,
-      "bigUpCount": 9
+      "bigUpCount": 10
     },
     {
       "code": "BK1329",
       "name": "集成电路制造",
       "kind": "Industry board",
-      "price": 5398.58,
-      "pct": 8.45,
-      "amount": 48060351179.0,
-      "turnover": 4.98,
+      "price": 5424.27,
+      "pct": 8.97,
+      "amount": 56854476485.0,
+      "turnover": 5.86,
       "open": 5059.99,
       "preClose": 4977.82,
-      "mainNet": 3856258816.0,
+      "mainNet": 4644523520.0,
       "rank": 3,
       "passed": 5,
       "qualified": true,
@@ -117,13 +117,13 @@
       "code": "BK1152",
       "name": "高带宽内存",
       "kind": "Concept board",
-      "price": 3560.19,
-      "pct": 7.09,
-      "amount": 87646198835.0,
-      "turnover": 6.22,
+      "price": 3595.7,
+      "pct": 8.16,
+      "amount": 104557236766.0,
+      "turnover": 7.41,
       "open": 3403.18,
       "preClose": 3324.46,
-      "mainNet": 5696471552.0,
+      "mainNet": 8013689600.0,
       "rank": 5,
       "passed": 5,
       "qualified": true,
@@ -135,20 +135,20 @@
         "[SectorGate] Leaders have follow-through support",
         "[SectorGate] Board momentum remains top-15 positive"
       ],
-      "limitUpCount": 2,
+      "limitUpCount": 3,
       "bigUpCount": 20
     },
     {
       "code": "BK1326",
       "name": "半导体设备",
       "kind": "Industry board",
-      "price": 69681.03,
-      "pct": 6.71,
-      "amount": 71836322246.0,
-      "turnover": 4.36,
+      "price": 70334.12,
+      "pct": 7.71,
+      "amount": 87178201894.0,
+      "turnover": 5.33,
       "open": 66693.02,
       "preClose": 65299.71,
-      "mainNet": 4462425088.0,
+      "mainNet": 5963623680.0,
       "rank": 6,
       "passed": 5,
       "qualified": true,
@@ -167,13 +167,13 @@
       "code": "BK1101",
       "name": "先进封装",
       "kind": "Concept board",
-      "price": 4458.99,
-      "pct": 6.68,
-      "amount": 150494438628.0,
-      "turnover": 9.51,
+      "price": 4474.36,
+      "pct": 7.05,
+      "amount": 166375317391.0,
+      "turnover": 10.22,
       "open": 4245.27,
       "preClose": 4179.59,
-      "mainNet": 9723659776.0,
+      "mainNet": 10903580416.0,
       "rank": 7,
       "passed": 5,
       "qualified": true,
@@ -186,19 +186,19 @@
         "[SectorGate] Board momentum remains top-15 positive"
       ],
       "limitUpCount": 10,
-      "bigUpCount": 29
+      "bigUpCount": 32
     },
     {
       "code": "BK1713",
       "name": "科技风格",
       "kind": "Concept board",
-      "price": 1171.29,
-      "pct": 6.48,
-      "amount": 754309946213.0,
-      "turnover": 3.27,
+      "price": 1177.37,
+      "pct": 7.03,
+      "amount": 880762377643.0,
+      "turnover": 3.95,
       "open": 1120.84,
       "preClose": 1100.02,
-      "mainNet": 36424146944.0,
+      "mainNet": 46484799488.0,
       "rank": 8,
       "passed": 5,
       "qualified": true,
@@ -210,20 +210,20 @@
         "[SectorGate] Leaders have follow-through support",
         "[SectorGate] Board momentum remains top-15 positive"
       ],
-      "limitUpCount": 8,
+      "limitUpCount": 10,
       "bigUpCount": 50
     },
     {
       "code": "BK1137",
       "name": "存储芯片",
       "kind": "Concept board",
-      "price": 3811.68,
-      "pct": 6.46,
-      "amount": 422862215022.0,
-      "turnover": 6.09,
+      "price": 3828.59,
+      "pct": 6.93,
+      "amount": 486870168229.0,
+      "turnover": 6.96,
       "open": 3648.7,
       "preClose": 3580.39,
-      "mainNet": 24050626560.0,
+      "mainNet": 29462339584.0,
       "rank": 9,
       "passed": 5,
       "qualified": true,
@@ -242,13 +242,13 @@
       "code": "BK1036",
       "name": "半导体",
       "kind": "Industry board",
-      "price": 3677.82,
-      "pct": 5.92,
-      "amount": 507881564560.0,
-      "turnover": 5.92,
+      "price": 3698.83,
+      "pct": 6.53,
+      "amount": 592537551906.0,
+      "turnover": 6.89,
       "open": 3524.67,
       "preClose": 3472.14,
-      "mainNet": 25107333120.0,
+      "mainNet": 31867711488.0,
       "rank": 10,
       "passed": 5,
       "qualified": true,
@@ -267,13 +267,13 @@
       "code": "BK1443",
       "name": "橡胶助剂",
       "kind": "Industry board",
-      "price": 5749.4,
-      "pct": 7.66,
-      "amount": 2736644063.0,
-      "turnover": 5.84,
+      "price": 5817.03,
+      "pct": 8.92,
+      "amount": 3367929116.0,
+      "turnover": 7.32,
       "open": 5401.96,
       "preClose": 5340.48,
-      "mainNet": 120343809.0,
+      "mainNet": 151904433.0,
       "rank": 4,
       "passed": 2,
       "qualified": false,
@@ -289,13 +289,13 @@
       "code": "BK0935",
       "name": "中芯概念",
       "kind": "Concept board",
-      "price": 3449.2,
-      "pct": 5.88,
-      "amount": 216916038958.0,
-      "turnover": 5.59,
+      "price": 3469.8,
+      "pct": 6.51,
+      "amount": 255006946170.0,
+      "turnover": 6.57,
       "open": 3305.17,
       "preClose": 3257.58,
-      "mainNet": 12196509696.0,
+      "mainNet": 15678648320.0,
       "rank": 11,
       "passed": 2,
       "qualified": false,
@@ -307,16 +307,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1298",
-      "name": "文字媒体",
-      "kind": "Industry board",
-      "price": 2394.39,
-      "pct": 5.1,
-      "amount": 2011750950.0,
-      "turnover": 7.91,
-      "open": 2269.66,
-      "preClose": 2278.28,
-      "mainNet": 201137551.0,
+      "code": "BK1121",
+      "name": "第四代半导体",
+      "kind": "Concept board",
+      "price": 2689.97,
+      "pct": 5.93,
+      "amount": 8253730786.0,
+      "turnover": 2.52,
+      "open": 2562.95,
+      "preClose": 2539.31,
+      "mainNet": 499263648.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -331,107 +331,20 @@
   "recommendations": [
     {
       "rank": 1,
-      "code": "003043",
-      "name": "华亚智能",
-      "market": "SZ",
-      "price": 101.69,
-      "pct": 3.29,
-      "amount": 766261957.71,
-      "turnover": 8.32,
-      "industry": "半导体",
-      "confidence": 96,
-      "winRate": 96,
-      "strategyTag": "TAIL_MAIN",
-      "t1EdgeScore": 199.43,
-      "expectedReturnPct": 9.0,
-      "riskPct": 1.83,
-      "board": {
-        "code": "BK1326",
-        "name": "半导体设备",
-        "passed": 5,
-        "score": 97.9
-      },
-      "criteria": {
-        "board": [
-          "[SectorGate] Board rank stays in the front row",
-          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-          "[SectorGate] Board turnover amount is active",
-          "[SectorGate] Leaders have follow-through support",
-          "[SectorGate] Board momentum remains top-15 positive"
-        ],
-        "stock": [
-          "[TAIL_MAIN] Main tail setup",
-          "[MarketGate] No hard risk veto is triggered",
-          "[SectorGate] Board has front-row ladder or continuity",
-          "[StockGate] T+1 gain room is healthy",
-          "Main or super capital is net inflow",
-          "[StockGate] Turnover fits trend/sentiment trade",
-          "[StockGate] Close holds high platform",
-          "[StockGate] Price stays above VWAP",
-          "[TailSignal] Late session still has upward spread",
-          "[StockGate] Deal amount supports next-morning exit",
-          "[TailSignal] No long upper-shadow distribution"
-        ]
-      },
-      "buyPlan": {
-        "type": "[TAIL_MAIN] T2 first pullback reclaim",
-        "timeWindow": "13:50-14:25; confirm 14:10-14:35",
-        "trigger": "Use only the first orderly pullback to VWAP or breakout support; skip repeated VWAP breaks.",
-        "priceRange": [
-          100.49,
-          101.94
-        ],
-        "quality": 21,
-        "priority": 6,
-        "strategyTag": "TAIL_MAIN"
-      },
-      "sellPlan": {
-        "targetPrice": 109.53,
-        "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless it quickly seals limit-up.",
-        "strategy": "Target the T+1 morning impulse after a mid-stage trend confirmation; take 3%+ quickly, only stronger front-row shapes aim for 5%-9%.",
-        "takeProfit": 109.53,
-        "timeWindow": "Next trading day 09:30-10:00; sell before 10:00 unless it quickly seals limit-up."
-      },
-      "stopPlan": {
-        "stopLoss": 98.68,
-        "rules": [
-          "Next morning weak open and cannot reclaim the late-session platform",
-          "Break the personalized stop or the 14:00 entry trigger",
-          "Avoid widening the stop after purchase"
-        ]
-      },
-      "sourceLinks": [
-        {
-          "name": "Eastmoney quote",
-          "url": "https://quote.eastmoney.com/sz003043.html"
-        },
-        {
-          "name": "10jqka stock page",
-          "url": "https://stockpage.10jqka.com.cn/003043/"
-        },
-        {
-          "name": "Yicai news",
-          "url": "https://www.yicai.com/news/"
-        }
-      ],
-      "sparkline": []
-    },
-    {
-      "rank": 2,
       "code": "002049",
       "name": "紫光国微",
       "market": "SZ",
-      "price": 86.64,
-      "pct": 3.75,
-      "amount": 4373228359.2,
-      "turnover": 6.1,
+      "price": 87.09,
+      "pct": 4.29,
+      "amount": 5708637203.41,
+      "turnover": 7.91,
       "industry": "半导体",
       "confidence": 96,
       "winRate": 96,
       "strategyTag": "TAIL_MAIN",
-      "t1EdgeScore": 196.15,
+      "t1EdgeScore": 203.12,
       "expectedReturnPct": 9.0,
-      "riskPct": 2.59,
+      "riskPct": 2.47,
       "board": {
         "code": "BK1152",
         "name": "高带宽内存",
@@ -458,7 +371,8 @@
           "[StockGate] Price stays above VWAP",
           "[TailSignal] Late session still has upward spread",
           "[StockGate] Deal amount supports next-morning exit",
-          "[TailSignal] No long upper-shadow distribution"
+          "[TailSignal] No long upper-shadow distribution",
+          "Reference-sample shape bonus"
         ]
       },
       "buyPlan": {
@@ -466,22 +380,22 @@
         "timeWindow": "13:50-14:25; confirm 14:10-14:35",
         "trigger": "Buy before 14:25 only if price stays above VWAP and the breakout platform; skip late pull-ups after 14:40.",
         "priceRange": [
-          85.93,
-          86.94
+          86.31,
+          87.39
         ],
         "quality": 24,
         "priority": 8,
         "strategyTag": "TAIL_MAIN"
       },
       "sellPlan": {
-        "targetPrice": 93.66,
+        "targetPrice": 94.08,
         "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless it quickly seals limit-up.",
         "strategy": "Target the T+1 morning impulse after a mid-stage trend confirmation; take 3%+ quickly, only stronger front-row shapes aim for 5%-9%.",
-        "takeProfit": 93.66,
+        "takeProfit": 94.08,
         "timeWindow": "Next trading day 09:30-10:00; sell before 10:00 unless it quickly seals limit-up."
       },
       "stopPlan": {
-        "stopLoss": 83.76,
+        "stopLoss": 84.23,
         "rules": [
           "Next morning weak open and cannot reclaim the late-session platform",
           "Break the personalized stop or the 14:00 entry trigger",
@@ -505,26 +419,26 @@
       "sparkline": []
     },
     {
-      "rank": 3,
-      "code": "603283",
-      "name": "赛腾股份",
-      "market": "SH",
-      "price": 72.21,
-      "pct": 6.5,
-      "amount": 1801678075.0,
-      "turnover": 7.34,
-      "industry": "自动化设备",
+      "rank": 2,
+      "code": "002077",
+      "name": "大港股份",
+      "market": "SZ",
+      "price": 20.13,
+      "pct": 3.23,
+      "amount": 1989664203.15,
+      "turnover": 17.41,
+      "industry": "半导体",
       "confidence": 96,
       "winRate": 96,
       "strategyTag": "TAIL_MAIN",
-      "t1EdgeScore": 194.43,
-      "expectedReturnPct": 9.0,
-      "riskPct": 3.18,
+      "t1EdgeScore": 202.77,
+      "expectedReturnPct": 9.02,
+      "riskPct": 1.99,
       "board": {
-        "code": "BK1152",
-        "name": "高带宽内存",
+        "code": "BK1328",
+        "name": "集成电路封测",
         "passed": 5,
-        "score": 98.25
+        "score": 99.3
       },
       "criteria": {
         "board": [
@@ -539,14 +453,14 @@
           "[MarketGate] No hard risk veto is triggered",
           "[SectorGate] Board has front-row ladder or continuity",
           "[StockGate] T+1 gain room is healthy",
+          "[StockGate] Volume expands without exhaustion",
           "Main or super capital is net inflow",
           "[StockGate] Turnover fits trend/sentiment trade",
           "[StockGate] Close holds high platform",
           "[StockGate] Price stays above VWAP",
           "[TailSignal] Late session still has upward spread",
           "[StockGate] Deal amount supports next-morning exit",
-          "[TailSignal] No long upper-shadow distribution",
-          "Reference-sample shape bonus"
+          "[TailSignal] No long upper-shadow distribution"
         ]
       },
       "buyPlan": {
@@ -554,22 +468,22 @@
         "timeWindow": "13:50-14:25; confirm 14:10-14:35",
         "trigger": "Use only the first orderly pullback to VWAP or breakout support; skip repeated VWAP breaks.",
         "priceRange": [
-          71.31,
-          72.46
+          19.95,
+          20.18
         ],
         "quality": 21,
         "priority": 6,
         "strategyTag": "TAIL_MAIN"
       },
       "sellPlan": {
-        "targetPrice": 77.73,
+        "targetPrice": 21.75,
         "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless it quickly seals limit-up.",
         "strategy": "Target the T+1 morning impulse after a mid-stage trend confirmation; take 3%+ quickly, only stronger front-row shapes aim for 5%-9%.",
-        "takeProfit": 77.73,
+        "takeProfit": 21.75,
         "timeWindow": "Next trading day 09:30-10:00; sell before 10:00 unless it quickly seals limit-up."
       },
       "stopPlan": {
-        "stopLoss": 69.11,
+        "stopLoss": 19.56,
         "rules": [
           "Next morning weak open and cannot reclaim the late-session platform",
           "Break the personalized stop or the 14:00 entry trigger",
@@ -579,11 +493,701 @@
       "sourceLinks": [
         {
           "name": "Eastmoney quote",
-          "url": "https://quote.eastmoney.com/sh603283.html"
+          "url": "https://quote.eastmoney.com/sz002077.html"
         },
         {
           "name": "10jqka stock page",
-          "url": "https://stockpage.10jqka.com.cn/603283/"
+          "url": "https://stockpage.10jqka.com.cn/002077/"
+        },
+        {
+          "name": "Yicai news",
+          "url": "https://www.yicai.com/news/"
+        }
+      ],
+      "sparkline": []
+    },
+    {
+      "rank": 3,
+      "code": "000977",
+      "name": "浪潮信息",
+      "market": "SZ",
+      "price": 85.99,
+      "pct": 10.0,
+      "amount": 18533723776.77,
+      "turnover": 14.87,
+      "industry": "计算机设备",
+      "confidence": 95,
+      "winRate": 95,
+      "strategyTag": "AM_TOP",
+      "t1EdgeScore": 199.07,
+      "expectedReturnPct": 9.0,
+      "riskPct": 2.05,
+      "board": {
+        "code": "BK1713",
+        "name": "科技风格",
+        "passed": 5,
+        "score": 97.2
+      },
+      "criteria": {
+        "board": [
+          "[SectorGate] Board rank stays in the front row",
+          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+          "[SectorGate] Board turnover amount is active",
+          "[SectorGate] Leaders have follow-through support",
+          "[SectorGate] Board momentum remains top-15 positive"
+        ],
+        "stock": [
+          "[AM_TOP] Early morning front-row setup",
+          "Board is hot enough for morning acceleration",
+          "Morning acceleration gain zone is matched",
+          "Price holds the early high platform",
+          "Price holds above VWAP",
+          "Turnover can support early board capture",
+          "Volume is active without obvious exhaustion",
+          "Main or super capital is net inflow",
+          "Deal amount supports fast T+1 exit",
+          "Open has enough upward spread"
+        ]
+      },
+      "buyPlan": {
+        "type": "[AM_TOP] 09:26 auction/near-limit queue",
+        "timeWindow": "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only",
+        "trigger": "At 09:26 only watch or queue after auction confirmation; after 09:40 use only if it is still open or resealing.",
+        "priceRange": [
+          85.65,
+          86.16
+        ],
+        "quality": 21,
+        "priority": 7,
+        "strategyTag": "AM_TOP"
+      },
+      "sellPlan": {
+        "targetPrice": 93.36,
+        "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed.",
+        "strategy": "AM_TOP setup: catch the next-morning premium after 09:31-09:38 front-row acceleration; after 09:40 only monitor seal strength or reseal.",
+        "takeProfit": 93.36,
+        "timeWindow": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed."
+      },
+      "stopPlan": {
+        "stopLoss": 83.93,
+        "rules": [
+          "Morning top weakens and fails to reseal or hold the high platform",
+          "Break the personalized stop or fall back under VWAP with volume",
+          "09:26 is a watch/queue signal; 09:31-09:38 is the primary execution window",
+          "Do not chase after 09:40 unless it is an unsealed front-row reseal"
+        ]
+      },
+      "sourceLinks": [
+        {
+          "name": "Eastmoney quote",
+          "url": "https://quote.eastmoney.com/sz000977.html"
+        },
+        {
+          "name": "10jqka stock page",
+          "url": "https://stockpage.10jqka.com.cn/000977/"
+        },
+        {
+          "name": "Yicai news",
+          "url": "https://www.yicai.com/news/"
+        }
+      ],
+      "sparkline": []
+    },
+    {
+      "rank": 4,
+      "code": "600520",
+      "name": "三佳科技",
+      "market": "SH",
+      "price": 37.98,
+      "pct": 9.39,
+      "amount": 1027843493.0,
+      "turnover": 17.27,
+      "industry": "半导体",
+      "confidence": 95,
+      "winRate": 95,
+      "strategyTag": "AM_TOP",
+      "t1EdgeScore": 198.88,
+      "expectedReturnPct": 8.99,
+      "riskPct": 1.94,
+      "board": {
+        "code": "BK1326",
+        "name": "半导体设备",
+        "passed": 5,
+        "score": 97.9
+      },
+      "criteria": {
+        "board": [
+          "[SectorGate] Board rank stays in the front row",
+          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+          "[SectorGate] Board turnover amount is active",
+          "[SectorGate] Leaders have follow-through support",
+          "[SectorGate] Board momentum remains top-15 positive"
+        ],
+        "stock": [
+          "[AM_TOP] Early morning front-row setup",
+          "Board is hot enough for morning acceleration",
+          "Morning acceleration gain zone is matched",
+          "Price holds the early high platform",
+          "Price holds above VWAP",
+          "Turnover can support early board capture",
+          "Volume is active without obvious exhaustion",
+          "Main or super capital is net inflow",
+          "Deal amount supports fast T+1 exit",
+          "Open has enough upward spread"
+        ]
+      },
+      "buyPlan": {
+        "type": "[AM_TOP] 09:31 open-strength entry",
+        "timeWindow": "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only",
+        "trigger": "Primary buy window is 09:31-09:38 after open support confirms; skip if it falls back under VWAP.",
+        "priceRange": [
+          37.83,
+          38.06
+        ],
+        "quality": 24,
+        "priority": 9,
+        "strategyTag": "AM_TOP"
+      },
+      "sellPlan": {
+        "targetPrice": 41.23,
+        "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed.",
+        "strategy": "AM_TOP setup: catch the next-morning premium after 09:31-09:38 front-row acceleration; after 09:40 only monitor seal strength or reseal.",
+        "takeProfit": 41.23,
+        "timeWindow": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed."
+      },
+      "stopPlan": {
+        "stopLoss": 37.11,
+        "rules": [
+          "Morning top weakens and fails to reseal or hold the high platform",
+          "Break the personalized stop or fall back under VWAP with volume",
+          "09:26 is a watch/queue signal; 09:31-09:38 is the primary execution window",
+          "Do not chase after 09:40 unless it is an unsealed front-row reseal"
+        ]
+      },
+      "sourceLinks": [
+        {
+          "name": "Eastmoney quote",
+          "url": "https://quote.eastmoney.com/sh600520.html"
+        },
+        {
+          "name": "10jqka stock page",
+          "url": "https://stockpage.10jqka.com.cn/600520/"
+        },
+        {
+          "name": "Yicai news",
+          "url": "https://www.yicai.com/news/"
+        }
+      ],
+      "sparkline": []
+    },
+    {
+      "rank": 5,
+      "code": "000892",
+      "name": "欢瑞世纪",
+      "market": "SZ",
+      "price": 3.82,
+      "pct": 10.09,
+      "amount": 458480031.26,
+      "turnover": 17.12,
+      "industry": "影视院线",
+      "confidence": 95,
+      "winRate": 95,
+      "strategyTag": "AM_TOP",
+      "t1EdgeScore": 194.77,
+      "expectedReturnPct": 8.95,
+      "riskPct": 2.15,
+      "board": {
+        "code": "AM_TOP_9726637a",
+        "name": "影视院线",
+        "passed": 4,
+        "score": 82
+      },
+      "criteria": {
+        "board": [
+          "AM_TOP all-main-board scan",
+          "Morning top candidate is evaluated by stock shape"
+        ],
+        "stock": [
+          "[AM_TOP] Early morning front-row setup",
+          "Board is hot enough for morning acceleration",
+          "Morning acceleration gain zone is matched",
+          "Price holds the early high platform",
+          "Price holds above VWAP",
+          "Turnover can support early board capture",
+          "Volume is active without obvious exhaustion",
+          "Main or super capital is net inflow",
+          "Deal amount supports fast T+1 exit",
+          "Open has enough upward spread"
+        ]
+      },
+      "buyPlan": {
+        "type": "[AM_TOP] 09:26 auction/near-limit queue",
+        "timeWindow": "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only",
+        "trigger": "At 09:26 only watch or queue after auction confirmation; after 09:40 use only if it is still open or resealing.",
+        "priceRange": [
+          3.8,
+          3.83
+        ],
+        "quality": 21,
+        "priority": 7,
+        "strategyTag": "AM_TOP"
+      },
+      "sellPlan": {
+        "targetPrice": 4.14,
+        "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed.",
+        "strategy": "AM_TOP setup: catch the next-morning premium after 09:31-09:38 front-row acceleration; after 09:40 only monitor seal strength or reseal.",
+        "takeProfit": 4.14,
+        "timeWindow": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed."
+      },
+      "stopPlan": {
+        "stopLoss": 3.72,
+        "rules": [
+          "Morning top weakens and fails to reseal or hold the high platform",
+          "Break the personalized stop or fall back under VWAP with volume",
+          "09:26 is a watch/queue signal; 09:31-09:38 is the primary execution window",
+          "Do not chase after 09:40 unless it is an unsealed front-row reseal"
+        ]
+      },
+      "sourceLinks": [
+        {
+          "name": "Eastmoney quote",
+          "url": "https://quote.eastmoney.com/sz000892.html"
+        },
+        {
+          "name": "10jqka stock page",
+          "url": "https://stockpage.10jqka.com.cn/000892/"
+        },
+        {
+          "name": "Yicai news",
+          "url": "https://www.yicai.com/news/"
+        }
+      ],
+      "sparkline": []
+    },
+    {
+      "rank": 6,
+      "code": "002579",
+      "name": "中京电子",
+      "market": "SZ",
+      "price": 18.06,
+      "pct": 9.99,
+      "amount": 1812773262.87,
+      "turnover": 17.61,
+      "industry": "元件",
+      "confidence": 95,
+      "winRate": 95,
+      "strategyTag": "AM_TOP",
+      "t1EdgeScore": 189.13,
+      "expectedReturnPct": 9.01,
+      "riskPct": 3.21,
+      "board": {
+        "code": "BK1101",
+        "name": "先进封装",
+        "passed": 5,
+        "score": 97.55
+      },
+      "criteria": {
+        "board": [
+          "[SectorGate] Board rank stays in the front row",
+          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+          "[SectorGate] Board turnover amount is active",
+          "[SectorGate] Leaders have follow-through support",
+          "[SectorGate] Board momentum remains top-15 positive"
+        ],
+        "stock": [
+          "[AM_TOP] Early morning front-row setup",
+          "Board is hot enough for morning acceleration",
+          "Morning acceleration gain zone is matched",
+          "Price holds the early high platform",
+          "Price holds above VWAP",
+          "Turnover can support early board capture",
+          "Volume is active without obvious exhaustion",
+          "Main or super capital is net inflow",
+          "Deal amount supports fast T+1 exit",
+          "Open has enough upward spread"
+        ]
+      },
+      "buyPlan": {
+        "type": "[AM_TOP] 09:26 auction/near-limit queue",
+        "timeWindow": "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only",
+        "trigger": "At 09:26 only watch or queue after auction confirmation; after 09:40 use only if it is still open or resealing.",
+        "priceRange": [
+          17.99,
+          18.1
+        ],
+        "quality": 21,
+        "priority": 7,
+        "strategyTag": "AM_TOP"
+      },
+      "sellPlan": {
+        "targetPrice": 19.61,
+        "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed.",
+        "strategy": "AM_TOP setup: catch the next-morning premium after 09:31-09:38 front-row acceleration; after 09:40 only monitor seal strength or reseal.",
+        "takeProfit": 19.61,
+        "timeWindow": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed."
+      },
+      "stopPlan": {
+        "stopLoss": 17.43,
+        "rules": [
+          "Morning top weakens and fails to reseal or hold the high platform",
+          "Break the personalized stop or fall back under VWAP with volume",
+          "09:26 is a watch/queue signal; 09:31-09:38 is the primary execution window",
+          "Do not chase after 09:40 unless it is an unsealed front-row reseal"
+        ]
+      },
+      "sourceLinks": [
+        {
+          "name": "Eastmoney quote",
+          "url": "https://quote.eastmoney.com/sz002579.html"
+        },
+        {
+          "name": "10jqka stock page",
+          "url": "https://stockpage.10jqka.com.cn/002579/"
+        },
+        {
+          "name": "Yicai news",
+          "url": "https://www.yicai.com/news/"
+        }
+      ],
+      "sparkline": []
+    },
+    {
+      "rank": 7,
+      "code": "002845",
+      "name": "同兴达",
+      "market": "SZ",
+      "price": 16.05,
+      "pct": 10.01,
+      "amount": 221385352.05,
+      "turnover": 5.61,
+      "industry": "光学光电子",
+      "confidence": 95,
+      "winRate": 95,
+      "strategyTag": "AM_TOP",
+      "t1EdgeScore": 188.83,
+      "expectedReturnPct": 9.01,
+      "riskPct": 2.57,
+      "board": {
+        "code": "BK1101",
+        "name": "先进封装",
+        "passed": 5,
+        "score": 97.55
+      },
+      "criteria": {
+        "board": [
+          "[SectorGate] Board rank stays in the front row",
+          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+          "[SectorGate] Board turnover amount is active",
+          "[SectorGate] Leaders have follow-through support",
+          "[SectorGate] Board momentum remains top-15 positive"
+        ],
+        "stock": [
+          "[AM_TOP] Early morning front-row setup",
+          "Board is hot enough for morning acceleration",
+          "Morning acceleration gain zone is matched",
+          "Price holds the early high platform",
+          "Price holds above VWAP",
+          "Turnover can support early board capture",
+          "Volume is active without obvious exhaustion",
+          "Main or super capital is net inflow",
+          "Deal amount supports fast T+1 exit",
+          "Open has enough upward spread"
+        ]
+      },
+      "buyPlan": {
+        "type": "[AM_TOP] 09:26 auction/near-limit queue",
+        "timeWindow": "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only",
+        "trigger": "At 09:26 only watch or queue after auction confirmation; after 09:40 use only if it is still open or resealing.",
+        "priceRange": [
+          15.99,
+          16.08
+        ],
+        "quality": 21,
+        "priority": 7,
+        "strategyTag": "AM_TOP"
+      },
+      "sellPlan": {
+        "targetPrice": 17.43,
+        "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed.",
+        "strategy": "AM_TOP setup: catch the next-morning premium after 09:31-09:38 front-row acceleration; after 09:40 only monitor seal strength or reseal.",
+        "takeProfit": 17.43,
+        "timeWindow": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed."
+      },
+      "stopPlan": {
+        "stopLoss": 15.59,
+        "rules": [
+          "Morning top weakens and fails to reseal or hold the high platform",
+          "Break the personalized stop or fall back under VWAP with volume",
+          "09:26 is a watch/queue signal; 09:31-09:38 is the primary execution window",
+          "Do not chase after 09:40 unless it is an unsealed front-row reseal"
+        ]
+      },
+      "sourceLinks": [
+        {
+          "name": "Eastmoney quote",
+          "url": "https://quote.eastmoney.com/sz002845.html"
+        },
+        {
+          "name": "10jqka stock page",
+          "url": "https://stockpage.10jqka.com.cn/002845/"
+        },
+        {
+          "name": "Yicai news",
+          "url": "https://www.yicai.com/news/"
+        }
+      ],
+      "sparkline": []
+    },
+    {
+      "rank": 8,
+      "code": "000021",
+      "name": "深科技",
+      "market": "SZ",
+      "price": 56.24,
+      "pct": 9.99,
+      "amount": 10109407250.89,
+      "turnover": 11.72,
+      "industry": "消费电子",
+      "confidence": 95,
+      "winRate": 95,
+      "strategyTag": "AM_TOP",
+      "t1EdgeScore": 185.24,
+      "expectedReturnPct": 9.0,
+      "riskPct": 3.51,
+      "board": {
+        "code": "BK1101",
+        "name": "先进封装",
+        "passed": 5,
+        "score": 97.55
+      },
+      "criteria": {
+        "board": [
+          "[SectorGate] Board rank stays in the front row",
+          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+          "[SectorGate] Board turnover amount is active",
+          "[SectorGate] Leaders have follow-through support",
+          "[SectorGate] Board momentum remains top-15 positive"
+        ],
+        "stock": [
+          "[AM_TOP] Early morning front-row setup",
+          "Board is hot enough for morning acceleration",
+          "Morning acceleration gain zone is matched",
+          "Price holds the early high platform",
+          "Price holds above VWAP",
+          "Turnover can support early board capture",
+          "Volume is active without obvious exhaustion",
+          "Main or super capital is net inflow",
+          "Deal amount supports fast T+1 exit",
+          "Open has enough upward spread"
+        ]
+      },
+      "buyPlan": {
+        "type": "[AM_TOP] 09:26 auction/near-limit queue",
+        "timeWindow": "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only",
+        "trigger": "At 09:26 only watch or queue after auction confirmation; after 09:40 use only if it is still open or resealing.",
+        "priceRange": [
+          56.02,
+          56.35
+        ],
+        "quality": 21,
+        "priority": 7,
+        "strategyTag": "AM_TOP"
+      },
+      "sellPlan": {
+        "targetPrice": 61.06,
+        "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed.",
+        "strategy": "AM_TOP setup: catch the next-morning premium after 09:31-09:38 front-row acceleration; after 09:40 only monitor seal strength or reseal.",
+        "takeProfit": 61.06,
+        "timeWindow": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed."
+      },
+      "stopPlan": {
+        "stopLoss": 54.12,
+        "rules": [
+          "Morning top weakens and fails to reseal or hold the high platform",
+          "Break the personalized stop or fall back under VWAP with volume",
+          "09:26 is a watch/queue signal; 09:31-09:38 is the primary execution window",
+          "Do not chase after 09:40 unless it is an unsealed front-row reseal"
+        ]
+      },
+      "sourceLinks": [
+        {
+          "name": "Eastmoney quote",
+          "url": "https://quote.eastmoney.com/sz000021.html"
+        },
+        {
+          "name": "10jqka stock page",
+          "url": "https://stockpage.10jqka.com.cn/000021/"
+        },
+        {
+          "name": "Yicai news",
+          "url": "https://www.yicai.com/news/"
+        }
+      ],
+      "sparkline": []
+    },
+    {
+      "rank": 9,
+      "code": "600667",
+      "name": "太极实业",
+      "market": "SH",
+      "price": 26.27,
+      "pct": 10.01,
+      "amount": 8691822828.0,
+      "turnover": 16.33,
+      "industry": "工程咨询服务Ⅱ",
+      "confidence": 95,
+      "winRate": 95,
+      "strategyTag": "AM_TOP",
+      "t1EdgeScore": 184.97,
+      "expectedReturnPct": 8.98,
+      "riskPct": 4.06,
+      "board": {
+        "code": "BK1101",
+        "name": "先进封装",
+        "passed": 5,
+        "score": 97.55
+      },
+      "criteria": {
+        "board": [
+          "[SectorGate] Board rank stays in the front row",
+          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+          "[SectorGate] Board turnover amount is active",
+          "[SectorGate] Leaders have follow-through support",
+          "[SectorGate] Board momentum remains top-15 positive"
+        ],
+        "stock": [
+          "[AM_TOP] Early morning front-row setup",
+          "Board is hot enough for morning acceleration",
+          "Morning acceleration gain zone is matched",
+          "Price holds the early high platform",
+          "Price holds above VWAP",
+          "Turnover can support early board capture",
+          "Volume is active without obvious exhaustion",
+          "Main or super capital is net inflow",
+          "Deal amount supports fast T+1 exit",
+          "Open has enough upward spread"
+        ]
+      },
+      "buyPlan": {
+        "type": "[AM_TOP] 09:26 auction/near-limit queue",
+        "timeWindow": "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only",
+        "trigger": "At 09:26 only watch or queue after auction confirmation; after 09:40 use only if it is still open or resealing.",
+        "priceRange": [
+          26.16,
+          26.32
+        ],
+        "quality": 21,
+        "priority": 7,
+        "strategyTag": "AM_TOP"
+      },
+      "sellPlan": {
+        "targetPrice": 28.51,
+        "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed.",
+        "strategy": "AM_TOP setup: catch the next-morning premium after 09:31-09:38 front-row acceleration; after 09:40 only monitor seal strength or reseal.",
+        "takeProfit": 28.51,
+        "timeWindow": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed."
+      },
+      "stopPlan": {
+        "stopLoss": 25.14,
+        "rules": [
+          "Morning top weakens and fails to reseal or hold the high platform",
+          "Break the personalized stop or fall back under VWAP with volume",
+          "09:26 is a watch/queue signal; 09:31-09:38 is the primary execution window",
+          "Do not chase after 09:40 unless it is an unsealed front-row reseal"
+        ]
+      },
+      "sourceLinks": [
+        {
+          "name": "Eastmoney quote",
+          "url": "https://quote.eastmoney.com/sh600667.html"
+        },
+        {
+          "name": "10jqka stock page",
+          "url": "https://stockpage.10jqka.com.cn/600667/"
+        },
+        {
+          "name": "Yicai news",
+          "url": "https://www.yicai.com/news/"
+        }
+      ],
+      "sparkline": []
+    },
+    {
+      "rank": 10,
+      "code": "600909",
+      "name": "华安证券",
+      "market": "SH",
+      "price": 10.1,
+      "pct": 10.02,
+      "amount": 3173302572.0,
+      "turnover": 6.38,
+      "industry": "证券Ⅱ",
+      "confidence": 95,
+      "winRate": 95,
+      "strategyTag": "AM_TOP",
+      "t1EdgeScore": 184.64,
+      "expectedReturnPct": 9.05,
+      "riskPct": 2.86,
+      "board": {
+        "code": "AM_TOP_fdd1c552",
+        "name": "证券Ⅱ",
+        "passed": 4,
+        "score": 82
+      },
+      "criteria": {
+        "board": [
+          "AM_TOP all-main-board scan",
+          "Morning top candidate is evaluated by stock shape"
+        ],
+        "stock": [
+          "[AM_TOP] Early morning front-row setup",
+          "Board is hot enough for morning acceleration",
+          "Morning acceleration gain zone is matched",
+          "Price holds the early high platform",
+          "Price holds above VWAP",
+          "Turnover can support early board capture",
+          "Volume is active without obvious exhaustion",
+          "Main or super capital is net inflow",
+          "Deal amount supports fast T+1 exit",
+          "Open has enough upward spread"
+        ]
+      },
+      "buyPlan": {
+        "type": "[AM_TOP] 09:26 auction/near-limit queue",
+        "timeWindow": "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only",
+        "trigger": "At 09:26 only watch or queue after auction confirmation; after 09:40 use only if it is still open or resealing.",
+        "priceRange": [
+          10.06,
+          10.12
+        ],
+        "quality": 21,
+        "priority": 7,
+        "strategyTag": "AM_TOP"
+      },
+      "sellPlan": {
+        "targetPrice": 10.97,
+        "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed.",
+        "strategy": "AM_TOP setup: catch the next-morning premium after 09:31-09:38 front-row acceleration; after 09:40 only monitor seal strength or reseal.",
+        "takeProfit": 10.97,
+        "timeWindow": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed."
+      },
+      "stopPlan": {
+        "stopLoss": 9.78,
+        "rules": [
+          "Morning top weakens and fails to reseal or hold the high platform",
+          "Break the personalized stop or fall back under VWAP with volume",
+          "09:26 is a watch/queue signal; 09:31-09:38 is the primary execution window",
+          "Do not chase after 09:40 unless it is an unsealed front-row reseal"
+        ]
+      },
+      "sourceLinks": [
+        {
+          "name": "Eastmoney quote",
+          "url": "https://quote.eastmoney.com/sh600909.html"
+        },
+        {
+          "name": "10jqka stock page",
+          "url": "https://stockpage.10jqka.com.cn/600909/"
         },
         {
           "name": "Yicai news",
@@ -596,14 +1200,20 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数收跌 深成指与创业板指跌近2% 国资云概念股逆市大涨",
-      "url": "https://finance.eastmoney.com/a/202607083798321635.html",
+      "title": "创业板指涨超4% 科创50指数涨逾8% 半导体板块爆发",
+      "url": "https://finance.eastmoney.com/a/202607093799957721.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
       "title": "韩国股市遭遇重挫进入技术性熊市",
       "url": "https://finance.eastmoney.com/a/202607083798517646.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "首破3万亿！二季度北向资金持仓曝光",
+      "url": "https://finance.eastmoney.com/a/202607083798545530.html",
       "time": ""
     },
     {
@@ -634,12 +1244,6 @@
       "source": "Eastmoney News",
       "title": "中泰证券：厄尔尼诺下旺季延长+结构迁移为核心趋势 中大包装水将迎来需求双重利好",
       "url": "https://finance.eastmoney.com/a/202607093799047770.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券：原奶或迎景气周期 全产业链受益",
-      "url": "https://finance.eastmoney.com/a/202607093799050023.html",
       "time": ""
     }
   ]
