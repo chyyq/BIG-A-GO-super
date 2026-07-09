@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-09T16:53:20.695589+08:00",
+    "generatedAt": "2026-07-09T16:57:37.237177+08:00",
     "tradingDate": "2026-07-09",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -20,18 +20,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 27.85
+    "runtimeSeconds": 37.63
   },
   "market": {
     "recommendationCount": 10,
@@ -1199,51 +1199,21 @@
   ],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "创业板指涨超4% 科创50指数涨逾8% 半导体板块爆发",
-      "url": "https://finance.eastmoney.com/a/202607093799957721.html",
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共75只个股涨停 恒尚节能收获8连板AI服务器概念股浪潮信息2连板，油气股山东墨龙2连板。一图速览今日连板股&gt;&gt;  49分钟前",
+      "url": "https://www.yicai.com/news/103267610.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "韩国股市遭遇重挫进入技术性熊市",
-      "url": "https://finance.eastmoney.com/a/202607083798517646.html",
+      "source": "Yicai",
+      "title": "收盘丨科创50指数涨8.41% 半导体产业链爆发全市场近2900只个股下跌。  1小时前",
+      "url": "https://www.yicai.com/news/103267488.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "首破3万亿！二季度北向资金持仓曝光",
-      "url": "https://finance.eastmoney.com/a/202607083798545530.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊",
-      "url": "https://finance.eastmoney.com/a/202605073730389683.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "掘金2026年A股中报季",
-      "url": "https://topic.eastmoney.com/detail/agzbj2026.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "摩根士丹利王滢：未来几个月资金将逐步重新配置中国市场",
-      "url": "https://finance.eastmoney.com/a/202607093799751787.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券：油价回落与客运旺季共振 交运板块布局景气修复",
-      "url": "https://finance.eastmoney.com/a/202607093799055363.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中泰证券：厄尔尼诺下旺季延长+结构迁移为核心趋势 中大包装水将迎来需求双重利好",
-      "url": "https://finance.eastmoney.com/a/202607093799047770.html",
+      "source": "Yicai",
+      "title": "下半年新模型竞赛启动前，智谱授权配售新H股募资公司需要充足资金储备支撑研发投入。  1小时前",
+      "url": "https://www.yicai.com/news/103267452.html",
       "time": ""
     }
   ]
