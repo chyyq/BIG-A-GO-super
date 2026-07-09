@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-09T16:57:37.237177+08:00",
+    "generatedAt": "2026-07-09T17:55:55.166887+08:00",
     "tradingDate": "2026-07-09",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -31,7 +31,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 37.63
+    "runtimeSeconds": 43.13
   },
   "market": {
     "recommendationCount": 10,
@@ -1200,19 +1200,25 @@
   "news": [
     {
       "source": "Yicai",
-      "title": "连板股追踪丨A股今日共75只个股涨停 恒尚节能收获8连板AI服务器概念股浪潮信息2连板，油气股山东墨龙2连板。一图速览今日连板股&gt;&gt;  49分钟前",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共75只个股涨停 恒尚节能收获8连板AI服务器概念股浪潮信息2连板，油气股山东墨龙2连板。一图速览今日连板股&gt;&gt;  1小时前",
       "url": "https://www.yicai.com/news/103267610.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "收盘丨科创50指数涨8.41% 半导体产业链爆发全市场近2900只个股下跌。  1小时前",
+      "title": "收盘丨科创50指数涨8.41% 半导体产业链爆发全市场近2900只个股下跌。  2小时前",
       "url": "https://www.yicai.com/news/103267488.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "下半年新模型竞赛启动前，智谱授权配售新H股募资公司需要充足资金储备支撑研发投入。  1小时前",
+      "title": "下半年新模型竞赛启动前，智谱授权配售新H股募资公司需要充足资金储备支撑研发投入。  2小时前",
       "url": "https://www.yicai.com/news/103267452.html",
       "time": ""
     }
