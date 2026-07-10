@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-10T09:34:43.406848+08:00",
+    "generatedAt": "2026-07-10T09:37:09.158614+08:00",
     "tradingDate": "2026-07-10",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -31,21 +31,21 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 37.04
+    "runtimeSeconds": 36.5
   },
   "market": {
-    "recommendationCount": 0,
-    "qualifiedBoardCount": 6,
+    "recommendationCount": 1,
+    "qualifiedBoardCount": 7,
     "monitor": {
       "emotionScore": 99,
       "riskLevel": "NORMAL",
-      "limitUpCount": 22,
+      "limitUpCount": 25,
       "limitDownCount": 0,
       "bigDownCount": 0,
-      "limitTouchCount": 30,
+      "limitTouchCount": 33,
       "brokenBoardCount": 9,
-      "brokenBoardRate": 0.3,
-      "topBoardPct": 4.57,
+      "brokenBoardRate": 0.273,
+      "topBoardPct": 4.83,
       "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
     }
   },
@@ -54,13 +54,38 @@
       "code": "BK0815",
       "name": "昨日涨停",
       "kind": "Concept board",
-      "price": 127570.19,
-      "pct": 4.57,
-      "amount": 58695170172.0,
-      "turnover": 2.39,
+      "price": 127891.24,
+      "pct": 4.83,
+      "amount": 71619458454.0,
+      "turnover": 2.49,
       "open": 126092.61,
       "preClose": 121998.02,
-      "mainNet": 741063168.0,
+      "mainNet": 1101272320.0,
+      "rank": 2,
+      "passed": 5,
+      "qualified": true,
+      "score": 99.3,
+      "criteria": [
+        "[SectorGate] Board rank stays in the front row",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Board turnover amount is active",
+        "[SectorGate] Leaders have follow-through support",
+        "[SectorGate] Board momentum remains top-15 positive"
+      ],
+      "limitUpCount": 9,
+      "bigUpCount": 31
+    },
+    {
+      "code": "BK1050",
+      "name": "昨日涨停_含一字",
+      "kind": "Concept board",
+      "price": 92970.33,
+      "pct": 4.71,
+      "amount": 73511088076.0,
+      "turnover": 2.54,
+      "open": 91750.76,
+      "preClose": 88784.95,
+      "mainNet": 1276257024.0,
       "rank": 3,
       "passed": 5,
       "qualified": true,
@@ -72,20 +97,20 @@
         "[SectorGate] Leaders have follow-through support",
         "[SectorGate] Board momentum remains top-15 positive"
       ],
-      "limitUpCount": 5,
-      "bigUpCount": 29
+      "limitUpCount": 11,
+      "bigUpCount": 33
     },
     {
-      "code": "BK1050",
-      "name": "昨日涨停_含一字",
+      "code": "BK1630",
+      "name": "昨日首板",
       "kind": "Concept board",
-      "price": 92764.39,
-      "pct": 4.48,
-      "amount": 60513300862.0,
-      "turnover": 2.53,
-      "open": 91750.76,
-      "preClose": 88784.95,
-      "mainNet": 887409152.0,
+      "price": 3975.24,
+      "pct": 4.5,
+      "amount": 59964332029.0,
+      "turnover": 2.37,
+      "open": 3933.82,
+      "preClose": 3804.2,
+      "mainNet": 1405924864.0,
       "rank": 5,
       "passed": 5,
       "qualified": true,
@@ -97,45 +122,20 @@
         "[SectorGate] Leaders have follow-through support",
         "[SectorGate] Board momentum remains top-15 positive"
       ],
-      "limitUpCount": 6,
-      "bigUpCount": 30
-    },
-    {
-      "code": "BK1630",
-      "name": "昨日首板",
-      "kind": "Concept board",
-      "price": 3966.43,
-      "pct": 4.26,
-      "amount": 49659283149.0,
-      "turnover": 3.45,
-      "open": 3933.82,
-      "preClose": 3804.2,
-      "mainNet": 1118763264.0,
-      "rank": 6,
-      "passed": 5,
-      "qualified": true,
-      "score": 97.9,
-      "criteria": [
-        "[SectorGate] Board rank stays in the front row",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board turnover amount is active",
-        "[SectorGate] Leaders have follow-through support",
-        "[SectorGate] Board momentum remains top-15 positive"
-      ],
-      "limitUpCount": 4,
-      "bigUpCount": 23
+      "limitUpCount": 8,
+      "bigUpCount": 25
     },
     {
       "code": "BK1637",
       "name": "东方财富热股",
       "kind": "Concept board",
-      "price": 2926.0,
-      "pct": 3.37,
-      "amount": 128242783399.0,
-      "turnover": 1.31,
+      "price": 2929.34,
+      "pct": 3.49,
+      "amount": 160387013768.0,
+      "turnover": 1.4,
       "open": 2888.74,
       "preClose": 2830.52,
-      "mainNet": 2089191936.0,
+      "mainNet": 2241232128.0,
       "rank": 9,
       "passed": 5,
       "qualified": true,
@@ -147,20 +147,20 @@
         "[SectorGate] Leaders have follow-through support",
         "[SectorGate] Board momentum remains top-15 positive"
       ],
-      "limitUpCount": 7,
-      "bigUpCount": 23
+      "limitUpCount": 10,
+      "bigUpCount": 30
     },
     {
-      "code": "BK1325",
-      "name": "半导体材料",
-      "kind": "Industry board",
-      "price": 19200.58,
-      "pct": 3.13,
-      "amount": 12751367756.0,
-      "turnover": 1.42,
-      "open": 18786.86,
-      "preClose": 18618.34,
-      "mainNet": 59488240.0,
+      "code": "BK1128",
+      "name": "CPO概念",
+      "kind": "Concept board",
+      "price": 10301.87,
+      "pct": 3.28,
+      "amount": 64396564441.0,
+      "turnover": 0.97,
+      "open": 10111.0,
+      "preClose": 9974.56,
+      "mainNet": 3433558272.0,
       "rank": 10,
       "passed": 5,
       "qualified": true,
@@ -172,20 +172,44 @@
         "[SectorGate] Leaders have follow-through support",
         "[SectorGate] Board momentum remains top-15 positive"
       ],
-      "limitUpCount": 0,
-      "bigUpCount": 5
+      "limitUpCount": 1,
+      "bigUpCount": 15
+    },
+    {
+      "code": "BK1051",
+      "name": "昨日连板_含一字",
+      "kind": "Concept board",
+      "price": 28446.92,
+      "pct": 4.61,
+      "amount": 8030564010.0,
+      "turnover": 4.04,
+      "open": 27850.7,
+      "preClose": 27193.82,
+      "mainNet": -275385088.0,
+      "rank": 4,
+      "passed": 4,
+      "qualified": true,
+      "score": 82.2,
+      "criteria": [
+        "[SectorGate] Board rank stays in the front row",
+        "[SectorGate] Board turnover amount is active",
+        "[SectorGate] Leaders have follow-through support",
+        "[SectorGate] Board momentum remains top-15 positive"
+      ],
+      "limitUpCount": 1,
+      "bigUpCount": 3
     },
     {
       "code": "BK1328",
       "name": "集成电路封测",
       "kind": "Industry board",
-      "price": 12356.75,
-      "pct": 3.62,
-      "amount": 10871261892.0,
-      "turnover": 1.62,
+      "price": 12369.1,
+      "pct": 3.72,
+      "amount": 13256443705.0,
+      "turnover": 1.95,
       "open": 12126.69,
       "preClose": 11925.43,
-      "mainNet": 401190896.0,
+      "mainNet": 374164368.0,
       "rank": 8,
       "passed": 4,
       "qualified": true,
@@ -197,19 +221,19 @@
         "[SectorGate] Board momentum remains top-15 positive"
       ],
       "limitUpCount": 1,
-      "bigUpCount": 3
+      "bigUpCount": 4
     },
     {
       "code": "BK1645",
       "name": "昨日打二板以上表现",
       "kind": "Concept board",
-      "price": 6598.63,
-      "pct": 7.38,
-      "amount": 824435955.0,
-      "turnover": 3.18,
+      "price": 6583.3,
+      "pct": 7.13,
+      "amount": 925069568.0,
+      "turnover": 3.11,
       "open": 6555.01,
       "preClose": 6145.19,
-      "mainNet": -48386096.0,
+      "mainNet": -57719878.0,
       "rank": 1,
       "passed": 2,
       "qualified": false,
@@ -225,17 +249,17 @@
       "code": "BK1121",
       "name": "第四代半导体",
       "kind": "Concept board",
-      "price": 2814.66,
-      "pct": 4.64,
-      "amount": 1622319401.0,
-      "turnover": 0.34,
+      "price": 2797.44,
+      "pct": 4.0,
+      "amount": 2043665530.0,
+      "turnover": 0.44,
       "open": 2734.37,
       "preClose": 2689.97,
-      "mainNet": 85245542.0,
-      "rank": 2,
+      "mainNet": 73749520.0,
+      "rank": 6,
       "passed": 2,
       "qualified": false,
-      "score": 50.1,
+      "score": 48.7,
       "criteria": [
         "[SectorGate] Board rank stays in the front row",
         "[SectorGate] Board momentum remains top-15 positive"
@@ -244,38 +268,16 @@
       "bigUpCount": 1
     },
     {
-      "code": "BK1051",
-      "name": "昨日连板_含一字",
-      "kind": "Concept board",
-      "price": 28413.68,
-      "pct": 4.49,
-      "amount": 6503092507.0,
-      "turnover": 1.86,
-      "open": 27850.7,
-      "preClose": 27193.82,
-      "mainNet": -241030400.0,
-      "rank": 4,
-      "passed": 2,
-      "qualified": false,
-      "score": 49.4,
-      "criteria": [
-        "[SectorGate] Board rank stays in the front row",
-        "[SectorGate] Board momentum remains top-15 positive"
-      ],
-      "limitUpCount": 1,
-      "bigUpCount": 2
-    },
-    {
       "code": "BK0816",
       "name": "昨日连板",
       "kind": "Concept board",
-      "price": 19308.34,
-      "pct": 3.89,
-      "amount": 1357302800.0,
-      "turnover": 1.14,
+      "price": 19280.01,
+      "pct": 3.74,
+      "amount": 1575300462.0,
+      "turnover": 3.51,
       "open": 18820.93,
       "preClose": 18584.5,
-      "mainNet": -41657634.0,
+      "mainNet": -67779721.0,
       "rank": 7,
       "passed": 2,
       "qualified": false,
@@ -285,19 +287,19 @@
         "[SectorGate] Board momentum remains top-15 positive"
       ],
       "limitUpCount": 1,
-      "bigUpCount": 1
+      "bigUpCount": 2
     },
     {
-      "code": "BK1128",
-      "name": "CPO概念",
+      "code": "BK1152",
+      "name": "高带宽内存",
       "kind": "Concept board",
-      "price": 10284.5,
-      "pct": 3.11,
-      "amount": 51651763348.0,
-      "turnover": 0.78,
-      "open": 10111.0,
-      "preClose": 9974.56,
-      "mainNet": 3183397120.0,
+      "price": 3710.07,
+      "pct": 3.18,
+      "amount": 17776761785.0,
+      "turnover": 1.43,
+      "open": 3628.22,
+      "preClose": 3595.7,
+      "mainNet": 1082506320.0,
       "rank": 11,
       "passed": 2,
       "qualified": false,
@@ -309,16 +311,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1717",
-      "name": "题材股",
-      "kind": "Concept board",
-      "price": 1256.0,
-      "pct": 3.05,
-      "amount": 70206769577.0,
-      "turnover": 2.96,
-      "open": 1239.29,
-      "preClose": 1218.85,
-      "mainNet": 129901312.0,
+      "code": "BK1325",
+      "name": "半导体材料",
+      "kind": "Industry board",
+      "price": 19200.51,
+      "pct": 3.13,
+      "amount": 16388186166.0,
+      "turnover": 1.84,
+      "open": 18786.86,
+      "preClose": 18618.34,
+      "mainNet": 92031440.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -330,7 +332,92 @@
       "bigUpCount": 0
     }
   ],
-  "recommendations": [],
+  "recommendations": [
+    {
+      "rank": 1,
+      "code": "002167",
+      "name": "东方锆业",
+      "market": "SZ",
+      "price": 21.27,
+      "pct": 8.24,
+      "amount": 447496507.93,
+      "turnover": 2.91,
+      "industry": "小金属",
+      "confidence": 95,
+      "winRate": 95,
+      "strategyTag": "AM_TOP",
+      "t1EdgeScore": 168.19,
+      "expectedReturnPct": 8.59,
+      "riskPct": 4.13,
+      "board": {
+        "code": "AM_TOP_45d2805b",
+        "name": "小金属",
+        "passed": 4,
+        "score": 82
+      },
+      "criteria": {
+        "board": [
+          "AM_TOP all-main-board scan",
+          "Morning top candidate is evaluated by stock shape"
+        ],
+        "stock": [
+          "[AM_TOP] Early morning front-row setup",
+          "Board is hot enough for morning acceleration",
+          "Morning acceleration gain zone is matched",
+          "Price holds the early high platform",
+          "Price holds above VWAP",
+          "Turnover can support early board capture",
+          "Volume is active without obvious exhaustion",
+          "Main or super capital is net inflow",
+          "Deal amount supports fast T+1 exit",
+          "Open has enough upward spread"
+        ]
+      },
+      "buyPlan": {
+        "type": "[AM_TOP] 09:31 open-strength entry",
+        "timeWindow": "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only",
+        "trigger": "Primary buy window is 09:31-09:38 after open support confirms; skip if it falls back under VWAP.",
+        "priceRange": [
+          21.18,
+          21.31
+        ],
+        "quality": 24,
+        "priority": 9,
+        "strategyTag": "AM_TOP"
+      },
+      "sellPlan": {
+        "targetPrice": 23.0,
+        "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed.",
+        "strategy": "AM_TOP setup: catch the next-morning premium after 09:31-09:38 front-row acceleration; after 09:40 only monitor seal strength or reseal.",
+        "takeProfit": 23.0,
+        "timeWindow": "Next trading day 09:30-10:00; sell before 10:00 unless the board remains sealed."
+      },
+      "stopPlan": {
+        "stopLoss": 20.34,
+        "rules": [
+          "Morning top weakens and fails to reseal or hold the high platform",
+          "Break the personalized stop or fall back under VWAP with volume",
+          "09:26 is a watch/queue signal; 09:31-09:38 is the primary execution window",
+          "Do not chase after 09:40 unless it is an unsealed front-row reseal"
+        ]
+      },
+      "sourceLinks": [
+        {
+          "name": "Eastmoney quote",
+          "url": "https://quote.eastmoney.com/sz002167.html"
+        },
+        {
+          "name": "10jqka stock page",
+          "url": "https://stockpage.10jqka.com.cn/002167/"
+        },
+        {
+          "name": "Yicai news",
+          "url": "https://www.yicai.com/news/"
+        }
+      ],
+      "sparkline": []
+    }
+  ],
   "news": [
     {
       "source": "Eastmoney News",
