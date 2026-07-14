@@ -1409,7 +1409,7 @@ def active_strategy_windows(now: datetime) -> set[str]:
         active.add(STRATEGY_AM_TOP)
     if 13 * 60 + 25 <= minute_of_day <= 14 * 60 + 40:
         active.add(STRATEGY_TAIL_MAIN)
-    return active or {STRATEGY_TAIL_MAIN, STRATEGY_AM_TOP}
+    return active
 
 
 def is_morning_top_setup(quote: dict[str, Any], board: dict[str, Any]) -> bool:
