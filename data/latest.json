@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-14T15:30:48.144211+08:00",
+    "generatedAt": "2026-07-14T16:24:11.884038+08:00",
     "tradingDate": "2026-07-14",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -31,7 +31,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 33.15
+    "runtimeSeconds": 39.88
   },
   "market": {
     "recommendationCount": 10,
@@ -1206,19 +1206,19 @@
     },
     {
       "source": "Yicai",
-      "title": "收盘｜沪指涨1.36% PCB方向掀涨停潮全市场超4200只个股上涨。  11分钟前",
+      "title": "收盘｜沪指涨1.36% PCB方向掀涨停潮全市场超4200只个股上涨。  1小时前",
       "url": "https://www.yicai.com/news/103274234.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "追问科技股回调：为何发生？谁在离场？何时结束？“全球流动性改善也有望继续支撑中外股市，尤其是AI与科技成长板块，我们维持超配中国股票。” 沸点冰点  3小时前",
+      "title": "追问科技股回调：为何发生？谁在离场？何时结束？“全球流动性改善也有望继续支撑中外股市，尤其是AI与科技成长板块，我们维持超配中国股票。” 沸点冰点  4小时前",
       "url": "https://www.yicai.com/news/103273700.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "A股四大指数多数高开，油气、零售等板块走强盘面上，黄金、PEEK材料、商业航天、CRO概念股走弱。  5小时前",
+      "title": "A股四大指数多数高开，油气、零售等板块走强盘面上，黄金、PEEK材料、商业航天、CRO概念股走弱。  6小时前",
       "url": "https://www.yicai.com/news/103273298.html",
       "time": ""
     }
