@@ -1,5 +1,10 @@
 const DATA_URL = "data/latest.json";
 const STORAGE_KEY = "a-share-maintrend-trades-v1";
+const AUTO_REFRESH_WINDOWS = [
+  { start: [9, 25], end: [10, 5] },
+  { start: [13, 30], end: [14, 40] },
+  { start: [19, 58], end: [20, 10] },
+];
 
 const state = {
   data: null,
@@ -7,6 +12,7 @@ const state = {
   liveQuotes: new Map(),
   historyQuotes: new Map(),
   isRefreshing: false,
+  lastAutoRefreshAt: 0,
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -19,6 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   await refreshPositionQuotes();
   render();
   scheduleNightlyReviewRefresh();
+  startAutoRefreshPolling();
   refreshIcons();
 });
 
@@ -35,7 +42,6 @@ function bindEvents() {
     if (event.key === "Escape" && !$("#tradeModal").hidden) closeTradeModal();
   });
   $("#tradeForm").addEventListener("submit", saveTradeFromForm);
-  $("#clearClosedButton").addEventListener("click", clearClosedTrades);
   $("#reviewRefreshButton")?.addEventListener("click", refreshReviewNow);
   $("#exportTradesButton")?.addEventListener("click", exportTradesForSync);
   $("#importTradesButton")?.addEventListener("click", importTradesFromSync);
@@ -45,14 +51,17 @@ function bindEvents() {
   });
 }
 
-async function refreshLatestData() {
+async function refreshLatestData(options = {}) {
+  const silent = Boolean(options.silent);
   if (state.isRefreshing) return;
   state.isRefreshing = true;
   const button = $("#refreshButton");
   const hint = $("#refreshHint");
   const previousGeneratedAt = state.data?.meta?.generatedAt || null;
-  button.disabled = true;
-  hint.textContent = "正在读取 GitHub Pages 上最新的 data/latest.json，不会影响本地交易记录。";
+  if (!silent) {
+    button.disabled = true;
+    hint.textContent = "正在读取 GitHub Pages 上最新的 data/latest.json，不会影响本地交易记录。";
+  }
 
   await loadData();
   state.liveQuotes.clear();
@@ -61,11 +70,15 @@ async function refreshLatestData() {
 
   const nextGeneratedAt = state.data?.meta?.generatedAt || null;
   const checkedAt = new Date().toLocaleTimeString("zh-CN", { hour12: false });
-  hint.textContent =
-    nextGeneratedAt && nextGeneratedAt !== previousGeneratedAt
-      ? `已读取到新数据，检查时间 ${checkedAt}。`
-      : `已检查最新文件，检查时间 ${checkedAt}。如果“数据生成时间”没变，说明 GitHub Actions 还没有生成新数据。`;
-  button.disabled = false;
+  if (!silent) {
+    hint.textContent =
+      nextGeneratedAt && nextGeneratedAt !== previousGeneratedAt
+        ? `已读取到新数据，检查时间 ${checkedAt}。`
+        : `已检查最新文件，检查时间 ${checkedAt}。如果“数据生成时间”没变，说明 GitHub Actions 还没有生成新数据。`;
+    button.disabled = false;
+  } else if (nextGeneratedAt && nextGeneratedAt !== previousGeneratedAt) {
+    hint.textContent = `自动刷新到新数据，检查时间 ${checkedAt}。`;
+  }
   state.isRefreshing = false;
   refreshIcons();
 }
@@ -83,6 +96,25 @@ function scheduleNightlyReviewRefresh() {
     await refreshLatestData();
     scheduleNightlyReviewRefresh();
   }, target.getTime() - now.getTime());
+}
+
+function startAutoRefreshPolling() {
+  window.setInterval(() => {
+    if (document.hidden || state.isRefreshing) return;
+    if (!isAutoRefreshWindow(new Date())) return;
+    if (Date.now() - state.lastAutoRefreshAt < 60_000) return;
+    state.lastAutoRefreshAt = Date.now();
+    refreshLatestData({ silent: true });
+  }, 30_000);
+}
+
+function isAutoRefreshWindow(date) {
+  const minute = date.getHours() * 60 + date.getMinutes();
+  return AUTO_REFRESH_WINDOWS.some(({ start, end }) => {
+    const startMinute = start[0] * 60 + start[1];
+    const endMinute = end[0] * 60 + end[1];
+    return minute >= startMinute && minute <= endMinute;
+  });
 }
 
 async function loadData() {
@@ -118,7 +150,6 @@ function render() {
   renderRecommendations();
   renderRecommendationTable();
   renderSectors();
-  renderPositions();
   renderT1Reviews();
   renderNews();
   renderSources();
@@ -397,6 +428,16 @@ function renderT1Reviews() {
 
   const reviews = openTrades.map(buildT1Review);
   root.innerHTML = reviews.map(renderT1ReviewCard).join("");
+  root.querySelectorAll("[data-action='edit']").forEach((button) => {
+    const trade = state.trades.find((item) => item.id === button.dataset.id);
+    button.addEventListener("click", () => openTradeModal(null, trade));
+  });
+  root.querySelectorAll("[data-action='sell']").forEach((button) => {
+    button.addEventListener("click", () => markTradeSold(button.dataset.id));
+  });
+  root.querySelectorAll("[data-action='delete']").forEach((button) => {
+    button.addEventListener("click", () => deleteTrade(button.dataset.id));
+  });
 }
 
 function buildT1Review(trade) {
@@ -473,23 +514,25 @@ function renderT1ReviewCard(review) {
         </div>
         <span class="${stateClass === "alert-pill" ? "alert-pill" : `tag ${stateClass}`}">${review.stockState}</span>
       </div>
-      <div class="review-score-grid">
-        <div><span>市场</span><strong>${review.scores.marketEmotionScore}</strong></div>
-        <div><span>板块</span><strong>${review.scores.sectorStrengthScore}</strong></div>
-        <div><span>承接</span><strong>${review.scores.tailSupportScore}</strong></div>
-        <div><span>风险</span><strong>${review.scores.positionRiskScore}</strong></div>
-        <div><span>结构</span><strong>${review.scores.structureIntegrityScore}</strong></div>
-      </div>
       <div class="review-plan">
         <div><span>TP1 50%</span><strong>${formatPrice(review.pricePlan.tp1)}</strong></div>
         <div><span>TP2 30%</span><strong>${formatPrice(review.pricePlan.tp2)}</strong></div>
-        <div><span>强势余仓</span><strong>${formatPrice(review.pricePlan.tp3)}</strong></div>
         <div><span>最终止损</span><strong>${formatPrice(review.pricePlan.finalStop)}</strong></div>
       </div>
       <p class="review-action">${escapeHtml(review.action)}</p>
-      <div class="criteria-list">
-        ${review.reasonTags.map((tag) => `<span class="tag pass">${escapeHtml(tag)}</span>`).join("")}
-        ${review.hardTags.map((tag) => `<span class="tag warn">${escapeHtml(tag)}</span>`).join("")}
+      <div class="position-actions review-actions">
+        <button class="ghost-button" type="button" data-action="edit" data-id="${review.trade.id}">
+          <i data-lucide="pencil"></i>
+          编辑
+        </button>
+        <button class="ghost-button" type="button" data-action="sell" data-id="${review.trade.id}">
+          <i data-lucide="circle-check"></i>
+          记为卖出
+        </button>
+        <button class="ghost-button" type="button" data-action="delete" data-id="${review.trade.id}">
+          <i data-lucide="trash-2"></i>
+          删除
+        </button>
       </div>
     </article>
   `;
@@ -577,18 +620,18 @@ function buildT1PricePlan({ buyPrice, closePrice, ma5, avgPrice, limitUpPrice, t
 
 function buildNextMorningAction(stockState, pricePlan) {
   if (stockState === "T1_PREMIUM") {
-    return `明早高开>=3%且承接强：${formatPrice(pricePlan.tp1)}先卖50%，${formatPrice(pricePlan.tp2)}再卖30%，余20%看是否封板；平开小高开等到09:45，不达TP1则逐步退出；10:00前不强制封板就清仓。`;
+    return `强T+1：高开承接强先看TP1/TP2；平开等09:45，不达TP1逐步退出；10:00前不封强板就清。`;
   }
   if (stockState === "T1_WEAK") {
-    return `按弱T+1处理：低开或5分钟不能站回均价线/VWAP就卖；若有反抽，反抽5分钟不继续走强也卖，明早不加仓。最终止损 ${formatPrice(pricePlan.finalStop)}。`;
+    return `弱T+1：低开先控风险；开盘5分钟不能站回均价线/VWAP，反抽卖出，不加仓。`;
   }
   if (stockState === "REENTRY_WATCH") {
-    return "止损观察池：明早竞价不直接买回，只观察是否重新站回均价线和关键位；最多观察2个交易日。";
+    return "观察：竞价不买回，只看能否重新站回均价线和关键位，最多观察2日。";
   }
   if (stockState === "REBUY_READY") {
-    return "回补候选：只在09:35后站稳均价线且突破前高，再等尾盘二次确认，小仓30%-50%。";
+    return "回补候选：09:35后站稳均价线并突破前高，再等尾盘确认，小仓30%-50%。";
   }
-  return "移出策略池：结构已破或市场风险过高，明早不做回补，手动删除即可。";
+  return "移出：结构已破或市场风险过高，明早不回补，手动删除即可。";
 }
 
 function buildReviewReasonTags(scores, rangePosition, tailDrawdown) {

@@ -580,7 +580,7 @@ tr:last-child td {
 }
 
 .review-plan {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .review-score-grid div,
@@ -607,6 +607,10 @@ tr:last-child td {
   margin: 12px 0 0;
   color: var(--ink);
   line-height: 1.55;
+}
+
+.review-actions {
+  margin-top: 10px;
 }
 
 button:disabled {
