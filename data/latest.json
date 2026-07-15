@@ -1,14 +1,14 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-15T21:49:49.956381+08:00",
-    "tradingDate": "2026-07-15",
+    "generatedAt": "2026-07-16T01:43:28.978960+08:00",
+    "tradingDate": "2026-07-16",
     "mode": "fast-snapshot",
     "sourceHealth": [
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=5000&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
       },
       {
@@ -20,31 +20,38 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 33.0
+    "errors": [
+      "Market monitor is RISK_OFF; no new buy recommendation generated."
+    ],
+    "runtimeSeconds": 37.86
   },
   "market": {
     "recommendationCount": 0,
     "qualifiedBoardCount": 6,
     "monitor": {
-      "emotionScore": 100,
-      "riskLevel": "NORMAL",
+      "emotionScore": 64,
+      "marketGateScore": 3,
+      "marketGatePassed": false,
+      "hardVeto": true,
+      "riskLevel": "RISK_OFF",
       "limitUpCount": 74,
-      "limitDownCount": 0,
-      "bigDownCount": 0,
+      "limitDownCount": 48,
+      "bigDownCount": 100,
       "limitTouchCount": 80,
       "brokenBoardCount": 6,
       "brokenBoardRate": 0.075,
+      "breadthSampleSize": 200,
+      "breadthMethod": "top-100 plus bottom-100 movers",
       "topBoardPct": 7.56,
       "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
     }
@@ -66,12 +73,14 @@
       "qualified": true,
       "score": 98.6,
       "criteria": [
-        "[SectorGate] Board rank stays in the front row",
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board turnover amount is active",
-        "[SectorGate] Leaders have follow-through support",
-        "[SectorGate] Board momentum remains top-15 positive"
+        "[SectorGate] Board amount expands at least 1.30x",
+        "[SectorGate] Leaders have follow-through support"
       ],
+      "continuous": true,
+      "amountRatio": null,
       "limitUpCount": 5,
       "bigUpCount": 17
     },
@@ -82,7 +91,7 @@
       "price": 2065.62,
       "pct": 6.27,
       "amount": 51228151946.0,
-      "turnover": 6.82,
+      "turnover": 6.87,
       "open": 1935.33,
       "preClose": 1943.71,
       "mainNet": 3345512192.0,
@@ -91,12 +100,14 @@
       "qualified": true,
       "score": 97.2,
       "criteria": [
-        "[SectorGate] Board rank stays in the front row",
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board turnover amount is active",
-        "[SectorGate] Leaders have follow-through support",
-        "[SectorGate] Board momentum remains top-15 positive"
+        "[SectorGate] Board amount expands at least 1.30x",
+        "[SectorGate] Leaders have follow-through support"
       ],
+      "continuous": true,
+      "amountRatio": null,
       "limitUpCount": 5,
       "bigUpCount": 20
     },
@@ -116,12 +127,14 @@
       "qualified": true,
       "score": 96.85,
       "criteria": [
-        "[SectorGate] Board rank stays in the front row",
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board turnover amount is active",
-        "[SectorGate] Leaders have follow-through support",
-        "[SectorGate] Board momentum remains top-15 positive"
+        "[SectorGate] Board amount expands at least 1.30x",
+        "[SectorGate] Leaders have follow-through support"
       ],
+      "continuous": true,
+      "amountRatio": null,
       "limitUpCount": 6,
       "bigUpCount": 20
     },
@@ -141,11 +154,13 @@
       "qualified": true,
       "score": 82.9,
       "criteria": [
-        "[SectorGate] Board rank stays in the front row",
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support",
-        "[SectorGate] Board momentum remains top-15 positive"
+        "[SectorGate] Leaders have follow-through support"
       ],
+      "continuous": true,
+      "amountRatio": null,
       "limitUpCount": 2,
       "bigUpCount": 3
     },
@@ -156,7 +171,7 @@
       "price": 20750.71,
       "pct": 6.78,
       "amount": 5780638933.0,
-      "turnover": 9.06,
+      "turnover": 18.75,
       "open": 19502.14,
       "preClose": 19432.42,
       "mainNet": 7842032.0,
@@ -165,11 +180,13 @@
       "qualified": true,
       "score": 81.5,
       "criteria": [
-        "[SectorGate] Board rank stays in the front row",
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support",
-        "[SectorGate] Board momentum remains top-15 positive"
+        "[SectorGate] Leaders have follow-through support"
       ],
+      "continuous": true,
+      "amountRatio": null,
       "limitUpCount": 4,
       "bigUpCount": 5
     },
@@ -180,7 +197,7 @@
       "price": 30096.22,
       "pct": 5.38,
       "amount": 5951693431.0,
-      "turnover": 8.96,
+      "turnover": 11.21,
       "open": 28517.03,
       "preClose": 28559.6,
       "mainNet": -1265888.0,
@@ -189,11 +206,13 @@
       "qualified": true,
       "score": 80.1,
       "criteria": [
-        "[SectorGate] Board rank stays in the front row",
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support",
-        "[SectorGate] Board momentum remains top-15 positive"
+        "[SectorGate] Leaders have follow-through support"
       ],
+      "continuous": true,
+      "amountRatio": null,
       "limitUpCount": 4,
       "bigUpCount": 5
     },
@@ -213,10 +232,12 @@
       "qualified": false,
       "score": 66.15,
       "criteria": [
-        "[SectorGate] Board rank stays in the front row",
-        "[SectorGate] Leaders have follow-through support",
-        "[SectorGate] Board momentum remains top-15 positive"
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Leaders have follow-through support"
       ],
+      "continuous": true,
+      "amountRatio": null,
       "limitUpCount": 1,
       "bigUpCount": 3
     },
@@ -236,10 +257,12 @@
       "qualified": false,
       "score": 65.45,
       "criteria": [
-        "[SectorGate] Board rank stays in the front row",
-        "[SectorGate] Leaders have follow-through support",
-        "[SectorGate] Board momentum remains top-15 positive"
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Leaders have follow-through support"
       ],
+      "continuous": true,
+      "amountRatio": null,
       "limitUpCount": 1,
       "bigUpCount": 3
     },
@@ -250,7 +273,7 @@
       "price": 7353.75,
       "pct": 10.05,
       "amount": 494184337.0,
-      "turnover": 4.43,
+      "turnover": 60.98,
       "open": 7075.32,
       "preClose": 6682.25,
       "mainNet": 109712494.0,
@@ -259,9 +282,11 @@
       "qualified": false,
       "score": 50.45,
       "criteria": [
-        "[SectorGate] Board rank stays in the front row",
-        "[SectorGate] Board momentum remains top-15 positive"
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
       ],
+      "continuous": true,
+      "amountRatio": null,
       "limitUpCount": 1,
       "bigUpCount": 1
     },
@@ -281,9 +306,11 @@
       "qualified": false,
       "score": 48.35,
       "criteria": [
-        "[SectorGate] Board rank stays in the front row",
-        "[SectorGate] Board momentum remains top-15 positive"
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
       ],
+      "continuous": true,
+      "amountRatio": null,
       "limitUpCount": 1,
       "bigUpCount": 2
     },
@@ -333,39 +360,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "暴涨熔断！三大利好来袭 韩国股市直线拉升！SK海力士、三星电子大涨",
+      "url": "https://finance.eastmoney.com/a/202607153806549033.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "一财社论：以改革创新提升国民健康守住公立医院的公益性和民营医疗机构的非营利性特征，并大胆地拥抱市场机制。  20分钟前",
-      "url": "https://www.yicai.com/news/103276822.html",
+      "source": "Eastmoney News",
+      "title": "长鑫科技发行价出炉 国产DRAM加速崛起 多只概念股获资金关注(名单)",
+      "url": "https://finance.eastmoney.com/a/202607153806651573.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "股市运行：持续盘整的内生淤塞长期盘整显现出来的各类运行约束，本质是市场价值释放通道阻滞的外在表征。  1小时前",
-      "url": "https://www.yicai.com/news/103276715.html",
+      "source": "Eastmoney News",
+      "title": "A股三大指数收跌 半导体板块领跌 创新药概念大涨",
+      "url": "https://finance.eastmoney.com/a/202607153807397452.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "长鑫科技回应董事长发股权激励，并称已制定三年分红回报规划朱一明称，登陆资本市场对长鑫科技而言既是新的起点，更意味着新的责任。  1小时前",
-      "url": "https://www.yicai.com/news/103276647.html",
+      "source": "Eastmoney News",
+      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
+      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "国际酒店巨头集体提速在华扩张，背后投资逻辑正在改变｜乐言商业国际酒店巨头正在加速引入中高端品牌、深化本土合作及挖掘存量市场。  2小时前",
-      "url": "https://www.yicai.com/news/103276614.html",
+      "source": "Eastmoney News",
+      "title": "A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊",
+      "url": "https://finance.eastmoney.com/a/202605073730389683.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "国行苹果AI“靴子落地”，但阿里、苹果的硬仗才刚开始巨头联袂所带来的商业故事固然性感，但市场真正需要的是一个足够惊艳的产品。  2小时前",
-      "url": "https://www.yicai.com/news/103276509.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：休闲出海方兴未艾 聚焦“三消”与“二合”赛道",
+      "url": "https://finance.eastmoney.com/a/202607153806521473.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "华泰证券：AI眼镜等终端有望成为消费新入口、新场景载体",
+      "url": "https://finance.eastmoney.com/a/202607153806524237.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "国金证券：产业、业绩与资金三维共振 把握创新药底部布局机遇",
+      "url": "https://finance.eastmoney.com/a/202607153806519517.html",
       "time": ""
     }
   ]
