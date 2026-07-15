@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-15T14:08:00.076173+08:00",
+    "generatedAt": "2026-07-15T15:29:37.695319+08:00",
     "tradingDate": "2026-07-15",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -31,21 +31,21 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 31.52
+    "runtimeSeconds": 33.24
   },
   "market": {
-    "recommendationCount": 1,
-    "qualifiedBoardCount": 5,
+    "recommendationCount": 0,
+    "qualifiedBoardCount": 6,
     "monitor": {
       "emotionScore": 100,
       "riskLevel": "NORMAL",
-      "limitUpCount": 73,
+      "limitUpCount": 74,
       "limitDownCount": 0,
       "bigDownCount": 0,
-      "limitTouchCount": 78,
-      "brokenBoardCount": 5,
-      "brokenBoardRate": 0.064,
-      "topBoardPct": 6.44,
+      "limitTouchCount": 80,
+      "brokenBoardCount": 6,
+      "brokenBoardRate": 0.075,
+      "topBoardPct": 7.56,
       "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
     }
   },
@@ -54,42 +54,17 @@
       "code": "BK1600",
       "name": "医疗研发外包",
       "kind": "Industry board",
-      "price": 7998.77,
-      "pct": 6.44,
-      "amount": 40420958516.0,
-      "turnover": 7.43,
+      "price": 8083.49,
+      "pct": 7.56,
+      "amount": 46807473078.0,
+      "turnover": 8.48,
       "open": 7515.99,
       "preClose": 7515.02,
-      "mainNet": 3115253504.0,
-      "rank": 6,
+      "mainNet": 3175639040.0,
+      "rank": 4,
       "passed": 5,
       "qualified": true,
-      "score": 97.9,
-      "criteria": [
-        "[SectorGate] Board rank stays in the front row",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board turnover amount is active",
-        "[SectorGate] Leaders have follow-through support",
-        "[SectorGate] Board momentum remains top-15 positive"
-      ],
-      "limitUpCount": 4,
-      "bigUpCount": 15
-    },
-    {
-      "code": "BK0899",
-      "name": "CRO",
-      "kind": "Concept board",
-      "price": 2047.72,
-      "pct": 5.35,
-      "amount": 44236112648.0,
-      "turnover": 5.95,
-      "open": 1935.33,
-      "preClose": 1943.71,
-      "mainNet": 3300927232.0,
-      "rank": 9,
-      "passed": 5,
-      "qualified": true,
-      "score": 96.85,
+      "score": 98.6,
       "criteria": [
         "[SectorGate] Board rank stays in the front row",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
@@ -101,16 +76,66 @@
       "bigUpCount": 17
     },
     {
+      "code": "BK0899",
+      "name": "CRO",
+      "kind": "Concept board",
+      "price": 2065.62,
+      "pct": 6.27,
+      "amount": 51228151946.0,
+      "turnover": 6.82,
+      "open": 1935.33,
+      "preClose": 1943.71,
+      "mainNet": 3345512192.0,
+      "rank": 8,
+      "passed": 5,
+      "qualified": true,
+      "score": 97.2,
+      "criteria": [
+        "[SectorGate] Board rank stays in the front row",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Board turnover amount is active",
+        "[SectorGate] Leaders have follow-through support",
+        "[SectorGate] Board momentum remains top-15 positive"
+      ],
+      "limitUpCount": 5,
+      "bigUpCount": 20
+    },
+    {
+      "code": "BK0727",
+      "name": "医疗服务",
+      "kind": "Industry board",
+      "price": 1347.37,
+      "pct": 5.44,
+      "amount": 55292859113.0,
+      "turnover": 4.77,
+      "open": 1273.71,
+      "preClose": 1277.87,
+      "mainNet": 3505589504.0,
+      "rank": 9,
+      "passed": 5,
+      "qualified": true,
+      "score": 96.85,
+      "criteria": [
+        "[SectorGate] Board rank stays in the front row",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Board turnover amount is active",
+        "[SectorGate] Leaders have follow-through support",
+        "[SectorGate] Board momentum remains top-15 positive"
+      ],
+      "limitUpCount": 6,
+      "bigUpCount": 20
+    },
+    {
       "code": "BK1300",
       "name": "院线",
       "kind": "Industry board",
-      "price": 603.65,
-      "pct": 9.14,
-      "amount": 1651283246.0,
-      "turnover": 4.31,
+      "price": 605.72,
+      "pct": 9.52,
+      "amount": 1736649624.0,
+      "turnover": 4.51,
       "open": 559.36,
       "preClose": 553.08,
-      "mainNet": 490768245.0,
+      "mainNet": 515604232.0,
       "rank": 2,
       "passed": 4,
       "qualified": true,
@@ -122,55 +147,101 @@
         "[SectorGate] Board momentum remains top-15 positive"
       ],
       "limitUpCount": 2,
-      "bigUpCount": 2
+      "bigUpCount": 3
     },
     {
       "code": "BK0816",
       "name": "昨日连板",
       "kind": "Concept board",
-      "price": 20769.38,
-      "pct": 6.88,
-      "amount": 5243542385.0,
-      "turnover": 8.15,
+      "price": 20750.71,
+      "pct": 6.78,
+      "amount": 5780638933.0,
+      "turnover": 9.06,
       "open": 19502.14,
       "preClose": 19432.42,
-      "mainNet": 7882336.0,
-      "rank": 4,
+      "mainNet": 7842032.0,
+      "rank": 6,
       "passed": 4,
       "qualified": true,
-      "score": 82.2,
+      "score": 81.5,
       "criteria": [
         "[SectorGate] Board rank stays in the front row",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
         "[SectorGate] Leaders have follow-through support",
         "[SectorGate] Board momentum remains top-15 positive"
       ],
-      "limitUpCount": 3,
+      "limitUpCount": 4,
       "bigUpCount": 5
     },
     {
       "code": "BK1051",
       "name": "昨日连板_含一字",
       "kind": "Concept board",
-      "price": 30146.67,
-      "pct": 5.56,
-      "amount": 5388826294.0,
-      "turnover": 7.98,
+      "price": 30096.22,
+      "pct": 5.38,
+      "amount": 5951693431.0,
+      "turnover": 8.96,
       "open": 28517.03,
       "preClose": 28559.6,
-      "mainNet": 1741872.0,
-      "rank": 8,
+      "mainNet": -1265888.0,
+      "rank": 10,
       "passed": 4,
       "qualified": true,
-      "score": 80.8,
+      "score": 80.1,
       "criteria": [
         "[SectorGate] Board rank stays in the front row",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
         "[SectorGate] Leaders have follow-through support",
         "[SectorGate] Board momentum remains top-15 positive"
       ],
-      "limitUpCount": 3,
+      "limitUpCount": 4,
       "bigUpCount": 5
+    },
+    {
+      "code": "BK1500",
+      "name": "医美耗材",
+      "kind": "Industry board",
+      "price": 1381.42,
+      "pct": 9.02,
+      "amount": 1399405891.0,
+      "turnover": 2.51,
+      "open": 1258.51,
+      "preClose": 1267.16,
+      "mainNet": 128482476.0,
+      "rank": 3,
+      "passed": 3,
+      "qualified": false,
+      "score": 66.15,
+      "criteria": [
+        "[SectorGate] Board rank stays in the front row",
+        "[SectorGate] Leaders have follow-through support",
+        "[SectorGate] Board momentum remains top-15 positive"
+      ],
+      "limitUpCount": 1,
+      "bigUpCount": 3
+    },
+    {
+      "code": "BK1253",
+      "name": "医疗美容",
+      "kind": "Industry board",
+      "price": 1029.24,
+      "pct": 7.25,
+      "amount": 1415943379.0,
+      "turnover": 1.43,
+      "open": 954.76,
+      "preClose": 959.67,
+      "mainNet": 129704900.0,
+      "rank": 5,
+      "passed": 3,
+      "qualified": false,
+      "score": 65.45,
+      "criteria": [
+        "[SectorGate] Board rank stays in the front row",
+        "[SectorGate] Leaders have follow-through support",
+        "[SectorGate] Board momentum remains top-15 positive"
+      ],
+      "limitUpCount": 1,
+      "bigUpCount": 3
     },
     {
       "code": "BK1645",
@@ -178,11 +249,11 @@
       "kind": "Concept board",
       "price": 7353.75,
       "pct": 10.05,
-      "amount": 482082480.0,
-      "turnover": 4.32,
+      "amount": 494184337.0,
+      "turnover": 4.43,
       "open": 7075.32,
       "preClose": 6682.25,
-      "mainNet": 101516937.0,
+      "mainNet": 109712494.0,
       "rank": 1,
       "passed": 2,
       "qualified": false,
@@ -195,60 +266,16 @@
       "bigUpCount": 1
     },
     {
-      "code": "BK1500",
-      "name": "医美耗材",
-      "kind": "Industry board",
-      "price": 1368.56,
-      "pct": 8.0,
-      "amount": 1215809014.0,
-      "turnover": 2.18,
-      "open": 1258.51,
-      "preClose": 1267.16,
-      "mainNet": 110547187.0,
-      "rank": 3,
-      "passed": 2,
-      "qualified": false,
-      "score": 49.75,
-      "criteria": [
-        "[SectorGate] Board rank stays in the front row",
-        "[SectorGate] Board momentum remains top-15 positive"
-      ],
-      "limitUpCount": 1,
-      "bigUpCount": 2
-    },
-    {
-      "code": "BK1253",
-      "name": "医疗美容",
-      "kind": "Industry board",
-      "price": 1022.65,
-      "pct": 6.56,
-      "amount": 1230165129.0,
-      "turnover": 1.25,
-      "open": 954.76,
-      "preClose": 959.67,
-      "mainNet": 112189845.0,
-      "rank": 5,
-      "passed": 2,
-      "qualified": false,
-      "score": 49.05,
-      "criteria": [
-        "[SectorGate] Board rank stays in the front row",
-        "[SectorGate] Board momentum remains top-15 positive"
-      ],
-      "limitUpCount": 1,
-      "bigUpCount": 2
-    },
-    {
       "code": "BK1507",
       "name": "宠物食品",
       "kind": "Industry board",
-      "price": 1454.54,
-      "pct": 5.68,
-      "amount": 642880084.0,
-      "turnover": 3.01,
+      "price": 1462.76,
+      "pct": 6.28,
+      "amount": 695763190.0,
+      "turnover": 3.26,
       "open": 1373.97,
       "preClose": 1376.34,
-      "mainNet": 62765176.0,
+      "mainNet": 68511362.0,
       "rank": 7,
       "passed": 2,
       "qualified": false,
@@ -261,38 +288,16 @@
       "bigUpCount": 2
     },
     {
-      "code": "BK1412",
-      "name": "氨纶",
-      "kind": "Industry board",
-      "price": 2612.23,
-      "pct": 4.85,
-      "amount": 348973115.0,
-      "turnover": 0.69,
-      "open": 2504.02,
-      "preClose": 2491.43,
-      "mainNet": 54178.0,
-      "rank": 10,
-      "passed": 2,
-      "qualified": false,
-      "score": 47.3,
-      "criteria": [
-        "[SectorGate] Board rank stays in the front row",
-        "[SectorGate] Board momentum remains top-15 positive"
-      ],
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1575",
-      "name": "白酒Ⅲ",
-      "kind": "Industry board",
-      "price": 4098.29,
-      "pct": 4.82,
-      "amount": 19474021540.0,
-      "turnover": 1.7,
-      "open": 3869.17,
-      "preClose": 3909.91,
-      "mainNet": 1318284032.0,
+      "code": "BK1063",
+      "name": "重组蛋白",
+      "kind": "Concept board",
+      "price": 975.42,
+      "pct": 5.31,
+      "amount": 10654686099.0,
+      "turnover": 5.73,
+      "open": 919.73,
+      "preClose": 926.22,
+      "mainNet": 947338736.0,
       "rank": 11,
       "passed": 2,
       "qualified": false,
@@ -304,16 +309,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1277",
-      "name": "白酒Ⅱ",
-      "kind": "Industry board",
-      "price": 4098.29,
-      "pct": 4.82,
-      "amount": 19474021540.0,
-      "turnover": 1.7,
-      "open": 3869.17,
-      "preClose": 3909.91,
-      "mainNet": 1318284032.0,
+      "code": "BK1146",
+      "name": "减肥药",
+      "kind": "Concept board",
+      "price": 1314.22,
+      "pct": 5.09,
+      "amount": 46753301059.0,
+      "turnover": 4.95,
+      "open": 1238.24,
+      "preClose": 1250.6,
+      "mainNet": 3143116288.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -325,102 +330,8 @@
       "bigUpCount": 0
     }
   ],
-  "recommendations": [
-    {
-      "rank": 1,
-      "code": "002379",
-      "name": "宏桥控股",
-      "market": "SZ",
-      "price": 18.52,
-      "pct": 5.89,
-      "amount": 2009857972.06,
-      "turnover": 9.72,
-      "industry": "工业金属",
-      "confidence": 96,
-      "winRate": 96,
-      "strategyTag": "TAIL_MAIN",
-      "t1EdgeScore": 206.31,
-      "expectedReturnPct": 9.01,
-      "riskPct": 1.84,
-      "board": {
-        "code": "BK0816",
-        "name": "昨日连板",
-        "passed": 4,
-        "score": 82.2
-      },
-      "criteria": {
-        "board": [
-          "[SectorGate] Board rank stays in the front row",
-          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-          "[SectorGate] Leaders have follow-through support",
-          "[SectorGate] Board momentum remains top-15 positive"
-        ],
-        "stock": [
-          "[TAIL_MAIN] Main tail setup",
-          "[MarketGate] No hard risk veto is triggered",
-          "[SectorGate] Board has front-row ladder or continuity",
-          "[StockGate] T+1 gain room is healthy",
-          "[StockGate] Volume expands without exhaustion",
-          "Main or super capital is net inflow",
-          "[StockGate] Turnover fits trend/sentiment trade",
-          "[StockGate] Close holds high platform",
-          "[StockGate] Price stays above VWAP",
-          "[TailSignal] Late session still has upward spread",
-          "[StockGate] Deal amount supports next-morning exit",
-          "[TailSignal] No long upper-shadow distribution"
-        ]
-      },
-      "buyPlan": {
-        "type": "[TAIL_MAIN] T1 tail breakout confirmation",
-        "timeWindow": "13:30 watch; 14:10-14:30 primary entry; 14:35 risk check",
-        "trigger": "Buy before 14:30 only if price stays above VWAP and the breakout platform; skip late pull-ups after 14:40.",
-        "priceRange": [
-          18.31,
-          18.57
-        ],
-        "quality": 24,
-        "priority": 8,
-        "strategyTag": "TAIL_MAIN"
-      },
-      "sellPlan": {
-        "targetPrice": 19.96,
-        "targetTime": "Next trading day 09:30-10:00; sell before 10:00 unless it quickly seals limit-up.",
-        "strategy": "Target the T+1 morning impulse after a mid-stage trend confirmation; take 3%+ quickly, only stronger front-row shapes aim for 5%-9%.",
-        "takeProfit": 19.96,
-        "timeWindow": "Next trading day 09:30-10:00; sell before 10:00 unless it quickly seals limit-up."
-      },
-      "stopPlan": {
-        "stopLoss": 17.98,
-        "rules": [
-          "Next morning weak open and cannot reclaim the late-session platform",
-          "Break the personalized stop or the 14:00 entry trigger",
-          "Avoid widening the stop after purchase"
-        ]
-      },
-      "sourceLinks": [
-        {
-          "name": "Eastmoney quote",
-          "url": "https://quote.eastmoney.com/sz002379.html"
-        },
-        {
-          "name": "10jqka stock page",
-          "url": "https://stockpage.10jqka.com.cn/002379/"
-        },
-        {
-          "name": "Yicai news",
-          "url": "https://www.yicai.com/news/"
-        }
-      ],
-      "sparkline": []
-    }
-  ],
+  "recommendations": [],
   "news": [
-    {
-      "source": "Eastmoney News",
-      "title": "两大利好突袭：韩国稳市 A股ETF再现大手笔买入",
-      "url": "https://finance.eastmoney.com/a/202607143805537242.html",
-      "time": ""
-    },
     {
       "source": "Eastmoney News",
       "title": "暴涨熔断！三大利好来袭 韩国股市直线拉升！SK海力士、三星电子大涨",
@@ -429,8 +340,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数收涨 创业板指大涨超3% 逾4200只股飘红",
-      "url": "https://finance.eastmoney.com/a/202607143805514077.html",
+      "title": "长鑫科技发行价出炉 国产DRAM加速崛起 多只概念股获资金关注(名单)",
+      "url": "https://finance.eastmoney.com/a/202607153806651573.html",
       "time": ""
     },
     {
@@ -461,6 +372,12 @@
       "source": "Eastmoney News",
       "title": "国金证券：产业、业绩与资金三维共振 把握创新药底部布局机遇",
       "url": "https://finance.eastmoney.com/a/202607153806519517.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "华泰证券：业绩期关注AI、涨价、制造三大线索",
+      "url": "https://finance.eastmoney.com/a/202607153806489540.html",
       "time": ""
     }
   ]
