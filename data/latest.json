@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-15T15:31:22.175506+08:00",
+    "generatedAt": "2026-07-15T15:44:28.431208+08:00",
     "tradingDate": "2026-07-15",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -31,7 +31,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 40.1
+    "runtimeSeconds": 37.73
   },
   "market": {
     "recommendationCount": 0,
@@ -340,13 +340,13 @@
     },
     {
       "source": "Yicai",
-      "title": "一线城市房价环比连续4个月上涨，房地产市场预期回升下阶段将继续因城施策控增量、去库存、优供给，推动房地产市场平稳健康运行  1小时前",
+      "title": "一线城市房价环比连续4个月上涨，房地产市场预期回升下阶段将继续因城施策控增量、去库存、优供给，推动房地产市场平稳健康运行  2小时前",
       "url": "https://www.yicai.com/news/103275914.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "A股四大指数多数高开，先进封装、半导体设备等板块涨幅居前盘面上，油气、商业航天、中药、白酒、黄金、银行板块走弱。  5小时前",
+      "title": "A股四大指数多数高开，先进封装、半导体设备等板块涨幅居前盘面上，油气、商业航天、中药、白酒、黄金、银行板块走弱。  6小时前",
       "url": "https://www.yicai.com/news/103275334.html",
       "time": ""
     },
