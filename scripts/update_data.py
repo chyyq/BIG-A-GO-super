@@ -36,26 +36,34 @@ HTTP_TIMEOUT_SECONDS = 8
 MAX_BOARDS_FOR_MEMBERS = 10
 MAX_MEMBERS_PER_BOARD = 50
 MAX_STOCK_CANDIDATES = 90
+MAX_TAIL_HISTORY_CANDIDATES = 36
 MAX_RECOMMENDATIONS = 10
 MAX_RECOMMENDATIONS_PER_INDUSTRY = 3
 ALLOW_GROWTH_BOARDS = False
 GROWTH_BOARD_PREFIXES = ("30", "68")
 STRATEGY_TAIL_MAIN = "TAIL_MAIN"
 STRATEGY_AM_TOP = "AM_TOP"
+TAIL_STRATEGY_ID = "TAIL_T1_V30_FINAL"
 AM_TOP_BUY_WINDOW = "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only"
-AM_TOP_MIN_AMOUNT = 80_000_000
-TAIL_BUY_WINDOW = "13:30 watch; 14:10-14:30 primary entry; 14:35 risk check"
-TAIL_TARGET_TIME = "Next trading day 09:30-10:00; sell before 10:00 unless it quickly seals limit-up."
+AM_TOP_MIN_PCT = 4.0
+AM_TOP_MAX_PCT = 10.3
+TAIL_BUY_WINDOW = "13:30 watch; 14:10-14:35 confirm; 14:35+ limit-up/reseal only"
+TAIL_TARGET_TIME = "Next day 09:25-09:31 first node; 09:35 classify; exit non-limit-up remainder at 10:00."
 TAIL_MIN_AMOUNT = 150_000_000
-TAIL_HARD_MAX_TURNOVER = 40.0
-TAIL_HARD_MAX_PULLBACK = 4.0
-TAIL_PREFERRED_MAX_PULLBACK = 3.0
-TAIL_MAX_PCT = 8.2
+TAIL_HARD_MAX_TURNOVER = 35.0
+TAIL_HARD_MAX_PULLBACK = 2.5
+TAIL_PREFERRED_MAX_PULLBACK = 2.0
+TAIL_MAX_PCT = 10.3
 TAIL_MIN_STOCK_SCORE = 7
 TAIL_MIN_BOARD_SCORE = 4
+OCR_DOWNGRADE = 45
+OCR_REJECT = 65
+SIMPLE_EXECUTION_SCORE_MIN = 65
+EXECUTION_TOLERANCE_SCORE_MIN = 60
 
 errors: list[str] = []
 source_health: dict[str, dict[str, Any]] = {}
+daily_history_cache: dict[str, dict[str, Any]] = {}
 
 
 def main() -> None:
@@ -72,12 +80,12 @@ def main() -> None:
         return
 
     rank_map = {board["code"]: index + 1 for index, board in enumerate(boards)}
-    evaluated_boards = evaluate_boards(boards, rank_map, history)
+    evaluated_boards = evaluate_boards(boards, rank_map, history, now)
     qualified_boards = [board for board in evaluated_boards if board["qualified"]]
     active_strategies = active_strategy_windows(now)
     recommendation_board_pool = select_recommendation_boards(evaluated_boards)
     am_top_quotes = fetch_all_a_shares() if STRATEGY_AM_TOP in active_strategies and remaining_seconds() > 35 else []
-    market_quotes = am_top_quotes or (fetch_all_a_shares() if remaining_seconds() > 35 else [])
+    market_quotes = fetch_market_breadth(am_top_quotes or None) if remaining_seconds() > 35 else []
     market_monitor = build_market_monitor(market_quotes, evaluated_boards)
     recommendations = build_recommendations(recommendation_board_pool, now, am_top_quotes, market_monitor)
     news = fetch_news() if remaining_seconds() > 25 else []
@@ -198,13 +206,158 @@ def fetch_all_a_shares() -> list[dict[str, Any]]:
     return stocks
 
 
+def fetch_market_breadth(top_quotes: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+    fields = "f12,f13,f14,f2,f3,f4,f5,f6,f7,f8,f10,f15,f16,f17,f18,f20,f21,f62,f66,f100"
+    fs = "m:0+t:6,m:0+t:80,m:1+t:2,m:1+t:23"
+    top = top_quotes if top_quotes is not None else fetch_all_a_shares()
+    bottom_rows = safe_clist("Eastmoney", fs, fields, page_size=100, descending=False)
+    bottom = [normalize_stock_quote(row) for row in bottom_rows]
+    deduped = {item.get("code"): item for item in [*top, *bottom] if item.get("code") and item.get("price")}
+    return list(deduped.values())
+
+
+def enrich_tail_history(quote: dict[str, Any], now: datetime) -> dict[str, Any]:
+    code = quote.get("code") or ""
+    if not code or remaining_seconds() < 20:
+        return {**quote, "dailyMetrics": build_daily_metrics(quote, [], now)}
+    rows = daily_history_cache.get(code)
+    if rows is None:
+        rows = fetch_daily_klines(code)
+        daily_history_cache[code] = rows
+    return {**quote, "dailyMetrics": build_daily_metrics(quote, rows, now)}
+
+
+def fetch_daily_klines(code: str) -> list[dict[str, Any]]:
+    secid = f"{1 if code.startswith('6') else 0}.{code}"
+    params = {
+        "secid": secid,
+        "ut": EASTMONEY_UT,
+        "fields1": "f1,f2,f3,f4,f5,f6",
+        "fields2": "f51,f52,f53,f54,f55,f56,f57,f58,f59,f60,f61",
+        "klt": "101",
+        "fqt": "1",
+        "end": "20500101",
+        "lmt": "16",
+    }
+    url = "https://push2his.eastmoney.com/api/qt/stock/kline/get?" + parse.urlencode(params)
+    try:
+        payload = json.loads(fetch_bytes("Eastmoney", url, referer="https://quote.eastmoney.com/").decode("utf-8", "ignore"))
+        lines = payload.get("data", {}).get("klines") or []
+        result = []
+        for line in lines:
+            parts = line.split(",")
+            if len(parts) < 11:
+                continue
+            result.append(
+                {
+                    "date": parts[0],
+                    "open": number(parts[1]),
+                    "close": number(parts[2]),
+                    "high": number(parts[3]),
+                    "low": number(parts[4]),
+                    "volume": number(parts[5]),
+                    "amount": number(parts[6]),
+                    "amplitude": number(parts[7]),
+                    "pct": number(parts[8]),
+                    "turnover": number(parts[10]),
+                }
+            )
+        if result:
+            mark_source("Eastmoney", True, url, "Quote snapshot and daily K-line history OK")
+        return result
+    except Exception as exc:
+        errors.append(f"Eastmoney daily K skipped for {code}: {short_error(exc)}")
+        return []
+
+
+def build_daily_metrics(
+    quote: dict[str, Any],
+    rows: list[dict[str, Any]],
+    now: datetime,
+) -> dict[str, Any]:
+    today = now.strftime("%Y-%m-%d")
+    completed = [row for row in rows if row.get("date") and row["date"] < today and row.get("close")]
+    completed = completed[-15:]
+    closes = [row["close"] for row in completed]
+    amounts = [row.get("amount") or 0 for row in completed[-5:] if (row.get("amount") or 0) > 0]
+    current_price = quote.get("price") or 0
+    current_amount = project_amount_to_close(quote.get("amount") or 0, now)
+    amount_ma5 = sum(amounts) / len(amounts) if amounts else None
+    amount_ratio = current_amount / amount_ma5 if amount_ma5 else None
+    ma5_values = closes[-4:] + ([current_price] if current_price else [])
+    ma10_values = closes[-9:] + ([current_price] if current_price else [])
+    ma5 = sum(ma5_values) / len(ma5_values) if ma5_values else None
+    ma10 = sum(ma10_values) / len(ma10_values) if ma10_values else None
+    previous_ma5 = sum(closes[-5:]) / 5 if len(closes) >= 5 else None
+    deviation_ma5 = ((current_price / ma5) - 1) * 100 if current_price and ma5 else None
+    gain5d = ((current_price / closes[-5]) - 1) * 100 if current_price and len(closes) >= 5 else None
+    gain10d = ((current_price / closes[-10]) - 1) * 100 if current_price and len(closes) >= 10 else None
+    breakout_level = max(closes[-5:]) if closes else None
+    close_above_breakout = (
+        current_price >= breakout_level * 0.995
+        if current_price and breakout_level
+        else None
+    )
+    ma5_rising = ma5 >= previous_ma5 if ma5 is not None and previous_ma5 is not None else None
+    first_pullback_proxy = bool(
+        current_price
+        and ma5
+        and current_price >= ma5 * 0.99
+        and (amount_ratio is None or amount_ratio <= 1.60)
+        and 2.5 <= (quote.get("pct") or 0) <= 6.5
+        and ma5_rising is not False
+    )
+    return {
+        "historyAvailable": len(completed) >= 5,
+        "sampleCount": len(completed),
+        "amountMA5": round2(amount_ma5),
+        "projectedAmount": round2(current_amount),
+        "amountRatio": round2(amount_ratio),
+        "ma5": round2(ma5),
+        "ma10": round2(ma10),
+        "ma5Rising": ma5_rising,
+        "deviationMA5Pct": round2(deviation_ma5),
+        "gain5dPct": round2(gain5d),
+        "gain10dPct": round2(gain10d),
+        "prevDayReturn": round2(completed[-1].get("pct")) if completed else None,
+        "breakoutLevel": round2(breakout_level),
+        "closeAboveBreakout": close_above_breakout,
+        "firstPullbackProxy": first_pullback_proxy,
+        "surgeCount5d": sum(1 for row in completed[-5:] if (row.get("pct") or 0) >= 5),
+    }
+
+
+def trading_minutes_elapsed(now: datetime) -> int:
+    minute = now.hour * 60 + now.minute
+    if minute < 9 * 60 + 30:
+        return 0
+    if minute <= 11 * 60 + 30:
+        return max(1, minute - (9 * 60 + 30))
+    if minute < 13 * 60:
+        return 120
+    if minute <= 15 * 60:
+        return min(240, 120 + minute - 13 * 60)
+    return 240
+
+
+def project_amount_to_close(amount: float, now: datetime) -> float:
+    elapsed = trading_minutes_elapsed(now)
+    if elapsed <= 0 or elapsed >= 240:
+        return amount
+    return amount * min(2.0, 240 / max(30, elapsed))
+
+
 def build_market_monitor(stocks: list[dict[str, Any]], boards: list[dict[str, Any]]) -> dict[str, Any]:
     if not stocks:
         hot_boards = sum(1 for board in boards[:12] if (board.get("passed") or 0) >= 4)
         score = 50 + min(25, hot_boards * 4)
+        market_gate_score = min(5, hot_boards)
         return {
             "emotionScore": clamp(score, 0, 100),
-            "riskLevel": "NORMAL" if score >= 60 else "CAUTION",
+            "marketGateScore": market_gate_score,
+            "marketGatePassed": market_gate_score >= 3,
+            "hardVeto": False,
+            "riskLevel": "NORMAL" if score >= 60 and market_gate_score >= 3 else "CAUTION",
             "limitUpCount": None,
             "limitDownCount": None,
             "brokenBoardRate": None,
@@ -218,6 +371,16 @@ def build_market_monitor(stocks: list[dict[str, Any]], boards: list[dict[str, An
     broken_count = sum(1 for item in stocks if touched_limit_up(item) and not is_limit_up(item))
     broken_rate = broken_count / limit_touch_count if limit_touch_count else 0
     top_board_pct = boards[0].get("pct") if boards else 0
+
+    market_checks = [
+        limit_up_count >= 30,
+        limit_down_count <= 10 and big_down_count <= 35,
+        broken_rate <= 0.40,
+        limit_up_count >= 18 and (top_board_pct or 0) >= 1.0,
+        (top_board_pct or 0) >= 0 and big_down_count <= 50,
+    ]
+    market_gate_score = sum(market_checks)
+    hard_veto = broken_rate > 0.50 or limit_down_count >= 25 or big_down_count >= 70
 
     score = 50
     if limit_up_count >= 30:
@@ -243,9 +406,15 @@ def build_market_monitor(stocks: list[dict[str, Any]], boards: list[dict[str, An
     elif (top_board_pct or 0) < 0:
         score -= 8
     score = round(clamp(score, 0, 100), 1)
-    risk_level = "NORMAL" if score >= 60 else "CAUTION" if score >= 40 else "RISK_OFF"
+    if hard_veto or market_gate_score < 3:
+        risk_level = "RISK_OFF"
+    else:
+        risk_level = "NORMAL" if score >= 60 else "CAUTION"
     return {
         "emotionScore": score,
+        "marketGateScore": market_gate_score,
+        "marketGatePassed": market_gate_score >= 3 and not hard_veto,
+        "hardVeto": hard_veto,
         "riskLevel": risk_level,
         "limitUpCount": limit_up_count,
         "limitDownCount": limit_down_count,
@@ -253,6 +422,8 @@ def build_market_monitor(stocks: list[dict[str, Any]], boards: list[dict[str, An
         "limitTouchCount": limit_touch_count,
         "brokenBoardCount": broken_count,
         "brokenBoardRate": round(broken_rate, 3),
+        "breadthSampleSize": len(stocks),
+        "breadthMethod": "top-100 plus bottom-100 movers",
         "topBoardPct": round2(top_board_pct or 0),
         "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates.",
     }
@@ -298,6 +469,7 @@ def evaluate_boards(
     boards: list[dict[str, Any]],
     rank_map: dict[str, int],
     history: dict[str, Any],
+    now: datetime,
 ) -> list[dict[str, Any]]:
     evaluated = []
     for board in boards[:MAX_BOARDS_FOR_MEMBERS]:
@@ -305,22 +477,26 @@ def evaluate_boards(
             errors.append("Runtime budget reached while evaluating boards.")
             break
         members = board.get("members") or fetch_board_members(board["code"])
+        for index, member in enumerate(members):
+            member["boardFrontPct"] = (index + 1) / max(1, len(members))
         limit_up_count = sum(1 for item in members if is_limit_up(item))
         big_up_count = sum(1 for item in members if (item.get("pct") or 0) >= 5)
         leader_ok = limit_up_count >= 2 or (
             any((item.get("pct") or 0) >= 7 for item in members[:8]) and big_up_count >= 3
         )
-        continuous_ok = board_continuous_ok(board["code"], rank_map, history)
+        continuous_ok = board_continuous_ok(board["code"], rank_map, history, now.strftime("%Y-%m-%d"))
         rank = rank_map.get(board["code"], 99)
         amount_ok = (board.get("amount") or 0) >= 8_000_000_000
+        amount_ratio = board_amount_ratio(board, history, now)
+        amount_expansion_ok = amount_ratio is None and amount_ok or (amount_ratio or 0) >= 1.30
         position_proxy_ok = rank <= 15 and (board.get("pct") or 0) >= 1.0
 
         criteria = [
-            ("[SectorGate] Board rank stays in the front row", rank <= 10 or continuous_ok),
+            ("[SectorGate] Two-day top-10 or three-day top-20 continuity", continuous_ok),
+            ("[SectorGate] Tail rank remains top-15 positive", position_proxy_ok),
             ("[SectorGate] Limit-up ladder or 5%+ cohort exists", limit_up_count >= 2 or big_up_count >= 5),
-            ("[SectorGate] Board turnover amount is active", amount_ok),
+            ("[SectorGate] Board amount expands at least 1.30x", amount_expansion_ok),
             ("[SectorGate] Leaders have follow-through support", leader_ok),
-            ("[SectorGate] Board momentum remains top-15 positive", position_proxy_ok),
         ]
         passed_labels = [label for label, ok in criteria if ok]
         passed = len(passed_labels)
@@ -334,6 +510,8 @@ def evaluate_boards(
                 "qualified": passed >= 4,
                 "score": min(100, score),
                 "criteria": passed_labels,
+                "continuous": continuous_ok,
+                "amountRatio": round2(amount_ratio),
                 "limitUpCount": limit_up_count,
                 "bigUpCount": big_up_count,
                 "members": members[:30],
@@ -381,7 +559,8 @@ def build_recommendations(
     am_top_quotes: list[dict[str, Any]] | None = None,
     market_monitor: dict[str, Any] | None = None,
 ) -> list[dict[str, Any]]:
-    active_strategies = active_strategy_windows(now or datetime.now(CN_TZ))
+    snapshot_now = now or datetime.now(CN_TZ)
+    active_strategies = active_strategy_windows(snapshot_now)
     if market_monitor and market_monitor.get("riskLevel") == "RISK_OFF":
         errors.append("Market monitor is RISK_OFF; no new buy recommendation generated.")
         return []
@@ -393,7 +572,7 @@ def build_recommendations(
             if not code or code in seen:
                 continue
             seen.add(code)
-            if stock_prefilter(member, active_strategies):
+            if stock_prefilter(member, active_strategies, snapshot_now):
                 candidates.append((member, board))
     if STRATEGY_AM_TOP in active_strategies:
         for quote in am_top_quotes or []:
@@ -401,7 +580,7 @@ def build_recommendations(
             if not code or code in seen:
                 continue
             seen.add(code)
-            if morning_top_prefilter(quote):
+            if morning_top_prefilter(quote, snapshot_now):
                 candidates.append((quote, am_top_board_for_quote(quote)))
 
     candidates.sort(
@@ -414,13 +593,20 @@ def build_recommendations(
     )
 
     recommendations = []
-    for quote, board in candidates[:MAX_STOCK_CANDIDATES]:
-        item = evaluate_stock_snapshot(quote, board, active_strategies)
+    candidate_limit = (
+        MAX_TAIL_HISTORY_CANDIDATES
+        if STRATEGY_TAIL_MAIN in active_strategies
+        else MAX_STOCK_CANDIDATES
+    )
+    for quote, board in candidates[:candidate_limit]:
+        if STRATEGY_TAIL_MAIN in active_strategies:
+            quote = enrich_tail_history(quote, snapshot_now)
+        item = evaluate_stock_snapshot(quote, board, active_strategies, snapshot_now, market_monitor)
         if item:
             recommendations.append(item)
     recommendations.sort(
         key=lambda item: (
-            item.get("t1EdgeScore") or 0,
+            item.get("finalScore") or item.get("t1EdgeScore") or 0,
             item.get("expectedReturnPct") or 0,
             item.get("winRate") or item.get("confidence") or 0,
             item.get("board", {}).get("score") or 0,
@@ -432,7 +618,11 @@ def build_recommendations(
         recommendations = [
             item
             for item in recommendations
-            if (item.get("t1EdgeScore") or 0) >= 170 and (item.get("riskPct") or 99) <= 4.2
+            if item.get("strategyTag") == STRATEGY_AM_TOP
+            or (
+                item.get("candidateStatus") == "STRONG_CANDIDATE"
+                and (item.get("riskPct") or 99) <= 4.2
+            )
         ]
     recommendations = recommendations[:MAX_RECOMMENDATIONS]
 
@@ -494,6 +684,107 @@ def upper_shadow_ratio(quote: dict[str, Any]) -> float:
     return upper_shadow / max(body, min_body)
 
 
+def quote_amplitude_pct(quote: dict[str, Any]) -> float:
+    amplitude = quote.get("amplitude")
+    if amplitude is not None:
+        return amplitude
+    high = quote.get("high") or 0
+    low = quote.get("low") or 0
+    pre_close = quote.get("preClose") or 0
+    return ((high - low) / pre_close) * 100 if high and low and pre_close else 0
+
+
+def is_stable_limit_up_proxy(quote: dict[str, Any]) -> bool:
+    return (
+        is_limit_up(quote)
+        and high_to_close_pullback_pct(quote) <= 0.35
+        and intraday_position(quote) >= 0.96
+    )
+
+
+def estimate_overnight_crowding_score(quote: dict[str, Any]) -> float:
+    metrics = quote.get("dailyMetrics") or {}
+    pct = quote.get("pct") or 0
+    turnover = quote.get("turnover") or 0
+    amount_ratio = metrics.get("amountRatio")
+    amplitude = quote_amplitude_pct(quote)
+    pullback = high_to_close_pullback_pct(quote)
+    score = 5.0
+    if (metrics.get("prevDayReturn") or 0) <= -7 and pct >= 7:
+        score += 30
+    if (metrics.get("gain5dPct") or 0) >= 25:
+        score += 22
+    if (metrics.get("gain10dPct") or 0) >= 40:
+        score += 24
+    if amplitude > 10 and not is_stable_limit_up_proxy(quote):
+        score += 28
+    elif amplitude > 8:
+        score += 12
+    if turnover > 25 and not is_stable_limit_up_proxy(quote):
+        score += 18
+    if amount_ratio is not None and amount_ratio >= 2.2:
+        score += 12
+    if pullback > 2.0:
+        score += 12
+    if (metrics.get("surgeCount5d") or 0) >= 2:
+        score += 16
+    return round2(clamp(score, 0, 100)) or 0
+
+
+def estimate_execution_tolerance_score(quote: dict[str, Any]) -> float:
+    metrics = quote.get("dailyMetrics") or {}
+    price = quote.get("price") or 0
+    avg_price = quote.get("avgPrice") or average_price(quote.get("amount"), quote.get("volume")) or price
+    price_vs_avg = ((price / avg_price) - 1) * 100 if price and avg_price else 0
+    deviation = metrics.get("deviationMA5Pct")
+    amount_ratio = metrics.get("amountRatio")
+    score = 100.0
+    score -= max(0, quote_amplitude_pct(quote) - 6.5) * 5
+    score -= max(0, (quote.get("turnover") or 0) - 18) * 1.2
+    score -= max(0, high_to_close_pullback_pct(quote) - 1.2) * 8
+    score -= max(0, 0.72 - intraday_position(quote)) * 80
+    score -= max(0, -price_vs_avg) * 10
+    if deviation is not None:
+        score -= max(0, deviation - 10) * 3
+    else:
+        score -= 5
+    if amount_ratio is not None and amount_ratio > 2.8:
+        score -= (amount_ratio - 2.8) * 12
+    return round2(clamp(score, 0, 100)) or 0
+
+
+def estimate_simple_execution_score(quote: dict[str, Any], tolerance_score: float) -> float:
+    metrics = quote.get("dailyMetrics") or {}
+    price = quote.get("price") or 0
+    avg_price = quote.get("avgPrice") or average_price(quote.get("amount"), quote.get("volume")) or price
+    price_vs_avg = ((price / avg_price) - 1) * 100 if price and avg_price else 0
+    score = (
+        tolerance_score * 0.55
+        + intraday_position(quote) * 20
+        + clamp(100 - high_to_close_pullback_pct(quote) * 20, 0, 100) * 0.15
+        + (10 if price_vs_avg >= 0 else 0)
+    )
+    if metrics.get("ma5Rising") is False:
+        score -= 12
+    return round2(clamp(score, 0, 100)) or 0
+
+
+def estimate_recovery_proxy_score(quote: dict[str, Any]) -> float:
+    metrics = quote.get("dailyMetrics") or {}
+    score = 50.0
+    if intraday_position(quote) >= 0.75:
+        score += 15
+    if high_to_close_pullback_pct(quote) <= 1.5:
+        score += 10
+    if metrics.get("ma5Rising"):
+        score += 10
+    if (metrics.get("deviationMA5Pct") or 0) <= 10:
+        score += 10
+    if quote_amplitude_pct(quote) > 10:
+        score -= 20
+    return round2(clamp(score, 0, 100)) or 0
+
+
 def tail_sector_gate_ok(board: dict[str, Any]) -> bool:
     rank = board.get("rank") or 99
     passed = board.get("passed") or 0
@@ -502,75 +793,145 @@ def tail_sector_gate_ok(board: dict[str, Any]) -> bool:
     return passed >= TAIL_MIN_BOARD_SCORE or (rank <= 10 and (limit_up_count >= 2 or big_up_count >= 5))
 
 
-def tail_hard_veto_reasons(quote: dict[str, Any], board: dict[str, Any]) -> list[str]:
+def tail_hard_veto_reasons(
+    quote: dict[str, Any],
+    board: dict[str, Any],
+    now: datetime | None = None,
+) -> list[str]:
     price = quote.get("price") or 0
     open_price = quote.get("open") or price
     amount = quote.get("amount") or 0
     pct = quote.get("pct") or 0
     turnover = quote.get("turnover") or 0
-    volume_ratio = quote.get("volumeRatio") or 0
     avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
     range_position = intraday_position(quote)
     pullback = high_to_close_pullback_pct(quote)
     shadow_ratio = upper_shadow_ratio(quote)
+    amplitude = quote_amplitude_pct(quote)
     price_vs_avg = ((price / avg_price) - 1) * 100 if price and avg_price else -99
     open_to_price = ((price / open_price) - 1) * 100 if price and open_price else -99
+    metrics = quote.get("dailyMetrics") or {}
+    amount_ratio = metrics.get("amountRatio")
+    deviation_ma5 = metrics.get("deviationMA5Pct")
+    crowding_score = estimate_overnight_crowding_score(quote)
+    tolerance_score = estimate_execution_tolerance_score(quote)
+    simple_execution_score = estimate_simple_execution_score(quote, tolerance_score)
+    stable_limit = is_stable_limit_up_proxy(quote)
 
     reasons: list[str] = []
     if not tail_sector_gate_ok(board):
         reasons.append("SectorGate fails: board lacks front-row ladder or continuity")
-    if pct < 3.0:
-        reasons.append("No enough T+1 premium: gain is below 3%")
+    if pct < 2.5:
+        reasons.append("No valid mid-trend tail signal: gain is below 2.5%")
     if pct > TAIL_MAX_PCT:
-        reasons.append("Possible late chase: gain is too close to exhaustion")
+        reasons.append("Gain exceeds the main-board strategy range")
     if turnover > TAIL_HARD_MAX_TURNOVER:
-        reasons.append("Turnover is overheated")
+        reasons.append("HV3: turnover exceeds 35%")
     if amount < TAIL_MIN_AMOUNT:
         reasons.append("Liquidity is too thin for next-morning exit")
-    if volume_ratio > 7.0:
-        reasons.append("Volume expansion is close to exhaustion")
     if pullback > TAIL_HARD_MAX_PULLBACK:
-        reasons.append("High-to-close pullback is too large")
+        reasons.append("High-to-close pullback exceeds 2.5%")
     if shadow_ratio >= 1.4 and pullback > TAIL_PREFERRED_MAX_PULLBACK:
         reasons.append("Long upper shadow suggests tail distribution")
-    if price_vs_avg < -0.5:
+    if price_vs_avg < -0.2:
         reasons.append("Price has fallen below VWAP")
-    if range_position < 0.50:
-        reasons.append("Close is not in the upper half of the day")
-    if volume_ratio >= 5.5 and pct < 4.0:
-        reasons.append("High volume without enough price progress")
-    if turnover >= 35 and pct < 4.5:
-        reasons.append("High turnover without enough T+1 premium")
+    if range_position < 0.60:
+        reasons.append("Close position is below the stable tail platform")
     if open_to_price < 0 and price_vs_avg < 0:
         reasons.append("Intraday structure is weakening into the close")
+    if amplitude > 10 and not stable_limit:
+        reasons.append("HV2: amplitude exceeds 10% without a stable limit-up")
+    if (
+        (metrics.get("prevDayReturn") or 0) <= -7
+        and pct >= 7
+        and amplitude >= 10
+        and not stable_limit
+    ):
+        reasons.append("HV1: high-amplitude rebound after a sharp prior-day loss")
+    if deviation_ma5 is not None and deviation_ma5 > 18:
+        reasons.append("MA5 deviation exceeds 18%")
+    if (
+        amount_ratio is not None
+        and amount_ratio >= 3.0
+        and pct < 4.0
+    ):
+        reasons.append("Volume exceeds 3x without enough price progress")
+    if (
+        amount_ratio is not None
+        and amount_ratio >= 2.2
+        and ((metrics.get("gain5dPct") or 0) >= 25 or (metrics.get("gain10dPct") or 0) >= 40)
+    ):
+        reasons.append("HV6: high-position crowding with another volume expansion")
+    if crowding_score >= OCR_REJECT and not stable_limit:
+        reasons.append("CrowdingGate rejects OCR >= 65")
+    if tolerance_score < EXECUTION_TOLERANCE_SCORE_MIN:
+        reasons.append("SimpleExecutionGate rejects low opening tolerance")
+    if simple_execution_score < SIMPLE_EXECUTION_SCORE_MIN:
+        reasons.append("HV9: fixed-node execution score is below 65")
+    snapshot_now = now or datetime.now(CN_TZ)
+    if snapshot_now.hour == 14 and snapshot_now.minute >= 40 and not stable_limit:
+        reasons.append("HV5: after 14:40 only a stable limit-up/reseal is eligible")
     return reasons
 
 
-def morning_top_hard_veto_reasons(quote: dict[str, Any]) -> list[str]:
+def morning_minutes_after_open(now: datetime | None = None) -> int:
+    snapshot_now = now or datetime.now(CN_TZ)
+    minute = snapshot_now.hour * 60 + snapshot_now.minute
+    return max(0, minute - (9 * 60 + 30))
+
+
+def morning_min_amount(now: datetime | None = None) -> float:
+    elapsed = morning_minutes_after_open(now)
+    if elapsed <= 0:
+        return 8_000_000
+    return min(60_000_000, 8_000_000 + elapsed * 3_000_000)
+
+
+def morning_min_turnover(now: datetime | None = None) -> float:
+    elapsed = morning_minutes_after_open(now)
+    return min(1.2, 0.10 + elapsed * 0.04)
+
+
+def morning_volume_ratio_ok(volume_ratio: float | None, upper: float = 7.0) -> bool:
+    if volume_ratio is None or volume_ratio <= 0:
+        return True
+    return 0.15 <= volume_ratio <= upper
+
+
+def morning_top_hard_veto_reasons(
+    quote: dict[str, Any],
+    now: datetime | None = None,
+) -> list[str]:
     price = quote.get("price") or 0
     amount = quote.get("amount") or 0
     avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
     pct = quote.get("pct") or 0
     turnover = quote.get("turnover") or 0
-    volume_ratio = quote.get("volumeRatio") or 0
+    volume_ratio = quote.get("volumeRatio")
     range_position = intraday_position(quote)
     pullback = high_to_close_pullback_pct(quote)
     price_vs_avg = ((price / avg_price) - 1) * 100 if price and avg_price else -99
     reasons: list[str] = []
-    if pct < 5.8 or pct > 10.3:
+    if pct < AM_TOP_MIN_PCT or pct > AM_TOP_MAX_PCT:
         reasons.append("Morning acceleration gain zone is not matched")
     if turnover > TAIL_HARD_MAX_TURNOVER:
         reasons.append("Morning top turnover is overheated")
-    if volume_ratio > 7.0:
+    if volume_ratio is not None and volume_ratio > 7.0:
         reasons.append("Morning top volume is close to exhaustion")
-    if amount < AM_TOP_MIN_AMOUNT:
+    if amount < morning_min_amount(now):
         reasons.append("Morning top liquidity is insufficient")
     if pullback > 3.0:
         reasons.append("Morning top has already faded from the high platform")
     if range_position < 0.72:
         reasons.append("Morning price is not holding the high platform")
-    if price_vs_avg < 0.0:
+    if price_vs_avg < -0.2:
         reasons.append("Morning top cannot hold above VWAP")
+    snapshot_now = now or datetime.now(CN_TZ)
+    minute_of_day = snapshot_now.hour * 60 + snapshot_now.minute
+    if minute_of_day > 9 * 60 + 45:
+        reasons.append("Morning entry window has ended after 09:45")
+    elif minute_of_day >= 9 * 60 + 40 and is_limit_up(quote):
+        reasons.append("Do not chase an already locked board after 09:40")
     return reasons
 
 
@@ -578,6 +939,8 @@ def evaluate_stock_snapshot(
     quote: dict[str, Any],
     board: dict[str, Any],
     active_strategies: set[str] | None = None,
+    now: datetime | None = None,
+    market_monitor: dict[str, Any] | None = None,
 ) -> dict[str, Any] | None:
     if active_strategies is None:
         active_strategies = {STRATEGY_TAIL_MAIN, STRATEGY_AM_TOP}
@@ -590,14 +953,11 @@ def evaluate_stock_snapshot(
         return None
 
     pct = quote.get("pct") or 0
-    if STRATEGY_AM_TOP in active_strategies and is_morning_top_setup(quote, board):
-        return evaluate_morning_top_snapshot(quote, board)
-    if is_late_chase(quote):
-        return None
+    if STRATEGY_AM_TOP in active_strategies and is_morning_top_setup(quote, board, now):
+        return evaluate_morning_top_snapshot(quote, board, now)
     if STRATEGY_TAIL_MAIN not in active_strategies:
         return None
 
-    volume_ratio = quote.get("volumeRatio") or 0
     turnover = quote.get("turnover") or 0
     main_net = quote.get("mainNet") or 0
     super_net = quote.get("superNet") or 0
@@ -606,64 +966,106 @@ def evaluate_stock_snapshot(
     high = quote.get("high") or price
     low = quote.get("low") or price
     avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
-    distance_to_high = ((high - price) / price) * 100 if price else 99
     close_to_high = price / high if high else 0
     price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
     open_to_price = ((price / open_price) - 1) * 100 if open_price else 0
-    intraday_reversal = ((price / low) - 1) * 100 if low else 0
     pullback = high_to_close_pullback_pct(quote)
     shadow_ratio = upper_shadow_ratio(quote)
-    veto_reasons = tail_hard_veto_reasons(quote, board)
+    metrics = quote.get("dailyMetrics") or {}
+    amount_ratio = metrics.get("amountRatio")
+    deviation_ma5 = metrics.get("deviationMA5Pct")
+    crowding_score = estimate_overnight_crowding_score(quote)
+    tolerance_score = estimate_execution_tolerance_score(quote)
+    simple_execution_score = estimate_simple_execution_score(quote, tolerance_score)
+    recovery_score = estimate_recovery_proxy_score(quote)
+    veto_reasons = tail_hard_veto_reasons(quote, board, now)
     if veto_reasons:
         return None
 
-    criteria = [
-        ("[MarketGate] No hard risk veto is triggered", not veto_reasons),
-        ("[SectorGate] Board has front-row ladder or continuity", tail_sector_gate_ok(board)),
-        ("[StockGate] T+1 gain room is healthy", 3.0 <= pct <= 7.6),
-        ("[StockGate] Volume expands without exhaustion", 1.1 <= volume_ratio <= 5.8),
-        ("Main or super capital is net inflow", main_net > 0 or super_net > 0),
-        ("[StockGate] Turnover fits trend/sentiment trade", 4.0 <= turnover <= 32.0),
-        ("[StockGate] Close holds high platform", range_position >= 0.62 and pullback <= 3.2 and close_to_high >= 0.968),
-        ("[StockGate] Price stays above VWAP", price_vs_avg >= 0.0),
-        ("[TailSignal] Late session still has upward spread", open_to_price >= 1.0 or intraday_reversal >= 4.0),
+    stock_criteria = [
+        ("[StockGate] Amount ratio is controlled", amount_ratio is None or 1.20 <= amount_ratio <= 2.80 or is_stable_limit_up_proxy(quote)),
+        ("[StockGate] MA5 is rising", metrics.get("ma5Rising") is not False),
+        ("[StockGate] MA5 deviation stays below 15%", deviation_ma5 is None or deviation_ma5 <= 15),
+        ("[StockGate] Mid-stage gain is not crowded", (metrics.get("gain5dPct") or 0) < 25 and (metrics.get("gain10dPct") or 0) < 40),
+        ("[StockGate] Breakout/reclaim structure remains valid", metrics.get("closeAboveBreakout") is not False or metrics.get("firstPullbackProxy") is True),
+        ("[StockGate] Main/super capital is not both negative", main_net > 0 or super_net > 0),
+        ("[StockGate] Turnover fits trend or strong-close type", 4.0 <= turnover <= 25.0 or is_stable_limit_up_proxy(quote)),
+        ("[StockGate] Close position is at least 0.70", range_position >= 0.70),
+        ("[StockGate] High-to-close pullback is at most 2.5%", pullback <= 2.5 and close_to_high >= 0.975),
+        ("[StockGate] Price holds VWAP", price_vs_avg >= 0.0),
+        ("[StockGate] Stock is in the board front 20%", (quote.get("boardFrontPct") or 1) <= 0.20),
         ("[StockGate] Deal amount supports next-morning exit", amount >= TAIL_MIN_AMOUNT),
-        ("[TailSignal] No long upper-shadow distribution", shadow_ratio < 1.4 or pullback <= TAIL_PREFERRED_MAX_PULLBACK),
-        ("Reference-sample shape bonus", 4.2 <= pct <= 7.2 and range_position >= 0.76 and price_vs_avg >= 1.0),
     ]
-    passed_labels = [label for label, ok in criteria if ok]
-    if len(passed_labels) < TAIL_MIN_STOCK_SCORE:
+    stock_labels = [label for label, ok in stock_criteria if ok]
+    if len(stock_labels) < TAIL_MIN_STOCK_SCORE:
         return None
 
-    buy_plan = choose_buy_plan_snapshot(quote)
+    buy_plan = choose_buy_plan_snapshot(quote, now)
     if not buy_plan:
         return None
 
+    tail_criteria = [
+        ("[TailGate] A valid v3.0 signal is present", bool(buy_plan)),
+        ("[TailGate] Close holds above VWAP", price_vs_avg >= 0.0),
+        ("[TailGate] Close position stays at least 0.70", range_position >= 0.70),
+        ("[TailGate] Pullback from high is at most 2.5%", pullback <= 2.5),
+        ("[TailGate] No distribution upper shadow", shadow_ratio < 1.4 or pullback <= 1.5),
+        ("[TailGate] Capital or price spread confirms support", main_net > 0 or super_net > 0 or open_to_price >= 1.0),
+        ("[TailGate] Fixed-node execution tolerance passes", tolerance_score >= EXECUTION_TOLERANCE_SCORE_MIN),
+    ]
+    tail_labels = [label for label, ok in tail_criteria if ok]
+    if len(tail_labels) < 5:
+        return None
+
+    market_value = (market_monitor or {}).get("emotionScore")
+    market_norm = clamp(float(market_value if market_value is not None else 60), 0, 100)
+    sector_norm = clamp(board.get("score") or 0, 0, 100)
+    stock_norm = (len(stock_labels) / len(stock_criteria)) * 100
+    tail_norm = (len(tail_labels) / len(tail_criteria)) * 100
+    final_score = round2(
+        market_norm * 0.10
+        + sector_norm * 0.20
+        + stock_norm * 0.30
+        + tail_norm * 0.20
+        + (100 - crowding_score) * 0.05
+        + simple_execution_score * 0.10
+        + recovery_score * 0.05
+    ) or 0
+    candidate_status = (
+        "STRONG_CANDIDATE"
+        if final_score >= 84
+        else "NORMAL_CANDIDATE"
+        if final_score >= 74
+        else "OBSERVE"
+        if final_score >= 64
+        else "REJECT"
+    )
+    if candidate_status not in ("STRONG_CANDIDATE", "NORMAL_CANDIDATE"):
+        return None
+    initial_plan = (
+        "PLAN_T"
+        if candidate_status == "STRONG_CANDIDATE"
+        and crowding_score < OCR_DOWNGRADE
+        and tolerance_score >= 70
+        and (market_monitor or {}).get("riskLevel", "NORMAL") == "NORMAL"
+        else "PLAN_S"
+    )
+
     entry = buy_plan["priceRange"][0]
     stop_loss = estimate_stop_snapshot(entry, quote)
-    target = estimate_target_snapshot(entry, price, pre_close, quote, board, buy_plan)
-    expected_return = ((target["targetPrice"] / entry) - 1) * 100 if entry else 0
-    risk_pct = ((entry / stop_loss) - 1) * 100 if stop_loss else 0
-    t1_edge_score = estimate_t1_edge_score(
+    target = estimate_target_snapshot(
+        entry,
+        price,
+        pre_close,
         quote,
         board,
         buy_plan,
-        expected_return,
-        risk_pct,
-        len(passed_labels),
+        final_score,
+        initial_plan,
     )
-    win_rate = round(
-        min(
-            96,
-            48
-            + len(passed_labels) * 4.2
-            + (board.get("passed") or 0) * 2.5
-            + buy_plan["quality"] * 0.85
-            + min(8, t1_edge_score / 12)
-            - max(0, risk_pct - 3.2) * 1.6,
-        ),
-        1,
-    )
+    expected_return = ((target["targetPrice"] / entry) - 1) * 100 if entry else 0
+    risk_pct = ((entry / stop_loss) - 1) * 100 if stop_loss else 0
+    t1_edge_score = final_score
 
     return {
         "rank": None,
@@ -675,12 +1077,22 @@ def evaluate_stock_snapshot(
         "amount": quote.get("amount"),
         "turnover": turnover,
         "industry": quote.get("industry") or board.get("name"),
-        "confidence": win_rate,
-        "winRate": win_rate,
+        "confidence": final_score,
+        "winRate": final_score,
         "strategyTag": STRATEGY_TAIL_MAIN,
+        "strategyId": TAIL_STRATEGY_ID,
+        "candidateStatus": candidate_status,
+        "finalScore": final_score,
         "t1EdgeScore": t1_edge_score,
         "expectedReturnPct": round2(expected_return),
         "riskPct": round2(risk_pct),
+        "signalType": buy_plan.get("signalType"),
+        "overnightCrowdingScore": crowding_score,
+        "executionToleranceScore": tolerance_score,
+        "simpleExecutionScore": simple_execution_score,
+        "recoveryAfter0935Score": recovery_score,
+        "initialPlan": initial_plan,
+        "nextDayPlan": next_day_plan(initial_plan),
         "board": {
             "code": board["code"],
             "name": board["name"],
@@ -689,7 +1101,7 @@ def evaluate_stock_snapshot(
         },
         "criteria": {
             "board": board.get("criteria", []),
-            "stock": [f"[{STRATEGY_TAIL_MAIN}] Main tail setup", *passed_labels],
+            "stock": [f"[{TAIL_STRATEGY_ID}] Mid-trend tail setup", *stock_labels, *tail_labels],
         },
         "buyPlan": buy_plan,
         "sellPlan": {
@@ -702,9 +1114,9 @@ def evaluate_stock_snapshot(
         "stopPlan": {
             "stopLoss": stop_loss,
             "rules": [
-                "Next morning weak open and cannot reclaim the late-session platform",
-                "Break the personalized stop or the 14:00 entry trigger",
-                "Avoid widening the stop after purchase",
+                "09:25-09:31 execute the PLAN_D/S/T first node",
+                "09:35 classify WEAK/NEUTRAL/STRONG; WEAK sells all remainder",
+                "10:00 sell every non-limit-up remainder; never widen the stop",
             ],
         },
         "sourceLinks": stock_source_links(quote["code"]),
@@ -712,7 +1124,11 @@ def evaluate_stock_snapshot(
     }
 
 
-def evaluate_morning_top_snapshot(quote: dict[str, Any], board: dict[str, Any]) -> dict[str, Any] | None:
+def evaluate_morning_top_snapshot(
+    quote: dict[str, Any],
+    board: dict[str, Any],
+    now: datetime | None = None,
+) -> dict[str, Any] | None:
     price = quote.get("price")
     pre_close = quote.get("preClose")
     open_price = quote.get("open") or price
@@ -720,7 +1136,7 @@ def evaluate_morning_top_snapshot(quote: dict[str, Any], board: dict[str, Any]) 
         return None
 
     pct = quote.get("pct") or 0
-    volume_ratio = quote.get("volumeRatio") or 0
+    volume_ratio = quote.get("volumeRatio")
     turnover = quote.get("turnover") or 0
     main_net = quote.get("mainNet") or 0
     super_net = quote.get("superNet") or 0
@@ -734,26 +1150,26 @@ def evaluate_morning_top_snapshot(quote: dict[str, Any], board: dict[str, Any]) 
     intraday_reversal = ((price / low) - 1) * 100 if low else 0
     open_to_price = ((price / open_price) - 1) * 100 if open_price else 0
     pullback = high_to_close_pullback_pct(quote)
-    veto_reasons = morning_top_hard_veto_reasons(quote)
+    veto_reasons = morning_top_hard_veto_reasons(quote, now)
     if veto_reasons:
         return None
 
     criteria = [
         ("Board is hot enough for morning acceleration", (board.get("passed") or 0) >= 4),
-        ("Morning acceleration gain zone is matched", 5.8 <= pct <= 10.3),
+        ("Morning acceleration gain zone is matched", AM_TOP_MIN_PCT <= pct <= AM_TOP_MAX_PCT),
         ("Price holds the early high platform", range_position >= 0.78 and close_to_high >= 0.972 and pullback <= 2.8),
-        ("Price holds above VWAP", price_vs_avg >= 0.2),
-        ("Turnover can support early board capture", 2 <= turnover <= 38),
-        ("Volume is active without obvious exhaustion", 0.3 <= volume_ratio <= 7.0),
+        ("Price holds above VWAP", price_vs_avg >= 0.0),
+        ("Turnover grows normally for the current minute", morning_min_turnover(now) <= turnover <= 38),
+        ("Volume is active without obvious exhaustion", morning_volume_ratio_ok(volume_ratio)),
         ("Main or super capital is net inflow", main_net > 0 or super_net > 0),
-        ("Deal amount supports fast T+1 exit", amount >= AM_TOP_MIN_AMOUNT),
-        ("Open has enough upward spread", pct >= 7.2 or open_to_price >= 2.0 or intraday_reversal >= 4.5),
+        ("Deal amount grows normally for the current minute", amount >= morning_min_amount(now)),
+        ("Open has enough upward spread", pct >= 6.5 or open_to_price >= 0.8 or intraday_reversal >= 3.0),
     ]
     passed_labels = [label for label, ok in criteria if ok]
     if len(passed_labels) < 7:
         return None
 
-    buy_plan = choose_morning_top_buy_plan_snapshot(quote)
+    buy_plan = choose_morning_top_buy_plan_snapshot(quote, now)
     if not buy_plan:
         return None
 
@@ -831,111 +1247,120 @@ def evaluate_morning_top_snapshot(quote: dict[str, Any], board: dict[str, Any]) 
     }
 
 
-def choose_buy_plan_snapshot(quote: dict[str, Any]) -> dict[str, Any] | None:
+def choose_buy_plan_snapshot(
+    quote: dict[str, Any],
+    now: datetime | None = None,
+) -> dict[str, Any] | None:
     price = quote["price"]
     pre_close = quote["preClose"]
     open_price = quote["open"]
     pct = quote.get("pct") or 0
-    volume_ratio = quote.get("volumeRatio") or 0
     turnover = quote.get("turnover") or 0
     range_position = intraday_position(quote)
     high = quote.get("high") or price
     low = quote.get("low") or price
-    distance_to_high = ((high - price) / price) * 100 if price else 99
     close_to_high = price / high if high else 0
     amount = quote.get("amount") or 0
     avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
     price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
     open_to_price = ((price / open_price) - 1) * 100 if open_price else 0
     intraday_reversal = ((price / low) - 1) * 100 if low else 0
-    gap = (open_price / pre_close - 1) * 100
     pullback = high_to_close_pullback_pct(quote)
-    shadow_ratio = upper_shadow_ratio(quote)
+    amplitude = quote_amplitude_pct(quote)
+    metrics = quote.get("dailyMetrics") or {}
+    amount_ratio = metrics.get("amountRatio")
+    deviation_ma5 = metrics.get("deviationMA5Pct")
+    mid_stage = (
+        metrics.get("ma5Rising") is not False
+        and (deviation_ma5 is None or deviation_ma5 <= 15)
+        and (metrics.get("gain5dPct") or 0) < 25
+        and (metrics.get("gain10dPct") or 0) < 40
+    )
 
     if (
-        3.6 <= pct <= 7.2
-        and 1.2 <= volume_ratio <= 5.5
-        and 5 <= turnover <= 28
-        and range_position >= 0.72
-        and pullback <= 3.0
+        is_stable_limit_up_proxy(quote)
+        and 3 <= turnover <= 25
+        and amount >= TAIL_MIN_AMOUNT
+        and mid_stage
+    ):
+        return make_buy_plan(
+            "[TAIL_MAIN] T1 stable limit-up",
+            price,
+            TAIL_BUY_WINDOW,
+            "Only use a stable seal with sector synchronization; repeated opening or fading orders cancel the entry.",
+            26,
+            9,
+            quote,
+            STRATEGY_TAIL_MAIN,
+            "T1_STABLE_LIMIT_UP",
+        )
+    if (
+        3.0 <= pct <= 7.0
+        and (amount_ratio is None or 1.20 <= amount_ratio <= 2.80)
+        and 4 <= turnover <= 25
+        and range_position >= 0.70
+        and pullback <= 2.5
         and close_to_high >= 0.975
-        and price_vs_avg >= 0.4
-        and open_to_price >= 1.2
+        and price_vs_avg >= 0.0
+        and metrics.get("closeAboveBreakout") is not False
+        and mid_stage
         and amount >= TAIL_MIN_AMOUNT
     ):
         return make_buy_plan(
-            "[TAIL_MAIN] T1 tail breakout confirmation",
+            "[TAIL_MAIN] T3 mid-trend breakout",
             price,
             TAIL_BUY_WINDOW,
-            "Buy before 14:30 only if price stays above VWAP and the breakout platform; skip late pull-ups after 14:40.",
-            24,
+            "Confirm above VWAP and the prior platform from 14:10-14:35; cancel on a late straight-line spike.",
+            25,
             8,
             quote,
             STRATEGY_TAIL_MAIN,
+            "T3_TREND_BREAKOUT",
         )
     if (
-        3.0 <= pct <= 6.8
-        and 1.0 <= volume_ratio <= 4.8
-        and 4 <= turnover <= 26
-        and range_position >= 0.60
-        and pullback <= 3.5
-        and distance_to_high <= 3.8
-        and price_vs_avg >= -0.1
-        and gap <= 4.5
-        and intraday_reversal >= 4.0
-        and shadow_ratio < 1.5
+        7.0 <= pct < 9.8
+        and amplitude <= 8.0
+        and 6 <= turnover <= 25
+        and range_position >= 0.80
+        and pullback <= 1.5
+        and close_to_high >= 0.985
+        and price_vs_avg >= 0.8
+        and mid_stage
+        and amount >= TAIL_MIN_AMOUNT
     ):
         return make_buy_plan(
-            "[TAIL_MAIN] T2 first pullback reclaim",
+            "[TAIL_MAIN] T4 strong close below limit",
             price,
             TAIL_BUY_WINDOW,
-            "Use only the first orderly pullback to VWAP or breakout support; skip repeated VWAP breaks.",
+            "Use only a low-amplitude front-row strong close; high turnover or an unsealed fade is rejected.",
+            23,
+            7,
+            quote,
+            STRATEGY_TAIL_MAIN,
+            "T4_NEAR_LIMIT_STRONG_CLOSE",
+        )
+    if (
+        2.5 <= pct <= 6.5
+        and metrics.get("firstPullbackProxy") is True
+        and (amount_ratio is None or amount_ratio <= 1.60)
+        and 4 <= turnover <= 20
+        and range_position >= 0.65
+        and pullback <= 2.5
+        and price_vs_avg >= -0.05
+        and open_to_price >= 0.5
+        and mid_stage
+        and amount >= TAIL_MIN_AMOUNT
+    ):
+        return make_buy_plan(
+            "[TAIL_MAIN] T5 first pullback reclaim",
+            price,
+            TAIL_BUY_WINDOW,
+            "Only the first shrinking-volume pullback is valid; repeated VWAP breaks or lost structure cancel it.",
             21,
             6,
             quote,
             STRATEGY_TAIL_MAIN,
-        )
-    if (
-        7.0 <= pct <= 8.2
-        and 1.2 <= volume_ratio <= 4.8
-        and 6 <= turnover <= 30
-        and range_position >= 0.86
-        and pullback <= 1.8
-        and close_to_high >= 0.988
-        and price_vs_avg >= 1.2
-        and open_to_price >= 3.0
-        and amount >= 250_000_000
-    ):
-        return make_buy_plan(
-            "[TAIL_MAIN] T3 leader reseal proxy",
-            price,
-            TAIL_BUY_WINDOW,
-            "Use only front-row high-platform reseal proxies; skip if seal strength or sector echo weakens.",
-            22,
-            7,
-            quote,
-            STRATEGY_TAIL_MAIN,
-        )
-    if (
-        4.8 <= pct <= 7.8
-        and 1.0 <= volume_ratio <= 5.8
-        and 6 <= turnover <= 30
-        and range_position >= 0.66
-        and pullback <= 3.4
-        and distance_to_high <= 3.8
-        and price_vs_avg >= 0.1
-        and (open_to_price >= 0.8 or intraday_reversal >= 3.5)
-        and amount >= TAIL_MIN_AMOUNT
-    ):
-        return make_buy_plan(
-            "[TAIL_MAIN] T4 trend tail confirmation",
-            price,
-            TAIL_BUY_WINDOW,
-            "Buy only if the trend stays above MA/VWAP proxy and does not fade from the late high platform.",
-            18,
-            5,
-            quote,
-            STRATEGY_TAIL_MAIN,
+            "T5_FIRST_PULLBACK",
         )
     return None
 
@@ -949,6 +1374,7 @@ def make_buy_plan(
     priority: int,
     quote: dict[str, Any] | None = None,
     strategy_tag: str = STRATEGY_TAIL_MAIN,
+    signal_type: str | None = None,
 ) -> dict[str, Any]:
     lower_offset, upper_offset = buy_range_offsets(quote)
     return {
@@ -959,13 +1385,17 @@ def make_buy_plan(
         "quality": quality,
         "priority": priority,
         "strategyTag": strategy_tag,
+        "signalType": signal_type,
     }
 
 
-def choose_morning_top_buy_plan_snapshot(quote: dict[str, Any]) -> dict[str, Any] | None:
+def choose_morning_top_buy_plan_snapshot(
+    quote: dict[str, Any],
+    now: datetime | None = None,
+) -> dict[str, Any] | None:
     price = quote["price"]
     pct = quote.get("pct") or 0
-    volume_ratio = quote.get("volumeRatio") or 0
+    volume_ratio = quote.get("volumeRatio")
     turnover = quote.get("turnover") or 0
     range_position = intraday_position(quote)
     high = quote.get("high") or price
@@ -974,78 +1404,62 @@ def choose_morning_top_buy_plan_snapshot(quote: dict[str, Any]) -> dict[str, Any
     close_to_high = price / high if high else 0
     price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
     pullback = high_to_close_pullback_pct(quote)
+    min_amount = morning_min_amount(now)
+    min_turnover = morning_min_turnover(now)
 
     if (
-        7.2 <= pct <= 9.6
-        and 2 <= turnover <= 32
-        and 0.3 <= volume_ratio <= 6.2
+        9.2 <= pct <= AM_TOP_MAX_PCT
+        and min_turnover <= turnover <= 38
+        and morning_volume_ratio_ok(volume_ratio, 6.8)
+        and range_position >= 0.88
+        and close_to_high >= 0.988
+        and pullback <= 1.6
+        and price_vs_avg >= 0.8
+        and amount >= min_amount
+    ):
+        return make_top_buy_plan(
+            "[AM_TOP] near-limit confirmation",
+            price,
+            AM_TOP_BUY_WINDOW,
+            "09:31-09:38 only: confirm the front-row seal/reseal; after 09:40 do not chase a locked board.",
+            23,
+            8,
+        )
+    if (
+        6.5 <= pct <= 9.6
+        and min_turnover <= turnover <= 32
+        and morning_volume_ratio_ok(volume_ratio, 6.2)
         and range_position >= 0.78
         and close_to_high >= 0.974
         and pullback <= 2.6
-        and price_vs_avg >= 0.2
-        and amount >= AM_TOP_MIN_AMOUNT
+        and price_vs_avg >= 0.15
+        and amount >= min_amount
     ):
         return make_top_buy_plan(
-            "[AM_TOP] 09:31 open-strength entry",
+            "[AM_TOP] open-strength entry",
             price,
             AM_TOP_BUY_WINDOW,
-            "Primary buy window is 09:31-09:38 after open support confirms; skip if it falls back under VWAP.",
+            "Primary window 09:31-09:38: enter only while the stock remains above VWAP and the early high platform.",
             24,
             9,
         )
     if (
-        5.8 <= pct <= 8.6
-        and 2 <= turnover <= 28
-        and 0.3 <= volume_ratio <= 5.8
-        and range_position >= 0.74
-        and close_to_high >= 0.970
+        AM_TOP_MIN_PCT <= pct <= 7.8
+        and min_turnover <= turnover <= 28
+        and morning_volume_ratio_ok(volume_ratio, 5.8)
+        and range_position >= 0.76
+        and close_to_high >= 0.972
         and pullback <= 2.8
         and price_vs_avg >= 0.0
-        and amount >= AM_TOP_MIN_AMOUNT
+        and amount >= min_amount
     ):
         return make_top_buy_plan(
-            "[AM_TOP] 09:31 early lift-off entry",
+            "[AM_TOP] early lift-off entry",
             price,
             AM_TOP_BUY_WINDOW,
-            "Use the first 5-10 minutes to confirm front-row lift-off before the limit-up rush; avoid buying a fade.",
+            "Catch the 09:31-09:38 lift-off before the limit-up rush; cancel immediately if it loses VWAP.",
             22,
-            8,
-        )
-    if (
-        9.2 <= pct <= 10.3
-        and 3 <= turnover <= 38
-        and 0.5 <= volume_ratio <= 6.8
-        and range_position >= 0.88
-        and close_to_high >= 0.988
-        and pullback <= 1.6
-        and price_vs_avg >= 1.2
-        and amount >= AM_TOP_MIN_AMOUNT
-    ):
-        return make_top_buy_plan(
-            "[AM_TOP] 09:26 auction/near-limit queue",
-            price,
-            AM_TOP_BUY_WINDOW,
-            "At 09:26 only watch or queue after auction confirmation; after 09:40 use only if it is still open or resealing.",
-            21,
             7,
-        )
-    if (
-        8.6 <= pct <= 10.3
-        and 3 <= turnover <= 38
-        and 0.5 <= volume_ratio <= 6.5
-        and range_position >= 0.82
-        and close_to_high >= 0.985
-        and pullback <= 2.0
-        and price_vs_avg >= 0.8
-        and amount >= AM_TOP_MIN_AMOUNT
-    ):
-        return make_top_buy_plan(
-            "[AM_TOP] 09:38 high-board confirmation",
-            price,
-            AM_TOP_BUY_WINDOW,
-            "Confirm the high-board shape before 09:40; after 09:40 only monitor seal strength, do not chase a locked board.",
-            19,
-            6,
         )
     return None
 
@@ -1069,6 +1483,27 @@ def make_top_buy_plan(
     }
 
 
+def next_day_plan(initial_plan: str) -> dict[str, Any]:
+    if initial_plan == "PLAN_T":
+        first_sell_ratio = [0.20, 0.30]
+        neutral_remainder = 0.30
+        strong_remainder = [0.50, 0.70]
+    else:
+        first_sell_ratio = [0.40, 0.50]
+        neutral_remainder = 0.20
+        strong_remainder = [0.50, 0.60]
+    return {
+        "firstNodeTime": "09:25-09:31",
+        "firstSellRatio": first_sell_ratio,
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": neutral_remainder,
+        "strongRemainder": strong_remainder,
+        "finalExitTime": "10:00",
+        "limitUpException": True,
+    }
+
+
 def estimate_target_snapshot(
     entry: float,
     price: float,
@@ -1076,11 +1511,11 @@ def estimate_target_snapshot(
     quote: dict[str, Any],
     board: dict[str, Any],
     buy_plan: dict[str, Any],
+    final_score: float = 74,
+    initial_plan: str = "PLAN_S",
 ) -> dict[str, Any]:
-    base_gain = 0.032
-    volume_ratio = quote.get("volumeRatio") or 0
+    base_gain = 0.012
     turnover = quote.get("turnover") or 0
-    pct = quote.get("pct") or 0
     amount = quote.get("amount") or 0
     main_net = max(0, quote.get("mainNet") or 0) + max(0, quote.get("superNet") or 0)
     net_ratio = main_net / amount if amount else 0
@@ -1089,55 +1524,40 @@ def estimate_target_snapshot(
     avg_price = quote.get("avgPrice") or average_price(amount, quote.get("volume")) or price
     close_to_high = price / high if high else 0
     price_vs_avg = ((price / avg_price) - 1) * 100 if avg_price else 0
-    float_cap = quote.get("floatMarketCap") or 0
+    metrics = quote.get("dailyMetrics") or {}
+    amount_ratio = metrics.get("amountRatio")
 
     if (board.get("passed") or 0) >= 5:
-        base_gain += 0.012
+        base_gain += 0.006
     if (board.get("limitUpCount") or 0) >= 2:
-        base_gain += 0.008
+        base_gain += 0.006
     elif (board.get("limitUpCount") or 0) >= 1:
-        base_gain += 0.005
-    if 1.4 <= volume_ratio <= 4.2:
-        base_gain += 0.012
-    elif 4.2 < volume_ratio <= 5.8:
-        base_gain += 0.005
-    elif volume_ratio > 5.8:
-        base_gain -= 0.010
-    if 8 <= turnover <= 24:
-        base_gain += 0.012
-    elif 5 <= turnover < 8 or 24 < turnover <= 32:
+        base_gain += 0.003
+    if amount_ratio is not None and 1.3 <= amount_ratio <= 2.2:
         base_gain += 0.006
-    elif turnover > 34:
-        base_gain -= 0.010
+    if 6 <= turnover <= 16:
+        base_gain += 0.005
     if main_net > 0:
-        base_gain += clamp(net_ratio * 0.7, 0, 0.014)
+        base_gain += clamp(net_ratio * 0.4, 0, 0.008)
     if range_position >= 0.84 and close_to_high >= 0.985:
-        base_gain += 0.012
+        base_gain += 0.006
     elif range_position >= 0.78:
-        base_gain += 0.006
-    if price_vs_avg >= 3.0:
-        base_gain += 0.012
-    elif price_vs_avg >= 1.2:
-        base_gain += 0.006
-    if 4.2 <= pct <= 6.8:
-        base_gain += 0.014
-    elif 3.4 <= pct < 4.2 or 6.8 < pct <= 7.6:
-        base_gain += 0.005
-    elif pct > 7.6:
-        base_gain -= 0.010
-    if 3_000_000_000 <= float_cap <= 45_000_000_000:
+        base_gain += 0.003
+    if price_vs_avg >= 1.2:
         base_gain += 0.004
-    if buy_plan["priority"] >= 8:
-        base_gain += 0.012
-    elif buy_plan["priority"] >= 6:
+    if final_score >= 84:
         base_gain += 0.008
+    if initial_plan == "PLAN_T":
+        base_gain += 0.006
+    if is_stable_limit_up_proxy(quote):
+        base_gain += 0.018
 
-    target_gain = clamp(base_gain, 0.030, 0.090)
-    target_price = round2(min(max(entry * (1 + target_gain), price * 1.012), entry * 1.095))
+    target_gain = clamp(base_gain, 0.008, 0.080)
+    target_price = round2(min(entry * (1 + target_gain), entry * 1.098))
     return {
         "targetPrice": target_price,
         "targetTime": TAIL_TARGET_TIME,
-        "strategy": "Target the T+1 morning impulse after a mid-stage trend confirmation; take 3%+ quickly, only stronger front-row shapes aim for 5%-9%.",
+        "strategy": "v3.0: execute the first node, classify at 09:35, and exit all non-limit-up remainder at 10:00.",
     }
 
 
@@ -1405,19 +1825,23 @@ def stock_universe_allowed(code: str) -> bool:
 def active_strategy_windows(now: datetime) -> set[str]:
     minute_of_day = now.hour * 60 + now.minute
     active: set[str] = set()
-    if 9 * 60 + 25 <= minute_of_day <= 10 * 60 + 10:
+    if 9 * 60 + 25 <= minute_of_day <= 9 * 60 + 45:
         active.add(STRATEGY_AM_TOP)
-    if 13 * 60 + 25 <= minute_of_day <= 14 * 60 + 40:
+    if 13 * 60 + 25 <= minute_of_day <= 14 * 60 + 50:
         active.add(STRATEGY_TAIL_MAIN)
     return active
 
 
-def is_morning_top_setup(quote: dict[str, Any], board: dict[str, Any]) -> bool:
+def is_morning_top_setup(
+    quote: dict[str, Any],
+    board: dict[str, Any],
+    now: datetime | None = None,
+) -> bool:
     if (board.get("passed") or 0) < 4:
         return False
-    if not morning_top_prefilter(quote):
+    if not morning_top_prefilter(quote, now):
         return False
-    if morning_top_hard_veto_reasons(quote):
+    if morning_top_hard_veto_reasons(quote, now):
         return False
     price = quote.get("price")
     high = quote.get("high") or price
@@ -1467,12 +1891,16 @@ def normalize_stock_quote(row: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def stock_prefilter(item: dict[str, Any], active_strategies: set[str] | None = None) -> bool:
+def stock_prefilter(
+    item: dict[str, Any],
+    active_strategies: set[str] | None = None,
+    now: datetime | None = None,
+) -> bool:
     if active_strategies is None:
         active_strategies = {STRATEGY_TAIL_MAIN, STRATEGY_AM_TOP}
     return (
         (STRATEGY_TAIL_MAIN in active_strategies and tail_prefilter(item))
-        or (STRATEGY_AM_TOP in active_strategies and morning_top_prefilter(item))
+        or (STRATEGY_AM_TOP in active_strategies and morning_top_prefilter(item, now))
     )
 
 
@@ -1486,25 +1914,26 @@ def tail_prefilter(item: dict[str, Any]) -> bool:
     turnover = item.get("turnover")
     pct = item.get("pct") or 0
     amount = item.get("amount") or 0
-    volume_ratio = item.get("volumeRatio") or 0
+    volume_ratio = item.get("volumeRatio")
     if turnover is None or turnover < 3.0 or turnover > TAIL_HARD_MAX_TURNOVER:
-        return False
-    if is_late_chase(item):
         return False
     price = item.get("price") or 0
     avg_price = item.get("avgPrice") or average_price(amount, item.get("volume")) or price
     price_vs_avg = ((price / avg_price) - 1) * 100 if price and avg_price else -99
     return (
-        3.0 <= pct <= TAIL_MAX_PCT
+        2.5 <= pct <= TAIL_MAX_PCT
         and amount >= TAIL_MIN_AMOUNT
-        and 0.9 <= volume_ratio <= 7.0
-        and intraday_position(item) >= 0.48
+        and (volume_ratio is None or volume_ratio <= 7.0)
+        and intraday_position(item) >= 0.55
         and high_to_close_pullback_pct(item) <= TAIL_HARD_MAX_PULLBACK + 0.4
-        and price_vs_avg >= -0.7
+        and price_vs_avg >= -0.3
     )
 
 
-def morning_top_prefilter(item: dict[str, Any]) -> bool:
+def morning_top_prefilter(
+    item: dict[str, Any],
+    now: datetime | None = None,
+) -> bool:
     code = item.get("code") or ""
     name = item.get("name") or ""
     if not stock_universe_allowed(code):
@@ -1514,13 +1943,13 @@ def morning_top_prefilter(item: dict[str, Any]) -> bool:
     turnover = item.get("turnover")
     pct = item.get("pct") or 0
     amount = item.get("amount") or 0
-    volume_ratio = item.get("volumeRatio") or 0
-    if turnover is None or turnover < 2 or turnover > TAIL_HARD_MAX_TURNOVER:
+    volume_ratio = item.get("volumeRatio")
+    if turnover is None or turnover < morning_min_turnover(now) or turnover > TAIL_HARD_MAX_TURNOVER:
         return False
     return (
-        5.8 <= pct <= 10.3
-        and amount >= AM_TOP_MIN_AMOUNT
-        and 0.3 <= volume_ratio <= 7.0
+        AM_TOP_MIN_PCT <= pct <= AM_TOP_MAX_PCT
+        and amount >= morning_min_amount(now)
+        and morning_volume_ratio_ok(volume_ratio)
         and intraday_position(item) >= 0.72
         and high_to_close_pullback_pct(item) <= 3.0
     )
@@ -1547,11 +1976,17 @@ def fetch_news() -> list[dict[str, Any]]:
     return dedupe_news(news)
 
 
-def safe_clist(source: str, fs: str, fields: str, page_size: int) -> list[dict[str, Any]]:
+def safe_clist(
+    source: str,
+    fs: str,
+    fields: str,
+    page_size: int,
+    descending: bool = True,
+) -> list[dict[str, Any]]:
     params = {
         "pn": "1",
         "pz": str(page_size),
-        "po": "1",
+        "po": "1" if descending else "0",
         "np": "1",
         "ut": EASTMONEY_UT,
         "fltt": "2",
@@ -1678,16 +2113,48 @@ def strip_members(boards: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return [{key: value for key, value in board.items() if key != "members"} for board in boards]
 
 
-def board_continuous_ok(code: str, current_ranks: dict[str, int], history: dict[str, Any]) -> bool:
+def board_continuous_ok(
+    code: str,
+    current_ranks: dict[str, int],
+    history: dict[str, Any],
+    current_date: str | None = None,
+) -> bool:
     current = current_ranks.get(code, 999)
-    previous = [item.get("ranks", {}).get(code, 999) for item in history.get("items", [])[-2:]]
-    return bool(current <= 10 and previous and previous[-1] <= 20)
+    history_items = [
+        item
+        for item in history.get("items", [])
+        if not current_date or item.get("date") != current_date
+    ]
+    previous = [item.get("ranks", {}).get(code, 999) for item in history_items[-2:]]
+    two_day_top10 = bool(previous and current <= 10 and previous[-1] <= 10)
+    three_day_top20 = bool(
+        len(previous) >= 2
+        and current <= 20
+        and previous[-1] <= 20
+        and previous[-2] <= 20
+    )
+    return two_day_top10 or three_day_top20
+
+
+def board_amount_ratio(board: dict[str, Any], history: dict[str, Any], now: datetime) -> float | None:
+    code = board.get("code")
+    previous_amounts = [
+        item.get("amounts", {}).get(code)
+        for item in history.get("items", [])[-5:]
+        if item.get("date") != now.strftime("%Y-%m-%d") and item.get("amounts", {}).get(code)
+    ]
+    if not previous_amounts:
+        return None
+    current_amount = project_amount_to_close(board.get("amount") or 0, now)
+    baseline = sum(previous_amounts) / len(previous_amounts)
+    return current_amount / baseline if baseline else None
 
 
 def update_board_history(history: dict[str, Any], today: str, boards: list[dict[str, Any]]) -> None:
     ranks = {board["code"]: board["rank"] for board in boards if board.get("rank")}
+    amounts = {board["code"]: board.get("amount") for board in boards if board.get("amount")}
     items = [entry for entry in history.get("items", []) if entry.get("date") != today]
-    items.append({"date": today, "ranks": ranks})
+    items.append({"date": today, "ranks": ranks, "amounts": amounts})
     write_json(BOARD_HISTORY_PATH, {"items": items[-30:]})
 
 
