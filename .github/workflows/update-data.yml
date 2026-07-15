@@ -4,10 +4,11 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "26 1 * * 1-5"
-    - cron: "31 1 * * 1-5"
-    - cron: "36 1 * * 1-5"
+    - cron: "29 1 * * 1-5"
+    - cron: "32 1 * * 1-5"
+    - cron: "35 1 * * 1-5"
+    - cron: "38 1 * * 1-5"
     - cron: "40 1 * * 1-5"
-    - cron: "0 2 * * 1-5"
     - cron: "30 5 * * 1-5"
     - cron: "45 5 * * 1-5"
     - cron: "0 6 * * 1-5"
@@ -15,6 +16,7 @@ on:
     - cron: "20 6 * * 1-5"
     - cron: "30 6 * * 1-5"
     - cron: "35 6 * * 1-5"
+    - cron: "50 6 * * 1-5"
     - cron: "0 12 * * 1-5"
 
 permissions:
@@ -22,7 +24,7 @@ permissions:
 
 concurrency:
   group: update-a-share-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   update-data:
