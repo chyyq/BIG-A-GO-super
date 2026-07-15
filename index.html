@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="A股主升量化候选、买卖点计划、交易记录与卖点监控" />
+    <meta name="description" content="A股主升量化候选、买卖点计划、晚间复盘与T+1卖点监控" />
     <title>A股主升交易台</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260716" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-    <script src="app.js" defer></script>
+    <script src="app.js?v=20260716" defer></script>
   </head>
   <body>
     <div class="app-shell">
@@ -25,7 +25,7 @@
           </button>
           <button class="primary-button" id="openTradeButton" type="button">
             <i data-lucide="plus"></i>
-            记录交易
+            录入买入
           </button>
           <button class="ghost-button" id="exportTradesButton" type="button">
             <i data-lucide="copy"></i>
@@ -48,7 +48,7 @@
           <article class="metric-panel">
             <span>严格达标</span>
             <strong id="recommendationCount">0</strong>
-            <small>板块4条 + 个股5条</small>
+            <small>v3.0 全部 Gate 通过</small>
           </article>
           <article class="metric-panel">
             <span>持仓预警</span>
@@ -71,7 +71,7 @@
             <section class="section-block">
               <div class="section-title">
                 <div>
-                  <p class="eyebrow">按胜率排序</p>
+                  <p class="eyebrow">按策略分排序</p>
                   <h2>今日推荐</h2>
                 </div>
                 <div class="segmented" role="tablist" aria-label="推荐视图">
@@ -86,7 +86,7 @@
                     <tr>
                       <th>序</th>
                       <th>股票</th>
-                      <th>胜率</th>
+                      <th>策略分</th>
                       <th>买点</th>
                       <th>峰值价</th>
                       <th>预估时间</th>
@@ -151,7 +151,7 @@
         <section class="section-block rules-block">
           <button class="accordion-toggle" id="rulesToggle" type="button" aria-expanded="false">
             <span>
-              <span class="eyebrow">sk.docx 量化纪律</span>
+              <span class="eyebrow">尾盘 T+1 v3.0 纪律</span>
               <strong>展开严格筛选标准</strong>
             </span>
             <i data-lucide="chevron-down"></i>
@@ -160,19 +160,19 @@
             <div class="rule-grid">
               <article>
                 <h3>主升板块</h3>
-                <p>连续强势、涨停/大涨数量、成交额放大、龙头连续性、指数位置，满足4条以上。</p>
+                <p>连续2日前10或3日前20，尾盘排名前15，成交额扩张且具备前排梯队。</p>
               </article>
               <article>
                 <h3>个股主升</h3>
-                <p>成交额放大、突破结构、资金连续流入、均线结构、换手率、分时强度，满足5条以上。</p>
+                <p>只做MA5上行、乖离可控、板块前排、非高位拥挤的主升中段结构。</p>
               </article>
               <article>
                 <h3>买点</h3>
-                <p>只认弱转强突破、第一次分时回踩、回封板三种节点，10:00后无达标则空仓。</p>
+                <p>13:30观察，14:10-14:35确认；14:35后仅稳定封板或高质量回封例外。</p>
               </article>
               <article>
                 <h3>止损</h3>
-                <p>跌破均价线10分钟不收回、跌破启动/平台位、单票亏损5%和账户日亏3%。</p>
+                <p>第一节点先降风险，09:35分类；弱势清余仓，10:00除稳定涨停外全部退出。</p>
               </article>
             </div>
           </div>
@@ -184,7 +184,7 @@
     <div class="modal-backdrop" id="tradeModal" hidden>
       <section class="modal" role="dialog" aria-modal="true" aria-labelledby="tradeModalTitle">
         <div class="modal-head">
-          <h2 id="tradeModalTitle">记录交易</h2>
+          <h2 id="tradeModalTitle">录入买入</h2>
           <button class="icon-button" id="closeTradeModal" type="button" title="关闭">
             <i data-lucide="x"></i>
           </button>

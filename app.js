@@ -60,7 +60,7 @@ async function refreshLatestData(options = {}) {
   const previousGeneratedAt = state.data?.meta?.generatedAt || null;
   if (!silent) {
     button.disabled = true;
-    hint.textContent = "正在读取 GitHub Pages 上最新的 data/latest.json，不会影响本地交易记录。";
+    hint.textContent = "正在读取 GitHub Pages 上最新的 data/latest.json，不会影响本地买入记录。";
   }
 
   await loadData();
@@ -175,7 +175,7 @@ function renderRecommendations() {
     root.innerHTML = `
       <div class="empty-state">
         <strong>今日暂无严格达标推荐。</strong>
-        <p>系统没有找到同时满足“主升板块4条以上 + 个股主升5条以上”的标的。按 sk 纪律，今天可空仓等待。</p>
+        <p>系统没有找到同时通过市场、板块、个股、尾盘、拥挤度和执行容错 Gate 的标的，今天按纪律空仓。</p>
       </div>
     `;
     return;
@@ -207,7 +207,7 @@ function renderRecommendationCard(item, index) {
           <h3 class="stock-name">${escapeHtml(item.name)} <span class="stock-code">${item.code}</span></h3>
           <div class="stock-code">${escapeHtml(item.board?.name || "未分组")} · ${formatPct(item.pct)} · 换手 ${formatPct(item.turnover, false)}</div>
         </div>
-        <span class="score-pill">胜率 ${Math.round(item.winRate || item.confidence || 0)}%</span>
+        <span class="score-pill">策略分 ${Math.round(item.finalScore || item.winRate || item.confidence || 0)}</span>
       </div>
       <div class="card-body">
         <div>
@@ -267,7 +267,7 @@ function renderRecommendationTable() {
         <tr>
           <td class="col-rank">#${item.rank || index + 1}</td>
           <td class="col-stock"><strong>${escapeHtml(item.name)}</strong><span>${item.code}</span></td>
-          <td class="col-score">${Math.round(item.winRate || item.confidence || 0)}%</td>
+          <td class="col-score">${Math.round(item.finalScore || item.winRate || item.confidence || 0)}</td>
           <td class="col-plan">${escapeHtml(item.buyPlan?.type || "--")}<span>${escapeHtml(item.buyPlan?.timeWindow || "")}</span></td>
           <td class="col-price">${formatPrice(targetPrice)}</td>
           <td class="col-time">${escapeHtml(targetTime)}</td>
@@ -302,6 +302,16 @@ function recordRecommendationBuy(recommendation) {
       sellPlan: recommendation.sellPlan,
       stopPlan: recommendation.stopPlan,
       board: recommendation.board,
+      strategyId: recommendation.strategyId,
+      candidateStatus: recommendation.candidateStatus,
+      finalScore: recommendation.finalScore,
+      signalType: recommendation.signalType,
+      overnightCrowdingScore: recommendation.overnightCrowdingScore,
+      executionToleranceScore: recommendation.executionToleranceScore,
+      simpleExecutionScore: recommendation.simpleExecutionScore,
+      recoveryAfter0935Score: recommendation.recoveryAfter0935Score,
+      initialPlan: recommendation.initialPlan,
+      nextDayPlan: recommendation.nextDayPlan,
     },
     createdAt: existing?.createdAt || new Date().toISOString(),
     updatedAt: new Date().toISOString(),
@@ -352,65 +362,6 @@ function renderSectors() {
     .join("");
 }
 
-function renderPositions() {
-  const root = $("#positionsList");
-  if (!state.trades.length) {
-    root.innerHTML = `<div class="empty-state">还没有交易记录。点击“记录交易”后，页面会用本地浏览器记忆并按卖点监控。</div>`;
-    return;
-  }
-
-  root.innerHTML = state.trades.map(renderPositionItem).join("");
-  root.querySelectorAll("[data-action='edit']").forEach((button) => {
-    const trade = state.trades.find((item) => item.id === button.dataset.id);
-    button.addEventListener("click", () => openTradeModal(null, trade));
-  });
-  root.querySelectorAll("[data-action='sell']").forEach((button) => {
-    button.addEventListener("click", () => markTradeSold(button.dataset.id));
-  });
-  root.querySelectorAll("[data-action='delete']").forEach((button) => {
-    button.addEventListener("click", () => deleteTrade(button.dataset.id));
-  });
-}
-
-function renderPositionItem(trade) {
-  const quote = getQuoteForTrade(trade);
-  const currentPrice = quote?.price || trade.lastPrice || trade.buyPrice;
-  const pnlPct = trade.buyPrice ? ((currentPrice - trade.buyPrice) / trade.buyPrice) * 100 : 0;
-  const alert = getAlertForTrade(trade, currentPrice);
-  const statusClass = trade.status === "sold" ? "warn" : alert ? "alert-pill" : "pass";
-
-  return `
-    <article class="position-item">
-      <div class="position-head">
-        <div>
-          <strong>${escapeHtml(trade.name)} <span class="stock-code">${trade.code}</span></strong>
-          <div class="stock-code">${escapeHtml(trade.note || "未填写备注")}</div>
-        </div>
-        <span class="${alert ? "alert-pill" : `tag ${statusClass}`}">${trade.status === "sold" ? "已卖出" : alert || "持仓中"}</span>
-      </div>
-      <div class="position-metrics">
-        <div><span class="detail-label">现价</span><strong>${formatPrice(currentPrice)}</strong></div>
-        <div><span class="detail-label">浮盈亏</span><strong class="${pnlPct >= 0 ? "positive" : "negative"}">${formatPct(pnlPct, false)}</strong></div>
-        <div><span class="detail-label">止损/卖点</span><strong>${formatPrice(trade.stopLoss)} / ${formatPrice(trade.takeProfit)}</strong></div>
-      </div>
-      <div class="position-actions">
-        <button class="ghost-button" type="button" data-action="edit" data-id="${trade.id}">
-          <i data-lucide="pencil"></i>
-          编辑
-        </button>
-        <button class="ghost-button" type="button" data-action="sell" data-id="${trade.id}">
-          <i data-lucide="circle-check"></i>
-          记为卖出
-        </button>
-        <button class="ghost-button" type="button" data-action="delete" data-id="${trade.id}">
-          <i data-lucide="trash-2"></i>
-          删除
-        </button>
-      </div>
-    </article>
-  `;
-}
-
 function renderT1Reviews() {
   const root = $("#t1ReviewList");
   const meta = $("#reviewMeta");
@@ -459,7 +410,7 @@ function buildT1Review(trade) {
   const rangePosition = calcRangePosition(closePrice, highPrice, lowPrice);
   const tailDrawdown = highPrice ? Math.max(0, (highPrice - closePrice) / highPrice) : 0;
   const upperShadow = calcUpperShadowRatio(openPrice, closePrice, highPrice, preClose);
-  const limitUpPrice = calcLimitUpPrice(trade.code, closePrice);
+  const limitUpPrice = calcLimitUpPrice(trade.code, preClose);
   const marketScore = getMarketEmotionScore();
   const sectorScore = calcReviewSectorScore(trade, quote);
   const tailSupportScore = calcReviewTailSupportScore({ closePrice, avgPrice, tailDrawdown, mainNet, superNet });
@@ -482,6 +433,11 @@ function buildT1Review(trade) {
     structureIntegrityScore: structureScore,
   };
   const stockState = classifyT1ReviewState(trade, scores);
+  const initialPlan = selectInitialT1Plan(trade, scores, stockState);
+  const phase = getT1ExecutionPhase(trade, new Date());
+  const state0935 = phase === "CLASSIFY" || phase === "FINAL"
+    ? classify0935Realtime({ quote, closePrice, openPrice, lowPrice, avgPrice, limitUpPrice, sectorScore })
+    : null;
   const pricePlan = buildT1PricePlan({ buyPrice, closePrice, ma5, avgPrice, limitUpPrice, trade });
   return {
     trade,
@@ -490,9 +446,13 @@ function buildT1Review(trade) {
     closePrice,
     pnlPct: buyPrice ? ((closePrice - buyPrice) / buyPrice) * 100 : 0,
     stockState,
+    displayState: state0935 || initialPlan,
+    initialPlan,
+    phase,
+    state0935,
     scores,
     pricePlan,
-    action: buildNextMorningAction(stockState, pricePlan),
+    action: buildNextMorningAction({ stockState, state0935, initialPlan, phase, pricePlan }),
     reasonTags: buildReviewReasonTags(scores, rangePosition, tailDrawdown),
     hardTags: buildReviewHardTags(scores),
   };
@@ -500,9 +460,9 @@ function buildT1Review(trade) {
 
 function renderT1ReviewCard(review) {
   const stateClass =
-    review.stockState === "T1_PREMIUM" || review.stockState === "REBUY_READY"
+    review.displayState === "PLAN_T" || review.displayState === "STRONG" || review.displayState === "LIMIT_UP"
       ? "pass"
-      : review.stockState === "REMOVE"
+      : review.displayState === "REMOVE" || review.displayState === "WEAK" || review.displayState === "PLAN_D"
         ? "alert-pill"
         : "warn";
   return `
@@ -512,12 +472,12 @@ function renderT1ReviewCard(review) {
           <strong>${escapeHtml(review.trade.name)} <span class="stock-code">${review.trade.code}</span></strong>
           <div class="stock-code">买入 ${formatPrice(review.buyPrice)} · 收盘/现价 ${formatPrice(review.closePrice)} · 浮盈 ${formatPct(review.pnlPct, false)}</div>
         </div>
-        <span class="${stateClass === "alert-pill" ? "alert-pill" : `tag ${stateClass}`}">${review.stockState}</span>
+        <span class="${stateClass === "alert-pill" ? "alert-pill" : `tag ${stateClass}`}">${review.displayState}</span>
       </div>
       <div class="review-plan">
-        <div><span>TP1 50%</span><strong>${formatPrice(review.pricePlan.tp1)}</strong></div>
-        <div><span>TP2 30%</span><strong>${formatPrice(review.pricePlan.tp2)}</strong></div>
-        <div><span>最终止损</span><strong>${formatPrice(review.pricePlan.finalStop)}</strong></div>
+        <div><span>第一节点</span><strong>09:25-09:31</strong></div>
+        <div><span>强弱分类</span><strong>09:35</strong></div>
+        <div><span>残仓边界</span><strong>10:00</strong></div>
       </div>
       <p class="review-action">${escapeHtml(review.action)}</p>
       <div class="position-actions review-actions">
@@ -606,6 +566,58 @@ function classifyT1ReviewState(trade, scores) {
   return "T1_WEAK";
 }
 
+function selectInitialT1Plan(trade, scores, stockState) {
+  const snapshotPlan = trade.planSnapshot?.initialPlan;
+  const hardDefensive =
+    stockState === "REMOVE" ||
+    scores.marketEmotionScore < 40 ||
+    scores.positionRiskScore > 75 ||
+    scores.structureIntegrityScore < 45;
+  if (hardDefensive) return "PLAN_D";
+  if (
+    stockState === "T1_PREMIUM" &&
+    scores.positionRiskScore <= 60 &&
+    Number(trade.planSnapshot?.overnightCrowdingScore ?? 44) < 45 &&
+    (snapshotPlan === "PLAN_T" || Number(trade.planSnapshot?.finalScore || 0) >= 84)
+  ) {
+    return "PLAN_T";
+  }
+  return "PLAN_S";
+}
+
+function getT1ExecutionPhase(trade, now) {
+  const created = trade.createdAt ? new Date(trade.createdAt) : null;
+  if (created && created.toLocaleDateString("zh-CN") === now.toLocaleDateString("zh-CN")) return "PREP";
+  const minute = now.getHours() * 60 + now.getMinutes();
+  if (minute < 9 * 60 + 25) return "PREP";
+  if (minute < 9 * 60 + 35) return "FIRST_NODE";
+  if (minute < 10 * 60) return "CLASSIFY";
+  return "FINAL";
+}
+
+function classify0935Realtime({ quote, closePrice, openPrice, lowPrice, avgPrice, limitUpPrice, sectorScore }) {
+  if (limitUpPrice && closePrice >= limitUpPrice * 0.998 && sectorScore >= 55) return "LIMIT_UP";
+  const mainNet = Number(quote.mainNet || 0);
+  const superNet = Number(quote.superNet || 0);
+  const fastReclaim = closePrice >= avgPrice || closePrice >= openPrice;
+  const weakPoints = [
+    closePrice < openPrice,
+    closePrice < avgPrice,
+    closePrice <= lowPrice * 1.004,
+    mainNet < 0 && superNet < 0,
+    sectorScore < 50,
+  ].filter(Boolean).length;
+  const strongPoints = [
+    closePrice >= openPrice || closePrice >= avgPrice,
+    closePrice > lowPrice * 1.008,
+    mainNet > 0 || superNet > 0,
+    sectorScore >= 60,
+  ].filter(Boolean).length;
+  if (weakPoints >= 2 && !fastReclaim) return "WEAK";
+  if (strongPoints >= 2) return "STRONG";
+  return "NEUTRAL";
+}
+
 function buildT1PricePlan({ buyPrice, closePrice, ma5, avgPrice, limitUpPrice, trade }) {
   const base = buyPrice || closePrice;
   const costStop = base * 0.96;
@@ -618,20 +630,34 @@ function buildT1PricePlan({ buyPrice, closePrice, ma5, avgPrice, limitUpPrice, t
   };
 }
 
-function buildNextMorningAction(stockState, pricePlan) {
-  if (stockState === "T1_PREMIUM") {
-    return `强T+1：高开承接强先看TP1/TP2；平开等09:45，不达TP1逐步退出；10:00前不封强板就清。`;
+function buildNextMorningAction({ state0935, initialPlan, phase, pricePlan }) {
+  const stopText = `结构止损 ${formatPrice(pricePlan.finalStop)}`;
+  if (initialPlan === "PLAN_D") {
+    return `PLAN_D：09:25-09:31 卖出100%，不等待09:35；${stopText}。`;
   }
-  if (stockState === "T1_WEAK") {
-    return `弱T+1：低开先控风险；开盘5分钟不能站回均价线/VWAP，反抽卖出，不加仓。`;
+  if (phase === "FINAL") {
+    return state0935 === "LIMIT_UP"
+      ? "稳定涨停且板块同步：例外持有；开板或封单恶化立即卖出。"
+      : "10:00纪律边界已到：卖出全部非涨停残仓，不延长到午后。";
   }
-  if (stockState === "REENTRY_WATCH") {
-    return "观察：竞价不买回，只看能否重新站回均价线和关键位，最多观察2日。";
+  if (state0935 === "WEAK") {
+    return `09:35 WEAK：立即卖出全部余仓，不等反抽，不加仓；${stopText}。`;
   }
-  if (stockState === "REBUY_READY") {
-    return "回补候选：09:35后站稳均价线并突破前高，再等尾盘确认，小仓30%-50%。";
+  if (state0935 === "NEUTRAL") {
+    const remainder = initialPlan === "PLAN_T" ? "30%" : "20%";
+    return `09:35 NEUTRAL：将总仓降至${remainder}，仅等至10:00；非稳定涨停全部卖出。`;
   }
-  return "移出：结构已破或市场风险过高，明早不回补，手动删除即可。";
+  if (state0935 === "STRONG") {
+    const remainder = initialPlan === "PLAN_T" ? "保留50%-70%" : "保留第一节点后的余仓";
+    return `09:35 STRONG：${remainder}至10:00；届时除稳定涨停外全部卖出。`;
+  }
+  if (state0935 === "LIMIT_UP") {
+    return "09:35 LIMIT_UP：稳定封板且板块同步可例外持有；开板或封单恶化立即卖出。";
+  }
+  if (initialPlan === "PLAN_T") {
+    return `PLAN_T：09:25-09:31 先卖20%-30%；09:35再分类，10:00清非涨停残仓；${stopText}。`;
+  }
+  return `PLAN_S：09:25-09:31 先卖40%-50%；09:35再分类，10:00清非涨停残仓；${stopText}。`;
 }
 
 function buildReviewReasonTags(scores, rangePosition, tailDrawdown) {
@@ -803,7 +829,7 @@ function importTradesFromSync() {
     const payload = decodeSyncPayload(syncCode);
     const importedTrades = normalizeImportedTrades(payload?.trades);
     if (!importedTrades.length) {
-      alert("同步码里没有可导入的交易记录。");
+      alert("同步码里没有可导入的买入记录。");
       return;
     }
     mergeImportedTrades(importedTrades);
