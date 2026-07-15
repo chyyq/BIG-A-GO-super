@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-15T16:56:39.955265+08:00",
+    "generatedAt": "2026-07-15T21:49:49.956381+08:00",
     "tradingDate": "2026-07-15",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -20,18 +20,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 29.58
+    "runtimeSeconds": 33.0
   },
   "market": {
     "recommendationCount": 0,
@@ -333,51 +333,39 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "暴涨熔断！三大利好来袭 韩国股市直线拉升！SK海力士、三星电子大涨",
-      "url": "https://finance.eastmoney.com/a/202607153806549033.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "长鑫科技发行价出炉 国产DRAM加速崛起 多只概念股获资金关注(名单)",
-      "url": "https://finance.eastmoney.com/a/202607153806651573.html",
+      "source": "Yicai",
+      "title": "一财社论：以改革创新提升国民健康守住公立医院的公益性和民营医疗机构的非营利性特征，并大胆地拥抱市场机制。  20分钟前",
+      "url": "https://www.yicai.com/news/103276822.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
-      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
+      "source": "Yicai",
+      "title": "股市运行：持续盘整的内生淤塞长期盘整显现出来的各类运行约束，本质是市场价值释放通道阻滞的外在表征。  1小时前",
+      "url": "https://www.yicai.com/news/103276715.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊",
-      "url": "https://finance.eastmoney.com/a/202605073730389683.html",
+      "source": "Yicai",
+      "title": "长鑫科技回应董事长发股权激励，并称已制定三年分红回报规划朱一明称，登陆资本市场对长鑫科技而言既是新的起点，更意味着新的责任。  1小时前",
+      "url": "https://www.yicai.com/news/103276647.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：休闲出海方兴未艾 聚焦“三消”与“二合”赛道",
-      "url": "https://finance.eastmoney.com/a/202607153806521473.html",
+      "source": "Yicai",
+      "title": "国际酒店巨头集体提速在华扩张，背后投资逻辑正在改变｜乐言商业国际酒店巨头正在加速引入中高端品牌、深化本土合作及挖掘存量市场。  2小时前",
+      "url": "https://www.yicai.com/news/103276614.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "华泰证券：AI眼镜等终端有望成为消费新入口、新场景载体",
-      "url": "https://finance.eastmoney.com/a/202607153806524237.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "国金证券：产业、业绩与资金三维共振 把握创新药底部布局机遇",
-      "url": "https://finance.eastmoney.com/a/202607153806519517.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券：业绩期关注AI、涨价、制造三大线索",
-      "url": "https://finance.eastmoney.com/a/202607153806489540.html",
+      "source": "Yicai",
+      "title": "国行苹果AI“靴子落地”，但阿里、苹果的硬仗才刚开始巨头联袂所带来的商业故事固然性感，但市场真正需要的是一个足够惊艳的产品。  2小时前",
+      "url": "https://www.yicai.com/news/103276509.html",
       "time": ""
     }
   ]
