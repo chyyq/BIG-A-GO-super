@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-16T12:37:51.253507+08:00",
+    "generatedAt": "2026-07-16T12:41:04.807288+08:00",
     "tradingDate": "2026-07-16",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -30,28 +30,25 @@
         "note": "Optional news/reference source"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Market monitor is RISK_OFF; no new buy recommendation generated."
-    ],
-    "runtimeSeconds": 51.77
+    "errors": [],
+    "runtimeSeconds": 37.27
   },
   "market": {
     "recommendationCount": 0,
     "qualifiedBoardCount": 1,
     "monitor": {
-      "emotionScore": 75,
-      "marketGateScore": 2,
-      "marketGatePassed": false,
+      "emotionScore": 98,
+      "marketGateScore": 4,
+      "marketGatePassed": true,
       "hardVeto": false,
-      "riskLevel": "RISK_OFF",
-      "limitUpCount": 0,
+      "riskLevel": "NORMAL",
+      "limitUpCount": 53,
       "limitDownCount": 10,
       "bigDownCount": 46,
-      "limitTouchCount": 0,
-      "brokenBoardCount": 0,
-      "brokenBoardRate": 0,
-      "breadthSampleSize": 100,
+      "limitTouchCount": 59,
+      "brokenBoardCount": 6,
+      "brokenBoardRate": 0.102,
+      "breadthSampleSize": 200,
       "breadthMethod": "top-100 plus bottom-100 movers",
       "topBoardPct": 5.43,
       "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
@@ -65,7 +62,7 @@
       "price": 7752.71,
       "pct": 5.43,
       "amount": 1818835161.0,
-      "turnover": 12.27,
+      "turnover": 10.78,
       "open": 7574.56,
       "preClose": 7353.75,
       "mainNet": -63403328.0,
@@ -262,7 +259,7 @@
       "price": 4108.61,
       "pct": 3.52,
       "amount": 32062970013.0,
-      "turnover": 3.82,
+      "turnover": 5.83,
       "open": 3997.21,
       "preClose": 3968.95,
       "mainNet": 747307936.0,
