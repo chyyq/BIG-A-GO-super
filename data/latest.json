@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-16T12:29:02.958765+08:00",
+    "generatedAt": "2026-07-16T12:37:51.253507+08:00",
     "tradingDate": "2026-07-16",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -30,25 +30,28 @@
         "note": "Optional news/reference source"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 30.77
+    "errors": [
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Market monitor is RISK_OFF; no new buy recommendation generated."
+    ],
+    "runtimeSeconds": 51.77
   },
   "market": {
     "recommendationCount": 0,
     "qualifiedBoardCount": 1,
     "monitor": {
-      "emotionScore": 98,
-      "marketGateScore": 4,
-      "marketGatePassed": true,
+      "emotionScore": 75,
+      "marketGateScore": 2,
+      "marketGatePassed": false,
       "hardVeto": false,
-      "riskLevel": "NORMAL",
-      "limitUpCount": 53,
+      "riskLevel": "RISK_OFF",
+      "limitUpCount": 0,
       "limitDownCount": 10,
       "bigDownCount": 46,
-      "limitTouchCount": 59,
-      "brokenBoardCount": 6,
-      "brokenBoardRate": 0.102,
-      "breadthSampleSize": 200,
+      "limitTouchCount": 0,
+      "brokenBoardCount": 0,
+      "brokenBoardRate": 0,
+      "breadthSampleSize": 100,
       "breadthMethod": "top-100 plus bottom-100 movers",
       "topBoardPct": 5.43,
       "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
