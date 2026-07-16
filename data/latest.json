@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-16T15:49:27.273290+08:00",
+    "generatedAt": "2026-07-16T16:27:51.824329+08:00",
     "tradingDate": "2026-07-16",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -33,7 +33,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 39.33
+    "runtimeSeconds": 34.27
   },
   "market": {
     "recommendationCount": 0,
@@ -64,7 +64,7 @@
       "price": 7807.84,
       "pct": 6.17,
       "amount": 1946330152.0,
-      "turnover": 11.48,
+      "turnover": 13.07,
       "open": 7574.56,
       "preClose": 7353.75,
       "mainNet": -51992176.0,
@@ -366,12 +366,6 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "一只猴能抵一辆车？这波CRO行情该如何判断？百亿基金经理先布局",
-      "url": "https://finance.eastmoney.com/a/202607163808747958.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
       "url": "https://finance.eastmoney.com/a/202605283752993232.html",
       "time": ""
@@ -392,6 +386,12 @@
       "source": "Eastmoney News",
       "title": "中信证券：休闲出海方兴未艾 聚焦“三消”与“二合”赛道",
       "url": "https://finance.eastmoney.com/a/202607153806521473.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "华泰证券：AI眼镜等终端有望成为消费新入口、新场景载体",
+      "url": "https://finance.eastmoney.com/a/202607153806524237.html",
       "time": ""
     }
   ]
