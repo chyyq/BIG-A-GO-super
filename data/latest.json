@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-16T16:27:51.824329+08:00",
+    "generatedAt": "2026-07-16T16:34:54.023734+08:00",
     "tradingDate": "2026-07-16",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -33,7 +33,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 34.27
+    "runtimeSeconds": 39.28
   },
   "market": {
     "recommendationCount": 0,
@@ -64,7 +64,7 @@
       "price": 7807.84,
       "pct": 6.17,
       "amount": 1946330152.0,
-      "turnover": 13.07,
+      "turnover": 11.48,
       "open": 7574.56,
       "preClose": 7353.75,
       "mainNet": -51992176.0,
@@ -354,14 +354,20 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "“股神”巴菲特再谈股市赌场论！感叹谷歌“买晚了”",
+      "url": "https://finance.eastmoney.com/a/202607163808126164.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "盘中直线拉升！两大利好突袭 脑机接口板块爆发",
       "url": "https://finance.eastmoney.com/a/202607163808848464.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "“股神”巴菲特再谈股市赌场论！感叹谷歌“买晚了”",
-      "url": "https://finance.eastmoney.com/a/202607163808126164.html",
+      "title": "A股三大指数集体下跌 影视院线概念股逆市上涨",
+      "url": "https://finance.eastmoney.com/a/202607163809001570.html",
       "time": ""
     },
     {
@@ -386,12 +392,6 @@
       "source": "Eastmoney News",
       "title": "中信证券：休闲出海方兴未艾 聚焦“三消”与“二合”赛道",
       "url": "https://finance.eastmoney.com/a/202607153806521473.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券：AI眼镜等终端有望成为消费新入口、新场景载体",
-      "url": "https://finance.eastmoney.com/a/202607153806524237.html",
       "time": ""
     }
   ]
