@@ -399,6 +399,7 @@ function buildT1Review(trade) {
   const highPrice = Number(quote.high || Math.max(openPrice, closePrice));
   const lowPrice = Number(quote.low || Math.min(openPrice, closePrice));
   const preClose = Number(quote.preClose || buyPrice || closePrice);
+  const phase = getT1ExecutionPhase(trade, new Date());
   const avgPrice = Number(quote.avgPrice || quote.ma5 || (highPrice + lowPrice + closePrice) / 3 || closePrice);
   const ma5 = Number(quote.ma5 || avgPrice || closePrice);
   const ma10 = Number(quote.ma10 || ma5 || closePrice);
@@ -410,7 +411,8 @@ function buildT1Review(trade) {
   const rangePosition = calcRangePosition(closePrice, highPrice, lowPrice);
   const tailDrawdown = highPrice ? Math.max(0, (highPrice - closePrice) / highPrice) : 0;
   const upperShadow = calcUpperShadowRatio(openPrice, closePrice, highPrice, preClose);
-  const limitUpPrice = calcLimitUpPrice(trade.code, preClose);
+  const limitUpBase = phase === "PREP" ? closePrice : preClose;
+  const limitUpPrice = calcLimitUpPrice(trade.code, limitUpBase);
   const marketScore = getMarketEmotionScore();
   const sectorScore = calcReviewSectorScore(trade, quote);
   const tailSupportScore = calcReviewTailSupportScore({ closePrice, avgPrice, tailDrawdown, mainNet, superNet });
@@ -434,11 +436,10 @@ function buildT1Review(trade) {
   };
   const stockState = classifyT1ReviewState(trade, scores);
   const initialPlan = selectInitialT1Plan(trade, scores, stockState);
-  const phase = getT1ExecutionPhase(trade, new Date());
   const state0935 = phase === "CLASSIFY" || phase === "FINAL"
     ? classify0935Realtime({ quote, closePrice, openPrice, lowPrice, avgPrice, limitUpPrice, sectorScore })
     : null;
-  const pricePlan = buildT1PricePlan({ buyPrice, closePrice, ma5, avgPrice, limitUpPrice, trade });
+  const pricePlan = buildT1PricePlan({ buyPrice, closePrice, ma5, avgPrice, limitUpPrice, trade, scores, initialPlan });
   return {
     trade,
     quote,
@@ -475,9 +476,21 @@ function renderT1ReviewCard(review) {
         <span class="${stateClass === "alert-pill" ? "alert-pill" : `tag ${stateClass}`}">${review.displayState}</span>
       </div>
       <div class="review-plan">
-        <div><span>第一节点</span><strong>09:25-09:31</strong></div>
-        <div><span>强弱分类</span><strong>09:35</strong></div>
-        <div><span>残仓边界</span><strong>10:00</strong></div>
+        <div>
+          <span>第一卖点 · ${firstSellRatioLabel(review.initialPlan)}</span>
+          <strong>${formatPrice(review.pricePlan.tp1)}</strong>
+          <small>09:25-09:31</small>
+        </div>
+        <div>
+          <span>趋势延伸止盈</span>
+          <strong>${formatPrice(review.pricePlan.tp2)}</strong>
+          <small>09:35分类后</small>
+        </div>
+        <div>
+          <span>极强/涨停参考</span>
+          <strong>${formatPrice(review.pricePlan.tp3)}</strong>
+          <small>10:00边界例外</small>
+        </div>
       </div>
       <p class="review-action">${escapeHtml(review.action)}</p>
       <div class="position-actions review-actions">
@@ -618,14 +631,46 @@ function classify0935Realtime({ quote, closePrice, openPrice, lowPrice, avgPrice
   return "NEUTRAL";
 }
 
-function buildT1PricePlan({ buyPrice, closePrice, ma5, avgPrice, limitUpPrice, trade }) {
+function firstSellRatioLabel(initialPlan) {
+  if (initialPlan === "PLAN_D") return "100%";
+  if (initialPlan === "PLAN_T") return "20%-30%";
+  return "40%-50%";
+}
+
+function buildT1PricePlan({ buyPrice, closePrice, ma5, avgPrice, limitUpPrice, trade, scores, initialPlan }) {
   const base = buyPrice || closePrice;
   const costStop = base * 0.96;
   const structureStop = Math.max(Number(trade.stopLoss || 0), ma5 || 0, avgPrice || 0) * 0.992;
+  const savedTarget = Number(trade.takeProfit || trade.planSnapshot?.sellPlan?.targetPrice || 0);
+  const savedGain = savedTarget > base ? (savedTarget - base) / base : null;
+  let scoreGain = 0.008;
+  scoreGain += Math.max(-0.003, Math.min(0.004, (scores.marketEmotionScore - 50) * 0.0002));
+  scoreGain += Math.max(0, Math.min(0.007, (scores.sectorStrengthScore - 50) * 0.00025));
+  scoreGain += Math.max(0, Math.min(0.008, (scores.tailSupportScore - 50) * 0.0003));
+  scoreGain += Math.max(0, Math.min(0.007, (scores.structureIntegrityScore - 55) * 0.00025));
+  scoreGain -= Math.max(0, (scores.positionRiskScore - 50) * 0.0002);
+  if (initialPlan === "PLAN_T") scoreGain += 0.008;
+  if (initialPlan === "PLAN_D") scoreGain = Math.min(scoreGain, 0.008);
+  scoreGain = Math.max(0.006, Math.min(0.05, scoreGain));
+
+  const targetGain = savedGain !== null
+    ? Math.max(0.006, Math.min(0.08, savedGain * 0.65 + scoreGain * 0.35))
+    : scoreGain;
+  const extensionBonus =
+    0.006 +
+    Math.max(0, (scores.tailSupportScore - 60) * 0.0002) +
+    Math.max(0, (scores.sectorStrengthScore - 60) * 0.00015);
+  const extensionGain = Math.min(0.085, targetGain + extensionBonus);
+  const upsideCap = limitUpPrice || base * 1.1;
+  const closeAnchor = closePrice || base;
+  const overnightFloorGain = initialPlan === "PLAN_D" ? 0 : initialPlan === "PLAN_T" ? 0.012 : 0.006;
+  const tp1Candidate = Math.max(base * (1 + targetGain), closeAnchor * (1 + overnightFloorGain));
+  const tp2Step = initialPlan === "PLAN_T" ? 0.012 : 0.008;
+  const tp2Candidate = Math.max(base * (1 + extensionGain), tp1Candidate * (1 + tp2Step));
   return {
-    tp1: round2(base * 1.03),
-    tp2: round2(base * 1.06),
-    tp3: round2(Math.min(base * 1.1, limitUpPrice || base * 1.1)),
+    tp1: round2(Math.min(tp1Candidate, upsideCap)),
+    tp2: round2(Math.min(tp2Candidate, upsideCap)),
+    tp3: round2(upsideCap),
     finalStop: round2(Math.max(costStop, structureStop || costStop)),
   };
 }

@@ -500,7 +500,6 @@ tr:last-child td {
 }
 
 .sector-list,
-.positions-list,
 .review-list,
 .news-list,
 .source-list {
@@ -509,7 +508,6 @@ tr:last-child td {
 }
 
 .sector-item,
-.position-item,
 .review-card,
 .news-item,
 .source-item {
@@ -520,7 +518,6 @@ tr:last-child td {
 }
 
 .sector-head,
-.position-head,
 .review-head,
 .source-head {
   display: flex;
@@ -541,19 +538,6 @@ tr:last-child td {
   height: 100%;
   width: 0;
   background: linear-gradient(90deg, var(--green), var(--amber));
-}
-
-.position-metrics {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  margin: 12px 0;
-}
-
-.position-metrics div {
-  background: #f6f8f7;
-  border-radius: 8px;
-  padding: 9px;
 }
 
 .position-actions {
@@ -601,6 +585,13 @@ tr:last-child td {
 .review-score-grid strong,
 .review-plan strong {
   font-variant-numeric: tabular-nums;
+}
+
+.review-plan small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 3px;
 }
 
 .review-action {
@@ -803,7 +794,6 @@ button:disabled {
   .plan-grid-four,
   .rule-grid,
   .trade-form,
-  .position-metrics,
   .review-score-grid,
   .review-plan {
     grid-template-columns: 1fr;
