@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-17T15:33:42.061745+08:00",
+    "generatedAt": "2026-07-17T15:35:26.648198+08:00",
     "tradingDate": "2026-07-17",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -20,20 +20,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 33.38
+    "runtimeSeconds": 41.45
   },
   "market": {
     "recommendationCount": 0,
@@ -354,51 +354,33 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "A股重磅信号！多只宽基ETF显著放量！大资金再度出手？",
-      "url": "https://finance.eastmoney.com/a/202607173810775557.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "需求爆发与政策利好共振 电力板块逆势爆发 融资客提前埋伏多股(名单)",
-      "url": "https://finance.eastmoney.com/a/202607173810524665.html",
+      "source": "Yicai",
+      "title": "收盘｜沪指跌3.05%失守3800点，电力板块多股涨停创业板指跌7.15%，科创综指跌8.13%。  12分钟前",
+      "url": "https://www.yicai.com/news/103279991.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "DeepSeek最新估值曝光 国产大模型资本化提速 多股获资金关注(名单)",
-      "url": "https://finance.eastmoney.com/a/202607173809629012.html",
+      "source": "Yicai",
+      "title": "外汇局回应QDII扩容：常态化发放QDII额度，向公募产品倾斜服务境内居民合规真实境外证券投资需求。  3小时前",
+      "url": "https://www.yicai.com/news/103279442.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
-      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
+      "source": "Yicai",
+      "title": "电力板块盘中震荡上涨，桂冠电力、深南电A等6股涨停截至发稿，桂冠电力、深南电A、乐山电力等6股涨停。  4小时前",
+      "url": "https://www.yicai.com/news/103279347.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股波动大如何守住利润？“黑天鹅”尾部风险管理是答案吗｜对话瑞锐投资袁磊",
-      "url": "https://finance.eastmoney.com/a/202605073730389683.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "外资机构把脉A股：AI景气度仍向好 市场正进入结构性分化新阶段",
-      "url": "https://finance.eastmoney.com/a/202607163808163235.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：休闲出海方兴未艾 聚焦“三消”与“二合”赛道",
-      "url": "https://finance.eastmoney.com/a/202607153806521473.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券：AI眼镜等终端有望成为消费新入口、新场景载体",
-      "url": "https://finance.eastmoney.com/a/202607153806524237.html",
+      "source": "Yicai",
+      "title": "半年盘点｜婴幼儿奶粉销量再次下滑，但头部企业为何业绩双位数增长龙宝宝的红利耗尽，市场再度回归寒冬。  5小时前",
+      "url": "https://www.yicai.com/news/103279115.html",
       "time": ""
     }
   ]
