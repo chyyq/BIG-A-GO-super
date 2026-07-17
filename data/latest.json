@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-17T12:43:52.396463+08:00",
+    "generatedAt": "2026-07-17T12:45:55.584372+08:00",
     "tradingDate": "2026-07-17",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -31,13 +31,15 @@
       }
     ],
     "errors": [
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 29.64
+    "runtimeSeconds": 67.27
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 5,
+    "qualifiedBoardCount": 4,
     "monitor": {
       "emotionScore": 54,
       "marketGateScore": 2,
@@ -64,7 +66,7 @@
       "price": 8685.73,
       "pct": 11.24,
       "amount": 6423735077.0,
-      "turnover": 23.44,
+      "turnover": 34.57,
       "open": 8428.76,
       "preClose": 7807.84,
       "mainNet": -141460816.0,
@@ -111,39 +113,13 @@
       "bigUpCount": 8
     },
     {
-      "code": "BK0428",
-      "name": "电力",
-      "kind": "Industry board",
-      "price": 18580.0,
-      "pct": 2.87,
-      "amount": 39741273685.0,
-      "turnover": 1.36,
-      "open": 17986.47,
-      "preClose": 18061.04,
-      "mainNet": 1157326224.0,
-      "rank": 6,
-      "passed": 4,
-      "qualified": true,
-      "score": 81.5,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 8,
-      "bigUpCount": 23
-    },
-    {
       "code": "BK1051",
       "name": "昨日连板_含一字",
       "kind": "Concept board",
       "price": 31277.69,
       "pct": 2.65,
       "amount": 11521934389.0,
-      "turnover": 16.13,
+      "turnover": 15.86,
       "open": 32086.06,
       "preClose": 30471.11,
       "mainNet": -764278256.0,
@@ -238,6 +214,30 @@
       "bigUpCount": 3
     },
     {
+      "code": "BK0428",
+      "name": "电力",
+      "kind": "Industry board",
+      "price": 18580.0,
+      "pct": 2.87,
+      "amount": 39741273685.0,
+      "turnover": 1.36,
+      "open": 17986.47,
+      "preClose": 18061.04,
+      "mainNet": 1157326224.0,
+      "rank": 6,
+      "passed": 2,
+      "qualified": false,
+      "score": 48.7,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
       "code": "BK1432",
       "name": "氮肥",
       "kind": "Industry board",
@@ -323,7 +323,7 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 1
+      "bigUpCount": 0
     },
     {
       "code": "BK1374",
