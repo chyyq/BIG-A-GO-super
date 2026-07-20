@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-20T16:25:34.631755+08:00",
+    "generatedAt": "2026-07-20T16:27:13.566799+08:00",
     "tradingDate": "2026-07-20",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -20,20 +20,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 35.3
+    "runtimeSeconds": 38.06
   },
   "market": {
     "recommendationCount": 0,
@@ -354,33 +354,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "证监会今开座谈会 促进市场稳定健康发展",
+      "url": "https://finance.eastmoney.com/a/202607203811942763.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "世界杯经济谁是赢家？多款西班牙球衣售罄，阿迪达斯预计相关销售超17亿美元世界杯的举办显著提升了美国市场的足球消费热情。  47分钟前",
-      "url": "https://www.yicai.com/news/103283297.html",
+      "source": "Eastmoney News",
+      "title": "稳定信号出现 五大A股主力联袂力挺",
+      "url": "https://finance.eastmoney.com/a/202607203811956168.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘丨沪指收盘涨0.85% 电力、煤炭板块掀涨停潮全市场超3700只个股下跌，超200股跌停。  1小时前",
-      "url": "https://www.yicai.com/news/103283285.html",
+      "source": "Eastmoney News",
+      "title": "资金入场！多只宽基ETF成交大幅放量",
+      "url": "https://finance.eastmoney.com/a/202607203813212485.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "国泰基金：原煤产量创十年最大降幅，煤炭板块迎来大反弹  4小时前",
-      "url": "https://www.yicai.com/news/103282463.html",
+      "source": "Eastmoney News",
+      "title": "证监会将就稳市场召开专题座谈会",
+      "url": "https://finance.eastmoney.com/a/202607193811871440.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "部分重大项目下半年陆续开工，多专家预计基建投资增速将回升2026年基建相关财政资金全年额度较为充足。  4小时前",
-      "url": "https://www.yicai.com/news/103282413.html",
+      "source": "Eastmoney News",
+      "title": "刷屏！大批A股公司 出手回购",
+      "url": "https://finance.eastmoney.com/a/202607203811886243.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
+      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "广发证券刘晨明：重点关注三大核心积极因素",
+      "url": "https://finance.eastmoney.com/a/202607203813000028.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "“国家队”率先出手护盘 稳市机制持续护航A股",
+      "url": "https://finance.eastmoney.com/a/202607203811889342.html",
       "time": ""
     }
   ]
