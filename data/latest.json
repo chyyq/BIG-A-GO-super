@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-20T17:46:24.296391+08:00",
+    "generatedAt": "2026-07-20T22:12:57.789529+08:00",
     "tradingDate": "2026-07-20",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -33,7 +33,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 29.77
+    "runtimeSeconds": 31.12
   },
   "market": {
     "recommendationCount": 0,
@@ -367,6 +367,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "上证50指数大涨超3% 煤炭、电力、保险板块走强",
+      "url": "https://finance.eastmoney.com/a/202607203813221935.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "稳定信号出现 五大A股主力联袂力挺",
       "url": "https://finance.eastmoney.com/a/202607203811956168.html",
       "time": ""
@@ -375,12 +381,6 @@
       "source": "Eastmoney News",
       "title": "资金入场！多只宽基ETF成交大幅放量",
       "url": "https://finance.eastmoney.com/a/202607203813212485.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "上证50指数大涨超3% 煤炭、电力、保险板块走强",
-      "url": "https://finance.eastmoney.com/a/202607203813221935.html",
       "time": ""
     },
     {
