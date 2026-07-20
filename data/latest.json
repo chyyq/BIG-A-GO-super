@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-20T16:30:26.388317+08:00",
+    "generatedAt": "2026-07-20T17:30:55.329865+08:00",
     "tradingDate": "2026-07-20",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -33,7 +33,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 35.59
+    "runtimeSeconds": 31.34
   },
   "market": {
     "recommendationCount": 0,
@@ -361,6 +361,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "证监会召开投资者座谈会听取意见建议：全力维护市场平稳运行",
+      "url": "https://finance.eastmoney.com/a/202607203813223029.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "稳定信号出现 五大A股主力联袂力挺",
       "url": "https://finance.eastmoney.com/a/202607203811956168.html",
       "time": ""
@@ -373,8 +379,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "证监会将就稳市场召开专题座谈会",
-      "url": "https://finance.eastmoney.com/a/202607193811871440.html",
+      "title": "上证50指数大涨超3% 煤炭、电力、保险板块走强",
+      "url": "https://finance.eastmoney.com/a/202607203813221935.html",
       "time": ""
     },
     {
@@ -385,20 +391,14 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "证监会将就稳市场召开专题座谈会",
+      "url": "https://finance.eastmoney.com/a/202607193811871440.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
       "url": "https://finance.eastmoney.com/a/202605283752993232.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "广发证券刘晨明：重点关注三大核心积极因素",
-      "url": "https://finance.eastmoney.com/a/202607203813000028.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "“国家队”率先出手护盘 稳市机制持续护航A股",
-      "url": "https://finance.eastmoney.com/a/202607203811889342.html",
       "time": ""
     }
   ]
