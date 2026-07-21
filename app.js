@@ -159,11 +159,12 @@ function render() {
 function renderStatus() {
   const meta = state.data?.meta || {};
   const generatedAt = meta.generatedAt ? new Date(meta.generatedAt) : null;
+  const dataIssue = getRecommendationDataIssue();
   $("#updatedAt").textContent = generatedAt
     ? generatedAt.toLocaleString("zh-CN", { hour12: false })
     : "--";
   $("#updateMode").textContent = meta.mode || "等待数据";
-  $("#recommendationCount").textContent = state.data?.recommendations?.length || 0;
+  $("#recommendationCount").textContent = dataIssue ? 0 : state.data?.recommendations?.length || 0;
   $("#sourceCount").textContent = (meta.sourceHealth || []).filter((source) => source.ok).length;
   $("#alertCount").textContent = getPositionAlerts().length;
 }
@@ -171,11 +172,22 @@ function renderStatus() {
 function renderRecommendations() {
   const root = $("#recommendationCards");
   const recommendations = state.data?.recommendations || [];
-  if (!recommendations.length) {
+  const dataIssue = getRecommendationDataIssue();
+  if (dataIssue) {
     root.innerHTML = `
       <div class="empty-state">
-        <strong>今日暂无严格达标推荐。</strong>
-        <p>系统没有找到同时通过市场、板块、个股、尾盘、拥挤度和执行容错 Gate 的标的，今天按纪律空仓。</p>
+        <strong>${escapeHtml(dataIssue.title)}</strong>
+        <p>${escapeHtml(dataIssue.detail)}</p>
+      </div>
+    `;
+    return;
+  }
+  if (!recommendations.length) {
+    const emptyCopy = getNoRecommendationCopy();
+    root.innerHTML = `
+      <div class="empty-state">
+        <strong>${escapeHtml(emptyCopy.title)}</strong>
+        <p>${escapeHtml(emptyCopy.detail)}</p>
       </div>
     `;
     return;
@@ -188,6 +200,57 @@ function renderRecommendations() {
       recordRecommendationBuy(recommendation);
     });
   });
+}
+
+function getRecommendationDataIssue() {
+  const meta = state.data?.meta || {};
+  if (["cached-fallback", "no-current-data"].includes(meta.mode)) {
+    return {
+      title: "行情数据未成功更新，暂不能判断空仓。",
+      detail: "当前内容来自历史缓存或数据源失败，请以数据生成时间和下一次 GitHub Actions 结果为准。",
+    };
+  }
+  const snapshotDate = meta.tradingDate || dateKey(meta.generatedAt ? new Date(meta.generatedAt) : null);
+  const today = dateKey(new Date());
+  if (snapshotDate && today && snapshotDate !== today) {
+    return {
+      title: "当前不是今天的行情快照，暂不能判断空仓。",
+      detail: `快照日期为 ${snapshotDate}，今天为 ${today}；请等待自动任务生成新数据或检查 GitHub Actions。`,
+    };
+  }
+  return null;
+}
+
+function getNoRecommendationCopy() {
+  const meta = state.data?.meta || {};
+  const monitor = state.data?.market?.monitor || {};
+  const reason = meta.noRecommendationReason || (monitor.riskLevel === "RISK_OFF" ? "MARKET_RISK_OFF" : null);
+  if (reason === "MARKET_RISK_OFF") {
+    const limitDown = Number.isFinite(Number(monitor.limitDownCount)) ? `跌停 ${monitor.limitDownCount} 只` : "极端下跌数量偏高";
+    const bigDown = Number.isFinite(Number(monitor.bigDownCount)) ? `、大跌 ${monitor.bigDownCount} 只` : "";
+    return {
+      title: "大盘风控触发，今日按纪律空仓。",
+      detail: `${limitDown}${bigDown}，市场处于 RISK_OFF；系统未进入个股推荐阶段。`,
+    };
+  }
+  if (reason === "OUTSIDE_STRATEGY_WINDOW") {
+    return {
+      title: "当前快照不是买入推荐时段。",
+      detail: "晚间更新用于持仓复盘，不代表早盘或尾盘盘中没有出现过候选。",
+    };
+  }
+  return {
+    title: "当前时段暂无严格达标推荐。",
+    detail: "市场风控未熔断，但没有股票同时通过板块、个股、形态、拥挤度和执行容错 Gate。",
+  };
+}
+
+function dateKey(date) {
+  if (!(date instanceof Date) || Number.isNaN(date.getTime())) return null;
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
 }
 
 function renderRecommendationCard(item, index) {
