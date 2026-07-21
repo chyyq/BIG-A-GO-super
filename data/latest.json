@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-21T12:38:10.328606+08:00",
+    "generatedAt": "2026-07-21T12:46:21.024353+08:00",
     "tradingDate": "2026-07-21",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -33,7 +33,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 33.87
+    "runtimeSeconds": 28.08
   },
   "market": {
     "recommendationCount": 0,
@@ -220,7 +220,7 @@
       "price": 15667.62,
       "pct": 6.92,
       "amount": 125734138548.0,
-      "turnover": 3.69,
+      "turnover": 5.97,
       "open": 14906.68,
       "preClose": 14653.92,
       "mainNet": 3226614784.0,
