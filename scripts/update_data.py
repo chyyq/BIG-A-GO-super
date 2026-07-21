@@ -88,6 +88,14 @@ def main() -> None:
     market_quotes = fetch_market_breadth(am_top_quotes or None) if remaining_seconds() > 35 else []
     market_monitor = build_market_monitor(market_quotes, evaluated_boards)
     recommendations = build_recommendations(recommendation_board_pool, now, am_top_quotes, market_monitor)
+    no_recommendation_reason = None
+    if not recommendations:
+        if not active_strategies:
+            no_recommendation_reason = "OUTSIDE_STRATEGY_WINDOW"
+        elif market_monitor.get("riskLevel") == "RISK_OFF":
+            no_recommendation_reason = "MARKET_RISK_OFF"
+        else:
+            no_recommendation_reason = "NO_STRICT_MATCH"
     news = fetch_news() if remaining_seconds() > 25 else []
 
     latest = {
@@ -96,6 +104,8 @@ def main() -> None:
             "generatedAt": now.isoformat(),
             "tradingDate": today,
             "mode": "fast-snapshot",
+            "activeStrategies": sorted(active_strategies),
+            "noRecommendationReason": no_recommendation_reason,
             "sourceHealth": source_list(),
             "errors": errors[:30],
             "runtimeSeconds": round(time.monotonic() - STARTED, 2),
