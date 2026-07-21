@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-21T17:08:00.657096+08:00",
+    "generatedAt": "2026-07-21T17:13:18.272644+08:00",
     "tradingDate": "2026-07-21",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -20,20 +20,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 68.1
+    "runtimeSeconds": 54.99
   },
   "market": {
     "recommendationCount": 0,
@@ -220,7 +220,7 @@
       "price": 2730.6,
       "pct": 9.85,
       "amount": 520600196787.0,
-      "turnover": 7.39,
+      "turnover": 7.4,
       "open": 2519.39,
       "preClose": 2485.79,
       "mainNet": 16617877504.0,
@@ -363,51 +363,45 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "吴清直面散户座谈 国家队密集增持：A股稳市机制走向常态化",
-      "url": "https://finance.eastmoney.com/a/202607203813658092.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "国家队历次进场后 A股怎么走？",
-      "url": "https://finance.eastmoney.com/a/202607213814573589.html",
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共121只个股涨停 立新能源4连板一图速览今日连板股&gt;&gt;  30分钟前",
+      "url": "https://www.yicai.com/news/103285993.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "创业板指大涨逾7% 科创50指数飙升近11% 半导体板块爆发",
-      "url": "https://finance.eastmoney.com/a/202607213815473760.html",
+      "source": "Yicai",
+      "title": "三年来首次全线增长，‌博柏利业绩上涨股价却跌了尽管整体业绩数据符合预期，市场却给出了颇为冷淡的反应。  1小时前",
+      "url": "https://www.yicai.com/news/103285849.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "力挺股市！三家万亿险资机构齐发声",
-      "url": "https://finance.eastmoney.com/a/202607203813468119.html",
+      "source": "Yicai",
+      "title": "收盘｜创业板涨超7% 存储器方向领涨全市场超3100只个股上涨，超百股涨停。  1小时前",
+      "url": "https://www.yicai.com/news/103285863.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股公司密集公告业绩利好 最高增超12倍",
-      "url": "https://finance.eastmoney.com/a/202607203813709437.html",
+      "source": "Yicai",
+      "title": "连吃五个跌停后，资金涌入成功“撬板”德明利｜市场观察有市场人士把德明利“开板”看成存储甚至是科技股反转标志。  2小时前",
+      "url": "https://www.yicai.com/news/103285721.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "真金白银传递信心！回购增持潮席卷A股 多股获融资客提前关注(名单)",
-      "url": "https://finance.eastmoney.com/a/202607213814045214.html",
+      "source": "Yicai",
+      "title": "中信建投策略分析师夏凡捷：中长期资金坚定流入，提供新定价“锚”“外部风险源逐步消退后，科技板块抛压也将明显减少。”夏凡捷说。 市场观点  3小时前",
+      "url": "https://www.yicai.com/news/103285647.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
-      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券：半年报盈利兑现快递行业景气 关注淡季价格表现",
-      "url": "https://finance.eastmoney.com/a/202607213814052971.html",
+      "source": "Yicai",
+      "title": "A股早盘深V反弹，四大股指期货贴水大幅收窄市场情绪修复、股指期货贴水收窄，机构普遍认为当前调整属技术性回调而非趋势反转。  4小时前",
+      "url": "https://www.yicai.com/news/103285540.html",
       "time": ""
     }
   ]
