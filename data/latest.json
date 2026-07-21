@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-21T17:16:59.398159+08:00",
+    "generatedAt": "2026-07-21T22:00:12.181428+08:00",
     "tradingDate": "2026-07-21",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -33,7 +33,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 67.37
+    "runtimeSeconds": 27.66
   },
   "market": {
     "recommendationCount": 0,
@@ -220,7 +220,7 @@
       "price": 2730.6,
       "pct": 9.85,
       "amount": 520600196787.0,
-      "turnover": 7.39,
+      "turnover": 7.4,
       "open": 2519.39,
       "preClose": 2485.79,
       "mainNet": 16617877504.0,
@@ -382,12 +382,6 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "力挺股市！三家万亿险资机构齐发声",
-      "url": "https://finance.eastmoney.com/a/202607203813468119.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "A股公司密集公告业绩利好 最高增超12倍",
       "url": "https://finance.eastmoney.com/a/202607203813709437.html",
       "time": ""
@@ -408,6 +402,12 @@
       "source": "Eastmoney News",
       "title": "华泰证券：半年报盈利兑现快递行业景气 关注淡季价格表现",
       "url": "https://finance.eastmoney.com/a/202607213814052971.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "银河证券：今年茅台多次提价 高端白酒消费见底信号",
+      "url": "https://finance.eastmoney.com/a/202607213814046382.html",
       "time": ""
     }
   ]
