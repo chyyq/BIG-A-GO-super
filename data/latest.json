@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-21T16:01:05.784962+08:00",
+    "generatedAt": "2026-07-21T16:41:19.967112+08:00",
     "tradingDate": "2026-07-21",
     "mode": "fast-snapshot",
     "sourceHealth": [
@@ -33,7 +33,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 88.22
+    "runtimeSeconds": 30.44
   },
   "market": {
     "recommendationCount": 0,
@@ -168,7 +168,7 @@
       "price": 16234.62,
       "pct": 10.79,
       "amount": 191154731178.0,
-      "turnover": 5.41,
+      "turnover": 8.76,
       "open": 14906.68,
       "preClose": 14653.92,
       "mainNet": 6551982592.0,
@@ -220,7 +220,7 @@
       "price": 2730.6,
       "pct": 9.85,
       "amount": 520600196787.0,
-      "turnover": 7.39,
+      "turnover": 7.4,
       "open": 2519.39,
       "preClose": 2485.79,
       "mainNet": 16617877504.0,
@@ -298,7 +298,7 @@
       "price": 987.85,
       "pct": 9.64,
       "amount": 857986066562.0,
-      "turnover": 3.95,
+      "turnover": 3.94,
       "open": 912.33,
       "preClose": 900.99,
       "mainNet": 29587181568.0,
@@ -345,7 +345,7 @@
       "price": 946.07,
       "pct": 9.19,
       "amount": 835161197727.0,
-      "turnover": 5.22,
+      "turnover": 5.12,
       "open": 875.73,
       "preClose": 866.45,
       "mainNet": 25482694656.0,
@@ -388,8 +388,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "市场监管总局：合理降低佣金、抽成、会员费等费用 减轻个体工商户运营初期成本压力",
-      "url": "https://finance.eastmoney.com/a/202607203813271621.html",
+      "title": "创业板指大涨逾7% 科创50指数飙升近11% 半导体板块爆发",
+      "url": "https://finance.eastmoney.com/a/202607213815473760.html",
       "time": ""
     },
     {
