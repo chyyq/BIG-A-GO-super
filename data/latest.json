@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-22T16:40:48.724425+08:00",
+    "generatedAt": "2026-07-22T16:45:10.550511+08:00",
     "tradingDate": "2026-07-22",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,6 +12,12 @@
         "ok": true,
         "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
@@ -27,17 +33,13 @@
       }
     ],
     "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 186.71
+    "runtimeSeconds": 105.52
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 1,
+    "qualifiedBoardCount": 2,
     "monitor": {
       "emotionScore": 76,
       "marketGateScore": 3,
@@ -52,11 +54,37 @@
       "brokenBoardRate": 0.212,
       "breadthSampleSize": 200,
       "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 6.37,
+      "topBoardPct": 6.38,
       "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
     }
   },
   "boards": [
+    {
+      "code": "BK0732",
+      "name": "贵金属",
+      "kind": "Industry board",
+      "price": 2100.81,
+      "pct": 6.38,
+      "amount": 26739980257.0,
+      "turnover": 5.07,
+      "open": 2016.43,
+      "preClose": 1974.81,
+      "mainNet": 1898165312.0,
+      "rank": 4,
+      "passed": 4,
+      "qualified": true,
+      "score": 82.2,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Board amount expands at least 1.30x",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 3,
+      "bigUpCount": 9
+    },
     {
       "code": "BK1617",
       "name": "黄金",
@@ -109,28 +137,54 @@
       "bigUpCount": 2
     },
     {
-      "code": "BK0732",
-      "name": "贵金属",
-      "kind": "Industry board",
-      "price": 2100.81,
-      "pct": 6.38,
-      "amount": 26739980257.0,
-      "turnover": 5.07,
-      "open": 2016.43,
-      "preClose": 1974.81,
-      "mainNet": 1898165312.0,
-      "rank": 4,
-      "passed": 2,
+      "code": "BK1051",
+      "name": "昨日连板_含一字",
+      "kind": "Concept board",
+      "price": 30883.67,
+      "pct": 7.05,
+      "amount": 6662363021.0,
+      "turnover": 15.25,
+      "open": 30431.37,
+      "preClose": 28848.85,
+      "mainNet": 286705600.0,
+      "rank": 2,
+      "passed": 3,
       "qualified": false,
-      "score": 49.4,
+      "score": 66.5,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
       ],
       "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "amountRatio": 0.46,
+      "limitUpCount": 3,
+      "bigUpCount": 4
+    },
+    {
+      "code": "BK0816",
+      "name": "昨日连板",
+      "kind": "Concept board",
+      "price": 20882.94,
+      "pct": 6.31,
+      "amount": 5214461947.0,
+      "turnover": 15.57,
+      "open": 20497.97,
+      "preClose": 19643.46,
+      "mainNet": 245102496.0,
+      "rank": 7,
+      "passed": 3,
+      "qualified": false,
+      "score": 64.75,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": 0.36,
+      "limitUpCount": 2,
+      "bigUpCount": 3
     },
     {
       "code": "BK1434",
@@ -178,7 +232,7 @@
       "continuous": false,
       "amountRatio": 1.72,
       "limitUpCount": 0,
-      "bigUpCount": 0
+      "bigUpCount": 1
     },
     {
       "code": "BK1318",
@@ -223,29 +277,6 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1051",
-      "name": "昨日连板_含一字",
-      "kind": "Concept board",
-      "price": 30883.67,
-      "pct": 7.05,
-      "amount": 6662363021.0,
-      "turnover": 15.25,
-      "open": 30431.37,
-      "preClose": 28848.85,
-      "mainNet": 286705600.0,
-      "rank": 2,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.7,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": 0.46,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
       "code": "BK1616",
       "name": "白银",
       "kind": "Industry board",
@@ -265,29 +296,6 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK0816",
-      "name": "昨日连板",
-      "kind": "Concept board",
-      "price": 20882.94,
-      "pct": 6.31,
-      "amount": 5214461947.0,
-      "turnover": 15.57,
-      "open": 20497.97,
-      "preClose": 19643.46,
-      "mainNet": 245102496.0,
-      "rank": 7,
-      "passed": 1,
-      "qualified": false,
-      "score": 31.95,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": 0.36,
       "limitUpCount": 0,
       "bigUpCount": 0
     },
@@ -384,8 +392,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "沪指震荡整理 贵金属与医疗美容板块走强",
-      "url": "https://finance.eastmoney.com/a/202607223817205421.html",
+      "title": "吴清：坚决维护资本市场平稳健康运行 持续提升外资参与资本市场的便利度",
+      "url": "https://finance.eastmoney.com/a/202607223817259915.html",
       "time": ""
     }
   ]
