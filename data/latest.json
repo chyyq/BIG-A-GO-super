@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-22T17:16:51.728956+08:00",
+    "generatedAt": "2026-07-22T22:03:14.588636+08:00",
     "tradingDate": "2026-07-22",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 35.16
+    "runtimeSeconds": 39.58
   },
   "market": {
     "recommendationCount": 0,
@@ -116,7 +116,7 @@
       "price": 8505.11,
       "pct": 9.98,
       "amount": 3563678920.0,
-      "turnover": 15.06,
+      "turnover": 41.97,
       "open": 7894.95,
       "preClose": 7733.25,
       "mainNet": 265637648.0,
@@ -141,7 +141,7 @@
       "price": 30883.67,
       "pct": 7.05,
       "amount": 6662363021.0,
-      "turnover": 15.25,
+      "turnover": 6.6,
       "open": 30431.37,
       "preClose": 28848.85,
       "mainNet": 286705600.0,
@@ -166,7 +166,7 @@
       "price": 20882.94,
       "pct": 6.31,
       "amount": 5214461947.0,
-      "turnover": 15.57,
+      "turnover": 5.9,
       "open": 20497.97,
       "preClose": 19643.46,
       "mainNet": 245102496.0,
@@ -347,27 +347,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "中国证监会：持续加强市场基础制度建设 增强市场内在稳定性",
+      "url": "https://finance.eastmoney.com/a/202607223816086570.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共48只个股涨停 这只电力股5连板电力板块立新能源5连板，算力租赁概念股美利云3连板。一图速览今日连板股&gt;&gt;  55分钟前",
-      "url": "https://www.yicai.com/news/103287803.html",
+      "source": "Eastmoney News",
+      "title": "吴清：坚决维护资本市场平稳健康运行 持续提升外资参与资本市场的便利度",
+      "url": "https://finance.eastmoney.com/a/202607223817259915.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜创业板指跌3.23% 算力硬件产业链调整全市场超3800只个股下跌。  1小时前",
-      "url": "https://www.yicai.com/news/103287671.html",
+      "source": "Eastmoney News",
+      "title": "北京国管：坚定看好中国资本市场发展前景 已统筹自有资金累计投入近百亿布局股市",
+      "url": "https://finance.eastmoney.com/a/202607223817266413.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "70多只产品涨超10%，这些ETF百亿资金兑现反弹成减仓契机？  3小时前",
-      "url": "https://www.yicai.com/news/103287360.html",
+      "source": "Eastmoney News",
+      "title": "沪指震荡整理 贵金属与医疗美容板块走强",
+      "url": "https://finance.eastmoney.com/a/202607223817205421.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
+      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "华泰证券：AI模型国内竞争升温 海外差距收敛",
+      "url": "https://finance.eastmoney.com/a/202607223816343112.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信证券：展望2026年下半年 红利资产有望进入估值修复区间",
+      "url": "https://finance.eastmoney.com/a/202607223816342846.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信证券：国产模型和头部互联网公司或再次被重估",
+      "url": "https://finance.eastmoney.com/a/202607223816350761.html",
       "time": ""
     }
   ]
