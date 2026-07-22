@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-22T17:07:06.764056+08:00",
+    "generatedAt": "2026-07-22T17:12:20.896928+08:00",
     "tradingDate": "2026-07-22",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=5000&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
       },
       {
@@ -22,67 +22,44 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 40.54
+    "errors": [
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response"
+    ],
+    "runtimeSeconds": 55.86
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 2,
+    "qualifiedBoardCount": 1,
     "monitor": {
-      "emotionScore": 76,
-      "marketGateScore": 3,
+      "emotionScore": 100,
+      "marketGateScore": 5,
       "marketGatePassed": true,
       "hardVeto": false,
       "riskLevel": "NORMAL",
       "limitUpCount": 52,
-      "limitDownCount": 15,
-      "bigDownCount": 69,
+      "limitDownCount": 0,
+      "bigDownCount": 0,
       "limitTouchCount": 66,
       "brokenBoardCount": 14,
       "brokenBoardRate": 0.212,
-      "breadthSampleSize": 200,
+      "breadthSampleSize": 100,
       "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 6.38,
+      "topBoardPct": 6.37,
       "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
     }
   },
   "boards": [
-    {
-      "code": "BK0732",
-      "name": "贵金属",
-      "kind": "Industry board",
-      "price": 2100.81,
-      "pct": 6.38,
-      "amount": 26739980257.0,
-      "turnover": 5.07,
-      "open": 2016.43,
-      "preClose": 1974.81,
-      "mainNet": 1898165312.0,
-      "rank": 4,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.2,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 3,
-      "bigUpCount": 9
-    },
     {
       "code": "BK1617",
       "name": "黄金",
@@ -183,6 +160,30 @@
       "amountRatio": 0.36,
       "limitUpCount": 2,
       "bigUpCount": 3
+    },
+    {
+      "code": "BK0732",
+      "name": "贵金属",
+      "kind": "Industry board",
+      "price": 2100.81,
+      "pct": 6.38,
+      "amount": 26739980257.0,
+      "turnover": 5.07,
+      "open": 2016.43,
+      "preClose": 1974.81,
+      "mainNet": 1898165312.0,
+      "rank": 4,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.4,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1434",
@@ -347,27 +348,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "中国证监会：持续加强市场基础制度建设 增强市场内在稳定性",
+      "url": "https://finance.eastmoney.com/a/202607223816086570.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共48只个股涨停 这只电力股5连板电力板块立新能源5连板，算力租赁概念股美利云3连板。一图速览今日连板股&gt;&gt;  46分钟前",
-      "url": "https://www.yicai.com/news/103287803.html",
+      "source": "Eastmoney News",
+      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
+      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜创业板指跌3.23% 算力硬件产业链调整全市场超3800只个股下跌。  1小时前",
-      "url": "https://www.yicai.com/news/103287671.html",
+      "source": "Eastmoney News",
+      "title": "华泰证券：AI模型国内竞争升温 海外差距收敛",
+      "url": "https://finance.eastmoney.com/a/202607223816343112.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "70多只产品涨超10%，这些ETF百亿资金兑现反弹成减仓契机？  3小时前",
-      "url": "https://www.yicai.com/news/103287360.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：展望2026年下半年 红利资产有望进入估值修复区间",
+      "url": "https://finance.eastmoney.com/a/202607223816342846.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信证券：国产模型和头部互联网公司或再次被重估",
+      "url": "https://finance.eastmoney.com/a/202607223816350761.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "天风证券：目前位置可以乐观一些 继续看好消费板块",
+      "url": "https://finance.eastmoney.com/a/202607223816341375.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信建投：医疗器械板块拐点来临 2026年业绩改善个股存在修复机会",
+      "url": "https://finance.eastmoney.com/a/202607223816340484.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "吴清：坚决维护资本市场平稳健康运行 持续提升外资参与资本市场的便利度",
+      "url": "https://finance.eastmoney.com/a/202607223817259915.html",
       "time": ""
     }
   ]
