@@ -440,7 +440,9 @@ function renderT1Reviews() {
     return;
   }
 
-  const reviews = openTrades.map(buildT1Review);
+  const now = new Date();
+  const reviews = openTrades.map((trade) => buildT1Review(trade, now));
+  if (captureOvernightReviewSnapshots(reviews, now)) persistTrades();
   root.innerHTML = reviews.map(renderT1ReviewCard).join("");
   root.querySelectorAll("[data-action='edit']").forEach((button) => {
     const trade = state.trades.find((item) => item.id === button.dataset.id);
@@ -454,7 +456,7 @@ function renderT1Reviews() {
   });
 }
 
-function buildT1Review(trade) {
+function buildT1Review(trade, now = new Date()) {
   const quote = getQuoteForTrade(trade) || {};
   const buyPrice = Number(trade.buyPrice || quote.price || 0);
   const closePrice = Number(quote.price || trade.lastPrice || buyPrice);
@@ -462,7 +464,7 @@ function buildT1Review(trade) {
   const highPrice = Number(quote.high || Math.max(openPrice, closePrice));
   const lowPrice = Number(quote.low || Math.min(openPrice, closePrice));
   const preClose = Number(quote.preClose || buyPrice || closePrice);
-  const phase = getT1ExecutionPhase(trade, new Date());
+  const phase = getT1ExecutionPhase(trade, now);
   const avgPrice = Number(quote.avgPrice || quote.ma5 || (highPrice + lowPrice + closePrice) / 3 || closePrice);
   const ma5 = Number(quote.ma5 || avgPrice || closePrice);
   const ma10 = Number(quote.ma10 || ma5 || closePrice);
@@ -474,8 +476,11 @@ function buildT1Review(trade) {
   const rangePosition = calcRangePosition(closePrice, highPrice, lowPrice);
   const tailDrawdown = highPrice ? Math.max(0, (highPrice - closePrice) / highPrice) : 0;
   const upperShadow = calcUpperShadowRatio(openPrice, closePrice, highPrice, preClose);
-  const limitUpBase = phase === "PREP" ? closePrice : preClose;
-  const limitUpPrice = calcLimitUpPrice(trade.code, limitUpBase);
+  const frozenReview = phase === "PREP" ? null : trade.reviewSnapshot;
+  const referenceClose = Number(frozenReview?.referenceClose || (phase === "PREP" ? closePrice : preClose) || closePrice);
+  const referenceAvgPrice = Number(frozenReview?.avgPrice || avgPrice || referenceClose);
+  const referenceMa5 = Number(frozenReview?.ma5 || ma5 || referenceAvgPrice);
+  const limitUpPrice = calcLimitUpPrice(trade.code, referenceClose);
   const marketScore = getMarketEmotionScore();
   const sectorScore = calcReviewSectorScore(trade, quote);
   const tailSupportScore = calcReviewTailSupportScore({ closePrice, avgPrice, tailDrawdown, mainNet, superNet });
@@ -490,19 +495,40 @@ function buildT1Review(trade) {
     upperShadow,
   });
   const structureScore = calcReviewStructureScore({ closePrice, lowPrice, highPrice, ma5, ma10, avgPrice, buyPrice });
-  const scores = {
+  const liveScores = {
     marketEmotionScore: marketScore,
     sectorStrengthScore: sectorScore,
     tailSupportScore,
     positionRiskScore,
     structureIntegrityScore: structureScore,
   };
-  const stockState = classifyT1ReviewState(trade, scores);
-  const initialPlan = selectInitialT1Plan(trade, scores, stockState);
-  const state0935 = phase === "CLASSIFY" || phase === "FINAL"
-    ? classify0935Realtime({ quote, closePrice, openPrice, lowPrice, avgPrice, limitUpPrice, sectorScore })
-    : null;
-  const pricePlan = buildT1PricePlan({ buyPrice, closePrice, ma5, avgPrice, limitUpPrice, trade, scores, initialPlan });
+  const scores = frozenReview?.scores || liveScores;
+  const stockState = frozenReview?.stockState || classifyT1ReviewState(trade, scores);
+  const initialPlan = frozenReview?.initialPlan || selectInitialT1Plan(trade, scores, stockState);
+  const realtimeState = phase === "PREP"
+    ? null
+    : classifyOpeningRealtime({
+        quote,
+        closePrice,
+        openPrice: Number(quote.open || 0),
+        lowPrice,
+        avgPrice,
+        referenceClose,
+        limitUpPrice,
+        sectorScore,
+        phase,
+      });
+  const pricePlan = frozenReview?.pricePlan || buildT1PricePlan({
+    buyPrice,
+    referenceClose,
+    ma5: referenceMa5,
+    avgPrice: referenceAvgPrice,
+    limitUpPrice,
+    trade,
+    scores,
+    initialPlan,
+  });
+  const execution = buildOpeningExecution({ phase, realtimeState, initialPlan });
   return {
     trade,
     quote,
@@ -510,21 +536,56 @@ function buildT1Review(trade) {
     closePrice,
     pnlPct: buyPrice ? ((closePrice - buyPrice) / buyPrice) * 100 : 0,
     stockState,
-    displayState: state0935 || initialPlan,
+    displayState: realtimeState || initialPlan,
     initialPlan,
     phase,
-    state0935,
+    realtimeState,
     scores,
+    referenceClose,
+    referenceAvgPrice,
+    referenceMa5,
     pricePlan,
-    action: buildNextMorningAction({ stockState, state0935, initialPlan, phase, pricePlan }),
+    execution,
+    action: buildNextMorningAction({ realtimeState, initialPlan, phase, pricePlan }),
     reasonTags: buildReviewReasonTags(scores, rangePosition, tailDrawdown),
     hardTags: buildReviewHardTags(scores),
   };
 }
 
+function captureOvernightReviewSnapshots(reviews, now) {
+  const minute = now.getHours() * 60 + now.getMinutes();
+  if (minute < 15 * 60) return false;
+  let changed = false;
+  reviews.forEach((review) => {
+    if (review.phase !== "PREP" || !isSameLocalDate(review.trade.createdAt, now)) return;
+    const snapshot = {
+      tradingDate: localDateKey(now),
+      capturedAt: now.toISOString(),
+      referenceClose: review.referenceClose,
+      avgPrice: review.referenceAvgPrice,
+      ma5: review.referenceMa5,
+      scores: review.scores,
+      stockState: review.stockState,
+      initialPlan: review.initialPlan,
+      pricePlan: review.pricePlan,
+    };
+    const previous = review.trade.reviewSnapshot;
+    const unchanged =
+      previous?.tradingDate === snapshot.tradingDate &&
+      previous?.referenceClose === snapshot.referenceClose &&
+      previous?.initialPlan === snapshot.initialPlan &&
+      JSON.stringify(previous?.pricePlan) === JSON.stringify(snapshot.pricePlan) &&
+      JSON.stringify(previous?.scores) === JSON.stringify(snapshot.scores);
+    if (unchanged) return;
+    review.trade.reviewSnapshot = snapshot;
+    changed = true;
+  });
+  return changed;
+}
+
 function renderT1ReviewCard(review) {
   const stateClass =
-    review.displayState === "PLAN_T" || review.displayState === "STRONG" || review.displayState === "LIMIT_UP"
+    review.displayState === "PLAN_T" || review.displayState === "STRONG" || review.displayState === "RECOVERY" || review.displayState === "LIMIT_UP"
       ? "pass"
       : review.displayState === "REMOVE" || review.displayState === "WEAK" || review.displayState === "PLAN_D"
         ? "alert-pill"
@@ -540,13 +601,13 @@ function renderT1ReviewCard(review) {
       </div>
       <div class="review-plan">
         <div>
-          <span>第一卖点 · ${firstSellRatioLabel(review.initialPlan)}</span>
-          <strong>${formatPrice(review.pricePlan.tp1)}</strong>
-          <small>09:25-09:31</small>
+          <span>开盘卖区 · ${escapeHtml(review.execution.ratioLabel)}</span>
+          <strong>${formatRange(review.pricePlan.tp1Range)}</strong>
+          <small>09:30-09:35 条件触发</small>
         </div>
         <div>
           <span>趋势延伸止盈</span>
-          <strong>${formatPrice(review.pricePlan.tp2)}</strong>
+          <strong>${formatRange(review.pricePlan.tp2Range)}</strong>
           <small>09:35分类后</small>
         </div>
         <div>
@@ -663,49 +724,91 @@ function selectInitialT1Plan(trade, scores, stockState) {
 
 function getT1ExecutionPhase(trade, now) {
   const created = trade.createdAt ? new Date(trade.createdAt) : null;
-  if (created && created.toLocaleDateString("zh-CN") === now.toLocaleDateString("zh-CN")) return "PREP";
+  if (created && isSameLocalDate(created, now)) return "PREP";
   const minute = now.getHours() * 60 + now.getMinutes();
   if (minute < 9 * 60 + 25) return "PREP";
-  if (minute < 9 * 60 + 35) return "FIRST_NODE";
+  if (minute < 9 * 60 + 30) return "AUCTION";
+  if (minute < 9 * 60 + 35) return "OPEN_CONFIRM";
   if (minute < 10 * 60) return "CLASSIFY";
   return "FINAL";
 }
 
-function classify0935Realtime({ quote, closePrice, openPrice, lowPrice, avgPrice, limitUpPrice, sectorScore }) {
+function classifyOpeningRealtime({
+  quote,
+  closePrice,
+  openPrice,
+  lowPrice,
+  avgPrice,
+  referenceClose,
+  limitUpPrice,
+  sectorScore,
+  phase,
+}) {
+  if (!closePrice || !referenceClose) return "NEUTRAL";
   if (limitUpPrice && closePrice >= limitUpPrice * 0.998 && sectorScore >= 55) return "LIMIT_UP";
+  const gap = openPrice ? (openPrice - referenceClose) / referenceClose : (closePrice - referenceClose) / referenceClose;
+  const gain = (closePrice - referenceClose) / referenceClose;
+  if (phase === "AUCTION") {
+    if (gain >= 0.025) return "STRONG";
+    if (gain <= -0.02) return "WEAK";
+    return "NEUTRAL";
+  }
+
   const mainNet = Number(quote.mainNet || 0);
   const superNet = Number(quote.superNet || 0);
-  const fastReclaim = closePrice >= avgPrice || closePrice >= openPrice;
-  const weakPoints = [
-    closePrice < openPrice,
-    closePrice < avgPrice,
-    closePrice <= lowPrice * 1.004,
-    mainNet < 0 && superNet < 0,
-    sectorScore < 50,
-  ].filter(Boolean).length;
-  const strongPoints = [
-    closePrice >= openPrice || closePrice >= avgPrice,
-    closePrice > lowPrice * 1.008,
-    mainNet > 0 || superNet > 0,
-    sectorScore >= 60,
-  ].filter(Boolean).length;
-  if (weakPoints >= 2 && !fastReclaim) return "WEAK";
-  if (strongPoints >= 2) return "STRONG";
+  const highPrice = Number(quote.high || closePrice);
+  const pullback = highPrice ? Math.max(0, (highPrice - closePrice) / highPrice) : 0;
+  const aboveOpen = !openPrice || closePrice >= openPrice * 0.998;
+  const aboveAvg = !avgPrice || closePrice >= avgPrice * 0.998;
+  const flowPositive = mainNet > 0 || superNet > 0;
+  const flowNegative = mainNet < 0 && superNet < 0;
+  const fastRecovery =
+    gap < 0 &&
+    closePrice >= referenceClose * 0.998 &&
+    (!openPrice || closePrice >= openPrice * 1.008) &&
+    aboveAvg;
+  if (fastRecovery && pullback <= 0.018) return "RECOVERY";
+  if (
+    gain >= 0.008 &&
+    aboveOpen &&
+    aboveAvg &&
+    pullback <= 0.018 &&
+    (flowPositive || sectorScore >= 55 || gain >= 0.035)
+  ) {
+    return "STRONG";
+  }
+
+  const lostGapAdvantage = gap >= 0.005 && closePrice < referenceClose * 1.002 && !aboveOpen;
+  const failedFollowThrough = !aboveOpen && !aboveAvg && (pullback >= 0.012 || flowNegative);
+  const nearLowWithPressure = closePrice <= lowPrice * 1.004 && !aboveAvg && (flowNegative || sectorScore < 50);
+  if (gain <= -0.015 || lostGapAdvantage || failedFollowThrough || nearLowWithPressure) return "WEAK";
   return "NEUTRAL";
 }
 
-function firstSellRatioLabel(initialPlan) {
-  if (initialPlan === "PLAN_D") return "100%";
-  if (initialPlan === "PLAN_T") return "20%-30%";
-  return "40%-50%";
+function buildOpeningExecution({ phase, realtimeState, initialPlan }) {
+  if (phase === "PREP") return { ratioLabel: "待开盘确认" };
+  if (phase === "AUCTION") return { ratioLabel: "竞价仅定级" };
+  if (realtimeState === "LIMIT_UP" || realtimeState === "STRONG" || realtimeState === "RECOVERY") {
+    return { ratioLabel: "暂缓卖出" };
+  }
+  if (realtimeState === "WEAK") {
+    if (initialPlan === "PLAN_D") return { ratioLabel: "100%" };
+    if (initialPlan === "PLAN_T") return { ratioLabel: "40%-50%" };
+    return { ratioLabel: "60%-70%" };
+  }
+  if (initialPlan === "PLAN_D") return { ratioLabel: "50%-70%" };
+  if (initialPlan === "PLAN_T") return { ratioLabel: "20%-30%" };
+  return { ratioLabel: "30%-40%" };
 }
 
-function buildT1PricePlan({ buyPrice, closePrice, ma5, avgPrice, limitUpPrice, trade, scores, initialPlan }) {
-  const base = buyPrice || closePrice;
+function buildT1PricePlan({ buyPrice, referenceClose, ma5, avgPrice, limitUpPrice, trade, scores, initialPlan }) {
+  const base = buyPrice || referenceClose;
+  const reference = referenceClose || base;
   const costStop = base * 0.96;
-  const structureStop = Math.max(Number(trade.stopLoss || 0), ma5 || 0, avgPrice || 0) * 0.992;
+  const rawStructureStop = Math.max(Number(trade.stopLoss || 0), ma5 || 0, avgPrice || 0) * 0.992;
+  const structureStop = rawStructureStop ? Math.min(rawStructureStop, reference * 0.997) : 0;
   const savedTarget = Number(trade.takeProfit || trade.planSnapshot?.sellPlan?.targetPrice || 0);
-  const savedGain = savedTarget > base ? (savedTarget - base) / base : null;
+  const savedGain = savedTarget > reference ? (savedTarget - reference) / reference : null;
   let scoreGain = 0.008;
   scoreGain += Math.max(-0.003, Math.min(0.004, (scores.marketEmotionScore - 50) * 0.0002));
   scoreGain += Math.max(0, Math.min(0.007, (scores.sectorStrengthScore - 50) * 0.00025));
@@ -716,56 +819,88 @@ function buildT1PricePlan({ buyPrice, closePrice, ma5, avgPrice, limitUpPrice, t
   if (initialPlan === "PLAN_D") scoreGain = Math.min(scoreGain, 0.008);
   scoreGain = Math.max(0.006, Math.min(0.05, scoreGain));
 
-  const targetGain = savedGain !== null
+  let targetGain = savedGain !== null
     ? Math.max(0.006, Math.min(0.08, savedGain * 0.65 + scoreGain * 0.35))
     : scoreGain;
+  const firstTargetCap = initialPlan === "PLAN_D" ? 0.008 : initialPlan === "PLAN_T" ? 0.025 : 0.01;
+  targetGain = Math.min(targetGain, firstTargetCap);
   const extensionBonus =
     0.006 +
     Math.max(0, (scores.tailSupportScore - 60) * 0.0002) +
     Math.max(0, (scores.sectorStrengthScore - 60) * 0.00015);
   const extensionGain = Math.min(0.085, targetGain + extensionBonus);
-  const upsideCap = limitUpPrice || base * 1.1;
-  const closeAnchor = closePrice || base;
+  const upsideCap = limitUpPrice || reference * 1.1;
+  const closeAnchor = reference;
   const overnightFloorGain = initialPlan === "PLAN_D" ? 0 : initialPlan === "PLAN_T" ? 0.012 : 0.006;
-  const tp1Candidate = Math.max(base * (1 + targetGain), closeAnchor * (1 + overnightFloorGain));
+  const recoveryAnchor = initialPlan === "PLAN_D"
+    ? closeAnchor
+    : Math.max(closeAnchor, Math.min(base, closeAnchor * (initialPlan === "PLAN_T" ? 1.025 : 1.02)));
+  const tp1Candidate = initialPlan === "PLAN_D"
+    ? closeAnchor * (1 + Math.min(0.008, targetGain))
+    : Math.max(recoveryAnchor * (1 + targetGain), closeAnchor * (1 + overnightFloorGain));
   const tp2Step = initialPlan === "PLAN_T" ? 0.012 : 0.008;
-  const tp2Candidate = Math.max(base * (1 + extensionGain), tp1Candidate * (1 + tp2Step));
+  const tp2Candidate = Math.max(recoveryAnchor * (1 + extensionGain), tp1Candidate * (1 + tp2Step));
+  const tp1 = round2(Math.min(tp1Candidate, upsideCap));
+  const tp2 = round2(Math.min(tp2Candidate, upsideCap));
+  const tp1Tolerance = initialPlan === "PLAN_D" ? 0.005 : 0.003;
+  const tp1Low = initialPlan === "PLAN_D"
+    ? Math.min(reference * 0.995, tp1 * (1 - tp1Tolerance))
+    : tp1 * (1 - tp1Tolerance);
   return {
-    tp1: round2(Math.min(tp1Candidate, upsideCap)),
-    tp2: round2(Math.min(tp2Candidate, upsideCap)),
+    tp1,
+    tp1Range: [round2(tp1Low), tp1],
+    tp2,
+    tp2Range: [round2(tp2 * 0.997), tp2],
     tp3: round2(upsideCap),
     finalStop: round2(Math.max(costStop, structureStop || costStop)),
   };
 }
 
-function buildNextMorningAction({ state0935, initialPlan, phase, pricePlan }) {
+function buildNextMorningAction({ realtimeState, initialPlan, phase, pricePlan }) {
   const stopText = `结构止损 ${formatPrice(pricePlan.finalStop)}`;
-  if (initialPlan === "PLAN_D") {
-    return `PLAN_D：09:25-09:31 卖出100%，不等待09:35；${stopText}。`;
+  if (phase === "PREP") {
+    const bias = initialPlan === "PLAN_D" ? "防守" : initialPlan === "PLAN_T" ? "趋势" : "平衡";
+    return `夜间${bias}预案：09:25竞价只定级；09:30后看3-5分钟承接，强修复可暂缓首卖，弱开且不能收复开盘价/VWAP再执行减仓；${stopText}。`;
+  }
+  if (phase === "AUCTION") {
+    if (realtimeState === "STRONG" || realtimeState === "LIMIT_UP") {
+      return "竞价偏强：先不挂机械卖单，等09:30后3分钟确认是否有真实承接。";
+    }
+    if (realtimeState === "WEAK") {
+      return `竞价偏弱：不在09:25直接砍仓；09:30后若仍低于开盘价/VWAP，按防守比例执行；${stopText}。`;
+    }
+    return `竞价中性：等待09:30-09:35方向确认，不因单一竞价价格卖出；${stopText}。`;
   }
   if (phase === "FINAL") {
-    return state0935 === "LIMIT_UP"
+    return realtimeState === "LIMIT_UP"
       ? "稳定涨停且板块同步：例外持有；开板或封单恶化立即卖出。"
       : "10:00纪律边界已到：卖出全部非涨停残仓，不延长到午后。";
   }
-  if (state0935 === "WEAK") {
+  if (phase === "OPEN_CONFIRM") {
+    if (realtimeState === "LIMIT_UP" || realtimeState === "STRONG" || realtimeState === "RECOVERY") {
+      return `开盘承接有效：暂缓第一卖点，持有到09:35再分类；跌回开盘价与VWAP下方则取消强修复；${stopText}。`;
+    }
+    if (realtimeState === "WEAK") {
+      const ratio = initialPlan === "PLAN_D" ? "全部" : initialPlan === "PLAN_T" ? "40%-50%" : "60%-70%";
+      return `开盘跟随失败：09:30-09:35卖出${ratio}；09:35仍弱则清余仓，不等反抽；${stopText}。`;
+    }
+    return `开盘尚未定向：按预案小幅减仓并等到09:35；一旦同时跌破开盘价和VWAP，转WEAK处理；${stopText}。`;
+  }
+  if (realtimeState === "WEAK") {
     return `09:35 WEAK：立即卖出全部余仓，不等反抽，不加仓；${stopText}。`;
   }
-  if (state0935 === "NEUTRAL") {
+  if (realtimeState === "NEUTRAL") {
     const remainder = initialPlan === "PLAN_T" ? "30%" : "20%";
     return `09:35 NEUTRAL：将总仓降至${remainder}，仅等至10:00；非稳定涨停全部卖出。`;
   }
-  if (state0935 === "STRONG") {
+  if (realtimeState === "STRONG" || realtimeState === "RECOVERY") {
     const remainder = initialPlan === "PLAN_T" ? "保留50%-70%" : "保留第一节点后的余仓";
     return `09:35 STRONG：${remainder}至10:00；届时除稳定涨停外全部卖出。`;
   }
-  if (state0935 === "LIMIT_UP") {
+  if (realtimeState === "LIMIT_UP") {
     return "09:35 LIMIT_UP：稳定封板且板块同步可例外持有；开板或封单恶化立即卖出。";
   }
-  if (initialPlan === "PLAN_T") {
-    return `PLAN_T：09:25-09:31 先卖20%-30%；09:35再分类，10:00清非涨停残仓；${stopText}。`;
-  }
-  return `PLAN_S：09:25-09:31 先卖40%-50%；09:35再分类，10:00清非涨停残仓；${stopText}。`;
+  return `09:35按实时强弱分类，10:00清理全部非涨停残仓；${stopText}。`;
 }
 
 function buildReviewReasonTags(scores, rangePosition, tailDrawdown) {
@@ -1246,6 +1381,18 @@ function calcLimitUpPrice(code, preClose) {
   if (!preClose) return null;
   if (/^(30|68)/.test(code)) return round2(preClose * 1.2);
   return round2(preClose * 1.1);
+}
+
+function isSameLocalDate(value, date) {
+  const left = value instanceof Date ? value : new Date(value);
+  if (Number.isNaN(left.getTime()) || Number.isNaN(date.getTime())) return false;
+  return localDateKey(left) === localDateKey(date);
+}
+
+function localDateKey(date) {
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${date.getFullYear()}-${month}-${day}`;
 }
 
 function clampScore(value) {
