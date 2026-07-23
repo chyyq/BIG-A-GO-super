@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-23T17:14:15.424815+08:00",
+    "generatedAt": "2026-07-23T22:09:09.974328+08:00",
     "tradingDate": "2026-07-23",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 36.03
+    "runtimeSeconds": 29.27
   },
   "market": {
     "recommendationCount": 0,
@@ -365,14 +365,20 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "A股三大指数小幅收涨 超4200只股上涨 逾百股涨停",
+      "url": "https://finance.eastmoney.com/a/202607233818864071.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "证监会：坚决维护资本市场平稳健康运行 持续提升外资参与资本市场的便利度",
       "url": "https://finance.eastmoney.com/a/202607233817776141.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数小幅收涨 超4200只股上涨 逾百股涨停",
-      "url": "https://finance.eastmoney.com/a/202607233818864071.html",
+      "title": "三重利好共振！电网设备板块掀涨停潮 多股业绩高增长可期",
+      "url": "https://finance.eastmoney.com/a/202607233818658055.html",
       "time": ""
     },
     {
@@ -397,12 +403,6 @@
       "source": "Eastmoney News",
       "title": "华泰证券：AI眼镜有望成为AI Agent进入物理世界的高频入口",
       "url": "https://finance.eastmoney.com/a/202607233818016250.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券： 预计国产CPU在国内商业市场渗透率将迅速从个位数提升到两位数",
-      "url": "https://finance.eastmoney.com/a/202607233818033076.html",
       "time": ""
     }
   ]
