@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-23T16:04:17.680586+08:00",
+    "generatedAt": "2026-07-23T16:42:22.083598+08:00",
     "tradingDate": "2026-07-23",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 34.61
+    "runtimeSeconds": 36.41
   },
   "market": {
     "recommendationCount": 0,
@@ -359,26 +359,20 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "吴清：坚决维护资本市场平稳健康运行 持续提升外资参与资本市场的便利度",
-      "url": "https://finance.eastmoney.com/a/202607223817259915.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "利好来了！批量涨停！重磅规划引爆A股多个板块",
       "url": "https://finance.eastmoney.com/a/202607233818652434.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "北京国管：坚定看好中国资本市场发展前景 已统筹自有资金累计投入近百亿布局股市",
-      "url": "https://finance.eastmoney.com/a/202607223817266413.html",
+      "title": "证监会：坚决维护资本市场平稳健康运行 持续提升外资参与资本市场的便利度",
+      "url": "https://finance.eastmoney.com/a/202607233817776141.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "证监会：坚决维护资本市场平稳健康运行 持续提升外资参与资本市场的便利度",
-      "url": "https://finance.eastmoney.com/a/202607233817776141.html",
+      "title": "A股三大指数小幅收涨 超4200只股上涨 逾百股涨停",
+      "url": "https://finance.eastmoney.com/a/202607233818864071.html",
       "time": ""
     },
     {
@@ -403,6 +397,12 @@
       "source": "Eastmoney News",
       "title": "华泰证券：AI眼镜有望成为AI Agent进入物理世界的高频入口",
       "url": "https://finance.eastmoney.com/a/202607233818016250.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信证券： 预计国产CPU在国内商业市场渗透率将迅速从个位数提升到两位数",
+      "url": "https://finance.eastmoney.com/a/202607233818033076.html",
       "time": ""
     }
   ]
