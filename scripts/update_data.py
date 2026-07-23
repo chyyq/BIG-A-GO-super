@@ -43,12 +43,12 @@ ALLOW_GROWTH_BOARDS = False
 GROWTH_BOARD_PREFIXES = ("30", "68")
 STRATEGY_TAIL_MAIN = "TAIL_MAIN"
 STRATEGY_AM_TOP = "AM_TOP"
-TAIL_STRATEGY_ID = "TAIL_T1_V30_FINAL"
+TAIL_STRATEGY_ID = "TAIL_T1_V31_EMPIRICAL"
 AM_TOP_BUY_WINDOW = "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only"
 AM_TOP_MIN_PCT = 4.0
 AM_TOP_MAX_PCT = 10.3
 TAIL_BUY_WINDOW = "13:30 watch; 14:10-14:35 confirm; 14:35+ limit-up/reseal only"
-TAIL_TARGET_TIME = "Next day 09:25-09:31 first node; 09:35 classify; exit non-limit-up remainder at 10:00."
+TAIL_TARGET_TIME = "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00."
 TAIL_MIN_AMOUNT = 150_000_000
 TAIL_HARD_MAX_TURNOVER = 35.0
 TAIL_HARD_MAX_PULLBACK = 2.5
@@ -299,6 +299,7 @@ def build_daily_metrics(
     ma5 = sum(ma5_values) / len(ma5_values) if ma5_values else None
     ma10 = sum(ma10_values) / len(ma10_values) if ma10_values else None
     previous_ma5 = sum(closes[-5:]) / 5 if len(closes) >= 5 else None
+    earlier_ma5 = sum(closes[-6:-1]) / 5 if len(closes) >= 6 else None
     deviation_ma5 = ((current_price / ma5) - 1) * 100 if current_price and ma5 else None
     gain5d = ((current_price / closes[-5]) - 1) * 100 if current_price and len(closes) >= 5 else None
     gain10d = ((current_price / closes[-10]) - 1) * 100 if current_price and len(closes) >= 10 else None
@@ -309,6 +310,13 @@ def build_daily_metrics(
         else None
     )
     ma5_rising = ma5 >= previous_ma5 if ma5 is not None and previous_ma5 is not None else None
+    prior_ma5_rising = previous_ma5 >= earlier_ma5 if previous_ma5 is not None and earlier_ma5 is not None else None
+    previous_close_above_ma5 = (
+        closes[-1] >= previous_ma5 * 0.99
+        if closes and previous_ma5
+        else None
+    )
+    ma5_above_ma10 = ma5 >= ma10 * 0.99 if ma5 is not None and ma10 is not None else None
     first_pullback_proxy = bool(
         current_price
         and ma5
@@ -326,6 +334,16 @@ def build_daily_metrics(
         "ma5": round2(ma5),
         "ma10": round2(ma10),
         "ma5Rising": ma5_rising,
+        "priorMA5Rising": prior_ma5_rising,
+        "previousCloseAboveMA5": previous_close_above_ma5,
+        "ma5AboveMA10": ma5_above_ma10,
+        "trendPersistence": trend_persistence_ok(
+            {
+                "priorMA5Rising": prior_ma5_rising,
+                "previousCloseAboveMA5": previous_close_above_ma5,
+                "ma5AboveMA10": ma5_above_ma10,
+            }
+        ),
         "deviationMA5Pct": round2(deviation_ma5),
         "gain5dPct": round2(gain5d),
         "gain10dPct": round2(gain10d),
@@ -712,6 +730,16 @@ def is_stable_limit_up_proxy(quote: dict[str, Any]) -> bool:
     )
 
 
+def trend_persistence_ok(metrics: dict[str, Any]) -> bool:
+    flags = [
+        metrics.get("priorMA5Rising"),
+        metrics.get("previousCloseAboveMA5"),
+        metrics.get("ma5AboveMA10"),
+    ]
+    known = [flag for flag in flags if flag is not None]
+    return len(known) < 2 or sum(flag is True for flag in known) >= 2
+
+
 def estimate_overnight_crowding_score(quote: dict[str, Any]) -> float:
     metrics = quote.get("dailyMetrics") or {}
     pct = quote.get("pct") or 0
@@ -738,6 +766,8 @@ def estimate_overnight_crowding_score(quote: dict[str, Any]) -> float:
         score += 12
     if (metrics.get("surgeCount5d") or 0) >= 2:
         score += 16
+    if metrics.get("historyAvailable") and not trend_persistence_ok(metrics):
+        score += 22
     return round2(clamp(score, 0, 100)) or 0
 
 
@@ -760,6 +790,8 @@ def estimate_execution_tolerance_score(quote: dict[str, Any]) -> float:
         score -= 5
     if amount_ratio is not None and amount_ratio > 2.8:
         score -= (amount_ratio - 2.8) * 12
+    if metrics.get("historyAvailable") and not trend_persistence_ok(metrics):
+        score -= 18
     return round2(clamp(score, 0, 100)) or 0
 
 
@@ -860,6 +892,8 @@ def tail_hard_veto_reasons(
         reasons.append("HV1: high-amplitude rebound after a sharp prior-day loss")
     if deviation_ma5 is not None and deviation_ma5 > 18:
         reasons.append("MA5 deviation exceeds 18%")
+    if metrics.get("historyAvailable") and not trend_persistence_ok(metrics):
+        reasons.append("HV10: prior trend is not established; reject a one-day rebound")
     if (
         amount_ratio is not None
         and amount_ratio >= 3.0
@@ -995,6 +1029,7 @@ def evaluate_stock_snapshot(
     stock_criteria = [
         ("[StockGate] Amount ratio is controlled", amount_ratio is None or 1.20 <= amount_ratio <= 2.80 or is_stable_limit_up_proxy(quote)),
         ("[StockGate] MA5 is rising", metrics.get("ma5Rising") is not False),
+        ("[StockGate] Prior trend was established before today's surge", trend_persistence_ok(metrics)),
         ("[StockGate] MA5 deviation stays below 15%", deviation_ma5 is None or deviation_ma5 <= 15),
         ("[StockGate] Mid-stage gain is not crowded", (metrics.get("gain5dPct") or 0) < 25 and (metrics.get("gain10dPct") or 0) < 40),
         ("[StockGate] Breakout/reclaim structure remains valid", metrics.get("closeAboveBreakout") is not False or metrics.get("firstPullbackProxy") is True),
@@ -1015,7 +1050,7 @@ def evaluate_stock_snapshot(
         return None
 
     tail_criteria = [
-        ("[TailGate] A valid v3.0 signal is present", bool(buy_plan)),
+        ("[TailGate] A valid v3.1 signal is present", bool(buy_plan)),
         ("[TailGate] Close holds above VWAP", price_vs_avg >= 0.0),
         ("[TailGate] Close position stays at least 0.70", range_position >= 0.70),
         ("[TailGate] Pullback from high is at most 2.5%", pullback <= 2.5),
@@ -1124,7 +1159,8 @@ def evaluate_stock_snapshot(
         "stopPlan": {
             "stopLoss": stop_loss,
             "rules": [
-                "09:25-09:31 execute the PLAN_D/S/T first node",
+                "09:25 auction only sets the opening bias; do not sell mechanically before the open",
+                "09:30-09:35 confirm follow-through: strong repair may override the overnight defensive plan",
                 "09:35 classify WEAK/NEUTRAL/STRONG; WEAK sells all remainder",
                 "10:00 sell every non-limit-up remainder; never widen the stop",
             ],
@@ -1282,6 +1318,7 @@ def choose_buy_plan_snapshot(
     deviation_ma5 = metrics.get("deviationMA5Pct")
     mid_stage = (
         metrics.get("ma5Rising") is not False
+        and trend_persistence_ok(metrics)
         and (deviation_ma5 is None or deviation_ma5 <= 15)
         and (metrics.get("gain5dPct") or 0) < 25
         and (metrics.get("gain10dPct") or 0) < 40
@@ -1503,8 +1540,11 @@ def next_day_plan(initial_plan: str) -> dict[str, Any]:
         neutral_remainder = 0.20
         strong_remainder = [0.50, 0.60]
     return {
-        "firstNodeTime": "09:25-09:31",
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
         "firstSellRatio": first_sell_ratio,
+        "openingOverride": True,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
         "classifyTime": "09:35",
         "weakAction": "SELL_ALL_REMAINDER_NOW",
         "neutralTotalRemainder": neutral_remainder,
@@ -1567,7 +1607,7 @@ def estimate_target_snapshot(
     return {
         "targetPrice": target_price,
         "targetTime": TAIL_TARGET_TIME,
-        "strategy": "v3.0: execute the first node, classify at 09:35, and exit all non-limit-up remainder at 10:00.",
+        "strategy": "v3.1: freeze the overnight target, confirm opening repair at 09:30-09:35, and exit non-limit-up remainder at 10:00.",
     }
 
 
