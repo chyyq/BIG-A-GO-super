@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-24T16:01:02.582408+08:00",
+    "generatedAt": "2026-07-24T16:38:32.864053+08:00",
     "tradingDate": "2026-07-24",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 25.62
+    "runtimeSeconds": 28.97
   },
   "market": {
     "recommendationCount": 0,
@@ -349,6 +349,12 @@
   "news": [
     {
       "source": "Eastmoney News",
+      "title": "A股三大指数收跌 成交额超1.9万亿 地面兵装板块逆市走强",
+      "url": "https://finance.eastmoney.com/a/202607243820419315.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "证监会召开党的建设暨监管工作座谈会 综合施策全力维护市场平稳运行 提升资本市场韧性",
       "url": "https://finance.eastmoney.com/a/202607243819361822.html",
       "time": ""
@@ -379,20 +385,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数收跌 成交额超1.9万亿 地面兵装板块逆市走强",
-      "url": "https://finance.eastmoney.com/a/202607243820419315.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "东方财富证券开户",
       "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
