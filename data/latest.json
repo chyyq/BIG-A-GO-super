@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-24T17:11:22.246355+08:00",
+    "generatedAt": "2026-07-24T21:51:03.919373+08:00",
     "tradingDate": "2026-07-24",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 34.49
+    "runtimeSeconds": 38.73
   },
   "market": {
     "recommendationCount": 0,
@@ -118,7 +118,7 @@
       "price": 32683.73,
       "pct": 1.22,
       "amount": 20637768732.0,
-      "turnover": 18.01,
+      "turnover": 22.55,
       "open": 33756.57,
       "preClose": 32290.5,
       "mainNet": -1291818464.0,
@@ -259,7 +259,7 @@
       "price": 1292.84,
       "pct": 1.62,
       "amount": 4689150939.0,
-      "turnover": 0.94,
+      "turnover": 2.34,
       "open": 1321.84,
       "preClose": 1272.17,
       "mainNet": -121692112.0,
@@ -305,7 +305,7 @@
       "price": 1253.98,
       "pct": 0.85,
       "amount": 9762956214.0,
-      "turnover": 1.48,
+      "turnover": 2.66,
       "open": 1282.83,
       "preClose": 1243.4,
       "mainNet": -530377040.0,
@@ -328,7 +328,7 @@
       "price": 2496.44,
       "pct": 0.79,
       "amount": 74025879440.0,
-      "turnover": 5.34,
+      "turnover": 5.33,
       "open": 2434.42,
       "preClose": 2476.85,
       "mainNet": 1368519168.0,
@@ -381,6 +381,12 @@
       "source": "Eastmoney News",
       "title": "中信证券：把握铜行业涨价预期和情绪回暖下的估值修复机会",
       "url": "https://finance.eastmoney.com/a/202607243819580147.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美股三大指数震荡整理 存储板块普跌",
+      "url": "https://finance.eastmoney.com/a/202607243820735018.html",
       "time": ""
     },
     {
