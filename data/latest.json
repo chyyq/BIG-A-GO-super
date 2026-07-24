@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-24T15:56:49.881584+08:00",
+    "generatedAt": "2026-07-24T16:01:02.582408+08:00",
     "tradingDate": "2026-07-24",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,20 +22,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 40.32
+    "runtimeSeconds": 25.62
   },
   "market": {
     "recommendationCount": 0,
@@ -348,39 +348,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "证监会召开党的建设暨监管工作座谈会 综合施策全力维护市场平稳运行 提升资本市场韧性",
+      "url": "https://finance.eastmoney.com/a/202607243819361822.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘丨沪指跌1.61%，两市成交额跌破2万亿元兵装重组概念领涨。  33分钟前",
-      "url": "https://www.yicai.com/news/103291074.html",
+      "source": "Eastmoney News",
+      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
+      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "7月中期流动性净投放8000亿，扭转连续四个月回笼态势MLF与买断式逆回购同步加量，是否意味着资金面将重回此前极度宽松的运行路径？  1小时前",
-      "url": "https://www.yicai.com/news/103290946.html",
+      "source": "Eastmoney News",
+      "title": "华泰证券：AI Agent加速推理算力与存力扩容 自主可控链国产化再加速",
+      "url": "https://finance.eastmoney.com/a/202607243819620034.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "年内超700亿资金涌入PCB赛道，两大企业同日宣布扩产鹏鼎控股一年内第三次大规模加码AI PCB。  4小时前",
-      "url": "https://www.yicai.com/news/103290668.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：可再生能源扩量提质 绿氢等非电领域正迎来更有力的政策支撑",
+      "url": "https://finance.eastmoney.com/a/202607243819604579.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "AMD率先发布2纳米芯片，挑战英伟达机架霸权AMD CEO苏姿丰预计，到2030年，计算市场规模将达到2万亿美元。  5小时前",
-      "url": "https://www.yicai.com/news/103290488.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：把握铜行业涨价预期和情绪回暖下的估值修复机会",
+      "url": "https://finance.eastmoney.com/a/202607243819580147.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "重庆零基预算改革加力：立新除旧取消资金分配基数重庆打破部门预算、重点专项、转移支付的基数，避免支出固化  5小时前",
-      "url": "https://www.yicai.com/news/103290518.html",
+      "source": "Eastmoney News",
+      "title": "A股三大指数收跌 成交额超1.9万亿 地面兵装板块逆市走强",
+      "url": "https://finance.eastmoney.com/a/202607243820419315.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
