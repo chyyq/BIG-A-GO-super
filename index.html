@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="A股主升量化候选、买卖点计划、晚间复盘与T+1卖点监控" />
     <title>A股主升交易台</title>
-    <link rel="stylesheet" href="styles.css?v=20260716b" />
+    <link rel="stylesheet" href="styles.css?v=20260726b" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-    <script src="app.js?v=20260724a" defer></script>
+    <script src="app.js?v=20260726b" defer></script>
   </head>
   <body>
     <div class="app-shell">
@@ -227,6 +227,73 @@
             </button>
           </div>
         </form>
+      </section>
+    </div>
+
+    <div class="modal-backdrop" id="syncModal" hidden>
+      <section class="modal sync-modal" role="dialog" aria-modal="true" aria-labelledby="syncModalTitle">
+        <div class="modal-head">
+          <div>
+            <p class="eyebrow">手机与电脑</p>
+            <h2 id="syncModalTitle">设备同步</h2>
+          </div>
+          <button class="icon-button" id="closeSyncModal" type="button" title="关闭">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+
+        <p class="sync-description" id="syncDescription"></p>
+
+        <div class="sync-import-mode" id="syncImportMode" hidden>
+          <button class="segment active" type="button" data-sync-import-mode="merge">智能合并</button>
+          <button class="segment" type="button" data-sync-import-mode="replace">以导出设备为准</button>
+        </div>
+
+        <label class="sync-code-field" for="syncCodeInput">
+          <span id="syncCodeLabel">同步码</span>
+          <textarea
+            id="syncCodeInput"
+            rows="8"
+            spellcheck="false"
+            autocapitalize="off"
+            autocomplete="off"
+            placeholder="在这里粘贴同步码，也可以从 JSON 文件导入"
+          ></textarea>
+        </label>
+
+        <p class="sync-status" id="syncStatus" role="status" aria-live="polite"></p>
+
+        <div class="sync-toolbar">
+          <button class="ghost-button import-only" id="pasteSyncCodeButton" type="button">
+            <i data-lucide="clipboard-paste"></i>
+            粘贴
+          </button>
+          <button class="ghost-button export-only" id="copySyncCodeButton" type="button">
+            <i data-lucide="copy"></i>
+            复制
+          </button>
+          <button class="ghost-button export-only" id="shareSyncCodeButton" type="button" hidden>
+            <i data-lucide="share-2"></i>
+            分享
+          </button>
+          <button class="ghost-button export-only" id="downloadSyncFileButton" type="button">
+            <i data-lucide="download"></i>
+            导出 JSON
+          </button>
+          <button class="ghost-button import-only" id="selectSyncFileButton" type="button">
+            <i data-lucide="file-up"></i>
+            导入 JSON
+          </button>
+          <input id="syncFileInput" type="file" accept=".json,.txt,application/json,text/plain" hidden />
+        </div>
+
+        <div class="modal-actions sync-modal-actions">
+          <button class="ghost-button" id="cancelSync" type="button">关闭</button>
+          <button class="primary-button import-only" id="applySyncCodeButton" type="button">
+            <i data-lucide="combine"></i>
+            开始同步
+          </button>
+        </div>
       </section>
     </div>
   </body>

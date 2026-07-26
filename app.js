@@ -1,5 +1,8 @@
 const DATA_URL = "data/latest.json";
 const STORAGE_KEY = "a-share-maintrend-trades-v1";
+const PUBLIC_SITE_URL = "https://chyyq.github.io/BIG-A-GO-super/";
+const SYNC_CODE_RAW_PREFIX = "BAGS3B.";
+const SYNC_CODE_GZIP_PREFIX = "BAGS3G.";
 const AUTO_REFRESH_WINDOWS = [
   { start: [9, 25], end: [10, 5] },
   { start: [13, 30], end: [14, 40] },
@@ -13,6 +16,8 @@ const state = {
   historyQuotes: new Map(),
   isRefreshing: false,
   lastAutoRefreshAt: 0,
+  syncPayload: null,
+  syncImportMode: "merge",
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -40,11 +45,28 @@ function bindEvents() {
   });
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && !$("#tradeModal").hidden) closeTradeModal();
+    if (event.key === "Escape" && !$("#syncModal").hidden) closeSyncModal();
   });
   $("#tradeForm").addEventListener("submit", saveTradeFromForm);
   $("#reviewRefreshButton")?.addEventListener("click", refreshReviewNow);
   $("#exportTradesButton")?.addEventListener("click", exportTradesForSync);
   $("#importTradesButton")?.addEventListener("click", importTradesFromSync);
+  $("#closeSyncModal")?.addEventListener("click", closeSyncModal);
+  $("#cancelSync")?.addEventListener("click", closeSyncModal);
+  $("#syncModal")?.addEventListener("click", (event) => {
+    if (event.target.id === "syncModal") closeSyncModal();
+  });
+  $("#pasteSyncCodeButton")?.addEventListener("click", pasteSyncCode);
+  $("#copySyncCodeButton")?.addEventListener("click", copySyncCode);
+  $("#shareSyncCodeButton")?.addEventListener("click", shareSyncCode);
+  $("#downloadSyncFileButton")?.addEventListener("click", downloadSyncFile);
+  $("#selectSyncFileButton")?.addEventListener("click", () => $("#syncFileInput").click());
+  $("#syncFileInput")?.addEventListener("change", loadSyncFile);
+  $("#applySyncCodeButton")?.addEventListener("click", applySyncImport);
+  $("#syncCodeInput")?.addEventListener("input", () => setSyncStatus(""));
+  $$("[data-sync-import-mode]").forEach((button) => {
+    button.addEventListener("click", () => setSyncImportMode(button.dataset.syncImportMode));
+  });
   $("#rulesToggle").addEventListener("click", toggleRules);
   $$(".segment").forEach((button) => {
     button.addEventListener("click", () => switchRecommendationView(button.dataset.view));
@@ -347,7 +369,9 @@ function recordRecommendationBuy(recommendation) {
   const targetPrice = recommendation.sellPlan?.targetPrice ?? recommendation.sellPlan?.takeProfit;
   const stopLoss = recommendation.stopPlan?.stopLoss ?? recommendation.sellPlan?.stopLoss;
   const buyPrice = estimateRecordedBuyPrice(recommendation);
-  const existing = state.trades.find((item) => item.code === recommendation.code && item.status !== "sold");
+  const now = new Date();
+  const buyTradingDate = currentTradingDateKey(now);
+  const existing = state.trades.find((item) => item.code === recommendation.code && !isTradeClosed(item));
   const trade = {
     id: existing?.id || createId(),
     code: recommendation.code,
@@ -360,6 +384,8 @@ function recordRecommendationBuy(recommendation) {
     status: "open",
     strategyTag: recommendation.strategyTag || recommendation.buyPlan?.strategyTag || "",
     source: "one_click_recommendation",
+    buyTradingDate: existing?.buyTradingDate || buyTradingDate,
+    plannedSellTradingDate: existing?.plannedSellTradingDate || nextWeekdayDateKey(buyTradingDate),
     planSnapshot: {
       buyPlan: recommendation.buyPlan,
       sellPlan: recommendation.sellPlan,
@@ -376,8 +402,8 @@ function recordRecommendationBuy(recommendation) {
       initialPlan: recommendation.initialPlan,
       nextDayPlan: recommendation.nextDayPlan,
     },
-    createdAt: existing?.createdAt || new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+    createdAt: existing?.createdAt || now.toISOString(),
+    updatedAt: now.toISOString(),
   };
   if (existing) {
     state.trades = state.trades.map((item) => (item.id === existing.id ? { ...item, ...trade } : item));
@@ -395,7 +421,7 @@ function estimateRecordedBuyPrice(recommendation) {
 }
 
 function isOpenTradeRecorded(code) {
-  return state.trades.some((trade) => trade.code === code && trade.status !== "sold");
+  return state.trades.some((trade) => trade.code === code && !isTradeClosed(trade));
 }
 
 function renderSectors() {
@@ -429,27 +455,30 @@ function renderT1Reviews() {
   const root = $("#t1ReviewList");
   const meta = $("#reviewMeta");
   if (!root || !meta) return;
-  const openTrades = state.trades.filter((trade) => trade.status !== "sold");
+  const reviewTrades = state.trades;
   const generatedAt = state.data?.meta?.generatedAt ? new Date(state.data.meta.generatedAt) : null;
   meta.textContent = generatedAt
     ? `行情快照 ${generatedAt.toLocaleString("zh-CN", { hour12: false })}；按 20:00 复盘纪律生成`
     : "等待 20:00 行情快照或手动刷新";
 
-  if (!openTrades.length) {
+  if (!reviewTrades.length) {
     root.innerHTML = `<div class="empty-state">暂无已记录买入。推荐卡片点“一键记录买入”后，这里会生成明天 T+1 卖出策略。</div>`;
     return;
   }
 
   const now = new Date();
-  const reviews = openTrades.map((trade) => buildT1Review(trade, now));
+  const reviews = reviewTrades.map((trade) => buildT1Review(trade, now));
   if (captureOvernightReviewSnapshots(reviews, now)) persistTrades();
   root.innerHTML = reviews.map(renderT1ReviewCard).join("");
   root.querySelectorAll("[data-action='edit']").forEach((button) => {
     const trade = state.trades.find((item) => item.id === button.dataset.id);
     button.addEventListener("click", () => openTradeModal(null, trade));
   });
-  root.querySelectorAll("[data-action='sell']").forEach((button) => {
-    button.addEventListener("click", () => markTradeSold(button.dataset.id));
+  root.querySelectorAll("[data-action='take-profit']").forEach((button) => {
+    button.addEventListener("click", () => markTradeOutcome(button.dataset.id, "take_profit"));
+  });
+  root.querySelectorAll("[data-action='stop-loss']").forEach((button) => {
+    button.addEventListener("click", () => markTradeOutcome(button.dataset.id, "stop_loss"));
   });
   root.querySelectorAll("[data-action='delete']").forEach((button) => {
     button.addEventListener("click", () => deleteTrade(button.dataset.id));
@@ -458,8 +487,11 @@ function renderT1Reviews() {
 
 function buildT1Review(trade, now = new Date()) {
   const quote = getQuoteForTrade(trade) || {};
+  const closed = isTradeClosed(trade);
   const buyPrice = Number(trade.buyPrice || quote.price || 0);
-  const closePrice = Number(quote.price || trade.lastPrice || buyPrice);
+  const livePrice = Number(quote.price || trade.lastPrice || buyPrice);
+  const displayPrice = closed ? Number(trade.sellPrice || 0) || null : livePrice;
+  const closePrice = Number(displayPrice || livePrice);
   const openPrice = Number(quote.open || closePrice);
   const highPrice = Number(quote.high || Math.max(openPrice, closePrice));
   const lowPrice = Number(quote.low || Math.min(openPrice, closePrice));
@@ -529,14 +561,20 @@ function buildT1Review(trade, now = new Date()) {
     initialPlan,
   });
   const execution = buildOpeningExecution({ phase, realtimeState, initialPlan });
+  const dateInfo = getTradeDateInfo(trade, now);
+  const outcomeState = getTradeOutcomeState(trade);
+  const activeAction = buildNextMorningAction({ realtimeState, initialPlan, phase, pricePlan });
   return {
     trade,
     quote,
     buyPrice,
     closePrice,
-    pnlPct: buyPrice ? ((closePrice - buyPrice) / buyPrice) * 100 : 0,
+    displayPrice,
+    pnlPct: buyPrice && displayPrice ? ((displayPrice - buyPrice) / buyPrice) * 100 : null,
     stockState,
-    displayState: realtimeState || initialPlan,
+    displayState: outcomeState || realtimeState || initialPlan,
+    closed,
+    dateInfo,
     initialPlan,
     phase,
     realtimeState,
@@ -546,7 +584,11 @@ function buildT1Review(trade, now = new Date()) {
     referenceMa5,
     pricePlan,
     execution,
-    action: buildNextMorningAction({ realtimeState, initialPlan, phase, pricePlan }),
+    action: closed
+      ? buildClosedOutcomeAction(trade, displayPrice, buyPrice)
+      : dateInfo.overdue
+        ? `日期提醒：计划卖出日已过，请先标记止盈或止损；未标记前该笔不会计入学习胜率。${activeAction}`
+        : activeAction,
     reasonTags: buildReviewReasonTags(scores, rangePosition, tailDrawdown),
     hardTags: buildReviewHardTags(scores),
   };
@@ -557,7 +599,7 @@ function captureOvernightReviewSnapshots(reviews, now) {
   if (minute < 15 * 60) return false;
   let changed = false;
   reviews.forEach((review) => {
-    if (review.phase !== "PREP" || !isSameLocalDate(review.trade.createdAt, now)) return;
+    if (review.closed || review.phase !== "PREP" || !isSameLocalDate(review.trade.createdAt, now)) return;
     const snapshot = {
       tradingDate: localDateKey(now),
       capturedAt: now.toISOString(),
@@ -585,17 +627,29 @@ function captureOvernightReviewSnapshots(reviews, now) {
 
 function renderT1ReviewCard(review) {
   const stateClass =
-    review.displayState === "PLAN_T" || review.displayState === "STRONG" || review.displayState === "RECOVERY" || review.displayState === "LIMIT_UP"
+    review.trade.outcome === "take_profit" ||
+    review.displayState === "PLAN_T" ||
+    review.displayState === "STRONG" ||
+    review.displayState === "RECOVERY" ||
+    review.displayState === "LIMIT_UP"
       ? "pass"
-      : review.displayState === "REMOVE" || review.displayState === "WEAK" || review.displayState === "PLAN_D"
+      : review.trade.outcome === "stop_loss" ||
+          review.displayState === "REMOVE" ||
+          review.displayState === "WEAK" ||
+          review.displayState === "PLAN_D"
         ? "alert-pill"
         : "warn";
+  const outcome = review.trade.outcome || "";
   return `
     <article class="review-card">
       <div class="review-head">
         <div>
           <strong>${escapeHtml(review.trade.name)} <span class="stock-code">${review.trade.code}</span></strong>
-          <div class="stock-code">买入 ${formatPrice(review.buyPrice)} · 收盘/现价 ${formatPrice(review.closePrice)} · 浮盈 ${formatPct(review.pnlPct, false)}</div>
+          <div class="stock-code">买入 ${formatPrice(review.buyPrice)} · ${review.closed ? "卖出标记价" : "收盘/现价"} ${formatPrice(review.displayPrice)} · ${review.closed ? "结果收益" : "浮盈"} ${formatPct(review.pnlPct, false)}</div>
+          <div class="review-dates ${review.dateInfo.overdue ? "overdue" : ""}">
+            买入日 ${escapeHtml(review.dateInfo.buyDate)} · 计划卖出日 ${escapeHtml(review.dateInfo.plannedSellDate)}
+            ${review.dateInfo.actualSellDate ? ` · 实际卖出日 ${escapeHtml(review.dateInfo.actualSellDate)}` : ""}
+          </div>
         </div>
         <span class="${stateClass === "alert-pill" ? "alert-pill" : `tag ${stateClass}`}">${review.displayState}</span>
       </div>
@@ -622,9 +676,13 @@ function renderT1ReviewCard(review) {
           <i data-lucide="pencil"></i>
           编辑
         </button>
-        <button class="ghost-button" type="button" data-action="sell" data-id="${review.trade.id}">
-          <i data-lucide="circle-check"></i>
-          记为卖出
+        <button class="ghost-button outcome-button take-profit ${outcome === "take_profit" ? "selected" : ""}" type="button" data-action="take-profit" data-id="${review.trade.id}">
+          <i data-lucide="circle-dollar-sign"></i>
+          ${outcome === "take_profit" ? "已记止盈" : "止盈卖出"}
+        </button>
+        <button class="ghost-button outcome-button stop-loss ${outcome === "stop_loss" ? "selected" : ""}" type="button" data-action="stop-loss" data-id="${review.trade.id}">
+          <i data-lucide="shield-alert"></i>
+          ${outcome === "stop_loss" ? "已记止损" : "止损卖出"}
         </button>
         <button class="ghost-button" type="button" data-action="delete" data-id="${review.trade.id}">
           <i data-lucide="trash-2"></i>
@@ -1009,6 +1067,8 @@ function saveTradeFromForm(event) {
   const quote = state.liveQuotes.get(code) || findRecommendationQuote(code) || {};
   const buyPrice = Number($("#tradeBuyPrice").value) || existing?.buyPrice || quote.price || 0;
   const stopLoss = Number($("#tradeStopLoss").value) || round2(buyPrice * 0.96);
+  const now = new Date();
+  const buyTradingDate = existing?.buyTradingDate || currentTradingDateKey(now);
   const trade = {
     id: existingId || createId(),
     code,
@@ -1019,7 +1079,10 @@ function saveTradeFromForm(event) {
     takeProfit: Number($("#tradeTakeProfit").value) || null,
     note: $("#tradeNote").value.trim(),
     status: existing?.status || "open",
-    createdAt: existing?.createdAt || new Date().toISOString(),
+    buyTradingDate,
+    plannedSellTradingDate: existing?.plannedSellTradingDate || nextWeekdayDateKey(buyTradingDate),
+    createdAt: existing?.createdAt || now.toISOString(),
+    updatedAt: now.toISOString(),
   };
   const index = state.trades.findIndex((item) => item.id === trade.id);
   if (index >= 0) state.trades[index] = { ...state.trades[index], ...trade };
@@ -1039,7 +1102,8 @@ function buildRecommendationNote(recommendation) {
 
 function loadTrades() {
   try {
-    state.trades = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+    state.trades = normalizeImportedTrades(stored);
   } catch {
     state.trades = [];
   }
@@ -1051,100 +1115,379 @@ function persistTrades() {
 
 async function exportTradesForSync() {
   const payload = {
-    version: 1,
+    version: 3,
+    source: PUBLIC_SITE_URL,
     exportedAt: new Date().toISOString(),
+    tradeCount: state.trades.length,
     trades: state.trades,
   };
-  const syncCode = encodeSyncPayload(payload);
-  const message = "已生成同步码。请在手机端打开网页，点击“导入同步码”后粘贴。";
-  try {
-    await navigator.clipboard.writeText(syncCode);
-    alert(`${message}\n同步码已复制到剪贴板。`);
-  } catch {
-    window.prompt(message, syncCode);
-  }
+  state.syncPayload = payload;
+  const syncCode = await encodeSyncPayload(payload);
+  openSyncModal("export", syncCode);
+  const copied = await writeTextToClipboard(syncCode);
+  setSyncStatus(
+    copied
+      ? `已复制 ${state.trades.length} 条记录的同步码，可直接到另一台设备粘贴。`
+      : `已生成 ${state.trades.length} 条记录的同步码，请长按文本复制，或使用分享/JSON。`,
+    copied ? "success" : "",
+  );
 }
 
 function importTradesFromSync() {
-  const syncCode = window.prompt("粘贴从另一台设备导出的同步码");
-  if (!syncCode) return;
+  state.syncPayload = null;
+  openSyncModal("import", "");
+}
+
+function openSyncModal(mode, syncCode = "") {
+  const isExport = mode === "export";
+  const modal = $("#syncModal");
+  modal.dataset.mode = mode;
+  $("#syncModalTitle").textContent = isExport ? "导出交易记录" : "导入交易记录";
+  $("#syncDescription").textContent = isExport
+    ? "同步码已包含买入日、计划卖出日、实际卖出日及止盈/止损标记。"
+    : "可粘贴新同步码、旧版同步码或 JSON，也可以直接选择导出的 JSON 文件。";
+  $("#syncCodeLabel").textContent = isExport ? "本次同步码" : "粘贴同步码";
+  $("#syncCodeInput").value = syncCode;
+  $("#syncCodeInput").readOnly = isExport;
+  $("#syncImportMode").hidden = isExport;
+  $$("#syncModal .export-only").forEach((element) => {
+    element.hidden = !isExport;
+  });
+  $$("#syncModal .import-only").forEach((element) => {
+    element.hidden = isExport;
+  });
+  $("#shareSyncCodeButton").hidden = !isExport || typeof navigator.share !== "function";
+  setSyncImportMode("merge");
+  setSyncStatus("");
+  modal.hidden = false;
+  refreshIcons();
+  window.setTimeout(() => {
+    $("#syncCodeInput").focus();
+    if (isExport) $("#syncCodeInput").select();
+  }, 0);
+}
+
+function closeSyncModal() {
+  $("#syncModal").hidden = true;
+  $("#syncCodeInput").value = "";
+  $("#syncFileInput").value = "";
+  state.syncPayload = null;
+  setSyncStatus("");
+}
+
+function setSyncImportMode(mode) {
+  state.syncImportMode = mode === "replace" ? "replace" : "merge";
+  $$("[data-sync-import-mode]").forEach((button) => {
+    const active = button.dataset.syncImportMode === state.syncImportMode;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+}
+
+function setSyncStatus(message, tone = "") {
+  const status = $("#syncStatus");
+  status.textContent = message;
+  status.className = `sync-status${tone ? ` ${tone}` : ""}`;
+}
+
+async function pasteSyncCode() {
   try {
-    const payload = decodeSyncPayload(syncCode);
-    const importedTrades = normalizeImportedTrades(payload?.trades);
-    if (!importedTrades.length) {
-      alert("同步码里没有可导入的买入记录。");
-      return;
-    }
-    mergeImportedTrades(importedTrades);
-    persistTrades();
-    refreshPositionQuotes().then(() => {
-      render();
-      alert(`已导入 ${importedTrades.length} 条记录，持仓和晚间复盘已刷新。`);
-    });
+    if (!navigator.clipboard?.readText) throw new Error("Clipboard read is unavailable");
+    const value = (await navigator.clipboard.readText()).trim();
+    if (!value) throw new Error("Clipboard is empty");
+    $("#syncCodeInput").value = value;
+    setSyncStatus("已从剪贴板粘贴，可以开始同步。", "success");
   } catch {
-    alert("同步码无法识别，请确认完整复制后再导入。");
+    $("#syncCodeInput").focus();
+    setSyncStatus("浏览器未允许读取剪贴板，请长按输入框后选择“粘贴”。", "error");
   }
 }
 
-function encodeSyncPayload(payload) {
-  const json = JSON.stringify(payload);
-  const bytes = new TextEncoder().encode(json);
-  let binary = "";
-  bytes.forEach((byte) => {
-    binary += String.fromCharCode(byte);
-  });
-  return btoa(binary);
+async function copySyncCode() {
+  const value = $("#syncCodeInput").value.trim();
+  if (!value) return;
+  const copied = await writeTextToClipboard(value);
+  setSyncStatus(copied ? "同步码已复制。" : "请长按同步码并选择“复制”。", copied ? "success" : "error");
 }
 
-function decodeSyncPayload(syncCode) {
-  const binary = atob(syncCode.trim());
+async function writeTextToClipboard(value) {
+  try {
+    if (navigator.clipboard?.writeText) {
+      await Promise.race([
+        navigator.clipboard.writeText(value),
+        new Promise((_, reject) => window.setTimeout(() => reject(new Error("Clipboard timeout")), 900)),
+      ]);
+      return true;
+    }
+  } catch {
+    // Fall through to selection-based copying for older mobile browsers.
+  }
+  const input = $("#syncCodeInput");
+  input.focus();
+  input.select();
+  try {
+    return Boolean(document.execCommand?.("copy"));
+  } catch {
+    return false;
+  }
+}
+
+async function shareSyncCode() {
+  if (typeof navigator.share !== "function") return;
+  const syncCode = $("#syncCodeInput").value.trim();
+  try {
+    const file = createSyncExportFile();
+    if (navigator.canShare?.({ files: [file] })) {
+      await navigator.share({ title: "BIG A GO 交易记录", files: [file] });
+    } else {
+      await navigator.share({ title: "BIG A GO 交易记录", text: `BIG A GO 同步码\n${syncCode}` });
+    }
+    setSyncStatus("已打开系统分享。", "success");
+  } catch (error) {
+    if (error?.name !== "AbortError") setSyncStatus("系统分享未完成，可改用复制或导出 JSON。", "error");
+  }
+}
+
+function createSyncExportFile() {
+  const content = JSON.stringify(state.syncPayload || { version: 3, source: PUBLIC_SITE_URL, trades: [] }, null, 2);
+  return new File([content], syncExportFilename(), { type: "application/json" });
+}
+
+function syncExportFilename() {
+  const now = new Date();
+  const stamp = [
+    now.getFullYear(),
+    String(now.getMonth() + 1).padStart(2, "0"),
+    String(now.getDate()).padStart(2, "0"),
+  ].join("-");
+  return `BIG-A-GO-trades-${stamp}.json`;
+}
+
+function downloadSyncFile() {
+  const file = createSyncExportFile();
+  const url = URL.createObjectURL(file);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = file.name;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+  setSyncStatus(`已导出 ${file.name}。`, "success");
+}
+
+async function loadSyncFile(event) {
+  const file = event.target.files?.[0];
+  if (!file) return;
+  try {
+    $("#syncCodeInput").value = (await file.text()).trim();
+    setSyncStatus(`已读取 ${file.name}，可以开始同步。`, "success");
+  } catch {
+    setSyncStatus("文件读取失败，请重新选择 JSON 或 TXT 文件。", "error");
+  } finally {
+    event.target.value = "";
+  }
+}
+
+async function applySyncImport() {
+  const input = $("#syncCodeInput").value.trim();
+  if (!input) {
+    setSyncStatus("请先粘贴同步码或选择 JSON 文件。", "error");
+    return;
+  }
+  const button = $("#applySyncCodeButton");
+  button.disabled = true;
+  try {
+    const payload = await decodeSyncPayload(input);
+    if (!Array.isArray(payload?.trades)) throw new Error("Missing trades");
+    const importedTrades = normalizeImportedTrades(payload.trades);
+    if (!importedTrades.length) {
+      setSyncStatus("导入内容中没有交易记录，未修改当前设备。", "error");
+      return;
+    }
+
+    let result;
+    if (state.syncImportMode === "replace") {
+      const previousCount = state.trades.length;
+      state.trades = importedTrades;
+      result = {
+        added: importedTrades.length,
+        updated: 0,
+        kept: 0,
+        removed: Math.max(0, previousCount - importedTrades.length),
+      };
+    } else {
+      result = mergeImportedTrades(importedTrades);
+    }
+
+    persistTrades();
+    state.liveQuotes.clear();
+    state.historyQuotes.clear();
+    await refreshPositionQuotes();
+    render();
+    const summary =
+      state.syncImportMode === "replace"
+        ? `同步完成：当前设备现有 ${state.trades.length} 条记录。`
+        : `同步完成：新增 ${result.added} 条，更新 ${result.updated} 条，本机较新 ${result.kept} 条。`;
+    setSyncStatus(summary, "success");
+  } catch {
+    setSyncStatus("无法识别导入内容，请确认同步码完整，或改用 JSON 文件。", "error");
+  } finally {
+    button.disabled = false;
+    refreshIcons();
+  }
+}
+
+async function encodeSyncPayload(payload) {
+  const bytes = new TextEncoder().encode(JSON.stringify(payload));
+  if (typeof CompressionStream === "function") {
+    try {
+      const stream = new Blob([bytes]).stream().pipeThrough(new CompressionStream("gzip"));
+      const compressed = new Uint8Array(await new Response(stream).arrayBuffer());
+      return `${SYNC_CODE_GZIP_PREFIX}${bytesToBase64Url(compressed)}`;
+    } catch {
+      // Uncompressed Base64URL remains compatible with older browsers.
+    }
+  }
+  return `${SYNC_CODE_RAW_PREFIX}${bytesToBase64Url(bytes)}`;
+}
+
+async function decodeSyncPayload(syncCode) {
+  const input = String(syncCode || "").replace(/^\uFEFF/, "").trim();
+  if (!input) throw new Error("Empty sync payload");
+  if (input.startsWith("{")) return JSON.parse(input);
+
+  const prefixed = input.match(/BAGS3[BG]\.[A-Za-z0-9_-]+/);
+  if (prefixed) {
+    const token = prefixed[0];
+    const isCompressed = token.startsWith(SYNC_CODE_GZIP_PREFIX);
+    const encoded = token.slice(isCompressed ? SYNC_CODE_GZIP_PREFIX.length : SYNC_CODE_RAW_PREFIX.length);
+    let bytes = base64UrlToBytes(encoded);
+    if (isCompressed) {
+      if (typeof DecompressionStream !== "function") throw new Error("Gzip is unavailable");
+      const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+      bytes = new Uint8Array(await new Response(stream).arrayBuffer());
+    }
+    return JSON.parse(new TextDecoder().decode(bytes));
+  }
+
+  const binary = atob(input.replace(/\s+/g, ""));
   const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
   return JSON.parse(new TextDecoder().decode(bytes));
+}
+
+function bytesToBase64Url(bytes) {
+  let binary = "";
+  for (let index = 0; index < bytes.length; index += 32768) {
+    binary += String.fromCharCode(...bytes.subarray(index, index + 32768));
+  }
+  return btoa(binary).replaceAll("+", "-").replaceAll("/", "_").replace(/=+$/, "");
+}
+
+function base64UrlToBytes(value) {
+  const base64 = value.replaceAll("-", "+").replaceAll("_", "/");
+  const padded = base64.padEnd(Math.ceil(base64.length / 4) * 4, "=");
+  const binary = atob(padded);
+  return Uint8Array.from(binary, (char) => char.charCodeAt(0));
 }
 
 function normalizeImportedTrades(trades) {
   if (!Array.isArray(trades)) return [];
   return trades
     .filter((trade) => trade && trade.code && trade.name)
-    .map((trade) => ({
-      ...trade,
-      id: trade.id || createId(),
-      code: String(trade.code).trim(),
-      name: String(trade.name).trim(),
-      buyPrice: Number(trade.buyPrice) || 0,
-      quantity: Number(trade.quantity) || null,
-      stopLoss: Number(trade.stopLoss) || null,
-      takeProfit: Number(trade.takeProfit) || null,
-      status: trade.status || "open",
-      importedAt: new Date().toISOString(),
-    }));
+    .map((trade) => {
+      const buyTradingDate = trade.buyTradingDate || safeLocalDateKey(trade.createdAt) || currentTradingDateKey();
+      return {
+        ...trade,
+        id: trade.id || createId(),
+        code: String(trade.code).trim(),
+        name: String(trade.name).trim(),
+        buyPrice: Number(trade.buyPrice) || 0,
+        quantity: Number(trade.quantity) || null,
+        stopLoss: Number(trade.stopLoss) || null,
+        takeProfit: Number(trade.takeProfit) || null,
+        status: trade.status || "open",
+        outcome: trade.outcome || null,
+        buyTradingDate,
+        plannedSellTradingDate: trade.plannedSellTradingDate || nextWeekdayDateKey(buyTradingDate),
+        sellTradingDate: trade.sellTradingDate || safeLocalDateKey(trade.soldAt) || null,
+        sellPrice: Number(trade.sellPrice) || null,
+        importedAt: trade.importedAt || new Date().toISOString(),
+      };
+    });
 }
 
 function mergeImportedTrades(importedTrades) {
   const merged = [...state.trades];
+  const result = { added: 0, updated: 0, kept: 0, removed: 0 };
   importedTrades.forEach((incoming) => {
-    const sameId = merged.findIndex((trade) => trade.id === incoming.id);
-    if (sameId >= 0) {
-      merged[sameId] = { ...merged[sameId], ...incoming };
-      return;
-    }
-    const sameOpenCode = merged.findIndex(
-      (trade) => trade.code === incoming.code && trade.status !== "sold" && incoming.status !== "sold",
+    const sameTrade = merged.findIndex(
+      (trade) =>
+        trade.id === incoming.id ||
+        (trade.code === incoming.code &&
+          trade.buyTradingDate &&
+          incoming.buyTradingDate &&
+          trade.buyTradingDate === incoming.buyTradingDate),
     );
-    if (sameOpenCode >= 0) {
-      merged[sameOpenCode] = { ...merged[sameOpenCode], ...incoming, id: merged[sameOpenCode].id };
+    if (sameTrade >= 0) {
+      const local = merged[sameTrade];
+      const useIncoming = shouldUseIncomingTrade(local, incoming);
+      merged[sameTrade] = useIncoming
+        ? { ...local, ...incoming, id: local.id }
+        : { ...incoming, ...local, id: local.id };
+      result[useIncoming ? "updated" : "kept"] += 1;
       return;
     }
     merged.unshift(incoming);
+    result.added += 1;
   });
   state.trades = merged;
+  return result;
 }
 
-function markTradeSold(id) {
+function shouldUseIncomingTrade(local, incoming) {
+  const localTime = tradeModifiedAt(local);
+  const incomingTime = tradeModifiedAt(incoming);
+  if (incomingTime !== localTime) return incomingTime > localTime;
+  if (isTradeClosed(incoming) !== isTradeClosed(local)) return isTradeClosed(incoming);
+  return Boolean(incoming.resultMarkedAt && !local.resultMarkedAt);
+}
+
+function tradeModifiedAt(trade) {
+  return Math.max(
+    0,
+    ...["resultMarkedAt", "updatedAt", "soldAt", "createdAt"]
+      .map((field) => Date.parse(trade?.[field] || ""))
+      .filter(Number.isFinite),
+  );
+}
+
+function markTradeOutcome(id, outcome) {
   const trade = state.trades.find((item) => item.id === id);
-  if (!trade) return;
-  trade.status = "sold";
-  trade.soldAt = new Date().toISOString();
+  if (!trade || !["take_profit", "stop_loss"].includes(outcome)) return;
+  if (trade.status === "closed" && trade.outcome === outcome) return;
+  const now = new Date();
+  const quote = getQuoteForTrade(trade) || {};
+  const markedTradingDate = currentTradingDateKey(now);
+  const plannedSellTradingDate =
+    trade.plannedSellTradingDate ||
+    nextWeekdayDateKey(trade.buyTradingDate || safeLocalDateKey(trade.createdAt));
+  if (plannedSellTradingDate && markedTradingDate < plannedSellTradingDate) {
+    alert(`计划卖出日为 ${plannedSellTradingDate}，尚未到T+1，暂不记录交易结果。`);
+    return;
+  }
+  const markedLate = Boolean(plannedSellTradingDate && markedTradingDate > plannedSellTradingDate);
+  trade.status = "closed";
+  trade.outcome = outcome;
+  trade.soldAt = now.toISOString();
+  trade.resultMarkedAt = now.toISOString();
+  trade.sellTradingDate = markedLate ? plannedSellTradingDate : markedTradingDate;
+  trade.outcomeDateSource = markedLate ? "planned_t1_backfill" : "marked_live";
+  trade.sellPrice = markedLate
+    ? Number(trade.sellPrice || 0) || null
+    : Number(quote.price || trade.lastPrice || trade.buyPrice || 0) || null;
+  trade.lastPrice = trade.sellPrice;
+  trade.updatedAt = now.toISOString();
   persistTrades();
   render();
 }
@@ -1155,14 +1498,8 @@ function deleteTrade(id) {
   render();
 }
 
-function clearClosedTrades() {
-  state.trades = state.trades.filter((item) => item.status !== "sold");
-  persistTrades();
-  render();
-}
-
 async function refreshPositionQuotes() {
-  const openCodes = state.trades.filter((trade) => trade.status !== "sold").map((trade) => trade.code);
+  const openCodes = state.trades.filter((trade) => !isTradeClosed(trade)).map((trade) => trade.code);
   await Promise.all(openCodes.map(fetchLiveQuote).slice(0, 20));
   await Promise.all(openCodes.map(fetchHistoryQuote).slice(0, 20));
   const alerts = getPositionAlerts();
@@ -1270,7 +1607,7 @@ function jsonp(url) {
 
 function getPositionAlerts() {
   return state.trades
-    .filter((trade) => trade.status !== "sold")
+    .filter((trade) => !isTradeClosed(trade))
     .map((trade) => {
       const quote = getQuoteForTrade(trade);
       const current = quote?.price || trade.lastPrice || trade.buyPrice;
@@ -1281,7 +1618,7 @@ function getPositionAlerts() {
 }
 
 function getAlertForTrade(trade, currentPrice) {
-  if (trade.status === "sold") return "";
+  if (isTradeClosed(trade)) return "";
   if (trade.stopLoss && currentPrice <= trade.stopLoss) return "到止损";
   if (trade.takeProfit && currentPrice >= trade.takeProfit) return "到卖点";
   if (currentPrice <= trade.buyPrice * 0.95) return "亏损5%";
@@ -1381,6 +1718,75 @@ function calcLimitUpPrice(code, preClose) {
   if (!preClose) return null;
   if (/^(30|68)/.test(code)) return round2(preClose * 1.2);
   return round2(preClose * 1.1);
+}
+
+function isTradeClosed(trade) {
+  return trade?.status === "closed" || trade?.status === "sold" || Boolean(trade?.outcome);
+}
+
+function getTradeOutcomeState(trade) {
+  if (trade.outcome === "take_profit") return "止盈完成";
+  if (trade.outcome === "stop_loss") return "止损完成";
+  if (trade.status === "sold" || trade.status === "closed") return "已卖出";
+  return "";
+}
+
+function getTradeDateInfo(trade, now = new Date()) {
+  const buyDate = trade.buyTradingDate || safeLocalDateKey(trade.createdAt) || "--";
+  const plannedSellDate =
+    trade.plannedSellTradingDate ||
+    (buyDate !== "--" ? nextWeekdayDateKey(buyDate) : "--");
+  const actualSellDate = trade.sellTradingDate || safeLocalDateKey(trade.soldAt) || "";
+  const today = currentTradingDateKey(now);
+  return {
+    buyDate,
+    plannedSellDate,
+    actualSellDate,
+    overdue: !isTradeClosed(trade) && plannedSellDate !== "--" && today > plannedSellDate,
+  };
+}
+
+function buildClosedOutcomeAction(trade, sellPrice, buyPrice) {
+  const result =
+    trade.outcome === "take_profit"
+      ? "止盈卖出"
+      : trade.outcome === "stop_loss"
+        ? "止损卖出"
+        : "卖出";
+  const pnl = buyPrice && sellPrice ? ((sellPrice - buyPrice) / buyPrice) * 100 : null;
+  const markedLate = trade.outcomeDateSource === "planned_t1_backfill";
+  const timing = markedLate ? "结果在T+1后补标，卖出日按原计划T+1日保存" : "卖出日已按标记日保存";
+  return `${result}已记录，${timing}；该样本会保留用于学习，只有“删除”会移除记录${pnl === null ? "" : `；标记价格相对买入 ${formatPct(pnl, false)}`}。`;
+}
+
+function safeLocalDateKey(value) {
+  if (!value) return "";
+  const parsed = value instanceof Date ? value : new Date(value);
+  return Number.isNaN(parsed.getTime()) ? "" : localDateKey(parsed);
+}
+
+function currentTradingDateKey(now = new Date()) {
+  const today = localDateKey(now);
+  const snapshotDate = state.data?.meta?.tradingDate;
+  if (snapshotDate === today) return snapshotDate;
+  if (now.getDay() === 0 || now.getDay() === 6) {
+    const previous = new Date(now);
+    do {
+      previous.setDate(previous.getDate() - 1);
+    } while (previous.getDay() === 0 || previous.getDay() === 6);
+    return localDateKey(previous);
+  }
+  return today;
+}
+
+function nextWeekdayDateKey(dateKey) {
+  const [year, month, day] = String(dateKey).split("-").map(Number);
+  const value = new Date(year, month - 1, day, 12, 0, 0);
+  if (Number.isNaN(value.getTime())) return "";
+  do {
+    value.setDate(value.getDate() + 1);
+  } while (value.getDay() === 0 || value.getDay() === 6);
+  return localDateKey(value);
 }
 
 function isSameLocalDate(value, date) {

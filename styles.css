@@ -552,6 +552,18 @@ tr:last-child td {
   margin: -6px 0 12px;
 }
 
+.review-dates {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.45;
+  margin-top: 4px;
+}
+
+.review-dates.overdue {
+  color: var(--red);
+  font-weight: 700;
+}
+
 .review-score-grid,
 .review-plan {
   display: grid;
@@ -602,6 +614,23 @@ tr:last-child td {
 
 .review-actions {
   margin-top: 10px;
+}
+
+.review-actions .ghost-button {
+  flex: 1 1 auto;
+  padding-inline: 9px;
+}
+
+.outcome-button.take-profit.selected {
+  border-color: var(--green);
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.outcome-button.stop-loss.selected {
+  border-color: var(--red);
+  background: var(--red-soft);
+  color: var(--red);
 }
 
 button:disabled {
@@ -740,6 +769,92 @@ button:disabled {
   resize: vertical;
 }
 
+.sync-modal {
+  width: min(680px, 100%);
+}
+
+.sync-description {
+  margin: 14px 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.sync-import-mode {
+  display: inline-flex;
+  margin-bottom: 14px;
+}
+
+.sync-import-mode .segment {
+  border-radius: 0;
+}
+
+.sync-import-mode .segment:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.sync-import-mode .segment:last-child {
+  border-radius: 0 8px 8px 0;
+  margin-left: -1px;
+}
+
+.sync-import-mode .segment.active {
+  position: relative;
+  z-index: 1;
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+}
+
+.sync-code-field {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.sync-code-field textarea {
+  width: 100%;
+  min-height: 190px;
+  margin-top: 7px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  resize: vertical;
+  background: #fbfcfb;
+  color: var(--ink);
+  font-family: Consolas, "SFMono-Regular", monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.sync-status {
+  min-height: 22px;
+  margin: 9px 0 5px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.sync-status.success {
+  color: var(--green);
+}
+
+.sync-status.error {
+  color: var(--red);
+}
+
+.sync-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sync-modal-actions {
+  margin-top: 18px;
+}
+
 .full-row,
 .modal-actions {
   grid-column: 1 / -1;
@@ -808,5 +923,23 @@ button:disabled {
   .primary-button,
   .ghost-button {
     min-width: 40px;
+  }
+
+  .sync-modal {
+    padding: 14px;
+  }
+
+  .sync-code-field textarea {
+    min-height: 160px;
+  }
+
+  .sync-import-mode,
+  .sync-toolbar {
+    width: 100%;
+  }
+
+  .sync-import-mode .segment,
+  .sync-toolbar .ghost-button {
+    flex: 1 1 auto;
   }
 }
