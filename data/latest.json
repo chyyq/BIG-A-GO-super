@@ -1,19 +1,17 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-27T14:09:44.765719+08:00",
+    "generatedAt": "2026-07-27T16:55:40.646180+08:00",
     "tradingDate": "2026-07-27",
     "mode": "fast-snapshot",
-    "activeStrategies": [
-      "TAIL_MAIN"
-    ],
-    "noRecommendationReason": null,
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.603983&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=16",
-        "note": "Quote snapshot and daily K-line history OK"
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "note": "OK"
       },
       {
         "name": "Eastmoney News",
@@ -34,50 +32,73 @@
         "note": "Optional news/reference source"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney daily K skipped for 002832: Remote end closed connection without response",
-      "Eastmoney daily K skipped for 001258: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 98.89
+    "errors": [],
+    "runtimeSeconds": 31.11
   },
   "market": {
-    "recommendationCount": 1,
-    "qualifiedBoardCount": 0,
+    "recommendationCount": 0,
+    "qualifiedBoardCount": 1,
     "monitor": {
-      "emotionScore": 98,
+      "emotionScore": 100,
       "marketGateScore": 5,
       "marketGatePassed": true,
       "hardVeto": false,
       "riskLevel": "NORMAL",
-      "limitUpCount": 71,
-      "limitDownCount": 9,
-      "bigDownCount": 22,
-      "limitTouchCount": 74,
+      "limitUpCount": 54,
+      "limitDownCount": 7,
+      "bigDownCount": 13,
+      "limitTouchCount": 57,
       "brokenBoardCount": 3,
-      "brokenBoardRate": 0.041,
+      "brokenBoardRate": 0.053,
       "breadthSampleSize": 200,
       "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 8.13,
+      "topBoardPct": 9.43,
       "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
     }
   },
   "boards": [
     {
+      "code": "BK1462",
+      "name": "玻纤制造",
+      "kind": "Industry board",
+      "price": 15244.47,
+      "pct": 9.43,
+      "amount": 22328283167.0,
+      "turnover": 6.3,
+      "open": 14030.37,
+      "preClose": 13931.27,
+      "mainNet": 3640261504.0,
+      "rank": 3,
+      "passed": 5,
+      "qualified": true,
+      "score": 98.95,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Board amount expands at least 1.30x",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": null,
+      "limitUpCount": 5,
+      "bigUpCount": 6
+    },
+    {
       "code": "BK1645",
       "name": "昨日打二板以上表现",
       "kind": "Concept board",
-      "price": 9767.4,
-      "pct": 8.13,
-      "amount": 3897941633.0,
-      "turnover": 10.41,
+      "price": 9782.96,
+      "pct": 8.31,
+      "amount": 4109257632.0,
+      "turnover": 11.35,
       "open": 9273.35,
       "preClose": 9032.7,
-      "mainNet": -196670720.0,
-      "rank": 3,
+      "mainNet": -214703808.0,
+      "rank": 4,
       "passed": 3,
       "qualified": false,
-      "score": 66.15,
+      "score": 65.8,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
@@ -89,20 +110,20 @@
       "bigUpCount": 4
     },
     {
-      "code": "BK1676",
-      "name": "百日新高",
-      "kind": "Concept board",
-      "price": 1367.23,
-      "pct": 5.75,
-      "amount": 5664026095.0,
-      "turnover": 6.62,
-      "open": 1307.38,
-      "preClose": 1292.84,
-      "mainNet": -21931712.0,
-      "rank": 10,
+      "code": "BK1498",
+      "name": "品牌化妆品",
+      "kind": "Industry board",
+      "price": 1451.25,
+      "pct": 7.09,
+      "amount": 2213483197.0,
+      "turnover": 2.8,
+      "open": 1352.87,
+      "preClose": 1355.11,
+      "mainNet": 76575496.0,
+      "rank": 7,
       "passed": 3,
       "qualified": false,
-      "score": 63.7,
+      "score": 64.75,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
@@ -110,20 +131,20 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 3,
-      "bigUpCount": 4
+      "limitUpCount": 1,
+      "bigUpCount": 5
     },
     {
       "code": "BK1458",
       "name": "个护小家电",
       "kind": "Industry board",
-      "price": 766.91,
-      "pct": 9.91,
-      "amount": 280607419.0,
-      "turnover": 1.87,
+      "price": 767.77,
+      "pct": 10.03,
+      "amount": 330101054.0,
+      "turnover": 2.21,
       "open": 701.1,
       "preClose": 697.79,
-      "mainNet": 30248524.0,
+      "mainNet": 29620707.0,
       "rank": 2,
       "passed": 2,
       "qualified": false,
@@ -138,40 +159,16 @@
       "bigUpCount": 3
     },
     {
-      "code": "BK1498",
-      "name": "品牌化妆品",
-      "kind": "Industry board",
-      "price": 1445.41,
-      "pct": 6.66,
-      "amount": 1915677028.0,
-      "turnover": 2.45,
-      "open": 1352.87,
-      "preClose": 1355.11,
-      "mainNet": 65499205.0,
-      "rank": 8,
-      "passed": 2,
-      "qualified": false,
-      "score": 48.0,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 4
-    },
-    {
-      "code": "BK1252",
-      "name": "化妆品",
-      "kind": "Industry board",
-      "price": 1967.01,
-      "pct": 5.74,
-      "amount": 2576963581.0,
-      "turnover": 2.14,
-      "open": 1857.48,
-      "preClose": 1860.24,
-      "mainNet": 78734672.0,
+      "code": "BK1676",
+      "name": "百日新高",
+      "kind": "Concept board",
+      "price": 1379.08,
+      "pct": 6.67,
+      "amount": 6243715628.0,
+      "turnover": 7.16,
+      "open": 1307.38,
+      "preClose": 1292.84,
+      "mainNet": -47706144.0,
       "rank": 11,
       "passed": 2,
       "qualified": false,
@@ -183,16 +180,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1560",
-      "name": "酒店",
+      "code": "BK1347",
+      "name": "纺织鞋类制造",
       "kind": "Industry board",
-      "price": 2137.07,
-      "pct": 5.6,
-      "amount": 985662169.0,
-      "turnover": 2.5,
-      "open": 2089.45,
-      "preClose": 2023.77,
-      "mainNet": 66082998.0,
+      "price": 409.72,
+      "pct": 6.09,
+      "amount": 161950932.0,
+      "turnover": 0.41,
+      "open": 386.43,
+      "preClose": 386.2,
+      "mainNet": 1891117.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -209,11 +206,11 @@
       "kind": "Concept board",
       "price": 1578.74,
       "pct": 20.0,
-      "amount": 711547594.0,
-      "turnover": 25.87,
+      "amount": 729659044.0,
+      "turnover": 26.51,
       "open": 1578.74,
       "preClose": 1315.61,
-      "mainNet": -69293682.0,
+      "mainNet": -69568562.0,
       "rank": 1,
       "passed": 1,
       "qualified": false,
@@ -227,39 +224,16 @@
       "bigUpCount": 1
     },
     {
-      "code": "BK1298",
-      "name": "文字媒体",
-      "kind": "Industry board",
-      "price": 2191.85,
-      "pct": 7.59,
-      "amount": 1009500537.0,
-      "turnover": 4.81,
-      "open": 2019.63,
-      "preClose": 2037.14,
-      "mainNet": 62203852.0,
-      "rank": 4,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.0,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 2
-    },
-    {
       "code": "BK1565",
       "name": "会展服务",
       "kind": "Industry board",
-      "price": 1101.24,
-      "pct": 7.57,
-      "amount": 529700465.0,
-      "turnover": 4.38,
+      "price": 1101.96,
+      "pct": 7.64,
+      "amount": 548352390.0,
+      "turnover": 4.51,
       "open": 1002.29,
       "preClose": 1023.71,
-      "mainNet": 57899621.0,
+      "mainNet": 59520045.0,
       "rank": 5,
       "passed": 1,
       "qualified": false,
@@ -273,16 +247,16 @@
       "bigUpCount": 1
     },
     {
-      "code": "BK1469",
-      "name": "涂料",
+      "code": "BK1298",
+      "name": "文字媒体",
       "kind": "Industry board",
-      "price": 875.1,
-      "pct": 6.98,
-      "amount": 179922950.0,
-      "turnover": 1.21,
-      "open": 820.5,
-      "preClose": 817.99,
-      "mainNet": 7188440.0,
+      "price": 2189.51,
+      "pct": 7.48,
+      "amount": 1259729550.0,
+      "turnover": 5.96,
+      "open": 2019.63,
+      "preClose": 2037.14,
+      "mainNet": 58043901.0,
       "rank": 6,
       "passed": 1,
       "qualified": false,
@@ -293,23 +267,23 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 0
+      "bigUpCount": 2
     },
     {
-      "code": "BK1342",
-      "name": "房地产综合服务",
+      "code": "BK1524",
+      "name": "汽车综合服务",
       "kind": "Industry board",
-      "price": 1302.02,
-      "pct": 6.87,
-      "amount": 100878617.0,
-      "turnover": 3.49,
-      "open": 1222.08,
-      "preClose": 1218.27,
-      "mainNet": 11652396.0,
-      "rank": 7,
+      "price": 1020.47,
+      "pct": 6.93,
+      "amount": 536192206.0,
+      "turnover": 2.76,
+      "open": 955.96,
+      "preClose": 954.36,
+      "mainNet": 50091445.0,
+      "rank": 8,
       "passed": 1,
       "qualified": false,
-      "score": 31.95,
+      "score": 31.6,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -319,16 +293,16 @@
       "bigUpCount": 1
     },
     {
-      "code": "BK1347",
-      "name": "纺织鞋类制造",
+      "code": "BK1342",
+      "name": "房地产综合服务",
       "kind": "Industry board",
-      "price": 408.9,
-      "pct": 5.88,
-      "amount": 132500508.0,
-      "turnover": 0.33,
-      "open": 386.43,
-      "preClose": 386.2,
-      "mainNet": 2014377.0,
+      "price": 1302.02,
+      "pct": 6.87,
+      "amount": 114041501.0,
+      "turnover": 3.94,
+      "open": 1222.08,
+      "preClose": 1218.27,
+      "mainNet": 10667530.0,
       "rank": 9,
       "passed": 1,
       "qualified": false,
@@ -340,133 +314,32 @@
       "amountRatio": null,
       "limitUpCount": 0,
       "bigUpCount": 1
-    }
-  ],
-  "recommendations": [
+    },
     {
-      "rank": 1,
-      "code": "001258",
-      "name": "立新能源",
-      "market": "SZ",
-      "price": 14.33,
-      "pct": 9.98,
-      "amount": 1151089629.38,
-      "turnover": 8.92,
-      "industry": "电力",
-      "confidence": 84.79,
-      "winRate": 84.79,
-      "strategyTag": "TAIL_MAIN",
-      "strategyId": "TAIL_T1_V31_EMPIRICAL",
-      "candidateStatus": "STRONG_CANDIDATE",
-      "finalScore": 84.79,
-      "t1EdgeScore": 84.79,
-      "expectedReturnPct": 6.47,
-      "riskPct": 2.63,
-      "signalType": "T1_STABLE_LIMIT_UP",
-      "overnightCrowdingScore": 17.0,
-      "executionToleranceScore": 81.45,
-      "simpleExecutionScore": 89.8,
-      "recoveryAfter0935Score": 65.0,
-      "initialPlan": "PLAN_T",
-      "nextDayPlan": {
-        "auctionWatchTime": "09:25-09:30",
-        "firstNodeTime": "09:30-09:35",
-        "firstSellRatio": [
-          0.2,
-          0.3
-        ],
-        "openingOverride": true,
-        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
-        "classifyTime": "09:35",
-        "weakAction": "SELL_ALL_REMAINDER_NOW",
-        "neutralTotalRemainder": 0.3,
-        "strongRemainder": [
-          0.5,
-          0.7
-        ],
-        "finalExitTime": "10:00",
-        "limitUpException": true
-      },
-      "board": {
-        "code": "BK1645",
-        "name": "昨日打二板以上表现",
-        "passed": 3,
-        "score": 66.15
-      },
-      "criteria": {
-        "board": [
-          "[SectorGate] Tail rank remains top-15 positive",
-          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-          "[SectorGate] Leaders have follow-through support"
-        ],
-        "stock": [
-          "[TAIL_T1_V31_EMPIRICAL] Mid-trend tail setup",
-          "[StockGate] Amount ratio is controlled",
-          "[StockGate] MA5 is rising",
-          "[StockGate] Prior trend was established before today's surge",
-          "[StockGate] MA5 deviation stays below 15%",
-          "[StockGate] Mid-stage gain is not crowded",
-          "[StockGate] Breakout/reclaim structure remains valid",
-          "[StockGate] Turnover fits trend or strong-close type",
-          "[StockGate] Close position is at least 0.70",
-          "[StockGate] High-to-close pullback is at most 2.5%",
-          "[StockGate] Price holds VWAP",
-          "[StockGate] Deal amount supports next-morning exit",
-          "[TailGate] A valid v3.1 signal is present",
-          "[TailGate] Close holds above VWAP",
-          "[TailGate] Close position stays at least 0.70",
-          "[TailGate] Pullback from high is at most 2.5%",
-          "[TailGate] No distribution upper shadow",
-          "[TailGate] Capital or price spread confirms support",
-          "[TailGate] Fixed-node execution tolerance passes"
-        ]
-      },
-      "buyPlan": {
-        "type": "[TAIL_MAIN] T1 stable limit-up",
-        "timeWindow": "13:30 watch; 14:10-14:35 confirm; 14:35+ limit-up/reseal only",
-        "trigger": "Only use a stable seal with sector synchronization; repeated opening or fading orders cancel the entry.",
-        "priceRange": [
-          14.07,
-          14.37
-        ],
-        "quality": 26,
-        "priority": 9,
-        "strategyTag": "TAIL_MAIN",
-        "signalType": "T1_STABLE_LIMIT_UP"
-      },
-      "sellPlan": {
-        "targetPrice": 14.98,
-        "targetTime": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00.",
-        "strategy": "v3.1: freeze the overnight target, confirm opening repair at 09:30-09:35, and exit non-limit-up remainder at 10:00.",
-        "takeProfit": 14.98,
-        "timeWindow": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00."
-      },
-      "stopPlan": {
-        "stopLoss": 13.71,
-        "rules": [
-          "09:25 auction only sets the opening bias; do not sell mechanically before the open",
-          "09:30-09:35 confirm follow-through: strong repair may override the overnight defensive plan",
-          "09:35 classify WEAK/NEUTRAL/STRONG; WEAK sells all remainder",
-          "10:00 sell every non-limit-up remainder; never widen the stop"
-        ]
-      },
-      "sourceLinks": [
-        {
-          "name": "Eastmoney quote",
-          "url": "https://quote.eastmoney.com/sz001258.html"
-        },
-        {
-          "name": "10jqka stock page",
-          "url": "https://stockpage.10jqka.com.cn/001258/"
-        },
-        {
-          "name": "Yicai news",
-          "url": "https://www.yicai.com/news/"
-        }
+      "code": "BK1469",
+      "name": "涂料",
+      "kind": "Industry board",
+      "price": 873.97,
+      "pct": 6.84,
+      "amount": 212020653.0,
+      "turnover": 1.33,
+      "open": 820.5,
+      "preClose": 817.99,
+      "mainNet": 5364219.0,
+      "rank": 10,
+      "passed": 1,
+      "qualified": false,
+      "score": 30.9,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
       ],
-      "sparkline": []
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 1,
+      "bigUpCount": 1
     }
   ],
+  "recommendations": [],
   "news": [
     {
       "source": "Eastmoney News",
@@ -482,8 +355,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "长鑫科技涨超460% 成为A股历史上首只单日成交额突破1000亿元的个股",
-      "url": "https://finance.eastmoney.com/a/202607273821805985.html",
+      "title": "电力板块震荡回升 百亿电力大牛股8天7板 公司紧急提示",
+      "url": "https://finance.eastmoney.com/a/202607273822000182.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "创业板指涨超3% 近5200只股飘红 长鑫科技上市首日大涨465%",
+      "url": "https://finance.eastmoney.com/a/202607273822062181.html",
       "time": ""
     },
     {
@@ -508,12 +387,6 @@
       "source": "Eastmoney News",
       "title": "银河证券：市场重心有望集中于政策与业绩双重验证",
       "url": "https://finance.eastmoney.com/a/202607273821333257.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：可回收技术降本增效 商业航天应用端静待花开",
-      "url": "https://finance.eastmoney.com/a/202607273821331122.html",
       "time": ""
     }
   ]
