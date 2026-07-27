@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-27T18:27:43.807442+08:00",
+    "generatedAt": "2026-07-27T18:29:22.473227+08:00",
     "tradingDate": "2026-07-27",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 44.25
+    "runtimeSeconds": 38.31
   },
   "market": {
     "recommendationCount": 0,
@@ -91,7 +91,7 @@
       "price": 9782.96,
       "pct": 8.31,
       "amount": 4109257632.0,
-      "turnover": 9.51,
+      "turnover": 11.35,
       "open": 9273.35,
       "preClose": 9032.7,
       "mainNet": -214703808.0,
@@ -165,7 +165,7 @@
       "price": 1379.08,
       "pct": 6.67,
       "amount": 6243715628.0,
-      "turnover": 0.71,
+      "turnover": 7.16,
       "open": 1307.38,
       "preClose": 1292.84,
       "mainNet": -47706144.0,
@@ -207,7 +207,7 @@
       "price": 1578.74,
       "pct": 20.0,
       "amount": 729659044.0,
-      "turnover": 0.67,
+      "turnover": 26.51,
       "open": 1578.74,
       "preClose": 1315.61,
       "mainNet": -69568562.0,
@@ -342,45 +342,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "长鑫科技正式登陆科创板！首日市值登顶A股 背后中国科技产业天团陪跑",
+      "url": "https://finance.eastmoney.com/a/202607273821620589.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "破解城市更新四大痛点，武汉探索有机更新模式产权碎片化、规划指标固化、资金供需失衡、长效运营缺失四大痛点。  1小时前",
-      "url": "https://www.yicai.com/news/103293635.html",
+      "source": "Eastmoney News",
+      "title": "长鑫科技开盘上涨471.59%  市值超越工行成A股“股王” 中一签可赚20420元",
+      "url": "https://finance.eastmoney.com/a/202607273821354595.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "高油价骤降、黄金跳空高开，市场迎来多年来最难预测美联储决议中东冲突重新生变，油价今日大跌，令美联储决议面临更多不确定性。  1小时前",
-      "url": "https://www.yicai.com/news/103293591.html",
+      "source": "Eastmoney News",
+      "title": "电力板块震荡回升 百亿电力大牛股8天7板 公司紧急提示",
+      "url": "https://finance.eastmoney.com/a/202607273822000182.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共121只个股涨停 这只电网设备股5连板军工股长城军工3连板，存储芯片板块至纯科技2连板。一图速览今日连板股&gt;&gt;  2小时前",
-      "url": "https://www.yicai.com/news/103293593.html",
+      "source": "Eastmoney News",
+      "title": "长鑫科技上市首日十大看点！登顶A股市值榜首 单日成交额破千亿",
+      "url": "https://finance.eastmoney.com/a/202607273822094517.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股市值“新王”诞生，长鑫科技上市首日十大看点长鑫科技上市首日看点全景  2小时前",
-      "url": "https://www.yicai.com/news/103293525.html",
+      "source": "Eastmoney News",
+      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
+      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜创业板指涨超3% 长鑫科技成交额1411亿元全市场近5200只个股上涨，超百股涨停。  3小时前",
-      "url": "https://www.yicai.com/news/103293453.html",
+      "source": "Eastmoney News",
+      "title": "长鑫科技上市，市值登顶A股，中一签赚超两万",
+      "url": "https://topic.eastmoney.com/detail/xcksjdfq.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "13家银行“坐享”长鑫科技上市盛宴，持股市值高达1480亿元创下多项A股历史。  5小时前",
-      "url": "https://www.yicai.com/news/103293212.html",
+      "source": "Eastmoney News",
+      "title": "十大券商策略：市场震荡再平衡 积极防御仍是核心",
+      "url": "https://finance.eastmoney.com/a/202607263821274067.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "银河证券：市场重心有望集中于政策与业绩双重验证",
+      "url": "https://finance.eastmoney.com/a/202607273821333257.html",
       "time": ""
     }
   ]
