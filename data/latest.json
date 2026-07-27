@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-27T18:29:22.473227+08:00",
+    "generatedAt": "2026-07-27T22:43:10.569261+08:00",
     "tradingDate": "2026-07-27",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 38.31
+    "runtimeSeconds": 43.0
   },
   "market": {
     "recommendationCount": 0,
@@ -342,51 +342,39 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "长鑫科技正式登陆科创板！首日市值登顶A股 背后中国科技产业天团陪跑",
-      "url": "https://finance.eastmoney.com/a/202607273821620589.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "长鑫科技开盘上涨471.59%  市值超越工行成A股“股王” 中一签可赚20420元",
-      "url": "https://finance.eastmoney.com/a/202607273821354595.html",
+      "source": "Yicai",
+      "title": "壹快评｜尹同跃“不再内卷”宣言，喊出汽车行业回归长期主义的心声国内汽车市场竞争焦点已从“拼价格、拼销量”，逐步转向“拼技术、拼服务、拼价值”。  1小时前",
+      "url": "https://www.yicai.com/news/103294052.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "电力板块震荡回升 百亿电力大牛股8天7板 公司紧急提示",
-      "url": "https://finance.eastmoney.com/a/202607273822000182.html",
+      "source": "Yicai",
+      "title": "长鑫科技首日创下多项纪录，加速重构全球存储竞争版图长鑫科技将进一步撼动全球DRAM市场维持了近三十年的寡头竞争格局。  1小时前",
+      "url": "https://www.yicai.com/news/103294056.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "长鑫科技上市首日十大看点！登顶A股市值榜首 单日成交额破千亿",
-      "url": "https://finance.eastmoney.com/a/202607273822094517.html",
+      "source": "Yicai",
+      "title": "阿斯利康中国区收入下降5%，这些因素在拖累王牌产品在中国面临集采、市场竞争加剧影响  2小时前",
+      "url": "https://www.yicai.com/news/103293847.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
-      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
+      "source": "Yicai",
+      "title": "十年陪跑，万亿市值：合肥国资的长鑫样本对合肥而言，这笔投资的意义远不止二级市场的“纸面财富”。  2小时前",
+      "url": "https://www.yicai.com/news/103293898.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "长鑫科技上市，市值登顶A股，中一签赚超两万",
-      "url": "https://topic.eastmoney.com/detail/xcksjdfq.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "十大券商策略：市场震荡再平衡 积极防御仍是核心",
-      "url": "https://finance.eastmoney.com/a/202607263821274067.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "银河证券：市场重心有望集中于政策与业绩双重验证",
-      "url": "https://finance.eastmoney.com/a/202607273821333257.html",
+      "source": "Yicai",
+      "title": "独家专访｜世界黄金协会全球研究负责人：美联储重估与AI吸金夹击，东方买盘正重塑定价逻辑全球黄金市场的运行逻辑是否已发生改变？  3小时前",
+      "url": "https://www.yicai.com/news/103293856.html",
       "time": ""
     }
   ]
