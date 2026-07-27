@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-27T18:25:12.219989+08:00",
+    "generatedAt": "2026-07-27T18:27:43.807442+08:00",
     "tradingDate": "2026-07-27",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 32.89
+    "runtimeSeconds": 44.25
   },
   "market": {
     "recommendationCount": 0,
@@ -381,12 +381,6 @@
       "source": "Yicai",
       "title": "13家银行“坐享”长鑫科技上市盛宴，持股市值高达1480亿元创下多项A股历史。  5小时前",
       "url": "https://www.yicai.com/news/103293212.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "合资车企，跌破25%份额红线“6月份合资加外资品牌的市场占比只剩24.5%。放在三年前没人敢信，今天就实实在在摆在眼前。”  5小时前",
-      "url": "https://www.yicai.com/news/103293184.html",
       "time": ""
     }
   ]
