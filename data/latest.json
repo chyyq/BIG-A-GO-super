@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-28T12:41:30.981942+08:00",
+    "generatedAt": "2026-07-28T12:44:24.125545+08:00",
     "tradingDate": "2026-07-28",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,20 +22,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 38.56
+    "runtimeSeconds": 31.13
   },
   "market": {
     "recommendationCount": 0,
@@ -350,51 +350,45 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "长鑫科技上市首日十大看点！登顶A股市值榜首 单日成交额破千亿",
-      "url": "https://finance.eastmoney.com/a/202607273822094517.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "电力板块震荡回升 百亿电力大牛股8天7板 公司紧急提示",
-      "url": "https://finance.eastmoney.com/a/202607273822000182.html",
+      "source": "Yicai",
+      "title": "申万宏源证券刘健：让创新被看见、被定价、被成就  36分钟前",
+      "url": "https://www.yicai.com/news/103294852.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "创业板指涨超3% 近5200只股飘红 长鑫科技上市首日大涨465%",
-      "url": "https://finance.eastmoney.com/a/202607273822062181.html",
+      "source": "Yicai",
+      "title": "A股四大指数集体低开，长鑫科技低开超7%算力硬件产业链下挫，存储器、CPO、PCB方向领跌。  3小时前",
+      "url": "https://www.yicai.com/news/103294448.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
-      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
+      "source": "Yicai",
+      "title": "盘前必读丨东方证券与上海证券重组草案出炉；又一波增持回购潮来了机构认为，市场底区间有望确立，景气度验证仍是主线。  4小时前",
+      "url": "https://www.yicai.com/news/103294290.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "长鑫科技上市，市值登顶A股，中一签赚超两万",
-      "url": "https://topic.eastmoney.com/detail/xcksjdfq.html",
+      "source": "Yicai",
+      "title": "壹快评｜尹同跃“不再内卷”宣言，喊出汽车行业回归长期主义心声国内汽车市场竞争焦点已从“拼价格、拼销量”，逐步转向“拼技术、拼服务、拼价值”。  昨天 21:24",
+      "url": "https://www.yicai.com/news/103294052.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：坚定看好超跌后的电子板块投资机会",
-      "url": "https://finance.eastmoney.com/a/202607283822762923.html",
+      "source": "Yicai",
+      "title": "长鑫科技首日创下多项纪录，加速重构全球存储竞争版图长鑫科技将进一步撼动全球DRAM市场维持了近三十年的寡头竞争格局。  昨天 21:12",
+      "url": "https://www.yicai.com/news/103294056.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：乳清蛋白景气上行超预期 关注国产蛋白机会",
-      "url": "https://finance.eastmoney.com/a/202607283822757750.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信建投：A股长期致胜的八个宏观视角",
-      "url": "https://finance.eastmoney.com/a/202607283822643726.html",
+      "source": "Yicai",
+      "title": "阿斯利康中国区收入下降5%，这些因素在拖累王牌产品在中国面临集采、市场竞争加剧影响  昨天 20:41",
+      "url": "https://www.yicai.com/news/103293847.html",
       "time": ""
     }
   ]
