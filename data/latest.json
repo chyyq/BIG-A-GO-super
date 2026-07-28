@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-28T16:00:52.068106+08:00",
+    "generatedAt": "2026-07-28T16:04:00.056534+08:00",
     "tradingDate": "2026-07-28",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,20 +22,22 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 38.71
+    "runtimeSeconds": 111.98
   },
   "market": {
     "recommendationCount": 0,
@@ -133,30 +135,6 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 2,
-      "bigUpCount": 3
-    },
-    {
-      "code": "BK1583",
-      "name": "零食",
-      "kind": "Industry board",
-      "price": 1806.3,
-      "pct": 4.29,
-      "amount": 1991687523.0,
-      "turnover": 2.95,
-      "open": 1725.24,
-      "preClose": 1731.99,
-      "mainNet": 25397447.0,
-      "rank": 4,
-      "passed": 2,
-      "qualified": false,
-      "score": 49.4,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
       "bigUpCount": 3
     },
     {
@@ -273,6 +251,29 @@
       "bigUpCount": 0
     },
     {
+      "code": "BK1583",
+      "name": "零食",
+      "kind": "Industry board",
+      "price": 1806.3,
+      "pct": 4.29,
+      "amount": 1991687523.0,
+      "turnover": 2.95,
+      "open": 1725.24,
+      "preClose": 1731.99,
+      "mainNet": 25397447.0,
+      "rank": 4,
+      "passed": 1,
+      "qualified": false,
+      "score": 33.0,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
       "code": "BK1360",
       "name": "金融信息服务",
       "kind": "Industry board",
@@ -338,58 +339,40 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
+      "limitUpCount": 0,
+      "bigUpCount": 0
     }
   ],
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "午后多只宽基ETF持续放量 创业板ETF易方达成交超100亿",
-      "url": "https://finance.eastmoney.com/a/202607283823404027.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "瞬间暴跌熔断！暂停程序化卖盘！日韩股市大跳水",
-      "url": "https://finance.eastmoney.com/a/202607283823182116.html",
+      "source": "Yicai",
+      "title": "收盘｜创业板指跌超7%，半导体、算力硬件产业链深度调整全市场超2700只个股下跌。  45分钟前",
+      "url": "https://www.yicai.com/news/103295138.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "单周530亿资金流入宽基ETF 创年内次高 再显抄底意图？",
-      "url": "https://finance.eastmoney.com/a/202607283822544931.html",
+      "source": "Yicai",
+      "title": "个税重回第三大税种原因揭晓个税较快增长受资本市场活跃、部分行业增收、税收征管强化影响  1小时前",
+      "url": "https://www.yicai.com/news/103294992.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
-      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
+      "source": "Yicai",
+      "title": "“稻米造血”第一股暴跌近20%，1736名投资者今日起迎来解禁重组人白蛋白如何拓展市场，仍有难度。  3小时前",
+      "url": "https://www.yicai.com/news/103294887.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "长鑫科技上市，市值登顶A股，中一签赚超两万",
-      "url": "https://topic.eastmoney.com/detail/xcksjdfq.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：坚定看好超跌后的电子板块投资机会",
-      "url": "https://finance.eastmoney.com/a/202607283822762923.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：乳清蛋白景气上行超预期 关注国产蛋白机会",
-      "url": "https://finance.eastmoney.com/a/202607283822757750.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信建投：A股长期致胜的八个宏观视角",
-      "url": "https://finance.eastmoney.com/a/202607283822643726.html",
+      "source": "Yicai",
+      "title": "申万宏源证券刘健：让创新被看见、被定价、被成就  4小时前",
+      "url": "https://www.yicai.com/news/103294852.html",
       "time": ""
     }
   ]
