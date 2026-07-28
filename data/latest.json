@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-28T17:27:35.102911+08:00",
+    "generatedAt": "2026-07-28T22:15:16.548392+08:00",
     "tradingDate": "2026-07-28",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 35.6
+    "runtimeSeconds": 37.95
   },
   "market": {
     "recommendationCount": 0,
@@ -352,14 +352,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "午后多只宽基ETF持续放量 创业板ETF易方达成交超100亿",
-      "url": "https://finance.eastmoney.com/a/202607283823404027.html",
+      "title": "A股三大指数集体收跌 白酒与食品饮料板块逆市走强",
+      "url": "https://finance.eastmoney.com/a/202607283823462913.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数集体收跌 白酒与食品饮料板块逆市走强",
-      "url": "https://finance.eastmoney.com/a/202607283823462913.html",
+      "title": "午后多只宽基ETF持续放量 创业板ETF易方达成交超100亿",
+      "url": "https://finance.eastmoney.com/a/202607283823404027.html",
       "time": ""
     },
     {
