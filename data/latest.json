@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-28T16:04:00.056534+08:00",
+    "generatedAt": "2026-07-28T16:07:46.011799+08:00",
     "tradingDate": "2026-07-28",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,11 +33,9 @@
       }
     ],
     "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 111.98
+    "runtimeSeconds": 41.29
   },
   "market": {
     "recommendationCount": 0,
@@ -135,6 +133,30 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 2,
+      "bigUpCount": 3
+    },
+    {
+      "code": "BK1583",
+      "name": "零食",
+      "kind": "Industry board",
+      "price": 1806.3,
+      "pct": 4.29,
+      "amount": 1991687523.0,
+      "turnover": 2.95,
+      "open": 1725.24,
+      "preClose": 1731.99,
+      "mainNet": 25397447.0,
+      "rank": 4,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.4,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 1,
       "bigUpCount": 3
     },
     {
@@ -251,29 +273,6 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1583",
-      "name": "零食",
-      "kind": "Industry board",
-      "price": 1806.3,
-      "pct": 4.29,
-      "amount": 1991687523.0,
-      "turnover": 2.95,
-      "open": 1725.24,
-      "preClose": 1731.99,
-      "mainNet": 25397447.0,
-      "rank": 4,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.0,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
       "code": "BK1360",
       "name": "金融信息服务",
       "kind": "Industry board",
@@ -339,8 +338,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 1
     }
   ],
   "recommendations": [],
