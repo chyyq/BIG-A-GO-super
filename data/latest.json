@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-29T12:37:19.832759+08:00",
+    "generatedAt": "2026-07-29T12:45:48.689565+08:00",
     "tradingDate": "2026-07-29",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,20 +22,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 69.05
+    "runtimeSeconds": 39.6
   },
   "market": {
     "recommendationCount": 0,
@@ -354,51 +354,39 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数集体收跌 白酒与食品饮料板块逆市走强",
-      "url": "https://finance.eastmoney.com/a/202607283823462913.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "午后多只宽基ETF持续放量 创业板ETF易方达成交超100亿",
-      "url": "https://finance.eastmoney.com/a/202607283823404027.html",
+      "source": "Yicai",
+      "title": "市场情绪转向、SK海力士财报未挽回信心，长鑫与韩厂竞争走向何方反复、剧烈的股价波动背后，市场情绪复杂，SK海力士财报只是影响市场信心的因素之一。  1小时前",
+      "url": "https://www.yicai.com/news/103296611.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
-      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
+      "source": "Yicai",
+      "title": "A股四大指数多数高开，短剧游戏概念股表现活跃盘面上，CRO、网络安全、短剧游戏概念股活跃。  3小时前",
+      "url": "https://www.yicai.com/news/103296221.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "长鑫科技上市，市值登顶A股，中一签赚超两万",
-      "url": "https://topic.eastmoney.com/detail/xcksjdfq.html",
+      "source": "Yicai",
+      "title": "SK海力士二季度营业利润大涨557%，但未及市场预期美股7月28日，SK海力士跌8.98%，触及上市后股价新低。  4小时前",
+      "url": "https://www.yicai.com/news/103296102.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：看好特斯拉机器人的量产和应用前景",
-      "url": "https://finance.eastmoney.com/a/202607293824189922.html",
+      "source": "Yicai",
+      "title": "盘前必读丨日韩股市高开SK海力士涨逾2%；中际旭创拟最高80亿元回购股份机构认为，指数近期震荡整固，建议投资者以降低波动为配置核心。  4小时前",
+      "url": "https://www.yicai.com/news/103296078.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：建议关注国内风电招标放量和建设提速带来的产业链盈利改善和估值修复机会",
-      "url": "https://finance.eastmoney.com/a/202607293824155829.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券：中长期继续看好玻纤、洁净室等高景气板块",
-      "url": "https://finance.eastmoney.com/a/202607293824154247.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "资金避险+板块多重利好！食品饮料密集涨停 2026业绩高增股来了",
-      "url": "https://finance.eastmoney.com/a/202607293824906946.html",
+      "source": "Yicai",
+      "title": "苹果市值首破5万亿，“轻AI”策略重塑科技股叙事？苹果和英伟达股价表现的分化，折射出资本市场对人工智能投资逻辑的深层转变。  5小时前",
+      "url": "https://www.yicai.com/news/103296017.html",
       "time": ""
     }
   ]
