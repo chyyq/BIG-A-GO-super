@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-29T17:24:05.885798+08:00",
+    "generatedAt": "2026-07-29T17:29:46.827164+08:00",
     "tradingDate": "2026-07-29",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 29.78
+    "runtimeSeconds": 58.18
   },
   "market": {
     "recommendationCount": 0,
@@ -353,51 +353,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "韩股又巨震 跌至熔断！韩国财长发声：正研究稳股市措施",
-      "url": "https://finance.eastmoney.com/a/202607293824902422.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "多位逆变器厂商人士回应美国市场禁令：对行业影响比较大",
-      "url": "https://finance.eastmoney.com/a/202607293824960736.html",
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共86只个股涨停 明新旭腾3连板一图速览今日连板股&gt;&gt;  39分钟前",
+      "url": "https://www.yicai.com/news/103297205.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
-      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
+      "source": "Yicai",
+      "title": "H股500亿融资“搞定”，中际旭创要在A股回购80亿存货5个月内激增近55%。  41分钟前",
+      "url": "https://www.yicai.com/news/103297202.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "长鑫科技上市，市值登顶A股，中一签赚超两万",
-      "url": "https://topic.eastmoney.com/detail/xcksjdfq.html",
+      "source": "Yicai",
+      "title": "收盘｜创业板指涨1.55% 大消费板块走强全市场超4200只个股上涨。  2小时前",
+      "url": "https://www.yicai.com/news/103297037.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：看好特斯拉机器人的量产和应用前景",
-      "url": "https://finance.eastmoney.com/a/202607293824189922.html",
+      "source": "Yicai",
+      "title": "SK海力士股价暴跌创纪录！韩股崩！分析师：部分亚太市场跌出机会凯伦表示，最近的波动“并未改变我们长期的积极看法”。  2小时前",
+      "url": "https://www.yicai.com/news/103296968.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：建议关注国内风电招标放量和建设提速带来的产业链盈利改善和估值修复机会",
-      "url": "https://finance.eastmoney.com/a/202607293824155829.html",
+      "source": "Yicai",
+      "title": "可口可乐公司2026Q2全球销量增长5%，中国等市场带动亚太增长8%  2小时前",
+      "url": "https://www.yicai.com/news/103296943.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "华泰证券：中长期继续看好玻纤、洁净室等高景气板块",
-      "url": "https://finance.eastmoney.com/a/202607293824154247.html",
+      "source": "Yicai",
+      "title": "从市场红利到创新红利，进博会折射外资战略之变连续参展的背后，是跨国企业对中国市场价值的重新认识。  3小时前",
+      "url": "https://www.yicai.com/news/103296908.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数收涨 创业板指涨1.55% 超4200只股飘红",
-      "url": "https://finance.eastmoney.com/a/202607293825060243.html",
+      "source": "Yicai",
+      "title": "今年上半年家电出口触底回暖，移动空调对欧盟出口量同比增超60%企业需把握新兴市场、高附加值品类红利，对冲传统市场与低端品类下行压力。  3小时前",
+      "url": "https://www.yicai.com/news/103296811.html",
       "time": ""
     }
   ]
