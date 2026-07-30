@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import csv
+import gzip
 import hashlib
 import json
 import math
@@ -117,6 +119,52 @@ def read_trade_export(path: Path) -> dict[str, Any] | None:
     return payload if isinstance(payload, dict) and isinstance(payload.get("trades"), list) else None
 
 
+def decode_sync_code(sync_code: str) -> dict[str, Any]:
+    value = (sync_code or "").strip()
+    match = re.search(r"BAGS3[BG]\.[A-Za-z0-9_-]+", value)
+    if match:
+        token = match.group(0)
+        compressed = token.startswith("BAGS3G.")
+        encoded = token.split(".", 1)[1]
+        encoded += "=" * (-len(encoded) % 4)
+        raw = base64.urlsafe_b64decode(encoded)
+        if compressed:
+            raw = gzip.decompress(raw)
+    else:
+        raw = base64.b64decode(re.sub(r"\s+", "", value))
+    payload = json.loads(raw.decode("utf-8"))
+    if not isinstance(payload, dict) or not isinstance(payload.get("trades"), list):
+        raise ValueError("sync code does not contain a trades array")
+    return payload
+
+
+def import_sync_code(sync_code: str) -> dict[str, Any]:
+    payload = decode_sync_code(sync_code)
+    exported_at = str(payload.get("exportedAt") or now_iso())
+    try:
+        stamp = datetime.fromisoformat(exported_at.replace("Z", "+00:00")).strftime("%Y-%m-%d-%H%M%S")
+    except ValueError:
+        stamp = datetime.now().strftime("%Y-%m-%d-%H%M%S")
+    digest = hashlib.sha256(
+        json.dumps(payload, ensure_ascii=False, sort_keys=True).encode("utf-8")
+    ).hexdigest()[:10]
+    path = REFERENCE_DIR / f"{TRADE_EXPORT_PREFIX}{stamp}-{digest}.json"
+    write_json(path, payload)
+    append_event(
+        "import_sync_code",
+        {
+            "path": path.relative_to(ROOT).as_posix(),
+            "tradeCount": len(payload["trades"]),
+            "sha256": digest,
+        },
+    )
+    return {
+        "path": path.relative_to(ROOT).as_posix(),
+        "tradeCount": len(payload["trades"]),
+        "exportedAt": payload.get("exportedAt"),
+    }
+
+
 def scan_reference(year: int) -> dict[str, Any]:
     previous = load_json(CATALOG_PATH, {"assets": []})
     previous_by_hash = {item["sha256"]: item for item in previous.get("assets", [])}
@@ -215,6 +263,22 @@ def trade_modified_at(trade: dict[str, Any], exported_at: Any) -> float:
     )
 
 
+def entry_strategy_from_trade(trade: dict[str, Any]) -> str:
+    plan_snapshot = trade.get("planSnapshot") or {}
+    buy_plan = plan_snapshot.get("buyPlan") or {}
+    strategy = str(trade.get("strategyTag") or buy_plan.get("strategyTag") or "").upper()
+    if strategy == "AM_TOP":
+        return "AM_TOP"
+    if strategy == "TAIL_MAIN":
+        return "TAIL_MAIN"
+    evidence = f"{trade.get('note') or ''} {buy_plan.get('type') or ''}".upper()
+    if "AM_TOP" in evidence or "早盘" in evidence:
+        return "AM_TOP"
+    if "TAIL_MAIN" in evidence or "尾盘" in evidence:
+        return "TAIL_MAIN"
+    return "unknown"
+
+
 def sync_trade_exports(trade_exports: list[dict[str, Any]]) -> dict[str, int]:
     latest: dict[tuple[str, str], dict[str, Any]] = {}
     for export in trade_exports:
@@ -263,6 +327,13 @@ def sync_trade_exports(trade_exports: list[dict[str, Any]]) -> dict[str, int]:
             if trade.get("outcome") in {"take_profit", "stop_loss", "manual_exit"}
             else None
         )
+        plan_snapshot = trade.get("planSnapshot") or {}
+        buy_plan_snapshot = plan_snapshot.get("buyPlan") or {}
+        board_snapshot = plan_snapshot.get("board") or {}
+        review_snapshot = trade.get("reviewSnapshot") or {}
+        entry_strategy = entry_strategy_from_trade(trade)
+        buy_plan_type = str(buy_plan_snapshot.get("type") or "").strip() or "unknown"
+        buy_day_limit_outcome = review_snapshot.get("buyDayLimitOutcome")
         sample = by_key.get((code, buy_date))
         if sample is None:
             sample = {
@@ -272,6 +343,9 @@ def sync_trade_exports(trade_exports: list[dict[str, Any]]) -> dict[str, int]:
                 "buyDate": buy_date,
                 "sellDate": sell_date,
                 "outcome": explicit_outcome or "unknown",
+                "entryStrategy": entry_strategy,
+                "buyPlanType": buy_plan_type,
+                "buyDayLimitOutcome": buy_day_limit_outcome,
                 "openingRegime": "unknown",
                 "prices": {},
                 "market": {},
@@ -286,6 +360,7 @@ def sync_trade_exports(trade_exports: list[dict[str, Any]]) -> dict[str, int]:
                     "market_buy",
                     "market_sell",
                     "actual_outcome",
+                    "entry_strategy",
                 ],
                 "diagnosis": "",
             }
@@ -296,10 +371,32 @@ def sync_trade_exports(trade_exports: list[dict[str, Any]]) -> dict[str, int]:
             updated += 1
 
         sample["stockName"] = sample.get("stockName") or str(trade.get("name") or "").strip()
+        if entry_strategy != "unknown":
+            sample["entryStrategy"] = entry_strategy
+            sample["missingEvidence"] = [
+                item for item in sample.get("missingEvidence", []) if item != "entry_strategy"
+            ]
+        else:
+            sample.setdefault("entryStrategy", "unknown")
+            if "entry_strategy" not in sample.get("missingEvidence", []):
+                sample.setdefault("missingEvidence", []).append("entry_strategy")
+        if buy_plan_type != "unknown":
+            sample["buyPlanType"] = buy_plan_type
+        else:
+            sample.setdefault("buyPlanType", "unknown")
+        if buy_day_limit_outcome in {
+            "SEALED_AT_CLOSE",
+            "TOUCHED_NOT_SEALED",
+            "NO_LIMIT_TOUCH",
+            "NOT_SEALED_AT_CLOSE",
+        }:
+            sample["buyDayLimitOutcome"] = buy_day_limit_outcome
         sample["sellDate"] = trade.get("sellTradingDate") or sample.get("sellDate") or sell_date
         prices = sample.setdefault("prices", {})
         if prices.get("buy") is None and trade.get("buyPrice") is not None:
             prices["buy"] = as_number(trade.get("buyPrice"))
+        if prices.get("buyClose") is None and review_snapshot.get("referenceClose") is not None:
+            prices["buyClose"] = as_number(review_snapshot.get("referenceClose"))
         if trade.get("sellPrice") is not None:
             prices["actualSell"] = as_number(trade.get("sellPrice"))
         night_plan = sample.setdefault("nightPlan", {})
@@ -320,12 +417,33 @@ def sync_trade_exports(trade_exports: list[dict[str, Any]]) -> dict[str, int]:
             sample["outcome"] = "unknown"
             if "actual_outcome" not in sample.get("missingEvidence", []):
                 sample.setdefault("missingEvidence", []).append("actual_outcome")
+        if review_snapshot:
+            sample["reviewEvidence"] = {
+                "capturedAt": review_snapshot.get("capturedAt"),
+                "tradingDate": review_snapshot.get("tradingDate"),
+                "stockState": review_snapshot.get("stockState"),
+                "initialPlan": review_snapshot.get("initialPlan"),
+                "scores": review_snapshot.get("scores") or {},
+            }
+            sample["missingEvidence"] = [
+                item for item in sample.get("missingEvidence", []) if item != "night_review"
+            ]
+        sample["entryEvidence"] = {
+            "buyPlanType": buy_plan_type,
+            "boardCode": board_snapshot.get("code"),
+            "boardName": board_snapshot.get("name"),
+            "boardPassed": board_snapshot.get("passed"),
+            "boardScore": board_snapshot.get("score"),
+        }
         sample["webTrade"] = {
             "tradeId": trade.get("id"),
             "status": trade.get("status"),
             "plannedSellDate": trade.get("plannedSellTradingDate"),
             "actualSellDate": trade.get("sellTradingDate"),
             "resultMarkedAt": trade.get("resultMarkedAt"),
+            "entryStrategy": entry_strategy,
+            "buyPlanType": buy_plan_type,
+            "buyDayLimitOutcome": buy_day_limit_outcome,
             "exportedAt": candidate["exportedAt"],
         }
 
@@ -394,6 +512,8 @@ def rebuild_model() -> dict[str, Any]:
     stop_known = stop_hits = 0
     mfe3_known = mfe3_hits = 0
     by_opening: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    by_entry_strategy: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    by_buy_plan: dict[str, list[dict[str, Any]]] = defaultdict(list)
 
     for sample in samples:
         prices = sample.get("prices") or {}
@@ -425,6 +545,8 @@ def rebuild_model() -> dict[str, Any]:
         }
         computed.append(row)
         by_opening[sample.get("openingRegime") or "unknown"].append({**sample, **row})
+        by_entry_strategy[sample.get("entryStrategy") or "unknown"].append({**sample, **row})
+        by_buy_plan[sample.get("buyPlanType") or "unknown"].append({**sample, **row})
 
     opening_stats = {}
     for regime, rows in sorted(by_opening.items()):
@@ -438,6 +560,72 @@ def rebuild_model() -> dict[str, Any]:
                 sum(row["mfePct"] for row in rows if row.get("mfePct") is not None)
                 / max(1, sum(row.get("mfePct") is not None for row in rows)),
                 2,
+            ),
+        }
+
+    entry_strategy_stats = {}
+    for strategy, rows in sorted(by_entry_strategy.items()):
+        strategy_labeled = [row for row in rows if row.get("outcome") != "unknown"]
+        seal_known = [
+            row
+            for row in rows
+            if row.get("buyDayLimitOutcome")
+            in {
+                "SEALED_AT_CLOSE",
+                "TOUCHED_NOT_SEALED",
+                "NO_LIMIT_TOUCH",
+                "NOT_SEALED_AT_CLOSE",
+            }
+        ]
+        touch_known = [
+            row
+            for row in rows
+            if row.get("buyDayLimitOutcome")
+            in {"SEALED_AT_CLOSE", "TOUCHED_NOT_SEALED", "NO_LIMIT_TOUCH"}
+        ]
+        sealed = sum(row.get("buyDayLimitOutcome") == "SEALED_AT_CLOSE" for row in seal_known)
+        touched = sum(
+            row.get("buyDayLimitOutcome") in {"SEALED_AT_CLOSE", "TOUCHED_NOT_SEALED"}
+            for row in touch_known
+        )
+        entry_strategy_stats[strategy] = {
+            "samples": len(rows),
+            "labeled": len(strategy_labeled),
+            "takeProfitRate": safe_rate(
+                sum(row.get("outcome") == "take_profit" for row in strategy_labeled),
+                len(strategy_labeled),
+            ),
+            "buyDayLimitKnown": len(seal_known),
+            "buyDayLimitTouchKnown": len(touch_known),
+            "buyDayLimitTouchRate": safe_rate(touched, len(touch_known)),
+            "buyDayLimitSealRate": safe_rate(sealed, len(seal_known)),
+        }
+
+    buy_plan_stats = {}
+    for buy_plan, rows in sorted(by_buy_plan.items()):
+        labeled_rows = [row for row in rows if row.get("outcome") != "unknown"]
+        seal_known = [
+            row
+            for row in rows
+            if row.get("buyDayLimitOutcome")
+            in {
+                "SEALED_AT_CLOSE",
+                "TOUCHED_NOT_SEALED",
+                "NO_LIMIT_TOUCH",
+                "NOT_SEALED_AT_CLOSE",
+            }
+        ]
+        buy_plan_stats[buy_plan] = {
+            "samples": len(rows),
+            "labeled": len(labeled_rows),
+            "distinctBuyDates": len({row.get("buyDate") for row in rows if row.get("buyDate")}),
+            "takeProfitRate": safe_rate(
+                sum(row.get("outcome") == "take_profit" for row in labeled_rows),
+                len(labeled_rows),
+            ),
+            "buyDayLimitSealRate": safe_rate(
+                sum(row.get("buyDayLimitOutcome") == "SEALED_AT_CLOSE" for row in seal_known),
+                len(seal_known),
             ),
         }
 
@@ -476,6 +664,8 @@ def rebuild_model() -> dict[str, Any]:
         "stopHitRate": safe_rate(stop_hits, stop_known),
         "mfeAtLeast3Rate": safe_rate(mfe3_hits, mfe3_known),
         "openingRegimes": opening_stats,
+        "entryStrategies": entry_strategy_stats,
+        "buyPlans": buy_plan_stats,
         "computedSamples": computed,
         "ruleCandidates": rule_candidates,
         "validationIssues": issues,
@@ -517,6 +707,9 @@ def export_learning_data() -> dict[str, Any]:
         "buyDate",
         "sellDate",
         "outcome",
+        "entryStrategy",
+        "buyPlanType",
+        "buyDayLimitOutcome",
         "openingRegime",
         "buyPrice",
         "nextOpen",
@@ -543,6 +736,9 @@ def export_learning_data() -> dict[str, Any]:
                     "buyDate": sample.get("buyDate"),
                     "sellDate": sample.get("sellDate"),
                     "outcome": sample.get("outcome"),
+                    "entryStrategy": sample.get("entryStrategy"),
+                    "buyPlanType": sample.get("buyPlanType"),
+                    "buyDayLimitOutcome": sample.get("buyDayLimitOutcome"),
                     "openingRegime": sample.get("openingRegime"),
                     "buyPrice": prices.get("buy"),
                     "nextOpen": prices.get("nextOpen"),
@@ -590,10 +786,35 @@ def write_report(model: dict[str, Any], catalog: dict[str, Any]) -> None:
         )
     lines.extend(["", "## 规则候选", ""])
     for rule in model["ruleCandidates"]:
-        state = "达到复核门槛" if rule["promotionReady"] else "继续积累"
+        if str(rule.get("status") or "").startswith("deployed_"):
+            state = "阶段规则已部署，继续验证"
+        else:
+            state = "达到复核门槛" if rule["promotionReady"] else "继续积累"
         lines.append(
             f"- `{rule['id']}`：{state}，证据 {rule['evidenceCount']} 笔，"
             f"其中真实结果 {rule['labeledEvidenceCount']} 笔，覆盖 {rule['distinctBuyDates']} 个买入日。"
+        )
+    lines.extend(["", "## 买入策略分组", "", "| 策略 | 样本 | 已标注 | 止盈率 | 买入日触板率 | 买入日封板率 |", "| --- | ---: | ---: | ---: | ---: | ---: |"])
+    for strategy, stats in model.get("entryStrategies", {}).items():
+        lines.append(
+            f"| {strategy} | {stats['samples']} | {stats['labeled']} | "
+            f"{display_rate(stats['takeProfitRate'])} | {display_rate(stats['buyDayLimitTouchRate'])} | "
+            f"{display_rate(stats['buyDayLimitSealRate'])} |"
+        )
+    lines.extend(
+        [
+            "",
+            "## 买入入口证据",
+            "",
+            "| 买入入口 | 样本 | 已标注 | 买入日 | 止盈率 | 买入日封板率 |",
+            "| --- | ---: | ---: | ---: | ---: | ---: |",
+        ]
+    )
+    for buy_plan, stats in model.get("buyPlans", {}).items():
+        lines.append(
+            f"| {buy_plan} | {stats['samples']} | {stats['labeled']} | "
+            f"{stats['distinctBuyDates']} | {display_rate(stats['takeProfitRate'])} | "
+            f"{display_rate(stats['buyDayLimitSealRate'])} |"
         )
     if model["validationIssues"]:
         lines.extend(["", "## 待修正数据", ""])
@@ -627,11 +848,17 @@ def print_status(catalog: dict[str, Any], model: dict[str, Any]) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Local evidence store for the T+1 learning workflow")
-    parser.add_argument("command", choices=("scan", "rebuild", "export", "run", "status"))
+    parser.add_argument("command", choices=("scan", "rebuild", "export", "run", "status", "import-code"))
     parser.add_argument("--year", type=int, default=datetime.now().year)
+    parser.add_argument("--code", help="BAGS3 sync code exported by the website")
     args = parser.parse_args()
 
     LEARNING_DIR.mkdir(parents=True, exist_ok=True)
+    if args.command == "import-code":
+        if not args.code:
+            parser.error("import-code requires --code")
+        print(json.dumps(import_sync_code(args.code), ensure_ascii=False, indent=2))
+        return
     if args.command in {"scan", "run"}:
         catalog = scan_reference(args.year)
     else:

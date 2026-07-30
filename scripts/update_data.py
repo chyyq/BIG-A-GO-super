@@ -45,7 +45,7 @@ STRATEGY_TAIL_MAIN = "TAIL_MAIN"
 STRATEGY_AM_TOP = "AM_TOP"
 TAIL_STRATEGY_ID = "TAIL_T1_V31_EMPIRICAL"
 AM_TOP_BUY_WINDOW = "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only"
-AM_TOP_MIN_PCT = 4.0
+AM_TOP_MIN_PCT = 6.5
 AM_TOP_MAX_PCT = 10.3
 TAIL_BUY_WINDOW = "13:30 watch; 14:10-14:35 confirm; 14:35+ limit-up/reseal only"
 TAIL_TARGET_TIME = "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00."
@@ -603,13 +603,19 @@ def build_recommendations(
             if stock_prefilter(member, active_strategies, snapshot_now):
                 candidates.append((member, board))
     if STRATEGY_AM_TOP in active_strategies:
+        boards_by_name = {
+            text(board.get("name")): board
+            for board in qualified_boards
+            if text(board.get("name")) and (board.get("passed") or 0) >= 4
+        }
         for quote in am_top_quotes or []:
             code = quote.get("code")
             if not code or code in seen:
                 continue
             seen.add(code)
-            if morning_top_prefilter(quote, snapshot_now):
-                candidates.append((quote, am_top_board_for_quote(quote)))
+            board = boards_by_name.get(text(quote.get("industry")))
+            if board and morning_top_prefilter(quote, snapshot_now):
+                candidates.append((quote, board))
 
     candidates.sort(
         key=lambda pair: (
@@ -682,10 +688,10 @@ def am_top_board_for_quote(quote: dict[str, Any]) -> dict[str, Any]:
     return {
         "code": "AM_TOP_" + hashlib.md5(industry.encode("utf-8")).hexdigest()[:8],
         "name": industry,
-        "passed": 4,
-        "qualified": True,
-        "score": 82,
-        "criteria": ["AM_TOP all-main-board scan", "Morning top candidate is evaluated by stock shape"],
+        "passed": 0,
+        "qualified": False,
+        "score": 0,
+        "criteria": ["No verified sector-strength result is available for this quote"],
         "limitUpCount": 0,
         "bigUpCount": 0,
     }
@@ -1489,24 +1495,6 @@ def choose_morning_top_buy_plan_snapshot(
             "Primary window 09:31-09:38: enter only while the stock remains above VWAP and the early high platform.",
             24,
             9,
-        )
-    if (
-        AM_TOP_MIN_PCT <= pct <= 7.8
-        and min_turnover <= turnover <= 28
-        and morning_volume_ratio_ok(volume_ratio, 5.8)
-        and range_position >= 0.76
-        and close_to_high >= 0.972
-        and pullback <= 2.8
-        and price_vs_avg >= 0.0
-        and amount >= min_amount
-    ):
-        return make_top_buy_plan(
-            "[AM_TOP] early lift-off entry",
-            price,
-            AM_TOP_BUY_WINDOW,
-            "Catch the 09:31-09:38 lift-off before the limit-up rush; cancel immediately if it loses VWAP.",
-            22,
-            7,
         )
     return None
 
