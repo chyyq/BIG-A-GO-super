@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-30T17:15:24.584047+08:00",
+    "generatedAt": "2026-07-30T17:18:56.423381+08:00",
     "tradingDate": "2026-07-30",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 28.96
+    "runtimeSeconds": 36.97
   },
   "market": {
     "recommendationCount": 0,
@@ -355,19 +355,19 @@
     },
     {
       "source": "Yicai",
-      "title": "中际旭创港股首日“破发”，主因发行价太贵？｜市场观察海外科技巨头缩减资本开支。  1分钟前",
+      "title": "中际旭创港股首日“破发”，主因发行价太贵？｜市场观察海外科技巨头缩减资本开支。  8分钟前",
       "url": "https://www.yicai.com/news/103299076.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "65种药品集采明日开标，有品种面临49家企业角逐涉及的品种市场竞争格局将面临重构。  25分钟前",
+      "title": "65种药品集采明日开标，有品种面临49家企业角逐涉及的品种市场竞争格局将面临重构。  32分钟前",
       "url": "https://www.yicai.com/news/103299019.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "连板股追踪丨A股今日共56只个股涨停 明新旭腾4连板教育板块传智教育4连板，乳业股一鸣食品3连板。一图速览今日连板股&gt;&gt;  56分钟前",
+      "title": "连板股追踪丨A股今日共56只个股涨停 明新旭腾4连板教育板块传智教育4连板，乳业股一鸣食品3连板。一图速览今日连板股&gt;&gt;  1小时前",
       "url": "https://www.yicai.com/news/103299007.html",
       "time": ""
     },
