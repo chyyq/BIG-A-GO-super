@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-30T16:00:28.181986+08:00",
+    "generatedAt": "2026-07-30T16:43:39.731209+08:00",
     "tradingDate": "2026-07-30",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 37.01
+    "runtimeSeconds": 25.95
   },
   "market": {
     "recommendationCount": 0,
@@ -363,12 +363,6 @@
       "source": "Eastmoney News",
       "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
       "url": "https://finance.eastmoney.com/a/202605283752993232.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "长鑫科技上市，市值登顶A股，中一签赚超两万",
-      "url": "https://topic.eastmoney.com/detail/xcksjdfq.html",
       "time": ""
     },
     {
