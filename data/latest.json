@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-31T17:33:12.249465+08:00",
+    "generatedAt": "2026-07-31T22:15:44.486459+08:00",
     "tradingDate": "2026-07-31",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,20 +22,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 35.21
+    "runtimeSeconds": 30.23
   },
   "market": {
     "recommendationCount": 0,
@@ -360,45 +360,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "提升资本市场韧性和信心 中央政治局会议最新定调释放多重信号",
+      "url": "https://finance.eastmoney.com/a/202607313827154315.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共103只个股涨停 这只家居股9连板教育板块传智教育5连板。一图速览今日连板股&gt;&gt;  51分钟前",
-      "url": "https://www.yicai.com/news/103300871.html",
+      "source": "Eastmoney News",
+      "title": "韩国股市熔断了！日韩股市强势走高 SK海力士、三星电子暴涨",
+      "url": "https://finance.eastmoney.com/a/202607313827442842.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "上海租房市场现“张江热”，50%房源挂牌首日就成交贝壳省心租数据显示，在科技产业发展带动下，7月张江板块租金环比上涨7%。  1小时前",
-      "url": "https://www.yicai.com/news/103300842.html",
+      "source": "Eastmoney News",
+      "title": "交易所今晚关停局域网行情通道 量化高频遇“减速带”",
+      "url": "https://finance.eastmoney.com/a/202607313828222920.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜创业板指涨3.06% 多模态AI概念股爆发市场近4700股上涨。  2小时前",
-      "url": "https://www.yicai.com/news/103300708.html",
+      "source": "Eastmoney News",
+      "title": "A股三大指数反弹 创业板指涨超3% 近4700只股上涨",
+      "url": "https://finance.eastmoney.com/a/202607313828254041.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "从“授权”到“共建”：中国创新药出海模式升级，板块估值迎修复中国药企在价值链中的位置从“供应商”向“合作方”迁移。  4小时前",
-      "url": "https://www.yicai.com/news/103300498.html",
+      "source": "Eastmoney News",
+      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
+      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "下半年宏观政策发力提效，国家发改委详解着力稳就业、稳企业、稳市场、稳预期  5小时前",
-      "url": "https://www.yicai.com/news/103300422.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：住房是最重要的大宗耐用消费 商业地产是重要的线下场景消费",
+      "url": "https://finance.eastmoney.com/a/202607313827422952.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "美联储年内加息？景顺首席全球市场策略师：即便加也是一次性，明年转向降息从市场的角度看，年内的一次加息基本上已经被计价了。  5小时前",
-      "url": "https://www.yicai.com/news/103300392.html",
+      "source": "Eastmoney News",
+      "title": "中国银河证券马宗明：煤电功能定位重塑 五大投资机遇显现",
+      "url": "https://finance.eastmoney.com/a/202607313827193581.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
