@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-07-31T12:49:15.353686+08:00",
+    "generatedAt": "2026-07-31T12:58:59.445228+08:00",
     "tradingDate": "2026-07-31",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 33.73
+    "runtimeSeconds": 42.14
   },
   "market": {
     "recommendationCount": 0,
@@ -368,13 +368,13 @@
     },
     {
       "source": "Yicai",
-      "title": "下半年宏观政策发力提效，国家发改委详解着力稳就业、稳企业、稳市场、稳预期  39分钟前",
+      "title": "下半年宏观政策发力提效，国家发改委详解着力稳就业、稳企业、稳市场、稳预期  49分钟前",
       "url": "https://www.yicai.com/news/103300422.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "美联储年内加息？景顺首席全球市场策略师：即便加也是一次性，明年转向降息从市场的角度看，年内的一次加息基本上已经被计价了。  56分钟前",
+      "title": "美联储年内加息？景顺首席全球市场策略师：即便加也是一次性，明年转向降息从市场的角度看，年内的一次加息基本上已经被计价了。  1小时前",
       "url": "https://www.yicai.com/news/103300392.html",
       "time": ""
     },
