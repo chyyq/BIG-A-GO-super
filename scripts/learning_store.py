@@ -8,6 +8,7 @@ import hashlib
 import json
 import math
 import re
+import zlib
 from collections import Counter, defaultdict
 from datetime import date, datetime
 from pathlib import Path
@@ -129,10 +130,23 @@ def decode_sync_code(sync_code: str) -> dict[str, Any]:
         encoded += "=" * (-len(encoded) % 4)
         raw = base64.urlsafe_b64decode(encoded)
         if compressed:
-            raw = gzip.decompress(raw)
+            try:
+                raw = gzip.decompress(raw)
+            except gzip.BadGzipFile as exc:
+                if len(raw) < 18 or raw[:3] != b"\x1f\x8b\x08" or raw[3] != 0:
+                    raise ValueError("sync code gzip checksum failed") from exc
+                try:
+                    raw = zlib.decompress(raw[10:-8], -zlib.MAX_WBITS)
+                except zlib.error as fallback_exc:
+                    raise ValueError("sync code compressed body is damaged") from fallback_exc
     else:
         raw = base64.b64decode(re.sub(r"\s+", "", value))
-    payload = json.loads(raw.decode("utf-8"))
+    decoded = raw.decode("utf-8")
+    try:
+        payload = json.loads(decoded)
+    except json.JSONDecodeError as exc:
+        context = decoded[max(0, exc.pos - 80) : exc.pos + 80]
+        raise ValueError(f"sync code JSON is damaged near position {exc.pos}: {context!r}") from exc
     if not isinstance(payload, dict) or not isinstance(payload.get("trades"), list):
         raise ValueError("sync code does not contain a trades array")
     return payload
@@ -511,6 +525,7 @@ def rebuild_model() -> dict[str, Any]:
     tp1_known = tp1_hits = 0
     stop_known = stop_hits = 0
     mfe3_known = mfe3_hits = 0
+    realized_returns: list[float] = []
     by_opening: dict[str, list[dict[str, Any]]] = defaultdict(list)
     by_entry_strategy: dict[str, list[dict[str, Any]]] = defaultdict(list)
     by_buy_plan: dict[str, list[dict[str, Any]]] = defaultdict(list)
@@ -520,6 +535,7 @@ def rebuild_model() -> dict[str, Any]:
         plan = sample.get("nightPlan") or {}
         mfe = pct_change(prices.get("nextHigh"), prices.get("buy"))
         mae = pct_change(prices.get("nextLow"), prices.get("buy"))
+        realized_return = pct_change(prices.get("actualSell"), prices.get("buy"))
         tp1_range = plan.get("tp1Range") or []
         tp1_low = as_number(tp1_range[0]) if tp1_range else as_number(plan.get("tp1"))
         stop = as_number(plan.get("stop"))
@@ -536,10 +552,13 @@ def rebuild_model() -> dict[str, Any]:
         if mfe is not None:
             mfe3_known += 1
             mfe3_hits += int(mfe >= 3)
+        if realized_return is not None:
+            realized_returns.append(realized_return)
         row = {
             "sampleId": sample.get("sampleId"),
             "mfePct": mfe,
             "maePct": mae,
+            "realizedReturnPct": realized_return,
             "tp1Hit": tp1_hit,
             "stopHit": stop_hit,
         }
@@ -566,6 +585,11 @@ def rebuild_model() -> dict[str, Any]:
     entry_strategy_stats = {}
     for strategy, rows in sorted(by_entry_strategy.items()):
         strategy_labeled = [row for row in rows if row.get("outcome") != "unknown"]
+        strategy_returns = [
+            row["realizedReturnPct"]
+            for row in rows
+            if row.get("realizedReturnPct") is not None
+        ]
         seal_known = [
             row
             for row in rows
@@ -595,6 +619,12 @@ def rebuild_model() -> dict[str, Any]:
                 sum(row.get("outcome") == "take_profit" for row in strategy_labeled),
                 len(strategy_labeled),
             ),
+            "realizedReturnKnown": len(strategy_returns),
+            "averageRealizedReturnPct": (
+                round(sum(strategy_returns) / len(strategy_returns), 2)
+                if strategy_returns
+                else None
+            ),
             "buyDayLimitKnown": len(seal_known),
             "buyDayLimitTouchKnown": len(touch_known),
             "buyDayLimitTouchRate": safe_rate(touched, len(touch_known)),
@@ -604,6 +634,11 @@ def rebuild_model() -> dict[str, Any]:
     buy_plan_stats = {}
     for buy_plan, rows in sorted(by_buy_plan.items()):
         labeled_rows = [row for row in rows if row.get("outcome") != "unknown"]
+        plan_returns = [
+            row["realizedReturnPct"]
+            for row in rows
+            if row.get("realizedReturnPct") is not None
+        ]
         seal_known = [
             row
             for row in rows
@@ -622,6 +657,12 @@ def rebuild_model() -> dict[str, Any]:
             "takeProfitRate": safe_rate(
                 sum(row.get("outcome") == "take_profit" for row in labeled_rows),
                 len(labeled_rows),
+            ),
+            "realizedReturnKnown": len(plan_returns),
+            "averageRealizedReturnPct": (
+                round(sum(plan_returns) / len(plan_returns), 2)
+                if plan_returns
+                else None
             ),
             "buyDayLimitSealRate": safe_rate(
                 sum(row.get("buyDayLimitOutcome") == "SEALED_AT_CLOSE" for row in seal_known),
@@ -660,6 +701,16 @@ def rebuild_model() -> dict[str, Any]:
         "outcomes": dict(outcomes),
         "missingEvidence": dict(sorted(missing_evidence.items())),
         "takeProfitRate": safe_rate(outcomes["take_profit"], len(labeled)),
+        "realizedReturnKnown": len(realized_returns),
+        "averageRealizedReturnPct": (
+            round(sum(realized_returns) / len(realized_returns), 2)
+            if realized_returns
+            else None
+        ),
+        "positiveRealizedReturnRate": safe_rate(
+            sum(value > 0 for value in realized_returns),
+            len(realized_returns),
+        ),
         "tp1HitRate": safe_rate(tp1_hits, tp1_known),
         "stopHitRate": safe_rate(stop_hits, stop_known),
         "mfeAtLeast3Rate": safe_rate(mfe3_hits, mfe3_known),
@@ -718,6 +769,7 @@ def export_learning_data() -> dict[str, Any]:
         "nextClose",
         "mfePct",
         "maePct",
+        "realizedReturnPct",
         "tp1Hit",
         "stopHit",
         "missingEvidence",
@@ -747,6 +799,7 @@ def export_learning_data() -> dict[str, Any]:
                     "nextClose": prices.get("nextClose"),
                     "mfePct": derived.get("mfePct"),
                     "maePct": derived.get("maePct"),
+                    "realizedReturnPct": derived.get("realizedReturnPct"),
                     "tp1Hit": derived.get("tp1Hit"),
                     "stopHit": derived.get("stopHit"),
                     "missingEvidence": "|".join(sample.get("missingEvidence", [])),
@@ -771,6 +824,8 @@ def write_report(model: dict[str, Any], catalog: dict[str, Any]) -> None:
         f"- 已标注结果：{model['labeledSampleCount']}",
         f"- 待补结果：{model['pendingOutcomeCount']}",
         f"- 实际止盈率：{display_rate(model['takeProfitRate'])}",
+        f"- 有成交价样本平均收益：{display_rate(model['averageRealizedReturnPct'])}",
+        f"- 有成交价样本正收益率：{display_rate(model['positiveRealizedReturnRate'])}",
         f"- 第一止盈区命中率：{display_rate(model['tp1HitRate'])}",
         f"- 次日最大涨幅达到3%：{display_rate(model['mfeAtLeast3Rate'])}",
         "",
@@ -794,11 +849,12 @@ def write_report(model: dict[str, Any], catalog: dict[str, Any]) -> None:
             f"- `{rule['id']}`：{state}，证据 {rule['evidenceCount']} 笔，"
             f"其中真实结果 {rule['labeledEvidenceCount']} 笔，覆盖 {rule['distinctBuyDates']} 个买入日。"
         )
-    lines.extend(["", "## 买入策略分组", "", "| 策略 | 样本 | 已标注 | 止盈率 | 买入日触板率 | 买入日封板率 |", "| --- | ---: | ---: | ---: | ---: | ---: |"])
+    lines.extend(["", "## 买入策略分组", "", "| 策略 | 样本 | 已标注 | 止盈率 | 平均实际收益 | 买入日触板率 | 买入日封板率 |", "| --- | ---: | ---: | ---: | ---: | ---: | ---: |"])
     for strategy, stats in model.get("entryStrategies", {}).items():
         lines.append(
             f"| {strategy} | {stats['samples']} | {stats['labeled']} | "
-            f"{display_rate(stats['takeProfitRate'])} | {display_rate(stats['buyDayLimitTouchRate'])} | "
+            f"{display_rate(stats['takeProfitRate'])} | {display_rate(stats['averageRealizedReturnPct'])} | "
+            f"{display_rate(stats['buyDayLimitTouchRate'])} | "
             f"{display_rate(stats['buyDayLimitSealRate'])} |"
         )
     lines.extend(
@@ -806,14 +862,15 @@ def write_report(model: dict[str, Any], catalog: dict[str, Any]) -> None:
             "",
             "## 买入入口证据",
             "",
-            "| 买入入口 | 样本 | 已标注 | 买入日 | 止盈率 | 买入日封板率 |",
-            "| --- | ---: | ---: | ---: | ---: | ---: |",
+            "| 买入入口 | 样本 | 已标注 | 买入日 | 止盈率 | 平均实际收益 | 买入日封板率 |",
+            "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
         ]
     )
     for buy_plan, stats in model.get("buyPlans", {}).items():
         lines.append(
             f"| {buy_plan} | {stats['samples']} | {stats['labeled']} | "
             f"{stats['distinctBuyDates']} | {display_rate(stats['takeProfitRate'])} | "
+            f"{display_rate(stats['averageRealizedReturnPct'])} | "
             f"{display_rate(stats['buyDayLimitSealRate'])} |"
         )
     if model["validationIssues"]:

@@ -43,6 +43,7 @@ ALLOW_GROWTH_BOARDS = False
 GROWTH_BOARD_PREFIXES = ("30", "68")
 STRATEGY_TAIL_MAIN = "TAIL_MAIN"
 STRATEGY_AM_TOP = "AM_TOP"
+AM_TOP_EXECUTION_MODE = "WATCH_ONLY"
 TAIL_STRATEGY_ID = "TAIL_T1_V31_EMPIRICAL"
 AM_TOP_BUY_WINDOW = "09:26 watch; 09:31-09:38 primary entry; 09:40+ confirm only"
 AM_TOP_MIN_PCT = 6.5
@@ -88,12 +89,15 @@ def main() -> None:
     market_quotes = fetch_market_breadth(am_top_quotes or None) if remaining_seconds() > 35 else []
     market_monitor = build_market_monitor(market_quotes, evaluated_boards)
     recommendations = build_recommendations(recommendation_board_pool, now, am_top_quotes, market_monitor)
+    actionable_recommendations = [item for item in recommendations if item.get("actionable") is not False]
     no_recommendation_reason = None
-    if not recommendations:
+    if not actionable_recommendations:
         if not active_strategies:
             no_recommendation_reason = "OUTSIDE_STRATEGY_WINDOW"
         elif market_monitor.get("riskLevel") == "RISK_OFF":
             no_recommendation_reason = "MARKET_RISK_OFF"
+        elif recommendations and active_strategies == {STRATEGY_AM_TOP}:
+            no_recommendation_reason = "AM_TOP_WATCH_ONLY"
         else:
             no_recommendation_reason = "NO_STRICT_MATCH"
     news = fetch_news() if remaining_seconds() > 25 else []
@@ -111,7 +115,8 @@ def main() -> None:
             "runtimeSeconds": round(time.monotonic() - STARTED, 2),
         },
         "market": {
-            "recommendationCount": len(recommendations),
+            "recommendationCount": len(actionable_recommendations),
+            "watchOnlyCount": len(recommendations) - len(actionable_recommendations),
             "qualifiedBoardCount": len(qualified_boards),
             "monitor": market_monitor,
         },
@@ -1264,6 +1269,8 @@ def evaluate_morning_top_snapshot(
         "confidence": win_rate,
         "winRate": win_rate,
         "strategyTag": STRATEGY_AM_TOP,
+        "executionMode": AM_TOP_EXECUTION_MODE,
+        "actionable": False,
         "t1EdgeScore": t1_edge_score,
         "expectedReturnPct": round2(expected_return),
         "riskPct": round2(risk_pct),
