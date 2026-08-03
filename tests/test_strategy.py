@@ -149,6 +149,8 @@ class StrategyV31Tests(unittest.TestCase):
         )
         self.assertIsNotNone(item)
         self.assertEqual(item["strategyTag"], STRATEGY.STRATEGY_AM_TOP)
+        self.assertFalse(item["actionable"])
+        self.assertEqual(item["executionMode"], "WATCH_ONLY")
         self.assertLess(STRATEGY.morning_min_amount(now), 80_000_000)
 
     def test_early_lift_off_branch_is_no_longer_recommended(self):

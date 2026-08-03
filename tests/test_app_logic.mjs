@@ -41,6 +41,7 @@ vm.runInNewContext(
     buildOpeningExecution,
     getTradeStrategyTag,
     tradeStrategyLabel,
+    renderRecommendationCard,
   };`,
   sandbox,
 );
@@ -51,6 +52,7 @@ const {
   buildOpeningExecution,
   getTradeStrategyTag,
   tradeStrategyLabel,
+  renderRecommendationCard,
 } = sandbox.__appTest;
 
 const trade = {
@@ -100,5 +102,23 @@ assert.match(
 assert.equal(getTradeStrategyTag({ strategyTag: "AM_TOP" }), "AM_TOP");
 assert.equal(tradeStrategyLabel({ strategyTag: "AM_TOP" }), "早盘涨停");
 assert.equal(tradeStrategyLabel({ strategyTag: "TAIL_MAIN" }), "尾盘 T+1");
+
+const watchOnlyCard = renderRecommendationCard(
+  {
+    code: "600000",
+    name: "观察样本",
+    actionable: false,
+    executionMode: "WATCH_ONLY",
+    buyPlan: { type: "[AM_TOP] open-strength entry", timeWindow: "09:31-09:38" },
+    sellPlan: {},
+    stopPlan: {},
+    board: { name: "测试板块" },
+    criteria: {},
+  },
+  0,
+);
+assert.match(watchOnlyCard, /早盘策略暂停实盘，仅观察/);
+assert.match(watchOnlyCard, /disabled/);
+assert.match(watchOnlyCard, /暂停实盘，仅观察/);
 
 console.log("app logic tests passed");

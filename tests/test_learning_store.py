@@ -1,4 +1,6 @@
 import importlib.util
+import base64
+import gzip
 import json
 import tempfile
 import unittest
@@ -12,6 +14,16 @@ SPEC.loader.exec_module(learning_store)
 
 
 class TradeExportImportTests(unittest.TestCase):
+    def test_sync_code_accepts_valid_json_when_only_gzip_footer_is_damaged(self):
+        payload = {"version": 3, "trades": [{"code": "600000"}]}
+        raw = bytearray(gzip.compress(json.dumps(payload).encode("utf-8")))
+        raw[-8] ^= 1
+        token = base64.urlsafe_b64encode(raw).decode("ascii").rstrip("=")
+
+        decoded = learning_store.decode_sync_code(f"BAGS3G.{token}")
+
+        self.assertEqual(decoded, payload)
+
     def test_only_explicit_web_outcome_becomes_a_label(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
@@ -82,7 +94,7 @@ class TradeExportImportTests(unittest.TestCase):
                 "outcome": "take_profit",
                 "entryStrategy": "AM_TOP",
                 "buyDayLimitOutcome": "NOT_SEALED_AT_CLOSE",
-                "prices": {},
+                "prices": {"buy": 10, "actualSell": 9.5},
                 "missingEvidence": [],
             }
         ]
@@ -106,6 +118,9 @@ class TradeExportImportTests(unittest.TestCase):
             self.assertEqual(stats["buyDayLimitTouchKnown"], 0)
             self.assertIsNone(stats["buyDayLimitTouchRate"])
             self.assertEqual(stats["buyDayLimitSealRate"], 0.0)
+            self.assertEqual(stats["realizedReturnKnown"], 1)
+            self.assertEqual(stats["averageRealizedReturnPct"], -5.0)
+            self.assertEqual(model["averageRealizedReturnPct"], -5.0)
 
 
 if __name__ == "__main__":
