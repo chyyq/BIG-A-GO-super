@@ -3,6 +3,8 @@ const STORAGE_KEY = "a-share-maintrend-trades-v1";
 const PUBLIC_SITE_URL = "https://chyyq.github.io/BIG-A-GO-super/";
 const SYNC_CODE_RAW_PREFIX = "BAGS3B.";
 const SYNC_CODE_GZIP_PREFIX = "BAGS3G.";
+const STRATEGY_TAIL_MAIN = "TAIL_MAIN";
+const STRATEGY_AM_TOP = "AM_TOP";
 const AUTO_REFRESH_WINDOWS = [
   { start: [9, 25], end: [10, 5] },
   { start: [13, 30], end: [14, 40] },
@@ -186,7 +188,9 @@ function renderStatus() {
     ? generatedAt.toLocaleString("zh-CN", { hour12: false })
     : "--";
   $("#updateMode").textContent = meta.mode || "等待数据";
-  $("#recommendationCount").textContent = dataIssue ? 0 : state.data?.recommendations?.length || 0;
+  $("#recommendationCount").textContent = dataIssue
+    ? 0
+    : (state.data?.recommendations || []).filter((item) => item.actionable !== false).length;
   $("#sourceCount").textContent = (meta.sourceHealth || []).filter((source) => source.ok).length;
   $("#alertCount").textContent = getPositionAlerts().length;
 }
@@ -283,6 +287,7 @@ function renderRecommendationCard(item, index) {
   const targetTime = item.sellPlan?.targetTime ?? item.sellPlan?.timeWindow ?? "--";
   const stopLoss = item.stopPlan?.stopLoss ?? item.sellPlan?.stopLoss;
   const recorded = isOpenTradeRecorded(item.code);
+  const watchOnly = item.actionable === false || item.executionMode === "WATCH_ONLY";
 
   return `
     <article class="recommendation-card">
@@ -290,6 +295,7 @@ function renderRecommendationCard(item, index) {
         <div class="rank-badge">#${rank}</div>
         <div>
           <h3 class="stock-name">${escapeHtml(item.name)} <span class="stock-code">${item.code}</span></h3>
+          ${watchOnly ? '<span class="tag warn">早盘策略暂停实盘，仅观察</span>' : ""}
           <div class="stock-code">${escapeHtml(item.board?.name || "未分组")} · ${formatPct(item.pct)} · 换手 ${formatPct(item.turnover, false)}</div>
         </div>
         <span class="score-pill">策略分 ${Math.round(item.finalScore || item.winRate || item.confidence || 0)}</span>
@@ -327,9 +333,9 @@ function renderRecommendationCard(item, index) {
         </div>
       </div>
       <div class="card-actions">
-        <button class="ghost-button" type="button" data-action="buy" data-code="${item.code}" ${recorded ? "disabled" : ""}>
-          <i data-lucide="${recorded ? "check" : "square-pen"}"></i>
-          ${recorded ? "已记录" : "一键记录买入"}
+        <button class="ghost-button" type="button" data-action="buy" data-code="${item.code}" ${recorded || watchOnly ? "disabled" : ""}>
+          <i data-lucide="${recorded ? "check" : watchOnly ? "eye" : "square-pen"}"></i>
+          ${recorded ? "已记录" : watchOnly ? "暂停实盘，仅观察" : "一键记录买入"}
         </button>
       </div>
     </article>
@@ -353,7 +359,7 @@ function renderRecommendationTable() {
           <td class="col-rank">#${item.rank || index + 1}</td>
           <td class="col-stock"><strong>${escapeHtml(item.name)}</strong><span>${item.code}</span></td>
           <td class="col-score">${Math.round(item.finalScore || item.winRate || item.confidence || 0)}</td>
-          <td class="col-plan">${escapeHtml(item.buyPlan?.type || "--")}<span>${escapeHtml(item.buyPlan?.timeWindow || "")}</span></td>
+          <td class="col-plan">${escapeHtml(item.buyPlan?.type || "--")}${item.actionable === false ? '<span class="tag warn">仅观察</span>' : ""}<span>${escapeHtml(item.buyPlan?.timeWindow || "")}</span></td>
           <td class="col-price">${formatPrice(targetPrice)}</td>
           <td class="col-time">${escapeHtml(targetTime)}</td>
           <td class="col-price">${formatPrice(stopLoss)}</td>
@@ -365,7 +371,7 @@ function renderRecommendationTable() {
 }
 
 function recordRecommendationBuy(recommendation) {
-  if (!recommendation) return;
+  if (!recommendation || recommendation.actionable === false || recommendation.executionMode === "WATCH_ONLY") return;
   const targetPrice = recommendation.sellPlan?.targetPrice ?? recommendation.sellPlan?.takeProfit;
   const stopLoss = recommendation.stopPlan?.stopLoss ?? recommendation.sellPlan?.stopLoss;
   const buyPrice = estimateRecordedBuyPrice(recommendation);
@@ -420,6 +426,38 @@ function estimateRecordedBuyPrice(recommendation) {
   return round2(recommendation?.price || 0);
 }
 
+function getTradeStrategyTag(record) {
+  const explicit =
+    record?.strategyTag ||
+    record?.planSnapshot?.buyPlan?.strategyTag ||
+    record?.buyPlan?.strategyTag ||
+    "";
+  if (explicit === STRATEGY_AM_TOP || explicit === STRATEGY_TAIL_MAIN) return explicit;
+  const evidence = `${explicit} ${record?.note || ""} ${record?.planSnapshot?.buyPlan?.type || ""}`.toUpperCase();
+  if (evidence.includes("AM_TOP") || evidence.includes("早盘")) return STRATEGY_AM_TOP;
+  if (evidence.includes("TAIL_MAIN") || evidence.includes("尾盘")) return STRATEGY_TAIL_MAIN;
+  return "";
+}
+
+function defaultTradeStrategyTag(now = new Date()) {
+  const minute = now.getHours() * 60 + now.getMinutes();
+  return minute >= 9 * 60 + 20 && minute <= 10 * 60 + 5 ? STRATEGY_AM_TOP : STRATEGY_TAIL_MAIN;
+}
+
+function tradeStrategyLabel(trade) {
+  const strategyTag = getTradeStrategyTag(trade);
+  if (strategyTag === STRATEGY_AM_TOP) return "早盘涨停";
+  if (strategyTag === STRATEGY_TAIL_MAIN) return "尾盘 T+1";
+  return "策略待确认";
+}
+
+function buyDayLimitLabel(outcome) {
+  if (outcome === "SEALED_AT_CLOSE") return "买入日封板";
+  if (outcome === "TOUCHED_NOT_SEALED") return "买入日触板未封";
+  if (outcome === "NO_LIMIT_TOUCH") return "买入日未触板";
+  return "";
+}
+
 function isOpenTradeRecorded(code) {
   return state.trades.some((trade) => trade.code === code && !isTradeClosed(trade));
 }
@@ -468,7 +506,9 @@ function renderT1Reviews() {
 
   const now = new Date();
   const reviews = reviewTrades.map((trade) => buildT1Review(trade, now));
-  if (captureOvernightReviewSnapshots(reviews, now)) persistTrades();
+  if (captureOvernightReviewSnapshots(reviews, now) || reviews.some((review) => review.executionMemoryChanged)) {
+    persistTrades();
+  }
   root.innerHTML = reviews.map(renderT1ReviewCard).join("");
   root.querySelectorAll("[data-action='edit']").forEach((button) => {
     const trade = state.trades.find((item) => item.id === button.dataset.id);
@@ -550,6 +590,14 @@ function buildT1Review(trade, now = new Date()) {
         sectorScore,
         phase,
       });
+  const dateInfo = getTradeDateInfo(trade, now);
+  const riskMemory = updateT1ExecutionMemory(trade, {
+    now,
+    dateInfo,
+    phase,
+    realtimeState,
+    initialPlan,
+  });
   const pricePlan = frozenReview?.pricePlan || buildT1PricePlan({
     buyPrice,
     referenceClose,
@@ -560,10 +608,14 @@ function buildT1Review(trade, now = new Date()) {
     scores,
     initialPlan,
   });
-  const execution = buildOpeningExecution({ phase, realtimeState, initialPlan });
-  const dateInfo = getTradeDateInfo(trade, now);
+  const execution = buildOpeningExecution({ phase, realtimeState, initialPlan, riskMemory });
   const outcomeState = getTradeOutcomeState(trade);
-  const activeAction = buildNextMorningAction({ realtimeState, initialPlan, phase, pricePlan });
+  const activeAction = buildNextMorningAction({ realtimeState, initialPlan, phase, pricePlan, riskMemory });
+  const liveDisplayState = outcomeState || realtimeState || initialPlan;
+  const displayState =
+    !outcomeState && riskMemory.active && realtimeState && realtimeState !== "WEAK"
+      ? `WEAK→${realtimeState}`
+      : liveDisplayState;
   return {
     trade,
     quote,
@@ -572,7 +624,7 @@ function buildT1Review(trade, now = new Date()) {
     displayPrice,
     pnlPct: buyPrice && displayPrice ? ((displayPrice - buyPrice) / buyPrice) * 100 : null,
     stockState,
-    displayState: outcomeState || realtimeState || initialPlan,
+    displayState,
     closed,
     dateInfo,
     initialPlan,
@@ -584,6 +636,9 @@ function buildT1Review(trade, now = new Date()) {
     referenceMa5,
     pricePlan,
     execution,
+    riskMemory,
+    executionMemoryChanged: riskMemory.changed,
+    buyDayLimitOutcome: trade.reviewSnapshot?.buyDayLimitOutcome || null,
     action: closed
       ? buildClosedOutcomeAction(trade, displayPrice, buyPrice)
       : dateInfo.overdue
@@ -600,9 +655,20 @@ function captureOvernightReviewSnapshots(reviews, now) {
   let changed = false;
   reviews.forEach((review) => {
     if (review.closed || review.phase !== "PREP" || !isSameLocalDate(review.trade.createdAt, now)) return;
+    const strategyTag = getTradeStrategyTag(review.trade);
+    const preClose = Number(review.quote?.preClose || 0);
+    const highPrice = Number(review.quote?.high || review.closePrice || 0);
+    const limitUpPrice = preClose ? calcLimitUpPrice(review.trade.code, preClose) : 0;
+    let buyDayLimitOutcome = null;
+    if (strategyTag === STRATEGY_AM_TOP && limitUpPrice) {
+      const touched = highPrice >= limitUpPrice * 0.998;
+      const sealed = review.closePrice >= limitUpPrice * 0.998;
+      buyDayLimitOutcome = sealed ? "SEALED_AT_CLOSE" : touched ? "TOUCHED_NOT_SEALED" : "NO_LIMIT_TOUCH";
+    }
     const snapshot = {
       tradingDate: localDateKey(now),
       capturedAt: now.toISOString(),
+      strategyTag,
       referenceClose: review.referenceClose,
       avgPrice: review.referenceAvgPrice,
       ma5: review.referenceMa5,
@@ -610,12 +676,15 @@ function captureOvernightReviewSnapshots(reviews, now) {
       stockState: review.stockState,
       initialPlan: review.initialPlan,
       pricePlan: review.pricePlan,
+      buyDayLimitOutcome,
     };
     const previous = review.trade.reviewSnapshot;
     const unchanged =
       previous?.tradingDate === snapshot.tradingDate &&
       previous?.referenceClose === snapshot.referenceClose &&
       previous?.initialPlan === snapshot.initialPlan &&
+      previous?.strategyTag === snapshot.strategyTag &&
+      previous?.buyDayLimitOutcome === snapshot.buyDayLimitOutcome &&
       JSON.stringify(previous?.pricePlan) === JSON.stringify(snapshot.pricePlan) &&
       JSON.stringify(previous?.scores) === JSON.stringify(snapshot.scores);
     if (unchanged) return;
@@ -626,6 +695,7 @@ function captureOvernightReviewSnapshots(reviews, now) {
 }
 
 function renderT1ReviewCard(review) {
+  const weakSequence = String(review.displayState || "").startsWith("WEAK→");
   const stateClass =
     review.trade.outcome === "take_profit" ||
     review.displayState === "PLAN_T" ||
@@ -636,10 +706,13 @@ function renderT1ReviewCard(review) {
       : review.trade.outcome === "stop_loss" ||
           review.displayState === "REMOVE" ||
           review.displayState === "WEAK" ||
+          weakSequence ||
           review.displayState === "PLAN_D"
         ? "alert-pill"
         : "warn";
   const outcome = review.trade.outcome || "";
+  const strategyTag = getTradeStrategyTag(review.trade);
+  const limitOutcomeLabel = buyDayLimitLabel(review.buyDayLimitOutcome);
   return `
     <article class="review-card">
       <div class="review-head">
@@ -649,9 +722,13 @@ function renderT1ReviewCard(review) {
           <div class="review-dates ${review.dateInfo.overdue ? "overdue" : ""}">
             买入日 ${escapeHtml(review.dateInfo.buyDate)} · 计划卖出日 ${escapeHtml(review.dateInfo.plannedSellDate)}
             ${review.dateInfo.actualSellDate ? ` · 实际卖出日 ${escapeHtml(review.dateInfo.actualSellDate)}` : ""}
+            ${limitOutcomeLabel ? ` · ${escapeHtml(limitOutcomeLabel)}` : ""}
           </div>
         </div>
-        <span class="${stateClass === "alert-pill" ? "alert-pill" : `tag ${stateClass}`}">${review.displayState}</span>
+        <div class="review-tag-group">
+          <span class="tag ${strategyTag === STRATEGY_AM_TOP ? "morning" : strategyTag === STRATEGY_TAIL_MAIN ? "pass" : "warn"}">${escapeHtml(tradeStrategyLabel(review.trade))}</span>
+          <span class="${stateClass === "alert-pill" ? "alert-pill" : `tag ${stateClass}`}">${review.displayState}</span>
+        </div>
       </div>
       <div class="review-plan">
         <div>
@@ -791,6 +868,45 @@ function getT1ExecutionPhase(trade, now) {
   return "FINAL";
 }
 
+function weakInstructionRatio(initialPlan) {
+  if (initialPlan === "PLAN_D") return { label: "100%", fullExit: true };
+  if (initialPlan === "PLAN_T") return { label: "40%-50%", fullExit: false };
+  return { label: "60%-70%", fullExit: false };
+}
+
+function updateT1ExecutionMemory(trade, { now, dateInfo, phase, realtimeState, initialPlan }) {
+  const tradingDate = localDateKey(now);
+  const previous = trade.t1ExecutionMemory;
+  const active = previous?.tradingDate === tradingDate && Boolean(previous.weakTriggeredAt);
+  const minute = now.getHours() * 60 + now.getMinutes();
+  const canLatch =
+    !isTradeClosed(trade) &&
+    dateInfo.plannedSellDate === tradingDate &&
+    minute >= 9 * 60 + 30 &&
+    minute < 10 * 60 &&
+    ["OPEN_CONFIRM", "CLASSIFY"].includes(phase);
+  if (active || !canLatch || realtimeState !== "WEAK") {
+    return { ...(active ? previous : {}), active, changed: false };
+  }
+
+  const instruction = weakInstructionRatio(initialPlan);
+  const memory = {
+    tradingDate,
+    weakTriggeredAt: now.toISOString(),
+    weakTriggerTime: now.toLocaleTimeString("zh-CN", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    }),
+    weakTriggerRatio: instruction.label,
+    fullExitInstruction: instruction.fullExit,
+    initialPlan,
+  };
+  trade.t1ExecutionMemory = memory;
+  trade.updatedAt = now.toISOString();
+  return { ...memory, active: true, changed: true };
+}
+
 function classifyOpeningRealtime({
   quote,
   closePrice,
@@ -843,9 +959,16 @@ function classifyOpeningRealtime({
   return "NEUTRAL";
 }
 
-function buildOpeningExecution({ phase, realtimeState, initialPlan }) {
+function buildOpeningExecution({ phase, realtimeState, initialPlan, riskMemory }) {
   if (phase === "PREP") return { ratioLabel: "待开盘确认" };
   if (phase === "AUCTION") return { ratioLabel: "竞价仅定级" };
+  if (riskMemory?.active && realtimeState !== "WEAK") {
+    return {
+      ratioLabel: riskMemory.fullExitInstruction
+        ? `WEAK已触发${riskMemory.weakTriggerRatio}`
+        : "仅管理未卖余仓",
+    };
+  }
   if (realtimeState === "LIMIT_UP" || realtimeState === "STRONG" || realtimeState === "RECOVERY") {
     return { ratioLabel: "暂缓卖出" };
   }
@@ -914,7 +1037,7 @@ function buildT1PricePlan({ buyPrice, referenceClose, ma5, avgPrice, limitUpPric
   };
 }
 
-function buildNextMorningAction({ realtimeState, initialPlan, phase, pricePlan }) {
+function buildNextMorningAction({ realtimeState, initialPlan, phase, pricePlan, riskMemory }) {
   const stopText = `结构止损 ${formatPrice(pricePlan.finalStop)}`;
   if (phase === "PREP") {
     const bias = initialPlan === "PLAN_D" ? "防守" : initialPlan === "PLAN_T" ? "趋势" : "平衡";
@@ -928,6 +1051,12 @@ function buildNextMorningAction({ realtimeState, initialPlan, phase, pricePlan }
       return `竞价偏弱：不在09:25直接砍仓；09:30后若仍低于开盘价/VWAP，按防守比例执行；${stopText}。`;
     }
     return `竞价中性：等待09:30-09:35方向确认，不因单一竞价价格卖出；${stopText}。`;
+  }
+  if (riskMemory?.active && realtimeState !== "WEAK") {
+    if (riskMemory.fullExitInstruction) {
+      return `${riskMemory.weakTriggerTime || "开盘后"}已触发WEAK全卖指令：若已执行，本笔交易已结束；当前${realtimeState || "状态变化"}只作复盘，不回补、不重新建立仓位。`;
+    }
+    return `${riskMemory.weakTriggerTime || "开盘后"}已触发WEAK减仓${riskMemory.weakTriggerRatio}：已卖部分不回补；当前${realtimeState || "状态变化"}只管理尚未卖出的余仓。`;
   }
   if (phase === "FINAL") {
     return realtimeState === "LIMIT_UP"
@@ -1045,6 +1174,8 @@ function openTradeModal(recommendation = null, trade = null) {
   $("#tradeId").value = trade?.id || "";
   $("#tradeCode").value = trade?.code || recommendation?.code || "";
   $("#tradeName").value = trade?.name || recommendation?.name || "";
+  $("#tradeStrategyTag").value =
+    getTradeStrategyTag(trade || recommendation) || defaultTradeStrategyTag(new Date());
   $("#tradeBuyPrice").value = valueForInput(trade?.buyPrice || recommendation?.buyPlan?.priceRange?.[0] || recommendation?.price);
   $("#tradeQuantity").value = valueForInput(trade?.quantity);
   $("#tradeStopLoss").value = valueForInput(trade?.stopLoss || stopLoss);
@@ -1079,6 +1210,7 @@ function saveTradeFromForm(event) {
     takeProfit: Number($("#tradeTakeProfit").value) || null,
     note: $("#tradeNote").value.trim(),
     status: existing?.status || "open",
+    strategyTag: $("#tradeStrategyTag").value,
     buyTradingDate,
     plannedSellTradingDate: existing?.plannedSellTradingDate || nextWeekdayDateKey(buyTradingDate),
     createdAt: existing?.createdAt || now.toISOString(),
@@ -1406,6 +1538,7 @@ function normalizeImportedTrades(trades) {
         quantity: Number(trade.quantity) || null,
         stopLoss: Number(trade.stopLoss) || null,
         takeProfit: Number(trade.takeProfit) || null,
+        strategyTag: getTradeStrategyTag(trade),
         status: trade.status || "open",
         outcome: trade.outcome || null,
         buyTradingDate,

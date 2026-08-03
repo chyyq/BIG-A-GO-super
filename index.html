@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="A股主升量化候选、买卖点计划、晚间复盘与T+1卖点监控" />
     <title>A股主升交易台</title>
-    <link rel="stylesheet" href="styles.css?v=20260726b" />
+    <link rel="stylesheet" href="styles.css?v=20260730a" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-    <script src="app.js?v=20260726b" defer></script>
+    <script src="app.js?v=20260803a" defer></script>
   </head>
   <body>
     <div class="app-shell">
@@ -198,6 +198,14 @@
           <label>
             股票名称
             <input id="tradeName" required placeholder="如 浦发银行" />
+          </label>
+          <label>
+            买入策略
+            <select id="tradeStrategyTag">
+              <option value="TAIL_MAIN">尾盘 T+1</option>
+              <option value="AM_TOP">早盘涨停</option>
+              <option value="">待确认</option>
+            </select>
           </label>
           <label>
             买入价
