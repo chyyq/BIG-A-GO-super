@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-03T16:48:51.095822+08:00",
+    "generatedAt": "2026-08-03T16:52:38.074124+08:00",
     "tradingDate": "2026-08-03",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,23 +22,25 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 69.86
+    "runtimeSeconds": 63.77
   },
   "market": {
     "recommendationCount": 0,
@@ -57,26 +59,26 @@
       "brokenBoardRate": 0.024,
       "breadthSampleSize": 100,
       "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 4.01,
+      "topBoardPct": 4.21,
       "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
     }
   },
   "boards": [
     {
-      "code": "BK1032",
-      "name": "风电设备",
+      "code": "BK1312",
+      "name": "线缆部件及其他",
       "kind": "Industry board",
-      "price": 1283.14,
-      "pct": 4.01,
-      "amount": 11037186694.0,
-      "turnover": 3.2,
-      "open": 1234.57,
-      "preClose": 1233.72,
-      "mainNet": 452632960.0,
-      "rank": 10,
+      "price": 3554.55,
+      "pct": 4.21,
+      "amount": 15494754743.0,
+      "turnover": 5.58,
+      "open": 3433.29,
+      "preClose": 3410.93,
+      "mainNet": 691409456.0,
+      "rank": 7,
       "passed": 4,
       "qualified": true,
-      "score": 80.1,
+      "score": 81.15,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
@@ -85,8 +87,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 8
+      "limitUpCount": 5,
+      "bigUpCount": 11
     },
     {
       "code": "BK1522",
@@ -114,20 +116,20 @@
       "bigUpCount": 3
     },
     {
-      "code": "BK1312",
-      "name": "线缆部件及其他",
+      "code": "BK1032",
+      "name": "风电设备",
       "kind": "Industry board",
-      "price": 3554.55,
-      "pct": 4.21,
-      "amount": 15494754743.0,
-      "turnover": 5.58,
-      "open": 3433.29,
-      "preClose": 3410.93,
-      "mainNet": 691409456.0,
-      "rank": 7,
+      "price": 1283.14,
+      "pct": 4.01,
+      "amount": 11037186694.0,
+      "turnover": 3.2,
+      "open": 1234.57,
+      "preClose": 1233.72,
+      "mainNet": 452632960.0,
+      "rank": 9,
       "passed": 2,
       "qualified": false,
-      "score": 48.35,
+      "score": 47.65,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -138,32 +140,8 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1319",
-      "name": "硅料硅片",
-      "kind": "Industry board",
-      "price": 1794.35,
-      "pct": 4.13,
-      "amount": 2042089437.0,
-      "turnover": 2.68,
-      "open": 1730.26,
-      "preClose": 1723.14,
-      "mainNet": 169597133.0,
-      "rank": 8,
-      "passed": 2,
-      "qualified": false,
-      "score": 48.0,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 3
-    },
-    {
-      "code": "BK1502",
-      "name": "林业Ⅲ",
+      "code": "BK1255",
+      "name": "林业Ⅱ",
       "kind": "Industry board",
       "price": 4160.8,
       "pct": 4.01,
@@ -183,16 +161,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1255",
-      "name": "林业Ⅱ",
+      "code": "BK1311",
+      "name": "输变电设备",
       "kind": "Industry board",
-      "price": 4160.8,
-      "pct": 4.01,
-      "amount": 1254256200.0,
-      "turnover": 7.88,
-      "open": 4030.36,
-      "preClose": 4000.44,
-      "mainNet": 36117931.0,
+      "price": 4044.78,
+      "pct": 4.0,
+      "amount": 17602517564.0,
+      "turnover": 4.64,
+      "open": 3924.33,
+      "preClose": 3889.07,
+      "mainNet": 378978448.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -223,8 +201,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1516",
@@ -269,8 +247,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 2
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1314",
@@ -316,68 +294,91 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 0
+      "bigUpCount": 1
     },
     {
-      "code": "BK1051",
-      "name": "昨日连板_含一字",
-      "kind": "Concept board",
-      "price": 39208.59,
-      "pct": 4.05,
-      "amount": 8481148533.0,
-      "turnover": 7.96,
-      "open": 39474.09,
-      "preClose": 37683.81,
-      "mainNet": -278786720.0,
-      "rank": 9,
+      "code": "BK1319",
+      "name": "硅料硅片",
+      "kind": "Industry board",
+      "price": 1794.35,
+      "pct": 4.13,
+      "amount": 2042089437.0,
+      "turnover": 2.68,
+      "open": 1730.26,
+      "preClose": 1723.14,
+      "mainNet": 169597133.0,
+      "rank": 8,
       "passed": 1,
       "qualified": false,
-      "score": 31.25,
+      "score": 31.6,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
       "continuous": false,
-      "amountRatio": 0.75,
+      "amountRatio": null,
       "limitUpCount": 0,
       "bigUpCount": 0
+    },
+    {
+      "code": "BK1502",
+      "name": "林业Ⅲ",
+      "kind": "Industry board",
+      "price": 4160.8,
+      "pct": 4.01,
+      "amount": 1254256200.0,
+      "turnover": 7.88,
+      "open": 4030.36,
+      "preClose": 4000.44,
+      "mainNet": 36117931.0,
+      "rank": 10,
+      "passed": 1,
+      "qualified": false,
+      "score": 30.9,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 1
     }
   ],
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "十大券商策略：调整基本结束 8月修复可期！建议增配这些板块",
+      "url": "https://finance.eastmoney.com/a/202608023829176575.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共83只个股涨停 这只教育股6连板乳业股一鸣食品5连板，AI应用概念股利欧股份等多股2连板。一图速览今日连板股&gt;&gt;  1小时前",
-      "url": "https://www.yicai.com/news/103302983.html",
+      "source": "Eastmoney News",
+      "title": "A股三大指数收跌 成交额缩量超5000亿 微盘股大涨",
+      "url": "https://finance.eastmoney.com/a/202608033829741129.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜上证指数跌0.59% 半导体、存储芯片等概念领跌全市场超4000只个股上涨。  1小时前",
-      "url": "https://www.yicai.com/news/103302962.html",
+      "source": "Eastmoney News",
+      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
+      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股四大指数集体低开，存储器、PCB等概念股走弱核聚变、人形机器人、AI应用、PEEK材料指数走强。  7小时前",
-      "url": "https://www.yicai.com/news/103302270.html",
+      "source": "Eastmoney News",
+      "title": "东方财富陈果：海外波动加剧并未改变A股内部再平衡方向",
+      "url": "https://finance.eastmoney.com/a/202608033829244854.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "盘前必读丨日韩股市低开SK海力士跌超5%；一博科技净利润增超15倍机构认为，海外AI板块出现止跌迹象，但完成真正筑底仍需要过程。  8小时前",
-      "url": "https://www.yicai.com/news/103302130.html",
+      "source": "Eastmoney News",
+      "title": "中信证券新材料第三季度投资策略：调整后仍看好科技 缩圈到核心新材料标的",
+      "url": "https://finance.eastmoney.com/a/202608033829235368.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "一财社论：提高知止的认知是最有力的风控培育有认知的投资者，营造交易活跃的制度场景，才是资本市场发展的重要保障。  昨天 20:28",
-      "url": "https://www.yicai.com/news/103302036.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：先进封装持续迭代升级 玻璃基板大有可为",
+      "url": "https://finance.eastmoney.com/a/202608033829232164.html",
       "time": ""
     }
   ]
