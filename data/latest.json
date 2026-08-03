@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-03T22:46:32.953434+08:00",
+    "generatedAt": "2026-08-03T23:56:52.803940+08:00",
     "tradingDate": "2026-08-03",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,10 +35,11 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 38.88
+    "runtimeSeconds": 29.46
   },
   "market": {
     "recommendationCount": 0,
+    "watchOnlyCount": 0,
     "qualifiedBoardCount": 2,
     "monitor": {
       "emotionScore": 86,
@@ -359,12 +360,6 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
-      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "东方财富陈果：海外波动加剧并未改变A股内部再平衡方向",
       "url": "https://finance.eastmoney.com/a/202608033829244854.html",
       "time": ""
@@ -385,6 +380,12 @@
       "source": "Eastmoney News",
       "title": "东方财富证券开户",
       "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
