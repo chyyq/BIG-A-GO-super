@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-03T18:27:27.812813+08:00",
+    "generatedAt": "2026-08-03T22:46:32.953434+08:00",
     "tradingDate": "2026-08-03",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,20 +22,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 36.38
+    "runtimeSeconds": 38.88
   },
   "market": {
     "recommendationCount": 0,
@@ -346,39 +346,45 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "A股三大指数收跌 成交额缩量超5000亿 微盘股大涨",
+      "url": "https://finance.eastmoney.com/a/202608033829741129.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "5万亿投资催化，A股电网设备板块爆发国家电网预计“十五五”期间固定资产投资达到4万亿元，对应年均投资约8000亿元。  30分钟前",
-      "url": "https://www.yicai.com/news/103303244.html",
+      "source": "Eastmoney News",
+      "title": "十大券商策略：调整基本结束 8月修复可期！建议增配这些板块",
+      "url": "https://finance.eastmoney.com/a/202608023829176575.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共83只个股涨停 这只教育股6连板乳业股一鸣食品5连板，AI应用概念股利欧股份等多股2连板。一图速览今日连板股&gt;&gt;  3小时前",
-      "url": "https://www.yicai.com/news/103302983.html",
+      "source": "Eastmoney News",
+      "title": "AI热潮下，夏季行情是震荡蓄力还是新周期？｜对话陈果、章椹元",
+      "url": "https://finance.eastmoney.com/a/202605283752993232.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜上证指数跌0.59% 半导体、存储芯片等概念领跌全市场超4000只个股上涨。  3小时前",
-      "url": "https://www.yicai.com/news/103302962.html",
+      "source": "Eastmoney News",
+      "title": "东方财富陈果：海外波动加剧并未改变A股内部再平衡方向",
+      "url": "https://finance.eastmoney.com/a/202608033829244854.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股四大指数集体低开，存储器、PCB等概念股走弱核聚变、人形机器人、AI应用、PEEK材料指数走强。  8小时前",
-      "url": "https://www.yicai.com/news/103302270.html",
+      "source": "Eastmoney News",
+      "title": "中信证券新材料第三季度投资策略：调整后仍看好科技 缩圈到核心新材料标的",
+      "url": "https://finance.eastmoney.com/a/202608033829235368.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "盘前必读丨日韩股市低开SK海力士跌超5%；一博科技净利润增超15倍机构认为，海外AI板块出现止跌迹象，但完成真正筑底仍需要过程。  10小时前",
-      "url": "https://www.yicai.com/news/103302130.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：先进封装持续迭代升级 玻璃基板大有可为",
+      "url": "https://finance.eastmoney.com/a/202608033829232164.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
