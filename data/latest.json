@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-04T16:02:22.685413+08:00",
+    "generatedAt": "2026-08-04T16:06:15.666147+08:00",
     "tradingDate": "2026-08-04",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source skipped; quote data is unaffected."
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 34.81
+    "errors": [
+      "Yicai news skipped: The read operation timed out"
+    ],
+    "runtimeSeconds": 50.78
   },
   "market": {
     "recommendationCount": 0,
