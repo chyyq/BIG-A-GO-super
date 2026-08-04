@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-04T17:18:57.457677+08:00",
+    "generatedAt": "2026-08-04T17:23:02.325851+08:00",
     "tradingDate": "2026-08-04",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 34.83
+    "runtimeSeconds": 33.53
   },
   "market": {
     "recommendationCount": 0,
@@ -374,6 +374,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "A股三大指数收涨 创业板指飙升5.64% 140只股涨停",
+      "url": "https://finance.eastmoney.com/a/202608043831134153.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "中金：8月A股行情可能进入大幅回调后的修复阶段",
       "url": "https://finance.eastmoney.com/a/202608043830405825.html",
       "time": ""
@@ -392,20 +398,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数收涨 创业板指飙升5.64% 140只股涨停",
-      "url": "https://finance.eastmoney.com/a/202608043831134153.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "东方财富证券开户",
       "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
