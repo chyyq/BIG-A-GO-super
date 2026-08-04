@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-04T16:50:43.625920+08:00",
+    "generatedAt": "2026-08-04T17:07:51.614764+08:00",
     "tradingDate": "2026-08-04",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 30.25
+    "runtimeSeconds": 47.55
   },
   "market": {
     "recommendationCount": 0,
@@ -361,51 +361,33 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "全球市场：道指创收盘历史新高 纳指涨逾2% 大型科技股普涨 国际油价跌超5%",
-      "url": "https://finance.eastmoney.com/a/202608043830167526.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "重要条例修订发布 芯片IP保护再升级 杠杆资金逆势布局多股(名单)",
-      "url": "https://finance.eastmoney.com/a/202608043830663370.html",
+      "source": "Yicai",
+      "title": "韩国杠杆ETF漩涡下，李在明支持率成“出气筒”金允俊认为，对于李在明政府而言，股市繁荣带来的蜜月期显然已经消退。   52分钟前",
+      "url": "https://www.yicai.com/news/103304728.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中金：8月A股行情可能进入大幅回调后的修复阶段",
-      "url": "https://finance.eastmoney.com/a/202608043830405825.html",
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共141只个股涨停 传智教育7连板算力租赁板块美利云3连板。一图速览今日连板股&gt;&gt;  1小时前",
+      "url": "https://www.yicai.com/news/103304664.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：银行板块全年绝对收益空间仍将延续",
-      "url": "https://finance.eastmoney.com/a/202608043830368550.html",
+      "source": "Yicai",
+      "title": "收盘｜创业板指涨5.64% 算力硬件股全天强势全市场超3600只个股上涨，超百股涨停。  1小时前",
+      "url": "https://www.yicai.com/news/103304641.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：AI投资回报闭环已现 坚定看好光通信板块",
-      "url": "https://finance.eastmoney.com/a/202608043830367295.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股三大指数收涨 创业板指飙升5.64% 140只股涨停",
-      "url": "https://finance.eastmoney.com/a/202608043831134153.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "source": "Yicai",
+      "title": "A股四大指数集体高开，算力硬件产业链反弹，医药股爆发盘面上，算力硬件产业链反弹，OCS、CPO、光通信方向涨幅居前，医药股爆发。  7小时前",
+      "url": "https://www.yicai.com/news/103303937.html",
       "time": ""
     }
   ]
