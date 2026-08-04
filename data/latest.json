@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-04T12:42:27.945948+08:00",
+    "generatedAt": "2026-08-04T12:45:34.311189+08:00",
     "tradingDate": "2026-08-04",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 33.05
+    "runtimeSeconds": 30.93
   },
   "market": {
     "recommendationCount": 0,
@@ -65,7 +65,7 @@
       "price": 41477.45,
       "pct": 5.79,
       "amount": 18165407877.0,
-      "turnover": 25.39,
+      "turnover": 13.43,
       "open": 41009.93,
       "preClose": 39208.59,
       "mainNet": -104600720.0,
@@ -274,7 +274,7 @@
       "price": 11619.75,
       "pct": 5.98,
       "amount": 5046810629.0,
-      "turnover": 12.49,
+      "turnover": 14.21,
       "open": 11285.42,
       "preClose": 10964.01,
       "mainNet": -228086112.0,
