@@ -14,6 +14,16 @@ SPEC.loader.exec_module(learning_store)
 
 
 class TradeExportImportTests(unittest.TestCase):
+    def test_sync_code_recovers_markdown_escaped_underscores(self):
+        payload = {"version": 3, "trades": [{"code": "600000", "name": "测试_样本"}]}
+        raw = gzip.compress(json.dumps(payload, ensure_ascii=False).encode("utf-8"))
+        token = base64.urlsafe_b64encode(raw).decode("ascii").rstrip("=")
+        escaped = token.replace("_", "\\_")
+
+        decoded = learning_store.decode_sync_code(f"BAGS3G.{escaped}")
+
+        self.assertEqual(decoded, payload)
+
     def test_sync_code_accepts_valid_json_when_only_gzip_footer_is_damaged(self):
         payload = {"version": 3, "trades": [{"code": "600000"}]}
         raw = bytearray(gzip.compress(json.dumps(payload).encode("utf-8")))
@@ -46,6 +56,18 @@ class TradeExportImportTests(unittest.TestCase):
                 "plannedSellTradingDate": "2026-07-27",
                 "createdAt": "2026-07-24T14:20:00+08:00",
                 "updatedAt": "2026-07-24T14:20:00+08:00",
+                "planSnapshot": {
+                    "strategyId": "TAIL_T1_V31_EMPIRICAL",
+                    "candidateStatus": "STRONG_CANDIDATE",
+                    "finalScore": 91.2,
+                    "signalType": "T3_TREND_BREAKOUT",
+                    "overnightCrowdingScore": 5,
+                    "executionToleranceScore": 96,
+                    "simpleExecutionScore": 90,
+                    "recoveryAfter0935Score": 85,
+                    "initialPlan": "PLAN_T",
+                    "nextDayPlan": {"classifyTime": "09:35"},
+                },
             }
             payload = {"version": 3, "exportedAt": "2026-07-26T10:00:00+08:00", "trades": [trade]}
             export_path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
@@ -61,6 +83,9 @@ class TradeExportImportTests(unittest.TestCase):
             self.assertEqual(result["added"], 1)
             self.assertEqual(samples[0]["outcome"], "unknown")
             self.assertIn("actual_outcome", samples[0]["missingEvidence"])
+            self.assertEqual(samples[0]["selectionEvidence"]["finalScore"], 91.2)
+            self.assertEqual(samples[0]["selectionEvidence"]["signalType"], "T3_TREND_BREAKOUT")
+            self.assertEqual(samples[0]["executionPlanEvidence"]["classifyTime"], "09:35")
 
             trade.update(
                 {
