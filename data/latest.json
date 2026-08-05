@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-05T17:27:04.535044+08:00",
+    "generatedAt": "2026-08-05T22:16:30.431276+08:00",
     "tradingDate": "2026-08-05",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 33.51
+    "runtimeSeconds": 30.59
   },
   "market": {
     "recommendationCount": 0,
@@ -362,51 +362,39 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "签下重大合同！A股算力牛股突然爆单！多股斩获数十亿订单",
-      "url": "https://finance.eastmoney.com/a/202608053831840969.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股“易中天”集体回应“美国光模块禁令”",
-      "url": "https://finance.eastmoney.com/a/202608053832283067.html",
+      "source": "Yicai",
+      "title": "光伏电价“安全垫”快速撤退，市场化倒逼收益重构提高项目自发自用比例、提前配置储能、提升电力交易能力，或是破局关键路径。  38分钟前",
+      "url": "https://www.yicai.com/news/103306960.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美国考虑禁止进口中国光模块？市场人士：可能性较小 影响也可控",
-      "url": "https://finance.eastmoney.com/a/202608053832003146.html",
+      "source": "Yicai",
+      "title": "统一开放交通运输市场加快建设：整治低价竞争、规范政府补贴《实施方案》为纵深推进全国统一大市场建设提供有力交通运输服务保障。  38分钟前",
+      "url": "https://www.yicai.com/news/103306959.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：未来1-2个季度美股重点应用软件公司营收增速有望迎来拐点",
-      "url": "https://finance.eastmoney.com/a/202608053831837764.html",
+      "source": "Yicai",
+      "title": "保费半年破万亿，增速近乎翻倍背后：分红险占比越高越好吗？分红险业务占比抬升，也使得与之对应的保险资金投资逻辑和策略生变。  1小时前",
+      "url": "https://www.yicai.com/news/103306882.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：黄金4000美元/盎司附近大概率是本轮底部区域",
-      "url": "https://finance.eastmoney.com/a/202608053831835142.html",
+      "source": "Yicai",
+      "title": "COMEX黄金期货急涨，这次能否站稳4200美元？受霍尔木兹海峡通航预期升温及地缘风险重定价驱动，现货黄金价格直线拉升并带动全球贵金属板块全线爆发  2小时前",
+      "url": "https://www.yicai.com/news/103306742.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "华泰证券：电网设备板块估值修复与催化空间并存",
-      "url": "https://finance.eastmoney.com/a/202608053831749452.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "沪指涨1.47% 科创50指数大涨4.78% 半导体板块爆发",
-      "url": "https://finance.eastmoney.com/a/202608053832529810.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "source": "Yicai",
+      "title": "A股市值超过4300亿元的药企，今年上半年盈利暴涨六倍多百济神州上半年盈利大幅超过去年全年。  2小时前",
+      "url": "https://www.yicai.com/news/103306808.html",
       "time": ""
     }
   ]
