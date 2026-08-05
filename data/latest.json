@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-05T17:05:49.051304+08:00",
+    "generatedAt": "2026-08-05T17:17:48.344105+08:00",
     "tradingDate": "2026-08-05",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 36.46
+    "runtimeSeconds": 37.48
   },
   "market": {
     "recommendationCount": 0,
@@ -362,51 +362,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "签下重大合同！A股算力牛股突然爆单！多股斩获数十亿订单",
+      "url": "https://finance.eastmoney.com/a/202608053831840969.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "特朗普政府已退还1000亿美元关税，都给谁了？美国议员抱怨称，这些资金往往流回了大企业手中，很少能回到那些最终承担了关税成本的消费者或小企业手里。  33分钟前",
-      "url": "https://www.yicai.com/news/103306568.html",
+      "source": "Eastmoney News",
+      "title": "A股“易中天”集体回应“美国光模块禁令”",
+      "url": "https://finance.eastmoney.com/a/202608053832283067.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共105只个股涨停 这只教育股8连板氢能板块德龙汇能收获4连板。一图速览今日连板股&gt;&gt;  1小时前",
-      "url": "https://www.yicai.com/news/103306493.html",
+      "source": "Eastmoney News",
+      "title": "美国考虑禁止进口中国光模块？市场人士：可能性较小 影响也可控",
+      "url": "https://finance.eastmoney.com/a/202608053832003146.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜沪指涨1.47% 存储芯片概念涨幅居前全市场超3700只个股上涨。  1小时前",
-      "url": "https://www.yicai.com/news/103306430.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：未来1-2个季度美股重点应用软件公司营收增速有望迎来拐点",
+      "url": "https://finance.eastmoney.com/a/202608053831837764.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "“易中天”市值跌超1000亿元，美国禁令或扰乱光模块供应生态国内光模块厂商与海外客户的深度绑定，成为相关禁令消息扰动股市的背景。  3小时前",
-      "url": "https://www.yicai.com/news/103306149.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：黄金4000美元/盎司附近大概率是本轮底部区域",
+      "url": "https://finance.eastmoney.com/a/202608053831835142.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "重建信用：当前最紧迫的“软基建”让市场真正感受到一个可预期、可信赖的未来，信心自会逐步回归，内需自会渐次回暖。  4小时前",
-      "url": "https://www.yicai.com/news/103306058.html",
+      "source": "Eastmoney News",
+      "title": "华泰证券：电网设备板块估值修复与催化空间并存",
+      "url": "https://finance.eastmoney.com/a/202608053831749452.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股四大指数集体低开，CPO概念股大幅回调稀土永磁、智能驾驶、黄金逆势走强。市场逾2400股下跌。  7小时前",
-      "url": "https://www.yicai.com/news/103305607.html",
+      "source": "Eastmoney News",
+      "title": "沪指涨1.47% 科创50指数大涨4.78% 半导体板块爆发",
+      "url": "https://finance.eastmoney.com/a/202608053832529810.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "盘前必读丨日韩股市高开SK海力士涨超6%；联创光电及实控人被证监会立案机构认为，市场震荡为主，趋势行情还需确认。  8小时前",
-      "url": "https://www.yicai.com/news/103305479.html",
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
