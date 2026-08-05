@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-05T12:44:59.819991+08:00",
+    "generatedAt": "2026-08-05T12:46:39.679750+08:00",
     "tradingDate": "2026-08-05",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 29.88
+    "runtimeSeconds": 39.31
   },
   "market": {
     "recommendationCount": 0,
@@ -370,7 +370,7 @@
     },
     {
       "source": "Yicai",
-      "title": "重建信用：当前最紧迫的“软基建”让市场真正感受到一个可预期、可信赖的未来，信心自会逐步回归，内需自会渐次回暖。  33分钟前",
+      "title": "重建信用：当前最紧迫的“软基建”让市场真正感受到一个可预期、可信赖的未来，信心自会逐步回归，内需自会渐次回暖。  39分钟前",
       "url": "https://www.yicai.com/news/103306058.html",
       "time": ""
     },
