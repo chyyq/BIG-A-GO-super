@@ -1,19 +1,17 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-05T14:24:13.453564+08:00",
+    "generatedAt": "2026-08-05T16:03:10.427012+08:00",
     "tradingDate": "2026-08-05",
     "mode": "fast-snapshot",
-    "activeStrategies": [
-      "TAIL_MAIN"
-    ],
-    "noRecommendationReason": null,
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=1.603005&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=16",
-        "note": "Quote snapshot and daily K-line history OK"
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "note": "OK"
       },
       {
         "name": "Eastmoney News",
@@ -35,10 +33,10 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 82.97
+    "runtimeSeconds": 44.39
   },
   "market": {
-    "recommendationCount": 7,
+    "recommendationCount": 0,
     "watchOnlyCount": 0,
     "qualifiedBoardCount": 9,
     "monitor": {
@@ -47,57 +45,30 @@
       "marketGatePassed": true,
       "hardVeto": false,
       "riskLevel": "NORMAL",
-      "limitUpCount": 50,
+      "limitUpCount": 35,
       "limitDownCount": 3,
-      "bigDownCount": 6,
-      "limitTouchCount": 52,
+      "bigDownCount": 4,
+      "limitTouchCount": 37,
       "brokenBoardCount": 2,
-      "brokenBoardRate": 0.038,
+      "brokenBoardRate": 0.054,
       "breadthSampleSize": 200,
       "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 7.61,
+      "topBoardPct": 9.08,
       "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
     }
   },
   "boards": [
     {
-      "code": "BK1325",
-      "name": "半导体材料",
-      "kind": "Industry board",
-      "price": 12175.13,
-      "pct": 7.61,
-      "amount": 42929122659.0,
-      "turnover": 6.83,
-      "open": 11303.04,
-      "preClose": 11314.29,
-      "mainNet": 2986733824.0,
-      "rank": 4,
-      "passed": 5,
-      "qualified": true,
-      "score": 98.6,
-      "criteria": [
-        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": true,
-      "amountRatio": 1.38,
-      "limitUpCount": 2,
-      "bigUpCount": 22
-    },
-    {
       "code": "BK1625",
       "name": "钨",
       "kind": "Industry board",
-      "price": 8215.5,
-      "pct": 8.48,
-      "amount": 12544798600.0,
-      "turnover": 6.28,
+      "price": 8261.08,
+      "pct": 9.08,
+      "amount": 13339877360.0,
+      "turnover": 6.7,
       "open": 7596.49,
       "preClose": 7573.2,
-      "mainNet": 1592103248.0,
+      "mainNet": 1721733520.0,
       "rank": 1,
       "passed": 4,
       "qualified": true,
@@ -117,13 +88,13 @@
       "code": "BK1326",
       "name": "半导体设备",
       "kind": "Industry board",
-      "price": 47170.25,
-      "pct": 7.68,
-      "amount": 63741414088.0,
-      "turnover": 4.26,
+      "price": 47455.82,
+      "pct": 8.34,
+      "amount": 69936966147.0,
+      "turnover": 4.66,
       "open": 43860.54,
       "preClose": 43804.2,
-      "mainNet": 2466989056.0,
+      "mainNet": 2546082304.0,
       "rank": 3,
       "passed": 4,
       "qualified": true,
@@ -137,19 +108,45 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 1,
-      "bigUpCount": 20
+      "bigUpCount": 21
+    },
+    {
+      "code": "BK1325",
+      "name": "半导体材料",
+      "kind": "Industry board",
+      "price": 12256.84,
+      "pct": 8.33,
+      "amount": 47348907703.0,
+      "turnover": 7.46,
+      "open": 11303.04,
+      "preClose": 11314.29,
+      "mainNet": 3163141376.0,
+      "rank": 4,
+      "passed": 4,
+      "qualified": true,
+      "score": 82.2,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.3,
+      "limitUpCount": 2,
+      "bigUpCount": 26
     },
     {
       "code": "BK0732",
       "name": "贵金属",
       "kind": "Industry board",
-      "price": 2358.27,
-      "pct": 7.15,
-      "amount": 22121810452.0,
-      "turnover": 3.96,
+      "price": 2374.12,
+      "pct": 7.87,
+      "amount": 24711279326.0,
+      "turnover": 4.45,
       "open": 2231.38,
       "preClose": 2200.91,
-      "mainNet": 2243245536.0,
+      "mainNet": 2457809664.0,
       "rank": 5,
       "passed": 4,
       "qualified": true,
@@ -163,19 +160,19 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 2,
-      "bigUpCount": 11
+      "bigUpCount": 12
     },
     {
       "code": "BK1152",
       "name": "高带宽内存",
       "kind": "Concept board",
-      "price": 2426.58,
-      "pct": 7.1,
-      "amount": 76189656812.0,
-      "turnover": 6.49,
+      "price": 2441.77,
+      "pct": 7.77,
+      "amount": 83855588600.0,
+      "turnover": 7.09,
       "open": 2259.07,
       "preClose": 2265.7,
-      "mainNet": 3363000576.0,
+      "mainNet": 3463628032.0,
       "rank": 6,
       "passed": 4,
       "qualified": true,
@@ -189,19 +186,19 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 1,
-      "bigUpCount": 22
+      "bigUpCount": 23
     },
     {
       "code": "BK1617",
       "name": "黄金",
       "kind": "Industry board",
-      "price": 6182.9,
-      "pct": 6.92,
-      "amount": 16482503856.0,
-      "turnover": 3.48,
+      "price": 6224.76,
+      "pct": 7.64,
+      "amount": 18466979119.0,
+      "turnover": 3.9,
       "open": 5859.33,
       "preClose": 5782.9,
-      "mainNet": 1577891248.0,
+      "mainNet": 1746799200.0,
       "rank": 7,
       "passed": 4,
       "qualified": true,
@@ -215,19 +212,19 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 1,
-      "bigUpCount": 8
+      "bigUpCount": 9
     },
     {
-      "code": "BK1462",
-      "name": "玻纤制造",
+      "code": "BK1332",
+      "name": "电子化学品Ⅲ",
       "kind": "Industry board",
-      "price": 15156.72,
-      "pct": 6.72,
-      "amount": 25193467064.0,
-      "turnover": 7.19,
-      "open": 14082.36,
-      "preClose": 14202.82,
-      "mainNet": 1509524992.0,
+      "price": 3064.84,
+      "pct": 7.3,
+      "amount": 45334311048.0,
+      "turnover": 7.99,
+      "open": 2847.21,
+      "preClose": 2856.45,
+      "mainNet": 2254899200.0,
       "rank": 8,
       "passed": 4,
       "qualified": true,
@@ -241,19 +238,19 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 2,
-      "bigUpCount": 5
+      "bigUpCount": 31
     },
     {
-      "code": "BK1332",
-      "name": "电子化学品Ⅲ",
+      "code": "BK1039",
+      "name": "电子化学品Ⅱ",
       "kind": "Industry board",
-      "price": 3046.26,
-      "pct": 6.64,
-      "amount": 41245403213.0,
-      "turnover": 7.26,
+      "price": 3064.84,
+      "pct": 7.3,
+      "amount": 45334311048.0,
+      "turnover": 7.99,
       "open": 2847.21,
       "preClose": 2856.45,
-      "mainNet": 2248893440.0,
+      "mainNet": 2254899200.0,
       "rank": 9,
       "passed": 4,
       "qualified": true,
@@ -267,19 +264,19 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 2,
-      "bigUpCount": 24
+      "bigUpCount": 31
     },
     {
-      "code": "BK1039",
-      "name": "电子化学品Ⅱ",
+      "code": "BK1462",
+      "name": "玻纤制造",
       "kind": "Industry board",
-      "price": 3046.26,
-      "pct": 6.64,
-      "amount": 41245403213.0,
-      "turnover": 7.26,
-      "open": 2847.21,
-      "preClose": 2856.45,
-      "mainNet": 2248893440.0,
+      "price": 15231.21,
+      "pct": 7.24,
+      "amount": 28279332072.0,
+      "turnover": 8.07,
+      "open": 14082.36,
+      "preClose": 14202.82,
+      "mainNet": 1481828096.0,
       "rank": 10,
       "passed": 4,
       "qualified": true,
@@ -293,19 +290,19 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 2,
-      "bigUpCount": 25
+      "bigUpCount": 6
     },
     {
       "code": "BK1616",
       "name": "白银",
       "kind": "Industry board",
-      "price": 4667.38,
-      "pct": 7.93,
-      "amount": 5639306596.0,
-      "turnover": 5.74,
+      "price": 4697.94,
+      "pct": 8.63,
+      "amount": 6244300207.0,
+      "turnover": 6.52,
       "open": 4393.53,
       "preClose": 4324.64,
-      "mainNet": 665354240.0,
+      "mainNet": 711010560.0,
       "rank": 2,
       "passed": 2,
       "qualified": false,
@@ -320,16 +317,16 @@
       "bigUpCount": 3
     },
     {
-      "code": "BK0890",
-      "name": "MLCC",
+      "code": "BK0935",
+      "name": "中芯概念",
       "kind": "Concept board",
-      "price": 4914.32,
-      "pct": 6.3,
-      "amount": 66778642924.0,
-      "turnover": 7.55,
-      "open": 4562.82,
-      "preClose": 4623.27,
-      "mainNet": 4194496768.0,
+      "price": 2561.89,
+      "pct": 6.82,
+      "amount": 161973256142.0,
+      "turnover": 4.63,
+      "open": 2396.89,
+      "preClose": 2398.4,
+      "mainNet": 6859427584.0,
       "rank": 11,
       "passed": 2,
       "qualified": false,
@@ -341,16 +338,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK0935",
-      "name": "中芯概念",
+      "code": "BK0890",
+      "name": "MLCC",
       "kind": "Concept board",
-      "price": 2546.81,
-      "pct": 6.19,
-      "amount": 145892153049.0,
-      "turnover": 4.16,
-      "open": 2396.89,
-      "preClose": 2398.4,
-      "mainNet": 6568484864.0,
+      "price": 4934.9,
+      "pct": 6.74,
+      "amount": 73955102350.0,
+      "turnover": 8.4,
+      "open": 4562.82,
+      "preClose": 4623.27,
+      "mainNet": 4157464320.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -362,881 +359,7 @@
       "bigUpCount": 0
     }
   ],
-  "recommendations": [
-    {
-      "rank": 1,
-      "code": "002716",
-      "name": "湖南白银",
-      "market": "SZ",
-      "price": 8.67,
-      "pct": 5.6,
-      "amount": 1160054681.7,
-      "turnover": 5.84,
-      "industry": "贵金属",
-      "confidence": 92.69,
-      "winRate": 92.69,
-      "strategyTag": "TAIL_MAIN",
-      "strategyId": "TAIL_T1_V31_EMPIRICAL",
-      "candidateStatus": "STRONG_CANDIDATE",
-      "finalScore": 92.69,
-      "t1EdgeScore": 92.69,
-      "expectedReturnPct": 5.25,
-      "riskPct": 1.78,
-      "signalType": "T3_TREND_BREAKOUT",
-      "overnightCrowdingScore": 5.0,
-      "executionToleranceScore": 96.55,
-      "simpleExecutionScore": 91.29,
-      "recoveryAfter0935Score": 95.0,
-      "initialPlan": "PLAN_T",
-      "nextDayPlan": {
-        "auctionWatchTime": "09:25-09:30",
-        "firstNodeTime": "09:30-09:35",
-        "firstSellRatio": [
-          0.2,
-          0.3
-        ],
-        "openingOverride": true,
-        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
-        "classifyTime": "09:35",
-        "weakAction": "SELL_ALL_REMAINDER_NOW",
-        "neutralTotalRemainder": 0.3,
-        "strongRemainder": [
-          0.5,
-          0.7
-        ],
-        "finalExitTime": "10:00",
-        "limitUpException": true
-      },
-      "board": {
-        "code": "BK0732",
-        "name": "贵金属",
-        "passed": 4,
-        "score": 81.85
-      },
-      "criteria": {
-        "board": [
-          "[SectorGate] Tail rank remains top-15 positive",
-          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-          "[SectorGate] Board amount expands at least 1.30x",
-          "[SectorGate] Leaders have follow-through support"
-        ],
-        "stock": [
-          "[TAIL_T1_V31_EMPIRICAL] Mid-trend tail setup",
-          "[StockGate] Amount ratio is controlled",
-          "[StockGate] MA5 is rising",
-          "[StockGate] Prior trend was established before today's surge",
-          "[StockGate] MA5 deviation stays below 15%",
-          "[StockGate] Mid-stage gain is not crowded",
-          "[StockGate] Breakout/reclaim structure remains valid",
-          "[StockGate] Main/super capital is not both negative",
-          "[StockGate] Turnover fits trend or strong-close type",
-          "[StockGate] Close position is at least 0.70",
-          "[StockGate] High-to-close pullback is at most 2.5%",
-          "[StockGate] Price holds VWAP",
-          "[StockGate] Deal amount supports next-morning exit",
-          "[TailGate] A valid v3.1 signal is present",
-          "[TailGate] Close holds above VWAP",
-          "[TailGate] Close position stays at least 0.70",
-          "[TailGate] Pullback from high is at most 2.5%",
-          "[TailGate] No distribution upper shadow",
-          "[TailGate] Capital or price spread confirms support",
-          "[TailGate] Fixed-node execution tolerance passes"
-        ]
-      },
-      "buyPlan": {
-        "type": "[TAIL_MAIN] T3 mid-trend breakout",
-        "timeWindow": "13:30 watch; 14:10-14:35 confirm; 14:35+ limit-up/reseal only",
-        "trigger": "Confirm above VWAP and the prior platform from 14:10-14:35; cancel on a late straight-line spike.",
-        "priceRange": [
-          8.57,
-          8.7
-        ],
-        "quality": 25,
-        "priority": 8,
-        "strategyTag": "TAIL_MAIN",
-        "signalType": "T3_TREND_BREAKOUT"
-      },
-      "sellPlan": {
-        "targetPrice": 9.02,
-        "targetTime": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00.",
-        "strategy": "v3.1: freeze the overnight target, confirm opening repair at 09:30-09:35, and exit non-limit-up remainder at 10:00.",
-        "takeProfit": 9.02,
-        "timeWindow": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00."
-      },
-      "stopPlan": {
-        "stopLoss": 8.42,
-        "rules": [
-          "09:25 auction only sets the opening bias; do not sell mechanically before the open",
-          "09:30-09:35 confirm follow-through: strong repair may override the overnight defensive plan",
-          "09:35 classify WEAK/NEUTRAL/STRONG; WEAK sells all remainder",
-          "10:00 sell every non-limit-up remainder; never widen the stop"
-        ]
-      },
-      "sourceLinks": [
-        {
-          "name": "Eastmoney quote",
-          "url": "https://quote.eastmoney.com/sz002716.html"
-        },
-        {
-          "name": "10jqka stock page",
-          "url": "https://stockpage.10jqka.com.cn/002716/"
-        },
-        {
-          "name": "Yicai news",
-          "url": "https://www.yicai.com/news/"
-        }
-      ],
-      "sparkline": []
-    },
-    {
-      "rank": 2,
-      "code": "000603",
-      "name": "盛达资源",
-      "market": "SZ",
-      "price": 29.15,
-      "pct": 10.0,
-      "amount": 1419032447.99,
-      "turnover": 7.62,
-      "industry": "贵金属",
-      "confidence": 92.57,
-      "winRate": 92.57,
-      "strategyTag": "TAIL_MAIN",
-      "strategyId": "TAIL_T1_V31_EMPIRICAL",
-      "candidateStatus": "STRONG_CANDIDATE",
-      "finalScore": 92.57,
-      "t1EdgeScore": 92.57,
-      "expectedReturnPct": 7.3,
-      "riskPct": 3.28,
-      "signalType": "T1_STABLE_LIMIT_UP",
-      "overnightCrowdingScore": 17.0,
-      "executionToleranceScore": 78.1,
-      "simpleExecutionScore": 87.96,
-      "recoveryAfter0935Score": 65.0,
-      "initialPlan": "PLAN_T",
-      "nextDayPlan": {
-        "auctionWatchTime": "09:25-09:30",
-        "firstNodeTime": "09:30-09:35",
-        "firstSellRatio": [
-          0.2,
-          0.3
-        ],
-        "openingOverride": true,
-        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
-        "classifyTime": "09:35",
-        "weakAction": "SELL_ALL_REMAINDER_NOW",
-        "neutralTotalRemainder": 0.3,
-        "strongRemainder": [
-          0.5,
-          0.7
-        ],
-        "finalExitTime": "10:00",
-        "limitUpException": true
-      },
-      "board": {
-        "code": "BK0732",
-        "name": "贵金属",
-        "passed": 4,
-        "score": 81.85
-      },
-      "criteria": {
-        "board": [
-          "[SectorGate] Tail rank remains top-15 positive",
-          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-          "[SectorGate] Board amount expands at least 1.30x",
-          "[SectorGate] Leaders have follow-through support"
-        ],
-        "stock": [
-          "[TAIL_T1_V31_EMPIRICAL] Mid-trend tail setup",
-          "[StockGate] Amount ratio is controlled",
-          "[StockGate] MA5 is rising",
-          "[StockGate] Prior trend was established before today's surge",
-          "[StockGate] MA5 deviation stays below 15%",
-          "[StockGate] Mid-stage gain is not crowded",
-          "[StockGate] Breakout/reclaim structure remains valid",
-          "[StockGate] Main/super capital is not both negative",
-          "[StockGate] Turnover fits trend or strong-close type",
-          "[StockGate] Close position is at least 0.70",
-          "[StockGate] High-to-close pullback is at most 2.5%",
-          "[StockGate] Price holds VWAP",
-          "[StockGate] Stock is in the board front 20%",
-          "[StockGate] Deal amount supports next-morning exit",
-          "[TailGate] A valid v3.1 signal is present",
-          "[TailGate] Close holds above VWAP",
-          "[TailGate] Close position stays at least 0.70",
-          "[TailGate] Pullback from high is at most 2.5%",
-          "[TailGate] No distribution upper shadow",
-          "[TailGate] Capital or price spread confirms support",
-          "[TailGate] Fixed-node execution tolerance passes"
-        ]
-      },
-      "buyPlan": {
-        "type": "[TAIL_MAIN] T1 stable limit-up",
-        "timeWindow": "13:30 watch; 14:10-14:35 confirm; 14:35+ limit-up/reseal only",
-        "trigger": "Only use a stable seal with sector synchronization; repeated opening or fading orders cancel the entry.",
-        "priceRange": [
-          28.63,
-          29.25
-        ],
-        "quality": 26,
-        "priority": 9,
-        "strategyTag": "TAIL_MAIN",
-        "signalType": "T1_STABLE_LIMIT_UP"
-      },
-      "sellPlan": {
-        "targetPrice": 30.72,
-        "targetTime": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00.",
-        "strategy": "v3.1: freeze the overnight target, confirm opening repair at 09:30-09:35, and exit non-limit-up remainder at 10:00.",
-        "takeProfit": 30.72,
-        "timeWindow": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00."
-      },
-      "stopPlan": {
-        "stopLoss": 27.72,
-        "rules": [
-          "09:25 auction only sets the opening bias; do not sell mechanically before the open",
-          "09:30-09:35 confirm follow-through: strong repair may override the overnight defensive plan",
-          "09:35 classify WEAK/NEUTRAL/STRONG; WEAK sells all remainder",
-          "10:00 sell every non-limit-up remainder; never widen the stop"
-        ]
-      },
-      "sourceLinks": [
-        {
-          "name": "Eastmoney quote",
-          "url": "https://quote.eastmoney.com/sz000603.html"
-        },
-        {
-          "name": "10jqka stock page",
-          "url": "https://stockpage.10jqka.com.cn/000603/"
-        },
-        {
-          "name": "Yicai news",
-          "url": "https://www.yicai.com/news/"
-        }
-      ],
-      "sparkline": []
-    },
-    {
-      "rank": 3,
-      "code": "001337",
-      "name": "四川黄金",
-      "market": "SZ",
-      "price": 43.27,
-      "pct": 9.99,
-      "amount": 835988443.16,
-      "turnover": 4.73,
-      "industry": "贵金属",
-      "confidence": 90.98,
-      "winRate": 90.98,
-      "strategyTag": "TAIL_MAIN",
-      "strategyId": "TAIL_T1_V31_EMPIRICAL",
-      "candidateStatus": "STRONG_CANDIDATE",
-      "finalScore": 90.98,
-      "t1EdgeScore": 90.98,
-      "expectedReturnPct": 7.39,
-      "riskPct": 1.87,
-      "signalType": "T1_STABLE_LIMIT_UP",
-      "overnightCrowdingScore": 17.0,
-      "executionToleranceScore": 82.05,
-      "simpleExecutionScore": 90.13,
-      "recoveryAfter0935Score": 75.0,
-      "initialPlan": "PLAN_T",
-      "nextDayPlan": {
-        "auctionWatchTime": "09:25-09:30",
-        "firstNodeTime": "09:30-09:35",
-        "firstSellRatio": [
-          0.2,
-          0.3
-        ],
-        "openingOverride": true,
-        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
-        "classifyTime": "09:35",
-        "weakAction": "SELL_ALL_REMAINDER_NOW",
-        "neutralTotalRemainder": 0.3,
-        "strongRemainder": [
-          0.5,
-          0.7
-        ],
-        "finalExitTime": "10:00",
-        "limitUpException": true
-      },
-      "board": {
-        "code": "BK0732",
-        "name": "贵金属",
-        "passed": 4,
-        "score": 81.85
-      },
-      "criteria": {
-        "board": [
-          "[SectorGate] Tail rank remains top-15 positive",
-          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-          "[SectorGate] Board amount expands at least 1.30x",
-          "[SectorGate] Leaders have follow-through support"
-        ],
-        "stock": [
-          "[TAIL_T1_V31_EMPIRICAL] Mid-trend tail setup",
-          "[StockGate] Amount ratio is controlled",
-          "[StockGate] MA5 is rising",
-          "[StockGate] Prior trend was established before today's surge",
-          "[StockGate] MA5 deviation stays below 15%",
-          "[StockGate] Mid-stage gain is not crowded",
-          "[StockGate] Breakout/reclaim structure remains valid",
-          "[StockGate] Main/super capital is not both negative",
-          "[StockGate] Turnover fits trend or strong-close type",
-          "[StockGate] Close position is at least 0.70",
-          "[StockGate] High-to-close pullback is at most 2.5%",
-          "[StockGate] Price holds VWAP",
-          "[StockGate] Deal amount supports next-morning exit",
-          "[TailGate] A valid v3.1 signal is present",
-          "[TailGate] Close holds above VWAP",
-          "[TailGate] Close position stays at least 0.70",
-          "[TailGate] Pullback from high is at most 2.5%",
-          "[TailGate] No distribution upper shadow",
-          "[TailGate] Capital or price spread confirms support",
-          "[TailGate] Fixed-node execution tolerance passes"
-        ]
-      },
-      "buyPlan": {
-        "type": "[TAIL_MAIN] T1 stable limit-up",
-        "timeWindow": "13:30 watch; 14:10-14:35 confirm; 14:35+ limit-up/reseal only",
-        "trigger": "Only use a stable seal with sector synchronization; repeated opening or fading orders cancel the entry.",
-        "priceRange": [
-          42.49,
-          43.42
-        ],
-        "quality": 26,
-        "priority": 9,
-        "strategyTag": "TAIL_MAIN",
-        "signalType": "T1_STABLE_LIMIT_UP"
-      },
-      "sellPlan": {
-        "targetPrice": 45.63,
-        "targetTime": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00.",
-        "strategy": "v3.1: freeze the overnight target, confirm opening repair at 09:30-09:35, and exit non-limit-up remainder at 10:00.",
-        "takeProfit": 45.63,
-        "timeWindow": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00."
-      },
-      "stopPlan": {
-        "stopLoss": 41.71,
-        "rules": [
-          "09:25 auction only sets the opening bias; do not sell mechanically before the open",
-          "09:30-09:35 confirm follow-through: strong repair may override the overnight defensive plan",
-          "09:35 classify WEAK/NEUTRAL/STRONG; WEAK sells all remainder",
-          "10:00 sell every non-limit-up remainder; never widen the stop"
-        ]
-      },
-      "sourceLinks": [
-        {
-          "name": "Eastmoney quote",
-          "url": "https://quote.eastmoney.com/sz001337.html"
-        },
-        {
-          "name": "10jqka stock page",
-          "url": "https://stockpage.10jqka.com.cn/001337/"
-        },
-        {
-          "name": "Yicai news",
-          "url": "https://www.yicai.com/news/"
-        }
-      ],
-      "sparkline": []
-    },
-    {
-      "rank": 4,
-      "code": "605589",
-      "name": "圣泉集团",
-      "market": "SH",
-      "price": 38.59,
-      "pct": 6.57,
-      "amount": 1829086316.0,
-      "turnover": 5.75,
-      "industry": "塑料",
-      "confidence": 90.88,
-      "winRate": 90.88,
-      "strategyTag": "TAIL_MAIN",
-      "strategyId": "TAIL_T1_V31_EMPIRICAL",
-      "candidateStatus": "STRONG_CANDIDATE",
-      "finalScore": 90.88,
-      "t1EdgeScore": 90.88,
-      "expectedReturnPct": 5.3,
-      "riskPct": 1.83,
-      "signalType": "T3_TREND_BREAKOUT",
-      "overnightCrowdingScore": 17.0,
-      "executionToleranceScore": 84.64,
-      "simpleExecutionScore": 84.89,
-      "recoveryAfter0935Score": 85.0,
-      "initialPlan": "PLAN_T",
-      "nextDayPlan": {
-        "auctionWatchTime": "09:25-09:30",
-        "firstNodeTime": "09:30-09:35",
-        "firstSellRatio": [
-          0.2,
-          0.3
-        ],
-        "openingOverride": true,
-        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
-        "classifyTime": "09:35",
-        "weakAction": "SELL_ALL_REMAINDER_NOW",
-        "neutralTotalRemainder": 0.3,
-        "strongRemainder": [
-          0.5,
-          0.7
-        ],
-        "finalExitTime": "10:00",
-        "limitUpException": true
-      },
-      "board": {
-        "code": "BK1152",
-        "name": "高带宽内存",
-        "passed": 4,
-        "score": 81.5
-      },
-      "criteria": {
-        "board": [
-          "[SectorGate] Tail rank remains top-15 positive",
-          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-          "[SectorGate] Board amount expands at least 1.30x",
-          "[SectorGate] Leaders have follow-through support"
-        ],
-        "stock": [
-          "[TAIL_T1_V31_EMPIRICAL] Mid-trend tail setup",
-          "[StockGate] Amount ratio is controlled",
-          "[StockGate] MA5 is rising",
-          "[StockGate] Prior trend was established before today's surge",
-          "[StockGate] MA5 deviation stays below 15%",
-          "[StockGate] Mid-stage gain is not crowded",
-          "[StockGate] Breakout/reclaim structure remains valid",
-          "[StockGate] Main/super capital is not both negative",
-          "[StockGate] Turnover fits trend or strong-close type",
-          "[StockGate] Close position is at least 0.70",
-          "[StockGate] High-to-close pullback is at most 2.5%",
-          "[StockGate] Price holds VWAP",
-          "[StockGate] Deal amount supports next-morning exit",
-          "[TailGate] A valid v3.1 signal is present",
-          "[TailGate] Close holds above VWAP",
-          "[TailGate] Close position stays at least 0.70",
-          "[TailGate] Pullback from high is at most 2.5%",
-          "[TailGate] No distribution upper shadow",
-          "[TailGate] Capital or price spread confirms support",
-          "[TailGate] Fixed-node execution tolerance passes"
-        ]
-      },
-      "buyPlan": {
-        "type": "[TAIL_MAIN] T3 mid-trend breakout",
-        "timeWindow": "13:30 watch; 14:10-14:35 confirm; 14:35+ limit-up/reseal only",
-        "trigger": "Confirm above VWAP and the prior platform from 14:10-14:35; cancel on a late straight-line spike.",
-        "priceRange": [
-          37.9,
-          38.73
-        ],
-        "quality": 25,
-        "priority": 8,
-        "strategyTag": "TAIL_MAIN",
-        "signalType": "T3_TREND_BREAKOUT"
-      },
-      "sellPlan": {
-        "targetPrice": 39.91,
-        "targetTime": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00.",
-        "strategy": "v3.1: freeze the overnight target, confirm opening repair at 09:30-09:35, and exit non-limit-up remainder at 10:00.",
-        "takeProfit": 39.91,
-        "timeWindow": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00."
-      },
-      "stopPlan": {
-        "stopLoss": 37.22,
-        "rules": [
-          "09:25 auction only sets the opening bias; do not sell mechanically before the open",
-          "09:30-09:35 confirm follow-through: strong repair may override the overnight defensive plan",
-          "09:35 classify WEAK/NEUTRAL/STRONG; WEAK sells all remainder",
-          "10:00 sell every non-limit-up remainder; never widen the stop"
-        ]
-      },
-      "sourceLinks": [
-        {
-          "name": "Eastmoney quote",
-          "url": "https://quote.eastmoney.com/sh605589.html"
-        },
-        {
-          "name": "10jqka stock page",
-          "url": "https://stockpage.10jqka.com.cn/605589/"
-        },
-        {
-          "name": "Yicai news",
-          "url": "https://www.yicai.com/news/"
-        }
-      ],
-      "sparkline": []
-    },
-    {
-      "rank": 5,
-      "code": "002378",
-      "name": "章源钨业",
-      "market": "SZ",
-      "price": 24.94,
-      "pct": 6.4,
-      "amount": 1420165324.77,
-      "turnover": 4.83,
-      "industry": "小金属",
-      "confidence": 90.36,
-      "winRate": 90.36,
-      "strategyTag": "TAIL_MAIN",
-      "strategyId": "TAIL_T1_V31_EMPIRICAL",
-      "candidateStatus": "STRONG_CANDIDATE",
-      "finalScore": 90.36,
-      "t1EdgeScore": 90.36,
-      "expectedReturnPct": 4.72,
-      "riskPct": 1.82,
-      "signalType": "T3_TREND_BREAKOUT",
-      "overnightCrowdingScore": 29.0,
-      "executionToleranceScore": 84.39,
-      "simpleExecutionScore": 82.18,
-      "recoveryAfter0935Score": 85.0,
-      "initialPlan": "PLAN_T",
-      "nextDayPlan": {
-        "auctionWatchTime": "09:25-09:30",
-        "firstNodeTime": "09:30-09:35",
-        "firstSellRatio": [
-          0.2,
-          0.3
-        ],
-        "openingOverride": true,
-        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
-        "classifyTime": "09:35",
-        "weakAction": "SELL_ALL_REMAINDER_NOW",
-        "neutralTotalRemainder": 0.3,
-        "strongRemainder": [
-          0.5,
-          0.7
-        ],
-        "finalExitTime": "10:00",
-        "limitUpException": true
-      },
-      "board": {
-        "code": "BK1625",
-        "name": "钨",
-        "passed": 4,
-        "score": 83.25
-      },
-      "criteria": {
-        "board": [
-          "[SectorGate] Tail rank remains top-15 positive",
-          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-          "[SectorGate] Board amount expands at least 1.30x",
-          "[SectorGate] Leaders have follow-through support"
-        ],
-        "stock": [
-          "[TAIL_T1_V31_EMPIRICAL] Mid-trend tail setup",
-          "[StockGate] Amount ratio is controlled",
-          "[StockGate] MA5 is rising",
-          "[StockGate] Prior trend was established before today's surge",
-          "[StockGate] MA5 deviation stays below 15%",
-          "[StockGate] Mid-stage gain is not crowded",
-          "[StockGate] Breakout/reclaim structure remains valid",
-          "[StockGate] Main/super capital is not both negative",
-          "[StockGate] Turnover fits trend or strong-close type",
-          "[StockGate] Close position is at least 0.70",
-          "[StockGate] High-to-close pullback is at most 2.5%",
-          "[StockGate] Price holds VWAP",
-          "[StockGate] Deal amount supports next-morning exit",
-          "[TailGate] A valid v3.1 signal is present",
-          "[TailGate] Close holds above VWAP",
-          "[TailGate] Close position stays at least 0.70",
-          "[TailGate] Pullback from high is at most 2.5%",
-          "[TailGate] No distribution upper shadow",
-          "[TailGate] Capital or price spread confirms support",
-          "[TailGate] Fixed-node execution tolerance passes"
-        ]
-      },
-      "buyPlan": {
-        "type": "[TAIL_MAIN] T3 mid-trend breakout",
-        "timeWindow": "13:30 watch; 14:10-14:35 confirm; 14:35+ limit-up/reseal only",
-        "trigger": "Confirm above VWAP and the prior platform from 14:10-14:35; cancel on a late straight-line spike.",
-        "priceRange": [
-          24.59,
-          25.03
-        ],
-        "quality": 25,
-        "priority": 8,
-        "strategyTag": "TAIL_MAIN",
-        "signalType": "T3_TREND_BREAKOUT"
-      },
-      "sellPlan": {
-        "targetPrice": 25.75,
-        "targetTime": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00.",
-        "strategy": "v3.1: freeze the overnight target, confirm opening repair at 09:30-09:35, and exit non-limit-up remainder at 10:00.",
-        "takeProfit": 25.75,
-        "timeWindow": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00."
-      },
-      "stopPlan": {
-        "stopLoss": 24.15,
-        "rules": [
-          "09:25 auction only sets the opening bias; do not sell mechanically before the open",
-          "09:30-09:35 confirm follow-through: strong repair may override the overnight defensive plan",
-          "09:35 classify WEAK/NEUTRAL/STRONG; WEAK sells all remainder",
-          "10:00 sell every non-limit-up remainder; never widen the stop"
-        ]
-      },
-      "sourceLinks": [
-        {
-          "name": "Eastmoney quote",
-          "url": "https://quote.eastmoney.com/sz002378.html"
-        },
-        {
-          "name": "10jqka stock page",
-          "url": "https://stockpage.10jqka.com.cn/002378/"
-        },
-        {
-          "name": "Yicai news",
-          "url": "https://www.yicai.com/news/"
-        }
-      ],
-      "sparkline": []
-    },
-    {
-      "rank": 6,
-      "code": "002842",
-      "name": "翔鹭钨业",
-      "market": "SZ",
-      "price": 34.56,
-      "pct": 9.99,
-      "amount": 1334607984.52,
-      "turnover": 15.0,
-      "industry": "小金属",
-      "confidence": 90.14,
-      "winRate": 90.14,
-      "strategyTag": "TAIL_MAIN",
-      "strategyId": "TAIL_T1_V31_EMPIRICAL",
-      "candidateStatus": "STRONG_CANDIDATE",
-      "finalScore": 90.14,
-      "t1EdgeScore": 90.14,
-      "expectedReturnPct": 7.9,
-      "riskPct": 3.22,
-      "signalType": "T1_STABLE_LIMIT_UP",
-      "overnightCrowdingScore": 17.0,
-      "executionToleranceScore": 70.94,
-      "simpleExecutionScore": 84.02,
-      "recoveryAfter0935Score": 65.0,
-      "initialPlan": "PLAN_T",
-      "nextDayPlan": {
-        "auctionWatchTime": "09:25-09:30",
-        "firstNodeTime": "09:30-09:35",
-        "firstSellRatio": [
-          0.2,
-          0.3
-        ],
-        "openingOverride": true,
-        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
-        "classifyTime": "09:35",
-        "weakAction": "SELL_ALL_REMAINDER_NOW",
-        "neutralTotalRemainder": 0.3,
-        "strongRemainder": [
-          0.5,
-          0.7
-        ],
-        "finalExitTime": "10:00",
-        "limitUpException": true
-      },
-      "board": {
-        "code": "BK1625",
-        "name": "钨",
-        "passed": 4,
-        "score": 83.25
-      },
-      "criteria": {
-        "board": [
-          "[SectorGate] Tail rank remains top-15 positive",
-          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-          "[SectorGate] Board amount expands at least 1.30x",
-          "[SectorGate] Leaders have follow-through support"
-        ],
-        "stock": [
-          "[TAIL_T1_V31_EMPIRICAL] Mid-trend tail setup",
-          "[StockGate] Amount ratio is controlled",
-          "[StockGate] MA5 is rising",
-          "[StockGate] Prior trend was established before today's surge",
-          "[StockGate] MA5 deviation stays below 15%",
-          "[StockGate] Mid-stage gain is not crowded",
-          "[StockGate] Breakout/reclaim structure remains valid",
-          "[StockGate] Main/super capital is not both negative",
-          "[StockGate] Turnover fits trend or strong-close type",
-          "[StockGate] Close position is at least 0.70",
-          "[StockGate] High-to-close pullback is at most 2.5%",
-          "[StockGate] Price holds VWAP",
-          "[StockGate] Deal amount supports next-morning exit",
-          "[TailGate] A valid v3.1 signal is present",
-          "[TailGate] Close holds above VWAP",
-          "[TailGate] Close position stays at least 0.70",
-          "[TailGate] Pullback from high is at most 2.5%",
-          "[TailGate] No distribution upper shadow",
-          "[TailGate] Capital or price spread confirms support",
-          "[TailGate] Fixed-node execution tolerance passes"
-        ]
-      },
-      "buyPlan": {
-        "type": "[TAIL_MAIN] T1 stable limit-up",
-        "timeWindow": "13:30 watch; 14:10-14:35 confirm; 14:35+ limit-up/reseal only",
-        "trigger": "Only use a stable seal with sector synchronization; repeated opening or fading orders cancel the entry.",
-        "priceRange": [
-          33.94,
-          34.65
-        ],
-        "quality": 26,
-        "priority": 9,
-        "strategyTag": "TAIL_MAIN",
-        "signalType": "T1_STABLE_LIMIT_UP"
-      },
-      "sellPlan": {
-        "targetPrice": 36.62,
-        "targetTime": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00.",
-        "strategy": "v3.1: freeze the overnight target, confirm opening repair at 09:30-09:35, and exit non-limit-up remainder at 10:00.",
-        "takeProfit": 36.62,
-        "timeWindow": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00."
-      },
-      "stopPlan": {
-        "stopLoss": 32.88,
-        "rules": [
-          "09:25 auction only sets the opening bias; do not sell mechanically before the open",
-          "09:30-09:35 confirm follow-through: strong repair may override the overnight defensive plan",
-          "09:35 classify WEAK/NEUTRAL/STRONG; WEAK sells all remainder",
-          "10:00 sell every non-limit-up remainder; never widen the stop"
-        ]
-      },
-      "sourceLinks": [
-        {
-          "name": "Eastmoney quote",
-          "url": "https://quote.eastmoney.com/sz002842.html"
-        },
-        {
-          "name": "10jqka stock page",
-          "url": "https://stockpage.10jqka.com.cn/002842/"
-        },
-        {
-          "name": "Yicai news",
-          "url": "https://www.yicai.com/news/"
-        }
-      ],
-      "sparkline": []
-    },
-    {
-      "rank": 7,
-      "code": "603005",
-      "name": "晶方科技",
-      "market": "SH",
-      "price": 31.29,
-      "pct": 2.72,
-      "amount": 1498524570.0,
-      "turnover": 7.37,
-      "industry": "半导体",
-      "confidence": 83.16,
-      "winRate": 83.16,
-      "strategyTag": "TAIL_MAIN",
-      "strategyId": "TAIL_T1_V31_EMPIRICAL",
-      "candidateStatus": "NORMAL_CANDIDATE",
-      "finalScore": 83.16,
-      "t1EdgeScore": 83.16,
-      "expectedReturnPct": 2.0,
-      "riskPct": 1.84,
-      "signalType": "T5_FIRST_PULLBACK",
-      "overnightCrowdingScore": 5.0,
-      "executionToleranceScore": 92.22,
-      "simpleExecutionScore": 83.93,
-      "recoveryAfter0935Score": 70.0,
-      "initialPlan": "PLAN_S",
-      "nextDayPlan": {
-        "auctionWatchTime": "09:25-09:30",
-        "firstNodeTime": "09:30-09:35",
-        "firstSellRatio": [
-          0.4,
-          0.5
-        ],
-        "openingOverride": true,
-        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
-        "classifyTime": "09:35",
-        "weakAction": "SELL_ALL_REMAINDER_NOW",
-        "neutralTotalRemainder": 0.2,
-        "strongRemainder": [
-          0.5,
-          0.6
-        ],
-        "finalExitTime": "10:00",
-        "limitUpException": true
-      },
-      "board": {
-        "code": "BK1152",
-        "name": "高带宽内存",
-        "passed": 4,
-        "score": 81.5
-      },
-      "criteria": {
-        "board": [
-          "[SectorGate] Tail rank remains top-15 positive",
-          "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-          "[SectorGate] Board amount expands at least 1.30x",
-          "[SectorGate] Leaders have follow-through support"
-        ],
-        "stock": [
-          "[TAIL_T1_V31_EMPIRICAL] Mid-trend tail setup",
-          "[StockGate] Amount ratio is controlled",
-          "[StockGate] MA5 is rising",
-          "[StockGate] Prior trend was established before today's surge",
-          "[StockGate] MA5 deviation stays below 15%",
-          "[StockGate] Mid-stage gain is not crowded",
-          "[StockGate] Breakout/reclaim structure remains valid",
-          "[StockGate] Turnover fits trend or strong-close type",
-          "[StockGate] High-to-close pullback is at most 2.5%",
-          "[StockGate] Price holds VWAP",
-          "[StockGate] Deal amount supports next-morning exit",
-          "[TailGate] A valid v3.1 signal is present",
-          "[TailGate] Close holds above VWAP",
-          "[TailGate] Pullback from high is at most 2.5%",
-          "[TailGate] No distribution upper shadow",
-          "[TailGate] Capital or price spread confirms support",
-          "[TailGate] Fixed-node execution tolerance passes"
-        ]
-      },
-      "buyPlan": {
-        "type": "[TAIL_MAIN] T5 first pullback reclaim",
-        "timeWindow": "13:30 watch; 14:10-14:35 confirm; 14:35+ limit-up/reseal only",
-        "trigger": "Only the first shrinking-volume pullback is valid; repeated VWAP breaks or lost structure cancel it.",
-        "priceRange": [
-          30.98,
-          31.4
-        ],
-        "quality": 21,
-        "priority": 6,
-        "strategyTag": "TAIL_MAIN",
-        "signalType": "T5_FIRST_PULLBACK"
-      },
-      "sellPlan": {
-        "targetPrice": 31.6,
-        "targetTime": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00.",
-        "strategy": "v3.1: freeze the overnight target, confirm opening repair at 09:30-09:35, and exit non-limit-up remainder at 10:00.",
-        "takeProfit": 31.6,
-        "timeWindow": "Next day 09:25 auction watch; 09:30-09:35 opening confirmation; exit non-limit-up remainder at 10:00."
-      },
-      "stopPlan": {
-        "stopLoss": 30.42,
-        "rules": [
-          "09:25 auction only sets the opening bias; do not sell mechanically before the open",
-          "09:30-09:35 confirm follow-through: strong repair may override the overnight defensive plan",
-          "09:35 classify WEAK/NEUTRAL/STRONG; WEAK sells all remainder",
-          "10:00 sell every non-limit-up remainder; never widen the stop"
-        ]
-      },
-      "sourceLinks": [
-        {
-          "name": "Eastmoney quote",
-          "url": "https://quote.eastmoney.com/sh603005.html"
-        },
-        {
-          "name": "10jqka stock page",
-          "url": "https://stockpage.10jqka.com.cn/603005/"
-        },
-        {
-          "name": "Yicai news",
-          "url": "https://www.yicai.com/news/"
-        }
-      ],
-      "sparkline": []
-    }
-  ],
+  "recommendations": [],
   "news": [
     {
       "source": "Yicai",
@@ -1246,32 +369,38 @@
     },
     {
       "source": "Yicai",
-      "title": "“易中天”市值跌超1000亿元，美国禁令或扰乱光模块供应生态国内光模块厂商与海外客户的深度绑定，成为相关禁令消息扰动股市的背景。  1小时前",
+      "title": "连板股追踪丨A股今日共105只个股涨停 这只教育股8连板氢能板块德龙汇能收获4连板。一图速览今日连板股&gt;&gt;  24分钟前",
+      "url": "https://www.yicai.com/news/103306493.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "收盘｜沪指涨1.47% 存储芯片概念涨幅居前全市场超3700只个股上涨。  50分钟前",
+      "url": "https://www.yicai.com/news/103306430.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "“易中天”市值跌超1000亿元，美国禁令或扰乱光模块供应生态国内光模块厂商与海外客户的深度绑定，成为相关禁令消息扰动股市的背景。  2小时前",
       "url": "https://www.yicai.com/news/103306149.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "重建信用：当前最紧迫的“软基建”让市场真正感受到一个可预期、可信赖的未来，信心自会逐步回归，内需自会渐次回暖。  2小时前",
+      "title": "重建信用：当前最紧迫的“软基建”让市场真正感受到一个可预期、可信赖的未来，信心自会逐步回归，内需自会渐次回暖。  3小时前",
       "url": "https://www.yicai.com/news/103306058.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "A股四大指数集体低开，CPO概念股大幅回调稀土永磁、智能驾驶、黄金逆势走强。市场逾2400股下跌。  4小时前",
+      "title": "A股四大指数集体低开，CPO概念股大幅回调稀土永磁、智能驾驶、黄金逆势走强。市场逾2400股下跌。  6小时前",
       "url": "https://www.yicai.com/news/103305607.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "盘前必读丨日韩股市高开SK海力士涨超6%；联创光电及实控人被证监会立案机构认为，市场震荡为主，趋势行情还需确认。  6小时前",
+      "title": "盘前必读丨日韩股市高开SK海力士涨超6%；联创光电及实控人被证监会立案机构认为，市场震荡为主，趋势行情还需确认。  7小时前",
       "url": "https://www.yicai.com/news/103305479.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "AMD收入展望不及最高预期，盘后跌超9%第二季度营收、净利润超市场预期，但第三季度营收展望不及最高的市场预期。  7小时前",
-      "url": "https://www.yicai.com/news/103305422.html",
       "time": ""
     }
   ]
