@@ -5,6 +5,7 @@ import base64
 import csv
 import gzip
 import hashlib
+import itertools
 import json
 import math
 import re
@@ -27,6 +28,7 @@ EXPORT_JSON_PATH = LEARNING_DIR / "exports" / "latest.json"
 EXPORT_CSV_PATH = LEARNING_DIR / "exports" / "trades.csv"
 IMAGE_SUFFIXES = {".jpg", ".jpeg", ".png", ".webp"}
 TRADE_EXPORT_PREFIX = "BIG-A-GO-trades-"
+SYNC_B64_ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_"
 ASSET_TYPES = {
     "买入盘": "buy",
     "卖出盘": "sell",
@@ -120,8 +122,40 @@ def read_trade_export(path: Path) -> dict[str, Any] | None:
     return payload if isinstance(payload, dict) and isinstance(payload.get("trades"), list) else None
 
 
+def sync_code_candidates(sync_code: str) -> list[str]:
+    value = re.sub(r"\\(?=[_-])", "", (sync_code or "").strip())
+    star_count = value.count("*")
+    if not star_count:
+        return [value]
+    if star_count > 2:
+        raise ValueError("sync code contains too many invalid characters")
+    candidates = [value.replace("*", "_")]
+    for replacements in itertools.product((*SYNC_B64_ALPHABET, ""), repeat=star_count):
+        iterator = iter(replacements)
+        candidate = "".join(next(iterator) if char == "*" else char for char in value)
+        if candidate not in candidates:
+            candidates.append(candidate)
+    return candidates
+
+
 def decode_sync_code(sync_code: str) -> dict[str, Any]:
-    value = (sync_code or "").strip()
+    last_error: Exception | None = None
+    for value in sync_code_candidates(sync_code):
+        try:
+            return decode_sync_code_candidate(value)
+        except (
+            ValueError,
+            UnicodeDecodeError,
+            json.JSONDecodeError,
+            base64.binascii.Error,
+            OSError,
+            zlib.error,
+        ) as exc:
+            last_error = exc
+    raise ValueError("sync code could not be restored to a valid trade export") from last_error
+
+
+def decode_sync_code_candidate(value: str) -> dict[str, Any]:
     match = re.search(r"BAGS3[BG]\.[A-Za-z0-9_-]+", value)
     if match:
         token = match.group(0)
@@ -438,6 +472,7 @@ def sync_trade_exports(trade_exports: list[dict[str, Any]]) -> dict[str, int]:
                 "stockState": review_snapshot.get("stockState"),
                 "initialPlan": review_snapshot.get("initialPlan"),
                 "scores": review_snapshot.get("scores") or {},
+                "pricePlan": review_snapshot.get("pricePlan") or {},
             }
             sample["missingEvidence"] = [
                 item for item in sample.get("missingEvidence", []) if item != "night_review"
@@ -449,12 +484,25 @@ def sync_trade_exports(trade_exports: list[dict[str, Any]]) -> dict[str, int]:
             "boardPassed": board_snapshot.get("passed"),
             "boardScore": board_snapshot.get("score"),
         }
+        sample["selectionEvidence"] = {
+            "strategyId": plan_snapshot.get("strategyId"),
+            "candidateStatus": plan_snapshot.get("candidateStatus"),
+            "finalScore": as_number(plan_snapshot.get("finalScore")),
+            "signalType": plan_snapshot.get("signalType"),
+            "overnightCrowdingScore": as_number(plan_snapshot.get("overnightCrowdingScore")),
+            "executionToleranceScore": as_number(plan_snapshot.get("executionToleranceScore")),
+            "simpleExecutionScore": as_number(plan_snapshot.get("simpleExecutionScore")),
+            "recoveryAfter0935Score": as_number(plan_snapshot.get("recoveryAfter0935Score")),
+            "initialPlan": plan_snapshot.get("initialPlan"),
+        }
+        sample["executionPlanEvidence"] = plan_snapshot.get("nextDayPlan") or {}
         sample["webTrade"] = {
             "tradeId": trade.get("id"),
             "status": trade.get("status"),
             "plannedSellDate": trade.get("plannedSellTradingDate"),
             "actualSellDate": trade.get("sellTradingDate"),
             "resultMarkedAt": trade.get("resultMarkedAt"),
+            "soldAt": trade.get("soldAt"),
             "entryStrategy": entry_strategy,
             "buyPlanType": buy_plan_type,
             "buyDayLimitOutcome": buy_day_limit_outcome,
