@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-05T16:48:15.050119+08:00",
+    "generatedAt": "2026-08-05T17:05:49.051304+08:00",
     "tradingDate": "2026-08-05",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 43.61
+    "runtimeSeconds": 36.46
   },
   "market": {
     "recommendationCount": 0,
@@ -369,7 +369,7 @@
     },
     {
       "source": "Yicai",
-      "title": "特朗普政府已退还1000亿美元关税，都给谁了？美国议员抱怨称，这些资金往往流回了大企业手中，很少能回到那些最终承担了关税成本的消费者或小企业手里。  15分钟前",
+      "title": "特朗普政府已退还1000亿美元关税，都给谁了？美国议员抱怨称，这些资金往往流回了大企业手中，很少能回到那些最终承担了关税成本的消费者或小企业手里。  33分钟前",
       "url": "https://www.yicai.com/news/103306568.html",
       "time": ""
     },
