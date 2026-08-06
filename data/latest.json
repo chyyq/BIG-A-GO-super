@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-06T16:08:24.217113+08:00",
+    "generatedAt": "2026-08-06T16:49:40.600447+08:00",
     "tradingDate": "2026-08-06",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 45.24
+    "runtimeSeconds": 44.03
   },
   "market": {
     "recommendationCount": 0,
@@ -91,7 +91,7 @@
       "price": 46533.99,
       "pct": 5.93,
       "amount": 60258919180.0,
-      "turnover": 12.04,
+      "turnover": 11.98,
       "open": 45270.4,
       "preClose": 43927.73,
       "mainNet": 2830630144.0,
@@ -117,7 +117,7 @@
       "price": 26197.11,
       "pct": 5.6,
       "amount": 56029651715.0,
-      "turnover": 10.51,
+      "turnover": 11.45,
       "open": 25372.67,
       "preClose": 24808.31,
       "mainNet": 2844173056.0,
@@ -323,7 +323,7 @@
       "price": 12772.41,
       "pct": 4.73,
       "amount": 7971524544.0,
-      "turnover": 44.48,
+      "turnover": 16.87,
       "open": 12817.61,
       "preClose": 12196.12,
       "mainNet": 147574304.0,
@@ -369,43 +369,43 @@
     },
     {
       "source": "Yicai",
-      "title": "中国重回韩国第一大出口市场，AI红利下韩国今年出口有望新高分析认为，中国市场对韩国出口的重要性依旧不可替代。  27分钟前",
+      "title": "中国重回韩国第一大出口市场，AI红利下韩国今年出口有望新高分析认为，中国市场对韩国出口的重要性依旧不可替代。  1小时前",
       "url": "https://www.yicai.com/news/103307992.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "连板股追踪丨A股今日共83只个股涨停 宝鼎科技3连板一图速览今日连板股&gt;&gt;  51分钟前",
+      "title": "连板股追踪丨A股今日共83只个股涨停 宝鼎科技3连板一图速览今日连板股&gt;&gt;  1小时前",
       "url": "https://www.yicai.com/news/103307971.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "收盘｜上证指数涨0.57% 煤炭股走强全市场超2700只个股上涨。  56分钟前",
+      "title": "收盘｜上证指数涨0.57% 煤炭股走强全市场超2700只个股上涨。  1小时前",
       "url": "https://www.yicai.com/news/103307959.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "韩股、恒科齐跌，“跷跷板”效应逐步弱化｜市场观察科技股业绩将会决定市场大方向。  59分钟前",
+      "title": "韩股、恒科齐跌，“跷跷板”效应逐步弱化｜市场观察科技股业绩将会决定市场大方向。  1小时前",
       "url": "https://www.yicai.com/news/103307931.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "SpaceX市值一夜蒸发1.52万亿元，AI支出激增引发市场担忧SpaceX未来两个季度的资本支出可能仍将维持与第二季度相近的水平。  4小时前",
+      "title": "SpaceX市值一夜蒸发1.52万亿元，AI支出激增引发市场担忧SpaceX未来两个季度的资本支出可能仍将维持与第二季度相近的水平。  5小时前",
       "url": "https://www.yicai.com/news/103307571.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "事关万亿市场，地方密集开展政府采购专项整治严打差别歧视条款、乱收费、虚假材料中标、围标串标等现象  5小时前",
+      "title": "事关万亿市场，地方密集开展政府采购专项整治严打差别歧视条款、乱收费、虚假材料中标、围标串标等现象  6小时前",
       "url": "https://www.yicai.com/news/103307362.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "A股四大指数集体低开，贵金属板块大幅高开盘面上，半导体、AI算力等板块指数跌幅居前。  6小时前",
+      "title": "A股四大指数集体低开，贵金属板块大幅高开盘面上，半导体、AI算力等板块指数跌幅居前。  7小时前",
       "url": "https://www.yicai.com/news/103307305.html",
       "time": ""
     }
