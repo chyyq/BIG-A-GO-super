@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-06T12:34:03.524024+08:00",
+    "generatedAt": "2026-08-06T12:42:31.941817+08:00",
     "tradingDate": "2026-08-06",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -32,13 +32,16 @@
         "note": "Optional news source OK"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 109.86
+    "errors": [
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response"
+    ],
+    "runtimeSeconds": 93.34
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 5,
+    "qualifiedBoardCount": 4,
     "monitor": {
       "emotionScore": 100,
       "marketGateScore": 5,
@@ -85,39 +88,13 @@
       "bigUpCount": 3
     },
     {
-      "code": "BK1051",
-      "name": "昨日连板_含一字",
-      "kind": "Concept board",
-      "price": 46187.69,
-      "pct": 5.14,
-      "amount": 46992313757.0,
-      "turnover": 9.09,
-      "open": 45270.4,
-      "preClose": 43927.73,
-      "mainNet": 2495098368.0,
-      "rank": 2,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.9,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 11.08,
-      "limitUpCount": 10,
-      "bigUpCount": 15
-    },
-    {
       "code": "BK1645",
       "name": "昨日打二板以上表现",
       "kind": "Concept board",
       "price": 12781.4,
       "pct": 4.8,
       "amount": 6570725475.0,
-      "turnover": 36.42,
+      "turnover": 13.81,
       "open": 12817.61,
       "preClose": 12196.12,
       "mainNet": 219737456.0,
@@ -143,7 +120,7 @@
       "price": 25971.97,
       "pct": 4.69,
       "amount": 43636802826.0,
-      "turnover": 8.16,
+      "turnover": 8.89,
       "open": 25372.67,
       "preClose": 24808.31,
       "mainNet": 2497707008.0,
@@ -214,31 +191,6 @@
       "bigUpCount": 1
     },
     {
-      "code": "BK1493",
-      "name": "动力煤",
-      "kind": "Industry board",
-      "price": 2377.17,
-      "pct": 3.44,
-      "amount": 6771589252.0,
-      "turnover": 0.85,
-      "open": 2300.78,
-      "preClose": 2298.12,
-      "mainNet": 256706704.0,
-      "rank": 7,
-      "passed": 3,
-      "qualified": false,
-      "score": 64.75,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 2,
-      "bigUpCount": 4
-    },
-    {
       "code": "BK0732",
       "name": "贵金属",
       "kind": "Industry board",
@@ -262,6 +214,30 @@
       "amountRatio": 2.22,
       "limitUpCount": 1,
       "bigUpCount": 1
+    },
+    {
+      "code": "BK1051",
+      "name": "昨日连板_含一字",
+      "kind": "Concept board",
+      "price": 46187.69,
+      "pct": 5.14,
+      "amount": 46992313757.0,
+      "turnover": 9.04,
+      "open": 45270.4,
+      "preClose": 43927.73,
+      "mainNet": 2495098368.0,
+      "rank": 2,
+      "passed": 2,
+      "qualified": false,
+      "score": 50.1,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": 11.08,
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1518",
@@ -315,7 +291,7 @@
       "price": 124663.71,
       "pct": 3.15,
       "amount": 125549142893.0,
-      "turnover": 9.05,
+      "turnover": 7.69,
       "open": 123220.82,
       "preClose": 120850.9,
       "mainNet": 3872122368.0,
@@ -351,56 +327,79 @@
       "amountRatio": null,
       "limitUpCount": 1,
       "bigUpCount": 1
+    },
+    {
+      "code": "BK1493",
+      "name": "动力煤",
+      "kind": "Industry board",
+      "price": 2377.17,
+      "pct": 3.44,
+      "amount": 6771589252.0,
+      "turnover": 0.85,
+      "open": 2300.78,
+      "preClose": 2298.12,
+      "mainNet": 256706704.0,
+      "rank": 7,
+      "passed": 1,
+      "qualified": false,
+      "score": 31.95,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
     }
   ],
   "recommendations": [],
   "news": [
     {
+      "source": "Eastmoney News",
+      "title": "沪指涨1.47% 科创50指数大涨4.78% 半导体板块爆发",
+      "url": "https://finance.eastmoney.com/a/202608053832529810.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信建投：CXO板块Beta稳中向好 AI制药大有可为",
+      "url": "https://finance.eastmoney.com/a/202608063833044771.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "招商证券：进入8月 风格选择推荐布局成长超跌反弹",
+      "url": "https://finance.eastmoney.com/a/202608063832990661.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "读懂再提“稳定房地产市场”的背后逻辑",
+      "url": "https://finance.eastmoney.com/a/202608063832945446.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股三大指数震荡 煤炭开采、贵金属领涨 CPO概念活跃",
+      "url": "https://finance.eastmoney.com/a/202608063833689720.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "time": ""
+    },
+    {
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "SpaceX市值一夜蒸发1.52万亿元，AI支出激增引发市场担忧SpaceX未来两个季度的资本支出可能仍将维持与第二季度相近的水平。  1小时前",
-      "url": "https://www.yicai.com/news/103307571.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "事关万亿市场，地方密集开展政府采购专项整治严打差别歧视条款、乱收费、虚假材料中标、围标串标等现象  2小时前",
-      "url": "https://www.yicai.com/news/103307362.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "A股四大指数集体低开，贵金属板块大幅高开盘面上，半导体、AI算力等板块指数跌幅居前。  2小时前",
-      "url": "https://www.yicai.com/news/103307305.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "盘前必读丨宇树科技IPO发行价今日确定；道指续创新高机构认为，市场有望逐步重回年内高盈利主线，8月高盈利高估值风格有望占优。  4小时前",
-      "url": "https://www.yicai.com/news/103307129.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "“小非农”降至半年新低，就业市场是否将搅动美联储加息前景世界杯因素退潮。  5小时前",
-      "url": "https://www.yicai.com/news/103307099.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "光伏电价“安全垫”快速撤退，市场化倒逼收益重构提高项目自发自用比例、提前配置储能、提升电力交易能力，或是破局关键路径。  昨天 21:38",
-      "url": "https://www.yicai.com/news/103306960.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "统一开放交通运输市场加快建设：整治低价竞争、规范政府补贴《实施方案》为纵深推进全国统一大市场建设提供有力交通运输服务保障。  昨天 21:38",
-      "url": "https://www.yicai.com/news/103306959.html",
       "time": ""
     }
   ]
