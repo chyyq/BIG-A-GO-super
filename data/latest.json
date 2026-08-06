@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-06T12:42:31.941817+08:00",
+    "generatedAt": "2026-08-06T12:45:17.194748+08:00",
     "tradingDate": "2026-08-06",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -32,16 +32,13 @@
         "note": "Optional news source OK"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 93.34
+    "errors": [],
+    "runtimeSeconds": 39.38
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 4,
+    "qualifiedBoardCount": 5,
     "monitor": {
       "emotionScore": 100,
       "marketGateScore": 5,
@@ -86,6 +83,32 @@
       "amountRatio": 2.68,
       "limitUpCount": 0,
       "bigUpCount": 3
+    },
+    {
+      "code": "BK1051",
+      "name": "昨日连板_含一字",
+      "kind": "Concept board",
+      "price": 46187.69,
+      "pct": 5.14,
+      "amount": 46992313757.0,
+      "turnover": 9.04,
+      "open": 45270.4,
+      "preClose": 43927.73,
+      "mainNet": 2495098368.0,
+      "rank": 2,
+      "passed": 4,
+      "qualified": true,
+      "score": 82.9,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Board amount expands at least 1.30x",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": 11.08,
+      "limitUpCount": 10,
+      "bigUpCount": 15
     },
     {
       "code": "BK1645",
@@ -191,6 +214,31 @@
       "bigUpCount": 1
     },
     {
+      "code": "BK1493",
+      "name": "动力煤",
+      "kind": "Industry board",
+      "price": 2377.17,
+      "pct": 3.44,
+      "amount": 6771589252.0,
+      "turnover": 0.85,
+      "open": 2300.78,
+      "preClose": 2298.12,
+      "mainNet": 256706704.0,
+      "rank": 7,
+      "passed": 3,
+      "qualified": false,
+      "score": 64.75,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 2,
+      "bigUpCount": 4
+    },
+    {
       "code": "BK0732",
       "name": "贵金属",
       "kind": "Industry board",
@@ -214,30 +262,6 @@
       "amountRatio": 2.22,
       "limitUpCount": 1,
       "bigUpCount": 1
-    },
-    {
-      "code": "BK1051",
-      "name": "昨日连板_含一字",
-      "kind": "Concept board",
-      "price": 46187.69,
-      "pct": 5.14,
-      "amount": 46992313757.0,
-      "turnover": 9.04,
-      "open": 45270.4,
-      "preClose": 43927.73,
-      "mainNet": 2495098368.0,
-      "rank": 2,
-      "passed": 2,
-      "qualified": false,
-      "score": 50.1,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
-      ],
-      "continuous": false,
-      "amountRatio": 11.08,
-      "limitUpCount": 0,
-      "bigUpCount": 0
     },
     {
       "code": "BK1518",
@@ -327,29 +351,6 @@
       "amountRatio": null,
       "limitUpCount": 1,
       "bigUpCount": 1
-    },
-    {
-      "code": "BK1493",
-      "name": "动力煤",
-      "kind": "Industry board",
-      "price": 2377.17,
-      "pct": 3.44,
-      "amount": 6771589252.0,
-      "turnover": 0.85,
-      "open": 2300.78,
-      "preClose": 2298.12,
-      "mainNet": 256706704.0,
-      "rank": 7,
-      "passed": 1,
-      "qualified": false,
-      "score": 31.95,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
     }
   ],
   "recommendations": [],
