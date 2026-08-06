@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-06T17:30:54.662276+08:00",
+    "generatedAt": "2026-08-06T22:20:07.946788+08:00",
     "tradingDate": "2026-08-06",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,42 +10,53 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK0437%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 196.72
+    "runtimeSeconds": 69.36
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 6,
+    "qualifiedBoardCount": 7,
     "monitor": {
-      "emotionScore": 74,
+      "emotionScore": 100,
       "marketGateScore": 5,
       "marketGatePassed": true,
       "hardVeto": false,
       "riskLevel": "NORMAL",
-      "limitUpCount": null,
-      "limitDownCount": null,
-      "brokenBoardRate": null,
-      "note": "Market monitor fell back to board strength."
+      "limitUpCount": 76,
+      "limitDownCount": 8,
+      "bigDownCount": 15,
+      "limitTouchCount": 78,
+      "brokenBoardCount": 2,
+      "brokenBoardRate": 0.026,
+      "breadthSampleSize": 200,
+      "breadthMethod": "top-100 plus bottom-100 movers",
+      "topBoardPct": 6.85,
+      "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
     }
   },
   "boards": [
@@ -74,32 +85,6 @@
       "amountRatio": 1.77,
       "limitUpCount": 0,
       "bigUpCount": 3
-    },
-    {
-      "code": "BK1051",
-      "name": "昨日连板_含一字",
-      "kind": "Concept board",
-      "price": 46533.99,
-      "pct": 5.93,
-      "amount": 60258919180.0,
-      "turnover": 11.98,
-      "open": 45270.4,
-      "preClose": 43927.73,
-      "mainNet": 2830630144.0,
-      "rank": 3,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.55,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 7.11,
-      "limitUpCount": 12,
-      "bigUpCount": 19
     },
     {
       "code": "BK0816",
@@ -180,6 +165,32 @@
       "bigUpCount": 8
     },
     {
+      "code": "BK0949",
+      "name": "氦气概念",
+      "kind": "Concept board",
+      "price": 3054.51,
+      "pct": 4.98,
+      "amount": 19068659607.0,
+      "turnover": 5.26,
+      "open": 2880.25,
+      "preClose": 2909.53,
+      "mainNet": 1205736208.0,
+      "rank": 8,
+      "passed": 4,
+      "qualified": true,
+      "score": 80.8,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Board amount expands at least 1.30x",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 2,
+      "bigUpCount": 7
+    },
+    {
       "code": "BK0437",
       "name": "煤炭",
       "kind": "Industry board",
@@ -204,6 +215,32 @@
       "amountRatio": null,
       "limitUpCount": 7,
       "bigUpCount": 13
+    },
+    {
+      "code": "BK1424",
+      "name": "氟化工",
+      "kind": "Industry board",
+      "price": 14487.33,
+      "pct": 4.75,
+      "amount": 16795576183.0,
+      "turnover": 5.81,
+      "open": 13752.51,
+      "preClose": 13830.05,
+      "mainNet": 1071130304.0,
+      "rank": 10,
+      "passed": 4,
+      "qualified": true,
+      "score": 80.1,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Board amount expands at least 1.30x",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 2,
+      "bigUpCount": 4
     },
     {
       "code": "BK1518",
@@ -256,50 +293,26 @@
       "bigUpCount": 4
     },
     {
-      "code": "BK0949",
-      "name": "氦气概念",
+      "code": "BK1051",
+      "name": "昨日连板_含一字",
       "kind": "Concept board",
-      "price": 3054.51,
-      "pct": 4.98,
-      "amount": 19068659607.0,
-      "turnover": 5.26,
-      "open": 2880.25,
-      "preClose": 2909.53,
-      "mainNet": 1205736208.0,
-      "rank": 8,
+      "price": 46533.99,
+      "pct": 5.93,
+      "amount": 60258919180.0,
+      "turnover": 11.98,
+      "open": 45270.4,
+      "preClose": 43927.73,
+      "mainNet": 2830630144.0,
+      "rank": 3,
       "passed": 2,
       "qualified": false,
-      "score": 48.0,
+      "score": 49.75,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1424",
-      "name": "氟化工",
-      "kind": "Industry board",
-      "price": 14487.33,
-      "pct": 4.75,
-      "amount": 16795576183.0,
-      "turnover": 5.81,
-      "open": 13752.51,
-      "preClose": 13830.05,
-      "mainNet": 1071130304.0,
-      "rank": 10,
-      "passed": 2,
-      "qualified": false,
-      "score": 47.3,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
-      ],
-      "continuous": false,
-      "amountRatio": null,
+      "amountRatio": 7.11,
       "limitUpCount": 0,
       "bigUpCount": 0
     },
@@ -349,45 +362,33 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数涨跌不一 煤炭与电子化学品板块大涨",
-      "url": "https://finance.eastmoney.com/a/202608063833821989.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "私募研判A股：科技调整为拥挤交易出清 市场进入多元均衡新阶段",
-      "url": "https://finance.eastmoney.com/a/202608063833750489.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信建投：CXO板块Beta稳中向好 AI制药大有可为",
-      "url": "https://finance.eastmoney.com/a/202608063833044771.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "招商证券：进入8月 风格选择推荐布局成长超跌反弹",
-      "url": "https://finance.eastmoney.com/a/202608063832990661.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "title": "今年前7个月地方债发行约6.6万亿，花哪儿了|财税益侃约六成的地方债资金用于“借新还旧”。  2小时前",
+      "url": "https://www.yicai.com/news/103308365.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "品牌足金报价单日涨近60元/克，短期波动下黄金企业怎么看市场？金价又涨了，买还是不买？  2小时前",
+      "url": "https://www.yicai.com/news/103308339.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "独家｜香港保监局回应一财：中国居民境外投资收益申报、缴税要求一直存在市场不用过度解读或作出揣测。  3小时前",
+      "url": "https://www.yicai.com/news/103308288.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "11日大涨16%、530亿资金“扫货”，小微盘拐点来了？当科技股“高处不胜寒”，微盘股成资金“阻力最小方向”  3小时前",
+      "url": "https://www.yicai.com/news/103308266.html",
       "time": ""
     }
   ]
