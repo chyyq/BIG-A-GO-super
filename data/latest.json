@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-06T12:45:17.194748+08:00",
+    "generatedAt": "2026-08-06T12:47:47.506470+08:00",
     "tradingDate": "2026-08-06",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=5000&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
       },
       {
@@ -32,13 +32,22 @@
         "note": "Optional news source OK"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 39.38
+    "errors": [
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response"
+    ],
+    "runtimeSeconds": 157.7
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 5,
+    "qualifiedBoardCount": 3,
     "monitor": {
       "emotionScore": 100,
       "marketGateScore": 5,
@@ -46,12 +55,12 @@
       "hardVeto": false,
       "riskLevel": "NORMAL",
       "limitUpCount": 59,
-      "limitDownCount": 5,
-      "bigDownCount": 8,
-      "limitTouchCount": 68,
-      "brokenBoardCount": 9,
-      "brokenBoardRate": 0.132,
-      "breadthSampleSize": 200,
+      "limitDownCount": 0,
+      "bigDownCount": 0,
+      "limitTouchCount": 67,
+      "brokenBoardCount": 8,
+      "brokenBoardRate": 0.119,
+      "breadthSampleSize": 100,
       "breadthMethod": "top-100 plus bottom-100 movers",
       "topBoardPct": 5.26,
       "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
@@ -111,58 +120,6 @@
       "bigUpCount": 15
     },
     {
-      "code": "BK1645",
-      "name": "昨日打二板以上表现",
-      "kind": "Concept board",
-      "price": 12781.4,
-      "pct": 4.8,
-      "amount": 6570725475.0,
-      "turnover": 13.81,
-      "open": 12817.61,
-      "preClose": 12196.12,
-      "mainNet": 219737456.0,
-      "rank": 3,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.55,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 2.08,
-      "limitUpCount": 4,
-      "bigUpCount": 5
-    },
-    {
-      "code": "BK0816",
-      "name": "昨日连板",
-      "kind": "Concept board",
-      "price": 25971.97,
-      "pct": 4.69,
-      "amount": 43636802826.0,
-      "turnover": 8.89,
-      "open": 25372.67,
-      "preClose": 24808.31,
-      "mainNet": 2497707008.0,
-      "rank": 4,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.2,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 7,
-      "bigUpCount": 12
-    },
-    {
       "code": "BK1250",
       "name": "煤炭开采",
       "kind": "Industry board",
@@ -210,33 +167,8 @@
       ],
       "continuous": true,
       "amountRatio": 2.48,
-      "limitUpCount": 1,
-      "bigUpCount": 1
-    },
-    {
-      "code": "BK1493",
-      "name": "动力煤",
-      "kind": "Industry board",
-      "price": 2377.17,
-      "pct": 3.44,
-      "amount": 6771589252.0,
-      "turnover": 0.85,
-      "open": 2300.78,
-      "preClose": 2298.12,
-      "mainNet": 256706704.0,
-      "rank": 7,
-      "passed": 3,
-      "qualified": false,
-      "score": 64.75,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 2,
-      "bigUpCount": 4
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK0732",
@@ -260,32 +192,56 @@
       ],
       "continuous": true,
       "amountRatio": 2.22,
-      "limitUpCount": 1,
-      "bigUpCount": 1
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
-      "code": "BK1518",
-      "name": "种子",
-      "kind": "Industry board",
-      "price": 3688.8,
-      "pct": 3.35,
-      "amount": 1173767999.0,
-      "turnover": 2.93,
-      "open": 3570.66,
-      "preClose": 3569.37,
-      "mainNet": 55485215.0,
-      "rank": 9,
+      "code": "BK1645",
+      "name": "昨日打二板以上表现",
+      "kind": "Concept board",
+      "price": 12781.4,
+      "pct": 4.8,
+      "amount": 6570725475.0,
+      "turnover": 13.81,
+      "open": 12817.61,
+      "preClose": 12196.12,
+      "mainNet": 219737456.0,
+      "rank": 3,
       "passed": 2,
       "qualified": false,
-      "score": 47.65,
+      "score": 49.75,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": 2.08,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK0816",
+      "name": "昨日连板",
+      "kind": "Concept board",
+      "price": 25971.97,
+      "pct": 4.69,
+      "amount": 43636802826.0,
+      "turnover": 8.89,
+      "open": 25372.67,
+      "preClose": 24808.31,
+      "mainNet": 2497707008.0,
+      "rank": 4,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.4,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 3
+      "bigUpCount": 0
     },
     {
       "code": "BK1328",
@@ -349,8 +305,54 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1493",
+      "name": "动力煤",
+      "kind": "Industry board",
+      "price": 2377.17,
+      "pct": 3.44,
+      "amount": 6771589252.0,
+      "turnover": 0.85,
+      "open": 2300.78,
+      "preClose": 2298.12,
+      "mainNet": 256706704.0,
+      "rank": 7,
+      "passed": 1,
+      "qualified": false,
+      "score": 31.95,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1518",
+      "name": "种子",
+      "kind": "Industry board",
+      "price": 3688.8,
+      "pct": 3.35,
+      "amount": 1173767999.0,
+      "turnover": 2.93,
+      "open": 3570.66,
+      "preClose": 3569.37,
+      "mainNet": 55485215.0,
+      "rank": 9,
+      "passed": 1,
+      "qualified": false,
+      "score": 31.25,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
     }
   ],
   "recommendations": [],
