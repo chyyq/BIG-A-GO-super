@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-07T15:36:53.109669+08:00",
+    "generatedAt": "2026-08-07T15:41:23.244564+08:00",
     "tradingDate": "2026-08-07",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -32,13 +32,15 @@
         "note": "Optional news/reference source"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 35.06
+    "errors": [
+      "Eastmoney clist failed: Remote end closed connection without response"
+    ],
+    "runtimeSeconds": 85.27
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 7,
+    "qualifiedBoardCount": 6,
     "monitor": {
       "emotionScore": 98,
       "marketGateScore": 5,
@@ -85,46 +87,20 @@
       "bigUpCount": 29
     },
     {
-      "code": "BK0899",
-      "name": "CRO",
-      "kind": "Concept board",
-      "price": 2164.01,
-      "pct": 10.84,
-      "amount": 44802867019.0,
-      "turnover": 6.16,
-      "open": 1956.51,
-      "preClose": 1952.31,
-      "mainNet": 2823992576.0,
-      "rank": 2,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.9,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 1.43,
-      "limitUpCount": 9,
-      "bigUpCount": 34
-    },
-    {
       "code": "BK1340",
       "name": "印制电路板",
       "kind": "Industry board",
       "price": 11598.68,
       "pct": 8.31,
       "amount": 129459983821.0,
-      "turnover": 7.98,
+      "turnover": 7.97,
       "open": 10824.6,
       "preClose": 10708.89,
       "mainNet": 12263356928.0,
-      "rank": 3,
+      "rank": 2,
       "passed": 4,
       "qualified": true,
-      "score": 82.55,
+      "score": 82.9,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
@@ -147,10 +123,10 @@
       "open": 1315.24,
       "preClose": 1314.41,
       "mainNet": 2539578624.0,
-      "rank": 4,
+      "rank": 3,
       "passed": 4,
       "qualified": true,
-      "score": 82.2,
+      "score": 82.55,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
@@ -173,10 +149,10 @@
       "open": 7390.69,
       "preClose": 7405.05,
       "mainNet": 980473424.0,
-      "rank": 5,
+      "rank": 4,
       "passed": 4,
       "qualified": true,
-      "score": 81.85,
+      "score": 82.2,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
@@ -189,20 +165,20 @@
       "bigUpCount": 29
     },
     {
-      "code": "BK1063",
-      "name": "重组蛋白",
-      "kind": "Concept board",
-      "price": 1000.36,
-      "pct": 7.9,
-      "amount": 9270644427.0,
-      "turnover": 4.86,
-      "open": 923.08,
-      "preClose": 927.09,
-      "mainNet": 592276224.0,
-      "rank": 6,
+      "code": "BK1044",
+      "name": "生物制品",
+      "kind": "Industry board",
+      "price": 1005.22,
+      "pct": 6.56,
+      "amount": 21178218614.0,
+      "turnover": 2.55,
+      "open": 942.16,
+      "preClose": 943.37,
+      "mainNet": 1210737296.0,
+      "rank": 8,
       "passed": 4,
       "qualified": true,
-      "score": 81.5,
+      "score": 80.8,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
@@ -211,24 +187,24 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 3,
-      "bigUpCount": 14
+      "limitUpCount": 4,
+      "bigUpCount": 35
     },
     {
-      "code": "BK1146",
-      "name": "减肥药",
-      "kind": "Concept board",
-      "price": 1282.85,
-      "pct": 6.62,
-      "amount": 31332315062.0,
-      "turnover": 3.69,
-      "open": 1203.46,
-      "preClose": 1203.23,
-      "mainNet": 2250814576.0,
-      "rank": 10,
+      "code": "BK0459",
+      "name": "元件",
+      "kind": "Industry board",
+      "price": 56046.5,
+      "pct": 6.41,
+      "amount": 170087574779.0,
+      "turnover": 8.39,
+      "open": 53013.61,
+      "preClose": 52670.24,
+      "mainNet": 12431377920.0,
+      "rank": 9,
       "passed": 4,
       "qualified": true,
-      "score": 80.1,
+      "score": 80.45,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
@@ -236,9 +212,9 @@
         "[SectorGate] Leaders have follow-through support"
       ],
       "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 5,
-      "bigUpCount": 20
+      "amountRatio": 1.49,
+      "limitUpCount": 12,
+      "bigUpCount": 36
     },
     {
       "code": "BK1626",
@@ -251,10 +227,10 @@
       "open": 9456.02,
       "preClose": 9594.03,
       "mainNet": 1510695952.0,
-      "rank": 8,
+      "rank": 6,
       "passed": 3,
       "qualified": false,
-      "score": 64.4,
+      "score": 65.1,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x",
@@ -276,10 +252,10 @@
       "open": 4835.59,
       "preClose": 4841.87,
       "mainNet": 602748736.0,
-      "rank": 9,
+      "rank": 7,
       "passed": 3,
       "qualified": false,
-      "score": 64.05,
+      "score": 64.75,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x",
@@ -291,16 +267,16 @@
       "bigUpCount": 3
     },
     {
-      "code": "BK1044",
-      "name": "生物制品",
+      "code": "BK1462",
+      "name": "玻纤制造",
       "kind": "Industry board",
-      "price": 1005.22,
-      "pct": 6.56,
-      "amount": 21178218614.0,
-      "turnover": 2.55,
-      "open": 942.16,
-      "preClose": 943.37,
-      "mainNet": 1210737296.0,
+      "price": 16631.15,
+      "pct": 5.58,
+      "amount": 39047186909.0,
+      "turnover": 9.35,
+      "open": 15810.33,
+      "preClose": 15751.53,
+      "mainNet": 2950868224.0,
       "rank": 11,
       "passed": 2,
       "qualified": false,
@@ -312,16 +288,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK0459",
-      "name": "元件",
+      "code": "BK1594",
+      "name": "化学制剂",
       "kind": "Industry board",
-      "price": 56046.5,
-      "pct": 6.41,
-      "amount": 170087574779.0,
-      "turnover": 8.39,
-      "open": 53013.61,
-      "preClose": 52670.24,
-      "mainNet": 12431377920.0,
+      "price": 3899.23,
+      "pct": 4.47,
+      "amount": 53217816592.0,
+      "turnover": 3.93,
+      "open": 3726.25,
+      "preClose": 3732.41,
+      "mainNet": 3671322624.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -343,10 +319,10 @@
       "open": 1162.87,
       "preClose": 1072.61,
       "mainNet": 69372185.0,
-      "rank": 7,
+      "rank": 5,
       "passed": 1,
       "qualified": false,
-      "score": 31.95,
+      "score": 32.65,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -354,6 +330,29 @@
       "amountRatio": null,
       "limitUpCount": 0,
       "bigUpCount": 2
+    },
+    {
+      "code": "BK1622",
+      "name": "镍",
+      "kind": "Industry board",
+      "price": 5260.58,
+      "pct": 6.3,
+      "amount": 7037752910.0,
+      "turnover": 8.58,
+      "open": 5174.52,
+      "preClose": 4948.6,
+      "mainNet": 379360080.0,
+      "rank": 10,
+      "passed": 1,
+      "qualified": false,
+      "score": 30.9,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 1
     }
   ],
   "recommendations": [],
@@ -398,6 +397,12 @@
       "source": "Eastmoney News",
       "title": "高盛“唱多”+Rubin规模出货 PCB概念掀涨停潮！多只中报预增股获资金青睐(名单)",
       "url": "https://finance.eastmoney.com/a/202608073835005718.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
