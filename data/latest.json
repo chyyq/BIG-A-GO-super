@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-07T16:00:31.335398+08:00",
+    "generatedAt": "2026-08-07T21:10:59.482858+08:00",
     "tradingDate": "2026-08-07",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 30.61
+    "runtimeSeconds": 38.43
   },
   "market": {
     "recommendationCount": 0,
@@ -366,6 +366,18 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "A股三大指数涨幅均超过1% 稀土与创新药板块大涨",
+      "url": "https://finance.eastmoney.com/a/202608073835146843.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "高盛“唱多”+Rubin规模出货 PCB概念掀涨停潮！多只中报预增股获资金青睐(名单)",
+      "url": "https://finance.eastmoney.com/a/202608073835005718.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "中信建投：交运板块标的配置价值凸显",
       "url": "https://finance.eastmoney.com/a/202608073834491687.html",
       "time": ""
@@ -390,20 +402,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数涨幅均超过1% 稀土与创新药板块大涨",
-      "url": "https://finance.eastmoney.com/a/202608073835146843.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "高盛“唱多”+Rubin规模出货 PCB概念掀涨停潮！多只中报预增股获资金青睐(名单)",
-      "url": "https://finance.eastmoney.com/a/202608073835005718.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "title": "美国7月非农就业人数减少2.3万人 不及市场预期",
+      "url": "https://finance.eastmoney.com/a/202608073835393180.html",
       "time": ""
     }
   ]
