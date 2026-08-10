@@ -494,6 +494,10 @@ def sync_trade_exports(trade_exports: list[dict[str, Any]]) -> dict[str, int]:
             "simpleExecutionScore": as_number(plan_snapshot.get("simpleExecutionScore")),
             "recoveryAfter0935Score": as_number(plan_snapshot.get("recoveryAfter0935Score")),
             "initialPlan": plan_snapshot.get("initialPlan"),
+            "entryFeasibilityStatus": plan_snapshot.get("entryFeasibilityStatus"),
+            "entryFeasibilityScore": as_number(plan_snapshot.get("entryFeasibilityScore")),
+            "executionMode": plan_snapshot.get("executionMode"),
+            "actionable": plan_snapshot.get("actionable"),
         }
         sample["executionPlanEvidence"] = plan_snapshot.get("nextDayPlan") or {}
         sample["webTrade"] = {
@@ -549,6 +553,21 @@ def validate_sample(sample: dict[str, Any], asset_ids: set[str]) -> list[str]:
             issues.append(f"{sample_id}: invalid ISO date")
     if sample.get("outcome") not in {"take_profit", "stop_loss", "manual_exit", "unknown"}:
         issues.append(f"{sample_id}: invalid outcome")
+    prices = sample.get("prices") or {}
+    buy_price = as_number(prices.get("buy"))
+    actual_sell = as_number(prices.get("actualSell"))
+    if buy_price and actual_sell:
+        realized_return = ((actual_sell / buy_price) - 1) * 100
+        if sample.get("outcome") == "take_profit" and realized_return < 0:
+            issues.append(
+                f"{sample_id}: explicit take_profit conflicts with negative realized return "
+                f"({realized_return:.2f}%); label retained for user review"
+            )
+        if sample.get("outcome") == "stop_loss" and realized_return > 0:
+            issues.append(
+                f"{sample_id}: explicit stop_loss conflicts with positive realized return "
+                f"({realized_return:.2f}%); label retained for user review"
+            )
     missing_assets = [asset_id for asset_id in sample.get("sourceAssetIds", []) if asset_id not in asset_ids]
     if missing_assets:
         issues.append(f"{sample_id}: unknown source assets {', '.join(missing_assets)}")

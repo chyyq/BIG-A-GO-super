@@ -39,6 +39,7 @@ MAX_STOCK_CANDIDATES = 90
 MAX_TAIL_HISTORY_CANDIDATES = 36
 MAX_RECOMMENDATIONS = 10
 MAX_RECOMMENDATIONS_PER_INDUSTRY = 3
+MAX_QUEUE_ONLY_LIMIT_UP_RECOMMENDATIONS = 2
 ALLOW_GROWTH_BOARDS = False
 GROWTH_BOARD_PREFIXES = ("30", "68")
 STRATEGY_TAIL_MAIN = "TAIL_MAIN"
@@ -645,6 +646,8 @@ def build_recommendations(
             recommendations.append(item)
     recommendations.sort(
         key=lambda item: (
+            item.get("actionable") is not False,
+            item.get("entryFeasibilityScore") or 0,
             item.get("finalScore") or item.get("t1EdgeScore") or 0,
             item.get("expectedReturnPct") or 0,
             item.get("winRate") or item.get("confidence") or 0,
@@ -663,11 +666,30 @@ def build_recommendations(
                 and (item.get("riskPct") or 99) <= 4.2
             )
         ]
+    recommendations = prioritize_executable_recommendations(recommendations)
     recommendations = recommendations[:MAX_RECOMMENDATIONS]
 
     for index, item in enumerate(recommendations, start=1):
         item["rank"] = index
     return recommendations
+
+
+def prioritize_executable_recommendations(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    executable = [
+        item
+        for item in items
+        if not (
+            item.get("strategyTag") == STRATEGY_TAIL_MAIN
+            and item.get("executionMode") == "QUEUE_ONLY"
+        )
+    ]
+    queue_only = [
+        item
+        for item in items
+        if item.get("strategyTag") == STRATEGY_TAIL_MAIN
+        and item.get("executionMode") == "QUEUE_ONLY"
+    ]
+    return [*executable, *queue_only[:MAX_QUEUE_ONLY_LIMIT_UP_RECOMMENDATIONS]]
 
 
 def diversify_recommendations(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -739,6 +761,27 @@ def is_stable_limit_up_proxy(quote: dict[str, Any]) -> bool:
         and high_to_close_pullback_pct(quote) <= 0.35
         and intraday_position(quote) >= 0.96
     )
+
+
+def tail_entry_feasibility(quote: dict[str, Any]) -> dict[str, Any]:
+    if not is_limit_up(quote):
+        return {
+            "actionable": True,
+            "executionMode": "ACTIONABLE",
+            "entryFeasibilityStatus": "EXECUTABLE_AT_SNAPSHOT",
+            "entryFeasibilityScore": 100,
+        }
+
+    price = quote.get("price") or 0
+    low = quote.get("low") or price
+    open_price = quote.get("open") or price
+    one_price = bool(price and low >= price * 0.998 and open_price >= price * 0.998)
+    return {
+        "actionable": False,
+        "executionMode": "QUEUE_ONLY",
+        "entryFeasibilityStatus": "ONE_PRICE_LIMIT_UP" if one_price else "SEALED_LIMIT_UP",
+        "entryFeasibilityScore": 5 if one_price else 15,
+    }
 
 
 def trend_persistence_ok(metrics: dict[str, Any]) -> bool:
@@ -1033,6 +1076,7 @@ def evaluate_stock_snapshot(
     tolerance_score = estimate_execution_tolerance_score(quote)
     simple_execution_score = estimate_simple_execution_score(quote, tolerance_score)
     recovery_score = estimate_recovery_proxy_score(quote)
+    entry_feasibility = tail_entry_feasibility(quote)
     veto_reasons = tail_hard_veto_reasons(quote, board, now)
     if veto_reasons:
         return None
@@ -1136,6 +1180,7 @@ def evaluate_stock_snapshot(
         "confidence": final_score,
         "winRate": final_score,
         "strategyTag": STRATEGY_TAIL_MAIN,
+        **entry_feasibility,
         "strategyId": TAIL_STRATEGY_ID,
         "candidateStatus": candidate_status,
         "finalScore": final_score,
@@ -1697,6 +1742,8 @@ def pre_rank_candidate(
         - max(0, volume_ratio - 5.8) * 3
         - max(0, pullback - TAIL_PREFERRED_MAX_PULLBACK) * 5
     )
+    if is_limit_up(quote):
+        tail_score -= 18
     early_top_gain = 1 - min(abs(pct - 7.8) / 2.2, 1)
     near_limit_gain = 1 - min(abs(pct - 9.7) / 1.4, 1)
     top_gain = max(early_top_gain, near_limit_gain * 0.92)
