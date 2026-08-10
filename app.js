@@ -287,7 +287,10 @@ function renderRecommendationCard(item, index) {
   const targetTime = item.sellPlan?.targetTime ?? item.sellPlan?.timeWindow ?? "--";
   const stopLoss = item.stopPlan?.stopLoss ?? item.sellPlan?.stopLoss;
   const recorded = isOpenTradeRecorded(item.code);
-  const watchOnly = item.actionable === false || item.executionMode === "WATCH_ONLY";
+  const queueOnly = item.executionMode === "QUEUE_ONLY";
+  const watchOnly = item.actionable === false || item.executionMode === "WATCH_ONLY" || queueOnly;
+  const watchLabel = queueOnly ? "已封板，排队观察" : "早盘策略暂停实盘，仅观察";
+  const watchAction = queueOnly ? "封板中，暂不可买" : "暂停实盘，仅观察";
 
   return `
     <article class="recommendation-card">
@@ -295,7 +298,7 @@ function renderRecommendationCard(item, index) {
         <div class="rank-badge">#${rank}</div>
         <div>
           <h3 class="stock-name">${escapeHtml(item.name)} <span class="stock-code">${item.code}</span></h3>
-          ${watchOnly ? '<span class="tag warn">早盘策略暂停实盘，仅观察</span>' : ""}
+          ${watchOnly ? `<span class="tag warn">${watchLabel}</span>` : ""}
           <div class="stock-code">${escapeHtml(item.board?.name || "未分组")} · ${formatPct(item.pct)} · 换手 ${formatPct(item.turnover, false)}</div>
         </div>
         <span class="score-pill">策略分 ${Math.round(item.finalScore || item.winRate || item.confidence || 0)}</span>
@@ -334,8 +337,8 @@ function renderRecommendationCard(item, index) {
       </div>
       <div class="card-actions">
         <button class="ghost-button" type="button" data-action="buy" data-code="${item.code}" ${recorded || watchOnly ? "disabled" : ""}>
-          <i data-lucide="${recorded ? "check" : watchOnly ? "eye" : "square-pen"}"></i>
-          ${recorded ? "已记录" : watchOnly ? "暂停实盘，仅观察" : "一键记录买入"}
+          <i data-lucide="${recorded ? "check" : queueOnly ? "clock-3" : watchOnly ? "eye" : "square-pen"}"></i>
+          ${recorded ? "已记录" : watchOnly ? watchAction : "一键记录买入"}
         </button>
       </div>
     </article>
@@ -359,7 +362,7 @@ function renderRecommendationTable() {
           <td class="col-rank">#${item.rank || index + 1}</td>
           <td class="col-stock"><strong>${escapeHtml(item.name)}</strong><span>${item.code}</span></td>
           <td class="col-score">${Math.round(item.finalScore || item.winRate || item.confidence || 0)}</td>
-          <td class="col-plan">${escapeHtml(item.buyPlan?.type || "--")}${item.actionable === false ? '<span class="tag warn">仅观察</span>' : ""}<span>${escapeHtml(item.buyPlan?.timeWindow || "")}</span></td>
+          <td class="col-plan">${escapeHtml(item.buyPlan?.type || "--")}${item.actionable === false ? `<span class="tag warn">${item.executionMode === "QUEUE_ONLY" ? "排队观察" : "仅观察"}</span>` : ""}<span>${escapeHtml(item.buyPlan?.timeWindow || "")}</span></td>
           <td class="col-price">${formatPrice(targetPrice)}</td>
           <td class="col-time">${escapeHtml(targetTime)}</td>
           <td class="col-price">${formatPrice(stopLoss)}</td>
@@ -407,6 +410,10 @@ function recordRecommendationBuy(recommendation) {
       recoveryAfter0935Score: recommendation.recoveryAfter0935Score,
       initialPlan: recommendation.initialPlan,
       nextDayPlan: recommendation.nextDayPlan,
+      entryFeasibilityStatus: recommendation.entryFeasibilityStatus,
+      entryFeasibilityScore: recommendation.entryFeasibilityScore,
+      executionMode: recommendation.executionMode,
+      actionable: recommendation.actionable,
     },
     createdAt: existing?.createdAt || now.toISOString(),
     updatedAt: now.toISOString(),
