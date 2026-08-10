@@ -147,6 +147,22 @@ class TradeExportImportTests(unittest.TestCase):
             self.assertEqual(stats["averageRealizedReturnPct"], -5.0)
             self.assertEqual(model["averageRealizedReturnPct"], -5.0)
 
+    def test_explicit_outcome_conflict_is_reported_without_relabeling(self):
+        sample = {
+            "sampleId": "20260807-002317",
+            "stockCode": "002317",
+            "buyDate": "2026-08-07",
+            "sellDate": "2026-08-10",
+            "outcome": "take_profit",
+            "prices": {"buy": 28.42, "actualSell": 27.78},
+            "sourceAssetIds": [],
+        }
+
+        issues = learning_store.validate_sample(sample, set())
+
+        self.assertEqual(sample["outcome"], "take_profit")
+        self.assertTrue(any("negative realized return" in issue for issue in issues))
+
 
 if __name__ == "__main__":
     unittest.main()

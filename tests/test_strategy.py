@@ -76,6 +76,49 @@ class StrategyV31Tests(unittest.TestCase):
         self.assertEqual(item["strategyId"], "TAIL_T1_V31_EMPIRICAL")
         self.assertIn(item["candidateStatus"], {"STRONG_CANDIDATE", "NORMAL_CANDIDATE"})
         self.assertEqual(item["signalType"], "T3_TREND_BREAKOUT")
+        self.assertTrue(item["actionable"])
+        self.assertEqual(item["executionMode"], "ACTIONABLE")
+
+    def test_sealed_limit_up_is_queue_only_and_not_actionable(self):
+        quote = tail_quote(
+            price=11.0,
+            pct=10.0,
+            high=11.0,
+            low=10.55,
+            open=10.60,
+            avgPrice=10.82,
+            amplitude=4.5,
+        )
+        item = STRATEGY.evaluate_stock_snapshot(
+            quote,
+            strong_board(),
+            {STRATEGY.STRATEGY_TAIL_MAIN},
+            datetime(2026, 8, 10, 14, 20, tzinfo=STRATEGY.CN_TZ),
+            {"emotionScore": 82, "riskLevel": "NORMAL", "marketGatePassed": True},
+        )
+        self.assertIsNotNone(item)
+        self.assertEqual(item["signalType"], "T1_STABLE_LIMIT_UP")
+        self.assertFalse(item["actionable"])
+        self.assertEqual(item["executionMode"], "QUEUE_ONLY")
+        self.assertLess(item["entryFeasibilityScore"], 20)
+
+    def test_executable_tail_candidates_rank_before_and_cap_queue_only(self):
+        executable = [
+            {"code": "000001", "strategyTag": STRATEGY.STRATEGY_TAIL_MAIN, "executionMode": "ACTIONABLE"}
+        ]
+        queue_only = [
+            {
+                "code": f"60000{index}",
+                "strategyTag": STRATEGY.STRATEGY_TAIL_MAIN,
+                "executionMode": "QUEUE_ONLY",
+            }
+            for index in range(4)
+        ]
+
+        selected = STRATEGY.prioritize_executable_recommendations([*queue_only, *executable])
+
+        self.assertEqual(selected[0]["code"], "000001")
+        self.assertEqual(len(selected), 1 + STRATEGY.MAX_QUEUE_ONLY_LIMIT_UP_RECOMMENDATIONS)
 
     def test_high_crowding_fishtail_is_rejected(self):
         quote = tail_quote(amplitude=11.2, turnover=28.0)
