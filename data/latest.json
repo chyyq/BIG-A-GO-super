@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-10T16:17:11.190289+08:00",
+    "generatedAt": "2026-08-10T21:15:35.341245+08:00",
     "tradingDate": "2026-08-10",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 33.96
+    "errors": [
+      "Eastmoney clist failed: Remote end closed connection without response"
+    ],
+    "runtimeSeconds": 47.34
   },
   "market": {
     "recommendationCount": 0,
@@ -348,51 +350,39 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "高盛：中国AI板块不存在整体泡沫 三大细分领域最具投资价值",
+      "url": "https://finance.eastmoney.com/a/202608103836433055.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共103只个股涨停 这只铜箔概念股5连板创新药板块百花医药5连板。一图速览今日连板股&gt;&gt;  16分钟前",
-      "url": "https://www.yicai.com/news/103312015.html",
+      "source": "Eastmoney News",
+      "title": "A股三大指数涨跌不一 沪指五连阳 超4000只股上涨",
+      "url": "https://finance.eastmoney.com/a/202608103836533841.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜沪指涨0.67%，医疗服务板块活跃全市场超4000只个股上涨。  56分钟前",
-      "url": "https://www.yicai.com/news/103311935.html",
+      "source": "Eastmoney News",
+      "title": "十大券商策略：A股反弹窗口开启！行情会更“百花齐放”",
+      "url": "https://finance.eastmoney.com/a/202608093836000276.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "经销商人士证实：雪佛兰已暂停在华新车销售无法适应中国市场的合资品牌陆续退出。  1小时前",
-      "url": "https://www.yicai.com/news/103311914.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：持续推荐稀土产业链战略配置价值",
+      "url": "https://finance.eastmoney.com/a/202608103836057548.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "北上深住宅租金连涨五个月，毕业季租赁需求集中释放在毕业季租赁需求带动下，租房市场进入“传统旺季”。  4小时前",
-      "url": "https://www.yicai.com/news/103311590.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：7月非农意外转负 加息预期降温",
+      "url": "https://finance.eastmoney.com/a/202608103836054979.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股四大股指开盘涨跌不一，影视、医药板块涨幅居前盘面上，医药股延续涨势，影视院线、小金属、电子化学品板块涨幅居前。  6小时前",
-      "url": "https://www.yicai.com/news/103311300.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "盘前必读丨宇树科技今日打新；摩尔线程筹划发行H股赴港上市机构认为，市场超跌反弹进入攻坚期，科技与景气赛道分化演绎。  8小时前",
-      "url": "https://www.yicai.com/news/103311117.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "散户太“勇”了狂投杠杆ETF：韩股脆弱的狂欢后，谁是赢家？从目前的市场反应来看，韩国散户信心的恢复还需要时间。  昨天 21:26",
-      "url": "https://www.yicai.com/news/103311000.html",
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
