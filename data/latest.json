@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-10T15:58:36.779935+08:00",
+    "generatedAt": "2026-08-10T16:04:08.347965+08:00",
     "tradingDate": "2026-08-10",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -32,10 +32,8 @@
         "note": "Optional news/reference source"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 100.78
+    "errors": [],
+    "runtimeSeconds": 35.11
   },
   "market": {
     "recommendationCount": 0,
@@ -343,8 +341,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 2
     }
   ],
   "recommendations": [],
