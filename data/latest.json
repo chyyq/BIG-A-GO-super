@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-11T15:48:07.483710+08:00",
+    "generatedAt": "2026-08-11T15:57:39.155314+08:00",
     "tradingDate": "2026-08-11",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 30.31
+    "runtimeSeconds": 37.81
   },
   "market": {
     "recommendationCount": 0,
@@ -356,6 +356,12 @@
       "source": "Eastmoney News",
       "title": "追价抢货！AI需求驱动MLCC景气向好 多只潜力股获资金加注(名单)",
       "url": "https://finance.eastmoney.com/a/202608113837663964.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中国减肥药出海！高盛看多全球市场",
+      "url": "https://finance.eastmoney.com/a/202608113837715430.html",
       "time": ""
     },
     {
