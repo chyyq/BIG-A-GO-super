@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-11T15:21:43.860115+08:00",
+    "generatedAt": "2026-08-11T15:37:30.188916+08:00",
     "tradingDate": "2026-08-11",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 36.24
+    "runtimeSeconds": 31.82
   },
   "market": {
     "recommendationCount": 0,
@@ -64,8 +64,8 @@
       "kind": "Concept board",
       "price": 1047.05,
       "pct": 2.37,
-      "amount": 12140755787.0,
-      "turnover": 5.08,
+      "amount": 12173840787.0,
+      "turnover": 5.09,
       "open": 1016.49,
       "preClose": 1022.8,
       "mainNet": 9524096.0,
@@ -347,33 +347,45 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "A股又现“超级大肉签” 中一签最高赚超22万元",
+      "url": "https://finance.eastmoney.com/a/202608113837693756.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜沪指跌0.82% 有色板块领跌全市场超3700只个股下跌。  7分钟前",
-      "url": "https://www.yicai.com/news/103313438.html",
+      "source": "Eastmoney News",
+      "title": "追价抢货！AI需求驱动MLCC景气向好 多只潜力股获资金加注(名单)",
+      "url": "https://finance.eastmoney.com/a/202608113837663964.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "别再说商业航天“薛定谔”！情绪退潮后市场要为“真里程碑”定价商业航天是综合性工程板块，对企业自身的能力与实力有非常高的要求，其经营风险性也较高。  35分钟前",
-      "url": "https://www.yicai.com/news/103313372.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：硅基材料行业静待修复 下游高增领域受益",
+      "url": "https://finance.eastmoney.com/a/202608113837247534.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股四大股指集体低开，油气、贵金属、煤炭板块走高盘面上，油气、贵金属、煤炭板块走高。  5小时前",
-      "url": "https://www.yicai.com/news/103312913.html",
+      "source": "Eastmoney News",
+      "title": "中信建投证券：宇树IPO定价超出预期 有望带动本体厂商估值重塑",
+      "url": "https://finance.eastmoney.com/a/202608113837246720.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "盘前必读丨江波龙净利暴增715倍；美战略石油储备跌穿3亿桶关口机构认为，震荡反弹，反转还需产业叙事催化和增量资金助推。  7小时前",
-      "url": "https://www.yicai.com/news/103312758.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：算力突破电力边界 SST开启硅进铜退新周期",
+      "url": "https://finance.eastmoney.com/a/202608113837247389.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "天风证券：中长期来看 铜供需紧平衡格局仍有望延续",
+      "url": "https://finance.eastmoney.com/a/202608113837246977.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股三大指数涨跌不一 MLCC与CRO概念股走强",
+      "url": "https://finance.eastmoney.com/a/202608113837804943.html",
       "time": ""
     }
   ]
