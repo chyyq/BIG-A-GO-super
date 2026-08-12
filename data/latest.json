@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-12T16:01:18.880332+08:00",
+    "generatedAt": "2026-08-12T16:04:45.060735+08:00",
     "tradingDate": "2026-08-12",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 25.8
+    "runtimeSeconds": 32.9
   },
   "market": {
     "recommendationCount": 0,
@@ -348,51 +348,45 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "20%涨停！16亿封单抢筹 “追光”行情彻底燃爆！硬科技传来重大利好",
-      "url": "https://finance.eastmoney.com/a/202608123838995882.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "樊纲：房地产市场已出现较为快速的价格出清",
-      "url": "https://finance.eastmoney.com/a/202608123838966177.html",
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共97只个股涨停 百花医药7连板人形机器人板块秦安股份4连板。一图速览今日连板股&gt;&gt;  33分钟前",
+      "url": "https://www.yicai.com/news/103315231.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：存储产业保持高景气度后续关注LTA进展与股东回报",
-      "url": "https://finance.eastmoney.com/a/202608123838529495.html",
+      "source": "Yicai",
+      "title": "收盘｜沪指涨0.32% 房地产板块强势全市场超4100只个股上涨。  51分钟前",
+      "url": "https://www.yicai.com/news/103315186.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：字节跳动成立AI数据部门 版权数据价值重估",
-      "url": "https://finance.eastmoney.com/a/202608123838516913.html",
+      "source": "Yicai",
+      "title": "集采下的中药饮片行业困境：有企业“亏两千万”保市场优质优价如何兑现？  2小时前",
+      "url": "https://www.yicai.com/news/103314922.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "华西证券：金价有望企稳回升 关注黄金饰品板块修复机会",
-      "url": "https://finance.eastmoney.com/a/202608123838467535.html",
+      "source": "Yicai",
+      "title": "A股四大指数多数低开，N杰理上市首日高开超180%盘面上，CRO、工业金属、太空光伏、人形机器人、商业航天、6G概念股走弱。  6小时前",
+      "url": "https://www.yicai.com/news/103314456.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数收涨 创业板指涨1.49% 超4100只股飘红",
-      "url": "https://finance.eastmoney.com/a/202608123839129195.html",
+      "source": "Yicai",
+      "title": "巨震预警？趋势基金建立史诗级美债空头，美国CPI是否引爆市场规模超过4000亿美元的CTA基金押注美国物价风险持续。  7小时前",
+      "url": "https://www.yicai.com/news/103314341.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "全球市场今晚屏息以待：美国CPI还能带来“鸽派惊喜”吗？",
-      "url": "https://finance.eastmoney.com/a/202608123839135870.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "source": "Yicai",
+      "title": "盘前必读丨工业富联上半年净利激增96%；宇树科技中签号出炉机构认为，市场横盘整固，反弹窗口打开，建议投资者延续均衡布局。  7小时前",
+      "url": "https://www.yicai.com/news/103314322.html",
       "time": ""
     }
   ]
