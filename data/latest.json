@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-12T11:30:57.164012+08:00",
+    "generatedAt": "2026-08-12T11:37:25.909966+08:00",
     "tradingDate": "2026-08-12",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -287,7 +287,7 @@
         "[SectorGate] Leaders have follow-through support"
       ],
       "continuous": false,
-      "amountRatio": 1.13,
+      "amountRatio": 1.07,
       "limitUpCount": 1,
       "bigUpCount": 6
     },
