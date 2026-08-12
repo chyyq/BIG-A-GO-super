@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-12T16:04:45.060735+08:00",
+    "generatedAt": "2026-08-12T21:16:25.751031+08:00",
     "tradingDate": "2026-08-12",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 32.9
+    "runtimeSeconds": 39.53
   },
   "market": {
     "recommendationCount": 0,
@@ -355,38 +355,14 @@
     },
     {
       "source": "Yicai",
-      "title": "连板股追踪丨A股今日共97只个股涨停 百花医药7连板人形机器人板块秦安股份4连板。一图速览今日连板股&gt;&gt;  33分钟前",
-      "url": "https://www.yicai.com/news/103315231.html",
+      "title": "独生子女父母陆续步入高龄，大城市养老如何破题养老正从过去以家庭为主的“小家之事”，转变为政府、市场、社会与家庭多方共建的系统工程。  12分钟前",
+      "url": "https://www.yicai.com/news/103315770.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "收盘｜沪指涨0.32% 房地产板块强势全市场超4100只个股上涨。  51分钟前",
-      "url": "https://www.yicai.com/news/103315186.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "集采下的中药饮片行业困境：有企业“亏两千万”保市场优质优价如何兑现？  2小时前",
-      "url": "https://www.yicai.com/news/103314922.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "A股四大指数多数低开，N杰理上市首日高开超180%盘面上，CRO、工业金属、太空光伏、人形机器人、商业航天、6G概念股走弱。  6小时前",
-      "url": "https://www.yicai.com/news/103314456.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "巨震预警？趋势基金建立史诗级美债空头，美国CPI是否引爆市场规模超过4000亿美元的CTA基金押注美国物价风险持续。  7小时前",
-      "url": "https://www.yicai.com/news/103314341.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "盘前必读丨工业富联上半年净利激增96%；宇树科技中签号出炉机构认为，市场横盘整固，反弹窗口打开，建议投资者延续均衡布局。  7小时前",
-      "url": "https://www.yicai.com/news/103314322.html",
+      "title": "恒生科技指数启动扩容，资金或将被动减持互联网巨头？｜市场观察预计纳入更多人工智能硬件公司。  2小时前",
+      "url": "https://www.yicai.com/news/103315509.html",
       "time": ""
     }
   ]
