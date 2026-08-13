@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-13T11:42:40.661840+08:00",
+    "generatedAt": "2026-08-13T11:53:00.751608+08:00",
     "tradingDate": "2026-08-13",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 37.81
+    "runtimeSeconds": 29.88
   },
   "market": {
     "recommendationCount": 0,
@@ -65,7 +65,7 @@
       "price": 17329.53,
       "pct": 9.57,
       "amount": 5473192080.0,
-      "turnover": 12.88,
+      "turnover": 13.18,
       "open": 17048.9,
       "preClose": 15815.27,
       "mainNet": -265702224.0,
@@ -92,7 +92,7 @@
       "price": 31237.27,
       "pct": 4.82,
       "amount": 12382331815.0,
-      "turnover": 12.94,
+      "turnover": 20.06,
       "open": 30994.82,
       "preClose": 29799.78,
       "mainNet": -612443840.0,
@@ -145,7 +145,7 @@
       "price": 57172.18,
       "pct": 7.4,
       "amount": 13676458770.0,
-      "turnover": 11.36,
+      "turnover": 17.55,
       "open": 56901.49,
       "preClose": 53233.32,
       "mainNet": -544143856.0,
@@ -369,12 +369,6 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "20%涨停！16亿封单抢筹 “追光”行情彻底燃爆！硬科技传来重大利好",
-      "url": "https://finance.eastmoney.com/a/202608123838995882.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "A股三大指数收涨 创业板指涨1.49% 超4100只股飘红",
       "url": "https://finance.eastmoney.com/a/202608123839129195.html",
       "time": ""
@@ -401,6 +395,12 @@
       "source": "Eastmoney News",
       "title": "中金：电力设备行业国内外景气向上 板块具备长期投资价值",
       "url": "https://finance.eastmoney.com/a/202608133839699516.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "3分钟 20%涨停！上海重磅发布！股市“吹哨人”最新发声",
+      "url": "https://finance.eastmoney.com/a/202608133840263727.html",
       "time": ""
     },
     {
