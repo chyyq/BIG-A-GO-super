@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-14T16:02:41.419724+08:00",
+    "generatedAt": "2026-08-14T21:12:56.446348+08:00",
     "tradingDate": "2026-08-14",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 33.83
+    "runtimeSeconds": 31.07
   },
   "market": {
     "recommendationCount": 0,
@@ -169,7 +169,7 @@
       "price": 8902.26,
       "pct": 3.18,
       "amount": 246195921505.0,
-      "turnover": 4.51,
+      "turnover": 4.49,
       "open": 8707.84,
       "preClose": 8627.95,
       "mainNet": 11489735936.0,
@@ -354,8 +354,8 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "利好突至！A股芯片巨头业绩大超预期",
-      "url": "https://finance.eastmoney.com/a/202608133840596197.html",
+      "title": "创业板指涨超1% 稀土板块大涨 CPO概念股走强",
+      "url": "https://finance.eastmoney.com/a/202608143841691710.html",
       "time": ""
     },
     {
@@ -384,20 +384,20 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "创业板指涨超1% 稀土板块大涨 CPO概念股走强",
-      "url": "https://finance.eastmoney.com/a/202608143841691710.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "史无前例！封锁、加息 两大利空突袭！亚太市场变数陡增",
-      "url": "https://finance.eastmoney.com/a/202608143841692523.html",
+      "title": "两部门：决定在全国范围内推广跨国公司本外币跨境资金集中运营业务",
+      "url": "https://finance.eastmoney.com/a/202608143841795687.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
       "title": "东方财富证券开户",
       "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
