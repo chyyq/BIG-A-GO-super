@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-14T15:50:40.189657+08:00",
+    "generatedAt": "2026-08-14T15:56:39.381625+08:00",
     "tradingDate": "2026-08-14",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 35.89
+    "runtimeSeconds": 39.98
   },
   "market": {
     "recommendationCount": 0,
@@ -360,13 +360,13 @@
     },
     {
       "source": "Yicai",
-      "title": "收盘｜创业板指涨1.12% 电子化学品板块领涨全市场超2900只个股下跌。  30分钟前",
+      "title": "收盘｜创业板指涨1.12% 电子化学品板块领涨全市场超2900只个股下跌。  36分钟前",
       "url": "https://www.yicai.com/news/103318652.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "连板股追踪丨A股今日共64只个股涨停 天洋新材3连板一图速览今日连板股&gt;&gt;  36分钟前",
+      "title": "连板股追踪丨A股今日共64只个股涨停 天洋新材3连板一图速览今日连板股&gt;&gt;  42分钟前",
       "url": "https://www.yicai.com/news/103318654.html",
       "time": ""
     },
