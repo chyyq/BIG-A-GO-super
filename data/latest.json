@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-14T15:56:39.381625+08:00",
+    "generatedAt": "2026-08-14T15:59:01.143403+08:00",
     "tradingDate": "2026-08-14",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 39.98
+    "runtimeSeconds": 30.77
   },
   "market": {
     "recommendationCount": 0,
@@ -353,39 +353,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "利好突至！A股芯片巨头业绩大超预期",
+      "url": "https://finance.eastmoney.com/a/202608133840596197.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜创业板指涨1.12% 电子化学品板块领涨全市场超2900只个股下跌。  36分钟前",
-      "url": "https://www.yicai.com/news/103318652.html",
+      "source": "Eastmoney News",
+      "title": "净利最多大增2559%！多只A股发业绩利好",
+      "url": "https://finance.eastmoney.com/a/202608133840799192.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共64只个股涨停 天洋新材3连板一图速览今日连板股&gt;&gt;  42分钟前",
-      "url": "https://www.yicai.com/news/103318654.html",
+      "source": "Eastmoney News",
+      "title": "华西证券：算力与基础设施是当前最清晰的投资主线",
+      "url": "https://finance.eastmoney.com/a/202608143841105030.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "目标1.4万亿，安全应急装备产业划定五年“施工图”安全应急装备产业发展面临关键核心技术短板、市场需求释放不足、产业生态和支撑体系尚不健全等现实挑战。  2小时前",
-      "url": "https://www.yicai.com/news/103318375.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：粘胶长丝行业有望进入供需偏紧与价格中枢上行阶段",
+      "url": "https://finance.eastmoney.com/a/202608143841083791.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "卡位热点赛道，青岛“10+1”创新型产业体系发展提速青岛正加快建设科创大走廊，推动人才、资金、政策等资源要素饱和式供给。  4小时前",
-      "url": "https://www.yicai.com/news/103318005.html",
+      "source": "Eastmoney News",
+      "title": "华泰证券：算力升级下AI电源或呈现四大趋势",
+      "url": "https://finance.eastmoney.com/a/202608143841064517.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股四大指数集体高开，存储芯片、半导体等板块走强盘面上，存储器、HBM、半导体、服务器、AI算力概念股走强。  6小时前",
-      "url": "https://www.yicai.com/news/103317879.html",
+      "source": "Eastmoney News",
+      "title": "创业板指涨超1% 稀土板块大涨 CPO概念股走强",
+      "url": "https://finance.eastmoney.com/a/202608143841691710.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "史无前例！封锁、加息 两大利空突袭！亚太市场变数陡增",
+      "url": "https://finance.eastmoney.com/a/202608143841692523.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
