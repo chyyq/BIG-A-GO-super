@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-14T11:39:57.309012+08:00",
+    "generatedAt": "2026-08-14T11:49:39.744403+08:00",
     "tradingDate": "2026-08-14",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 33.85
+    "runtimeSeconds": 35.1
   },
   "market": {
     "recommendationCount": 0,
@@ -117,7 +117,7 @@
       "price": 8795.99,
       "pct": 1.95,
       "amount": 154295756685.0,
-      "turnover": 2.81,
+      "turnover": 2.82,
       "open": 8707.84,
       "preClose": 8627.95,
       "mainNet": 4105864192.0,
@@ -349,51 +349,21 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "3分钟 20%涨停！上海重磅发布！股市“吹哨人”最新发声",
-      "url": "https://finance.eastmoney.com/a/202608133840263727.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数集体收跌 创新药概念股逆市走强",
-      "url": "https://finance.eastmoney.com/a/202608133840398023.html",
+      "source": "Yicai",
+      "title": "卡位热点赛道，青岛“10+1”创新型产业体系发展提速青岛正加快建设科创大走廊，推动人才、资金、政策等资源要素饱和式供给。  42分钟前",
+      "url": "https://www.yicai.com/news/103318005.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "利好突至！A股芯片巨头业绩大超预期",
-      "url": "https://finance.eastmoney.com/a/202608133840596197.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股跳空高开 尾盘却突发跳水 超4300股下跌！发生了什么？",
-      "url": "https://finance.eastmoney.com/a/202608133840411965.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华西证券：算力与基础设施是当前最清晰的投资主线",
-      "url": "https://finance.eastmoney.com/a/202608143841105030.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：粘胶长丝行业有望进入供需偏紧与价格中枢上行阶段",
-      "url": "https://finance.eastmoney.com/a/202608143841083791.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券：算力升级下AI电源或呈现四大趋势",
-      "url": "https://finance.eastmoney.com/a/202608143841064517.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "创业板指上涨0.65% AI硬件走强 影视股回落",
-      "url": "https://finance.eastmoney.com/a/202608143841566367.html",
+      "source": "Yicai",
+      "title": "A股四大指数集体高开，存储芯片、半导体等板块走强盘面上，存储器、HBM、半导体、服务器、AI算力概念股走强。  2小时前",
+      "url": "https://www.yicai.com/news/103317879.html",
       "time": ""
     }
   ]
