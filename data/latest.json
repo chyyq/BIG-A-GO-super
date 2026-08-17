@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-17T15:39:15.537253+08:00",
+    "generatedAt": "2026-08-17T20:49:51.396994+08:00",
     "tradingDate": "2026-08-17",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 33.86
+    "runtimeSeconds": 32.05
   },
   "market": {
     "recommendationCount": 0,
@@ -357,33 +357,45 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "十大券商策略：看好“金秋行情”！科技修复尚未结束 及时部署核心资产",
+      "url": "https://finance.eastmoney.com/a/202608163842565243.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜创业板指涨3.14% 算力硬件股走强全市场超4300只个股上涨，超百股涨停。  19分钟前",
-      "url": "https://www.yicai.com/news/103320970.html",
+      "source": "Eastmoney News",
+      "title": "创业板指涨逾3% 科创50指数涨超4% 逾4300只股飘红",
+      "url": "https://finance.eastmoney.com/a/202608173843115045.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股四大指数集体高开，大消费低迷，白酒股领跌盘面上，OCS、光芯片、CPO概念涨幅居前，贵金属、造纸板块活跃。  6小时前",
-      "url": "https://www.yicai.com/news/103320283.html",
+      "source": "Eastmoney News",
+      "title": "华泰证券：双创超跌反弹接近尾声 市场进入震荡筑底和再平衡阶段",
+      "url": "https://finance.eastmoney.com/a/202608173842618648.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "单车均价百万级，捷豹路虎为何不怕被模仿？2026/27财年第一季度营收达60亿英镑 中国市场销量环比增长28.5%  6小时前",
-      "url": "https://www.yicai.com/news/103319997.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：国产算力未来将兼具工业品与公用事业属性 或将成为新一轮产业升级和资本形成的重要抓手",
+      "url": "https://finance.eastmoney.com/a/202608173842618251.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "一财社论：正视AI领域的金融创新当前AI的方兴未艾，以及正步入真实世界所带来的全局式经济社会结构重构，正在客观上助推金融市场的创新快马加鞭。  昨天 20:42",
-      "url": "https://www.yicai.com/news/103320028.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：全球封测厂Q2收入普遍增长约三成 先进封装量产时间表前移",
+      "url": "https://finance.eastmoney.com/a/202608173842615711.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
