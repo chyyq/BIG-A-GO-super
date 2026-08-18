@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-18T15:04:03.011429+08:00",
+    "generatedAt": "2026-08-18T15:12:58.757520+08:00",
     "tradingDate": "2026-08-18",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 29.38
+    "runtimeSeconds": 33.57
   },
   "market": {
     "recommendationCount": 0,
@@ -144,7 +144,7 @@
       "price": 760.48,
       "pct": 7.45,
       "amount": 12904617007.0,
-      "turnover": 6.92,
+      "turnover": 6.66,
       "open": 708.2,
       "preClose": 707.72,
       "mainNet": 1625471312.0,
@@ -195,7 +195,7 @@
       "price": 1465.23,
       "pct": 8.27,
       "amount": 7389511006.0,
-      "turnover": 6.55,
+      "turnover": 6.53,
       "open": 1349.29,
       "preClose": 1353.3,
       "mainNet": 911985872.0,
@@ -361,12 +361,6 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "创业板指涨逾3% 科创50指数涨超4% 逾4300只股飘红",
-      "url": "https://finance.eastmoney.com/a/202608173843115045.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "中信证券：银行板块基本面预期稳定，预计全年绝对收益空间仍将延续",
       "url": "https://finance.eastmoney.com/a/202608183843879876.html",
       "time": ""
@@ -393,6 +387,12 @@
       "source": "Eastmoney News",
       "title": "东方财富证券开户",
       "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
