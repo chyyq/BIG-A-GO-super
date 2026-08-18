@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-18T15:24:43.048993+08:00",
+    "generatedAt": "2026-08-18T20:52:17.231289+08:00",
     "tradingDate": "2026-08-18",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 26.86
+    "runtimeSeconds": 32.23
   },
   "market": {
     "recommendationCount": 0,
@@ -144,7 +144,7 @@
       "price": 760.48,
       "pct": 7.45,
       "amount": 12904617007.0,
-      "turnover": 6.92,
+      "turnover": 6.66,
       "open": 708.2,
       "preClose": 707.72,
       "mainNet": 1625471312.0,
@@ -195,7 +195,7 @@
       "price": 1465.23,
       "pct": 8.27,
       "amount": 7389511006.0,
-      "turnover": 6.55,
+      "turnover": 6.53,
       "open": 1349.29,
       "preClose": 1353.3,
       "mainNet": 911985872.0,
@@ -361,6 +361,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "A股三大指数收盘涨跌不一 农业板块掀起涨停潮",
+      "url": "https://finance.eastmoney.com/a/202608183844502394.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "中信证券：银行板块基本面预期稳定，预计全年绝对收益空间仍将延续",
       "url": "https://finance.eastmoney.com/a/202608183843879876.html",
       "time": ""
@@ -379,8 +385,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数收盘涨跌不一 农业板块掀起涨停潮",
-      "url": "https://finance.eastmoney.com/a/202608183844502394.html",
+      "title": "黑色星期二！全球市场集体跳水！华尔街“预言家”火线发声 发生了什么？",
+      "url": "https://finance.eastmoney.com/a/202608183844517394.html",
       "time": ""
     },
     {
