@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-19T15:05:14.871465+08:00",
+    "generatedAt": "2026-08-19T15:13:25.243545+08:00",
     "tradingDate": "2026-08-19",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 46.86
+    "runtimeSeconds": 36.66
   },
   "market": {
     "recommendationCount": 0,
@@ -395,8 +395,8 @@
     },
     {
       "source": "Yicai",
-      "title": "工信部科技服务业标准化技术委员会技术转移转化服务工作组成立 ，东方证券成为联席组长单位  20分钟前",
-      "url": "https://www.yicai.com/news/103324570.html",
+      "title": "收盘｜上证指数跌2.4% 科创次新股走弱全市场超5000只个股下跌，逾百股跌停。  1分钟前",
+      "url": "https://www.yicai.com/news/103324654.html",
       "time": ""
     }
   ]
