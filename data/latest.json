@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-20T15:27:52.974327+08:00",
+    "generatedAt": "2026-08-20T20:54:39.381740+08:00",
     "tradingDate": "2026-08-20",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 34.46
+    "runtimeSeconds": 36.51
   },
   "market": {
     "recommendationCount": 0,
@@ -64,7 +64,7 @@
       "kind": "Concept board",
       "price": 1327.4,
       "pct": 8.84,
-      "amount": 33993254710.0,
+      "amount": 33995922710.0,
       "turnover": 6.53,
       "open": 1298.13,
       "preClose": 1219.54,
@@ -90,7 +90,7 @@
       "kind": "Industry board",
       "price": 1094.44,
       "pct": 8.64,
-      "amount": 32948554400.0,
+      "amount": 32951222400.0,
       "turnover": 3.99,
       "open": 1073.72,
       "preClose": 1007.39,
@@ -116,7 +116,7 @@
       "kind": "Industry board",
       "price": 8700.66,
       "pct": 7.45,
-      "amount": 24555873347.0,
+      "amount": 24558541347.0,
       "turnover": 5.3,
       "open": 8541.13,
       "preClose": 8097.31,
@@ -143,7 +143,7 @@
       "price": 1094.11,
       "pct": 6.67,
       "amount": 18516283121.0,
-      "turnover": 5.08,
+      "turnover": 5.23,
       "open": 1078.74,
       "preClose": 1025.68,
       "mainNet": 1342611888.0,
@@ -367,26 +367,32 @@
     },
     {
       "source": "Yicai",
-      "title": "收盘｜创业板指涨0.64% 医药生物板块集体爆发全市场近4100只个股上涨。  11分钟前",
-      "url": "https://www.yicai.com/news/103326562.html",
+      "title": "东南亚电商6年增长近3倍，中国品牌“出海”竞争怎么赢？机遇与挑战如影随形。市场的结构性红利与竞争的复杂性，是这场出海浪潮的一体两面。  5分钟前",
+      "url": "https://www.yicai.com/news/103327232.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "上海楼市“沪八条”新政来了！外环外二套房首付门槛再降上海楼市近期“淡季不淡、量价齐升”，新政将进一步巩固向好行情。  1小时前",
-      "url": "https://www.yicai.com/news/103326353.html",
+      "title": "券商“一哥”最新业绩出炉！券商中报披露高峰来临，百亿营收券商已达3家根据安排，到本周末，财达证券、东方财富等将陆续披露中报。  43分钟前",
+      "url": "https://www.yicai.com/news/103327136.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "中国机器人出海，光“卖过去”还不够海外市场进入商业化“算账”阶段。  2小时前",
-      "url": "https://www.yicai.com/news/103326231.html",
+      "title": "友邦保险上半年新业务价值增10%，中国内地市场增速最快中国内地9家新机构上半年新业务价值增速超过40%。  1小时前",
+      "url": "https://www.yicai.com/news/103326946.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "A股四大指数集体高开，生物医药板块爆发盘面上，生物医药板块爆发，创新药、ADC、基因检测、CRO方向领涨。  5小时前",
-      "url": "https://www.yicai.com/news/103325750.html",
+      "title": "淘汰赛中的新变量：新神龙落地武汉，地方国资深度入局新车型的市场表现，中外股东技术协同效率，将决定产业链红利释放的实际效果。  1小时前",
+      "url": "https://www.yicai.com/news/103326945.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "5年5万亿砸向电网：国网南网此次联手有何不同？全国统一电力市场正在从规则建设走向电网和市场的深度融合。  2小时前",
+      "url": "https://www.yicai.com/news/103326904.html",
       "time": ""
     }
   ]
