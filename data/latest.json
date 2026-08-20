@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-20T15:21:39.351483+08:00",
+    "generatedAt": "2026-08-20T15:24:33.603241+08:00",
     "tradingDate": "2026-08-20",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 38.92
+    "runtimeSeconds": 37.96
   },
   "market": {
     "recommendationCount": 0,
@@ -143,7 +143,7 @@
       "price": 1094.11,
       "pct": 6.67,
       "amount": 18516283121.0,
-      "turnover": 5.23,
+      "turnover": 5.08,
       "open": 1078.74,
       "preClose": 1025.68,
       "mainNet": 1342611888.0,
@@ -360,45 +360,33 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "mRNA癌症疫苗迎重磅突破！Moderna单日暴涨177% 多家A股公司也有相关布局",
-      "url": "https://finance.eastmoney.com/a/202608203847220777.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
-      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
+      "source": "Yicai",
+      "title": "收盘｜创业板指涨0.64% 医药生物板块集体爆发全市场近4100只个股上涨。  11分钟前",
+      "url": "https://www.yicai.com/news/103326562.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "华泰证券：中长期仍看好民航行业景气底部回暖 左侧布局具备较高性价比",
-      "url": "https://finance.eastmoney.com/a/202608203846976191.html",
+      "source": "Yicai",
+      "title": "上海楼市“沪八条”新政来了！外环外二套房首付门槛再降上海楼市近期“淡季不淡、量价齐升”，新政将进一步巩固向好行情。  1小时前",
+      "url": "https://www.yicai.com/news/103326353.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信建投：当前保险板块具备显著配置价值",
-      "url": "https://finance.eastmoney.com/a/202608203846975140.html",
+      "source": "Yicai",
+      "title": "中国机器人出海，光“卖过去”还不够海外市场进入商业化“算账”阶段。  2小时前",
+      "url": "https://www.yicai.com/news/103326231.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中金：A股自7月底以来的修复行情仍有望延续",
-      "url": "https://finance.eastmoney.com/a/202608203846938020.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股三大指数缩量收涨 近4100只股飘红 生物制品板块掀涨停潮",
-      "url": "https://finance.eastmoney.com/a/202608203847690467.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "source": "Yicai",
+      "title": "A股四大指数集体高开，生物医药板块爆发盘面上，生物医药板块爆发，创新药、ADC、基因检测、CRO方向领涨。  5小时前",
+      "url": "https://www.yicai.com/news/103325750.html",
       "time": ""
     }
   ]
