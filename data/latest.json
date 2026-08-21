@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-21T15:22:20.816347+08:00",
+    "generatedAt": "2026-08-21T15:25:50.223687+08:00",
     "tradingDate": "2026-08-21",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,20 +22,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 42.0
+    "runtimeSeconds": 30.92
   },
   "market": {
     "recommendationCount": 0,
@@ -354,27 +354,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "全球市场：美股收跌 道指跌超1% 存储、加密货币概念股走强 Moderna跌23.55%",
+      "url": "https://finance.eastmoney.com/a/202608213848260831.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "20号胶期货首次跨境交割顺利完成完成交割的20号胶离岸货物将在泰国林查班港完成实货交付，标志着我国期货市场跨境交割机制顺利实现全流程打通。  2小时前",
-      "url": "https://www.yicai.com/news/103328127.html",
+      "source": "Eastmoney News",
+      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
+      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股四大指数集体低开，创新药概念大面积下挫黄金、数字货币题材走强。市场近4000股下跌。  5小时前",
-      "url": "https://www.yicai.com/news/103327663.html",
+      "source": "Eastmoney News",
+      "title": "华西证券：性价比与弹性兼备 保险板块凸显配置价值",
+      "url": "https://finance.eastmoney.com/a/202608213848592659.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "盘前必读丨日韩股市集体低开超1%；拓荆科技上半年净利暴涨13倍机构认为，前期过于拥挤赛道集中度释放还需要时间。  7小时前",
-      "url": "https://www.yicai.com/news/103327543.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：地产政策再宽松 住宅开发更聚焦",
+      "url": "https://finance.eastmoney.com/a/202608213848593412.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "银河证券：超节点重塑网络架构 关注国内交换机+交换芯片领域龙头",
+      "url": "https://finance.eastmoney.com/a/202608213848461919.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信建投：燃机市场高景气延续 坚定看好国产燃机出海",
+      "url": "https://finance.eastmoney.com/a/202608213848399038.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "沪指震荡整理 创业板指涨1.43% 成交额不足1.9万亿",
+      "url": "https://finance.eastmoney.com/a/202608213849222150.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
