@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-24T15:35:38.088733+08:00",
+    "generatedAt": "2026-08-24T15:40:46.449928+08:00",
     "tradingDate": "2026-08-24",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 48.26
+    "runtimeSeconds": 41.78
   },
   "market": {
     "recommendationCount": 0,
@@ -347,6 +347,36 @@
   "recommendations": [],
   "news": [
     {
+      "source": "Eastmoney News",
+      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
+      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "十大券商策略：中线反弹尚未结束！行情将以结构性轮动修复为主",
+      "url": "https://finance.eastmoney.com/a/202608233850410614.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股三大指数集体收跌 贵金属与煤炭板块逆市走强",
+      "url": "https://finance.eastmoney.com/a/202608243851044114.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "time": ""
+    },
+    {
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
@@ -354,7 +384,7 @@
     },
     {
       "source": "Yicai",
-      "title": "收盘｜创业板指跌3.21% 医药生物板块领跌全市场近4000股下跌。  21分钟前",
+      "title": "收盘｜创业板指跌3.21% 医药生物板块领跌全市场近4000股下跌。  26分钟前",
       "url": "https://www.yicai.com/news/103330822.html",
       "time": ""
     },
@@ -362,24 +392,6 @@
       "source": "Yicai",
       "title": "“易中天”市值跌超1500亿元中际旭创和新易盛释放了未来收入增长的信心，但资本市场的反应并不十分积极。  2小时前",
       "url": "https://www.yicai.com/news/103330581.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "阿里巴巴融资800亿股价大跌，市场热议港股“二次探底”日本央行9月议息会议前后市场或延续大幅波动。  2小时前",
-      "url": "https://www.yicai.com/news/103330554.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "跨国药企新调整：让中国“声音”直接进入全球决策核心举措之一，就是调整组织架构，提升大中华区的业务层级，与美国、日本和各大区域市场并列。  3小时前",
-      "url": "https://www.yicai.com/news/103330447.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "A股四大指数开盘表现分化，工业金属、黄金等板块涨幅居前盘面上，锂矿、工业金属、黄金、智能驾驶、服务器题材活跃。  6小时前",
-      "url": "https://www.yicai.com/news/103330148.html",
       "time": ""
     }
   ]
