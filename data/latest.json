@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-24T15:44:49.204094+08:00",
+    "generatedAt": "2026-08-24T20:55:59.127930+08:00",
     "tradingDate": "2026-08-24",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 34.13
+    "runtimeSeconds": 45.54
   },
   "market": {
     "recommendationCount": 0,
@@ -348,6 +348,12 @@
   "news": [
     {
       "source": "Eastmoney News",
+      "title": "A股三大指数集体收跌 贵金属与煤炭板块逆市走强",
+      "url": "https://finance.eastmoney.com/a/202608243851044114.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
       "url": "https://finance.eastmoney.com/a/202607133804238086.html",
       "time": ""
@@ -356,12 +362,6 @@
       "source": "Eastmoney News",
       "title": "十大券商策略：中线反弹尚未结束！行情将以结构性轮动修复为主",
       "url": "https://finance.eastmoney.com/a/202608233850410614.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股三大指数集体收跌 贵金属与煤炭板块逆市走强",
-      "url": "https://finance.eastmoney.com/a/202608243851044114.html",
       "time": ""
     },
     {
@@ -384,14 +384,8 @@
     },
     {
       "source": "Yicai",
-      "title": "收盘｜创业板指跌3.21% 医药生物板块领跌全市场近4000股下跌。  26分钟前",
-      "url": "https://www.yicai.com/news/103330822.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "“易中天”市值跌超1500亿元中际旭创和新易盛释放了未来收入增长的信心，但资本市场的反应并不十分积极。  2小时前",
-      "url": "https://www.yicai.com/news/103330581.html",
+      "title": "智能经济治理体系亟待系统性革新智能经济不仅重塑生产经营运行逻辑，更重构了产业组织、利益分配、市场运行、社会治理等经济社会关系全维度。  35分钟前",
+      "url": "https://www.yicai.com/news/103331442.html",
       "time": ""
     }
   ]
