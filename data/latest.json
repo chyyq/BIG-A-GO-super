@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-25T15:31:16.552541+08:00",
+    "generatedAt": "2026-08-25T20:52:34.970377+08:00",
     "tradingDate": "2026-08-25",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -32,10 +32,8 @@
         "note": "Optional news/reference source"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 83.57
+    "errors": [],
+    "runtimeSeconds": 36.39
   },
   "market": {
     "recommendationCount": 0,
@@ -174,8 +172,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 2
     },
     {
       "code": "BK1556",
@@ -343,8 +341,8 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "亚洲市场全线跳水大跌！背后发生了什么？",
-      "url": "https://finance.eastmoney.com/a/202608243851088192.html",
+      "title": "A股三大指数涨跌不一 成交额不足1.9万亿 逾4200只股上涨",
+      "url": "https://finance.eastmoney.com/a/202608253852752533.html",
       "time": ""
     },
     {
@@ -373,8 +371,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数涨跌不一 成交额不足1.9万亿 逾4200只股上涨",
-      "url": "https://finance.eastmoney.com/a/202608253852752533.html",
+      "title": "暴涨时代远去？英伟达财报前夕 期权市场给出了“冷静”预判",
+      "url": "https://finance.eastmoney.com/a/202608253852805852.html",
       "time": ""
     },
     {
