@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-25T15:02:07.115871+08:00",
+    "generatedAt": "2026-08-25T15:08:31.547833+08:00",
     "tradingDate": "2026-08-25",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 30.86
+    "runtimeSeconds": 31.95
   },
   "market": {
     "recommendationCount": 0,
@@ -341,12 +341,6 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数集体收跌 贵金属与煤炭板块逆市走强",
-      "url": "https://finance.eastmoney.com/a/202608243851044114.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "亚洲市场全线跳水大跌！背后发生了什么？",
       "url": "https://finance.eastmoney.com/a/202608243851088192.html",
       "time": ""
@@ -373,6 +367,12 @@
       "source": "Eastmoney News",
       "title": "中信证券：银行中报信号积极 绝对收益空间料将延续",
       "url": "https://finance.eastmoney.com/a/202608253851924249.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股三大指数涨跌不一 成交额不足1.9万亿 逾4200只股上涨",
+      "url": "https://finance.eastmoney.com/a/202608253852752533.html",
       "time": ""
     },
     {
