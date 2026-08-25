@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-25T15:27:10.241563+08:00",
+    "generatedAt": "2026-08-25T15:31:16.552541+08:00",
     "tradingDate": "2026-08-25",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 84.05
+    "runtimeSeconds": 83.57
   },
   "market": {
     "recommendationCount": 0,
@@ -174,8 +174,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 2
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1556",
