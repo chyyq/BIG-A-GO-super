@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-26T15:02:39.514441+08:00",
+    "generatedAt": "2026-08-26T15:08:52.673152+08:00",
     "tradingDate": "2026-08-26",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 30.76
+    "runtimeSeconds": 38.06
   },
   "market": {
     "recommendationCount": 0,
@@ -91,7 +91,7 @@
       "price": 67177.66,
       "pct": 3.97,
       "amount": 9916750739.0,
-      "turnover": 16.53,
+      "turnover": 8.16,
       "open": 66239.93,
       "preClose": 64611.72,
       "mainNet": -865001776.0,
@@ -142,7 +142,7 @@
       "price": 17238.38,
       "pct": 5.78,
       "amount": 5975956368.0,
-      "turnover": 27.5,
+      "turnover": 23.89,
       "open": 16614.18,
       "preClose": 16296.41,
       "mainNet": -358097440.0,
@@ -383,14 +383,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "业绩高增与重组浪潮共振 “牛市旗手”爆发！板块配置价值显现？(附股)",
-      "url": "https://finance.eastmoney.com/a/202608263854375872.html",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
