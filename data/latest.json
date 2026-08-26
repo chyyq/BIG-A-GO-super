@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-26T15:28:34.789617+08:00",
+    "generatedAt": "2026-08-26T15:32:57.671040+08:00",
     "tradingDate": "2026-08-26",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 43.56
+    "runtimeSeconds": 32.66
   },
   "market": {
     "recommendationCount": 0,
@@ -346,27 +346,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "暴涨时代远去？英伟达财报前夕 期权市场给出了“冷静”预判",
+      "url": "https://finance.eastmoney.com/a/202608253852805852.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜沪指涨0.59% 大金融板块强势全市场超2900股上涨。  13分钟前",
-      "url": "https://www.yicai.com/news/103334640.html",
+      "source": "Eastmoney News",
+      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
+      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股四大指数多数高开，PCB、创新药等板块表现活跃盘面上，黄金、农业、油气、煤炭板块跌幅靠前。  5小时前",
-      "url": "https://www.yicai.com/news/103333946.html",
+      "source": "Eastmoney News",
+      "title": "中信建投证券：保险板块中长期配置价值突出",
+      "url": "https://finance.eastmoney.com/a/202608263853877186.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "盘前必读丨加拿大宣布对美实施报复性关税；马云买入阿里超6亿港元机构认为，当前市场环境下，做好多资产对冲仍是核心。  7小时前",
-      "url": "https://www.yicai.com/news/103333810.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：标准体系顶层设计加快完善 脑机接口产业化进程有望提速",
+      "url": "https://finance.eastmoney.com/a/202608263853770144.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股三大指数集体收涨 证券与工业金属板块领涨",
+      "url": "https://finance.eastmoney.com/a/202608263854495011.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "“钟才文”关键时点发声 又带来市场提振的风向标",
+      "url": "https://finance.eastmoney.com/a/202608263854402577.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
