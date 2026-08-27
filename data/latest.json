@@ -1,8 +1,8 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-27T19:59:41.156124+08:00",
-    "tradingDate": "2026-08-27",
+    "generatedAt": "2026-08-28T00:39:55.590853+08:00",
+    "tradingDate": "2026-08-28",
     "mode": "fast-snapshot",
     "activeStrategies": [],
     "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
@@ -33,12 +33,12 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 33.01
+    "runtimeSeconds": 44.1
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 6,
+    "qualifiedBoardCount": 9,
     "monitor": {
       "emotionScore": 100,
       "marketGateScore": 5,
@@ -65,7 +65,7 @@
       "price": 18439.38,
       "pct": 6.97,
       "amount": 6868795386.0,
-      "turnover": 35.94,
+      "turnover": 72.4,
       "open": 17467.12,
       "preClose": 17238.38,
       "mainNet": 152905952.0,
@@ -80,7 +80,7 @@
         "[SectorGate] Leaders have follow-through support"
       ],
       "continuous": true,
-      "amountRatio": 1.15,
+      "amountRatio": 1.07,
       "limitUpCount": 3,
       "bigUpCount": 4
     },
@@ -100,14 +100,66 @@
       "qualified": true,
       "score": 82.55,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 1,
+      "bigUpCount": 5
+    },
+    {
+      "code": "BK1516",
+      "name": "其他种植业",
+      "kind": "Industry board",
+      "price": 1024.57,
+      "pct": 6.74,
+      "amount": 2170485080.0,
+      "turnover": 4.97,
+      "open": 995.27,
+      "preClose": 959.84,
+      "mainNet": 143541489.0,
+      "rank": 4,
+      "passed": 4,
+      "qualified": true,
+      "score": 82.2,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 3,
+      "bigUpCount": 3
+    },
+    {
+      "code": "BK1518",
+      "name": "种子",
+      "kind": "Industry board",
+      "price": 4649.01,
+      "pct": 6.3,
+      "amount": 6798680352.0,
+      "turnover": 12.54,
+      "open": 4472.56,
+      "preClose": 4373.6,
+      "mainNet": 310644672.0,
+      "rank": 5,
+      "passed": 4,
+      "qualified": true,
+      "score": 81.85,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.08,
+      "limitUpCount": 2,
       "bigUpCount": 5
     },
     {
@@ -126,13 +178,13 @@
       "qualified": true,
       "score": 81.5,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 2,
       "bigUpCount": 14
     },
@@ -152,13 +204,13 @@
       "qualified": true,
       "score": 81.15,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 2,
       "bigUpCount": 18
     },
@@ -178,13 +230,13 @@
       "qualified": true,
       "score": 80.8,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 4,
       "bigUpCount": 21
     },
@@ -204,15 +256,41 @@
       "qualified": true,
       "score": 80.45,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 5,
       "bigUpCount": 9
+    },
+    {
+      "code": "BK1592",
+      "name": "通信线缆及配套",
+      "kind": "Industry board",
+      "price": 26182.79,
+      "pct": 5.47,
+      "amount": 57533715727.0,
+      "turnover": 11.5,
+      "open": 24940.89,
+      "preClose": 24824.01,
+      "mainNet": 4908656896.0,
+      "rank": 10,
+      "passed": 4,
+      "qualified": true,
+      "score": 80.1,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.08,
+      "limitUpCount": 3,
+      "bigUpCount": 6
     },
     {
       "code": "BK1556",
@@ -235,84 +313,9 @@
         "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": true,
-      "amountRatio": 2.05,
+      "amountRatio": 1.52,
       "limitUpCount": 1,
       "bigUpCount": 1
-    },
-    {
-      "code": "BK1516",
-      "name": "其他种植业",
-      "kind": "Industry board",
-      "price": 1024.57,
-      "pct": 6.74,
-      "amount": 2170485080.0,
-      "turnover": 4.97,
-      "open": 995.27,
-      "preClose": 959.84,
-      "mainNet": 143541489.0,
-      "rank": 4,
-      "passed": 3,
-      "qualified": false,
-      "score": 65.8,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 3,
-      "bigUpCount": 3
-    },
-    {
-      "code": "BK1518",
-      "name": "种子",
-      "kind": "Industry board",
-      "price": 4649.01,
-      "pct": 6.3,
-      "amount": 6798680352.0,
-      "turnover": 12.54,
-      "open": 4472.56,
-      "preClose": 4373.6,
-      "mainNet": 310644672.0,
-      "rank": 5,
-      "passed": 3,
-      "qualified": false,
-      "score": 65.45,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 1.12,
-      "limitUpCount": 2,
-      "bigUpCount": 5
-    },
-    {
-      "code": "BK1592",
-      "name": "通信线缆及配套",
-      "kind": "Industry board",
-      "price": 26182.79,
-      "pct": 5.47,
-      "amount": 57533715727.0,
-      "turnover": 11.5,
-      "open": 24940.89,
-      "preClose": 24824.01,
-      "mainNet": 4908656896.0,
-      "rank": 10,
-      "passed": 3,
-      "qualified": false,
-      "score": 63.7,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 1.18,
-      "limitUpCount": 3,
-      "bigUpCount": 6
     },
     {
       "code": "BK1325",
