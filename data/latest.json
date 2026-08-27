@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-28T01:54:30.903409+08:00",
+    "generatedAt": "2026-08-28T05:59:37.818993+08:00",
     "tradingDate": "2026-08-28",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 36.02
+    "runtimeSeconds": 32.42
   },
   "market": {
     "recommendationCount": 0,
@@ -65,7 +65,7 @@
       "price": 18439.38,
       "pct": 6.97,
       "amount": 6868795386.0,
-      "turnover": 41.36,
+      "turnover": 35.94,
       "open": 17467.12,
       "preClose": 17238.38,
       "mainNet": 152905952.0,
@@ -195,7 +195,7 @@
       "price": 6652.27,
       "pct": 5.77,
       "amount": 16878707620.0,
-      "turnover": 2.94,
+      "turnover": 2.95,
       "open": 6313.67,
       "preClose": 6289.43,
       "mainNet": 734069504.0,
@@ -394,6 +394,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "全球市场：美股收涨 纳指涨超1% 英伟达涨8.74% 网络安全板块集体走强",
+      "url": "https://finance.eastmoney.com/a/202608283857089458.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "东方财富证券开户",
       "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
@@ -402,12 +408,6 @@
       "source": "Eastmoney News",
       "title": "东方财富证券交易",
       "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     }
   ]
