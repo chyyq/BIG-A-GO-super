@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-27T19:14:19.767368+08:00",
+    "generatedAt": "2026-08-27T19:48:16.138041+08:00",
     "tradingDate": "2026-08-27",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -32,10 +32,8 @@
         "note": "Optional news source OK"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 120.24
+    "errors": [],
+    "runtimeSeconds": 47.03
   },
   "market": {
     "recommendationCount": 0,
@@ -67,7 +65,7 @@
       "price": 18439.38,
       "pct": 6.97,
       "amount": 6868795386.0,
-      "turnover": 13.07,
+      "turnover": 35.94,
       "open": 17467.12,
       "preClose": 17238.38,
       "mainNet": 152905952.0,
@@ -145,7 +143,7 @@
       "price": 6652.27,
       "pct": 5.77,
       "amount": 16878707620.0,
-      "turnover": 2.95,
+      "turnover": 2.94,
       "open": 6313.67,
       "preClose": 6289.43,
       "mainNet": 734069504.0,
@@ -238,8 +236,8 @@
       ],
       "continuous": true,
       "amountRatio": 2.05,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK1516",
