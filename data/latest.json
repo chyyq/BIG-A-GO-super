@@ -1,8 +1,8 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-28T21:19:57.670377+08:00",
-    "tradingDate": "2026-08-28",
+    "generatedAt": "2026-08-29T01:39:29.836903+08:00",
+    "tradingDate": "2026-08-29",
     "mode": "fast-snapshot",
     "activeStrategies": [],
     "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
@@ -33,12 +33,12 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 28.7
+    "runtimeSeconds": 43.68
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 3,
+    "qualifiedBoardCount": 5,
     "monitor": {
       "emotionScore": 98,
       "marketGateScore": 4,
@@ -81,7 +81,7 @@
         "[SectorGate] Leaders have follow-through support"
       ],
       "continuous": true,
-      "amountRatio": 1.67,
+      "amountRatio": 1.36,
       "limitUpCount": 5,
       "bigUpCount": 5
     },
@@ -97,19 +97,46 @@
       "preClose": 70446.16,
       "mainNet": -995390576.0,
       "rank": 6,
-      "passed": 4,
+      "passed": 5,
       "qualified": true,
-      "score": 81.5,
+      "score": 97.9,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
         "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": 2.43,
+      "continuous": true,
+      "amountRatio": 1.42,
       "limitUpCount": 8,
       "bigUpCount": 8
+    },
+    {
+      "code": "BK1432",
+      "name": "氮肥",
+      "kind": "Industry board",
+      "price": 2122.92,
+      "pct": 7.33,
+      "amount": 4436036936.0,
+      "turnover": 7.26,
+      "open": 1977.26,
+      "preClose": 1977.88,
+      "mainNet": 303817936.0,
+      "rank": 2,
+      "passed": 4,
+      "qualified": true,
+      "score": 82.9,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 3,
+      "bigUpCount": 3
     },
     {
       "code": "BK1518",
@@ -133,34 +160,9 @@
         "[SectorGate] Leaders have follow-through support"
       ],
       "continuous": true,
-      "amountRatio": 1.23,
+      "amountRatio": 1.16,
       "limitUpCount": 3,
       "bigUpCount": 4
-    },
-    {
-      "code": "BK1432",
-      "name": "氮肥",
-      "kind": "Industry board",
-      "price": 2122.92,
-      "pct": 7.33,
-      "amount": 4436036936.0,
-      "turnover": 7.26,
-      "open": 1977.26,
-      "preClose": 1977.88,
-      "mainNet": 303817936.0,
-      "rank": 2,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.5,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 3,
-      "bigUpCount": 3
     },
     {
       "code": "BK1404",
@@ -174,18 +176,139 @@
       "preClose": 1722.28,
       "mainNet": 56015177.0,
       "rank": 8,
-      "passed": 3,
-      "qualified": false,
-      "score": 64.4,
+      "passed": 4,
+      "qualified": true,
+      "score": 80.8,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 2,
       "bigUpCount": 3
+    },
+    {
+      "code": "BK1675",
+      "name": "历史新高",
+      "kind": "Concept board",
+      "price": 1773.22,
+      "pct": 10.02,
+      "amount": 1680052098.0,
+      "turnover": 4.49,
+      "open": 1678.88,
+      "preClose": 1611.73,
+      "mainNet": -43253440.0,
+      "rank": 1,
+      "passed": 2,
+      "qualified": false,
+      "score": 50.45,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 1
+    },
+    {
+      "code": "BK1341",
+      "name": "房产租赁经纪",
+      "kind": "Industry board",
+      "price": 1383.14,
+      "pct": 5.44,
+      "amount": 870720416.0,
+      "turnover": 5.83,
+      "open": 1329.03,
+      "preClose": 1311.78,
+      "mainNet": 232127265.0,
+      "rank": 4,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.4,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 1
+    },
+    {
+      "code": "BK1355",
+      "name": "运动服装",
+      "kind": "Industry board",
+      "price": 3005.55,
+      "pct": 5.12,
+      "amount": 1284786284.0,
+      "turnover": 8.76,
+      "open": 2867.42,
+      "preClose": 2859.19,
+      "mainNet": 168498857.0,
+      "rank": 5,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.05,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 2
+    },
+    {
+      "code": "BK1502",
+      "name": "林业Ⅲ",
+      "kind": "Industry board",
+      "price": 4718.71,
+      "pct": 3.96,
+      "amount": 2851344756.0,
+      "turnover": 15.54,
+      "open": 4592.38,
+      "preClose": 4539.18,
+      "mainNet": -117013680.0,
+      "rank": 9,
+      "passed": 2,
+      "qualified": false,
+      "score": 47.65,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 1
+    },
+    {
+      "code": "BK1255",
+      "name": "林业Ⅱ",
+      "kind": "Industry board",
+      "price": 4718.71,
+      "pct": 3.96,
+      "amount": 2851344756.0,
+      "turnover": 15.54,
+      "open": 4592.38,
+      "preClose": 4539.18,
+      "mainNet": -117013680.0,
+      "rank": 10,
+      "passed": 2,
+      "qualified": false,
+      "score": 47.3,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK1513",
@@ -228,153 +351,56 @@
       ],
       "limitUpCount": 0,
       "bigUpCount": 0
-    },
-    {
-      "code": "BK1675",
-      "name": "历史新高",
-      "kind": "Concept board",
-      "price": 1773.22,
-      "pct": 10.02,
-      "amount": 1680052098.0,
-      "turnover": 4.49,
-      "open": 1678.88,
-      "preClose": 1611.73,
-      "mainNet": -43253440.0,
-      "rank": 1,
-      "passed": 1,
-      "qualified": false,
-      "score": 34.05,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
-    },
-    {
-      "code": "BK1341",
-      "name": "房产租赁经纪",
-      "kind": "Industry board",
-      "price": 1383.14,
-      "pct": 5.44,
-      "amount": 870720416.0,
-      "turnover": 5.83,
-      "open": 1329.03,
-      "preClose": 1311.78,
-      "mainNet": 232127265.0,
-      "rank": 4,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.0,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": 1.01,
-      "limitUpCount": 1,
-      "bigUpCount": 1
-    },
-    {
-      "code": "BK1355",
-      "name": "运动服装",
-      "kind": "Industry board",
-      "price": 3005.55,
-      "pct": 5.12,
-      "amount": 1284786284.0,
-      "turnover": 8.76,
-      "open": 2867.42,
-      "preClose": 2859.19,
-      "mainNet": 168498857.0,
-      "rank": 5,
-      "passed": 1,
-      "qualified": false,
-      "score": 32.65,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 2
-    },
-    {
-      "code": "BK1502",
-      "name": "林业Ⅲ",
-      "kind": "Industry board",
-      "price": 4718.71,
-      "pct": 3.96,
-      "amount": 2851344756.0,
-      "turnover": 15.54,
-      "open": 4592.38,
-      "preClose": 4539.18,
-      "mainNet": -117013680.0,
-      "rank": 9,
-      "passed": 1,
-      "qualified": false,
-      "score": 31.25,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
-    },
-    {
-      "code": "BK1255",
-      "name": "林业Ⅱ",
-      "kind": "Industry board",
-      "price": 4718.71,
-      "pct": 3.96,
-      "amount": 2851344756.0,
-      "turnover": 15.54,
-      "open": 4592.38,
-      "preClose": 4539.18,
-      "mainNet": -117013680.0,
-      "rank": 10,
-      "passed": 1,
-      "qualified": false,
-      "score": 30.9,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
     }
   ],
   "recommendations": [],
   "news": [
     {
+      "source": "Eastmoney News",
+      "title": "沪指震荡整理 创业板指跌逾1% 粮食概念股大涨",
+      "url": "https://finance.eastmoney.com/a/202608283858072733.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
+      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信证券：伴随FDE交付效率改善 预计头部CSP、平台应用软件厂商业绩将跟随受益",
+      "url": "https://finance.eastmoney.com/a/202608283857336162.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "华泰证券：CSP与运营商资本开支共振 关注国内算力基础设施链",
+      "url": "https://finance.eastmoney.com/a/202608283857335433.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "证监会发布《关于资本市场支持构建房地产发展新模式的意见》",
+      "url": "https://finance.eastmoney.com/a/202608283858435779.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "time": ""
+    },
+    {
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "交行副行长杨涛回应一财：聚焦上海重点赛道，区域贷款增量列市场首位围绕上海主场及服务“五个中心”建设，发挥业务协同与跨境服务等特色。  2分钟前",
-      "url": "https://www.yicai.com/news/103339342.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "19家白酒上市公司半年总收入减少近百亿元，市场景气指数仍在下滑白酒行业上半年仍未走出深度调整。  42分钟前",
-      "url": "https://www.yicai.com/news/103339271.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "孙宇晨长文提及的三大顶奢目的地：从特内里费到马尔代夫，每晚房价可达5.5万元深度体验正推动中国高端定制游市场向个性化与品质化快速发展。  54分钟前",
-      "url": "https://www.yicai.com/news/103339232.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "破解特医食品“入院难”，数百亿市场迎来政策破冰中国特医食品市场规模过去5年里年均复合增长率达25.34%，预计2029年将增至531亿元。  1小时前",
-      "url": "https://www.yicai.com/news/103339154.html",
       "time": ""
     }
   ]
