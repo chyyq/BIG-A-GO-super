@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-29T03:00:55.523150+08:00",
+    "generatedAt": "2026-08-29T05:54:54.811170+08:00",
     "tradingDate": "2026-08-29",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 37.4
+    "runtimeSeconds": 42.42
   },
   "market": {
     "recommendationCount": 0,
@@ -356,51 +356,21 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "沪指震荡整理 创业板指跌逾1% 粮食概念股大涨",
-      "url": "https://finance.eastmoney.com/a/202608283858072733.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
-      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：伴随FDE交付效率改善 预计头部CSP、平台应用软件厂商业绩将跟随受益",
-      "url": "https://finance.eastmoney.com/a/202608283857336162.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券：CSP与运营商资本开支共振 关注国内算力基础设施链",
-      "url": "https://finance.eastmoney.com/a/202608283857335433.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "证监会发布《关于资本市场支持构建房地产发展新模式的意见》",
-      "url": "https://finance.eastmoney.com/a/202608283858435779.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "title": "沃什放鹰！如果通胀压力持续，美联储有很多工作要做市场预期美联储下月加息概率升至50%。  昨天 23:25",
+      "url": "https://www.yicai.com/news/103339522.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "交行副行长杨涛回应一财：聚焦上海重点赛道，区域贷款增量列市场首位围绕上海主场及服务“五个中心”建设，发挥业务协同与跨境服务等特色。  昨天 21:14",
+      "url": "https://www.yicai.com/news/103339342.html",
       "time": ""
     }
   ]
