@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-31T19:53:27.371442+08:00",
+    "generatedAt": "2026-08-31T21:32:28.126383+08:00",
     "tradingDate": "2026-08-31",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -32,10 +32,8 @@
         "note": "Optional news source OK"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 101.97
+    "errors": [],
+    "runtimeSeconds": 36.67
   },
   "market": {
     "recommendationCount": 0,
@@ -349,7 +347,7 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 0
+      "bigUpCount": 2
     }
   ],
   "recommendations": [],
@@ -358,18 +356,6 @@
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共89只个股涨停 这只消费电子股5连板消费电子板块捷荣技术5连板。一图速览今日连板股&gt;&gt;  3小时前",
-      "url": "https://www.yicai.com/news/103341031.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "收盘｜沪指涨0.86% AI应用端午后持续上涨全市场超3100股上涨。  4小时前",
-      "url": "https://www.yicai.com/news/103340889.html",
       "time": ""
     }
   ]
