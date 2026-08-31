@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-31T22:21:07.754302+08:00",
+    "generatedAt": "2026-08-31T22:27:39.399417+08:00",
     "tradingDate": "2026-08-31",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 41.03
+    "runtimeSeconds": 34.62
   },
   "market": {
     "recommendationCount": 0,
@@ -360,7 +360,7 @@
     },
     {
       "source": "Yicai",
-      "title": "国际农产品价格暴涨，种业行情存预期博弈A股种业板块在预期驱动下大幅上涨，但短期面临过热风险。  46分钟前",
+      "title": "国际农产品价格暴涨，种业行情存预期博弈A股种业板块在预期驱动下大幅上涨，但短期面临过热风险。  52分钟前",
       "url": "https://www.yicai.com/news/103341558.html",
       "time": ""
     }
