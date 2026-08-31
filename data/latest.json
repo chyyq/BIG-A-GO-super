@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-08-31T15:35:57.786573+08:00",
+    "generatedAt": "2026-08-31T19:46:08.774384+08:00",
     "tradingDate": "2026-08-31",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 36.4
+    "runtimeSeconds": 37.75
   },
   "market": {
     "recommendationCount": 0,
@@ -360,6 +360,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "A股三大指数集体收涨 影视概念股掀起涨停潮",
+      "url": "https://finance.eastmoney.com/a/202608313860052072.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "高盛押中大牛股 本周豪取五连板！超3000亿外资A股持仓曝光",
       "url": "https://finance.eastmoney.com/a/202608303859492774.html",
       "time": ""
@@ -392,12 +398,6 @@
       "source": "Eastmoney News",
       "title": "十大券商看后市｜A股有望延续反弹 短期再平衡或加速",
       "url": "https://finance.eastmoney.com/a/202608313859577222.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：预计银行房地产类贷款投放具备增量空间 资产质量迎来高确定性改善预期",
-      "url": "https://finance.eastmoney.com/a/202608313859571851.html",
       "time": ""
     }
   ]
