@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-01T18:21:52.825779+08:00",
+    "generatedAt": "2026-09-01T18:24:58.663193+08:00",
     "tradingDate": "2026-09-01",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 34.21
+    "runtimeSeconds": 35.66
   },
   "market": {
     "recommendationCount": 0,
@@ -91,7 +91,7 @@
       "price": 1627.7,
       "pct": 7.79,
       "amount": 9936094567.0,
-      "turnover": 6.87,
+      "turnover": 6.86,
       "open": 1503.32,
       "preClose": 1510.0,
       "mainNet": 1233304624.0,
@@ -117,7 +117,7 @@
       "price": 860.28,
       "pct": 6.87,
       "amount": 20096136937.0,
-      "turnover": 5.89,
+      "turnover": 6.66,
       "open": 801.98,
       "preClose": 804.97,
       "mainNet": 2595184624.0,
@@ -243,7 +243,7 @@
       "price": 79580.92,
       "pct": 5.65,
       "amount": 26840625969.0,
-      "turnover": 21.04,
+      "turnover": 23.24,
       "open": 78091.96,
       "preClose": 75323.92,
       "mainNet": -1046058464.0,
@@ -264,7 +264,7 @@
       "price": 36092.54,
       "pct": 5.57,
       "amount": 16480247618.0,
-      "turnover": 18.31,
+      "turnover": 14.03,
       "open": 35372.23,
       "preClose": 34188.41,
       "mainNet": -778884400.0,
@@ -351,51 +351,45 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "市场惊现“0盈利比”基金 让所有基民都亏钱 这一次拷问了谁？",
-      "url": "https://finance.eastmoney.com/a/202609013861231546.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
-      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
+      "source": "Yicai",
+      "title": "跌跌不休！“美元贬值交易”重燃，新兴市场股市迎22年来最佳8月全球投资者重新担心美元资产前景。  34分钟前",
+      "url": "https://www.yicai.com/news/103342675.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：“十五五”时期物流网累计基建投资达3.6-4.3万亿元",
-      "url": "https://finance.eastmoney.com/a/202609013860787990.html",
+      "source": "Yicai",
+      "title": "UFC的惊险一跃：2.6亿粉丝，期待一个冠军“对UFC中国市场而言，宋亚东的爆发是里程碑事件。”  1小时前",
+      "url": "https://www.yicai.com/news/103342590.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "招商证券：需求释放 CXO板块景气度明确上行",
-      "url": "https://finance.eastmoney.com/a/202609013860753828.html",
+      "source": "Yicai",
+      "title": "05&#39;11&#39;&#39;  UFC的惊险一跃：2.6亿粉丝，期待一个冠军“对UFC中国市场而言，宋亚东的爆发是里程碑事件。”  1小时前",
+      "url": "https://www.yicai.com/video/103342591.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：AI液冷、测试设备、算力新技术、消费电子新品的主题热情有望升温",
-      "url": "https://finance.eastmoney.com/a/202609013860752488.html",
+      "source": "Yicai",
+      "title": "前8月百强房企卖房超两万亿，头部央企的排名又发生了改变楼市新政频出的八月份，市场及房企业绩表现如何？  1小时前",
+      "url": "https://www.yicai.com/news/103342661.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "欧美日债市遭遇抛售潮 贵金属及欧美股市承压",
-      "url": "https://finance.eastmoney.com/a/202609013861516062.html",
+      "source": "Yicai",
+      "title": "A股半年报盘点：工行日赚9.5亿，长鑫科技闯入利润榜前十  2小时前",
+      "url": "https://www.yicai.com/news/103342557.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "source": "Yicai",
+      "title": "收盘｜沪指跌0.16% 传媒板块表现活跃全市场超3300只个股上涨。  3小时前",
+      "url": "https://www.yicai.com/news/103342528.html",
       "time": ""
     }
   ]
