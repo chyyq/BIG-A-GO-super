@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-01T18:33:02.045427+08:00",
+    "generatedAt": "2026-09-01T19:33:09.533258+08:00",
     "tradingDate": "2026-09-01",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 35.5
+    "runtimeSeconds": 41.09
   },
   "market": {
     "recommendationCount": 0,
@@ -91,7 +91,7 @@
       "price": 1627.7,
       "pct": 7.79,
       "amount": 9936094567.0,
-      "turnover": 6.86,
+      "turnover": 6.87,
       "open": 1503.32,
       "preClose": 1510.0,
       "mainNet": 1233304624.0,
@@ -117,7 +117,7 @@
       "price": 860.28,
       "pct": 6.87,
       "amount": 20096136937.0,
-      "turnover": 6.66,
+      "turnover": 5.89,
       "open": 801.98,
       "preClose": 804.97,
       "mainNet": 2595184624.0,
@@ -243,7 +243,7 @@
       "price": 79580.92,
       "pct": 5.65,
       "amount": 26840625969.0,
-      "turnover": 23.24,
+      "turnover": 21.04,
       "open": 78091.96,
       "preClose": 75323.92,
       "mainNet": -1046058464.0,
@@ -264,7 +264,7 @@
       "price": 36092.54,
       "pct": 5.57,
       "amount": 16480247618.0,
-      "turnover": 14.03,
+      "turnover": 18.31,
       "open": 35372.23,
       "preClose": 34188.41,
       "mainNet": -778884400.0,
@@ -382,12 +382,6 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "欧美日债市遭遇抛售潮 贵金属及欧美股市承压",
-      "url": "https://finance.eastmoney.com/a/202609013861516062.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "东方财富证券开户",
       "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
@@ -396,6 +390,12 @@
       "source": "Eastmoney News",
       "title": "东方财富证券交易",
       "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     }
   ]
