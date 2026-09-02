@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-02T17:59:15.159072+08:00",
+    "generatedAt": "2026-09-02T19:09:31.168634+08:00",
     "tradingDate": "2026-09-02",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 33.61
+    "runtimeSeconds": 29.02
   },
   "market": {
     "recommendationCount": 0,
@@ -143,7 +143,7 @@
       "price": 21732.3,
       "pct": 3.96,
       "amount": 11900428609.0,
-      "turnover": 26.84,
+      "turnover": 28.2,
       "open": 21578.64,
       "preClose": 20903.52,
       "mainNet": -507127376.0,
@@ -168,7 +168,7 @@
       "price": 82372.56,
       "pct": 3.51,
       "amount": 21554677786.0,
-      "turnover": 21.85,
+      "turnover": 21.44,
       "open": 83170.97,
       "preClose": 79580.92,
       "mainNet": -1153766032.0,
@@ -218,7 +218,7 @@
       "price": 36960.54,
       "pct": 2.4,
       "amount": 13052192281.0,
-      "turnover": 17.66,
+      "turnover": 11.44,
       "open": 37366.72,
       "preClose": 36092.54,
       "mainNet": -550598752.0,
@@ -267,7 +267,7 @@
       "price": 1894.45,
       "pct": 2.92,
       "amount": 6943157534.0,
-      "turnover": 0.22,
+      "turnover": 118.97,
       "open": 1849.65,
       "preClose": 1840.64,
       "mainNet": -117539008.0,
@@ -366,6 +366,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "全球股民的终极命题：长债危机的火会“烧向”股市吗？",
+      "url": "https://finance.eastmoney.com/a/202609023862621811.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
       "url": "https://finance.eastmoney.com/a/202607133804238086.html",
       "time": ""
@@ -392,12 +398,6 @@
       "source": "Eastmoney News",
       "title": "华泰证券：全球软件FDE加速 关注国内软件厂商业绩放量",
       "url": "https://finance.eastmoney.com/a/202609023862070873.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券：基金对红利、新能源的关注度明显增强",
-      "url": "https://finance.eastmoney.com/a/202609023862071113.html",
       "time": ""
     }
   ]
