@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-02T19:33:27.700880+08:00",
+    "generatedAt": "2026-09-02T19:39:44.050953+08:00",
     "tradingDate": "2026-09-02",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 36.15
+    "runtimeSeconds": 29.65
   },
   "market": {
     "recommendationCount": 0,
@@ -372,6 +372,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "全球市场：美股三大指数收跌 纳指跌超1% AI硬件股普跌 国际油价涨逾5%",
+      "url": "https://finance.eastmoney.com/a/202609023861898065.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
       "url": "https://finance.eastmoney.com/a/202607133804238086.html",
       "time": ""
@@ -392,12 +398,6 @@
       "source": "Eastmoney News",
       "title": "中信建投：保险板块估值仍有较高安全边际 长期配置价值显著",
       "url": "https://finance.eastmoney.com/a/202609023862147227.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券：全球软件FDE加速 关注国内软件厂商业绩放量",
-      "url": "https://finance.eastmoney.com/a/202609023862070873.html",
       "time": ""
     }
   ]
