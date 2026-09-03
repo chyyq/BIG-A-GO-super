@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-03T19:15:20.846840+08:00",
+    "generatedAt": "2026-09-03T19:29:30.789256+08:00",
     "tradingDate": "2026-09-03",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 37.6
+    "runtimeSeconds": 38.72
   },
   "market": {
     "recommendationCount": 0,
@@ -346,51 +346,33 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数震荡整理 成交额不足1.8万亿 培育钻石概念股大涨",
-      "url": "https://finance.eastmoney.com/a/202609033864001670.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
-      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "全球债市危机下的A股影响传导",
-      "url": "https://topic.eastmoney.com/detail/qqzswjagyx.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：视频模型竞争转向生产可用与商业兑现 AI剧成为率先形成规模消耗的应用场景",
-      "url": "https://finance.eastmoney.com/a/202609033863515633.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券：建议优先关注业绩能见度较高的方向",
-      "url": "https://finance.eastmoney.com/a/202609033863415468.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "title": "地产新政后北京首场土拍：暂停出让和百轮竞价并存北京迎来“8·28”新政后首场土拍，市场实际热度冷热分化。  29分钟前",
+      "url": "https://www.yicai.com/news/103346533.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共46只个股涨停 这只零售股5连板传媒板块龙版传媒4连板。一图速览今日连板股&gt;&gt;  2小时前",
+      "url": "https://www.yicai.com/news/103346251.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "收盘｜四大股指涨跌不一 航运、保险涨幅居前全市场超3500只个股下跌。  4小时前",
+      "url": "https://www.yicai.com/news/103346010.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "两款国产RSV预防单抗获批上市，行业进入四强混战局面打破了原来进口产品独占市场局面。  4小时前",
+      "url": "https://www.yicai.com/news/103346014.html",
       "time": ""
     }
   ]
