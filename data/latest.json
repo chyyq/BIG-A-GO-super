@@ -1,8 +1,8 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-03T19:44:10.878923+08:00",
-    "tradingDate": "2026-09-03",
+    "generatedAt": "2026-09-04T00:04:08.785765+08:00",
+    "tradingDate": "2026-09-04",
     "mode": "fast-snapshot",
     "activeStrategies": [],
     "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
@@ -33,12 +33,12 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 39.91
+    "runtimeSeconds": 31.65
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 2,
+    "qualifiedBoardCount": 3,
     "monitor": {
       "emotionScore": 88,
       "marketGateScore": 4,
@@ -74,15 +74,41 @@
       "qualified": true,
       "score": 82.2,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 2,
       "bigUpCount": 8
+    },
+    {
+      "code": "BK1532",
+      "name": "金属包装",
+      "kind": "Industry board",
+      "price": 2986.32,
+      "pct": 3.45,
+      "amount": 1548785466.0,
+      "turnover": 1.88,
+      "open": 2898.49,
+      "preClose": 2886.75,
+      "mainNet": 299760577.0,
+      "rank": 6,
+      "passed": 4,
+      "qualified": true,
+      "score": 81.5,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 2,
+      "bigUpCount": 2
     },
     {
       "code": "BK1482",
@@ -100,40 +126,15 @@
       "qualified": true,
       "score": 81.15,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 1,
       "bigUpCount": 5
-    },
-    {
-      "code": "BK1532",
-      "name": "金属包装",
-      "kind": "Industry board",
-      "price": 2986.32,
-      "pct": 3.45,
-      "amount": 1548785466.0,
-      "turnover": 1.88,
-      "open": 2898.49,
-      "preClose": 2886.75,
-      "mainNet": 299760577.0,
-      "rank": 6,
-      "passed": 3,
-      "qualified": false,
-      "score": 65.1,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 2,
-      "bigUpCount": 2
     },
     {
       "code": "BK1397",
@@ -151,14 +152,62 @@
       "qualified": false,
       "score": 64.4,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 1,
       "bigUpCount": 4
+    },
+    {
+      "code": "BK1549",
+      "name": "旅游零售Ⅲ",
+      "kind": "Industry board",
+      "price": 6431.48,
+      "pct": 5.99,
+      "amount": 2070085726.0,
+      "turnover": 2.33,
+      "open": 6118.74,
+      "preClose": 6068.17,
+      "mainNet": 284342584.0,
+      "rank": 1,
+      "passed": 2,
+      "qualified": false,
+      "score": 50.45,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 1
+    },
+    {
+      "code": "BK1269",
+      "name": "旅游零售Ⅱ",
+      "kind": "Industry board",
+      "price": 6431.48,
+      "pct": 5.99,
+      "amount": 2070085726.0,
+      "turnover": 2.33,
+      "open": 6118.74,
+      "preClose": 6068.17,
+      "mainNet": 284342584.0,
+      "rank": 2,
+      "passed": 2,
+      "qualified": false,
+      "score": 50.1,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK1616",
@@ -176,11 +225,59 @@
       "qualified": false,
       "score": 49.75,
       "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 0,
+      "bigUpCount": 1
+    },
+    {
+      "code": "BK1469",
+      "name": "涂料",
+      "kind": "Industry board",
+      "price": 1058.27,
+      "pct": 3.78,
+      "amount": 284768517.0,
+      "turnover": 1.56,
+      "open": 1021.45,
+      "preClose": 1019.74,
+      "mainNet": 22284320.0,
+      "rank": 5,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.05,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1565",
+      "name": "会展服务",
+      "kind": "Industry board",
+      "price": 1224.27,
+      "pct": 2.66,
+      "amount": 683460609.0,
+      "turnover": 4.73,
+      "open": 1216.83,
+      "preClose": 1192.56,
+      "mainNet": 71071004.0,
+      "rank": 9,
+      "passed": 2,
+      "qualified": false,
+      "score": 47.65,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 0,
       "bigUpCount": 1
     },
@@ -200,11 +297,11 @@
       "qualified": false,
       "score": 47.3,
       "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 0,
       "bigUpCount": 2
     },
@@ -249,130 +346,56 @@
       ],
       "limitUpCount": 0,
       "bigUpCount": 0
-    },
-    {
-      "code": "BK1549",
-      "name": "旅游零售Ⅲ",
-      "kind": "Industry board",
-      "price": 6431.48,
-      "pct": 5.99,
-      "amount": 2070085726.0,
-      "turnover": 2.33,
-      "open": 6118.74,
-      "preClose": 6068.17,
-      "mainNet": 284342584.0,
-      "rank": 1,
-      "passed": 1,
-      "qualified": false,
-      "score": 34.05,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
-    },
-    {
-      "code": "BK1269",
-      "name": "旅游零售Ⅱ",
-      "kind": "Industry board",
-      "price": 6431.48,
-      "pct": 5.99,
-      "amount": 2070085726.0,
-      "turnover": 2.33,
-      "open": 6118.74,
-      "preClose": 6068.17,
-      "mainNet": 284342584.0,
-      "rank": 2,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.7,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
-    },
-    {
-      "code": "BK1469",
-      "name": "涂料",
-      "kind": "Industry board",
-      "price": 1058.27,
-      "pct": 3.78,
-      "amount": 284768517.0,
-      "turnover": 1.56,
-      "open": 1021.45,
-      "preClose": 1019.74,
-      "mainNet": 22284320.0,
-      "rank": 5,
-      "passed": 1,
-      "qualified": false,
-      "score": 32.65,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1565",
-      "name": "会展服务",
-      "kind": "Industry board",
-      "price": 1224.27,
-      "pct": 2.66,
-      "amount": 683460609.0,
-      "turnover": 4.73,
-      "open": 1216.83,
-      "preClose": 1192.56,
-      "mainNet": 71071004.0,
-      "rank": 9,
-      "passed": 1,
-      "qualified": false,
-      "score": 31.25,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 1
     }
   ],
   "recommendations": [],
   "news": [
     {
+      "source": "Eastmoney News",
+      "title": "A股三大指数震荡整理 成交额不足1.8万亿 培育钻石概念股大涨",
+      "url": "https://finance.eastmoney.com/a/202609033864001670.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
+      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "全球债市危机下的A股影响传导",
+      "url": "https://topic.eastmoney.com/detail/qqzswjagyx.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信证券：视频模型竞争转向生产可用与商业兑现 AI剧成为率先形成规模消耗的应用场景",
+      "url": "https://finance.eastmoney.com/a/202609033863515633.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "华泰证券：建议优先关注业绩能见度较高的方向",
+      "url": "https://finance.eastmoney.com/a/202609033863415468.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "time": ""
+    },
+    {
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "地产新政后北京首场土拍：暂停出让和百轮竞价并存北京迎来“8·28”新政后首场土拍，市场实际热度冷热分化。  44分钟前",
-      "url": "https://www.yicai.com/news/103346533.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共46只个股涨停 这只零售股5连板传媒板块龙版传媒4连板。一图速览今日连板股&gt;&gt;  3小时前",
-      "url": "https://www.yicai.com/news/103346251.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "收盘｜四大股指涨跌不一 航运、保险涨幅居前全市场超3500只个股下跌。  4小时前",
-      "url": "https://www.yicai.com/news/103346010.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "两款国产RSV预防单抗获批上市，行业进入四强混战局面打破了原来进口产品独占市场局面。  4小时前",
-      "url": "https://www.yicai.com/news/103346014.html",
       "time": ""
     }
   ]
