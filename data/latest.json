@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-03T19:39:08.763654+08:00",
+    "generatedAt": "2026-09-03T19:44:10.878923+08:00",
     "tradingDate": "2026-09-03",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 35.01
+    "runtimeSeconds": 39.91
   },
   "market": {
     "recommendationCount": 0,
@@ -353,7 +353,7 @@
     },
     {
       "source": "Yicai",
-      "title": "地产新政后北京首场土拍：暂停出让和百轮竞价并存北京迎来“8·28”新政后首场土拍，市场实际热度冷热分化。  39分钟前",
+      "title": "地产新政后北京首场土拍：暂停出让和百轮竞价并存北京迎来“8·28”新政后首场土拍，市场实际热度冷热分化。  44分钟前",
       "url": "https://www.yicai.com/news/103346533.html",
       "time": ""
     },
