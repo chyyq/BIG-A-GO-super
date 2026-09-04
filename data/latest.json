@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-04T19:45:47.133465+08:00",
+    "generatedAt": "2026-09-04T23:59:47.481409+08:00",
     "tradingDate": "2026-09-04",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 42.22
+    "runtimeSeconds": 43.29
   },
   "market": {
     "recommendationCount": 0,
@@ -357,8 +357,14 @@
     },
     {
       "source": "Yicai",
-      "title": "连板股追踪丨A股今日共42只个股涨停 龙版传媒5连板传媒板块龙版传媒5连板，机器人概念股爱仕达2连板。一图速览今日连板股&gt;&gt;  3小时前",
-      "url": "https://www.yicai.com/news/103349215.html",
+      "title": "开盘下跌近两成！中国市场失速，瑜伽裤巨头遭遇危机lululemon遭遇危机。  昨天 23:58",
+      "url": "https://www.yicai.com/news/103350288.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "央行公开市场操作节奏微调，3 个月买断式逆回购转为等量续作本周逆回购到期规模高达22275亿元，最终实现14115亿元大额净回笼。  昨天 20:28",
+      "url": "https://www.yicai.com/news/103349723.html",
       "time": ""
     }
   ]
