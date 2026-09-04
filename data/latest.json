@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-04T19:32:39.150452+08:00",
+    "generatedAt": "2026-09-04T19:40:20.336124+08:00",
     "tradingDate": "2026-09-04",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 44.24
+    "runtimeSeconds": 32.96
   },
   "market": {
     "recommendationCount": 0,
@@ -350,15 +350,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "A股三大指数冲高回落 猪肉概念股逆市大涨",
+      "url": "https://finance.eastmoney.com/a/202609043865379465.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共42只个股涨停 龙版传媒5连板传媒板块龙版传媒5连板，机器人概念股爱仕达2连板。一图速览今日连板股&gt;&gt;  3小时前",
-      "url": "https://www.yicai.com/news/103349215.html",
+      "source": "Eastmoney News",
+      "title": "全球市场：美股三大指数均涨超1% 加密货币概念股走强 国际金银价格上扬",
+      "url": "https://finance.eastmoney.com/a/202609043864460473.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
+      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "全球债市危机下的A股影响传导",
+      "url": "https://topic.eastmoney.com/detail/qqzswjagyx.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信证券：预计银行板块全年绝对收益仍将延续",
+      "url": "https://finance.eastmoney.com/a/202609043864711254.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信证券：煤价中枢有望上移 年内行情有望震荡上行",
+      "url": "https://finance.eastmoney.com/a/202609043864711490.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "华泰证券：煤炭中期供给弹性或进一步下降",
+      "url": "https://finance.eastmoney.com/a/202609043864667616.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
