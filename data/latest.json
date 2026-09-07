@@ -1,8 +1,8 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-07T21:02:23.731922+08:00",
-    "tradingDate": "2026-09-07",
+    "generatedAt": "2026-09-08T01:32:46.771304+08:00",
+    "tradingDate": "2026-09-08",
     "mode": "fast-snapshot",
     "activeStrategies": [],
     "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
@@ -33,12 +33,12 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 36.93
+    "runtimeSeconds": 29.59
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 5,
+    "qualifiedBoardCount": 10,
     "monitor": {
       "emotionScore": 100,
       "marketGateScore": 5,
@@ -74,15 +74,67 @@
       "qualified": true,
       "score": 83.25,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 12,
       "bigUpCount": 33
+    },
+    {
+      "code": "BK0816",
+      "name": "昨日连板",
+      "kind": "Concept board",
+      "price": 40287.66,
+      "pct": 7.34,
+      "amount": 2596292890.0,
+      "turnover": 5.81,
+      "open": 40448.47,
+      "preClose": 37532.61,
+      "mainNet": 235758589.0,
+      "rank": 2,
+      "passed": 4,
+      "qualified": true,
+      "score": 82.9,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 0.24,
+      "limitUpCount": 4,
+      "bigUpCount": 4
+    },
+    {
+      "code": "BK1051",
+      "name": "昨日连板_含一字",
+      "kind": "Concept board",
+      "price": 89247.33,
+      "pct": 7.19,
+      "amount": 4049499522.0,
+      "turnover": 6.66,
+      "open": 88490.56,
+      "preClose": 83261.48,
+      "mainNet": 265062192.0,
+      "rank": 3,
+      "passed": 4,
+      "qualified": true,
+      "score": 82.55,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 0.23,
+      "limitUpCount": 4,
+      "bigUpCount": 5
     },
     {
       "code": "BK0459",
@@ -100,13 +152,13 @@
       "qualified": true,
       "score": 82.2,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 14,
       "bigUpCount": 40
     },
@@ -126,15 +178,67 @@
       "qualified": true,
       "score": 81.85,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 11,
       "bigUpCount": 50
+    },
+    {
+      "code": "BK1518",
+      "name": "种子",
+      "kind": "Industry board",
+      "price": 5322.57,
+      "pct": 6.35,
+      "amount": 8380980238.0,
+      "turnover": 13.38,
+      "open": 5078.09,
+      "preClose": 5004.68,
+      "mainNet": 39322992.0,
+      "rank": 6,
+      "passed": 4,
+      "qualified": true,
+      "score": 81.5,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.01,
+      "limitUpCount": 2,
+      "bigUpCount": 7
+    },
+    {
+      "code": "BK1516",
+      "name": "其他种植业",
+      "kind": "Industry board",
+      "price": 1201.62,
+      "pct": 6.13,
+      "amount": 3662490058.0,
+      "turnover": 6.65,
+      "open": 1169.24,
+      "preClose": 1132.23,
+      "mainNet": -68081216.0,
+      "rank": 7,
+      "passed": 4,
+      "qualified": true,
+      "score": 81.15,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 2,
+      "bigUpCount": 3
     },
     {
       "code": "BK1136",
@@ -152,13 +256,13 @@
       "qualified": true,
       "score": 80.8,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 14,
       "bigUpCount": 50
     },
@@ -178,115 +282,15 @@
       "qualified": true,
       "score": 80.45,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 4,
       "bigUpCount": 19
-    },
-    {
-      "code": "BK0816",
-      "name": "昨日连板",
-      "kind": "Concept board",
-      "price": 40287.66,
-      "pct": 7.34,
-      "amount": 2596292890.0,
-      "turnover": 5.81,
-      "open": 40448.47,
-      "preClose": 37532.61,
-      "mainNet": 235758589.0,
-      "rank": 2,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.5,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 0.18,
-      "limitUpCount": 4,
-      "bigUpCount": 4
-    },
-    {
-      "code": "BK1051",
-      "name": "昨日连板_含一字",
-      "kind": "Concept board",
-      "price": 89247.33,
-      "pct": 7.19,
-      "amount": 4049499522.0,
-      "turnover": 6.66,
-      "open": 88490.56,
-      "preClose": 83261.48,
-      "mainNet": 265062192.0,
-      "rank": 3,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.15,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 0.17,
-      "limitUpCount": 4,
-      "bigUpCount": 5
-    },
-    {
-      "code": "BK1518",
-      "name": "种子",
-      "kind": "Industry board",
-      "price": 5322.57,
-      "pct": 6.35,
-      "amount": 8380980238.0,
-      "turnover": 13.38,
-      "open": 5078.09,
-      "preClose": 5004.68,
-      "mainNet": 39322992.0,
-      "rank": 6,
-      "passed": 3,
-      "qualified": false,
-      "score": 65.1,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 1.01,
-      "limitUpCount": 2,
-      "bigUpCount": 7
-    },
-    {
-      "code": "BK1516",
-      "name": "其他种植业",
-      "kind": "Industry board",
-      "price": 1201.62,
-      "pct": 6.13,
-      "amount": 3662490058.0,
-      "turnover": 6.65,
-      "open": 1169.24,
-      "preClose": 1132.23,
-      "mainNet": -68081216.0,
-      "rank": 7,
-      "passed": 3,
-      "qualified": false,
-      "score": 64.75,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 2,
-      "bigUpCount": 3
     },
     {
       "code": "BK1261",
@@ -300,16 +304,17 @@
       "preClose": 2914.46,
       "mainNet": -85586480.0,
       "rank": 10,
-      "passed": 3,
-      "qualified": false,
-      "score": 63.7,
+      "passed": 4,
+      "qualified": true,
+      "score": 80.1,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": 0.9,
+      "continuous": true,
+      "amountRatio": 0.95,
       "limitUpCount": 4,
       "bigUpCount": 10
     },
@@ -372,14 +377,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "A股市场下方支撑已形成？投资主线有哪些？十大券商策略来了",
-      "url": "https://finance.eastmoney.com/a/202609063866127011.html",
+      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
+      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
-      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
+      "title": "A股市场下方支撑已形成？投资主线有哪些？十大券商策略来了",
+      "url": "https://finance.eastmoney.com/a/202609063866127011.html",
       "time": ""
     },
     {
@@ -398,6 +403,12 @@
       "source": "Eastmoney News",
       "title": "华泰证券港股策略：继续建议将低波红利作为底仓",
       "url": "https://finance.eastmoney.com/a/202609073866194440.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "朱雀基金王一昊：“红利为盾，增长为矛”挖掘消费板块机遇",
+      "url": "https://finance.eastmoney.com/a/202609073866160567.html",
       "time": ""
     }
   ]
