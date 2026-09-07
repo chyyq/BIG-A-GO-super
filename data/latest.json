@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-07T18:39:27.276199+08:00",
+    "generatedAt": "2026-09-07T18:42:05.928270+08:00",
     "tradingDate": "2026-09-07",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 33.95
+    "runtimeSeconds": 42.47
   },
   "market": {
     "recommendationCount": 0,
@@ -359,51 +359,27 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数走势分化 创业板指涨超3% CPO概念股爆发",
-      "url": "https://finance.eastmoney.com/a/202609073866639128.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "日经225指数大涨超1300点 韩国股市大幅走高 存储芯片全线拉升！发生了啥？",
-      "url": "https://finance.eastmoney.com/a/202609073866356293.html",
+      "source": "Yicai",
+      "title": "股债、碳市场、地方试点多维协同助绿转型：陆家嘴金融沙龙2026年第三十期精彩落幕本期沙龙以“发挥耐心资本效能，股债协同助绿转型”为主题。  11分钟前",
+      "url": "https://www.yicai.com/news/103354793.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
-      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
+      "source": "Yicai",
+      "title": "江苏财政补贴高校买楼作宿舍，存量房市场迎来“团购客”江苏是首个定出了补助标准的省份。  18分钟前",
+      "url": "https://www.yicai.com/news/103354741.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股市场下方支撑已形成？投资主线有哪些？十大券商策略来了",
-      "url": "https://finance.eastmoney.com/a/202609063866127011.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "国金证券：下半年PCB将迎来新品拉货和盈利修复的双重利好",
-      "url": "https://finance.eastmoney.com/a/202609073866195822.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：房地产行业会走一条去制造业的发展道路",
-      "url": "https://finance.eastmoney.com/a/202609073866195570.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券港股策略：继续建议将低波红利作为底仓",
-      "url": "https://finance.eastmoney.com/a/202609073866194440.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "朱雀基金王一昊：“红利为盾，增长为矛”挖掘消费板块机遇",
-      "url": "https://finance.eastmoney.com/a/202609073866160567.html",
+      "source": "Yicai",
+      "title": "江波龙港股发行价“打骨折”，仅相当于A股增发价的36%｜IPO观察回购计划公布一个月后依然未实施。  1小时前",
+      "url": "https://www.yicai.com/news/103354606.html",
       "time": ""
     }
   ]
