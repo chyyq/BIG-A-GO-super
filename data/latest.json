@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-08T18:03:47.670474+08:00",
+    "generatedAt": "2026-09-08T18:07:02.601315+08:00",
     "tradingDate": "2026-09-08",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 29.7
+    "runtimeSeconds": 45.27
   },
   "market": {
     "recommendationCount": 0,
@@ -393,8 +393,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数涨跌不一 农化制品与石油石化板块大涨",
-      "url": "https://finance.eastmoney.com/a/202609083868000213.html",
+      "title": "要站在田里 而不是光里？A股“0跌停” 农业板块再度爆发 原因找到了",
+      "url": "https://finance.eastmoney.com/a/202609083868020237.html",
       "time": ""
     }
   ]
