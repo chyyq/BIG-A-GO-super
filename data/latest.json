@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-08T19:19:54.068035+08:00",
+    "generatedAt": "2026-09-08T19:32:53.871210+08:00",
     "tradingDate": "2026-09-08",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 38.98
+    "runtimeSeconds": 25.7
   },
   "market": {
     "recommendationCount": 0,
@@ -369,6 +369,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "A股三大指数涨跌不一 农化制品与石油石化板块大涨",
+      "url": "https://finance.eastmoney.com/a/202609083868000213.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
       "url": "https://finance.eastmoney.com/a/202607133804238086.html",
       "time": ""
@@ -389,12 +395,6 @@
       "source": "Eastmoney News",
       "title": "中信证券：锂盐库存数据大幅波动 锂价已经超跌",
       "url": "https://finance.eastmoney.com/a/202609083867359870.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "要站在田里 而不是光里？A股“0跌停” 农业板块再度爆发 原因找到了",
-      "url": "https://finance.eastmoney.com/a/202609083868020237.html",
       "time": ""
     }
   ]
