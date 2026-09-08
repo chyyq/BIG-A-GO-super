@@ -1,8 +1,8 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-08T19:45:33.462442+08:00",
-    "tradingDate": "2026-09-08",
+    "generatedAt": "2026-09-09T00:17:44.303894+08:00",
+    "tradingDate": "2026-09-09",
     "mode": "fast-snapshot",
     "activeStrategies": [],
     "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
@@ -33,12 +33,12 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 29.81
+    "runtimeSeconds": 34.84
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 2,
+    "qualifiedBoardCount": 6,
     "monitor": {
       "emotionScore": 100,
       "marketGateScore": 5,
@@ -53,11 +53,63 @@
       "brokenBoardRate": 0.128,
       "breadthSampleSize": 200,
       "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 7.01,
+      "topBoardPct": 8.35,
       "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
     }
   },
   "boards": [
+    {
+      "code": "BK1645",
+      "name": "昨日打二板以上表现",
+      "kind": "Concept board",
+      "price": 24060.13,
+      "pct": 8.35,
+      "amount": 2873695037.0,
+      "turnover": 5.03,
+      "open": 23745.53,
+      "preClose": 22206.37,
+      "mainNet": -44980480.0,
+      "rank": 1,
+      "passed": 4,
+      "qualified": true,
+      "score": 83.25,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 0.39,
+      "limitUpCount": 3,
+      "bigUpCount": 4
+    },
+    {
+      "code": "BK1341",
+      "name": "房产租赁经纪",
+      "kind": "Industry board",
+      "price": 1581.85,
+      "pct": 7.53,
+      "amount": 2624089777.0,
+      "turnover": 14.13,
+      "open": 1510.61,
+      "preClose": 1471.04,
+      "mainNet": 347025392.0,
+      "rank": 3,
+      "passed": 4,
+      "qualified": true,
+      "score": 82.55,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 0.95,
+      "limitUpCount": 2,
+      "bigUpCount": 2
+    },
     {
       "code": "BK1435",
       "name": "磷肥及磷化工",
@@ -74,15 +126,67 @@
       "qualified": true,
       "score": 82.2,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 2,
       "bigUpCount": 7
+    },
+    {
+      "code": "BK1505",
+      "name": "其他农产品加工",
+      "kind": "Industry board",
+      "price": 2853.51,
+      "pct": 6.95,
+      "amount": 4287103149.0,
+      "turnover": 4.95,
+      "open": 2733.84,
+      "preClose": 2668.05,
+      "mainNet": 605177344.0,
+      "rank": 5,
+      "passed": 4,
+      "qualified": true,
+      "score": 81.85,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 5,
+      "bigUpCount": 7
+    },
+    {
+      "code": "BK1432",
+      "name": "氮肥",
+      "kind": "Industry board",
+      "price": 2277.6,
+      "pct": 6.66,
+      "amount": 3965272259.0,
+      "turnover": 6.58,
+      "open": 2136.48,
+      "preClose": 2135.38,
+      "mainNet": 663740000.0,
+      "rank": 7,
+      "passed": 4,
+      "qualified": true,
+      "score": 81.15,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 3,
+      "bigUpCount": 3
     },
     {
       "code": "BK1051",
@@ -106,109 +210,82 @@
         "[SectorGate] Leaders have follow-through support"
       ],
       "continuous": true,
-      "amountRatio": 0.74,
+      "amountRatio": 0.81,
       "limitUpCount": 6,
       "bigUpCount": 8
     },
     {
-      "code": "BK1645",
-      "name": "昨日打二板以上表现",
-      "kind": "Concept board",
-      "price": 24060.13,
-      "pct": 8.35,
-      "amount": 2873695037.0,
-      "turnover": 5.03,
-      "open": 23745.53,
-      "preClose": 22206.37,
-      "mainNet": -44980480.0,
-      "rank": 1,
+      "code": "BK1492",
+      "name": "焦炭Ⅲ",
+      "kind": "Industry board",
+      "price": 846.54,
+      "pct": 6.01,
+      "amount": 1800631626.0,
+      "turnover": 3.33,
+      "open": 796.65,
+      "preClose": 798.55,
+      "mainNet": 127035004.0,
+      "rank": 10,
       "passed": 3,
       "qualified": false,
-      "score": 66.85,
+      "score": 63.7,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": 0.24,
-      "limitUpCount": 3,
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
       "bigUpCount": 4
     },
     {
-      "code": "BK1341",
-      "name": "房产租赁经纪",
+      "code": "BK1515",
+      "name": "粮食种植",
       "kind": "Industry board",
-      "price": 1581.85,
-      "pct": 7.53,
-      "amount": 2624089777.0,
-      "turnover": 14.13,
-      "open": 1510.61,
-      "preClose": 1471.04,
-      "mainNet": 347025392.0,
-      "rank": 3,
-      "passed": 3,
+      "price": 1092.29,
+      "pct": 7.8,
+      "amount": 2203585875.0,
+      "turnover": 5.47,
+      "open": 1021.74,
+      "preClose": 1013.23,
+      "mainNet": 133746048.0,
+      "rank": 2,
+      "passed": 2,
       "qualified": false,
-      "score": 66.15,
+      "score": 50.1,
       "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
       ],
-      "continuous": false,
-      "amountRatio": 0.91,
-      "limitUpCount": 2,
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
       "bigUpCount": 2
     },
     {
-      "code": "BK1505",
-      "name": "其他农产品加工",
+      "code": "BK1558",
+      "name": "学历教育",
       "kind": "Industry board",
-      "price": 2853.51,
-      "pct": 6.95,
-      "amount": 4287103149.0,
-      "turnover": 4.95,
-      "open": 2733.84,
-      "preClose": 2668.05,
-      "mainNet": 605177344.0,
-      "rank": 5,
-      "passed": 3,
+      "price": 2081.45,
+      "pct": 6.84,
+      "amount": 300571171.0,
+      "turnover": 2.92,
+      "open": 1953.87,
+      "preClose": 1948.28,
+      "mainNet": 87300492.0,
+      "rank": 6,
+      "passed": 2,
       "qualified": false,
-      "score": 65.45,
+      "score": 48.7,
       "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
       ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 5,
-      "bigUpCount": 7
-    },
-    {
-      "code": "BK1432",
-      "name": "氮肥",
-      "kind": "Industry board",
-      "price": 2277.6,
-      "pct": 6.66,
-      "amount": 3965272259.0,
-      "turnover": 6.58,
-      "open": 2136.48,
-      "preClose": 2135.38,
-      "mainNet": 663740000.0,
-      "rank": 7,
-      "passed": 3,
-      "qualified": false,
-      "score": 64.75,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 3,
-      "bigUpCount": 3
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK1556",
@@ -226,37 +303,13 @@
       "qualified": false,
       "score": 47.65,
       "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
       ],
-      "continuous": false,
-      "amountRatio": 1.44,
+      "continuous": true,
+      "amountRatio": 1.18,
       "limitUpCount": 1,
       "bigUpCount": 1
-    },
-    {
-      "code": "BK1492",
-      "name": "焦炭Ⅲ",
-      "kind": "Industry board",
-      "price": 846.54,
-      "pct": 6.01,
-      "amount": 1800631626.0,
-      "turnover": 3.33,
-      "open": 796.65,
-      "preClose": 798.55,
-      "mainNet": 127035004.0,
-      "rank": 10,
-      "passed": 2,
-      "qualified": false,
-      "score": 47.3,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 4
     },
     {
       "code": "BK1249",
@@ -299,52 +352,6 @@
       ],
       "limitUpCount": 0,
       "bigUpCount": 0
-    },
-    {
-      "code": "BK1515",
-      "name": "粮食种植",
-      "kind": "Industry board",
-      "price": 1092.29,
-      "pct": 7.8,
-      "amount": 2203585875.0,
-      "turnover": 5.47,
-      "open": 1021.74,
-      "preClose": 1013.23,
-      "mainNet": 133746048.0,
-      "rank": 2,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.7,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 2
-    },
-    {
-      "code": "BK1558",
-      "name": "学历教育",
-      "kind": "Industry board",
-      "price": 2081.45,
-      "pct": 6.84,
-      "amount": 300571171.0,
-      "turnover": 2.92,
-      "open": 1953.87,
-      "preClose": 1948.28,
-      "mainNet": 87300492.0,
-      "rank": 6,
-      "passed": 1,
-      "qualified": false,
-      "score": 32.3,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
     }
   ],
   "recommendations": [],
@@ -353,12 +360,6 @@
       "source": "Eastmoney News",
       "title": "“黑天鹅”突袭！市场猛烈抛售！德国传来大消息",
       "url": "https://finance.eastmoney.com/a/202609083867184697.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "3家A股券商9月15日起停牌！中金公司重组获证监会批复",
-      "url": "https://finance.eastmoney.com/a/202609073867020110.html",
       "time": ""
     },
     {
@@ -395,6 +396,12 @@
       "source": "Eastmoney News",
       "title": "中信证券：锂盐库存数据大幅波动 锂价已经超跌",
       "url": "https://finance.eastmoney.com/a/202609083867359870.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
