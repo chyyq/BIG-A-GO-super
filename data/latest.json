@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-09T18:02:27.913822+08:00",
+    "generatedAt": "2026-09-09T18:05:06.854830+08:00",
     "tradingDate": "2026-09-09",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 39.23
+    "runtimeSeconds": 36.95
   },
   "market": {
     "recommendationCount": 0,
@@ -351,51 +351,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "江波龙港股“破发”！净利暴增715倍为何没打动市场？",
+      "url": "https://finance.eastmoney.com/a/202609083868346041.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "金饰克价一天跌近20元，黄金品牌加码投资金生意如何同时做好黄金的投资生意和消费生意，正在成为新的竞争点。  4分钟前",
-      "url": "https://www.yicai.com/news/103358035.html",
+      "source": "Eastmoney News",
+      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
+      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "大模型涉足半导体设计，EDA会“颤抖”吗？资本市场对大模型赋能芯片设计的态度由恐慌转为平静  9分钟前",
-      "url": "https://www.yicai.com/news/103358048.html",
+      "source": "Eastmoney News",
+      "title": "华泰证券：上半年国有大行量稳、价升、质优、回报加码 配置价值凸显",
+      "url": "https://finance.eastmoney.com/a/202609093868713461.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "成交放量、库存下降，新政“满月”后北京楼市怎么走？业内预计“金九银十”期间，市场成交将保持一定活跃度。  59分钟前",
-      "url": "https://www.yicai.com/news/103357986.html",
+      "source": "Eastmoney News",
+      "title": "中国银河证券：电子纱、电子布市场需求缺口持续存在",
+      "url": "https://finance.eastmoney.com/a/202609093868714348.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共49只个股涨停 这只零售股收获5连板零售板块百大集团收获5连板、中百集团3连板。一图速览今日连板股&gt;&gt;  1小时前",
-      "url": "https://www.yicai.com/news/103357958.html",
+      "source": "Eastmoney News",
+      "title": "中信证券：龙头连锁药店业绩向好 已有公司重启扩张",
+      "url": "https://finance.eastmoney.com/a/202609093868712679.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜沪指涨0.28% 电力板块走强全市场超3600只个股下跌。  2小时前",
-      "url": "https://www.yicai.com/news/103357768.html",
+      "source": "Eastmoney News",
+      "title": "消息称DeepSeek拟登陆科创板 聘请中信证券筹备IPO",
+      "url": "https://finance.eastmoney.com/a/202609093869264162.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "“我就是庄家！”贝森特再发声撑日元，真实意图是稳美债？日债收益率飙升暗藏风险市场人士关注到，除日元走势外，日债收益率飙升也是美债潜在风险。  3小时前",
-      "url": "https://www.yicai.com/news/103357663.html",
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "刚劝行业刹车自己却猛踩油门，OpenAI在急什么？OpenAI需要向市场展示模型能力能否转化为科研和生产力市场。  5小时前",
-      "url": "https://www.yicai.com/news/103357453.html",
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
