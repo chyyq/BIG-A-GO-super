@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-09T19:46:21.704924+08:00",
+    "generatedAt": "2026-09-09T19:54:32.461059+08:00",
     "tradingDate": "2026-09-09",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 34.81
+    "runtimeSeconds": 39.34
   },
   "market": {
     "recommendationCount": 0,
@@ -351,45 +351,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "江波龙港股“破发”！净利暴增715倍为何没打动市场？",
-      "url": "https://finance.eastmoney.com/a/202609083868346041.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "消息称DeepSeek拟登陆科创板 聘请中信证券筹备IPO",
-      "url": "https://finance.eastmoney.com/a/202609093869264162.html",
+      "source": "Yicai",
+      "title": "全球118款生物药即将失去专利或独占权，生物类似药的“泼天富贵”来了？预计2035年全球生物类似药市场规模将突破2400亿美元。  12分钟前",
+      "url": "https://www.yicai.com/news/103358218.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
-      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
+      "source": "Yicai",
+      "title": "全球央行加息阴影扰动港股，恒生科技指数连跌一个月｜市场观察半年业绩期后流动性将主导港股走势。  1小时前",
+      "url": "https://www.yicai.com/news/103358064.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "华泰证券：上半年国有大行量稳、价升、质优、回报加码 配置价值凸显",
-      "url": "https://finance.eastmoney.com/a/202609093868713461.html",
+      "source": "Yicai",
+      "title": "金饰克价一天跌近20元，黄金品牌加码投资金生意如何同时做好黄金的投资生意和消费生意，正在成为新的竞争点。  1小时前",
+      "url": "https://www.yicai.com/news/103358035.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中国银河证券：电子纱、电子布市场需求缺口持续存在",
-      "url": "https://finance.eastmoney.com/a/202609093868714348.html",
+      "source": "Yicai",
+      "title": "大模型涉足半导体设计，EDA会“颤抖”吗？资本市场对大模型赋能芯片设计的态度由恐慌转为平静  2小时前",
+      "url": "https://www.yicai.com/news/103358048.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信证券：龙头连锁药店业绩向好 已有公司重启扩张",
-      "url": "https://finance.eastmoney.com/a/202609093868712679.html",
+      "source": "Yicai",
+      "title": "成交放量、库存下降，新政“满月”后北京楼市怎么走？业内预计“金九银十”期间，市场成交将保持一定活跃度。  2小时前",
+      "url": "https://www.yicai.com/news/103357986.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "从“光”到“田”！A股风格迎来极致切换",
-      "url": "https://finance.eastmoney.com/a/202609093869444936.html",
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共49只个股涨停 这只零售股收获5连板零售板块百大集团收获5连板、中百集团3连板。一图速览今日连板股&gt;&gt;  3小时前",
+      "url": "https://www.yicai.com/news/103357958.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "收盘｜沪指涨0.28% 电力板块走强全市场超3600只个股下跌。  4小时前",
+      "url": "https://www.yicai.com/news/103357768.html",
       "time": ""
     }
   ]
