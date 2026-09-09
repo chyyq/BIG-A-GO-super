@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-09T18:09:31.580193+08:00",
+    "generatedAt": "2026-09-09T19:12:21.472622+08:00",
     "tradingDate": "2026-09-09",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 30.64
+    "runtimeSeconds": 28.23
   },
   "market": {
     "recommendationCount": 0,
@@ -358,6 +358,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "消息称DeepSeek拟登陆科创板 聘请中信证券筹备IPO",
+      "url": "https://finance.eastmoney.com/a/202609093869264162.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
       "url": "https://finance.eastmoney.com/a/202607133804238086.html",
       "time": ""
@@ -382,20 +388,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "消息称DeepSeek拟登陆科创板 聘请中信证券筹备IPO",
-      "url": "https://finance.eastmoney.com/a/202609093869264162.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "title": "从“光”到“田”！A股风格迎来极致切换",
+      "url": "https://finance.eastmoney.com/a/202609093869444936.html",
       "time": ""
     }
   ]
