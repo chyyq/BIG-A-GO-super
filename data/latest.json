@@ -1,8 +1,8 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-10T19:51:30.340008+08:00",
-    "tradingDate": "2026-09-10",
+    "generatedAt": "2026-09-11T00:04:14.926004+08:00",
+    "tradingDate": "2026-09-11",
     "mode": "fast-snapshot",
     "activeStrategies": [],
     "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
@@ -22,23 +22,23 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 35.15
+    "runtimeSeconds": 38.14
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 1,
+    "qualifiedBoardCount": 2,
     "monitor": {
       "emotionScore": 76,
       "marketGateScore": 3,
@@ -74,15 +74,41 @@
       "qualified": true,
       "score": 81.85,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 2,
       "bigUpCount": 4
+    },
+    {
+      "code": "BK1380",
+      "name": "水力发电",
+      "kind": "Industry board",
+      "price": 4087.97,
+      "pct": 2.23,
+      "amount": 4695942069.0,
+      "turnover": 0.55,
+      "open": 3997.42,
+      "preClose": 3998.74,
+      "mainNet": 161140448.0,
+      "rank": 9,
+      "passed": 4,
+      "qualified": true,
+      "score": 80.45,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 2,
+      "bigUpCount": 2
     },
     {
       "code": "BK1462",
@@ -100,89 +126,39 @@
       "qualified": false,
       "score": 65.8,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 1,
       "bigUpCount": 3
     },
     {
-      "code": "BK1383",
-      "name": "航海装备Ⅲ",
+      "code": "BK1373",
+      "name": "电能综合服务",
       "kind": "Industry board",
-      "price": 5538.41,
-      "pct": 2.52,
-      "amount": 14955647407.0,
-      "turnover": 5.72,
-      "open": 5373.19,
-      "preClose": 5402.24,
-      "mainNet": 487502080.0,
-      "rank": 6,
+      "price": 3411.92,
+      "pct": 2.26,
+      "amount": 4574375345.0,
+      "turnover": 2.31,
+      "open": 3313.4,
+      "preClose": 3336.67,
+      "mainNet": 370380375.0,
+      "rank": 8,
       "passed": 3,
       "qualified": false,
-      "score": 65.1,
+      "score": 64.4,
       "criteria": [
         "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
-      ],
-      "continuous": true,
-      "amountRatio": 1.39,
-      "limitUpCount": 0,
-      "bigUpCount": 1
-    },
-    {
-      "code": "BK1230",
-      "name": "航海装备Ⅱ",
-      "kind": "Industry board",
-      "price": 5538.41,
-      "pct": 2.52,
-      "amount": 14955647407.0,
-      "turnover": 5.72,
-      "open": 5373.19,
-      "preClose": 5402.24,
-      "mainNet": 487502080.0,
-      "rank": 7,
-      "passed": 3,
-      "qualified": false,
-      "score": 64.75,
-      "criteria": [
-        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
-      ],
-      "continuous": true,
-      "amountRatio": 1.39,
-      "limitUpCount": 0,
-      "bigUpCount": 1
-    },
-    {
-      "code": "BK1380",
-      "name": "水力发电",
-      "kind": "Industry board",
-      "price": 4087.97,
-      "pct": 2.23,
-      "amount": 4695942069.0,
-      "turnover": 0.55,
-      "open": 3997.42,
-      "preClose": 3998.74,
-      "mainNet": 161140448.0,
-      "rank": 9,
-      "passed": 3,
-      "qualified": false,
-      "score": 64.05,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 2,
-      "bigUpCount": 2
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 4
     },
     {
       "code": "BK1556",
@@ -204,33 +180,129 @@
         "[SectorGate] Tail rank remains top-15 positive"
       ],
       "continuous": true,
-      "amountRatio": 1.19,
+      "amountRatio": 1.14,
       "limitUpCount": 1,
       "bigUpCount": 1
     },
     {
-      "code": "BK1373",
-      "name": "电能综合服务",
+      "code": "BK1452",
+      "name": "卫浴电器",
       "kind": "Industry board",
-      "price": 3411.92,
-      "pct": 2.26,
-      "amount": 4574375345.0,
-      "turnover": 2.31,
-      "open": 3313.4,
-      "preClose": 3336.67,
-      "mainNet": 370380375.0,
-      "rank": 8,
+      "price": 1456.28,
+      "pct": 4.87,
+      "amount": 1177497080.0,
+      "turnover": 7.63,
+      "open": 1374.75,
+      "preClose": 1388.69,
+      "mainNet": 359989735.0,
+      "rank": 2,
       "passed": 2,
       "qualified": false,
-      "score": 48.0,
+      "score": 50.1,
       "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 1,
-      "bigUpCount": 4
+      "bigUpCount": 2
+    },
+    {
+      "code": "BK1356",
+      "name": "其他饰品",
+      "kind": "Industry board",
+      "price": 556.77,
+      "pct": 4.72,
+      "amount": 104974946.0,
+      "turnover": 1.41,
+      "open": 529.86,
+      "preClose": 531.66,
+      "mainNet": 8666321.0,
+      "rank": 3,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.75,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 1
+    },
+    {
+      "code": "BK1383",
+      "name": "航海装备Ⅲ",
+      "kind": "Industry board",
+      "price": 5538.41,
+      "pct": 2.52,
+      "amount": 14955647407.0,
+      "turnover": 5.72,
+      "open": 5373.19,
+      "preClose": 5402.24,
+      "mainNet": 487502080.0,
+      "rank": 6,
+      "passed": 2,
+      "qualified": false,
+      "score": 48.7,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.16,
+      "limitUpCount": 0,
+      "bigUpCount": 1
+    },
+    {
+      "code": "BK1230",
+      "name": "航海装备Ⅱ",
+      "kind": "Industry board",
+      "price": 5538.41,
+      "pct": 2.52,
+      "amount": 14955647407.0,
+      "turnover": 5.72,
+      "open": 5373.19,
+      "preClose": 5402.24,
+      "mainNet": 487502080.0,
+      "rank": 7,
+      "passed": 2,
+      "qualified": false,
+      "score": 48.35,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.16,
+      "limitUpCount": 0,
+      "bigUpCount": 1
+    },
+    {
+      "code": "BK1359",
+      "name": "金融控股",
+      "kind": "Industry board",
+      "price": 2115.69,
+      "pct": 2.12,
+      "amount": 3039225680.0,
+      "turnover": 1.18,
+      "open": 2093.27,
+      "preClose": 2071.83,
+      "mainNet": 183459488.0,
+      "rank": 10,
+      "passed": 2,
+      "qualified": false,
+      "score": 47.3,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK1469",
@@ -273,125 +345,20 @@
       ],
       "limitUpCount": 0,
       "bigUpCount": 0
-    },
-    {
-      "code": "BK1452",
-      "name": "卫浴电器",
-      "kind": "Industry board",
-      "price": 1456.28,
-      "pct": 4.87,
-      "amount": 1177497080.0,
-      "turnover": 7.63,
-      "open": 1374.75,
-      "preClose": 1388.69,
-      "mainNet": 359989735.0,
-      "rank": 2,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.7,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 2
-    },
-    {
-      "code": "BK1356",
-      "name": "其他饰品",
-      "kind": "Industry board",
-      "price": 556.77,
-      "pct": 4.72,
-      "amount": 104974946.0,
-      "turnover": 1.41,
-      "open": 529.86,
-      "preClose": 531.66,
-      "mainNet": 8666321.0,
-      "rank": 3,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.35,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
-    },
-    {
-      "code": "BK1359",
-      "name": "金融控股",
-      "kind": "Industry board",
-      "price": 2115.69,
-      "pct": 2.12,
-      "amount": 3039225680.0,
-      "turnover": 1.18,
-      "open": 2093.27,
-      "preClose": 2071.83,
-      "mainNet": 183459488.0,
-      "rank": 10,
-      "passed": 1,
-      "qualified": false,
-      "score": 30.9,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
     }
   ],
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "超20只A股提示风险 请投资者审慎决策",
-      "url": "https://finance.eastmoney.com/a/202609093869607479.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "证监会最新定调未来五年资本市场 八大方向明确",
-      "url": "https://finance.eastmoney.com/a/202609103870548276.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "贝森特亮出的“救市底牌” 如何成了一张惊吓市场的“烂牌”？",
-      "url": "https://finance.eastmoney.com/a/202609103870027784.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
-      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "美存储股逆势大涨！高盛振臂高呼：最坏时期已过去 资金或正重新进场",
-      "url": "https://finance.eastmoney.com/a/202609103870399339.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：现房销售改革 处置不良资产速度可能加快",
-      "url": "https://finance.eastmoney.com/a/202609103869951487.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信建投：当前证券板块具备较好配置价值 建议积极关注",
-      "url": "https://finance.eastmoney.com/a/202609103869948615.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "source": "Yicai",
+      "title": "彩票公益金创历史新高，千亿级资金花在哪里近十年每年弃奖资金规模有波动，但均超过14亿元。  昨天 19:51",
+      "url": "https://www.yicai.com/news/103359893.html",
       "time": ""
     }
   ]
