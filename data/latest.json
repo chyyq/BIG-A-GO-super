@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-10T19:37:02.157746+08:00",
+    "generatedAt": "2026-09-10T19:44:18.370086+08:00",
     "tradingDate": "2026-09-10",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -23,7 +23,7 @@
         "name": "10jqka",
         "ok": true,
         "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "note": "Optional news source skipped; quote data is unaffected."
       },
       {
         "name": "Yicai",
@@ -32,8 +32,10 @@
         "note": "Optional news source OK"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 32.09
+    "errors": [
+      "10jqka news skipped: The read operation timed out"
+    ],
+    "runtimeSeconds": 48.14
   },
   "market": {
     "recommendationCount": 0,
@@ -354,7 +356,7 @@
     },
     {
       "source": "Yicai",
-      "title": "8月平均收益超10%！百亿量化私募快速“回血”市场已逐渐由上半年的单一板块行情扩散到多板块行情以及板块间的轮动行情，环境对量化选股策略更加友好。  46分钟前",
+      "title": "8月平均收益超10%！百亿量化私募快速“回血”市场已逐渐由上半年的单一板块行情扩散到多板块行情以及板块间的轮动行情，环境对量化选股策略更加友好。  56分钟前",
       "url": "https://www.yicai.com/news/103359791.html",
       "time": ""
     },
