@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-11T17:59:15.072403+08:00",
+    "generatedAt": "2026-09-11T18:02:31.713208+08:00",
     "tradingDate": "2026-09-11",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 29.56
+    "runtimeSeconds": 31.07
   },
   "market": {
     "recommendationCount": 0,
@@ -369,14 +369,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "全球市场：美股三大指数收跌 存储板块下挫 美油大涨逾8%",
-      "url": "https://finance.eastmoney.com/a/202609113870998212.html",
+      "title": "美联储下周是否加息？今晚20:30 市场迎来“终极一战”！",
+      "url": "https://finance.eastmoney.com/a/202609113872026872.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数收跌 地面兵装、玻璃玻纤、元件板块逆市走强",
-      "url": "https://finance.eastmoney.com/a/202609113872026127.html",
+      "title": "全球市场：美股三大指数收跌 存储板块下挫 美油大涨逾8%",
+      "url": "https://finance.eastmoney.com/a/202609113870998212.html",
       "time": ""
     },
     {
