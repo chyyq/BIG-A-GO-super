@@ -1607,7 +1607,6 @@ function markTradeOutcome(id, outcome) {
   if (!trade || !["take_profit", "stop_loss"].includes(outcome)) return;
   if (trade.status === "closed" && trade.outcome === outcome) return;
   const now = new Date();
-  const quote = getQuoteForTrade(trade) || {};
   const markedTradingDate = currentTradingDateKey(now);
   const plannedSellTradingDate =
     trade.plannedSellTradingDate ||
@@ -1619,14 +1618,13 @@ function markTradeOutcome(id, outcome) {
   const markedLate = Boolean(plannedSellTradingDate && markedTradingDate > plannedSellTradingDate);
   trade.status = "closed";
   trade.outcome = outcome;
-  trade.soldAt = now.toISOString();
   trade.resultMarkedAt = now.toISOString();
-  trade.sellTradingDate = markedLate ? plannedSellTradingDate : markedTradingDate;
-  trade.outcomeDateSource = markedLate ? "planned_t1_backfill" : "marked_live";
-  trade.sellPrice = markedLate
-    ? Number(trade.sellPrice || 0) || null
-    : Number(quote.price || trade.lastPrice || trade.buyPrice || 0) || null;
-  trade.lastPrice = trade.sellPrice;
+  trade.sellTradingDate = plannedSellTradingDate || markedTradingDate;
+  trade.outcomeDateSource = markedLate ? "planned_t1_backfill" : "user_confirmed_t1";
+  trade.sellExecutionWindow = "T1_BEFORE_1000";
+  trade.sellPrice = Number(trade.sellPrice || 0) || null;
+  trade.sellPriceSource = trade.sellPrice ? trade.sellPriceSource || "unverified_existing" : "not_recorded";
+  trade.sellPriceConfirmed = trade.sellPriceSource === "manual_exact";
   trade.updatedAt = now.toISOString();
   persistTrades();
   render();
