@@ -62,6 +62,8 @@ OCR_DOWNGRADE = 45
 OCR_REJECT = 65
 SIMPLE_EXECUTION_SCORE_MIN = 65
 EXECUTION_TOLERANCE_SCORE_MIN = 60
+LEARNED_RECOVERY_PROXY_MAX = 70
+LEARNED_MA5_EXTENSION_MIN = 3.0
 
 errors: list[str] = []
 source_health: dict[str, dict[str, Any]] = {}
@@ -912,6 +914,7 @@ def tail_hard_veto_reasons(
     crowding_score = estimate_overnight_crowding_score(quote)
     tolerance_score = estimate_execution_tolerance_score(quote)
     simple_execution_score = estimate_simple_execution_score(quote, tolerance_score)
+    recovery_score = estimate_recovery_proxy_score(quote)
     stable_limit = is_stable_limit_up_proxy(quote)
 
     reasons: list[str] = []
@@ -946,6 +949,13 @@ def tail_hard_veto_reasons(
         reasons.append("HV1: high-amplitude rebound after a sharp prior-day loss")
     if deviation_ma5 is not None and deviation_ma5 > 18:
         reasons.append("MA5 deviation exceeds 18%")
+    if (
+        recovery_score <= LEARNED_RECOVERY_PROXY_MAX
+        and deviation_ma5 is not None
+        and deviation_ma5 >= LEARNED_MA5_EXTENSION_MIN
+        and not stable_limit
+    ):
+        reasons.append("LG1: weak tail recovery combined with MA5 extension")
     if metrics.get("historyAvailable") and not trend_persistence_ok(metrics):
         reasons.append("HV10: prior trend is not established; reject a one-day rebound")
     if (

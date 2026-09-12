@@ -445,8 +445,19 @@ def sync_trade_exports(trade_exports: list[dict[str, Any]]) -> dict[str, int]:
             prices["buy"] = as_number(trade.get("buyPrice"))
         if prices.get("buyClose") is None and review_snapshot.get("referenceClose") is not None:
             prices["buyClose"] = as_number(review_snapshot.get("referenceClose"))
-        if trade.get("sellPrice") is not None:
-            prices["actualSell"] = as_number(trade.get("sellPrice"))
+        recorded_sell_price = as_number(trade.get("sellPrice"))
+        if recorded_sell_price is not None:
+            if has_verified_sell_price(trade):
+                prices["actualSell"] = recorded_sell_price
+                prices["actualSellSource"] = trade.get("sellPriceSource") or "user_confirmed_exact"
+            else:
+                prices["markedSellSnapshot"] = recorded_sell_price
+                if (
+                    prices.get("actualSellSource") in {None, "web_mark_snapshot"}
+                    and as_number(prices.get("actualSell")) == recorded_sell_price
+                ):
+                    prices.pop("actualSell", None)
+                    prices.pop("actualSellSource", None)
         night_plan = sample.setdefault("nightPlan", {})
         if night_plan.get("tp1") is None and trade.get("takeProfit") is not None:
             night_plan["tp1"] = as_number(trade.get("takeProfit"))
@@ -500,6 +511,14 @@ def sync_trade_exports(trade_exports: list[dict[str, Any]]) -> dict[str, int]:
             "actionable": plan_snapshot.get("actionable"),
         }
         sample["executionPlanEvidence"] = plan_snapshot.get("nextDayPlan") or {}
+        sample["sellExecution"] = {
+            "tradingDate": trade.get("sellTradingDate") or sell_date,
+            "window": trade.get("sellExecutionWindow") or "T1_BEFORE_1000",
+            "resultLabel": explicit_outcome or "unknown",
+            "resultRecordedAt": trade.get("resultMarkedAt"),
+            "resultLabelReliability": "user_confirmed" if explicit_outcome else "unknown",
+            "priceAccuracy": "verified_exact" if has_verified_sell_price(trade) else "unverified",
+        }
         sample["webTrade"] = {
             "tradeId": trade.get("id"),
             "status": trade.get("status"),
@@ -524,6 +543,14 @@ def as_number(value: Any) -> float | None:
         return float(value) if value is not None else None
     except (TypeError, ValueError):
         return None
+
+
+def has_verified_sell_price(trade: dict[str, Any]) -> bool:
+    """Only an explicitly confirmed execution price may drive return statistics."""
+    return bool(
+        trade.get("sellPriceConfirmed") is True
+        or trade.get("sellPriceSource") in {"manual_exact", "broker_export"}
+    )
 
 
 def pct_change(high_or_low: Any, base: Any) -> float | None:
@@ -891,8 +918,8 @@ def write_report(model: dict[str, Any], catalog: dict[str, Any]) -> None:
         f"- 已标注结果：{model['labeledSampleCount']}",
         f"- 待补结果：{model['pendingOutcomeCount']}",
         f"- 实际止盈率：{display_rate(model['takeProfitRate'])}",
-        f"- 有成交价样本平均收益：{display_rate(model['averageRealizedReturnPct'])}",
-        f"- 有成交价样本正收益率：{display_rate(model['positiveRealizedReturnRate'])}",
+        f"- 有确认成交价样本平均收益：{display_rate(model['averageRealizedReturnPct'])}",
+        f"- 有确认成交价样本正收益率：{display_rate(model['positiveRealizedReturnRate'])}",
         f"- 第一止盈区命中率：{display_rate(model['tp1HitRate'])}",
         f"- 次日最大涨幅达到3%：{display_rate(model['mfeAtLeast3Rate'])}",
         "",
@@ -916,7 +943,7 @@ def write_report(model: dict[str, Any], catalog: dict[str, Any]) -> None:
             f"- `{rule['id']}`：{state}，证据 {rule['evidenceCount']} 笔，"
             f"其中真实结果 {rule['labeledEvidenceCount']} 笔，覆盖 {rule['distinctBuyDates']} 个买入日。"
         )
-    lines.extend(["", "## 买入策略分组", "", "| 策略 | 样本 | 已标注 | 止盈率 | 平均实际收益 | 买入日触板率 | 买入日封板率 |", "| --- | ---: | ---: | ---: | ---: | ---: | ---: |"])
+    lines.extend(["", "## 买入策略分组", "", "| 策略 | 样本 | 已标注 | 止盈率 | 平均确认成交收益 | 买入日触板率 | 买入日封板率 |", "| --- | ---: | ---: | ---: | ---: | ---: | ---: |"])
     for strategy, stats in model.get("entryStrategies", {}).items():
         lines.append(
             f"| {strategy} | {stats['samples']} | {stats['labeled']} | "
@@ -929,7 +956,7 @@ def write_report(model: dict[str, Any], catalog: dict[str, Any]) -> None:
             "",
             "## 买入入口证据",
             "",
-            "| 买入入口 | 样本 | 已标注 | 买入日 | 止盈率 | 平均实际收益 | 买入日封板率 |",
+            "| 买入入口 | 样本 | 已标注 | 买入日 | 止盈率 | 平均确认成交收益 | 买入日封板率 |",
             "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
         ]
     )
