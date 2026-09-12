@@ -147,6 +147,44 @@ class TradeExportImportTests(unittest.TestCase):
             self.assertEqual(stats["averageRealizedReturnPct"], -5.0)
             self.assertEqual(model["averageRealizedReturnPct"], -5.0)
 
+    def test_mark_snapshot_price_is_not_treated_as_exact_sell_price(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            reference = root / "reference"
+            reference.mkdir()
+            export_path = reference / "BIG-A-GO-trades-2026-09-12.json"
+            learning_store.ROOT = root
+            learning_store.SAMPLES_PATH = root / "learning" / "samples.json"
+            trade = {
+                "id": "trade-late-mark",
+                "code": "600000",
+                "name": "补录样本",
+                "buyPrice": 10,
+                "sellPrice": 10.5,
+                "buyTradingDate": "2026-09-09",
+                "plannedSellTradingDate": "2026-09-10",
+                "sellTradingDate": "2026-09-10",
+                "sellExecutionWindow": "T1_BEFORE_1000",
+                "outcome": "take_profit",
+                "status": "closed",
+                "resultMarkedAt": "2026-09-11T14:00:00+08:00",
+            }
+            export_path.write_text(
+                json.dumps({"exportedAt": "2026-09-12T08:00:00+08:00", "trades": [trade]}),
+                encoding="utf-8",
+            )
+
+            learning_store.sync_trade_exports(
+                [{"exportId": "export-late", "path": export_path.relative_to(root).as_posix()}]
+            )
+
+            sample = json.loads(learning_store.SAMPLES_PATH.read_text(encoding="utf-8"))["samples"][0]
+            self.assertEqual(sample["outcome"], "take_profit")
+            self.assertEqual(sample["prices"]["markedSellSnapshot"], 10.5)
+            self.assertNotIn("actualSell", sample["prices"])
+            self.assertEqual(sample["sellExecution"]["window"], "T1_BEFORE_1000")
+            self.assertEqual(sample["sellExecution"]["priceAccuracy"], "unverified")
+
     def test_explicit_outcome_conflict_is_reported_without_relabeling(self):
         sample = {
             "sampleId": "20260807-002317",

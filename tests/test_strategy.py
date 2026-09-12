@@ -156,6 +156,24 @@ class StrategyV31Tests(unittest.TestCase):
         )
         self.assertIsNone(item)
 
+    def test_learned_weak_recovery_with_ma5_extension_is_rejected(self):
+        quote = tail_quote(price=10.60, high=10.85, low=10.00, avgPrice=10.30)
+        quote["dailyMetrics"] = {
+            **quote["dailyMetrics"],
+            "deviationMA5Pct": 4.0,
+        }
+
+        self.assertEqual(STRATEGY.estimate_recovery_proxy_score(quote), 70.0)
+        item = STRATEGY.evaluate_stock_snapshot(
+            quote,
+            strong_board(),
+            {STRATEGY.STRATEGY_TAIL_MAIN},
+            datetime(2026, 9, 12, 14, 20, tzinfo=STRATEGY.CN_TZ),
+            {"emotionScore": 82, "riskLevel": "NORMAL", "marketGatePassed": True},
+        )
+
+        self.assertIsNone(item)
+
     def test_next_day_plan_waits_for_opening_confirmation(self):
         plan = STRATEGY.next_day_plan("PLAN_S")
         self.assertEqual(plan["auctionWatchTime"], "09:25-09:30")
