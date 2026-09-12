@@ -1,0 +1,1473 @@
+{
+  "schemaVersion": 1,
+  "fetchedAt": "2026-09-12T16:04:28+08:00",
+  "dateRange": {
+    "from": "2026-08-26",
+    "to": "2026-09-10"
+  },
+  "sources": {
+    "indexes": {
+      "shanghai": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SS?period1=1767196800&period2=1789056000&interval=1d&events=history",
+      "shenzhen": "https://query1.finance.yahoo.com/v8/finance/chart/399001.SZ?period1=1767196800&period2=1789056000&interval=1d&events=history"
+    },
+    "indexProviders": {
+      "shanghai": "Yahoo Finance",
+      "shenzhen": "Yahoo Finance"
+    }
+  },
+  "samples": [
+    {
+      "sampleId": "20260826-000737",
+      "stockCode": "000737",
+      "stockName": "北方铜业",
+      "outcome": "stop_loss",
+      "evidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:20+08:00",
+        "buyDate": "2026-08-26",
+        "sellDate": "2026-08-27",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000737.SZ?period1=1767196800&period2=1787846400&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000737.SZ?period1=1787673600&period2=1787760000&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000737.SZ?period1=1787760000&period2=1787846400&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-08-26",
+          "open": 14.770000457763672,
+          "close": 15.4399995803833,
+          "high": 15.6899995803833,
+          "low": 14.65999984741211,
+          "volume": 164439489.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 6.26,
+          "turnoverPct": null,
+          "ma5": 14.73,
+          "previousMa5": 14.41,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 4.83,
+          "amountRatio5": null,
+          "volumeRatio5": 1.94,
+          "closeLocationPct": 75.73,
+          "upperShadowPctOfRange": 24.27
+        },
+        "sellDay": {
+          "date": "2026-08-27",
+          "open": 15.100000381469727,
+          "close": 15.3100004196167,
+          "high": 15.380000114440918,
+          "low": 15.09000015258789,
+          "volume": 122087189.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": -0.84,
+          "turnoverPct": null,
+          "ma5": 14.98,
+          "previousMa5": 14.73,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 2.22,
+          "amountRatio5": null,
+          "volumeRatio5": 1.16,
+          "closeLocationPct": 75.86,
+          "upperShadowPctOfRange": 24.14
+        },
+        "buyTail": {
+          "open": 14.71,
+          "gapPct": null,
+          "highBefore1000": 15.49,
+          "lowBefore1000": 14.69,
+          "close0935": 14.98,
+          "close0945": 15.21,
+          "close1000": 15.32,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": 0.78,
+          "maeBefore1000Pct": -4.42,
+          "fadeFromPeakPct": -1.1
+        },
+        "sellBefore1000": {
+          "open": 15.11,
+          "gapPct": -2.14,
+          "highBefore1000": 15.38,
+          "lowBefore1000": 15.11,
+          "close0935": 15.33,
+          "close0945": 15.24,
+          "close1000": 15.33,
+          "peakTime": "10:00",
+          "mfeBefore1000Pct": 0.07,
+          "maeBefore1000Pct": -1.69,
+          "fadeFromPeakPct": -0.33
+        },
+        "errors": []
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3881.740966796875,
+            "close": 3912.52294921875,
+            "high": 3926.43505859375,
+            "low": 3881.740966796875,
+            "changePct": 0.59
+          },
+          "shenzhen": {
+            "open": 13761.3603515625,
+            "close": 13841.330078125,
+            "high": 13948.6904296875,
+            "low": 13714.0498046875,
+            "changePct": 0.69
+          },
+          "averageChangePct": 0.64
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3911.89111328125,
+            "close": 3956.571044921875,
+            "high": 3958.032958984375,
+            "low": 3909.31201171875,
+            "changePct": 1.13
+          },
+          "shenzhen": {
+            "open": 13876.7900390625,
+            "close": 14048.8798828125,
+            "high": 14049.990234375,
+            "low": 13808.6201171875,
+            "changePct": 1.5
+          },
+          "averageChangePct": 1.31
+        }
+      }
+    },
+    {
+      "sampleId": "20260826-000878",
+      "stockCode": "000878",
+      "stockName": "云南铜业",
+      "outcome": "stop_loss",
+      "evidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:20+08:00",
+        "buyDate": "2026-08-26",
+        "sellDate": "2026-08-27",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000878.SZ?period1=1767196800&period2=1787846400&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000878.SZ?period1=1787673600&period2=1787760000&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000878.SZ?period1=1787760000&period2=1787846400&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-08-26",
+          "open": 16.290000915527344,
+          "close": 17.059999465942383,
+          "high": 17.3799991607666,
+          "low": 16.219999313354492,
+          "volume": 96495920.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 5.5,
+          "turnoverPct": null,
+          "ma5": 16.49,
+          "previousMa5": 16.26,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 3.47,
+          "amountRatio5": null,
+          "volumeRatio5": 2.46,
+          "closeLocationPct": 72.41,
+          "upperShadowPctOfRange": 27.59
+        },
+        "sellDay": {
+          "date": "2026-08-27",
+          "open": 16.790000915527344,
+          "close": 17.149999618530273,
+          "high": 17.15999984741211,
+          "low": 16.75,
+          "volume": 59997329.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 0.53,
+          "turnoverPct": null,
+          "ma5": 16.7,
+          "previousMa5": 16.49,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 2.69,
+          "amountRatio5": null,
+          "volumeRatio5": 1.17,
+          "closeLocationPct": 97.56,
+          "upperShadowPctOfRange": 2.44
+        },
+        "buyTail": {
+          "open": 16.29,
+          "gapPct": null,
+          "highBefore1000": 17.36,
+          "lowBefore1000": 16.25,
+          "close0935": 16.6,
+          "close0945": 17.01,
+          "close1000": 17.07,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": 2.24,
+          "maeBefore1000Pct": -4.3,
+          "fadeFromPeakPct": -1.67
+        },
+        "sellBefore1000": {
+          "open": 16.78,
+          "gapPct": -1.64,
+          "highBefore1000": 17.08,
+          "lowBefore1000": 16.77,
+          "close0935": 17.07,
+          "close0945": 17.02,
+          "close1000": 16.99,
+          "peakTime": "09:45",
+          "mfeBefore1000Pct": 0.59,
+          "maeBefore1000Pct": -1.24,
+          "fadeFromPeakPct": -0.53
+        },
+        "errors": []
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3881.740966796875,
+            "close": 3912.52294921875,
+            "high": 3926.43505859375,
+            "low": 3881.740966796875,
+            "changePct": 0.59
+          },
+          "shenzhen": {
+            "open": 13761.3603515625,
+            "close": 13841.330078125,
+            "high": 13948.6904296875,
+            "low": 13714.0498046875,
+            "changePct": 0.69
+          },
+          "averageChangePct": 0.64
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3911.89111328125,
+            "close": 3956.571044921875,
+            "high": 3958.032958984375,
+            "low": 3909.31201171875,
+            "changePct": 1.13
+          },
+          "shenzhen": {
+            "open": 13876.7900390625,
+            "close": 14048.8798828125,
+            "high": 14049.990234375,
+            "low": 13808.6201171875,
+            "changePct": 1.5
+          },
+          "averageChangePct": 1.31
+        }
+      }
+    },
+    {
+      "sampleId": "20260831-600228",
+      "stockCode": "600228",
+      "stockName": "返利科技",
+      "outcome": "take_profit",
+      "evidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:20+08:00",
+        "buyDate": "2026-08-31",
+        "sellDate": "2026-09-01",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600228.SS?period1=1767196800&period2=1788278400&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600228.SS?period1=1788105600&period2=1788192000&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600228.SS?period1=1788192000&period2=1788278400&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-08-31",
+          "open": 8.199999809265137,
+          "close": 8.859999656677246,
+          "high": 8.859999656677246,
+          "low": 8.199999809265137,
+          "volume": 30677088.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 6.62,
+          "turnoverPct": null,
+          "ma5": 8.5,
+          "previousMa5": 8.37,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 4.26,
+          "amountRatio5": null,
+          "volumeRatio5": 1.59,
+          "closeLocationPct": 100.0,
+          "upperShadowPctOfRange": 0.0
+        },
+        "sellDay": {
+          "date": "2026-09-01",
+          "open": 9.029999732971191,
+          "close": 9.140000343322754,
+          "high": 9.300000190734863,
+          "low": 8.930000305175781,
+          "volume": 29348700.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 3.16,
+          "turnoverPct": null,
+          "ma5": 8.66,
+          "previousMa5": 8.5,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 5.52,
+          "amountRatio5": null,
+          "volumeRatio5": 1.4,
+          "closeLocationPct": 56.76,
+          "upperShadowPctOfRange": 43.24
+        },
+        "buyTail": {
+          "open": 8.28,
+          "gapPct": null,
+          "highBefore1000": 8.78,
+          "lowBefore1000": 8.21,
+          "close0935": 8.54,
+          "close0945": 8.68,
+          "close1000": 8.64,
+          "peakTime": "09:45",
+          "mfeBefore1000Pct": -0.11,
+          "maeBefore1000Pct": -6.6,
+          "fadeFromPeakPct": -1.59
+        },
+        "sellBefore1000": {
+          "open": 9.01,
+          "gapPct": 1.69,
+          "highBefore1000": 9.3,
+          "lowBefore1000": 8.97,
+          "close0935": 9.23,
+          "close0945": 9.19,
+          "close1000": 9.08,
+          "peakTime": "09:35",
+          "mfeBefore1000Pct": 5.8,
+          "maeBefore1000Pct": 2.05,
+          "fadeFromPeakPct": -2.37
+        },
+        "errors": []
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3926.531005859375,
+            "close": 3986.298095703125,
+            "high": 3986.298095703125,
+            "low": 3926.50390625,
+            "changePct": 0.86
+          },
+          "shenzhen": {
+            "open": 13764.41015625,
+            "close": 14015.0,
+            "high": 14015.0,
+            "low": 13740.740234375,
+            "changePct": 0.44
+          },
+          "averageChangePct": 0.65
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3979.881103515625,
+            "close": 3979.887939453125,
+            "high": 3995.175048828125,
+            "low": 3976.468994140625,
+            "changePct": -0.16
+          },
+          "shenzhen": {
+            "open": 14017.419921875,
+            "close": 13872.3798828125,
+            "high": 14018.509765625,
+            "low": 13845.5498046875,
+            "changePct": -1.02
+          },
+          "averageChangePct": -0.59
+        }
+      }
+    },
+    {
+      "sampleId": "20260831-600986",
+      "stockCode": "600986",
+      "stockName": "浙文互联",
+      "outcome": "take_profit",
+      "evidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:20+08:00",
+        "buyDate": "2026-08-31",
+        "sellDate": "2026-09-01",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600986.SS?period1=1767196800&period2=1788278400&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600986.SS?period1=1788105600&period2=1788192000&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600986.SS?period1=1788192000&period2=1788278400&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-08-31",
+          "open": 7.039999961853027,
+          "close": 7.460000038146973,
+          "high": 7.460000038146973,
+          "low": 7.0,
+          "volume": 80450655.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.34,
+          "turnoverPct": null,
+          "ma5": 7.2,
+          "previousMa5": 7.09,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 3.61,
+          "amountRatio5": null,
+          "volumeRatio5": 2.0,
+          "closeLocationPct": 100.0,
+          "upperShadowPctOfRange": 0.0
+        },
+        "sellDay": {
+          "date": "2026-09-01",
+          "open": 7.460000038146973,
+          "close": 7.78000020980835,
+          "high": 7.989999771118164,
+          "low": 7.420000076293945,
+          "volume": 115699554.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.29,
+          "turnoverPct": null,
+          "ma5": 7.34,
+          "previousMa5": 7.2,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 5.97,
+          "amountRatio5": null,
+          "volumeRatio5": 2.35,
+          "closeLocationPct": 63.16,
+          "upperShadowPctOfRange": 36.84
+        },
+        "buyTail": {
+          "open": 7.03,
+          "gapPct": null,
+          "highBefore1000": 7.24,
+          "lowBefore1000": 7.03,
+          "close0935": 7.19,
+          "close0945": 7.14,
+          "close1000": 7.19,
+          "peakTime": "09:35",
+          "mfeBefore1000Pct": -2.43,
+          "maeBefore1000Pct": -5.26,
+          "fadeFromPeakPct": -0.69
+        },
+        "sellBefore1000": {
+          "open": 7.47,
+          "gapPct": 0.13,
+          "highBefore1000": 7.99,
+          "lowBefore1000": 7.45,
+          "close0935": 7.69,
+          "close0945": 7.79,
+          "close1000": 7.7,
+          "peakTime": "09:40",
+          "mfeBefore1000Pct": 7.68,
+          "maeBefore1000Pct": 0.4,
+          "fadeFromPeakPct": -3.63
+        },
+        "errors": []
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3926.531005859375,
+            "close": 3986.298095703125,
+            "high": 3986.298095703125,
+            "low": 3926.50390625,
+            "changePct": 0.86
+          },
+          "shenzhen": {
+            "open": 13764.41015625,
+            "close": 14015.0,
+            "high": 14015.0,
+            "low": 13740.740234375,
+            "changePct": 0.44
+          },
+          "averageChangePct": 0.65
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3979.881103515625,
+            "close": 3979.887939453125,
+            "high": 3995.175048828125,
+            "low": 3976.468994140625,
+            "changePct": -0.16
+          },
+          "shenzhen": {
+            "open": 14017.419921875,
+            "close": 13872.3798828125,
+            "high": 14018.509765625,
+            "low": 13845.5498046875,
+            "changePct": -1.02
+          },
+          "averageChangePct": -0.59
+        }
+      }
+    },
+    {
+      "sampleId": "20260901-002758",
+      "stockCode": "002758",
+      "stockName": "浙农股份",
+      "outcome": "stop_loss",
+      "evidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:24+08:00",
+        "buyDate": "2026-09-01",
+        "sellDate": "2026-09-02",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/002758.SZ?period1=1767196800&period2=1788364800&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/002758.SZ?period1=1788192000&period2=1788278400&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/002758.SZ?period1=1788278400&period2=1788364800&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-01",
+          "open": 8.890000343322754,
+          "close": 9.300000190734863,
+          "high": 9.449999809265137,
+          "low": 8.850000381469727,
+          "volume": 31994548.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.14,
+          "turnoverPct": null,
+          "ma5": 8.8,
+          "previousMa5": 8.55,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 5.73,
+          "amountRatio5": null,
+          "volumeRatio5": 1.4,
+          "closeLocationPct": 75.0,
+          "upperShadowPctOfRange": 25.0
+        },
+        "sellDay": {
+          "date": "2026-09-02",
+          "open": 9.119999885559082,
+          "close": 8.90999984741211,
+          "high": 9.25,
+          "low": 8.859999656677246,
+          "volume": 21074397.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": -4.19,
+          "turnoverPct": null,
+          "ma5": 8.95,
+          "previousMa5": 8.8,
+          "ma5Rising": true,
+          "closeVsMa5Pct": -0.47,
+          "amountRatio5": null,
+          "volumeRatio5": 0.76,
+          "closeLocationPct": 12.82,
+          "upperShadowPctOfRange": 33.33
+        },
+        "buyTail": {
+          "open": 8.89,
+          "gapPct": null,
+          "highBefore1000": 9.36,
+          "lowBefore1000": 8.89,
+          "close0935": 9.11,
+          "close0945": 9.18,
+          "close1000": 9.33,
+          "peakTime": "10:00",
+          "mfeBefore1000Pct": 1.3,
+          "maeBefore1000Pct": -3.79,
+          "fadeFromPeakPct": -0.32
+        },
+        "sellBefore1000": {
+          "open": 9.13,
+          "gapPct": -1.83,
+          "highBefore1000": 9.13,
+          "lowBefore1000": 8.86,
+          "close0935": 8.88,
+          "close0945": 8.92,
+          "close1000": 8.91,
+          "peakTime": "09:30",
+          "mfeBefore1000Pct": -1.19,
+          "maeBefore1000Pct": -4.11,
+          "fadeFromPeakPct": -2.41
+        },
+        "errors": []
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3979.881103515625,
+            "close": 3979.887939453125,
+            "high": 3995.175048828125,
+            "low": 3976.468994140625,
+            "changePct": -0.16
+          },
+          "shenzhen": {
+            "open": 14017.419921875,
+            "close": 13872.3798828125,
+            "high": 14018.509765625,
+            "low": 13845.5498046875,
+            "changePct": -1.02
+          },
+          "averageChangePct": -0.59
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3963.06591796875,
+            "close": 3941.385986328125,
+            "high": 3965.80810546875,
+            "low": 3932.2509765625,
+            "changePct": -0.97
+          },
+          "shenzhen": {
+            "open": 13732.1796875,
+            "close": 13611.5498046875,
+            "high": 13732.1796875,
+            "low": 13549.76953125,
+            "changePct": -1.88
+          },
+          "averageChangePct": -1.42
+        }
+      }
+    },
+    {
+      "sampleId": "20260902-600435",
+      "stockCode": "600435",
+      "stockName": "北方导航",
+      "outcome": "take_profit",
+      "evidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:24+08:00",
+        "buyDate": "2026-09-02",
+        "sellDate": "2026-09-03",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600435.SS?period1=1767196800&period2=1788451200&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600435.SS?period1=1788278400&period2=1788364800&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600435.SS?period1=1788364800&period2=1788451200&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-02",
+          "open": 11.079999923706055,
+          "close": 11.619999885559082,
+          "high": 11.699999809265137,
+          "low": 11.029999732971191,
+          "volume": 70418800.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.59,
+          "turnoverPct": null,
+          "ma5": 10.97,
+          "previousMa5": 10.73,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 5.93,
+          "amountRatio5": null,
+          "volumeRatio5": 3.86,
+          "closeLocationPct": 88.06,
+          "upperShadowPctOfRange": 11.94
+        },
+        "sellDay": {
+          "date": "2026-09-03",
+          "open": 11.510000228881836,
+          "close": 11.609999656677246,
+          "high": 11.949999809265137,
+          "low": 11.380000114440918,
+          "volume": 53250997.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": -0.09,
+          "turnoverPct": null,
+          "ma5": 11.18,
+          "previousMa5": 10.97,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 3.83,
+          "amountRatio5": null,
+          "volumeRatio5": 1.8,
+          "closeLocationPct": 40.35,
+          "upperShadowPctOfRange": 59.65
+        },
+        "buyTail": {
+          "open": 11.08,
+          "gapPct": null,
+          "highBefore1000": 11.49,
+          "lowBefore1000": 11.06,
+          "close0935": 11.23,
+          "close0945": 11.45,
+          "close1000": 11.39,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": -0.52,
+          "maeBefore1000Pct": -4.24,
+          "fadeFromPeakPct": -0.87
+        },
+        "sellBefore1000": {
+          "open": 11.55,
+          "gapPct": -0.6,
+          "highBefore1000": 11.94,
+          "lowBefore1000": 11.4,
+          "close0935": 11.61,
+          "close0945": 11.72,
+          "close1000": 11.77,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": 3.38,
+          "maeBefore1000Pct": -1.3,
+          "fadeFromPeakPct": -1.42
+        },
+        "errors": []
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3963.06591796875,
+            "close": 3941.385986328125,
+            "high": 3965.80810546875,
+            "low": 3932.2509765625,
+            "changePct": -0.97
+          },
+          "shenzhen": {
+            "open": 13732.1796875,
+            "close": 13611.5498046875,
+            "high": 13732.1796875,
+            "low": 13549.76953125,
+            "changePct": -1.88
+          },
+          "averageChangePct": -1.42
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3952.794921875,
+            "close": 3942.087890625,
+            "high": 3968.112060546875,
+            "low": 3930.447021484375,
+            "changePct": 0.02
+          },
+          "shenzhen": {
+            "open": 13711.0703125,
+            "close": 13625.1201171875,
+            "high": 13742.8896484375,
+            "low": 13531.5302734375,
+            "changePct": 0.1
+          },
+          "averageChangePct": 0.06
+        }
+      }
+    },
+    {
+      "sampleId": "20260903-601083",
+      "stockCode": "601083",
+      "stockName": "锦江航运",
+      "outcome": "stop_loss",
+      "evidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:24+08:00",
+        "buyDate": "2026-09-03",
+        "sellDate": "2026-09-04",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/601083.SS?period1=1767196800&period2=1788537600&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/601083.SS?period1=1788364800&period2=1788451200&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/601083.SS?period1=1788451200&period2=1788537600&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-03",
+          "open": 12.380000114440918,
+          "close": 13.0,
+          "high": 13.109999656677246,
+          "low": 12.380000114440918,
+          "volume": 22042294.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.92,
+          "turnoverPct": null,
+          "ma5": 12.97,
+          "previousMa5": 13.02,
+          "ma5Rising": false,
+          "closeVsMa5Pct": 0.23,
+          "amountRatio5": null,
+          "volumeRatio5": 1.32,
+          "closeLocationPct": 84.93,
+          "upperShadowPctOfRange": 15.07
+        },
+        "sellDay": {
+          "date": "2026-09-04",
+          "open": 13.050000190734863,
+          "close": 13.229999542236328,
+          "high": 13.369999885559082,
+          "low": 12.890000343322754,
+          "volume": 17102299.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 1.77,
+          "turnoverPct": null,
+          "ma5": 13.0,
+          "previousMa5": 12.97,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 1.8,
+          "amountRatio5": null,
+          "volumeRatio5": 1.0,
+          "closeLocationPct": 70.83,
+          "upperShadowPctOfRange": 29.17
+        },
+        "buyTail": {
+          "open": 12.39,
+          "gapPct": null,
+          "highBefore1000": 13.09,
+          "lowBefore1000": 12.39,
+          "close0935": 12.61,
+          "close0945": 12.78,
+          "close1000": 12.99,
+          "peakTime": "10:00",
+          "mfeBefore1000Pct": 0.61,
+          "maeBefore1000Pct": -4.77,
+          "fadeFromPeakPct": -0.76
+        },
+        "sellBefore1000": {
+          "open": 13.06,
+          "gapPct": 0.46,
+          "highBefore1000": 13.22,
+          "lowBefore1000": 12.91,
+          "close0935": 13.14,
+          "close0945": 13.07,
+          "close1000": 13.1,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": 1.61,
+          "maeBefore1000Pct": -0.77,
+          "fadeFromPeakPct": -0.91
+        },
+        "errors": []
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3952.794921875,
+            "close": 3942.087890625,
+            "high": 3968.112060546875,
+            "low": 3930.447021484375,
+            "changePct": 0.02
+          },
+          "shenzhen": {
+            "open": 13711.0703125,
+            "close": 13625.1201171875,
+            "high": 13742.8896484375,
+            "low": 13531.5302734375,
+            "changePct": 0.1
+          },
+          "averageChangePct": 0.06
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3955.549072265625,
+            "close": 3930.115966796875,
+            "high": 3980.201904296875,
+            "low": 3915.220947265625,
+            "changePct": -0.3
+          },
+          "shenzhen": {
+            "open": 13725.650390625,
+            "close": 13516.9697265625,
+            "high": 13798.3603515625,
+            "low": 13448.7900390625,
+            "changePct": -0.79
+          },
+          "averageChangePct": -0.55
+        }
+      }
+    },
+    {
+      "sampleId": "20260903-601975",
+      "stockCode": "601975",
+      "stockName": "招商南油",
+      "outcome": "take_profit",
+      "evidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:24+08:00",
+        "buyDate": "2026-09-03",
+        "sellDate": "2026-09-04",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/601975.SS?period1=1767196800&period2=1788537600&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/601975.SS?period1=1788364800&period2=1788451200&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/601975.SS?period1=1788451200&period2=1788537600&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-03",
+          "open": 4.099999904632568,
+          "close": 4.28000020980835,
+          "high": 4.389999866485596,
+          "low": 4.090000152587891,
+          "volume": 251483524.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.9,
+          "turnoverPct": null,
+          "ma5": 4.18,
+          "previousMa5": 4.12,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 2.44,
+          "amountRatio5": null,
+          "volumeRatio5": 1.44,
+          "closeLocationPct": 63.33,
+          "upperShadowPctOfRange": 36.67
+        },
+        "sellDay": {
+          "date": "2026-09-04",
+          "open": 4.400000095367432,
+          "close": 4.480000019073486,
+          "high": 4.570000171661377,
+          "low": 4.349999904632568,
+          "volume": 299025582.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.67,
+          "turnoverPct": null,
+          "ma5": 4.24,
+          "previousMa5": 4.18,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 5.56,
+          "amountRatio5": null,
+          "volumeRatio5": 1.52,
+          "closeLocationPct": 59.09,
+          "upperShadowPctOfRange": 40.91
+        },
+        "buyTail": {
+          "open": 4.11,
+          "gapPct": null,
+          "highBefore1000": 4.35,
+          "lowBefore1000": 4.1,
+          "close0935": 4.24,
+          "close0945": 4.27,
+          "close1000": 4.33,
+          "peakTime": "10:00",
+          "mfeBefore1000Pct": 1.64,
+          "maeBefore1000Pct": -4.21,
+          "fadeFromPeakPct": -0.46
+        },
+        "sellBefore1000": {
+          "open": 4.43,
+          "gapPct": 3.5,
+          "highBefore1000": 4.57,
+          "lowBefore1000": 4.36,
+          "close0935": 4.54,
+          "close0945": 4.49,
+          "close1000": 4.48,
+          "peakTime": "09:40",
+          "mfeBefore1000Pct": 6.78,
+          "maeBefore1000Pct": 1.87,
+          "fadeFromPeakPct": -1.97
+        },
+        "errors": []
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3952.794921875,
+            "close": 3942.087890625,
+            "high": 3968.112060546875,
+            "low": 3930.447021484375,
+            "changePct": 0.02
+          },
+          "shenzhen": {
+            "open": 13711.0703125,
+            "close": 13625.1201171875,
+            "high": 13742.8896484375,
+            "low": 13531.5302734375,
+            "changePct": 0.1
+          },
+          "averageChangePct": 0.06
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3955.549072265625,
+            "close": 3930.115966796875,
+            "high": 3980.201904296875,
+            "low": 3915.220947265625,
+            "changePct": -0.3
+          },
+          "shenzhen": {
+            "open": 13725.650390625,
+            "close": 13516.9697265625,
+            "high": 13798.3603515625,
+            "low": 13448.7900390625,
+            "changePct": -0.79
+          },
+          "averageChangePct": -0.55
+        }
+      }
+    },
+    {
+      "sampleId": "20260904-001313",
+      "stockCode": "001313",
+      "stockName": "粤海饲料",
+      "outcome": "take_profit",
+      "evidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:27+08:00",
+        "buyDate": "2026-09-04",
+        "sellDate": "2026-09-07",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/001313.SZ?period1=1767196800&period2=1788796800&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/001313.SZ?period1=1788451200&period2=1788537600&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/001313.SZ?period1=1788710400&period2=1788796800&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-04",
+          "open": 7.340000152587891,
+          "close": 7.710000038146973,
+          "high": 7.889999866485596,
+          "low": 7.239999771118164,
+          "volume": 32186234.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 5.62,
+          "turnoverPct": null,
+          "ma5": 7.91,
+          "previousMa5": 8.01,
+          "ma5Rising": false,
+          "closeVsMa5Pct": -2.55,
+          "amountRatio5": null,
+          "volumeRatio5": 1.57,
+          "closeLocationPct": 72.31,
+          "upperShadowPctOfRange": 27.69
+        },
+        "sellDay": {
+          "date": "2026-09-07",
+          "open": 7.710000038146973,
+          "close": 8.029999732971191,
+          "high": 8.130000114440918,
+          "low": 7.679999828338623,
+          "volume": 25378180.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.15,
+          "turnoverPct": null,
+          "ma5": 7.88,
+          "previousMa5": 7.91,
+          "ma5Rising": false,
+          "closeVsMa5Pct": 1.96,
+          "amountRatio5": null,
+          "volumeRatio5": 1.09,
+          "closeLocationPct": 77.78,
+          "upperShadowPctOfRange": 22.22
+        },
+        "buyTail": {
+          "open": 7.36,
+          "gapPct": null,
+          "highBefore1000": 7.6,
+          "lowBefore1000": 7.25,
+          "close0935": 7.47,
+          "close0945": 7.51,
+          "close1000": 7.55,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": -1.43,
+          "maeBefore1000Pct": -5.97,
+          "fadeFromPeakPct": -0.66
+        },
+        "sellBefore1000": {
+          "open": 7.74,
+          "gapPct": 0.39,
+          "highBefore1000": 8.04,
+          "lowBefore1000": 7.72,
+          "close0935": 7.86,
+          "close0945": 7.93,
+          "close1000": 7.96,
+          "peakTime": "09:50",
+          "mfeBefore1000Pct": 4.28,
+          "maeBefore1000Pct": 0.13,
+          "fadeFromPeakPct": -1.0
+        },
+        "errors": []
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3955.549072265625,
+            "close": 3930.115966796875,
+            "high": 3980.201904296875,
+            "low": 3915.220947265625,
+            "changePct": -0.3
+          },
+          "shenzhen": {
+            "open": 13725.650390625,
+            "close": 13516.9697265625,
+            "high": 13798.3603515625,
+            "low": 13448.7900390625,
+            "changePct": -0.79
+          },
+          "averageChangePct": -0.55
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3942.509033203125,
+            "close": 3932.698974609375,
+            "high": 3948.4208984375,
+            "low": 3916.490966796875,
+            "changePct": 0.07
+          },
+          "shenzhen": {
+            "open": 13605.01953125,
+            "close": 13774.919921875,
+            "high": 13811.259765625,
+            "low": 13590.8203125,
+            "changePct": 1.91
+          },
+          "averageChangePct": 0.99
+        }
+      }
+    },
+    {
+      "sampleId": "20260904-002458",
+      "stockCode": "002458",
+      "stockName": "益生股份",
+      "outcome": "take_profit",
+      "evidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:27+08:00",
+        "buyDate": "2026-09-04",
+        "sellDate": "2026-09-07",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/002458.SZ?period1=1767196800&period2=1788796800&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/002458.SZ?period1=1788451200&period2=1788537600&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/002458.SZ?period1=1788710400&period2=1788796800&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-04",
+          "open": 8.75,
+          "close": 9.109999656677246,
+          "high": 9.229999542236328,
+          "low": 8.75,
+          "volume": 73238142.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.23,
+          "turnoverPct": null,
+          "ma5": 9.02,
+          "previousMa5": 9.01,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 1.02,
+          "amountRatio5": null,
+          "volumeRatio5": 1.39,
+          "closeLocationPct": 75.0,
+          "upperShadowPctOfRange": 25.0
+        },
+        "sellDay": {
+          "date": "2026-09-07",
+          "open": 9.109999656677246,
+          "close": 9.1899995803833,
+          "high": 9.239999771118164,
+          "low": 9.0,
+          "volume": 46198960.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 0.88,
+          "turnoverPct": null,
+          "ma5": 9.06,
+          "previousMa5": 9.02,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 1.46,
+          "amountRatio5": null,
+          "volumeRatio5": 0.79,
+          "closeLocationPct": 79.17,
+          "upperShadowPctOfRange": 20.83
+        },
+        "buyTail": {
+          "open": 8.77,
+          "gapPct": null,
+          "highBefore1000": 9.13,
+          "lowBefore1000": 8.76,
+          "close0935": 8.95,
+          "close0945": 9.03,
+          "close1000": 9.09,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": 0.22,
+          "maeBefore1000Pct": -3.84,
+          "fadeFromPeakPct": -0.44
+        },
+        "sellBefore1000": {
+          "open": 9.08,
+          "gapPct": -0.33,
+          "highBefore1000": 9.2,
+          "lowBefore1000": 9.01,
+          "close0935": 9.1,
+          "close0945": 9.11,
+          "close1000": 9.13,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": 0.99,
+          "maeBefore1000Pct": -1.1,
+          "fadeFromPeakPct": -0.76
+        },
+        "errors": []
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3955.549072265625,
+            "close": 3930.115966796875,
+            "high": 3980.201904296875,
+            "low": 3915.220947265625,
+            "changePct": -0.3
+          },
+          "shenzhen": {
+            "open": 13725.650390625,
+            "close": 13516.9697265625,
+            "high": 13798.3603515625,
+            "low": 13448.7900390625,
+            "changePct": -0.79
+          },
+          "averageChangePct": -0.55
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3942.509033203125,
+            "close": 3932.698974609375,
+            "high": 3948.4208984375,
+            "low": 3916.490966796875,
+            "changePct": 0.07
+          },
+          "shenzhen": {
+            "open": 13605.01953125,
+            "close": 13774.919921875,
+            "high": 13811.259765625,
+            "low": 13590.8203125,
+            "changePct": 1.91
+          },
+          "averageChangePct": 0.99
+        }
+      }
+    },
+    {
+      "sampleId": "20260909-600105",
+      "stockCode": "600105",
+      "stockName": "永鼎股份",
+      "outcome": "stop_loss",
+      "evidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:28+08:00",
+        "buyDate": "2026-09-09",
+        "sellDate": "2026-09-10",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600105.SS?period1=1767196800&period2=1789056000&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600105.SS?period1=1788883200&period2=1788969600&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600105.SS?period1=1788969600&period2=1789056000&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-09",
+          "open": 40.5,
+          "close": 41.47999954223633,
+          "high": 42.31999969482422,
+          "low": 40.0,
+          "volume": 173403430.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 6.06,
+          "turnoverPct": null,
+          "ma5": 39.21,
+          "previousMa5": 38.62,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 5.79,
+          "amountRatio5": null,
+          "volumeRatio5": 1.76,
+          "closeLocationPct": 63.79,
+          "upperShadowPctOfRange": 36.21
+        },
+        "sellDay": {
+          "date": "2026-09-10",
+          "open": 41.15999984741211,
+          "close": 40.380001068115234,
+          "high": 41.43000030517578,
+          "low": 40.040000915527344,
+          "volume": 97696677.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": -2.65,
+          "turnoverPct": null,
+          "ma5": 39.42,
+          "previousMa5": 39.21,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 2.42,
+          "amountRatio5": null,
+          "volumeRatio5": 0.84,
+          "closeLocationPct": 24.46,
+          "upperShadowPctOfRange": 19.42
+        },
+        "buyTail": {
+          "open": 40.6,
+          "gapPct": null,
+          "highBefore1000": 41.85,
+          "lowBefore1000": 40.05,
+          "close0935": 41.81,
+          "close0945": 40.97,
+          "close1000": 40.93,
+          "peakTime": "09:40",
+          "mfeBefore1000Pct": 1.11,
+          "maeBefore1000Pct": -3.24,
+          "fadeFromPeakPct": -2.2
+        },
+        "sellBefore1000": {
+          "open": 41.28,
+          "gapPct": -0.48,
+          "highBefore1000": 41.41,
+          "lowBefore1000": 40.06,
+          "close0935": 40.37,
+          "close0945": 40.81,
+          "close1000": 40.26,
+          "peakTime": "09:30",
+          "mfeBefore1000Pct": 0.05,
+          "maeBefore1000Pct": -3.21,
+          "fadeFromPeakPct": -2.78
+        },
+        "errors": []
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3943.922119140625,
+            "close": 3951.507080078125,
+            "high": 3958.116943359375,
+            "low": 3933.468994140625,
+            "changePct": 0.28
+          },
+          "shenzhen": {
+            "open": 13788.9404296875,
+            "close": 13723.3203125,
+            "high": 13788.9404296875,
+            "low": 13625.1201171875,
+            "changePct": 0.15
+          },
+          "averageChangePct": 0.22
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3939.094970703125,
+            "close": 3934.404052734375,
+            "high": 3949.2548828125,
+            "low": 3927.346923828125,
+            "changePct": -0.43
+          },
+          "shenzhen": {
+            "open": 13641.1796875,
+            "close": 13617.669921875,
+            "high": 13713.8798828125,
+            "low": 13585.599609375,
+            "changePct": -0.77
+          },
+          "averageChangePct": -0.6
+        }
+      }
+    },
+    {
+      "sampleId": "20260909-600522",
+      "stockCode": "600522",
+      "stockName": "中天科技",
+      "outcome": "stop_loss",
+      "evidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:27+08:00",
+        "buyDate": "2026-09-09",
+        "sellDate": "2026-09-10",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600522.SS?period1=1767196800&period2=1789056000&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600522.SS?period1=1788883200&period2=1788969600&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600522.SS?period1=1788969600&period2=1789056000&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-09",
+          "open": 33.400001525878906,
+          "close": 34.119998931884766,
+          "high": 34.38999938964844,
+          "low": 33.209999084472656,
+          "volume": 264496886.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.95,
+          "turnoverPct": null,
+          "ma5": 32.79,
+          "previousMa5": 32.7,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 4.05,
+          "amountRatio5": null,
+          "volumeRatio5": 1.92,
+          "closeLocationPct": 77.12,
+          "upperShadowPctOfRange": 22.88
+        },
+        "sellDay": {
+          "date": "2026-09-10",
+          "open": 33.70000076293945,
+          "close": 33.29999923706055,
+          "high": 33.900001525878906,
+          "low": 33.2400016784668,
+          "volume": 127855123.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": -2.4,
+          "turnoverPct": null,
+          "ma5": 32.87,
+          "previousMa5": 32.79,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 1.31,
+          "amountRatio5": null,
+          "volumeRatio5": 0.78,
+          "closeLocationPct": 9.09,
+          "upperShadowPctOfRange": 30.3
+        },
+        "buyTail": {
+          "open": 33.43,
+          "gapPct": null,
+          "highBefore1000": 34.39,
+          "lowBefore1000": 33.26,
+          "close0935": 34.21,
+          "close0945": 33.85,
+          "close1000": 33.92,
+          "peakTime": "09:40",
+          "mfeBefore1000Pct": 1.0,
+          "maeBefore1000Pct": -2.32,
+          "fadeFromPeakPct": -1.37
+        },
+        "sellBefore1000": {
+          "open": 33.7,
+          "gapPct": -1.23,
+          "highBefore1000": 33.89,
+          "lowBefore1000": 33.25,
+          "close0935": 33.49,
+          "close0945": 33.69,
+          "close1000": 33.34,
+          "peakTime": "09:40",
+          "mfeBefore1000Pct": -0.47,
+          "maeBefore1000Pct": -2.35,
+          "fadeFromPeakPct": -1.62
+        },
+        "errors": []
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3943.922119140625,
+            "close": 3951.507080078125,
+            "high": 3958.116943359375,
+            "low": 3933.468994140625,
+            "changePct": 0.28
+          },
+          "shenzhen": {
+            "open": 13788.9404296875,
+            "close": 13723.3203125,
+            "high": 13788.9404296875,
+            "low": 13625.1201171875,
+            "changePct": 0.15
+          },
+          "averageChangePct": 0.22
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3939.094970703125,
+            "close": 3934.404052734375,
+            "high": 3949.2548828125,
+            "low": 3927.346923828125,
+            "changePct": -0.43
+          },
+          "shenzhen": {
+            "open": 13641.1796875,
+            "close": 13617.669921875,
+            "high": 13713.8798828125,
+            "low": 13585.599609375,
+            "changePct": -0.77
+          },
+          "averageChangePct": -0.6
+        }
+      }
+    }
+  ],
+  "errors": []
+}

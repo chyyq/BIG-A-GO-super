@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "scannedAt": "2026-09-12T15:57:32+08:00",
+  "referenceRoot": "reference",
+  "assetCount": 36,
+  "newAssetCount": 0,
+  "assets": [
+    {
+      "assetId": "11fa150069acf732",
+      "sha256": "11fa150069acf7325b776c2eea742612a35955b10cffeefcc8a3ee7b9d889312",
+      "path": "reference/7.14-7.15/0714大盘.jpg",
+      "type": "market",
+      "stockNames": [],
+      "dates": [
+        "2026-07-14",
+        "2026-07-15"
+      ],
+      "size": 268018,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "9efe62c1bce04f95",
+      "sha256": "9efe62c1bce04f95c0c72723aefef10823153071b5e712599adff6a8647635da",
+      "path": "reference/7.14-7.15/0715大盘.jpg",
+      "type": "market",
+      "stockNames": [],
+      "dates": [
+        "2026-07-15",
+        "2026-07-14"
+      ],
+      "size": 287340,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "7011dde12c22ca65",
+      "sha256": "7011dde12c22ca65f92b34176cdedd6a0a764a5d983f2823358f6e8f56b453e2",
+      "path": "reference/7.14-7.15/兴森科技+红板科技-夜盘策略0714.jpg",
+      "type": "night_review",
+      "stockNames": [
+        "兴森科技",
+        "红板科技"
+      ],
+      "dates": [
+        "2026-07-14",
+        "2026-07-15"
+      ],
+      "size": 192515,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "53653c573198e994",
+      "sha256": "53653c573198e994b425124dfd2e2b6dc06abc79c38819a3f68ae26a7ff06b41",
+      "path": "reference/7.14-7.15/兴森科技-买入盘0714.jpg",
+      "type": "buy",
+      "stockNames": [
+        "兴森科技"
+      ],
+      "dates": [
+        "2026-07-14",
+        "2026-07-15"
+      ],
+      "size": 259372,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "150c2c48daeae0ad",
+      "sha256": "150c2c48daeae0ade373bf5e5bc250ca0faceedfc1f0de2fda9c3866146981bf",
+      "path": "reference/7.14-7.15/兴森科技-卖出盘0715.jpg",
+      "type": "sell",
+      "stockNames": [
+        "兴森科技"
+      ],
+      "dates": [
+        "2026-07-15",
+        "2026-07-14"
+      ],
+      "size": 277605,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "a0e871bb7861378a",
+      "sha256": "a0e871bb7861378a813919285bfcda1ea5bac3c50df547a32482fc464bc79bf2",
+      "path": "reference/7.14-7.15/宝鼎科技-买入盘0714.jpg",
+      "type": "buy",
+      "stockNames": [
+        "宝鼎科技"
+      ],
+      "dates": [
+        "2026-07-14",
+        "2026-07-15"
+      ],
+      "size": 258800,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "ed92b016ba9e48de",
+      "sha256": "ed92b016ba9e48dee2209d94d54fe04b23faf2b062e1b1680320d4a677b790c0",
+      "path": "reference/7.14-7.15/宝鼎科技-卖出盘0715.jpg",
+      "type": "sell",
+      "stockNames": [
+        "宝鼎科技"
+      ],
+      "dates": [
+        "2026-07-15",
+        "2026-07-14"
+      ],
+      "size": 273428,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "5803655446135d21",
+      "sha256": "5803655446135d218a13ba38ec15cce73dd69f7c42502f0d3f6c6c8a2a53c9e8",
+      "path": "reference/7.14-7.15/山东波纤-买入盘0714.jpg",
+      "type": "buy",
+      "stockNames": [
+        "山东玻纤"
+      ],
+      "dates": [
+        "2026-07-14",
+        "2026-07-15"
+      ],
+      "size": 252053,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "7cc5f6def5761c99",
+      "sha256": "7cc5f6def5761c993d03d418c6251b9597556d084a9bfbe6ab041bbf90bd5c22",
+      "path": "reference/7.14-7.15/山东波纤-卖出盘0715.jpg",
+      "type": "sell",
+      "stockNames": [
+        "山东玻纤"
+      ],
+      "dates": [
+        "2026-07-15",
+        "2026-07-14"
+      ],
+      "size": 272365,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "fad5f420bf177e3e",
+      "sha256": "fad5f420bf177e3efb68c40faeb9faa4dd827c7fbaa1654046b37a95a5cd9b74",
+      "path": "reference/7.14-7.15/山东波纤-夜间策略0714.jpg",
+      "type": "night_review",
+      "stockNames": [
+        "山东玻纤"
+      ],
+      "dates": [
+        "2026-07-14",
+        "2026-07-15"
+      ],
+      "size": 204473,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "a2ad32080c2fb631",
+      "sha256": "a2ad32080c2fb63172bddcac3d2b346f266bd2299efadbb6c3dd74b832b6f310",
+      "path": "reference/7.14-7.15/祖名股份-买入盘0714.jpg",
+      "type": "buy",
+      "stockNames": [
+        "祖名股份"
+      ],
+      "dates": [
+        "2026-07-14",
+        "2026-07-15"
+      ],
+      "size": 261208,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "1c1c60952e8d9397",
+      "sha256": "1c1c60952e8d93972805a975519b7ef7f6bcf3d33dacecc19790921ad43fec88",
+      "path": "reference/7.14-7.15/祖名股份-卖出盘0715.jpg",
+      "type": "sell",
+      "stockNames": [
+        "祖名股份"
+      ],
+      "dates": [
+        "2026-07-15",
+        "2026-07-14"
+      ],
+      "size": 268470,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "e2d02fe9afe1d30b",
+      "sha256": "e2d02fe9afe1d30b9986fe4ece78988069e6ef6b826df8a41ab1f60b9449ca99",
+      "path": "reference/7.14-7.15/祖名股份-夜盘策略0714.jpg",
+      "type": "night_review",
+      "stockNames": [
+        "祖名股份"
+      ],
+      "dates": [
+        "2026-07-14",
+        "2026-07-15"
+      ],
+      "size": 204538,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "28ceb88d9f74084d",
+      "sha256": "28ceb88d9f74084d6f8ee018f636666a8d3fc29b50b97b1d8ebfd54ac12bbc6d",
+      "path": "reference/7.14-7.15/红板科技-买入盘0714.jpg",
+      "type": "buy",
+      "stockNames": [
+        "红板科技"
+      ],
+      "dates": [
+        "2026-07-14",
+        "2026-07-15"
+      ],
+      "size": 262821,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "d4c3cf21c4e5954c",
+      "sha256": "d4c3cf21c4e5954c387b65a4be851028fd31a56f5cf824101ad4c8daaf61a14a",
+      "path": "reference/7.14-7.15/红板科技-卖出盘0715.jpg",
+      "type": "sell",
+      "stockNames": [
+        "红板科技"
+      ],
+      "dates": [
+        "2026-07-15",
+        "2026-07-14"
+      ],
+      "size": 278282,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "963e333b9477e3e6",
+      "sha256": "963e333b9477e3e6daf47a24671cb42b0a20ce5f277905d20734f3ce1aa8a677",
+      "path": "reference/7.22-7.23/0722大盘.jpg",
+      "type": "market",
+      "stockNames": [],
+      "dates": [
+        "2026-07-22",
+        "2026-07-23"
+      ],
+      "size": 272429,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "5b459c63f4e5a7e4",
+      "sha256": "5b459c63f4e5a7e4de69ebf19862d4cddc10cfb52572beeeff4a02a5fb52d25d",
+      "path": "reference/7.22-7.23/0723大盘.jpg",
+      "type": "market",
+      "stockNames": [],
+      "dates": [
+        "2026-07-23",
+        "2026-07-22"
+      ],
+      "size": 275686,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "5772a433c89f8628",
+      "sha256": "5772a433c89f86288ec47feff72b7bdead8e1eddb413ebed5b83373c646feeb1",
+      "path": "reference/7.22-7.23/兴业银锡-买入盘0722.jpg",
+      "type": "buy",
+      "stockNames": [
+        "兴业银锡"
+      ],
+      "dates": [
+        "2026-07-22",
+        "2026-07-23"
+      ],
+      "size": 245638,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "eac2ea2ebaec84b6",
+      "sha256": "eac2ea2ebaec84b687b0e37011d1bc2ff87e2134a8ea78e53d63f1f1e3b59ef7",
+      "path": "reference/7.22-7.23/兴业银锡-卖出盘0723.jpg",
+      "type": "sell",
+      "stockNames": [
+        "兴业银锡"
+      ],
+      "dates": [
+        "2026-07-23",
+        "2026-07-22"
+      ],
+      "size": 270229,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "816c8929140a0e21",
+      "sha256": "816c8929140a0e21c2fa9498f8d7d87ff841e0c12418762567b8e08cc665c729",
+      "path": "reference/7.22-7.23/兴业银锡-夜间复盘0722.jpg",
+      "type": "night_review",
+      "stockNames": [
+        "兴业银锡"
+      ],
+      "dates": [
+        "2026-07-22",
+        "2026-07-23"
+      ],
+      "size": 184905,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "43f402d865d54863",
+      "sha256": "43f402d865d548633461576cd7fed02fabf9591d455830f6a1113b14c5c04554",
+      "path": "reference/7.22-7.23/博迁新材-卖出盘0723.jpg",
+      "type": "sell",
+      "stockNames": [
+        "博迁新材"
+      ],
+      "dates": [
+        "2026-07-23",
+        "2026-07-22"
+      ],
+      "size": 271116,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "3e2715a8b0f77724",
+      "sha256": "3e2715a8b0f777246dbe608b09c3ffd0549a992fda353c8db7ec4b391ca025d0",
+      "path": "reference/7.22-7.23/博迁新材-夜间复盘0722.jpg",
+      "type": "night_review",
+      "stockNames": [
+        "博迁新材"
+      ],
+      "dates": [
+        "2026-07-22",
+        "2026-07-23"
+      ],
+      "size": 199910,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "2c433adef7a1a15d",
+      "sha256": "2c433adef7a1a15d9525139b9c2b9339aa50efaa925b5308672202ed6082dd14",
+      "path": "reference/7.22-7.23/山金国际-买入盘0722.jpg",
+      "type": "buy",
+      "stockNames": [
+        "山金国际"
+      ],
+      "dates": [
+        "2026-07-22",
+        "2026-07-23"
+      ],
+      "size": 237417,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "694d6509b14868a2",
+      "sha256": "694d6509b14868a22586453999e33d79f365532847c8802efd86a180cbebf430",
+      "path": "reference/7.22-7.23/山金国际-卖出盘0723.jpg",
+      "type": "sell",
+      "stockNames": [
+        "山金国际"
+      ],
+      "dates": [
+        "2026-07-23",
+        "2026-07-22"
+      ],
+      "size": 268917,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "273b588446ba2f1d",
+      "sha256": "273b588446ba2f1d59abc19c9196be20975ad41bc0ba78c12da4f7a1fac5defe",
+      "path": "reference/7.22-7.23/山金国际-夜间复盘0722.jpg",
+      "type": "night_review",
+      "stockNames": [
+        "山金国际"
+      ],
+      "dates": [
+        "2026-07-22",
+        "2026-07-23"
+      ],
+      "size": 179191,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "34383da73dc32313",
+      "sha256": "34383da73dc32313758617a973dc0b1e915ae91a0e400380b100e18d6df36f30",
+      "path": "reference/7.22-7.23/洪田股份-卖出盘0723.jpg",
+      "type": "sell",
+      "stockNames": [
+        "洪田股份"
+      ],
+      "dates": [
+        "2026-07-23",
+        "2026-07-22"
+      ],
+      "size": 285551,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "3dc39887faf88813",
+      "sha256": "3dc39887faf88813d2079e8acd184e8a0b81189ee39e84e75c12ebeffa3b9888",
+      "path": "reference/7.22-7.23/洪田股份-夜间复盘0722.jpg",
+      "type": "night_review",
+      "stockNames": [
+        "洪田股份"
+      ],
+      "dates": [
+        "2026-07-22",
+        "2026-07-23"
+      ],
+      "size": 196043,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "a2d9c29c8e126f75",
+      "sha256": "a2d9c29c8e126f753fbc8c9b503f026ff22fad0ce69051918a3c945bd404b096",
+      "path": "reference/7.22-7.23/（打板）博迁新材-买入盘0722.jpg",
+      "type": "buy",
+      "stockNames": [
+        "博迁新材"
+      ],
+      "dates": [
+        "2026-07-22",
+        "2026-07-23"
+      ],
+      "size": 261056,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "a3443f841ee5d7d7",
+      "sha256": "a3443f841ee5d7d778941bd85ff0b5a2e9dd56a167f5f9411abe5db7ec780a0c",
+      "path": "reference/7.22-7.23/（打板）洪田股份-买入盘0722.jpg",
+      "type": "buy",
+      "stockNames": [
+        "洪田股份"
+      ],
+      "dates": [
+        "2026-07-22",
+        "2026-07-23"
+      ],
+      "size": 258656,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "3553ba9bf357503e",
+      "sha256": "3553ba9bf357503e0c36ed59bc7fb08f8a724854c084dab1d6f0d9358eee7563",
+      "path": "reference/冠石科技6.30-7.1形态.png",
+      "type": "shape",
+      "stockNames": [
+        "冠石科技"
+      ],
+      "dates": [
+        "2026-06-30",
+        "2026-07-01"
+      ],
+      "size": 198875,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "687d8465e5dab5c5",
+      "sha256": "687d8465e5dab5c5a94402d3a95673ce3cd3a7bfde339f997e7ffda6e9e67efd",
+      "path": "reference/冠石科技_0630形态.jpg",
+      "type": "shape",
+      "stockNames": [
+        "冠石科技"
+      ],
+      "dates": [
+        "2026-06-30"
+      ],
+      "size": 255085,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "d9380259cb84b502",
+      "sha256": "d9380259cb84b502088ac4add3695d977a7631ef5e2ccee982cecd6c5a9a578e",
+      "path": "reference/冠石科技_0701形态.jpg",
+      "type": "shape",
+      "stockNames": [
+        "冠石科技"
+      ],
+      "dates": [
+        "2026-07-01"
+      ],
+      "size": 257169,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "cb902f689c13287b",
+      "sha256": "cb902f689c13287bec88c5aaa7ea2ad18b18036e36fb80488440c0a8d4f5d101",
+      "path": "reference/泰晶科技_0625形态.jpg",
+      "type": "shape",
+      "stockNames": [
+        "泰晶科技"
+      ],
+      "dates": [
+        "2026-06-25"
+      ],
+      "size": 257937,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "8de61fd500f4b08c",
+      "sha256": "8de61fd500f4b08c3b1348ddc44f9ba58ac47cc024d068a60283a01ba9286b88",
+      "path": "reference/泰晶科技_0626形态.jpg",
+      "type": "shape",
+      "stockNames": [
+        "泰晶科技"
+      ],
+      "dates": [
+        "2026-06-26"
+      ],
+      "size": 257055,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "8f4927d9e09a9386",
+      "sha256": "8f4927d9e09a938624c2dce925d94837bcbeb22d1769d550193b9e2a5b45a745",
+      "path": "reference/黑猫股份_0624形态.jpg",
+      "type": "shape",
+      "stockNames": [
+        "黑猫股份"
+      ],
+      "dates": [
+        "2026-06-24"
+      ],
+      "size": 249089,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "assetId": "265e962cfc686688",
+      "sha256": "265e962cfc6866885258228a07535635b172abacf5796cacc2e04c43bfb4fd40",
+      "path": "reference/黑猫股份_0625形态.jpg",
+      "type": "shape",
+      "stockNames": [
+        "黑猫股份"
+      ],
+      "dates": [
+        "2026-06-25"
+      ],
+      "size": 236958,
+      "firstSeenAt": "2026-07-26T21:17:11+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    }
+  ],
+  "tradeExportCount": 5,
+  "newTradeExportCount": 0,
+  "tradeExports": [
+    {
+      "exportId": "9e7c6e58f4d82d7d",
+      "sha256": "9e7c6e58f4d82d7d7e0f9de9d29947f00d8d7e0b97645c9f6c5def0c2b0eea90",
+      "path": "reference/BIG-A-GO-trades-2026-07-30-133228-b74ee6679e.json",
+      "exportedAt": "2026-07-30T13:32:28.688Z",
+      "tradeCount": 7,
+      "firstSeenAt": "2026-07-30T22:22:37+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "exportId": "36d2224495375613",
+      "sha256": "36d2224495375613d57460114bc376b107061666a83bf77b30328ce2a5b82827",
+      "path": "reference/BIG-A-GO-trades-2026-08-03-151937-74942d023d.json",
+      "exportedAt": "2026-08-03T15:19:37.487Z",
+      "tradeCount": 3,
+      "firstSeenAt": "2026-08-03T23:34:06+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "exportId": "8f960f1d52a17ffd",
+      "sha256": "8f960f1d52a17ffd70ce194e60f8277ffb70833ffadec5ae43bcd8666434bb9f",
+      "path": "reference/BIG-A-GO-trades-2026-08-05-155929-c32f00b015.json",
+      "exportedAt": "2026-08-05T15:59:29.200Z",
+      "tradeCount": 8,
+      "firstSeenAt": "2026-08-06T00:23:01+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "exportId": "8a56051ef583faa7",
+      "sha256": "8a56051ef583faa711f322014dec6bffe28e17e7810eb877e2eeb0303af2c921",
+      "path": "reference/BIG-A-GO-trades-2026-08-10-161850-2fcbccd244.json",
+      "exportedAt": "2026-08-10T16:18:50.776Z",
+      "tradeCount": 8,
+      "firstSeenAt": "2026-08-11T00:24:40+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    },
+    {
+      "exportId": "44553c940d16ea2f",
+      "sha256": "44553c940d16ea2f2ff62bed3d7e023bdd61363ff86deea69786384873a1a6e8",
+      "path": "reference/BIG-A-GO-trades-2026-09-12.json",
+      "exportedAt": "2026-09-12T07:40:25.096Z",
+      "tradeCount": 27,
+      "firstSeenAt": "2026-09-12T15:43:54+08:00",
+      "lastSeenAt": "2026-09-12T15:57:32+08:00"
+    }
+  ]
+}

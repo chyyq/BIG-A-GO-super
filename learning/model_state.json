@@ -1,0 +1,704 @@
+{
+  "schemaVersion": 1,
+  "rebuiltAt": "2026-09-12T16:12:57+08:00",
+  "sampleCount": 42,
+  "labeledSampleCount": 29,
+  "pendingOutcomeCount": 13,
+  "outcomes": {
+    "stop_loss": 13,
+    "take_profit": 16
+  },
+  "missingEvidence": {
+    "actual_outcome": 13,
+    "buy": 21,
+    "entry_strategy": 9,
+    "five_day": 30,
+    "market_buy": 21,
+    "market_sell": 21,
+    "night_review": 23,
+    "sell": 21,
+    "valid_frozen_night_plan": 6
+  },
+  "takeProfitRate": 55.17,
+  "realizedReturnKnown": 0,
+  "averageRealizedReturnPct": null,
+  "positiveRealizedReturnRate": null,
+  "tp1HitRate": 42.86,
+  "stopHitRate": 28.57,
+  "mfeAtLeast3Rate": 45.0,
+  "openingRegimes": {
+    "flat_open_failed_followthrough": {
+      "samples": 2,
+      "labeled": 1,
+      "takeProfitRate": 0.0,
+      "averageMfePct": 0.98
+    },
+    "flat_open_followthrough": {
+      "samples": 5,
+      "labeled": 5,
+      "takeProfitRate": 80.0,
+      "averageMfePct": 3.59
+    },
+    "gap_down_recovery": {
+      "samples": 2,
+      "labeled": 2,
+      "takeProfitRate": 0.0,
+      "averageMfePct": 0.33
+    },
+    "gap_down_recovery_then_fade": {
+      "samples": 1,
+      "labeled": 0,
+      "takeProfitRate": null,
+      "averageMfePct": 2.91
+    },
+    "gap_down_weak": {
+      "samples": 2,
+      "labeled": 2,
+      "takeProfitRate": 0.0,
+      "averageMfePct": -0.83
+    },
+    "gap_up_failed_followthrough": {
+      "samples": 6,
+      "labeled": 2,
+      "takeProfitRate": 100.0,
+      "averageMfePct": 4.33
+    },
+    "gap_up_fast_recovery_limit": {
+      "samples": 1,
+      "labeled": 0,
+      "takeProfitRate": null,
+      "averageMfePct": 2.84
+    },
+    "strong_open_extension": {
+      "samples": 2,
+      "labeled": 0,
+      "takeProfitRate": null,
+      "averageMfePct": 5.53
+    },
+    "unknown": {
+      "samples": 21,
+      "labeled": 17,
+      "takeProfitRate": 58.82,
+      "averageMfePct": 0.0
+    }
+  },
+  "entryStrategies": {
+    "AM_TOP": {
+      "samples": 9,
+      "labeled": 9,
+      "takeProfitRate": 55.56,
+      "realizedReturnKnown": 0,
+      "averageRealizedReturnPct": null,
+      "buyDayLimitKnown": 9,
+      "buyDayLimitTouchKnown": 0,
+      "buyDayLimitTouchRate": null,
+      "buyDayLimitSealRate": 0.0
+    },
+    "TAIL_MAIN": {
+      "samples": 24,
+      "labeled": 20,
+      "takeProfitRate": 55.0,
+      "realizedReturnKnown": 0,
+      "averageRealizedReturnPct": null,
+      "buyDayLimitKnown": 0,
+      "buyDayLimitTouchKnown": 0,
+      "buyDayLimitTouchRate": null,
+      "buyDayLimitSealRate": null
+    },
+    "unknown": {
+      "samples": 9,
+      "labeled": 0,
+      "takeProfitRate": null,
+      "realizedReturnKnown": 0,
+      "averageRealizedReturnPct": null,
+      "buyDayLimitKnown": 0,
+      "buyDayLimitTouchKnown": 0,
+      "buyDayLimitTouchRate": null,
+      "buyDayLimitSealRate": null
+    }
+  },
+  "buyPlans": {
+    "[AM_TOP] early lift-off entry": {
+      "samples": 7,
+      "labeled": 7,
+      "distinctBuyDates": 4,
+      "takeProfitRate": 57.14,
+      "realizedReturnKnown": 0,
+      "averageRealizedReturnPct": null,
+      "buyDayLimitSealRate": 0.0
+    },
+    "[AM_TOP] open-strength entry": {
+      "samples": 2,
+      "labeled": 2,
+      "distinctBuyDates": 1,
+      "takeProfitRate": 50.0,
+      "realizedReturnKnown": 0,
+      "averageRealizedReturnPct": null,
+      "buyDayLimitSealRate": 0.0
+    },
+    "[TAIL_MAIN] T3 mid-trend breakout": {
+      "samples": 22,
+      "labeled": 18,
+      "distinctBuyDates": 12,
+      "takeProfitRate": 55.56,
+      "realizedReturnKnown": 0,
+      "averageRealizedReturnPct": null,
+      "buyDayLimitSealRate": null
+    },
+    "[TAIL_MAIN] T5 first pullback reclaim": {
+      "samples": 2,
+      "labeled": 2,
+      "distinctBuyDates": 2,
+      "takeProfitRate": 50.0,
+      "realizedReturnKnown": 0,
+      "averageRealizedReturnPct": null,
+      "buyDayLimitSealRate": null
+    },
+    "unknown": {
+      "samples": 9,
+      "labeled": 0,
+      "distinctBuyDates": 2,
+      "takeProfitRate": null,
+      "realizedReturnKnown": 0,
+      "averageRealizedReturnPct": null,
+      "buyDayLimitSealRate": null
+    }
+  },
+  "computedSamples": [
+    {
+      "sampleId": "20260714-002552",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260714-603459",
+      "mfePct": 1.91,
+      "maePct": -7.98,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260714-605006",
+      "mfePct": 5.21,
+      "maePct": -2.88,
+      "realizedReturnPct": null,
+      "tp1Hit": true,
+      "stopHit": true
+    },
+    {
+      "sampleId": "20260714-002436",
+      "mfePct": 4.26,
+      "maePct": -4.31,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260714-003030",
+      "mfePct": 2.91,
+      "maePct": -2.16,
+      "realizedReturnPct": null,
+      "tp1Hit": true,
+      "stopHit": false
+    },
+    {
+      "sampleId": "20260722-605376",
+      "mfePct": 2.84,
+      "maePct": -7.17,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260722-603800",
+      "mfePct": -0.41,
+      "maePct": -6.95,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260722-000975",
+      "mfePct": 5.63,
+      "maePct": -0.4,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260722-000426",
+      "mfePct": 5.43,
+      "maePct": -1.48,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260730-000893",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260729-603727",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260729-605376",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260729-603115",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260728-603078",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260727-600396",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260727-002716",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260731-003043",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260731-603031",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260805-605589",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260805-002716",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260804-603456",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260804-600360",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260804-002897",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260810-002155",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260810-000426",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260810-002746",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260807-002038",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260807-000518",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260807-002317",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260806-600408",
+      "mfePct": null,
+      "maePct": null,
+      "realizedReturnPct": null,
+      "tp1Hit": null,
+      "stopHit": null
+    },
+    {
+      "sampleId": "20260826-000878",
+      "mfePct": 0.59,
+      "maePct": -1.24,
+      "realizedReturnPct": null,
+      "tp1Hit": false,
+      "stopHit": false
+    },
+    {
+      "sampleId": "20260826-000737",
+      "mfePct": 0.07,
+      "maePct": -1.69,
+      "realizedReturnPct": null,
+      "tp1Hit": false,
+      "stopHit": false
+    },
+    {
+      "sampleId": "20260831-600228",
+      "mfePct": 5.8,
+      "maePct": 2.05,
+      "realizedReturnPct": null,
+      "tp1Hit": true,
+      "stopHit": false
+    },
+    {
+      "sampleId": "20260831-600986",
+      "mfePct": 7.68,
+      "maePct": 0.4,
+      "realizedReturnPct": null,
+      "tp1Hit": true,
+      "stopHit": false
+    },
+    {
+      "sampleId": "20260901-002758",
+      "mfePct": -1.19,
+      "maePct": -4.11,
+      "realizedReturnPct": null,
+      "tp1Hit": false,
+      "stopHit": true
+    },
+    {
+      "sampleId": "20260902-600435",
+      "mfePct": 3.38,
+      "maePct": -1.3,
+      "realizedReturnPct": null,
+      "tp1Hit": false,
+      "stopHit": false
+    },
+    {
+      "sampleId": "20260903-601975",
+      "mfePct": 6.78,
+      "maePct": 1.87,
+      "realizedReturnPct": null,
+      "tp1Hit": true,
+      "stopHit": false
+    },
+    {
+      "sampleId": "20260903-601083",
+      "mfePct": 1.61,
+      "maePct": -0.77,
+      "realizedReturnPct": null,
+      "tp1Hit": false,
+      "stopHit": false
+    },
+    {
+      "sampleId": "20260904-002458",
+      "mfePct": 0.99,
+      "maePct": -1.1,
+      "realizedReturnPct": null,
+      "tp1Hit": false,
+      "stopHit": false
+    },
+    {
+      "sampleId": "20260904-001313",
+      "mfePct": 4.28,
+      "maePct": 0.13,
+      "realizedReturnPct": null,
+      "tp1Hit": true,
+      "stopHit": false
+    },
+    {
+      "sampleId": "20260909-600522",
+      "mfePct": -0.47,
+      "maePct": -2.35,
+      "realizedReturnPct": null,
+      "tp1Hit": false,
+      "stopHit": true
+    },
+    {
+      "sampleId": "20260909-600105",
+      "mfePct": 0.05,
+      "maePct": -3.21,
+      "realizedReturnPct": null,
+      "tp1Hit": false,
+      "stopHit": true
+    }
+  ],
+  "ruleCandidates": [
+    {
+      "id": "OPENING_CONFIRMATION_OVERRIDE",
+      "status": "deployed_stage1_pending_validation",
+      "minimumSamples": 12,
+      "rationale": "09:25竞价只定级，09:30-09:35的真实承接可以覆盖夜间默认预案。",
+      "supportSampleIds": [
+        "20260714-002552",
+        "20260714-603459",
+        "20260714-605006",
+        "20260714-002436",
+        "20260714-003030",
+        "20260722-605376",
+        "20260722-603800",
+        "20260722-000975",
+        "20260722-000426"
+      ],
+      "contradictionSampleIds": [],
+      "evidenceCount": 9,
+      "labeledEvidenceCount": 0,
+      "distinctBuyDates": 2,
+      "promotionReady": false
+    },
+    {
+      "id": "FREEZE_OVERNIGHT_TARGET",
+      "status": "deployed_stage1_pending_validation",
+      "minimumSamples": 8,
+      "rationale": "次日实时价不得重新抬高夜间卖点，避免移动目标。",
+      "supportSampleIds": [
+        "20260714-603459",
+        "20260714-002436",
+        "20260722-605376",
+        "20260722-603800",
+        "20260722-000975",
+        "20260722-000426"
+      ],
+      "contradictionSampleIds": [],
+      "evidenceCount": 6,
+      "labeledEvidenceCount": 0,
+      "distinctBuyDates": 2,
+      "promotionReady": false
+    },
+    {
+      "id": "PRIOR_TREND_PERSISTENCE_VETO",
+      "status": "deployed_stage1_pending_validation",
+      "minimumSamples": 10,
+      "rationale": "排除前一日趋势尚未成立、仅凭当日大阳线形成的下跌反弹。",
+      "supportSampleIds": [
+        "20260714-002552",
+        "20260714-603459",
+        "20260714-605006",
+        "20260714-002436"
+      ],
+      "contradictionSampleIds": [],
+      "evidenceCount": 4,
+      "labeledEvidenceCount": 0,
+      "distinctBuyDates": 1,
+      "promotionReady": false
+    },
+    {
+      "id": "EXECUTABLE_TARGET_BAND",
+      "status": "deployed_stage1_pending_validation",
+      "minimumSamples": 8,
+      "rationale": "止盈使用价格区间和成交容差，不使用单一精确价。",
+      "supportSampleIds": [
+        "20260714-003030",
+        "20260714-605006",
+        "20260804-600360",
+        "20260804-002897"
+      ],
+      "contradictionSampleIds": [],
+      "evidenceCount": 4,
+      "labeledEvidenceCount": 2,
+      "distinctBuyDates": 2,
+      "promotionReady": false
+    },
+    {
+      "id": "WEAK_EXECUTION_MONOTONIC",
+      "status": "deployed_execution_guard_pending_validation",
+      "minimumSamples": 8,
+      "rationale": "WEAK卖出指令属于不可逆执行事件；后续转NEUTRAL/STRONG只管理未卖余仓，不能提示回补已卖仓位。",
+      "supportSampleIds": [
+        "20260714-603459",
+        "20260714-605006",
+        "20260722-605376",
+        "20260722-603800"
+      ],
+      "contradictionSampleIds": [],
+      "evidenceCount": 4,
+      "labeledEvidenceCount": 0,
+      "distinctBuyDates": 2,
+      "promotionReady": false
+    },
+    {
+      "id": "NEUTRAL_EXIT_0945_STRONG_EXIT_1000",
+      "status": "candidate_collect_more_dates",
+      "minimumSamples": 12,
+      "rationale": "WEAK按触发点退出；NEUTRAL考虑09:45清余仓；仅STRONG/RECOVERY/LIMIT_UP保留到10:00，避免普通溢价冲高回落。",
+      "supportSampleIds": [
+        "20260714-002552",
+        "20260714-603459",
+        "20260714-605006",
+        "20260714-002436",
+        "20260722-603800"
+      ],
+      "contradictionSampleIds": [
+        "20260714-003030",
+        "20260722-605376",
+        "20260722-000975",
+        "20260722-000426"
+      ],
+      "evidenceCount": 9,
+      "labeledEvidenceCount": 0,
+      "distinctBuyDates": 2,
+      "promotionReady": false
+    },
+    {
+      "id": "AM_TOP_SAME_DAY_LIMIT_PRECISION",
+      "status": "deployed_watch_only_pending_validation",
+      "minimumSamples": 12,
+      "stage1Decision": "Seven tagged AM_TOP trades across four buy dates all used the broad early lift-off branch and none sealed at the buy-day close. Remove that branch, reject synthetic board scores, and retain only verified-sector near-limit or open-strength entries.",
+      "stage2Decision": "Nine tagged AM_TOP trades across five buy dates produced zero buy-day sealed limit-ups. The two verified-sector open-strength samples split one profit and one stop loss, with the loss larger. Suspend live AM_TOP execution and keep candidates as watch-only evidence until multi-date seal precision is demonstrated.",
+      "rationale": "早盘策略单独统计买入日触板率和收盘封板率；在至少三个买入日样本前，不凭主观失败感受直接收紧阈值。",
+      "supportSampleIds": [
+        "20260727-600396",
+        "20260727-002716",
+        "20260728-603078",
+        "20260729-603727",
+        "20260729-605376",
+        "20260729-603115",
+        "20260730-000893",
+        "20260731-003043",
+        "20260731-603031"
+      ],
+      "contradictionSampleIds": [],
+      "evidenceCount": 9,
+      "labeledEvidenceCount": 9,
+      "distinctBuyDates": 5,
+      "promotionReady": false
+    },
+    {
+      "id": "TAIL_T3_SAME_DAY_RANKING_CALIBRATION",
+      "status": "candidate_collect_more_dates",
+      "minimumSamples": 9,
+      "rationale": "截至2026-08-10已有8笔已标记T3样本覆盖4个买入日。8月4日总分最高者是同日唯一亏损，8月7日总分最高者的记录收益反而最低；当前总分适合做准入，但不足以单独决定同日排序。继续补足至少9笔，并先复核结果标签与收益方向冲突。",
+      "supportSampleIds": [
+        "20260804-603456",
+        "20260804-600360",
+        "20260804-002897",
+        "20260805-605589",
+        "20260806-600408",
+        "20260807-002038",
+        "20260807-000518",
+        "20260807-002317"
+      ],
+      "contradictionSampleIds": [],
+      "evidenceCount": 8,
+      "labeledEvidenceCount": 8,
+      "distinctBuyDates": 4,
+      "promotionReady": false
+    },
+    {
+      "id": "TAIL_RECOVERY_MA5_EXTENSION_VETO",
+      "status": "deployed_learned_guard_pending_validation",
+      "minimumSamples": 5,
+      "promotionDecision": "The interaction matched five user-confirmed stop-loss outcomes across three buy dates and no take-profit outcome in the 2026-08-26 through 2026-09-09 cohort. Deploy as a conservative admission veto while continuing validation.",
+      "rationale": "尾盘承接恢复分不高（<=70）且收盘偏离MA5至少3%时，表面强势更接近末端扩张；拒绝该组合，单项分数不单独否决。",
+      "supportSampleIds": [
+        "20260826-000878",
+        "20260826-000737",
+        "20260901-002758",
+        "20260909-600522",
+        "20260909-600105"
+      ],
+      "contradictionSampleIds": [],
+      "evidenceCount": 5,
+      "labeledEvidenceCount": 5,
+      "distinctBuyDates": 3,
+      "promotionReady": true
+    },
+    {
+      "id": "T1_GAP_DOWN_ONE_PCT_DEFENSIVE_EXIT",
+      "status": "candidate_collect_more_samples",
+      "minimumSamples": 8,
+      "rationale": "本批T+1低开至少1%的4笔全部为用户确认止损，覆盖3个买入日；继续区分低开后快速修复与持续弱势，暂不等同于竞价直接全卖。",
+      "supportSampleIds": [
+        "20260826-000878",
+        "20260826-000737",
+        "20260901-002758",
+        "20260909-600522"
+      ],
+      "contradictionSampleIds": [],
+      "evidenceCount": 4,
+      "labeledEvidenceCount": 4,
+      "distinctBuyDates": 3,
+      "promotionReady": false
+    }
+  ],
+  "validationIssues": []
+}

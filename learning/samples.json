@@ -1,0 +1,5247 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-12T16:04:28+08:00",
+  "samples": [
+    {
+      "sampleId": "20260714-002552",
+      "stockCode": "002552",
+      "stockName": "宝鼎科技",
+      "buyDate": "2026-07-14",
+      "sellDate": "2026-07-15",
+      "outcome": "unknown",
+      "entryStrategy": "unknown",
+      "exitTimingEvidence": "early_defensive",
+      "openingRegime": "gap_up_failed_followthrough",
+      "prices": {
+        "buy": null,
+        "buyClose": 58.2,
+        "nextOpen": 59.94,
+        "nextHigh": 60.5,
+        "nextLow": 54.28,
+        "nextClose": 55.66
+      },
+      "market": {
+        "buyDayClose": 3967.13,
+        "buyDayPct": 1.36,
+        "sellDayClose": 3955.58,
+        "sellDayPct": -0.29
+      },
+      "nightPlan": {},
+      "sourceAssetIds": [
+        "11fa150069acf732",
+        "9efe62c1bce04f95",
+        "a0e871bb7861378a",
+        "ed92b016ba9e48de"
+      ],
+      "missingEvidence": [
+        "five_day",
+        "night_review",
+        "actual_outcome",
+        "entry_strategy"
+      ],
+      "diagnosis": "次日高开后迅速失去开盘价和均价线，属于开盘跟随失败，不能仅因高开延后风险处理。"
+    },
+    {
+      "sampleId": "20260714-603459",
+      "stockCode": "603459",
+      "stockName": "红板科技",
+      "buyDate": "2026-07-14",
+      "sellDate": "2026-07-15",
+      "outcome": "unknown",
+      "entryStrategy": "unknown",
+      "exitTimingEvidence": "early_defensive",
+      "openingRegime": "flat_open_failed_followthrough",
+      "prices": {
+        "buy": 92.43,
+        "buyClose": 94.5,
+        "nextOpen": 94.0,
+        "nextHigh": 94.2,
+        "nextLow": 85.05,
+        "nextClose": 85.05
+      },
+      "market": {
+        "buyDayClose": 3967.13,
+        "buyDayPct": 1.36,
+        "sellDayClose": 3955.58,
+        "sellDayPct": -0.29
+      },
+      "nightPlan": {
+        "captureTiming": "next_day_live_shifted"
+      },
+      "sourceAssetIds": [
+        "11fa150069acf732",
+        "9efe62c1bce04f95",
+        "28ceb88d9f74084d",
+        "d4c3cf21c4e5954c",
+        "7011dde12c22ca65"
+      ],
+      "missingEvidence": [
+        "five_day",
+        "valid_frozen_night_plan",
+        "actual_outcome",
+        "entry_strategy"
+      ],
+      "diagnosis": "接近前收开盘但无上攻确认，随后单边跌停，弱势分支必须保留快速退出。"
+    },
+    {
+      "sampleId": "20260714-605006",
+      "stockCode": "605006",
+      "stockName": "山东玻纤",
+      "buyDate": "2026-07-14",
+      "sellDate": "2026-07-15",
+      "outcome": "unknown",
+      "entryStrategy": "unknown",
+      "exitTimingEvidence": "early_defensive",
+      "openingRegime": "gap_up_failed_followthrough",
+      "prices": {
+        "buy": 16.32,
+        "buyClose": 16.54,
+        "nextOpen": 16.81,
+        "nextHigh": 17.17,
+        "nextLow": 15.85,
+        "nextClose": 15.85
+      },
+      "market": {
+        "buyDayClose": 3967.13,
+        "buyDayPct": 1.36,
+        "sellDayClose": 3955.58,
+        "sellDayPct": -0.29
+      },
+      "nightPlan": {
+        "initialState": "T1_PREMIUM",
+        "tp1": 16.81,
+        "tp1Range": [
+          16.76,
+          16.81
+        ],
+        "tp2": 17.3,
+        "stop": 16.3,
+        "captureTiming": "buy_day_night"
+      },
+      "sourceAssetIds": [
+        "11fa150069acf732",
+        "9efe62c1bce04f95",
+        "5803655446135d21",
+        "7cc5f6def5761c99",
+        "fad5f420bf177e3e"
+      ],
+      "missingEvidence": [
+        "five_day",
+        "actual_outcome",
+        "entry_strategy"
+      ],
+      "diagnosis": "TP1在开盘即可成交，但开盘冲高后快速跌破均价，说明首卖区间有效，强势持有条件不成立。"
+    },
+    {
+      "sampleId": "20260714-002436",
+      "stockCode": "002436",
+      "stockName": "兴森科技",
+      "buyDate": "2026-07-14",
+      "sellDate": "2026-07-15",
+      "outcome": "unknown",
+      "entryStrategy": "unknown",
+      "exitTimingEvidence": "early_defensive",
+      "openingRegime": "gap_up_failed_followthrough",
+      "prices": {
+        "buy": 40.16,
+        "buyClose": 40.85,
+        "nextOpen": 41.26,
+        "nextHigh": 41.87,
+        "nextLow": 38.43,
+        "nextClose": 38.71
+      },
+      "market": {
+        "buyDayClose": 3967.13,
+        "buyDayPct": 1.36,
+        "sellDayClose": 3955.58,
+        "sellDayPct": -0.29
+      },
+      "nightPlan": {
+        "captureTiming": "next_day_live_shifted"
+      },
+      "sourceAssetIds": [
+        "11fa150069acf732",
+        "9efe62c1bce04f95",
+        "53653c573198e994",
+        "150c2c48daeae0ad",
+        "7011dde12c22ca65"
+      ],
+      "missingEvidence": [
+        "five_day",
+        "valid_frozen_night_plan",
+        "actual_outcome",
+        "entry_strategy"
+      ],
+      "diagnosis": "高开冲高后跌破开盘价和均价线，属于下跌趋势中的单日反弹风险样本。"
+    },
+    {
+      "sampleId": "20260714-003030",
+      "stockCode": "003030",
+      "stockName": "祖名股份",
+      "buyDate": "2026-07-14",
+      "sellDate": "2026-07-15",
+      "outcome": "unknown",
+      "entryStrategy": "unknown",
+      "exitTimingEvidence": "recovery_window_until_1000",
+      "openingRegime": "gap_down_recovery_then_fade",
+      "prices": {
+        "buy": 25.41,
+        "buyClose": 25.97,
+        "nextOpen": 24.95,
+        "nextHigh": 26.15,
+        "nextLow": 24.86,
+        "nextClose": 24.98
+      },
+      "market": {
+        "buyDayClose": 3967.13,
+        "buyDayPct": 1.36,
+        "sellDayClose": 3955.58,
+        "sellDayPct": -0.29
+      },
+      "nightPlan": {
+        "initialState": "T1_PREMIUM",
+        "tp1": 26.17,
+        "tp1Range": [
+          26.09,
+          26.17
+        ],
+        "tp2": 26.93,
+        "stop": 24.83,
+        "captureTiming": "buy_day_night"
+      },
+      "sourceAssetIds": [
+        "11fa150069acf732",
+        "9efe62c1bce04f95",
+        "a2ad32080c2fb631",
+        "1c1c60952e8d9397",
+        "e2d02fe9afe1d30b"
+      ],
+      "missingEvidence": [
+        "five_day",
+        "actual_outcome",
+        "entry_strategy"
+      ],
+      "diagnosis": "精确目标26.17比实际最高26.15高两分钱，使用可成交区间后可避免目标差一档未触发。"
+    },
+    {
+      "sampleId": "20260722-605376",
+      "stockCode": "605376",
+      "stockName": "博迁新材",
+      "buyDate": "2026-07-22",
+      "sellDate": "2026-07-23",
+      "outcome": "unknown",
+      "entryStrategy": "unknown",
+      "exitTimingEvidence": "limit_up_exception",
+      "openingRegime": "gap_up_fast_recovery_limit",
+      "prices": {
+        "buy": 155.12,
+        "buyClose": 145.02,
+        "nextOpen": 149.83,
+        "nextHigh": 159.52,
+        "nextLow": 144.0,
+        "nextClose": 146.41
+      },
+      "market": {
+        "buyDayClose": 3867.03,
+        "buyDayPct": 0.07,
+        "sellDayClose": 3876.78,
+        "sellDayPct": 0.25
+      },
+      "nightPlan": {
+        "captureTiming": "next_day_live_shifted"
+      },
+      "sourceAssetIds": [
+        "963e333b9477e3e6",
+        "5b459c63f4e5a7e4",
+        "a2d9c29c8e126f75",
+        "43f402d865d54863",
+        "3e2715a8b0f77724"
+      ],
+      "missingEvidence": [
+        "five_day",
+        "valid_frozen_night_plan",
+        "actual_outcome",
+        "entry_strategy"
+      ],
+      "diagnosis": "夜间弱势只能作为默认预案；次日高开后快速修复至涨停应覆盖09:31机械清仓指令。"
+    },
+    {
+      "sampleId": "20260722-603800",
+      "stockCode": "603800",
+      "stockName": "洪田股份",
+      "buyDate": "2026-07-22",
+      "sellDate": "2026-07-23",
+      "outcome": "unknown",
+      "entryStrategy": "unknown",
+      "exitTimingEvidence": "early_defensive",
+      "openingRegime": "gap_up_failed_followthrough",
+      "prices": {
+        "buy": 69.02,
+        "buyClose": 67.4,
+        "nextOpen": 68.5,
+        "nextHigh": 68.74,
+        "nextLow": 64.22,
+        "nextClose": 65.29
+      },
+      "market": {
+        "buyDayClose": 3867.03,
+        "buyDayPct": 0.07,
+        "sellDayClose": 3876.78,
+        "sellDayPct": 0.25
+      },
+      "nightPlan": {
+        "captureTiming": "next_day_live_shifted"
+      },
+      "sourceAssetIds": [
+        "963e333b9477e3e6",
+        "5b459c63f4e5a7e4",
+        "a3443f841ee5d7d7",
+        "34383da73dc32313",
+        "3dc39887faf88813"
+      ],
+      "missingEvidence": [
+        "five_day",
+        "valid_frozen_night_plan",
+        "actual_outcome",
+        "entry_strategy"
+      ],
+      "diagnosis": "高开仅形成短暂溢价，随后跌破开盘价与均价，开盘弱势分支应快速退出。"
+    },
+    {
+      "sampleId": "20260722-000975",
+      "stockCode": "000975",
+      "stockName": "山金国际",
+      "buyDate": "2026-07-22",
+      "sellDate": "2026-07-23",
+      "outcome": "unknown",
+      "entryStrategy": "unknown",
+      "exitTimingEvidence": "strong_hold_until_1000",
+      "openingRegime": "strong_open_extension",
+      "prices": {
+        "buy": 22.4,
+        "buyClose": 22.52,
+        "nextOpen": 22.6,
+        "nextHigh": 23.66,
+        "nextLow": 22.31,
+        "nextClose": 22.81
+      },
+      "market": {
+        "buyDayClose": 3867.03,
+        "buyDayPct": 0.07,
+        "sellDayClose": 3876.78,
+        "sellDayPct": 0.25
+      },
+      "nightPlan": {
+        "captureTiming": "next_day_live_shifted"
+      },
+      "sourceAssetIds": [
+        "963e333b9477e3e6",
+        "5b459c63f4e5a7e4",
+        "2c433adef7a1a15d",
+        "694d6509b14868a2",
+        "273b588446ba2f1d"
+      ],
+      "missingEvidence": [
+        "five_day",
+        "valid_frozen_night_plan",
+        "actual_outcome",
+        "entry_strategy"
+      ],
+      "diagnosis": "平稳开盘后持续抬高，强承接应允许保留较大仓位至09:35分类和目标区间。"
+    },
+    {
+      "sampleId": "20260722-000426",
+      "stockCode": "000426",
+      "stockName": "兴业银锡",
+      "buyDate": "2026-07-22",
+      "sellDate": "2026-07-23",
+      "outcome": "unknown",
+      "entryStrategy": "unknown",
+      "exitTimingEvidence": "strong_hold_until_1000",
+      "openingRegime": "strong_open_extension",
+      "prices": {
+        "buy": 32.41,
+        "buyClose": 31.73,
+        "nextOpen": 32.3,
+        "nextHigh": 34.17,
+        "nextLow": 31.93,
+        "nextClose": 33.59
+      },
+      "market": {
+        "buyDayClose": 3867.03,
+        "buyDayPct": 0.07,
+        "sellDayClose": 3876.78,
+        "sellDayPct": 0.25
+      },
+      "nightPlan": {
+        "captureTiming": "next_day_live_shifted"
+      },
+      "sourceAssetIds": [
+        "963e333b9477e3e6",
+        "5b459c63f4e5a7e4",
+        "5772a433c89f8628",
+        "eac2ea2ebaec84b6",
+        "816c8929140a0e21"
+      ],
+      "missingEvidence": [
+        "five_day",
+        "valid_frozen_night_plan",
+        "actual_outcome",
+        "entry_strategy"
+      ],
+      "diagnosis": "开盘后趋势持续增强，说明强势状态下首卖应降低比例，剩余仓位跟随至10点纪律边界。"
+    },
+    {
+      "sampleId": "20260730-000893",
+      "stockCode": "000893",
+      "stockName": "亚钾国际",
+      "buyDate": "2026-07-30",
+      "sellDate": "2026-07-31",
+      "outcome": "stop_loss",
+      "entryStrategy": "AM_TOP",
+      "buyDayLimitOutcome": "NOT_SEALED_AT_CLOSE",
+      "buyDayLimitEvidenceSource": "user_statement_2026-07-30",
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 53.79,
+        "buyClose": 52.3,
+        "markedSellSnapshot": 51.74
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 57.05,
+        "stop": 52.65
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "9e7c6e58f4d82d7d",
+        "36d2224495375613",
+        "8f960f1d52a17ffd",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "The AM_TOP early lift-off branch failed the buy-day limit objective and closed as an explicit stop loss at 51.74, about 3.81% below the recorded buy price.",
+      "webTrade": {
+        "tradeId": "91985c21-a6a3-4ad2-9f30-13aa9b1d6a10",
+        "status": "closed",
+        "plannedSellDate": "2026-07-31",
+        "actualSellDate": "2026-07-31",
+        "resultMarkedAt": "2026-07-31T01:41:05.617Z",
+        "soldAt": "2026-07-31T01:41:05.617Z",
+        "entryStrategy": "AM_TOP",
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "buyPlanType": "[AM_TOP] early lift-off entry",
+      "reviewEvidence": {
+        "capturedAt": "2026-07-30T13:32:27.523Z",
+        "tradingDate": "2026-07-30",
+        "stockState": "T1_WEAK",
+        "initialPlan": "PLAN_S",
+        "scores": {
+          "marketEmotionScore": 86,
+          "sectorStrengthScore": 77,
+          "tailSupportScore": 15,
+          "positionRiskScore": 40,
+          "structureIntegrityScore": 45
+        },
+        "pricePlan": {
+          "tp1": 53.88,
+          "tp1Range": [
+            53.72,
+            53.88
+          ],
+          "tp2": 54.34,
+          "tp2Range": [
+            54.18,
+            54.34
+          ],
+          "tp3": 57.53,
+          "finalStop": 52.14
+        }
+      },
+      "entryEvidence": {
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "boardCode": "AM_TOP_11754351",
+        "boardName": "农化制品",
+        "boardPassed": 4,
+        "boardScore": 82
+      },
+      "outcomeSource": "web_explicit_mark",
+      "selectionEvidence": {
+        "strategyId": null,
+        "candidateStatus": null,
+        "finalScore": null,
+        "signalType": null,
+        "overnightCrowdingScore": null,
+        "executionToleranceScore": null,
+        "simpleExecutionScore": null,
+        "recoveryAfter0935Score": null,
+        "initialPlan": null,
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {},
+      "sellExecution": {
+        "tradingDate": "2026-07-31",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "stop_loss",
+        "resultRecordedAt": "2026-07-31T01:41:05.617Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260729-603727",
+      "stockCode": "603727",
+      "stockName": "博迈科",
+      "buyDate": "2026-07-29",
+      "sellDate": "2026-07-30",
+      "outcome": "take_profit",
+      "entryStrategy": "AM_TOP",
+      "buyDayLimitOutcome": "NOT_SEALED_AT_CLOSE",
+      "buyDayLimitEvidenceSource": "user_statement_2026-07-30",
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 17.61,
+        "buyClose": 17.96,
+        "markedSellSnapshot": 18.07
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 18.67,
+        "stop": 17.23
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "9e7c6e58f4d82d7d"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "Profitable T+1 outcome, but the AM_TOP early lift-off branch did not achieve its primary buy-day limit-up objective.",
+      "outcomeSource": "web_explicit_mark",
+      "webTrade": {
+        "tradeId": "49e9b7e4-745c-49bb-b4bc-2caa8449ee35",
+        "status": "closed",
+        "plannedSellDate": "2026-07-30",
+        "actualSellDate": "2026-07-30",
+        "resultMarkedAt": "2026-07-30T01:49:20.560Z",
+        "soldAt": "2026-07-30T01:49:20.560Z",
+        "entryStrategy": "AM_TOP",
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-07-30T13:32:28.688Z"
+      },
+      "buyPlanType": "[AM_TOP] early lift-off entry",
+      "reviewEvidence": {
+        "capturedAt": "2026-07-29T07:19:27.945Z",
+        "tradingDate": "2026-07-29",
+        "stockState": "T1_PREMIUM",
+        "initialPlan": "PLAN_S",
+        "scores": {
+          "marketEmotionScore": 76,
+          "sectorStrengthScore": 77,
+          "tailSupportScore": 80,
+          "positionRiskScore": 0,
+          "structureIntegrityScore": 85
+        },
+        "pricePlan": {
+          "tp1": 18.14,
+          "tp1Range": [
+            18.09,
+            18.14
+          ],
+          "tp2": 18.36,
+          "tp2Range": [
+            18.3,
+            18.36
+          ],
+          "tp3": 19.76,
+          "finalStop": 17.73
+        }
+      },
+      "entryEvidence": {
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "boardCode": "AM_TOP_8228c792",
+        "boardName": "油服工程",
+        "boardPassed": 4,
+        "boardScore": 82
+      },
+      "selectionEvidence": {
+        "strategyId": null,
+        "candidateStatus": null,
+        "finalScore": null,
+        "signalType": null,
+        "overnightCrowdingScore": null,
+        "executionToleranceScore": null,
+        "simpleExecutionScore": null,
+        "recoveryAfter0935Score": null,
+        "initialPlan": null,
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {},
+      "sellExecution": {
+        "tradingDate": "2026-07-30",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-07-30T01:49:20.560Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260729-605376",
+      "stockCode": "605376",
+      "stockName": "博迁新材",
+      "buyDate": "2026-07-29",
+      "sellDate": "2026-07-30",
+      "outcome": "take_profit",
+      "entryStrategy": "AM_TOP",
+      "buyDayLimitOutcome": "NOT_SEALED_AT_CLOSE",
+      "buyDayLimitEvidenceSource": "user_statement_2026-07-30",
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 142.05,
+        "buyClose": 144.58,
+        "markedSellSnapshot": 146.33
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 150.68,
+        "stop": 139.07
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "9e7c6e58f4d82d7d"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "Profitable T+1 outcome, but the AM_TOP early lift-off branch did not achieve its primary buy-day limit-up objective.",
+      "outcomeSource": "web_explicit_mark",
+      "webTrade": {
+        "tradeId": "21cd28ad-c9d2-4f62-a7f4-05e5b38a61c5",
+        "status": "closed",
+        "plannedSellDate": "2026-07-30",
+        "actualSellDate": "2026-07-30",
+        "resultMarkedAt": "2026-07-30T01:37:54.898Z",
+        "soldAt": "2026-07-30T01:37:54.898Z",
+        "entryStrategy": "AM_TOP",
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-07-30T13:32:28.688Z"
+      },
+      "buyPlanType": "[AM_TOP] early lift-off entry",
+      "reviewEvidence": {
+        "capturedAt": "2026-07-29T07:19:27.945Z",
+        "tradingDate": "2026-07-29",
+        "stockState": "T1_PREMIUM",
+        "initialPlan": "PLAN_S",
+        "scores": {
+          "marketEmotionScore": 76,
+          "sectorStrengthScore": 77,
+          "tailSupportScore": 90,
+          "positionRiskScore": 0,
+          "structureIntegrityScore": 65
+        },
+        "pricePlan": {
+          "tp1": 146.03,
+          "tp1Range": [
+            145.59,
+            146.03
+          ],
+          "tp2": 148.13,
+          "tp2Range": [
+            147.69,
+            148.13
+          ],
+          "tp3": 159.04,
+          "finalStop": 142.25
+        }
+      },
+      "entryEvidence": {
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "boardCode": "AM_TOP_63fc09ef",
+        "boardName": "金属新材料",
+        "boardPassed": 4,
+        "boardScore": 82
+      },
+      "selectionEvidence": {
+        "strategyId": null,
+        "candidateStatus": null,
+        "finalScore": null,
+        "signalType": null,
+        "overnightCrowdingScore": null,
+        "executionToleranceScore": null,
+        "simpleExecutionScore": null,
+        "recoveryAfter0935Score": null,
+        "initialPlan": null,
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {},
+      "sellExecution": {
+        "tradingDate": "2026-07-30",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-07-30T01:37:54.898Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260729-603115",
+      "stockCode": "603115",
+      "stockName": "海星股份",
+      "buyDate": "2026-07-29",
+      "sellDate": "2026-07-30",
+      "outcome": "stop_loss",
+      "entryStrategy": "AM_TOP",
+      "buyDayLimitOutcome": "NOT_SEALED_AT_CLOSE",
+      "buyDayLimitEvidenceSource": "user_statement_2026-07-30",
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 71.85,
+        "buyClose": 69.91,
+        "markedSellSnapshot": 68.83
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 75.51,
+        "stop": 70.18
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "9e7c6e58f4d82d7d"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "The broad early lift-off entry failed both the same-day limit objective and T+1 risk control; the synthetic sector score also overstated confirmation.",
+      "outcomeSource": "web_explicit_mark",
+      "webTrade": {
+        "tradeId": "bbaf4ab0-e98d-4f31-8efb-c0198164ec71",
+        "status": "closed",
+        "plannedSellDate": "2026-07-30",
+        "actualSellDate": "2026-07-30",
+        "resultMarkedAt": "2026-07-30T01:49:15.962Z",
+        "soldAt": "2026-07-30T01:49:15.962Z",
+        "entryStrategy": "AM_TOP",
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-07-30T13:32:28.688Z"
+      },
+      "buyPlanType": "[AM_TOP] early lift-off entry",
+      "reviewEvidence": {
+        "capturedAt": "2026-07-29T07:19:27.945Z",
+        "tradingDate": "2026-07-29",
+        "stockState": "T1_WEAK",
+        "initialPlan": "PLAN_D",
+        "scores": {
+          "marketEmotionScore": 76,
+          "sectorStrengthScore": 77,
+          "tailSupportScore": 70,
+          "positionRiskScore": 25,
+          "structureIntegrityScore": 35
+        },
+        "pricePlan": {
+          "tp1": 70.47,
+          "tp1Range": [
+            69.56,
+            70.47
+          ],
+          "tp2": 71.21,
+          "tp2Range": [
+            71,
+            71.21
+          ],
+          "tp3": 76.9,
+          "finalStop": 69.62
+        }
+      },
+      "entryEvidence": {
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "boardCode": "AM_TOP_01fe27cc",
+        "boardName": "元件",
+        "boardPassed": 4,
+        "boardScore": 82
+      },
+      "selectionEvidence": {
+        "strategyId": null,
+        "candidateStatus": null,
+        "finalScore": null,
+        "signalType": null,
+        "overnightCrowdingScore": null,
+        "executionToleranceScore": null,
+        "simpleExecutionScore": null,
+        "recoveryAfter0935Score": null,
+        "initialPlan": null,
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {},
+      "sellExecution": {
+        "tradingDate": "2026-07-30",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "stop_loss",
+        "resultRecordedAt": "2026-07-30T01:49:15.962Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260728-603078",
+      "stockCode": "603078",
+      "stockName": "江化微",
+      "buyDate": "2026-07-28",
+      "sellDate": "2026-07-29",
+      "outcome": "stop_loss",
+      "entryStrategy": "AM_TOP",
+      "buyDayLimitOutcome": "NOT_SEALED_AT_CLOSE",
+      "buyDayLimitEvidenceSource": "user_statement_2026-07-30",
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 34.97
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 37.65,
+        "stop": 34.23
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "9e7c6e58f4d82d7d"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "night_review",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "The broad early lift-off entry failed both the same-day limit objective and T+1 outcome; keep the explicit stop-loss label independent of missing sell price.",
+      "outcomeSource": "web_explicit_mark",
+      "webTrade": {
+        "tradeId": "16320296-64bc-4a11-ba9e-4b45ee50f6b2",
+        "status": "closed",
+        "plannedSellDate": "2026-07-29",
+        "actualSellDate": "2026-07-29",
+        "resultMarkedAt": "2026-07-30T01:38:00.846Z",
+        "soldAt": "2026-07-30T01:38:00.846Z",
+        "entryStrategy": "AM_TOP",
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-07-30T13:32:28.688Z"
+      },
+      "buyPlanType": "[AM_TOP] early lift-off entry",
+      "entryEvidence": {
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "boardCode": "BK0884",
+        "boardName": "光刻机(胶)",
+        "boardPassed": 4,
+        "boardScore": 81.5
+      },
+      "selectionEvidence": {
+        "strategyId": null,
+        "candidateStatus": null,
+        "finalScore": null,
+        "signalType": null,
+        "overnightCrowdingScore": null,
+        "executionToleranceScore": null,
+        "simpleExecutionScore": null,
+        "recoveryAfter0935Score": null,
+        "initialPlan": null,
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {},
+      "sellExecution": {
+        "tradingDate": "2026-07-29",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "stop_loss",
+        "resultRecordedAt": "2026-07-30T01:38:00.846Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260727-600396",
+      "stockCode": "600396",
+      "stockName": "华电辽能",
+      "buyDate": "2026-07-27",
+      "sellDate": "2026-07-28",
+      "outcome": "take_profit",
+      "entryStrategy": "AM_TOP",
+      "buyDayLimitOutcome": "NOT_SEALED_AT_CLOSE",
+      "buyDayLimitEvidenceSource": "user_statement_2026-07-30",
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 15.42
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 16.48,
+        "stop": 15.09
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "9e7c6e58f4d82d7d"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "night_review",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "Profitable T+1 label, but the AM_TOP early lift-off branch did not achieve its primary buy-day limit-up objective.",
+      "outcomeSource": "web_explicit_mark",
+      "webTrade": {
+        "tradeId": "1c1b098d-d242-4f58-9385-2d52e5e8a206",
+        "status": "closed",
+        "plannedSellDate": "2026-07-28",
+        "actualSellDate": "2026-07-28",
+        "resultMarkedAt": "2026-07-30T01:38:05.459Z",
+        "soldAt": "2026-07-30T01:38:05.459Z",
+        "entryStrategy": "AM_TOP",
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-07-30T13:32:28.688Z"
+      },
+      "buyPlanType": "[AM_TOP] early lift-off entry",
+      "entryEvidence": {
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "boardCode": "AM_TOP_3f2aae60",
+        "boardName": "电力",
+        "boardPassed": 4,
+        "boardScore": 82
+      },
+      "selectionEvidence": {
+        "strategyId": null,
+        "candidateStatus": null,
+        "finalScore": null,
+        "signalType": null,
+        "overnightCrowdingScore": null,
+        "executionToleranceScore": null,
+        "simpleExecutionScore": null,
+        "recoveryAfter0935Score": null,
+        "initialPlan": null,
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {},
+      "sellExecution": {
+        "tradingDate": "2026-07-28",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-07-30T01:38:05.459Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260727-002716",
+      "stockCode": "002716",
+      "stockName": "湖南白银",
+      "buyDate": "2026-07-27",
+      "sellDate": "2026-07-28",
+      "outcome": "take_profit",
+      "entryStrategy": "AM_TOP",
+      "buyDayLimitOutcome": "NOT_SEALED_AT_CLOSE",
+      "buyDayLimitEvidenceSource": "user_statement_2026-07-30",
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 7.56
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 8.01,
+        "stop": 7.39
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "9e7c6e58f4d82d7d"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "night_review",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "Profitable T+1 label, but the AM_TOP early lift-off branch did not achieve its primary buy-day limit-up objective.",
+      "outcomeSource": "web_explicit_mark",
+      "webTrade": {
+        "tradeId": "b7d6bcbe-a589-477e-a4af-a02bf562aa38",
+        "status": "closed",
+        "plannedSellDate": "2026-07-28",
+        "actualSellDate": "2026-07-28",
+        "resultMarkedAt": "2026-07-30T01:38:03.822Z",
+        "soldAt": "2026-07-30T01:38:03.822Z",
+        "entryStrategy": "AM_TOP",
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-07-30T13:32:28.688Z"
+      },
+      "buyPlanType": "[AM_TOP] early lift-off entry",
+      "entryEvidence": {
+        "buyPlanType": "[AM_TOP] early lift-off entry",
+        "boardCode": "AM_TOP_36bda34b",
+        "boardName": "贵金属",
+        "boardPassed": 4,
+        "boardScore": 82
+      },
+      "selectionEvidence": {
+        "strategyId": null,
+        "candidateStatus": null,
+        "finalScore": null,
+        "signalType": null,
+        "overnightCrowdingScore": null,
+        "executionToleranceScore": null,
+        "simpleExecutionScore": null,
+        "recoveryAfter0935Score": null,
+        "initialPlan": null,
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {},
+      "sellExecution": {
+        "tradingDate": "2026-07-28",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-07-30T01:38:03.822Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260731-003043",
+      "stockCode": "003043",
+      "stockName": "华亚智能",
+      "buyDate": "2026-07-31",
+      "sellDate": "2026-08-03",
+      "outcome": "stop_loss",
+      "entryStrategy": "AM_TOP",
+      "buyPlanType": "[AM_TOP] open-strength entry",
+      "buyDayLimitOutcome": "NOT_SEALED_AT_CLOSE",
+      "buyDayLimitEvidenceSource": "user_statement_2026-08-03",
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 60.58,
+        "markedSellSnapshot": 56.61
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 64.51,
+        "stop": 59.31
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "36d2224495375613",
+        "8f960f1d52a17ffd",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "night_review",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "The verified-sector open-strength entry did not seal at the buy-day close and produced an explicit T+1 stop loss of about 6.55%.",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[AM_TOP] open-strength entry",
+        "boardCode": "BK1326",
+        "boardName": "半导体设备",
+        "boardPassed": 4,
+        "boardScore": 82.9
+      },
+      "webTrade": {
+        "tradeId": "d50f63c2-8308-4246-8355-aa7b0d8d47a1",
+        "status": "closed",
+        "plannedSellDate": "2026-08-03",
+        "actualSellDate": "2026-08-03",
+        "resultMarkedAt": "2026-08-03T01:32:41.917Z",
+        "soldAt": "2026-08-03T01:32:41.917Z",
+        "entryStrategy": "AM_TOP",
+        "buyPlanType": "[AM_TOP] open-strength entry",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "selectionEvidence": {
+        "strategyId": null,
+        "candidateStatus": null,
+        "finalScore": null,
+        "signalType": null,
+        "overnightCrowdingScore": null,
+        "executionToleranceScore": null,
+        "simpleExecutionScore": null,
+        "recoveryAfter0935Score": null,
+        "initialPlan": null,
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {},
+      "sellExecution": {
+        "tradingDate": "2026-08-03",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "stop_loss",
+        "resultRecordedAt": "2026-08-03T01:32:41.917Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260731-603031",
+      "stockCode": "603031",
+      "stockName": "安孚科技",
+      "buyDate": "2026-07-31",
+      "sellDate": "2026-08-03",
+      "outcome": "take_profit",
+      "entryStrategy": "AM_TOP",
+      "buyPlanType": "[AM_TOP] open-strength entry",
+      "buyDayLimitOutcome": "NOT_SEALED_AT_CLOSE",
+      "buyDayLimitEvidenceSource": "user_statement_2026-08-03",
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 36.56,
+        "markedSellSnapshot": 38.03
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 39.22,
+        "stop": 35.79
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "36d2224495375613",
+        "8f960f1d52a17ffd",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "night_review",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "The verified-sector open-strength entry produced about 4.02% T+1 profit but still failed the primary buy-day limit-up objective.",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[AM_TOP] open-strength entry",
+        "boardCode": "BK1128",
+        "boardName": "CPO概念",
+        "boardPassed": 4,
+        "boardScore": 82.2
+      },
+      "webTrade": {
+        "tradeId": "0239e5ed-f3fe-41ec-b5b9-4366456af145",
+        "status": "closed",
+        "plannedSellDate": "2026-08-03",
+        "actualSellDate": "2026-08-03",
+        "resultMarkedAt": "2026-08-03T01:32:01.425Z",
+        "soldAt": "2026-08-03T01:32:01.425Z",
+        "entryStrategy": "AM_TOP",
+        "buyPlanType": "[AM_TOP] open-strength entry",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "selectionEvidence": {
+        "strategyId": null,
+        "candidateStatus": null,
+        "finalScore": null,
+        "signalType": null,
+        "overnightCrowdingScore": null,
+        "executionToleranceScore": null,
+        "simpleExecutionScore": null,
+        "recoveryAfter0935Score": null,
+        "initialPlan": null,
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {},
+      "sellExecution": {
+        "tradingDate": "2026-08-03",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-08-03T01:32:01.425Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260805-605589",
+      "stockCode": "605589",
+      "stockName": "圣泉集团",
+      "buyDate": "2026-08-05",
+      "sellDate": "2026-08-06",
+      "outcome": "take_profit",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 38.32,
+        "buyClose": 38.91,
+        "markedSellSnapshot": 38.93
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 39.91,
+        "stop": 37.22
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "8f960f1d52a17ffd",
+        "8a56051ef583faa7",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "Explicit take-profit label. The recorded sale at 38.93 versus 38.32 entry is about +1.59%; positive but below the preferred 3% T+1 objective, so it supports direction more than target magnitude.",
+      "reviewEvidence": {
+        "capturedAt": "2026-08-05T15:59:14.802Z",
+        "tradingDate": "2026-08-05",
+        "stockState": "T1_PREMIUM",
+        "initialPlan": "PLAN_T",
+        "scores": {
+          "marketEmotionScore": 100,
+          "sectorStrengthScore": 76,
+          "tailSupportScore": 90,
+          "positionRiskScore": 0,
+          "structureIntegrityScore": 85
+        },
+        "pricePlan": {
+          "tp1": 39.88,
+          "tp1Range": [
+            39.76,
+            39.88
+          ],
+          "tp2": 40.44,
+          "tp2Range": [
+            40.32,
+            40.44
+          ],
+          "tp3": 42.8,
+          "finalStop": 37.45
+        }
+      },
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1152",
+        "boardName": "高带宽内存",
+        "boardPassed": 4,
+        "boardScore": 81.5
+      },
+      "webTrade": {
+        "tradeId": "41f07152-e740-4cbe-9443-adff149529ae",
+        "status": "closed",
+        "plannedSellDate": "2026-08-06",
+        "actualSellDate": "2026-08-06",
+        "resultMarkedAt": "2026-08-06T01:38:49.568Z",
+        "soldAt": "2026-08-06T01:38:49.568Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 90.88,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 17.0,
+        "executionToleranceScore": 84.64,
+        "simpleExecutionScore": 84.89,
+        "recoveryAfter0935Score": 85.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "outcomeSource": "web_explicit_mark",
+      "sellExecution": {
+        "tradingDate": "2026-08-06",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-08-06T01:38:49.568Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260805-002716",
+      "stockCode": "002716",
+      "stockName": "湖南白银",
+      "buyDate": "2026-08-05",
+      "sellDate": "2026-08-06",
+      "outcome": "unknown",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 8.64,
+        "buyClose": 8.77
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 9.02,
+        "stop": 8.42
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "8f960f1d52a17ffd",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "market_buy",
+        "market_sell",
+        "actual_outcome"
+      ],
+      "diagnosis": "Outcome remains unmarked for the planned 2026-08-06 exit. Keep this T3 tail sample unknown and exclude it from realized accuracy until the user marks the result.",
+      "reviewEvidence": {
+        "capturedAt": "2026-08-05T15:59:14.802Z",
+        "tradingDate": "2026-08-05",
+        "stockState": "T1_PREMIUM",
+        "initialPlan": "PLAN_T",
+        "scores": {
+          "marketEmotionScore": 100,
+          "sectorStrengthScore": 76,
+          "tailSupportScore": 90,
+          "positionRiskScore": 0,
+          "structureIntegrityScore": 85
+        },
+        "pricePlan": {
+          "tp1": 8.99,
+          "tp1Range": [
+            8.96,
+            8.99
+          ],
+          "tp2": 9.12,
+          "tp2Range": [
+            9.09,
+            9.12
+          ],
+          "tp3": 9.65,
+          "finalStop": 8.52
+        }
+      },
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK0732",
+        "boardName": "贵金属",
+        "boardPassed": 4,
+        "boardScore": 81.85
+      },
+      "webTrade": {
+        "tradeId": "3ffbe02a-af7b-4502-81c7-d45ab989e158",
+        "status": "open",
+        "plannedSellDate": "2026-08-06",
+        "actualSellDate": null,
+        "resultMarkedAt": null,
+        "soldAt": null,
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 92.69,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 96.55,
+        "simpleExecutionScore": 91.29,
+        "recoveryAfter0935Score": 95.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "sellExecution": {
+        "tradingDate": "2026-08-06",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "unknown",
+        "resultRecordedAt": null,
+        "resultLabelReliability": "unknown",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260804-603456",
+      "stockCode": "603456",
+      "stockName": "九洲药业",
+      "buyDate": "2026-08-04",
+      "sellDate": "2026-08-05",
+      "outcome": "stop_loss",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 15.68,
+        "markedSellSnapshot": 15.61
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 16.33,
+        "stop": 15.27
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "8f960f1d52a17ffd",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "night_review",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "Explicit stop-loss label. The recorded sale at 15.61 versus 15.68 entry is about -0.45%; this was the highest-ranked 2026-08-04 T3 candidate by finalScore (91.31) but the only labeled loser, so same-day ranking discrimination needs more evidence.",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1600",
+        "boardName": "医疗研发外包",
+        "boardPassed": 4,
+        "boardScore": 82.9
+      },
+      "webTrade": {
+        "tradeId": "f3a5a801-e388-4339-8c0f-8f3d84c291d5",
+        "status": "closed",
+        "plannedSellDate": "2026-08-05",
+        "actualSellDate": "2026-08-05",
+        "resultMarkedAt": "2026-08-05T01:47:06.910Z",
+        "soldAt": "2026-08-05T01:47:06.910Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 91.31,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 100.0,
+        "simpleExecutionScore": 97.38,
+        "recoveryAfter0935Score": 85.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "sellExecution": {
+        "tradingDate": "2026-08-05",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "stop_loss",
+        "resultRecordedAt": "2026-08-05T01:47:06.910Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260804-600360",
+      "stockCode": "600360",
+      "stockName": "华微电子",
+      "buyDate": "2026-08-04",
+      "sellDate": "2026-08-05",
+      "outcome": "take_profit",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 9.53,
+        "markedSellSnapshot": 9.91
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 9.9,
+        "stop": 9.31
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "8f960f1d52a17ffd",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "night_review",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "Explicit take-profit label. The recorded sale at 9.91 versus 9.53 entry is about +3.99% and is within 0.10% of the frozen 9.90 target, supporting the current executable target calibration.",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1327",
+        "boardName": "分立器件",
+        "boardPassed": 4,
+        "boardScore": 82.55
+      },
+      "webTrade": {
+        "tradeId": "08bdaae7-96c2-4d58-b9e9-89b4ed981135",
+        "status": "closed",
+        "plannedSellDate": "2026-08-05",
+        "actualSellDate": "2026-08-05",
+        "resultMarkedAt": "2026-08-05T01:41:45.338Z",
+        "soldAt": "2026-08-05T01:41:45.338Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 90.97,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 100.0,
+        "simpleExecutionScore": 94.64,
+        "recoveryAfter0935Score": 85.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "sellExecution": {
+        "tradingDate": "2026-08-05",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-08-05T01:41:45.338Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260804-002897",
+      "stockCode": "002897",
+      "stockName": "意华股份",
+      "buyDate": "2026-08-04",
+      "sellDate": "2026-08-05",
+      "outcome": "take_profit",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 52.41,
+        "markedSellSnapshot": 54.13
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 54.65,
+        "stop": 51.11
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "8f960f1d52a17ffd",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "night_review",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "Explicit take-profit label. The recorded sale at 54.13 versus 52.41 entry is about +3.28%; it was 0.95% below the 54.65 point target, supporting a target band and execution tolerance instead of treating one exact price as pass/fail.",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1591",
+        "boardName": "通信网络设备及器件",
+        "boardPassed": 4,
+        "boardScore": 81.85
+      },
+      "webTrade": {
+        "tradeId": "2f5d3306-f517-4000-9dee-71f8ba21f0ea",
+        "status": "closed",
+        "plannedSellDate": "2026-08-05",
+        "actualSellDate": "2026-08-05",
+        "resultMarkedAt": "2026-08-05T01:41:46.538Z",
+        "soldAt": "2026-08-05T01:41:46.538Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 90.85,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 100.0,
+        "simpleExecutionScore": 94.84,
+        "recoveryAfter0935Score": 85.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "sellExecution": {
+        "tradingDate": "2026-08-05",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-08-05T01:41:46.538Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260810-002155",
+      "stockCode": "002155",
+      "stockName": "湖南黄金",
+      "buyDate": "2026-08-10",
+      "sellDate": "2026-08-11",
+      "outcome": "unknown",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 27.01,
+        "buyClose": 27.08
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 28.09,
+        "stop": 26.3
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "8a56051ef583faa7",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "market_buy",
+        "market_sell",
+        "actual_outcome"
+      ],
+      "diagnosis": "The planned 2026-08-11 exit has not been marked. Keep this 2026-08-10 T3 tail sample unknown and exclude it from realized accuracy.",
+      "reviewEvidence": {
+        "capturedAt": "2026-08-10T09:51:36.684Z",
+        "tradingDate": "2026-08-10",
+        "stockState": "T1_PREMIUM",
+        "initialPlan": "PLAN_T",
+        "scores": {
+          "marketEmotionScore": 88,
+          "sectorStrengthScore": 76,
+          "tailSupportScore": 90,
+          "positionRiskScore": 0,
+          "structureIntegrityScore": 85
+        },
+        "pricePlan": {
+          "tp1": 27.76,
+          "tp1Range": [
+            27.68,
+            27.76
+          ],
+          "tp2": 28.15,
+          "tp2Range": [
+            28.07,
+            28.15
+          ],
+          "tp3": 29.79,
+          "finalStop": 26.37
+        }
+      },
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK0732",
+        "boardName": "贵金属",
+        "boardPassed": 4,
+        "boardScore": 81.5
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 91.56,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 100.0,
+        "simpleExecutionScore": 97.65,
+        "recoveryAfter0935Score": 85.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "94ca0b1e-4015-47d3-b438-1396efb1e0ee",
+        "status": "open",
+        "plannedSellDate": "2026-08-11",
+        "actualSellDate": null,
+        "resultMarkedAt": null,
+        "soldAt": null,
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-08-11",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "unknown",
+        "resultRecordedAt": null,
+        "resultLabelReliability": "unknown",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260810-000426",
+      "stockCode": "000426",
+      "stockName": "兴业银锡",
+      "buyDate": "2026-08-10",
+      "sellDate": "2026-08-11",
+      "outcome": "unknown",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 40.81,
+        "buyClose": 40.67
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 42.48,
+        "stop": 39.84
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "8a56051ef583faa7",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "market_buy",
+        "market_sell",
+        "actual_outcome"
+      ],
+      "diagnosis": "The planned 2026-08-11 exit has not been marked. Keep this 2026-08-10 T3 tail sample unknown and exclude it from realized accuracy.",
+      "reviewEvidence": {
+        "capturedAt": "2026-08-10T09:51:36.684Z",
+        "tradingDate": "2026-08-10",
+        "stockState": "T1_WEAK",
+        "initialPlan": "PLAN_S",
+        "scores": {
+          "marketEmotionScore": 88,
+          "sectorStrengthScore": 76,
+          "tailSupportScore": 90,
+          "positionRiskScore": 0,
+          "structureIntegrityScore": 55
+        },
+        "pricePlan": {
+          "tp1": 41.22,
+          "tp1Range": [
+            41.1,
+            41.22
+          ],
+          "tp2": 41.81,
+          "tp2Range": [
+            41.68,
+            41.81
+          ],
+          "tp3": 44.74,
+          "finalStop": 39.98
+        }
+      },
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK0732",
+        "boardName": "贵金属",
+        "boardPassed": 4,
+        "boardScore": 81.5
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 91.64,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 100.0,
+        "simpleExecutionScore": 98.44,
+        "recoveryAfter0935Score": 85.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "0b5d1d5a-8c99-4957-8926-d88de75ab138",
+        "status": "open",
+        "plannedSellDate": "2026-08-11",
+        "actualSellDate": null,
+        "resultMarkedAt": null,
+        "soldAt": null,
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-08-11",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "unknown",
+        "resultRecordedAt": null,
+        "resultLabelReliability": "unknown",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260810-002746",
+      "stockCode": "002746",
+      "stockName": "仙坛股份",
+      "buyDate": "2026-08-10",
+      "sellDate": "2026-08-11",
+      "outcome": "unknown",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 6.56,
+        "buyClose": 6.57
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 6.81,
+        "stop": 6.38
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "8a56051ef583faa7",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "market_buy",
+        "market_sell",
+        "actual_outcome"
+      ],
+      "diagnosis": "The planned 2026-08-11 exit has not been marked. Keep this 2026-08-10 T3 tail sample unknown and exclude it from realized accuracy.",
+      "reviewEvidence": {
+        "capturedAt": "2026-08-10T09:51:36.684Z",
+        "tradingDate": "2026-08-10",
+        "stockState": "T1_WEAK",
+        "initialPlan": "PLAN_S",
+        "scores": {
+          "marketEmotionScore": 88,
+          "sectorStrengthScore": 55,
+          "tailSupportScore": 90,
+          "positionRiskScore": 0,
+          "structureIntegrityScore": 85
+        },
+        "pricePlan": {
+          "tp1": 6.64,
+          "tp1Range": [
+            6.62,
+            6.64
+          ],
+          "tp2": 6.71,
+          "tp2Range": [
+            6.69,
+            6.71
+          ],
+          "tp3": 7.23,
+          "finalStop": 6.44
+        }
+      },
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1511",
+        "boardName": "肉鸡养殖",
+        "boardPassed": 3,
+        "boardScore": 66.15
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 88.42,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 96.15,
+        "simpleExecutionScore": 96.98,
+        "recoveryAfter0935Score": 85.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "ab12bbc6-d414-4da8-b741-8775a366a48a",
+        "status": "open",
+        "plannedSellDate": "2026-08-11",
+        "actualSellDate": null,
+        "resultMarkedAt": null,
+        "soldAt": null,
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-08-11",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "unknown",
+        "resultRecordedAt": null,
+        "resultLabelReliability": "unknown",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260807-002038",
+      "stockCode": "002038",
+      "stockName": "双鹭药业",
+      "buyDate": "2026-08-07",
+      "sellDate": "2026-08-10",
+      "outcome": "take_profit",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 5.86,
+        "markedSellSnapshot": 5.98
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 6.12,
+        "stop": 5.72
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "8a56051ef583faa7",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "night_review",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "Explicit take-profit label. The recorded sale at 5.98 versus 5.86 entry is about +2.05%; the direction was correct but the realized move remained below the preferred 3% objective.",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1146",
+        "boardName": "减肥药",
+        "boardPassed": 4,
+        "boardScore": 80.1
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 92.37,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 100.0,
+        "simpleExecutionScore": 98.62,
+        "recoveryAfter0935Score": 85.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "50b14d01-9cef-419d-8e5a-22b7f2d8e8f7",
+        "status": "closed",
+        "plannedSellDate": "2026-08-10",
+        "actualSellDate": "2026-08-10",
+        "resultMarkedAt": "2026-08-10T09:52:06.832Z",
+        "soldAt": "2026-08-10T09:52:06.832Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-08-10",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-08-10T09:52:06.832Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260807-000518",
+      "stockCode": "000518",
+      "stockName": "四环生物",
+      "buyDate": "2026-08-07",
+      "sellDate": "2026-08-10",
+      "outcome": "stop_loss",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 4.13,
+        "markedSellSnapshot": 4.13
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 4.31,
+        "stop": 4.03
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "8a56051ef583faa7",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "night_review",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "Explicit stop-loss label with a recorded sale equal to the 4.13 entry. Treat the label as user-confirmed while the realized return remains 0.00%; this is a protected exit rather than a price loss.",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1596",
+        "boardName": "其他生物制品",
+        "boardPassed": 4,
+        "boardScore": 82.2
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 92.14,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 95.9,
+        "simpleExecutionScore": 92.12,
+        "recoveryAfter0935Score": 85.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "2820939d-5d93-4997-9853-0c4f39dcf7f2",
+        "status": "closed",
+        "plannedSellDate": "2026-08-10",
+        "actualSellDate": "2026-08-10",
+        "resultMarkedAt": "2026-08-10T09:52:35.290Z",
+        "soldAt": "2026-08-10T09:52:35.290Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-08-10",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "stop_loss",
+        "resultRecordedAt": "2026-08-10T09:52:35.290Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260807-002317",
+      "stockCode": "002317",
+      "stockName": "众生药业",
+      "buyDate": "2026-08-07",
+      "sellDate": "2026-08-10",
+      "outcome": "take_profit",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 28.42,
+        "markedSellSnapshot": 27.78
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 29.82,
+        "stop": 27.73
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "8a56051ef583faa7",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "night_review",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "The user explicitly marked take-profit, but the recorded sale at 27.78 versus 28.42 entry is about -2.25%. Retain the explicit label, flag the direction conflict, and do not silently reinterpret it.",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1146",
+        "boardName": "减肥药",
+        "boardPassed": 4,
+        "boardScore": 80.1
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 92.59,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 100.0,
+        "simpleExecutionScore": 95.81,
+        "recoveryAfter0935Score": 95.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "fe8f2daa-8a69-4525-896b-9916a78bfd24",
+        "status": "closed",
+        "plannedSellDate": "2026-08-10",
+        "actualSellDate": "2026-08-10",
+        "resultMarkedAt": "2026-08-10T09:52:59.399Z",
+        "soldAt": "2026-08-10T09:52:59.399Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-08-10",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-08-10T09:52:59.399Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260806-600408",
+      "stockCode": "600408",
+      "stockName": "安泰集团",
+      "buyDate": "2026-08-06",
+      "sellDate": "2026-08-07",
+      "outcome": "stop_loss",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "unknown",
+      "prices": {
+        "buy": 2.87,
+        "markedSellSnapshot": 2.69
+      },
+      "market": {},
+      "nightPlan": {
+        "tp1": 3.01,
+        "stop": 2.8
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "8a56051ef583faa7",
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "buy",
+        "sell",
+        "five_day",
+        "night_review",
+        "market_buy",
+        "market_sell"
+      ],
+      "diagnosis": "Explicit stop-loss label. The recorded sale at 2.69 versus 2.87 entry is about -6.27% and 3.93% below the planned 2.80 stop, indicating material gap or execution slippage; one case is insufficient for a new rule.",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK0437",
+        "boardName": "煤炭",
+        "boardPassed": 4,
+        "boardScore": 81.85
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 92.52,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 17.0,
+        "executionToleranceScore": 100.0,
+        "simpleExecutionScore": 95.58,
+        "recoveryAfter0935Score": 95.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": null,
+        "entryFeasibilityScore": null,
+        "executionMode": null,
+        "actionable": null
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "eb884c21-821d-452a-ba0b-de6042c75067",
+        "status": "closed",
+        "plannedSellDate": "2026-08-07",
+        "actualSellDate": "2026-08-07",
+        "resultMarkedAt": "2026-08-07T02:33:13.427Z",
+        "soldAt": "2026-08-07T02:33:13.427Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-08-07",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "stop_loss",
+        "resultRecordedAt": "2026-08-07T02:33:13.427Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      }
+    },
+    {
+      "sampleId": "20260826-000878",
+      "stockCode": "000878",
+      "stockName": "云南铜业",
+      "buyDate": "2026-08-26",
+      "sellDate": "2026-08-27",
+      "outcome": "stop_loss",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "gap_down_recovery",
+      "prices": {
+        "buy": 16.98,
+        "markedSellSnapshot": 17.0,
+        "nextOpen": 16.78,
+        "nextHigh": 17.08,
+        "nextLow": 16.77,
+        "nextClose": 16.99,
+        "buyOpen": 16.290000915527344,
+        "buyClose": 17.059999465942383
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3881.740966796875,
+            "close": 3912.52294921875,
+            "high": 3926.43505859375,
+            "low": 3881.740966796875,
+            "changePct": 0.59
+          },
+          "shenzhen": {
+            "open": 13761.3603515625,
+            "close": 13841.330078125,
+            "high": 13948.6904296875,
+            "low": 13714.0498046875,
+            "changePct": 0.69
+          },
+          "averageChangePct": 0.64
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3911.89111328125,
+            "close": 3956.571044921875,
+            "high": 3958.032958984375,
+            "low": 3909.31201171875,
+            "changePct": 1.13
+          },
+          "shenzhen": {
+            "open": 13876.7900390625,
+            "close": 14048.8798828125,
+            "high": 14049.990234375,
+            "low": 13808.6201171875,
+            "changePct": 1.5
+          },
+          "averageChangePct": 1.31
+        }
+      },
+      "nightPlan": {
+        "tp1": 17.52,
+        "stop": 16.55
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "night_review"
+      ],
+      "diagnosis": "用户确认止损；T+1交易发生于10:00前，补录时间不作为成交时间。买入日收盘/MA5偏离 3.47%，T+1竞价缺口 -1.64%，10点前MFE 0.59%。",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1615",
+        "boardName": "铜",
+        "boardPassed": 4,
+        "boardScore": 82.55
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 90.1,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 90.7,
+        "simpleExecutionScore": 83.5,
+        "recoveryAfter0935Score": 60.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": "EXECUTABLE_AT_SNAPSHOT",
+        "entryFeasibilityScore": 100.0,
+        "executionMode": "ACTIONABLE",
+        "actionable": true
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "1363bd2a-d419-412a-8767-46f4badb3b92",
+        "status": "closed",
+        "plannedSellDate": "2026-08-27",
+        "actualSellDate": "2026-08-27",
+        "resultMarkedAt": "2026-08-27T02:05:22.066Z",
+        "soldAt": "2026-08-27T02:05:22.066Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-08-27",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "stop_loss",
+        "resultRecordedAt": "2026-08-27T02:05:22.066Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      },
+      "webMarketEvidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:20+08:00",
+        "buyDate": "2026-08-26",
+        "sellDate": "2026-08-27",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000878.SZ?period1=1767196800&period2=1787846400&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000878.SZ?period1=1787673600&period2=1787760000&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000878.SZ?period1=1787760000&period2=1787846400&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-08-26",
+          "open": 16.290000915527344,
+          "close": 17.059999465942383,
+          "high": 17.3799991607666,
+          "low": 16.219999313354492,
+          "volume": 96495920.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 5.5,
+          "turnoverPct": null,
+          "ma5": 16.49,
+          "previousMa5": 16.26,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 3.47,
+          "amountRatio5": null,
+          "volumeRatio5": 2.46,
+          "closeLocationPct": 72.41,
+          "upperShadowPctOfRange": 27.59
+        },
+        "sellDay": {
+          "date": "2026-08-27",
+          "open": 16.790000915527344,
+          "close": 17.149999618530273,
+          "high": 17.15999984741211,
+          "low": 16.75,
+          "volume": 59997329.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 0.53,
+          "turnoverPct": null,
+          "ma5": 16.7,
+          "previousMa5": 16.49,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 2.69,
+          "amountRatio5": null,
+          "volumeRatio5": 1.17,
+          "closeLocationPct": 97.56,
+          "upperShadowPctOfRange": 2.44
+        },
+        "buyTail": {
+          "open": 16.29,
+          "gapPct": null,
+          "highBefore1000": 17.36,
+          "lowBefore1000": 16.25,
+          "close0935": 16.6,
+          "close0945": 17.01,
+          "close1000": 17.07,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": 2.24,
+          "maeBefore1000Pct": -4.3,
+          "fadeFromPeakPct": -1.67
+        },
+        "sellBefore1000": {
+          "open": 16.78,
+          "gapPct": -1.64,
+          "highBefore1000": 17.08,
+          "lowBefore1000": 16.77,
+          "close0935": 17.07,
+          "close0945": 17.02,
+          "close1000": 16.99,
+          "peakTime": "09:45",
+          "mfeBefore1000Pct": 0.59,
+          "maeBefore1000Pct": -1.24,
+          "fadeFromPeakPct": -0.53
+        },
+        "errors": []
+      }
+    },
+    {
+      "sampleId": "20260826-000737",
+      "stockCode": "000737",
+      "stockName": "北方铜业",
+      "buyDate": "2026-08-26",
+      "sellDate": "2026-08-27",
+      "outcome": "stop_loss",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "gap_down_recovery",
+      "prices": {
+        "buy": 15.37,
+        "markedSellSnapshot": 15.33,
+        "nextOpen": 15.11,
+        "nextHigh": 15.38,
+        "nextLow": 15.11,
+        "nextClose": 15.33,
+        "buyOpen": 14.770000457763672,
+        "buyClose": 15.4399995803833
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3881.740966796875,
+            "close": 3912.52294921875,
+            "high": 3926.43505859375,
+            "low": 3881.740966796875,
+            "changePct": 0.59
+          },
+          "shenzhen": {
+            "open": 13761.3603515625,
+            "close": 13841.330078125,
+            "high": 13948.6904296875,
+            "low": 13714.0498046875,
+            "changePct": 0.69
+          },
+          "averageChangePct": 0.64
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3911.89111328125,
+            "close": 3956.571044921875,
+            "high": 3958.032958984375,
+            "low": 3909.31201171875,
+            "changePct": 1.13
+          },
+          "shenzhen": {
+            "open": 13876.7900390625,
+            "close": 14048.8798828125,
+            "high": 14049.990234375,
+            "low": 13808.6201171875,
+            "changePct": 1.5
+          },
+          "averageChangePct": 1.31
+        }
+      },
+      "nightPlan": {
+        "tp1": 15.94,
+        "stop": 14.98
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "night_review"
+      ],
+      "diagnosis": "用户确认止损；T+1交易发生于10:00前，补录时间不作为成交时间。买入日收盘/MA5偏离 4.83%，T+1竞价缺口 -2.14%，10点前MFE 0.07%。",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1615",
+        "boardName": "铜",
+        "boardPassed": 4,
+        "boardScore": 82.55
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 90.39,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 93.39,
+        "simpleExecutionScore": 86.34,
+        "recoveryAfter0935Score": 60.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": "EXECUTABLE_AT_SNAPSHOT",
+        "entryFeasibilityScore": 100.0,
+        "executionMode": "ACTIONABLE",
+        "actionable": true
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "a26677c6-9af1-41ea-a631-98e0aeabac7c",
+        "status": "closed",
+        "plannedSellDate": "2026-08-27",
+        "actualSellDate": "2026-08-27",
+        "resultMarkedAt": "2026-08-27T02:05:20.108Z",
+        "soldAt": "2026-08-27T02:05:20.108Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-08-27",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "stop_loss",
+        "resultRecordedAt": "2026-08-27T02:05:20.108Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      },
+      "webMarketEvidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:20+08:00",
+        "buyDate": "2026-08-26",
+        "sellDate": "2026-08-27",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000737.SZ?period1=1767196800&period2=1787846400&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000737.SZ?period1=1787673600&period2=1787760000&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000737.SZ?period1=1787760000&period2=1787846400&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-08-26",
+          "open": 14.770000457763672,
+          "close": 15.4399995803833,
+          "high": 15.6899995803833,
+          "low": 14.65999984741211,
+          "volume": 164439489.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 6.26,
+          "turnoverPct": null,
+          "ma5": 14.73,
+          "previousMa5": 14.41,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 4.83,
+          "amountRatio5": null,
+          "volumeRatio5": 1.94,
+          "closeLocationPct": 75.73,
+          "upperShadowPctOfRange": 24.27
+        },
+        "sellDay": {
+          "date": "2026-08-27",
+          "open": 15.100000381469727,
+          "close": 15.3100004196167,
+          "high": 15.380000114440918,
+          "low": 15.09000015258789,
+          "volume": 122087189.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": -0.84,
+          "turnoverPct": null,
+          "ma5": 14.98,
+          "previousMa5": 14.73,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 2.22,
+          "amountRatio5": null,
+          "volumeRatio5": 1.16,
+          "closeLocationPct": 75.86,
+          "upperShadowPctOfRange": 24.14
+        },
+        "buyTail": {
+          "open": 14.71,
+          "gapPct": null,
+          "highBefore1000": 15.49,
+          "lowBefore1000": 14.69,
+          "close0935": 14.98,
+          "close0945": 15.21,
+          "close1000": 15.32,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": 0.78,
+          "maeBefore1000Pct": -4.42,
+          "fadeFromPeakPct": -1.1
+        },
+        "sellBefore1000": {
+          "open": 15.11,
+          "gapPct": -2.14,
+          "highBefore1000": 15.38,
+          "lowBefore1000": 15.11,
+          "close0935": 15.33,
+          "close0945": 15.24,
+          "close1000": 15.33,
+          "peakTime": "10:00",
+          "mfeBefore1000Pct": 0.07,
+          "maeBefore1000Pct": -1.69,
+          "fadeFromPeakPct": -0.33
+        },
+        "errors": []
+      }
+    },
+    {
+      "sampleId": "20260831-600228",
+      "stockCode": "600228",
+      "stockName": "返利科技",
+      "buyDate": "2026-08-31",
+      "sellDate": "2026-09-01",
+      "outcome": "take_profit",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "gap_up_failed_followthrough",
+      "prices": {
+        "buy": 8.79,
+        "markedSellSnapshot": 9.18,
+        "nextOpen": 9.01,
+        "nextHigh": 9.3,
+        "nextLow": 8.97,
+        "nextClose": 9.08,
+        "buyOpen": 8.199999809265137,
+        "buyClose": 8.859999656677246
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3926.531005859375,
+            "close": 3986.298095703125,
+            "high": 3986.298095703125,
+            "low": 3926.50390625,
+            "changePct": 0.86
+          },
+          "shenzhen": {
+            "open": 13764.41015625,
+            "close": 14015.0,
+            "high": 14015.0,
+            "low": 13740.740234375,
+            "changePct": 0.44
+          },
+          "averageChangePct": 0.65
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3979.881103515625,
+            "close": 3979.887939453125,
+            "high": 3995.175048828125,
+            "low": 3976.468994140625,
+            "changePct": -0.16
+          },
+          "shenzhen": {
+            "open": 14017.419921875,
+            "close": 13872.3798828125,
+            "high": 14018.509765625,
+            "low": 13845.5498046875,
+            "changePct": -1.02
+          },
+          "averageChangePct": -0.59
+        }
+      },
+      "nightPlan": {
+        "tp1": 9.25,
+        "stop": 8.56
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "night_review"
+      ],
+      "diagnosis": "用户确认止盈；T+1交易发生于10:00前，补录时间不作为成交时间。买入日收盘/MA5偏离 4.26%，T+1竞价缺口 1.69%，10点前MFE 5.8%。",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1221",
+        "boardName": "数字媒体",
+        "boardPassed": 4,
+        "boardScore": 81.85
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 90.77,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 94.0,
+        "simpleExecutionScore": 96.05,
+        "recoveryAfter0935Score": 95.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": "EXECUTABLE_AT_SNAPSHOT",
+        "entryFeasibilityScore": 100.0,
+        "executionMode": "ACTIONABLE",
+        "actionable": true
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "30aa094d-58a6-4c58-87fc-6f1b73a0c744",
+        "status": "closed",
+        "plannedSellDate": "2026-09-01",
+        "actualSellDate": "2026-09-01",
+        "resultMarkedAt": "2026-09-01T01:37:06.181Z",
+        "soldAt": "2026-09-01T01:37:06.181Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-09-01",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-09-01T01:37:06.181Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      },
+      "webMarketEvidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:20+08:00",
+        "buyDate": "2026-08-31",
+        "sellDate": "2026-09-01",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600228.SS?period1=1767196800&period2=1788278400&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600228.SS?period1=1788105600&period2=1788192000&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600228.SS?period1=1788192000&period2=1788278400&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-08-31",
+          "open": 8.199999809265137,
+          "close": 8.859999656677246,
+          "high": 8.859999656677246,
+          "low": 8.199999809265137,
+          "volume": 30677088.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 6.62,
+          "turnoverPct": null,
+          "ma5": 8.5,
+          "previousMa5": 8.37,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 4.26,
+          "amountRatio5": null,
+          "volumeRatio5": 1.59,
+          "closeLocationPct": 100.0,
+          "upperShadowPctOfRange": 0.0
+        },
+        "sellDay": {
+          "date": "2026-09-01",
+          "open": 9.029999732971191,
+          "close": 9.140000343322754,
+          "high": 9.300000190734863,
+          "low": 8.930000305175781,
+          "volume": 29348700.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 3.16,
+          "turnoverPct": null,
+          "ma5": 8.66,
+          "previousMa5": 8.5,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 5.52,
+          "amountRatio5": null,
+          "volumeRatio5": 1.4,
+          "closeLocationPct": 56.76,
+          "upperShadowPctOfRange": 43.24
+        },
+        "buyTail": {
+          "open": 8.28,
+          "gapPct": null,
+          "highBefore1000": 8.78,
+          "lowBefore1000": 8.21,
+          "close0935": 8.54,
+          "close0945": 8.68,
+          "close1000": 8.64,
+          "peakTime": "09:45",
+          "mfeBefore1000Pct": -0.11,
+          "maeBefore1000Pct": -6.6,
+          "fadeFromPeakPct": -1.59
+        },
+        "sellBefore1000": {
+          "open": 9.01,
+          "gapPct": 1.69,
+          "highBefore1000": 9.3,
+          "lowBefore1000": 8.97,
+          "close0935": 9.23,
+          "close0945": 9.19,
+          "close1000": 9.08,
+          "peakTime": "09:35",
+          "mfeBefore1000Pct": 5.8,
+          "maeBefore1000Pct": 2.05,
+          "fadeFromPeakPct": -2.37
+        },
+        "errors": []
+      }
+    },
+    {
+      "sampleId": "20260831-600986",
+      "stockCode": "600986",
+      "stockName": "浙文互联",
+      "buyDate": "2026-08-31",
+      "sellDate": "2026-09-01",
+      "outcome": "take_profit",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "flat_open_followthrough",
+      "prices": {
+        "buy": 7.42,
+        "markedSellSnapshot": 7.64,
+        "nextOpen": 7.47,
+        "nextHigh": 7.99,
+        "nextLow": 7.45,
+        "nextClose": 7.7,
+        "buyOpen": 7.039999961853027,
+        "buyClose": 7.460000038146973
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3926.531005859375,
+            "close": 3986.298095703125,
+            "high": 3986.298095703125,
+            "low": 3926.50390625,
+            "changePct": 0.86
+          },
+          "shenzhen": {
+            "open": 13764.41015625,
+            "close": 14015.0,
+            "high": 14015.0,
+            "low": 13740.740234375,
+            "changePct": 0.44
+          },
+          "averageChangePct": 0.65
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3979.881103515625,
+            "close": 3979.887939453125,
+            "high": 3995.175048828125,
+            "low": 3976.468994140625,
+            "changePct": -0.16
+          },
+          "shenzhen": {
+            "open": 14017.419921875,
+            "close": 13872.3798828125,
+            "high": 14018.509765625,
+            "low": 13845.5498046875,
+            "changePct": -1.02
+          },
+          "averageChangePct": -0.59
+        }
+      },
+      "nightPlan": {
+        "tp1": 7.77,
+        "stop": 7.23
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "night_review"
+      ],
+      "diagnosis": "用户确认止盈；T+1交易发生于10:00前，补录时间不作为成交时间。买入日收盘/MA5偏离 3.61%，T+1竞价缺口 0.13%，10点前MFE 7.68%。",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1151",
+        "boardName": "短剧互动游戏",
+        "boardPassed": 4,
+        "boardScore": 80.8
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 90.79,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 100.0,
+        "simpleExecutionScore": 98.33,
+        "recoveryAfter0935Score": 95.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": "EXECUTABLE_AT_SNAPSHOT",
+        "entryFeasibilityScore": 100.0,
+        "executionMode": "ACTIONABLE",
+        "actionable": true
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "abd35f58-0717-4402-95bd-9df1499d9c6b",
+        "status": "closed",
+        "plannedSellDate": "2026-09-01",
+        "actualSellDate": "2026-09-01",
+        "resultMarkedAt": "2026-09-01T01:37:04.982Z",
+        "soldAt": "2026-09-01T01:37:04.982Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-09-01",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-09-01T01:37:04.982Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      },
+      "webMarketEvidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:20+08:00",
+        "buyDate": "2026-08-31",
+        "sellDate": "2026-09-01",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600986.SS?period1=1767196800&period2=1788278400&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600986.SS?period1=1788105600&period2=1788192000&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600986.SS?period1=1788192000&period2=1788278400&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-08-31",
+          "open": 7.039999961853027,
+          "close": 7.460000038146973,
+          "high": 7.460000038146973,
+          "low": 7.0,
+          "volume": 80450655.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.34,
+          "turnoverPct": null,
+          "ma5": 7.2,
+          "previousMa5": 7.09,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 3.61,
+          "amountRatio5": null,
+          "volumeRatio5": 2.0,
+          "closeLocationPct": 100.0,
+          "upperShadowPctOfRange": 0.0
+        },
+        "sellDay": {
+          "date": "2026-09-01",
+          "open": 7.460000038146973,
+          "close": 7.78000020980835,
+          "high": 7.989999771118164,
+          "low": 7.420000076293945,
+          "volume": 115699554.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.29,
+          "turnoverPct": null,
+          "ma5": 7.34,
+          "previousMa5": 7.2,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 5.97,
+          "amountRatio5": null,
+          "volumeRatio5": 2.35,
+          "closeLocationPct": 63.16,
+          "upperShadowPctOfRange": 36.84
+        },
+        "buyTail": {
+          "open": 7.03,
+          "gapPct": null,
+          "highBefore1000": 7.24,
+          "lowBefore1000": 7.03,
+          "close0935": 7.19,
+          "close0945": 7.14,
+          "close1000": 7.19,
+          "peakTime": "09:35",
+          "mfeBefore1000Pct": -2.43,
+          "maeBefore1000Pct": -5.26,
+          "fadeFromPeakPct": -0.69
+        },
+        "sellBefore1000": {
+          "open": 7.47,
+          "gapPct": 0.13,
+          "highBefore1000": 7.99,
+          "lowBefore1000": 7.45,
+          "close0935": 7.69,
+          "close0945": 7.79,
+          "close1000": 7.7,
+          "peakTime": "09:40",
+          "mfeBefore1000Pct": 7.68,
+          "maeBefore1000Pct": 0.4,
+          "fadeFromPeakPct": -3.63
+        },
+        "errors": []
+      }
+    },
+    {
+      "sampleId": "20260901-002758",
+      "stockCode": "002758",
+      "stockName": "浙农股份",
+      "buyDate": "2026-09-01",
+      "sellDate": "2026-09-02",
+      "outcome": "stop_loss",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "gap_down_weak",
+      "prices": {
+        "buy": 9.24,
+        "nextOpen": 9.13,
+        "nextHigh": 9.13,
+        "nextLow": 8.86,
+        "nextClose": 8.91,
+        "buyOpen": 8.890000343322754,
+        "buyClose": 9.300000190734863
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3979.881103515625,
+            "close": 3979.887939453125,
+            "high": 3995.175048828125,
+            "low": 3976.468994140625,
+            "changePct": -0.16
+          },
+          "shenzhen": {
+            "open": 14017.419921875,
+            "close": 13872.3798828125,
+            "high": 14018.509765625,
+            "low": 13845.5498046875,
+            "changePct": -1.02
+          },
+          "averageChangePct": -0.59
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3963.06591796875,
+            "close": 3941.385986328125,
+            "high": 3965.80810546875,
+            "low": 3932.2509765625,
+            "changePct": -0.97
+          },
+          "shenzhen": {
+            "open": 13732.1796875,
+            "close": 13611.5498046875,
+            "high": 13732.1796875,
+            "low": 13549.76953125,
+            "changePct": -1.88
+          },
+          "averageChangePct": -1.42
+        }
+      },
+      "nightPlan": {
+        "tp1": 9.59,
+        "stop": 9.0
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "night_review"
+      ],
+      "diagnosis": "用户确认止损；T+1交易发生于10:00前，补录时间不作为成交时间。买入日收盘/MA5偏离 5.73%，T+1竞价缺口 -1.83%，10点前MFE -1.19%。",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1086",
+        "boardName": "粮食概念",
+        "boardPassed": 4,
+        "boardScore": 81.85
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 90.48,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 91.66,
+        "simpleExecutionScore": 83.7,
+        "recoveryAfter0935Score": 70.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": "EXECUTABLE_AT_SNAPSHOT",
+        "entryFeasibilityScore": 100.0,
+        "executionMode": "ACTIONABLE",
+        "actionable": true
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "d7ae898b-e3c0-42d4-a89f-ae43f5003a7a",
+        "status": "closed",
+        "plannedSellDate": "2026-09-02",
+        "actualSellDate": "2026-09-02",
+        "resultMarkedAt": "2026-09-03T06:43:06.314Z",
+        "soldAt": "2026-09-03T06:43:06.314Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-09-02",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "stop_loss",
+        "resultRecordedAt": "2026-09-03T06:43:06.314Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      },
+      "webMarketEvidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:24+08:00",
+        "buyDate": "2026-09-01",
+        "sellDate": "2026-09-02",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/002758.SZ?period1=1767196800&period2=1788364800&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/002758.SZ?period1=1788192000&period2=1788278400&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/002758.SZ?period1=1788278400&period2=1788364800&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-01",
+          "open": 8.890000343322754,
+          "close": 9.300000190734863,
+          "high": 9.449999809265137,
+          "low": 8.850000381469727,
+          "volume": 31994548.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.14,
+          "turnoverPct": null,
+          "ma5": 8.8,
+          "previousMa5": 8.55,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 5.73,
+          "amountRatio5": null,
+          "volumeRatio5": 1.4,
+          "closeLocationPct": 75.0,
+          "upperShadowPctOfRange": 25.0
+        },
+        "sellDay": {
+          "date": "2026-09-02",
+          "open": 9.119999885559082,
+          "close": 8.90999984741211,
+          "high": 9.25,
+          "low": 8.859999656677246,
+          "volume": 21074397.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": -4.19,
+          "turnoverPct": null,
+          "ma5": 8.95,
+          "previousMa5": 8.8,
+          "ma5Rising": true,
+          "closeVsMa5Pct": -0.47,
+          "amountRatio5": null,
+          "volumeRatio5": 0.76,
+          "closeLocationPct": 12.82,
+          "upperShadowPctOfRange": 33.33
+        },
+        "buyTail": {
+          "open": 8.89,
+          "gapPct": null,
+          "highBefore1000": 9.36,
+          "lowBefore1000": 8.89,
+          "close0935": 9.11,
+          "close0945": 9.18,
+          "close1000": 9.33,
+          "peakTime": "10:00",
+          "mfeBefore1000Pct": 1.3,
+          "maeBefore1000Pct": -3.79,
+          "fadeFromPeakPct": -0.32
+        },
+        "sellBefore1000": {
+          "open": 9.13,
+          "gapPct": -1.83,
+          "highBefore1000": 9.13,
+          "lowBefore1000": 8.86,
+          "close0935": 8.88,
+          "close0945": 8.92,
+          "close1000": 8.91,
+          "peakTime": "09:30",
+          "mfeBefore1000Pct": -1.19,
+          "maeBefore1000Pct": -4.11,
+          "fadeFromPeakPct": -2.41
+        },
+        "errors": []
+      }
+    },
+    {
+      "sampleId": "20260902-600435",
+      "stockCode": "600435",
+      "stockName": "北方导航",
+      "buyDate": "2026-09-02",
+      "sellDate": "2026-09-03",
+      "outcome": "take_profit",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "flat_open_followthrough",
+      "prices": {
+        "buy": 11.55,
+        "markedSellSnapshot": 11.62,
+        "nextOpen": 11.55,
+        "nextHigh": 11.94,
+        "nextLow": 11.4,
+        "nextClose": 11.77,
+        "buyOpen": 11.079999923706055,
+        "buyClose": 11.619999885559082
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3963.06591796875,
+            "close": 3941.385986328125,
+            "high": 3965.80810546875,
+            "low": 3932.2509765625,
+            "changePct": -0.97
+          },
+          "shenzhen": {
+            "open": 13732.1796875,
+            "close": 13611.5498046875,
+            "high": 13732.1796875,
+            "low": 13549.76953125,
+            "changePct": -1.88
+          },
+          "averageChangePct": -1.42
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3952.794921875,
+            "close": 3942.087890625,
+            "high": 3968.112060546875,
+            "low": 3930.447021484375,
+            "changePct": 0.02
+          },
+          "shenzhen": {
+            "open": 13711.0703125,
+            "close": 13625.1201171875,
+            "high": 13742.8896484375,
+            "low": 13531.5302734375,
+            "changePct": 0.1
+          },
+          "averageChangePct": 0.06
+        }
+      },
+      "nightPlan": {
+        "tp1": 11.96,
+        "stop": 11.26
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "night_review"
+      ],
+      "diagnosis": "用户确认止盈；T+1交易发生于10:00前，补录时间不作为成交时间。买入日收盘/MA5偏离 5.93%，T+1竞价缺口 -0.6%，10点前MFE 3.38%。",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1382",
+        "boardName": "地面兵装Ⅲ",
+        "boardPassed": 4,
+        "boardScore": 83.25
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 92.48,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 100.0,
+        "simpleExecutionScore": 93.34,
+        "recoveryAfter0935Score": 85.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": "EXECUTABLE_AT_SNAPSHOT",
+        "entryFeasibilityScore": 100.0,
+        "executionMode": "ACTIONABLE",
+        "actionable": true
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "11327d36-15e3-4da9-9c08-8cdb9d21a6ae",
+        "status": "closed",
+        "plannedSellDate": "2026-09-03",
+        "actualSellDate": "2026-09-03",
+        "resultMarkedAt": "2026-09-03T06:43:01.036Z",
+        "soldAt": "2026-09-03T06:43:01.036Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-09-03",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-09-03T06:43:01.036Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      },
+      "webMarketEvidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:24+08:00",
+        "buyDate": "2026-09-02",
+        "sellDate": "2026-09-03",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600435.SS?period1=1767196800&period2=1788451200&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600435.SS?period1=1788278400&period2=1788364800&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600435.SS?period1=1788364800&period2=1788451200&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-02",
+          "open": 11.079999923706055,
+          "close": 11.619999885559082,
+          "high": 11.699999809265137,
+          "low": 11.029999732971191,
+          "volume": 70418800.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.59,
+          "turnoverPct": null,
+          "ma5": 10.97,
+          "previousMa5": 10.73,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 5.93,
+          "amountRatio5": null,
+          "volumeRatio5": 3.86,
+          "closeLocationPct": 88.06,
+          "upperShadowPctOfRange": 11.94
+        },
+        "sellDay": {
+          "date": "2026-09-03",
+          "open": 11.510000228881836,
+          "close": 11.609999656677246,
+          "high": 11.949999809265137,
+          "low": 11.380000114440918,
+          "volume": 53250997.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": -0.09,
+          "turnoverPct": null,
+          "ma5": 11.18,
+          "previousMa5": 10.97,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 3.83,
+          "amountRatio5": null,
+          "volumeRatio5": 1.8,
+          "closeLocationPct": 40.35,
+          "upperShadowPctOfRange": 59.65
+        },
+        "buyTail": {
+          "open": 11.08,
+          "gapPct": null,
+          "highBefore1000": 11.49,
+          "lowBefore1000": 11.06,
+          "close0935": 11.23,
+          "close0945": 11.45,
+          "close1000": 11.39,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": -0.52,
+          "maeBefore1000Pct": -4.24,
+          "fadeFromPeakPct": -0.87
+        },
+        "sellBefore1000": {
+          "open": 11.55,
+          "gapPct": -0.6,
+          "highBefore1000": 11.94,
+          "lowBefore1000": 11.4,
+          "close0935": 11.61,
+          "close0945": 11.72,
+          "close1000": 11.77,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": 3.38,
+          "maeBefore1000Pct": -1.3,
+          "fadeFromPeakPct": -1.42
+        },
+        "errors": []
+      }
+    },
+    {
+      "sampleId": "20260903-601975",
+      "stockCode": "601975",
+      "stockName": "招商南油",
+      "buyDate": "2026-09-03",
+      "sellDate": "2026-09-04",
+      "outcome": "take_profit",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T5 first pullback reclaim",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "gap_up_failed_followthrough",
+      "prices": {
+        "buy": 4.28,
+        "nextOpen": 4.43,
+        "nextHigh": 4.57,
+        "nextLow": 4.36,
+        "nextClose": 4.48,
+        "buyOpen": 4.099999904632568,
+        "buyClose": 4.28000020980835
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3952.794921875,
+            "close": 3942.087890625,
+            "high": 3968.112060546875,
+            "low": 3930.447021484375,
+            "changePct": 0.02
+          },
+          "shenzhen": {
+            "open": 13711.0703125,
+            "close": 13625.1201171875,
+            "high": 13742.8896484375,
+            "low": 13531.5302734375,
+            "changePct": 0.1
+          },
+          "averageChangePct": 0.06
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3955.549072265625,
+            "close": 3930.115966796875,
+            "high": 3980.201904296875,
+            "low": 3915.220947265625,
+            "changePct": -0.3
+          },
+          "shenzhen": {
+            "open": 13725.650390625,
+            "close": 13516.9697265625,
+            "high": 13798.3603515625,
+            "low": 13448.7900390625,
+            "changePct": -0.79
+          },
+          "averageChangePct": -0.55
+        }
+      },
+      "nightPlan": {
+        "tp1": 4.36,
+        "stop": 4.16
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "night_review"
+      ],
+      "diagnosis": "用户确认止盈；T+1交易发生于10:00前，补录时间不作为成交时间。买入日收盘/MA5偏离 2.44%，T+1竞价缺口 3.5%，10点前MFE 6.78%。",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T5 first pullback reclaim",
+        "boardCode": "BK1482",
+        "boardName": "航运",
+        "boardPassed": 4,
+        "boardScore": 81.15
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "NORMAL_CANDIDATE",
+        "finalScore": 82.91,
+        "signalType": "T5_FIRST_PULLBACK",
+        "overnightCrowdingScore": 17.0,
+        "executionToleranceScore": 82.86,
+        "simpleExecutionScore": 77.07,
+        "recoveryAfter0935Score": 70.0,
+        "initialPlan": "PLAN_S",
+        "entryFeasibilityStatus": "EXECUTABLE_AT_SNAPSHOT",
+        "entryFeasibilityScore": 100.0,
+        "executionMode": "ACTIONABLE",
+        "actionable": true
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.4,
+          0.5
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.2,
+        "strongRemainder": [
+          0.5,
+          0.6
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "7990d179-415c-47cc-aec2-9284ce505cdc",
+        "status": "closed",
+        "plannedSellDate": "2026-09-04",
+        "actualSellDate": "2026-09-04",
+        "resultMarkedAt": "2026-09-11T06:26:26.817Z",
+        "soldAt": "2026-09-11T06:26:26.817Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T5 first pullback reclaim",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-09-04",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-09-11T06:26:26.817Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      },
+      "webMarketEvidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:24+08:00",
+        "buyDate": "2026-09-03",
+        "sellDate": "2026-09-04",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/601975.SS?period1=1767196800&period2=1788537600&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/601975.SS?period1=1788364800&period2=1788451200&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/601975.SS?period1=1788451200&period2=1788537600&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-03",
+          "open": 4.099999904632568,
+          "close": 4.28000020980835,
+          "high": 4.389999866485596,
+          "low": 4.090000152587891,
+          "volume": 251483524.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.9,
+          "turnoverPct": null,
+          "ma5": 4.18,
+          "previousMa5": 4.12,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 2.44,
+          "amountRatio5": null,
+          "volumeRatio5": 1.44,
+          "closeLocationPct": 63.33,
+          "upperShadowPctOfRange": 36.67
+        },
+        "sellDay": {
+          "date": "2026-09-04",
+          "open": 4.400000095367432,
+          "close": 4.480000019073486,
+          "high": 4.570000171661377,
+          "low": 4.349999904632568,
+          "volume": 299025582.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.67,
+          "turnoverPct": null,
+          "ma5": 4.24,
+          "previousMa5": 4.18,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 5.56,
+          "amountRatio5": null,
+          "volumeRatio5": 1.52,
+          "closeLocationPct": 59.09,
+          "upperShadowPctOfRange": 40.91
+        },
+        "buyTail": {
+          "open": 4.11,
+          "gapPct": null,
+          "highBefore1000": 4.35,
+          "lowBefore1000": 4.1,
+          "close0935": 4.24,
+          "close0945": 4.27,
+          "close1000": 4.33,
+          "peakTime": "10:00",
+          "mfeBefore1000Pct": 1.64,
+          "maeBefore1000Pct": -4.21,
+          "fadeFromPeakPct": -0.46
+        },
+        "sellBefore1000": {
+          "open": 4.43,
+          "gapPct": 3.5,
+          "highBefore1000": 4.57,
+          "lowBefore1000": 4.36,
+          "close0935": 4.54,
+          "close0945": 4.49,
+          "close1000": 4.48,
+          "peakTime": "09:40",
+          "mfeBefore1000Pct": 6.78,
+          "maeBefore1000Pct": 1.87,
+          "fadeFromPeakPct": -1.97
+        },
+        "errors": []
+      }
+    },
+    {
+      "sampleId": "20260903-601083",
+      "stockCode": "601083",
+      "stockName": "锦江航运",
+      "buyDate": "2026-09-03",
+      "sellDate": "2026-09-04",
+      "outcome": "stop_loss",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "flat_open_followthrough",
+      "prices": {
+        "buy": 13.01,
+        "nextOpen": 13.06,
+        "nextHigh": 13.22,
+        "nextLow": 12.91,
+        "nextClose": 13.1,
+        "buyOpen": 12.380000114440918,
+        "buyClose": 13.0
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3952.794921875,
+            "close": 3942.087890625,
+            "high": 3968.112060546875,
+            "low": 3930.447021484375,
+            "changePct": 0.02
+          },
+          "shenzhen": {
+            "open": 13711.0703125,
+            "close": 13625.1201171875,
+            "high": 13742.8896484375,
+            "low": 13531.5302734375,
+            "changePct": 0.1
+          },
+          "averageChangePct": 0.06
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3955.549072265625,
+            "close": 3930.115966796875,
+            "high": 3980.201904296875,
+            "low": 3915.220947265625,
+            "changePct": -0.3
+          },
+          "shenzhen": {
+            "open": 13725.650390625,
+            "close": 13516.9697265625,
+            "high": 13798.3603515625,
+            "low": 13448.7900390625,
+            "changePct": -0.79
+          },
+          "averageChangePct": -0.55
+        }
+      },
+      "nightPlan": {
+        "tp1": 13.6,
+        "stop": 12.7
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "night_review"
+      ],
+      "diagnosis": "用户确认止损；T+1交易发生于10:00前，补录时间不作为成交时间。买入日收盘/MA5偏离 0.23%，T+1竞价缺口 0.46%，10点前MFE 1.61%。",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1482",
+        "boardName": "航运",
+        "boardPassed": 4,
+        "boardScore": 81.15
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 91.42,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 100.0,
+        "simpleExecutionScore": 96.98,
+        "recoveryAfter0935Score": 85.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": "EXECUTABLE_AT_SNAPSHOT",
+        "entryFeasibilityScore": 100.0,
+        "executionMode": "ACTIONABLE",
+        "actionable": true
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "987463a8-cfbb-43ab-ae70-dd9225f5e0a4",
+        "status": "closed",
+        "plannedSellDate": "2026-09-04",
+        "actualSellDate": "2026-09-04",
+        "resultMarkedAt": "2026-09-11T06:26:27.934Z",
+        "soldAt": "2026-09-11T06:26:27.934Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-09-04",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "stop_loss",
+        "resultRecordedAt": "2026-09-11T06:26:27.934Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      },
+      "webMarketEvidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:24+08:00",
+        "buyDate": "2026-09-03",
+        "sellDate": "2026-09-04",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/601083.SS?period1=1767196800&period2=1788537600&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/601083.SS?period1=1788364800&period2=1788451200&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/601083.SS?period1=1788451200&period2=1788537600&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-03",
+          "open": 12.380000114440918,
+          "close": 13.0,
+          "high": 13.109999656677246,
+          "low": 12.380000114440918,
+          "volume": 22042294.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.92,
+          "turnoverPct": null,
+          "ma5": 12.97,
+          "previousMa5": 13.02,
+          "ma5Rising": false,
+          "closeVsMa5Pct": 0.23,
+          "amountRatio5": null,
+          "volumeRatio5": 1.32,
+          "closeLocationPct": 84.93,
+          "upperShadowPctOfRange": 15.07
+        },
+        "sellDay": {
+          "date": "2026-09-04",
+          "open": 13.050000190734863,
+          "close": 13.229999542236328,
+          "high": 13.369999885559082,
+          "low": 12.890000343322754,
+          "volume": 17102299.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 1.77,
+          "turnoverPct": null,
+          "ma5": 13.0,
+          "previousMa5": 12.97,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 1.8,
+          "amountRatio5": null,
+          "volumeRatio5": 1.0,
+          "closeLocationPct": 70.83,
+          "upperShadowPctOfRange": 29.17
+        },
+        "buyTail": {
+          "open": 12.39,
+          "gapPct": null,
+          "highBefore1000": 13.09,
+          "lowBefore1000": 12.39,
+          "close0935": 12.61,
+          "close0945": 12.78,
+          "close1000": 12.99,
+          "peakTime": "10:00",
+          "mfeBefore1000Pct": 0.61,
+          "maeBefore1000Pct": -4.77,
+          "fadeFromPeakPct": -0.76
+        },
+        "sellBefore1000": {
+          "open": 13.06,
+          "gapPct": 0.46,
+          "highBefore1000": 13.22,
+          "lowBefore1000": 12.91,
+          "close0935": 13.14,
+          "close0945": 13.07,
+          "close1000": 13.1,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": 1.61,
+          "maeBefore1000Pct": -0.77,
+          "fadeFromPeakPct": -0.91
+        },
+        "errors": []
+      }
+    },
+    {
+      "sampleId": "20260904-002458",
+      "stockCode": "002458",
+      "stockName": "益生股份",
+      "buyDate": "2026-09-04",
+      "sellDate": "2026-09-07",
+      "outcome": "take_profit",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "flat_open_followthrough",
+      "prices": {
+        "buy": 9.11,
+        "buyClose": 9.109999656677246,
+        "nextOpen": 9.08,
+        "nextHigh": 9.2,
+        "nextLow": 9.01,
+        "nextClose": 9.13,
+        "buyOpen": 8.75
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3955.549072265625,
+            "close": 3930.115966796875,
+            "high": 3980.201904296875,
+            "low": 3915.220947265625,
+            "changePct": -0.3
+          },
+          "shenzhen": {
+            "open": 13725.650390625,
+            "close": 13516.9697265625,
+            "high": 13798.3603515625,
+            "low": 13448.7900390625,
+            "changePct": -0.79
+          },
+          "averageChangePct": -0.55
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3942.509033203125,
+            "close": 3932.698974609375,
+            "high": 3948.4208984375,
+            "low": 3916.490966796875,
+            "changePct": 0.07
+          },
+          "shenzhen": {
+            "open": 13605.01953125,
+            "close": 13774.919921875,
+            "high": 13811.259765625,
+            "low": 13590.8203125,
+            "changePct": 1.91
+          },
+          "averageChangePct": 0.99
+        }
+      },
+      "nightPlan": {
+        "tp1": 9.48,
+        "stop": 8.89
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [],
+      "diagnosis": "用户确认止盈；T+1交易发生于10:00前，补录时间不作为成交时间。买入日收盘/MA5偏离 1.02%，T+1竞价缺口 -0.33%，10点前MFE 0.99%。",
+      "outcomeSource": "web_explicit_mark",
+      "reviewEvidence": {
+        "capturedAt": "2026-09-04T07:05:06.793Z",
+        "tradingDate": "2026-09-04",
+        "stockState": "T1_PREMIUM",
+        "initialPlan": "PLAN_T",
+        "scores": {
+          "marketEmotionScore": 86,
+          "sectorStrengthScore": 77,
+          "tailSupportScore": 90,
+          "positionRiskScore": 0,
+          "structureIntegrityScore": 85
+        },
+        "pricePlan": {
+          "tp1": 9.35,
+          "tp1Range": [
+            9.32,
+            9.35
+          ],
+          "tp2": 9.48,
+          "tp2Range": [
+            9.45,
+            9.48
+          ],
+          "tp3": 10.03,
+          "finalStop": 9
+        }
+      },
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK0882",
+        "boardName": "猪肉概念",
+        "boardPassed": 4,
+        "boardScore": 82.2
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 90.99,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 100.0,
+        "simpleExecutionScore": 92.58,
+        "recoveryAfter0935Score": 85.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": "EXECUTABLE_AT_SNAPSHOT",
+        "entryFeasibilityScore": 100.0,
+        "executionMode": "ACTIONABLE",
+        "actionable": true
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "ebfd302e-202d-499e-876c-2adf150a3856",
+        "status": "closed",
+        "plannedSellDate": "2026-09-07",
+        "actualSellDate": "2026-09-07",
+        "resultMarkedAt": "2026-09-11T06:26:06.030Z",
+        "soldAt": "2026-09-11T06:26:06.030Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-09-07",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-09-11T06:26:06.030Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      },
+      "webMarketEvidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:27+08:00",
+        "buyDate": "2026-09-04",
+        "sellDate": "2026-09-07",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/002458.SZ?period1=1767196800&period2=1788796800&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/002458.SZ?period1=1788451200&period2=1788537600&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/002458.SZ?period1=1788710400&period2=1788796800&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-04",
+          "open": 8.75,
+          "close": 9.109999656677246,
+          "high": 9.229999542236328,
+          "low": 8.75,
+          "volume": 73238142.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.23,
+          "turnoverPct": null,
+          "ma5": 9.02,
+          "previousMa5": 9.01,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 1.02,
+          "amountRatio5": null,
+          "volumeRatio5": 1.39,
+          "closeLocationPct": 75.0,
+          "upperShadowPctOfRange": 25.0
+        },
+        "sellDay": {
+          "date": "2026-09-07",
+          "open": 9.109999656677246,
+          "close": 9.1899995803833,
+          "high": 9.239999771118164,
+          "low": 9.0,
+          "volume": 46198960.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 0.88,
+          "turnoverPct": null,
+          "ma5": 9.06,
+          "previousMa5": 9.02,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 1.46,
+          "amountRatio5": null,
+          "volumeRatio5": 0.79,
+          "closeLocationPct": 79.17,
+          "upperShadowPctOfRange": 20.83
+        },
+        "buyTail": {
+          "open": 8.77,
+          "gapPct": null,
+          "highBefore1000": 9.13,
+          "lowBefore1000": 8.76,
+          "close0935": 8.95,
+          "close0945": 9.03,
+          "close1000": 9.09,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": 0.22,
+          "maeBefore1000Pct": -3.84,
+          "fadeFromPeakPct": -0.44
+        },
+        "sellBefore1000": {
+          "open": 9.08,
+          "gapPct": -0.33,
+          "highBefore1000": 9.2,
+          "lowBefore1000": 9.01,
+          "close0935": 9.1,
+          "close0945": 9.11,
+          "close1000": 9.13,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": 0.99,
+          "maeBefore1000Pct": -1.1,
+          "fadeFromPeakPct": -0.76
+        },
+        "errors": []
+      }
+    },
+    {
+      "sampleId": "20260904-001313",
+      "stockCode": "001313",
+      "stockName": "粤海饲料",
+      "buyDate": "2026-09-04",
+      "sellDate": "2026-09-07",
+      "outcome": "take_profit",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "flat_open_followthrough",
+      "prices": {
+        "buy": 7.71,
+        "buyClose": 7.710000038146973,
+        "nextOpen": 7.74,
+        "nextHigh": 8.04,
+        "nextLow": 7.72,
+        "nextClose": 7.96,
+        "buyOpen": 7.340000152587891
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3955.549072265625,
+            "close": 3930.115966796875,
+            "high": 3980.201904296875,
+            "low": 3915.220947265625,
+            "changePct": -0.3
+          },
+          "shenzhen": {
+            "open": 13725.650390625,
+            "close": 13516.9697265625,
+            "high": 13798.3603515625,
+            "low": 13448.7900390625,
+            "changePct": -0.79
+          },
+          "averageChangePct": -0.55
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3942.509033203125,
+            "close": 3932.698974609375,
+            "high": 3948.4208984375,
+            "low": 3916.490966796875,
+            "changePct": 0.07
+          },
+          "shenzhen": {
+            "open": 13605.01953125,
+            "close": 13774.919921875,
+            "high": 13811.259765625,
+            "low": 13590.8203125,
+            "changePct": 1.91
+          },
+          "averageChangePct": 0.99
+        }
+      },
+      "nightPlan": {
+        "tp1": 8.0,
+        "stop": 7.5
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [],
+      "diagnosis": "用户确认止盈；T+1交易发生于10:00前，补录时间不作为成交时间。买入日收盘/MA5偏离 -2.55%，T+1竞价缺口 0.39%，10点前MFE 4.28%。",
+      "outcomeSource": "web_explicit_mark",
+      "reviewEvidence": {
+        "capturedAt": "2026-09-04T07:05:06.793Z",
+        "tradingDate": "2026-09-04",
+        "stockState": "T1_WEAK",
+        "initialPlan": "PLAN_D",
+        "scores": {
+          "marketEmotionScore": 86,
+          "sectorStrengthScore": 55,
+          "tailSupportScore": 80,
+          "positionRiskScore": 0,
+          "structureIntegrityScore": 40
+        },
+        "pricePlan": {
+          "tp1": 7.79,
+          "tp1Range": [
+            7.69,
+            7.79
+          ],
+          "tp2": 7.87,
+          "tp2Range": [
+            7.85,
+            7.87
+          ],
+          "tp3": 8.5,
+          "finalStop": 7.71
+        }
+      },
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1258",
+        "boardName": "饲料",
+        "boardPassed": 3,
+        "boardScore": 66.5
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 85.62,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 17.0,
+        "executionToleranceScore": 83.4,
+        "simpleExecutionScore": 81.24,
+        "recoveryAfter0935Score": 75.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": "EXECUTABLE_AT_SNAPSHOT",
+        "entryFeasibilityScore": 100.0,
+        "executionMode": "ACTIONABLE",
+        "actionable": true
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "b4982dad-eb2c-4344-962a-bcadcc38c44f",
+        "status": "closed",
+        "plannedSellDate": "2026-09-07",
+        "actualSellDate": "2026-09-07",
+        "resultMarkedAt": "2026-09-11T06:26:04.647Z",
+        "soldAt": "2026-09-11T06:26:04.647Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-09-07",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "take_profit",
+        "resultRecordedAt": "2026-09-11T06:26:04.647Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      },
+      "webMarketEvidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:27+08:00",
+        "buyDate": "2026-09-04",
+        "sellDate": "2026-09-07",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/001313.SZ?period1=1767196800&period2=1788796800&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/001313.SZ?period1=1788451200&period2=1788537600&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/001313.SZ?period1=1788710400&period2=1788796800&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-04",
+          "open": 7.340000152587891,
+          "close": 7.710000038146973,
+          "high": 7.889999866485596,
+          "low": 7.239999771118164,
+          "volume": 32186234.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 5.62,
+          "turnoverPct": null,
+          "ma5": 7.91,
+          "previousMa5": 8.01,
+          "ma5Rising": false,
+          "closeVsMa5Pct": -2.55,
+          "amountRatio5": null,
+          "volumeRatio5": 1.57,
+          "closeLocationPct": 72.31,
+          "upperShadowPctOfRange": 27.69
+        },
+        "sellDay": {
+          "date": "2026-09-07",
+          "open": 7.710000038146973,
+          "close": 8.029999732971191,
+          "high": 8.130000114440918,
+          "low": 7.679999828338623,
+          "volume": 25378180.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.15,
+          "turnoverPct": null,
+          "ma5": 7.88,
+          "previousMa5": 7.91,
+          "ma5Rising": false,
+          "closeVsMa5Pct": 1.96,
+          "amountRatio5": null,
+          "volumeRatio5": 1.09,
+          "closeLocationPct": 77.78,
+          "upperShadowPctOfRange": 22.22
+        },
+        "buyTail": {
+          "open": 7.36,
+          "gapPct": null,
+          "highBefore1000": 7.6,
+          "lowBefore1000": 7.25,
+          "close0935": 7.47,
+          "close0945": 7.51,
+          "close1000": 7.55,
+          "peakTime": "09:55",
+          "mfeBefore1000Pct": -1.43,
+          "maeBefore1000Pct": -5.97,
+          "fadeFromPeakPct": -0.66
+        },
+        "sellBefore1000": {
+          "open": 7.74,
+          "gapPct": 0.39,
+          "highBefore1000": 8.04,
+          "lowBefore1000": 7.72,
+          "close0935": 7.86,
+          "close0945": 7.93,
+          "close1000": 7.96,
+          "peakTime": "09:50",
+          "mfeBefore1000Pct": 4.28,
+          "maeBefore1000Pct": 0.13,
+          "fadeFromPeakPct": -1.0
+        },
+        "errors": []
+      }
+    },
+    {
+      "sampleId": "20260909-600522",
+      "stockCode": "600522",
+      "stockName": "中天科技",
+      "buyDate": "2026-09-09",
+      "sellDate": "2026-09-10",
+      "outcome": "stop_loss",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "gap_down_weak",
+      "prices": {
+        "buy": 34.05,
+        "nextOpen": 33.7,
+        "nextHigh": 33.89,
+        "nextLow": 33.25,
+        "nextClose": 33.34,
+        "buyOpen": 33.400001525878906,
+        "buyClose": 34.119998931884766
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3943.922119140625,
+            "close": 3951.507080078125,
+            "high": 3958.116943359375,
+            "low": 3933.468994140625,
+            "changePct": 0.28
+          },
+          "shenzhen": {
+            "open": 13788.9404296875,
+            "close": 13723.3203125,
+            "high": 13788.9404296875,
+            "low": 13625.1201171875,
+            "changePct": 0.15
+          },
+          "averageChangePct": 0.22
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3939.094970703125,
+            "close": 3934.404052734375,
+            "high": 3949.2548828125,
+            "low": 3927.346923828125,
+            "changePct": -0.43
+          },
+          "shenzhen": {
+            "open": 13641.1796875,
+            "close": 13617.669921875,
+            "high": 13713.8798828125,
+            "low": 13585.599609375,
+            "changePct": -0.77
+          },
+          "averageChangePct": -0.6
+        }
+      },
+      "nightPlan": {
+        "tp1": 35.31,
+        "stop": 33.28
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "night_review"
+      ],
+      "diagnosis": "用户确认止损；T+1交易发生于10:00前，补录时间不作为成交时间。买入日收盘/MA5偏离 4.05%，T+1竞价缺口 -1.23%，10点前MFE -0.47%。",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "boardCode": "BK1592",
+        "boardName": "通信线缆及配套",
+        "boardPassed": 4,
+        "boardScore": 81.5
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "STRONG_CANDIDATE",
+        "finalScore": 90.27,
+        "signalType": "T3_TREND_BREAKOUT",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 100.0,
+        "simpleExecutionScore": 92.3,
+        "recoveryAfter0935Score": 70.0,
+        "initialPlan": "PLAN_T",
+        "entryFeasibilityStatus": "EXECUTABLE_AT_SNAPSHOT",
+        "entryFeasibilityScore": 100.0,
+        "executionMode": "ACTIONABLE",
+        "actionable": true
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.2,
+          0.3
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.3,
+        "strongRemainder": [
+          0.5,
+          0.7
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "14b2ff92-e498-4eec-ac8a-0ef550da1058",
+        "status": "closed",
+        "plannedSellDate": "2026-09-10",
+        "actualSellDate": "2026-09-10",
+        "resultMarkedAt": "2026-09-11T06:26:01.230Z",
+        "soldAt": "2026-09-11T06:26:01.230Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T3 mid-trend breakout",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-09-10",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "stop_loss",
+        "resultRecordedAt": "2026-09-11T06:26:01.230Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      },
+      "webMarketEvidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:27+08:00",
+        "buyDate": "2026-09-09",
+        "sellDate": "2026-09-10",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600522.SS?period1=1767196800&period2=1789056000&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600522.SS?period1=1788883200&period2=1788969600&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600522.SS?period1=1788969600&period2=1789056000&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-09",
+          "open": 33.400001525878906,
+          "close": 34.119998931884766,
+          "high": 34.38999938964844,
+          "low": 33.209999084472656,
+          "volume": 264496886.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 4.95,
+          "turnoverPct": null,
+          "ma5": 32.79,
+          "previousMa5": 32.7,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 4.05,
+          "amountRatio5": null,
+          "volumeRatio5": 1.92,
+          "closeLocationPct": 77.12,
+          "upperShadowPctOfRange": 22.88
+        },
+        "sellDay": {
+          "date": "2026-09-10",
+          "open": 33.70000076293945,
+          "close": 33.29999923706055,
+          "high": 33.900001525878906,
+          "low": 33.2400016784668,
+          "volume": 127855123.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": -2.4,
+          "turnoverPct": null,
+          "ma5": 32.87,
+          "previousMa5": 32.79,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 1.31,
+          "amountRatio5": null,
+          "volumeRatio5": 0.78,
+          "closeLocationPct": 9.09,
+          "upperShadowPctOfRange": 30.3
+        },
+        "buyTail": {
+          "open": 33.43,
+          "gapPct": null,
+          "highBefore1000": 34.39,
+          "lowBefore1000": 33.26,
+          "close0935": 34.21,
+          "close0945": 33.85,
+          "close1000": 33.92,
+          "peakTime": "09:40",
+          "mfeBefore1000Pct": 1.0,
+          "maeBefore1000Pct": -2.32,
+          "fadeFromPeakPct": -1.37
+        },
+        "sellBefore1000": {
+          "open": 33.7,
+          "gapPct": -1.23,
+          "highBefore1000": 33.89,
+          "lowBefore1000": 33.25,
+          "close0935": 33.49,
+          "close0945": 33.69,
+          "close1000": 33.34,
+          "peakTime": "09:40",
+          "mfeBefore1000Pct": -0.47,
+          "maeBefore1000Pct": -2.35,
+          "fadeFromPeakPct": -1.62
+        },
+        "errors": []
+      }
+    },
+    {
+      "sampleId": "20260909-600105",
+      "stockCode": "600105",
+      "stockName": "永鼎股份",
+      "buyDate": "2026-09-09",
+      "sellDate": "2026-09-10",
+      "outcome": "stop_loss",
+      "entryStrategy": "TAIL_MAIN",
+      "buyPlanType": "[TAIL_MAIN] T5 first pullback reclaim",
+      "buyDayLimitOutcome": null,
+      "openingRegime": "flat_open_failed_followthrough",
+      "prices": {
+        "buy": 41.39,
+        "nextOpen": 41.28,
+        "nextHigh": 41.41,
+        "nextLow": 40.06,
+        "nextClose": 40.26,
+        "buyOpen": 40.5,
+        "buyClose": 41.47999954223633
+      },
+      "market": {
+        "buyDay": {
+          "shanghai": {
+            "open": 3943.922119140625,
+            "close": 3951.507080078125,
+            "high": 3958.116943359375,
+            "low": 3933.468994140625,
+            "changePct": 0.28
+          },
+          "shenzhen": {
+            "open": 13788.9404296875,
+            "close": 13723.3203125,
+            "high": 13788.9404296875,
+            "low": 13625.1201171875,
+            "changePct": 0.15
+          },
+          "averageChangePct": 0.22
+        },
+        "sellDay": {
+          "shanghai": {
+            "open": 3939.094970703125,
+            "close": 3934.404052734375,
+            "high": 3949.2548828125,
+            "low": 3927.346923828125,
+            "changePct": -0.43
+          },
+          "shenzhen": {
+            "open": 13641.1796875,
+            "close": 13617.669921875,
+            "high": 13713.8798828125,
+            "low": 13585.599609375,
+            "changePct": -0.77
+          },
+          "averageChangePct": -0.6
+        }
+      },
+      "nightPlan": {
+        "tp1": 42.29,
+        "stop": 40.4
+      },
+      "sourceAssetIds": [],
+      "sourceTradeExportIds": [
+        "44553c940d16ea2f"
+      ],
+      "missingEvidence": [
+        "night_review"
+      ],
+      "diagnosis": "用户确认止损；T+1交易发生于10:00前，补录时间不作为成交时间。买入日收盘/MA5偏离 5.79%，T+1竞价缺口 -0.48%，10点前MFE 0.05%。",
+      "outcomeSource": "web_explicit_mark",
+      "entryEvidence": {
+        "buyPlanType": "[TAIL_MAIN] T5 first pullback reclaim",
+        "boardCode": "BK1592",
+        "boardName": "通信线缆及配套",
+        "boardPassed": 4,
+        "boardScore": 81.5
+      },
+      "selectionEvidence": {
+        "strategyId": "TAIL_T1_V31_EMPIRICAL",
+        "candidateStatus": "NORMAL_CANDIDATE",
+        "finalScore": 83.58,
+        "signalType": "T5_FIRST_PULLBACK",
+        "overnightCrowdingScore": 5.0,
+        "executionToleranceScore": 89.82,
+        "simpleExecutionScore": 81.99,
+        "recoveryAfter0935Score": 60.0,
+        "initialPlan": "PLAN_S",
+        "entryFeasibilityStatus": "EXECUTABLE_AT_SNAPSHOT",
+        "entryFeasibilityScore": 100.0,
+        "executionMode": "ACTIONABLE",
+        "actionable": true
+      },
+      "executionPlanEvidence": {
+        "auctionWatchTime": "09:25-09:30",
+        "firstNodeTime": "09:30-09:35",
+        "firstSellRatio": [
+          0.4,
+          0.5
+        ],
+        "openingOverride": true,
+        "strongRepairAction": "DEFER_FIRST_SELL_TO_0935",
+        "classifyTime": "09:35",
+        "weakAction": "SELL_ALL_REMAINDER_NOW",
+        "neutralTotalRemainder": 0.2,
+        "strongRemainder": [
+          0.5,
+          0.6
+        ],
+        "finalExitTime": "10:00",
+        "limitUpException": true
+      },
+      "webTrade": {
+        "tradeId": "0f13d64c-d1c9-4c5d-b4cb-406c318cebf5",
+        "status": "closed",
+        "plannedSellDate": "2026-09-10",
+        "actualSellDate": "2026-09-10",
+        "resultMarkedAt": "2026-09-11T06:25:59.817Z",
+        "soldAt": "2026-09-11T06:25:59.817Z",
+        "entryStrategy": "TAIL_MAIN",
+        "buyPlanType": "[TAIL_MAIN] T5 first pullback reclaim",
+        "buyDayLimitOutcome": null,
+        "exportedAt": "2026-09-12T07:40:25.096Z"
+      },
+      "sellExecution": {
+        "tradingDate": "2026-09-10",
+        "window": "T1_BEFORE_1000",
+        "resultLabel": "stop_loss",
+        "resultRecordedAt": "2026-09-11T06:25:59.817Z",
+        "resultLabelReliability": "user_confirmed",
+        "priceAccuracy": "unverified"
+      },
+      "webMarketEvidence": {
+        "provider": {
+          "daily": "Yahoo Finance",
+          "intraday": "Yahoo Finance"
+        },
+        "fetchedAt": "2026-09-12T16:04:28+08:00",
+        "buyDate": "2026-09-09",
+        "sellDate": "2026-09-10",
+        "dailyUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600105.SS?period1=1767196800&period2=1789056000&interval=1d&events=history",
+        "buyIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600105.SS?period1=1788883200&period2=1788969600&interval=5m&events=history",
+        "sellIntradayUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600105.SS?period1=1788969600&period2=1789056000&interval=5m&events=history",
+        "buyDay": {
+          "date": "2026-09-09",
+          "open": 40.5,
+          "close": 41.47999954223633,
+          "high": 42.31999969482422,
+          "low": 40.0,
+          "volume": 173403430.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": 6.06,
+          "turnoverPct": null,
+          "ma5": 39.21,
+          "previousMa5": 38.62,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 5.79,
+          "amountRatio5": null,
+          "volumeRatio5": 1.76,
+          "closeLocationPct": 63.79,
+          "upperShadowPctOfRange": 36.21
+        },
+        "sellDay": {
+          "date": "2026-09-10",
+          "open": 41.15999984741211,
+          "close": 40.380001068115234,
+          "high": 41.43000030517578,
+          "low": 40.040000915527344,
+          "volume": 97696677.0,
+          "amount": null,
+          "amplitudePct": null,
+          "changePct": -2.65,
+          "turnoverPct": null,
+          "ma5": 39.42,
+          "previousMa5": 39.21,
+          "ma5Rising": true,
+          "closeVsMa5Pct": 2.42,
+          "amountRatio5": null,
+          "volumeRatio5": 0.84,
+          "closeLocationPct": 24.46,
+          "upperShadowPctOfRange": 19.42
+        },
+        "buyTail": {
+          "open": 40.6,
+          "gapPct": null,
+          "highBefore1000": 41.85,
+          "lowBefore1000": 40.05,
+          "close0935": 41.81,
+          "close0945": 40.97,
+          "close1000": 40.93,
+          "peakTime": "09:40",
+          "mfeBefore1000Pct": 1.11,
+          "maeBefore1000Pct": -3.24,
+          "fadeFromPeakPct": -2.2
+        },
+        "sellBefore1000": {
+          "open": 41.28,
+          "gapPct": -0.48,
+          "highBefore1000": 41.41,
+          "lowBefore1000": 40.06,
+          "close0935": 40.37,
+          "close0945": 40.81,
+          "close1000": 40.26,
+          "peakTime": "09:30",
+          "mfeBefore1000Pct": 0.05,
+          "maeBefore1000Pct": -3.21,
+          "fadeFromPeakPct": -2.78
+        },
+        "errors": []
+      }
+    }
+  ],
+  "ruleCandidates": [
+    {
+      "id": "OPENING_CONFIRMATION_OVERRIDE",
+      "status": "deployed_stage1_pending_validation",
+      "minimumSamples": 12,
+      "rationale": "09:25竞价只定级，09:30-09:35的真实承接可以覆盖夜间默认预案。",
+      "supportSampleIds": [
+        "20260714-002552",
+        "20260714-603459",
+        "20260714-605006",
+        "20260714-002436",
+        "20260714-003030",
+        "20260722-605376",
+        "20260722-603800",
+        "20260722-000975",
+        "20260722-000426"
+      ],
+      "contradictionSampleIds": []
+    },
+    {
+      "id": "FREEZE_OVERNIGHT_TARGET",
+      "status": "deployed_stage1_pending_validation",
+      "minimumSamples": 8,
+      "rationale": "次日实时价不得重新抬高夜间卖点，避免移动目标。",
+      "supportSampleIds": [
+        "20260714-603459",
+        "20260714-002436",
+        "20260722-605376",
+        "20260722-603800",
+        "20260722-000975",
+        "20260722-000426"
+      ],
+      "contradictionSampleIds": []
+    },
+    {
+      "id": "PRIOR_TREND_PERSISTENCE_VETO",
+      "status": "deployed_stage1_pending_validation",
+      "minimumSamples": 10,
+      "rationale": "排除前一日趋势尚未成立、仅凭当日大阳线形成的下跌反弹。",
+      "supportSampleIds": [
+        "20260714-002552",
+        "20260714-603459",
+        "20260714-605006",
+        "20260714-002436"
+      ],
+      "contradictionSampleIds": []
+    },
+    {
+      "id": "EXECUTABLE_TARGET_BAND",
+      "status": "deployed_stage1_pending_validation",
+      "minimumSamples": 8,
+      "rationale": "止盈使用价格区间和成交容差，不使用单一精确价。",
+      "supportSampleIds": [
+        "20260714-003030",
+        "20260714-605006",
+        "20260804-600360",
+        "20260804-002897"
+      ],
+      "contradictionSampleIds": []
+    },
+    {
+      "id": "WEAK_EXECUTION_MONOTONIC",
+      "status": "deployed_execution_guard_pending_validation",
+      "minimumSamples": 8,
+      "rationale": "WEAK卖出指令属于不可逆执行事件；后续转NEUTRAL/STRONG只管理未卖余仓，不能提示回补已卖仓位。",
+      "supportSampleIds": [
+        "20260714-603459",
+        "20260714-605006",
+        "20260722-605376",
+        "20260722-603800"
+      ],
+      "contradictionSampleIds": []
+    },
+    {
+      "id": "NEUTRAL_EXIT_0945_STRONG_EXIT_1000",
+      "status": "candidate_collect_more_dates",
+      "minimumSamples": 12,
+      "rationale": "WEAK按触发点退出；NEUTRAL考虑09:45清余仓；仅STRONG/RECOVERY/LIMIT_UP保留到10:00，避免普通溢价冲高回落。",
+      "supportSampleIds": [
+        "20260714-002552",
+        "20260714-603459",
+        "20260714-605006",
+        "20260714-002436",
+        "20260722-603800"
+      ],
+      "contradictionSampleIds": [
+        "20260714-003030",
+        "20260722-605376",
+        "20260722-000975",
+        "20260722-000426"
+      ]
+    },
+    {
+      "id": "AM_TOP_SAME_DAY_LIMIT_PRECISION",
+      "status": "deployed_watch_only_pending_validation",
+      "minimumSamples": 12,
+      "stage1Decision": "Seven tagged AM_TOP trades across four buy dates all used the broad early lift-off branch and none sealed at the buy-day close. Remove that branch, reject synthetic board scores, and retain only verified-sector near-limit or open-strength entries.",
+      "stage2Decision": "Nine tagged AM_TOP trades across five buy dates produced zero buy-day sealed limit-ups. The two verified-sector open-strength samples split one profit and one stop loss, with the loss larger. Suspend live AM_TOP execution and keep candidates as watch-only evidence until multi-date seal precision is demonstrated.",
+      "rationale": "早盘策略单独统计买入日触板率和收盘封板率；在至少三个买入日样本前，不凭主观失败感受直接收紧阈值。",
+      "supportSampleIds": [
+        "20260727-600396",
+        "20260727-002716",
+        "20260728-603078",
+        "20260729-603727",
+        "20260729-605376",
+        "20260729-603115",
+        "20260730-000893",
+        "20260731-003043",
+        "20260731-603031"
+      ],
+      "contradictionSampleIds": []
+    },
+    {
+      "id": "TAIL_T3_SAME_DAY_RANKING_CALIBRATION",
+      "status": "candidate_collect_more_dates",
+      "minimumSamples": 9,
+      "rationale": "截至2026-08-10已有8笔已标记T3样本覆盖4个买入日。8月4日总分最高者是同日唯一亏损，8月7日总分最高者的记录收益反而最低；当前总分适合做准入，但不足以单独决定同日排序。继续补足至少9笔，并先复核结果标签与收益方向冲突。",
+      "supportSampleIds": [
+        "20260804-603456",
+        "20260804-600360",
+        "20260804-002897",
+        "20260805-605589",
+        "20260806-600408",
+        "20260807-002038",
+        "20260807-000518",
+        "20260807-002317"
+      ],
+      "contradictionSampleIds": []
+    },
+    {
+      "id": "TAIL_RECOVERY_MA5_EXTENSION_VETO",
+      "status": "deployed_learned_guard_pending_validation",
+      "minimumSamples": 5,
+      "promotionDecision": "The interaction matched five user-confirmed stop-loss outcomes across three buy dates and no take-profit outcome in the 2026-08-26 through 2026-09-09 cohort. Deploy as a conservative admission veto while continuing validation.",
+      "rationale": "尾盘承接恢复分不高（<=70）且收盘偏离MA5至少3%时，表面强势更接近末端扩张；拒绝该组合，单项分数不单独否决。",
+      "supportSampleIds": [
+        "20260826-000878",
+        "20260826-000737",
+        "20260901-002758",
+        "20260909-600522",
+        "20260909-600105"
+      ],
+      "contradictionSampleIds": []
+    },
+    {
+      "id": "T1_GAP_DOWN_ONE_PCT_DEFENSIVE_EXIT",
+      "status": "candidate_collect_more_samples",
+      "minimumSamples": 8,
+      "rationale": "本批T+1低开至少1%的4笔全部为用户确认止损，覆盖3个买入日；继续区分低开后快速修复与持续弱势，暂不等同于竞价直接全卖。",
+      "supportSampleIds": [
+        "20260826-000878",
+        "20260826-000737",
+        "20260901-002758",
+        "20260909-600522"
+      ],
+      "contradictionSampleIds": []
+    }
+  ]
+}

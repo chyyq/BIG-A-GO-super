@@ -1,0 +1,54 @@
+{"at": "2026-07-26T21:17:11+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 36}
+{"at": "2026-07-26T21:37:44+08:00", "type": "rebuild", "sampleCount": 9, "labeledSampleCount": 0, "validationIssueCount": 0}
+{"at": "2026-07-26T21:39:08+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0}
+{"at": "2026-07-26T21:39:08+08:00", "type": "rebuild", "sampleCount": 9, "labeledSampleCount": 0, "validationIssueCount": 0}
+{"at": "2026-07-26T21:39:08+08:00", "type": "export", "json": "learning\\exports\\latest.json", "csv": "learning\\exports\\trades.csv"}
+{"at": "2026-07-26T21:49:39+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0}
+{"at": "2026-07-26T21:49:39+08:00", "type": "rebuild", "sampleCount": 9, "labeledSampleCount": 0, "validationIssueCount": 0}
+{"at": "2026-07-26T21:49:39+08:00", "type": "export", "json": "learning\\exports\\latest.json", "csv": "learning\\exports\\trades.csv"}
+{"at": "2026-07-30T21:39:34+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0, "tradeExportCount": 0, "newTradeExportCount": 0, "tradeSamplesAdded": 0, "tradeSamplesUpdated": 0}
+{"at": "2026-07-30T22:03:34+08:00", "type": "rebuild", "sampleCount": 9, "labeledSampleCount": 0, "validationIssueCount": 0}
+{"at": "2026-07-30T22:03:43+08:00", "type": "export", "json": "learning\\exports\\latest.json", "csv": "learning\\exports\\trades.csv"}
+{"at": "2026-07-30T22:22:24+08:00", "type": "import_sync_code", "path": "reference/BIG-A-GO-trades-2026-07-30-133228-b74ee6679e.json", "tradeCount": 7, "sha256": "b74ee6679e"}
+{"at": "2026-07-30T22:22:37+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0, "tradeExportCount": 1, "newTradeExportCount": 1, "tradeSamplesAdded": 7, "tradeSamplesUpdated": 0}
+{"at": "2026-07-30T22:31:25+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0, "tradeExportCount": 1, "newTradeExportCount": 0, "tradeSamplesAdded": 0, "tradeSamplesUpdated": 7}
+{"at": "2026-07-30T22:34:12+08:00", "type": "promote_rule", "ruleId": "AM_TOP_SAME_DAY_LIMIT_PRECISION", "stage": "stage1", "evidenceSampleCount": 7, "distinctBuyDates": 4, "labeledOutcomeCount": 6, "changes": ["disable early lift-off entry", "require verified sector board passed >= 4", "remove synthetic board score"], "validation": "12 Python tests and app logic tests passed", "status": "pending 12-sample validation"}
+{"at": "2026-07-30T22:34:18+08:00", "type": "rebuild", "sampleCount": 16, "labeledSampleCount": 6, "validationIssueCount": 0}
+{"at": "2026-07-30T22:34:24+08:00", "type": "export", "json": "learning\\exports\\latest.json", "csv": "learning\\exports\\trades.csv"}
+{"at": "2026-07-30T22:35:51+08:00", "type": "rebuild", "sampleCount": 16, "labeledSampleCount": 6, "validationIssueCount": 0}
+{"at": "2026-07-30T22:35:57+08:00", "type": "export", "json": "learning\\exports\\latest.json", "csv": "learning\\exports\\trades.csv"}
+{"at": "2026-08-03T23:33:35+08:00", "type": "import_sync_code", "path": "reference/BIG-A-GO-trades-2026-08-03-151937-74942d023d.json", "tradeCount": 3, "sha256": "74942d023d"}
+{"at": "2026-08-03T23:34:06+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0, "tradeExportCount": 2, "newTradeExportCount": 1, "tradeSamplesAdded": 2, "tradeSamplesUpdated": 7}
+{"at": "2026-08-03T23:40:33+08:00", "type": "promote_rule", "ruleId": "AM_TOP_SAME_DAY_LIMIT_PRECISION", "stage": "watch_only", "evidenceSampleCount": 9, "distinctBuyDates": 5, "labeledOutcomeCount": 9, "buyDaySealRate": 0.0, "changes": ["keep AM_TOP candidates visible for evidence", "disable actionable AM_TOP buy recording", "mark AM_TOP execution mode WATCH_ONLY"], "validation": "13 Python tests and app logic tests passed"}
+{"at": "2026-08-03T23:40:33+08:00", "type": "tail_no_recommendation_audit", "snapshots": [{"at": "2026-07-30T14:18:01+08:00", "reason": "MARKET_RISK_OFF", "limitDown": 28, "bigDown": 100}, {"at": "2026-07-31T14:20:19+08:00", "reason": "MARKET_RISK_OFF", "brokenBoardRate": 0.667}, {"at": "2026-08-03T14:47:20+08:00", "reason": "MARKET_RISK_OFF", "limitUp": 82, "limitDown": 10, "bigDown": 100}], "decision": "keep tail gates unchanged", "refreshFinding": "GitHub scheduled runs were delayed; manual workflow_dispatch remains the reliable intraday trigger"}
+{"at": "2026-08-03T23:40:44+08:00", "type": "rebuild", "sampleCount": 18, "labeledSampleCount": 9, "validationIssueCount": 0}
+{"at": "2026-08-03T23:40:51+08:00", "type": "export", "json": "learning\\exports\\latest.json", "csv": "learning\\exports\\trades.csv"}
+{"at": "2026-08-06T00:22:51+08:00", "type": "import_sync_code", "path": "reference/BIG-A-GO-trades-2026-08-05-155929-c32f00b015.json", "tradeCount": 8, "sha256": "c32f00b015"}
+{"at": "2026-08-06T00:23:01+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0, "tradeExportCount": 3, "newTradeExportCount": 1, "tradeSamplesAdded": 5, "tradeSamplesUpdated": 9}
+{"at": "2026-08-06T00:26:58+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0, "tradeExportCount": 3, "newTradeExportCount": 0, "tradeSamplesAdded": 0, "tradeSamplesUpdated": 14}
+{"at": "2026-08-06T00:28:59+08:00", "type": "rebuild", "sampleCount": 23, "labeledSampleCount": 12, "validationIssueCount": 0}
+{"at": "2026-08-06T00:29:00+08:00", "type": "export", "json": "learning\\exports\\latest.json", "csv": "learning\\exports\\trades.csv"}
+{"at": "2026-08-11T00:24:06+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0, "tradeExportCount": 3, "newTradeExportCount": 0, "tradeSamplesAdded": 0, "tradeSamplesUpdated": 14}
+{"at": "2026-08-11T00:24:25+08:00", "type": "import_sync_code", "path": "reference/BIG-A-GO-trades-2026-08-10-161850-2fcbccd244.json", "tradeCount": 8, "sha256": "2fcbccd244"}
+{"at": "2026-08-11T00:24:40+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0, "tradeExportCount": 4, "newTradeExportCount": 1, "tradeSamplesAdded": 7, "tradeSamplesUpdated": 14}
+{"at": "2026-08-11T00:40:09+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0, "tradeExportCount": 4, "newTradeExportCount": 0, "tradeSamplesAdded": 0, "tradeSamplesUpdated": 21}
+{"at": "2026-08-11T00:42:58+08:00", "type": "rebuild", "sampleCount": 30, "labeledSampleCount": 17, "validationIssueCount": 1}
+{"at": "2026-08-11T00:42:59+08:00", "type": "export", "json": "learning\\exports\\latest.json", "csv": "learning\\exports\\trades.csv"}
+{"at": "2026-08-11T00:43:34+08:00", "type": "production_execution_guard", "rule": "LOCKED_LIMIT_UP_ENTRY_FEASIBILITY", "reason": "User reported repeated tail snapshots dominated by already sealed limit-up stocks that could not be bought; code audit confirmed stable limit-up was prioritized without fill feasibility.", "decision": "Keep at most two sealed limit-up candidates as queue-only watch items, disable one-click buy, and rank executable tail candidates first.", "evidenceGate": "Operational executability correction; no selection threshold was relaxed.", "tests": "17 Python tests and app logic tests passed"}
+{"at": "2026-09-12T15:26:38+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0, "tradeExportCount": 4, "newTradeExportCount": 0, "tradeSamplesAdded": 0, "tradeSamplesUpdated": 21}
+{"at": "2026-09-12T15:29:05+08:00", "type": "rebuild", "sampleCount": 30, "labeledSampleCount": 17, "validationIssueCount": 1}
+{"at": "2026-09-12T15:29:05+08:00", "type": "export", "json": "learning\\exports\\latest.json", "csv": "learning\\exports\\trades.csv"}
+{"at": "2026-09-12T15:43:54+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0, "tradeExportCount": 5, "newTradeExportCount": 1, "tradeSamplesAdded": 12, "tradeSamplesUpdated": 21}
+{"at": "2026-09-12T15:47:06+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0, "tradeExportCount": 5, "newTradeExportCount": 0, "tradeSamplesAdded": 0, "tradeSamplesUpdated": 33}
+{"at": "2026-09-12T15:57:32+08:00", "type": "scan", "assetCount": 36, "newAssetCount": 0, "tradeExportCount": 5, "newTradeExportCount": 0, "tradeSamplesAdded": 0, "tradeSamplesUpdated": 33}
+{"at": "2026-09-12T15:59:21+08:00", "type": "market_evidence", "evidencePath": "learning/market_evidence/2026-09-12.json", "selected": 12, "enriched": 0, "errorCount": 14}
+{"at": "2026-09-12T16:00:43+08:00", "type": "market_evidence", "evidencePath": "learning/market_evidence/2026-09-12.json", "selected": 12, "enriched": 12, "errorCount": 0}
+{"at": "2026-09-12T16:04:28+08:00", "type": "market_evidence", "evidencePath": "learning/market_evidence/2026-09-12.json", "selected": 12, "enriched": 12, "errorCount": 0}
+{"at": "2026-09-12T16:07:22+08:00", "type": "production_rule_promotion", "rule": "TAIL_RECOVERY_MA5_EXTENSION_VETO", "decision": "Reject tail candidates only when recoveryAfter0935Score <= 70 and MA5 deviation >= 3%, excluding stable limit-up queue observations.", "evidence": "Five user-confirmed stop-loss outcomes across three buy dates; zero take-profit contradictions in the 2026-08-26 through 2026-09-09 cohort.", "pricePolicy": "Outcome labels are authoritative; mark-time prices are unverified and excluded from realized-return statistics.", "tests": "Pending full regression run"}
+{"at": "2026-09-12T16:09:48+08:00", "type": "production_rule_validation", "rule": "TAIL_RECOVERY_MA5_EXTENSION_VETO", "result": "passed", "tests": "21 Python tests passed; app.js syntax check passed", "model": {"sampleCount": 42, "labeledSampleCount": 29, "pendingOutcomeCount": 13, "takeProfitRate": 55.17}}
+{"at": "2026-09-12T16:09:23+08:00", "type": "rebuild", "sampleCount": 42, "labeledSampleCount": 29, "validationIssueCount": 0}
+{"at": "2026-09-12T16:09:23+08:00", "type": "export", "json": "learning\\exports\\latest.json", "csv": "learning\\exports\\trades.csv"}
+{"at": "2026-09-12T16:10:52+08:00", "type": "rebuild", "sampleCount": 42, "labeledSampleCount": 29, "validationIssueCount": 0}
+{"at": "2026-09-12T16:10:53+08:00", "type": "export", "json": "learning\\exports\\latest.json", "csv": "learning\\exports\\trades.csv"}
+{"at": "2026-09-12T16:12:57+08:00", "type": "rebuild", "sampleCount": 42, "labeledSampleCount": 29, "validationIssueCount": 0}
+{"at": "2026-09-12T16:12:57+08:00", "type": "export", "json": "learning\\exports\\latest.json", "csv": "learning\\exports\\trades.csv"}
