@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-14T21:15:46.701880+08:00",
+    "generatedAt": "2026-09-14T21:22:40.072322+08:00",
     "tradingDate": "2026-09-14",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,20 +22,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 34.6
+    "runtimeSeconds": 29.45
   },
   "market": {
     "recommendationCount": 0,
@@ -356,39 +356,45 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "昔日彩电大王将退市，已连续三年巨亏两年康佳在国内电视市场的出货量市占率维持在约3%的水平  29分钟前",
-      "url": "https://www.yicai.com/news/103363890.html",
+      "source": "Eastmoney News",
+      "title": "十大券商策略：迎接关键时刻！加息“靴子”将落地 A股或迎反攻行情",
+      "url": "https://finance.eastmoney.com/a/202609133872891743.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "美联储、日本央行加息在即，港股逆势站稳｜市场观察加息如何影响港股？  2小时前",
-      "url": "https://www.yicai.com/news/103363754.html",
+      "source": "Eastmoney News",
+      "title": "沪指震荡整理 三市成交额1.64万亿 医疗服务板块大涨",
+      "url": "https://finance.eastmoney.com/a/202609143873370592.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "“新中金”呼之欲出，两家AMC系券商将告别A股“汇金系”券商的加速整合，是当下券业并购重组白热化的缩影。  2小时前",
-      "url": "https://www.yicai.com/news/103363737.html",
+      "source": "Eastmoney News",
+      "title": "韩国股市放大招！正式开启夜盘 交易延长至晚上8点",
+      "url": "https://finance.eastmoney.com/a/202609133872896933.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "AI“口头放缓”引担忧，A股光模块三巨头市值单日蒸发近千亿大模型&#34;踩刹车&#34;传闻扰动市场  2小时前",
-      "url": "https://www.yicai.com/news/103363736.html",
+      "source": "Eastmoney News",
+      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
+      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "PCB板块多股涨停，涨价潮持续传导随着PCB上游材料价格持续上涨，涨价开始向部分PCB品类传导。  3小时前",
-      "url": "https://www.yicai.com/news/103363644.html",
+      "source": "Eastmoney News",
+      "title": "事关下半年A股韧性 五大券商首席发声",
+      "url": "https://finance.eastmoney.com/a/202609143873594412.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "韩国股市延长交易时段，AI担忧、高油价与美联储加息预期三重逆风笼罩亚太市场萨姆森表示：“亚洲正处于塑造全球市场的几大关键力量的中心。”  4小时前",
-      "url": "https://www.yicai.com/news/103363506.html",
+      "source": "Eastmoney News",
+      "title": "经济学家震撼预言：2027年美经济、股市“双崩” 纳指跌回“万点大关”！",
+      "url": "https://finance.eastmoney.com/a/202609143873301688.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信证券：银行板块仍将演绎估值上行方向 全年绝对收益仍将延续",
+      "url": "https://finance.eastmoney.com/a/202609143872952974.html",
       "time": ""
     }
   ]
