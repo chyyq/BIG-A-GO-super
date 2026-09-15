@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-15T18:24:34.926928+08:00",
+    "generatedAt": "2026-09-15T18:30:31.022602+08:00",
     "tradingDate": "2026-09-15",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 34.35
+    "runtimeSeconds": 37.0
   },
   "market": {
     "recommendationCount": 0,
@@ -67,7 +67,7 @@
       "price": 45885.79,
       "pct": 3.23,
       "amount": 17179420250.0,
-      "turnover": 69.0,
+      "turnover": 38.71,
       "open": 45697.89,
       "preClose": 44449.74,
       "mainNet": -439927584.0,
@@ -146,7 +146,7 @@
       "price": 102829.86,
       "pct": 3.35,
       "amount": 18589505579.0,
-      "turnover": 61.79,
+      "turnover": 38.03,
       "open": 102321.24,
       "preClose": 99501.13,
       "mainNet": -568714688.0,
@@ -402,8 +402,8 @@
     },
     {
       "source": "Yicai",
-      "title": "连板股追踪丨A股今日共32只个股涨停 这只电力股5连板PCB概念股澳弘电子3连板。一图速览今日连板股&gt;&gt;  1小时前",
-      "url": "https://www.yicai.com/news/103365142.html",
+      "title": "资本市场波动加大，8月居民存款搬家节奏放缓非银存款同比少增或指向股市、理财等资管产品赚钱效应不及去年同期。  4分钟前",
+      "url": "https://www.yicai.com/news/103365246.html",
       "time": ""
     }
   ]
