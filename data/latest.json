@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-15T19:57:25.997208+08:00",
+    "generatedAt": "2026-09-15T20:02:01.814640+08:00",
     "tradingDate": "2026-09-15",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -23,7 +23,7 @@
         "name": "10jqka",
         "ok": true,
         "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source skipped; quote data is unaffected."
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
@@ -33,10 +33,9 @@
       }
     ],
     "errors": [
-      "Market monitor is RISK_OFF; no new buy recommendation generated.",
-      "10jqka news skipped: <urlopen error _ssl.c:999: The handshake operation timed out>"
+      "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 41.3
+    "runtimeSeconds": 32.83
   },
   "market": {
     "recommendationCount": 0,
