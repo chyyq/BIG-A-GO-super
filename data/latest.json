@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-15T19:36:14.104546+08:00",
+    "generatedAt": "2026-09-15T19:44:57.409906+08:00",
     "tradingDate": "2026-09-15",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 46.35
+    "runtimeSeconds": 32.92
   },
   "market": {
     "recommendationCount": 0,
@@ -359,42 +359,6 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "沪指跌0.54% 科创50指数涨1.55% 成交额仅1.62万亿",
-      "url": "https://finance.eastmoney.com/a/202609153874652822.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
-      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：洁净室头部企业半导体相关订单大幅放量 半导体设备需求有望跟进",
-      "url": "https://finance.eastmoney.com/a/202609153874059447.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：金属业绩增长继续提速 估值修复值得关注",
-      "url": "https://finance.eastmoney.com/a/202609153874037785.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
-      "time": ""
-    },
-    {
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
@@ -402,8 +366,20 @@
     },
     {
       "source": "Yicai",
-      "title": "罕见！要约收购后公众持股剩6%，瓦轴B主动“私有化”退市无论是A股，还是B股，选择主动要约退市的例子，此前极为罕见。  50分钟前",
+      "title": "罕见！要约收购后公众持股剩6%，瓦轴B主动“私有化”退市无论是A股，还是B股，选择主动要约退市的例子，此前极为罕见。  58分钟前",
       "url": "https://www.yicai.com/news/103365291.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "资本市场波动加大，8月居民存款搬家节奏放缓非银存款同比少增或指向股市、理财等资管产品赚钱效应不及去年同期。  1小时前",
+      "url": "https://www.yicai.com/news/103365246.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共32只个股涨停 这只电力股5连板PCB概念股澳弘电子3连板。一图速览今日连板股&gt;&gt;  2小时前",
+      "url": "https://www.yicai.com/news/103365142.html",
       "time": ""
     }
   ]
