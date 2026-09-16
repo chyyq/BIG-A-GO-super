@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-16T19:53:33.320814+08:00",
+    "generatedAt": "2026-09-16T19:58:30.396771+08:00",
     "tradingDate": "2026-09-16",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 29.64
+    "runtimeSeconds": 44.4
   },
   "market": {
     "recommendationCount": 0,
@@ -355,51 +355,27 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "加密货币市场遭遇重大利空！里程碑法案遭否决",
-      "url": "https://finance.eastmoney.com/a/202609163875210435.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "央行行长潘功胜：维护股市、债市、汇市等金融市场平稳运行",
-      "url": "https://finance.eastmoney.com/a/202609163875690495.html",
+      "source": "Yicai",
+      "title": "美联储决议前夕，A股资金“抢跑”科技近期持续缩量的A股出现久违的科技 &#34;抢跑&#34; 行情  3小时前",
+      "url": "https://www.yicai.com/news/103366744.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "创业板指涨近2% 科创50指数涨超4% 半导体板块爆发",
-      "url": "https://finance.eastmoney.com/a/202609163876004139.html",
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共91只个股涨停 这只电力股6连板电力板块闽东电力6连板，PCB概念股澳弘电子4连板。一图速览今日连板股&gt;&gt;  3小时前",
+      "url": "https://www.yicai.com/news/103366730.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "历史上“零失手”！当市场定价近乎拉满 美联储今夜加息已无退路？",
-      "url": "https://finance.eastmoney.com/a/202609163875461636.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
-      "url": "https://finance.eastmoney.com/a/202607133804238086.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "国泰海通：重视航空板块底部时机",
-      "url": "https://finance.eastmoney.com/a/202609163875455315.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "国金证券：DeepSeek V4.1 Flash发布 关注国产大模型与AI应用",
-      "url": "https://finance.eastmoney.com/a/202609163875405519.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券：保险政策密集落地 行业经营质效有望持续改善",
-      "url": "https://finance.eastmoney.com/a/202609163875407284.html",
+      "source": "Yicai",
+      "title": "收盘｜科创50涨超4% 半导体、光通信板块领涨全市场超4100只个股上涨。  4小时前",
+      "url": "https://www.yicai.com/news/103366612.html",
       "time": ""
     }
   ]
