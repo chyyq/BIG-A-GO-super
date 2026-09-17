@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-17T18:29:02.609527+08:00",
+    "generatedAt": "2026-09-17T19:31:33.443757+08:00",
     "tradingDate": "2026-09-17",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 37.28
+    "runtimeSeconds": 39.56
   },
   "market": {
     "recommendationCount": 0,
@@ -348,6 +348,12 @@
   "news": [
     {
       "source": "Eastmoney News",
+      "title": "A股三大指数小幅收跌 粮食概念股逆市大涨",
+      "url": "https://finance.eastmoney.com/a/202609173877264816.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
       "url": "https://finance.eastmoney.com/a/202607133804238086.html",
       "time": ""
@@ -386,12 +392,6 @@
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "美伊冲突半年后，全球油运市场进入极端行情超大型原油运输船基准运价飙升到历史高位。  29分钟前",
-      "url": "https://www.yicai.com/news/103368510.html",
       "time": ""
     }
   ]
