@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-17T18:24:20.487277+08:00",
+    "generatedAt": "2026-09-17T18:29:02.609527+08:00",
     "tradingDate": "2026-09-17",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 32.25
+    "runtimeSeconds": 37.28
   },
   "market": {
     "recommendationCount": 0,
@@ -390,7 +390,7 @@
     },
     {
       "source": "Yicai",
-      "title": "美伊冲突半年后，全球油运市场进入极端行情超大型原油运输船基准运价飙升到历史高位。  19分钟前",
+      "title": "美伊冲突半年后，全球油运市场进入极端行情超大型原油运输船基准运价飙升到历史高位。  29分钟前",
       "url": "https://www.yicai.com/news/103368510.html",
       "time": ""
     }
