@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-17T18:19:23.074244+08:00",
+    "generatedAt": "2026-09-17T18:24:20.487277+08:00",
     "tradingDate": "2026-09-17",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 44.92
+    "runtimeSeconds": 32.25
   },
   "market": {
     "recommendationCount": 0,
@@ -117,7 +117,7 @@
       "price": 48917.65,
       "pct": 3.6,
       "amount": 17630317935.0,
-      "turnover": 45.82,
+      "turnover": 22.09,
       "open": 47820.62,
       "preClose": 47219.03,
       "mainNet": -851435232.0,
@@ -168,7 +168,7 @@
       "price": 110836.02,
       "pct": 4.13,
       "amount": 18182966476.0,
-      "turnover": 42.11,
+      "turnover": 21.49,
       "open": 108377.79,
       "preClose": 106437.72,
       "mainNet": -865963456.0,
@@ -235,7 +235,7 @@
       "price": 24517.21,
       "pct": 6.71,
       "amount": 3799983710.0,
-      "turnover": 5.23,
+      "turnover": 23.41,
       "open": 23007.09,
       "preClose": 22975.07,
       "mainNet": -127803920.0,
@@ -348,12 +348,6 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "今夜揭晓！一图看懂美国加息后 A股怎么走",
-      "url": "https://finance.eastmoney.com/a/202609163876161055.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "市场资金撕裂！高波动行情如何保住本金又不踏空主线",
       "url": "https://finance.eastmoney.com/a/202607133804238086.html",
       "time": ""
@@ -392,6 +386,12 @@
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "美伊冲突半年后，全球油运市场进入极端行情超大型原油运输船基准运价飙升到历史高位。  19分钟前",
+      "url": "https://www.yicai.com/news/103368510.html",
       "time": ""
     }
   ]
