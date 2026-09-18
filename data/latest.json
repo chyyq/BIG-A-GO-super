@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-18T19:42:30.818249+08:00",
+    "generatedAt": "2026-09-18T19:52:13.572519+08:00",
     "tradingDate": "2026-09-18",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 39.44
+    "runtimeSeconds": 40.62
   },
   "market": {
     "recommendationCount": 0,
@@ -397,7 +397,7 @@
     },
     {
       "source": "Yicai",
-      "title": "越来越多人全款买房，多城居民资金杠杆率大幅降低当前全款买房或者少贷款的人越来越多。  35分钟前",
+      "title": "越来越多人全款买房，多城居民资金杠杆率大幅降低当前全款买房或者少贷款的人越来越多。  42分钟前",
       "url": "https://www.yicai.com/news/103370322.html",
       "time": ""
     }
