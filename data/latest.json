@@ -1,8 +1,8 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-18T19:52:13.572519+08:00",
-    "tradingDate": "2026-09-18",
+    "generatedAt": "2026-09-19T00:04:49.657184+08:00",
+    "tradingDate": "2026-09-19",
     "mode": "fast-snapshot",
     "activeStrategies": [],
     "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
@@ -33,12 +33,12 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 40.62
+    "runtimeSeconds": 39.52
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 3,
+    "qualifiedBoardCount": 6,
     "monitor": {
       "emotionScore": 100,
       "marketGateScore": 5,
@@ -53,11 +53,37 @@
       "brokenBoardRate": 0.069,
       "breadthSampleSize": 200,
       "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 4.83,
+      "topBoardPct": 6.72,
       "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
     }
   },
   "boards": [
+    {
+      "code": "BK1599",
+      "name": "其他医疗服务",
+      "kind": "Industry board",
+      "price": 4471.41,
+      "pct": 6.72,
+      "amount": 1280330539.0,
+      "turnover": 5.72,
+      "open": 4268.6,
+      "preClose": 4189.73,
+      "mainNet": 196897219.0,
+      "rank": 1,
+      "passed": 4,
+      "qualified": true,
+      "score": 83.25,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 2,
+      "bigUpCount": 3
+    },
     {
       "code": "BK1326",
       "name": "半导体设备",
@@ -74,13 +100,13 @@
       "qualified": true,
       "score": 82.2,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": 1.31,
+      "continuous": true,
+      "amountRatio": 1.19,
       "limitUpCount": 1,
       "bigUpCount": 9
     },
@@ -100,13 +126,13 @@
       "qualified": true,
       "score": 81.85,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 1,
       "bigUpCount": 15
     },
@@ -126,65 +152,67 @@
       "qualified": true,
       "score": 81.5,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 13,
       "bigUpCount": 50
     },
     {
-      "code": "BK1599",
-      "name": "其他医疗服务",
+      "code": "BK1327",
+      "name": "分立器件",
       "kind": "Industry board",
-      "price": 4471.41,
-      "pct": 6.72,
-      "amount": 1280330539.0,
-      "turnover": 5.72,
-      "open": 4268.6,
-      "preClose": 4189.73,
-      "mainNet": 196897219.0,
-      "rank": 1,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.85,
+      "price": 16728.12,
+      "pct": 4.46,
+      "amount": 26222839442.0,
+      "turnover": 4.8,
+      "open": 16309.26,
+      "preClose": 16014.62,
+      "mainNet": 1131824144.0,
+      "rank": 9,
+      "passed": 4,
+      "qualified": true,
+      "score": 80.45,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 2,
-      "bigUpCount": 3
+      "continuous": true,
+      "amountRatio": 1.1,
+      "limitUpCount": 0,
+      "bigUpCount": 5
     },
     {
-      "code": "BK1341",
-      "name": "房产租赁经纪",
+      "code": "BK1328",
+      "name": "集成电路封测",
       "kind": "Industry board",
-      "price": 1521.05,
-      "pct": 4.86,
-      "amount": 1988311763.0,
-      "turnover": 12.17,
-      "open": 1430.37,
-      "preClose": 1450.6,
-      "mainNet": 100325575.0,
-      "rank": 3,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.15,
+      "price": 9230.89,
+      "pct": 4.43,
+      "amount": 34342279075.0,
+      "turnover": 8.77,
+      "open": 9006.33,
+      "preClose": 8838.96,
+      "mainNet": 5082660384.0,
+      "rank": 10,
+      "passed": 4,
+      "qualified": true,
+      "score": 80.1,
       "criteria": [
         "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
+        "[SectorGate] Board amount expands at least 1.30x",
+        "[SectorGate] Leaders have follow-through support"
       ],
       "continuous": true,
-      "amountRatio": 1.37,
+      "amountRatio": 1.38,
       "limitUpCount": 1,
-      "bigUpCount": 1
+      "bigUpCount": 4
     },
     {
       "code": "BK1329",
@@ -202,64 +230,14 @@
       "qualified": false,
       "score": 64.75,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 0,
       "bigUpCount": 3
-    },
-    {
-      "code": "BK1327",
-      "name": "分立器件",
-      "kind": "Industry board",
-      "price": 16728.12,
-      "pct": 4.46,
-      "amount": 26222839442.0,
-      "turnover": 4.8,
-      "open": 16309.26,
-      "preClose": 16014.62,
-      "mainNet": 1131824144.0,
-      "rank": 9,
-      "passed": 3,
-      "qualified": false,
-      "score": 64.05,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 1.23,
-      "limitUpCount": 0,
-      "bigUpCount": 5
-    },
-    {
-      "code": "BK1328",
-      "name": "集成电路封测",
-      "kind": "Industry board",
-      "price": 9230.89,
-      "pct": 4.43,
-      "amount": 34342279075.0,
-      "turnover": 8.77,
-      "open": 9006.33,
-      "preClose": 8838.96,
-      "mainNet": 5082660384.0,
-      "rank": 10,
-      "passed": 3,
-      "qualified": false,
-      "score": 63.7,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 2.23,
-      "limitUpCount": 1,
-      "bigUpCount": 4
     },
     {
       "code": "BK1317",
@@ -273,17 +251,66 @@
       "preClose": 6416.67,
       "mainNet": 63111952.0,
       "rank": 8,
-      "passed": 2,
+      "passed": 3,
       "qualified": false,
-      "score": 48.0,
+      "score": 64.4,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 0,
       "bigUpCount": 3
+    },
+    {
+      "code": "BK1121",
+      "name": "第四代半导体",
+      "kind": "Concept board",
+      "price": 2364.57,
+      "pct": 4.96,
+      "amount": 4511855005.0,
+      "turnover": 1.43,
+      "open": 2292.64,
+      "preClose": 2252.78,
+      "mainNet": 121578208.0,
+      "rank": 2,
+      "passed": 2,
+      "qualified": false,
+      "score": 50.1,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 0,
+      "bigUpCount": 1
+    },
+    {
+      "code": "BK1341",
+      "name": "房产租赁经纪",
+      "kind": "Industry board",
+      "price": 1521.05,
+      "pct": 4.86,
+      "amount": 1988311763.0,
+      "turnover": 12.17,
+      "open": 1430.37,
+      "preClose": 1450.6,
+      "mainNet": 100325575.0,
+      "rank": 3,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.75,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.16,
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK1330",
@@ -326,29 +353,6 @@
       ],
       "limitUpCount": 0,
       "bigUpCount": 0
-    },
-    {
-      "code": "BK1121",
-      "name": "第四代半导体",
-      "kind": "Concept board",
-      "price": 2364.57,
-      "pct": 4.96,
-      "amount": 4511855005.0,
-      "turnover": 1.43,
-      "open": 2292.64,
-      "preClose": 2252.78,
-      "mainNet": 121578208.0,
-      "rank": 2,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.7,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 1
     }
   ],
   "recommendations": [],
@@ -397,7 +401,7 @@
     },
     {
       "source": "Yicai",
-      "title": "越来越多人全款买房，多城居民资金杠杆率大幅降低当前全款买房或者少贷款的人越来越多。  42分钟前",
+      "title": "越来越多人全款买房，多城居民资金杠杆率大幅降低当前全款买房或者少贷款的人越来越多。  昨天 19:07",
       "url": "https://www.yicai.com/news/103370322.html",
       "time": ""
     }
