@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-18T19:16:03.552107+08:00",
+    "generatedAt": "2026-09-18T19:34:44.156447+08:00",
     "tradingDate": "2026-09-18",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 44.64
+    "runtimeSeconds": 34.2
   },
   "market": {
     "recommendationCount": 0,
@@ -397,8 +397,8 @@
     },
     {
       "source": "Yicai",
-      "title": "专家：车企出海风险中，最需警惕海外重资产投资全球市场的本地化准入门槛正在全面收紧。  59分钟前",
-      "url": "https://www.yicai.com/news/103370252.html",
+      "title": "越来越多人全款买房，多城居民资金杠杆率大幅降低当前全款买房或者少贷款的人越来越多。  27分钟前",
+      "url": "https://www.yicai.com/news/103370322.html",
       "time": ""
     }
   ]
