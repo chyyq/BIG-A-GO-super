@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-18T18:05:28.256740+08:00",
+    "generatedAt": "2026-09-18T19:05:00.576064+08:00",
     "tradingDate": "2026-09-18",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 32.85
+    "runtimeSeconds": 42.2
   },
   "market": {
     "recommendationCount": 0,
@@ -397,8 +397,8 @@
     },
     {
       "source": "Yicai",
-      "title": "捕捉算力投资机遇，创业板算力ETF易方达（158050）今日上市  2小时前",
-      "url": "https://www.yicai.com/news/103370004.html",
+      "title": "专家：车企出海风险中，最需警惕海外重资产投资全球市场的本地化准入门槛正在全面收紧。  47分钟前",
+      "url": "https://www.yicai.com/news/103370252.html",
       "time": ""
     }
   ]
