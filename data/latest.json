@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-21T20:49:24.050421+08:00",
+    "generatedAt": "2026-09-21T21:06:40.254491+08:00",
     "tradingDate": "2026-09-21",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -36,7 +36,7 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: HTTP 502",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
@@ -46,7 +46,7 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 147.34
+    "runtimeSeconds": 168.16
   },
   "market": {
     "recommendationCount": 0,
