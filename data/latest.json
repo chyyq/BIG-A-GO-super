@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-23T18:15:44.793733+08:00",
+    "generatedAt": "2026-09-23T18:18:36.940442+08:00",
     "tradingDate": "2026-09-23",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
         "note": "OK"
       },
       {
@@ -44,10 +44,9 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 130.03
+    "runtimeSeconds": 87.14
   },
   "market": {
     "recommendationCount": 0,
@@ -66,56 +65,6 @@
     }
   },
   "boards": [
-    {
-      "code": "BK1456",
-      "name": "其他家电Ⅲ",
-      "kind": "Industry board",
-      "price": 1281.14,
-      "pct": 2.44,
-      "amount": 1074345073.0,
-      "turnover": 9.92,
-      "open": 1291.37,
-      "preClose": 1250.66,
-      "mainNet": 57199864.0,
-      "rank": 9,
-      "passed": 3,
-      "qualified": false,
-      "score": 64.05,
-      "criteria": [
-        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
-      ],
-      "continuous": true,
-      "amountRatio": 4.47,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1243",
-      "name": "其他家电Ⅱ",
-      "kind": "Industry board",
-      "price": 1281.14,
-      "pct": 2.44,
-      "amount": 1074345073.0,
-      "turnover": 9.92,
-      "open": 1291.37,
-      "preClose": 1250.66,
-      "mainNet": 57199864.0,
-      "rank": 10,
-      "passed": 3,
-      "qualified": false,
-      "score": 63.7,
-      "criteria": [
-        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
-      ],
-      "continuous": true,
-      "amountRatio": 4.47,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
     {
       "code": "BK1325",
       "name": "半导体材料",
@@ -189,16 +138,64 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1451",
-      "name": "厨房电器",
+      "code": "BK1675",
+      "name": "历史新高",
+      "kind": "Concept board",
+      "price": 2042.81,
+      "pct": 2.73,
+      "amount": 43818251199.0,
+      "turnover": 1.96,
+      "open": 1987.45,
+      "preClose": 1988.57,
+      "mainNet": -673564416.0,
+      "rank": 5,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.05,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1113",
+      "name": "复合集流体",
+      "kind": "Concept board",
+      "price": 2012.75,
+      "pct": 2.62,
+      "amount": 27722166293.0,
+      "turnover": 5.34,
+      "open": 1963.99,
+      "preClose": 1961.31,
+      "mainNet": 1971801488.0,
+      "rank": 7,
+      "passed": 2,
+      "qualified": false,
+      "score": 48.35,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1456",
+      "name": "其他家电Ⅲ",
       "kind": "Industry board",
-      "price": 9014.3,
-      "pct": 2.25,
-      "amount": 1062088136.0,
-      "turnover": 2.56,
-      "open": 8785.13,
-      "preClose": 8816.14,
-      "mainNet": 79011792.0,
+      "price": 1281.14,
+      "pct": 2.44,
+      "amount": 1074345073.0,
+      "turnover": 9.92,
+      "open": 1291.37,
+      "preClose": 1250.66,
+      "mainNet": 57199864.0,
       "rank": 11,
       "passed": 2,
       "qualified": false,
@@ -210,16 +207,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1401",
-      "name": "纺织服装设备",
+      "code": "BK1243",
+      "name": "其他家电Ⅱ",
       "kind": "Industry board",
-      "price": 3594.7,
-      "pct": 2.22,
-      "amount": 2561952685.0,
-      "turnover": 3.46,
-      "open": 3527.53,
-      "preClose": 3516.46,
-      "mainNet": 234299083.0,
+      "price": 1281.14,
+      "pct": 2.44,
+      "amount": 1074345073.0,
+      "turnover": 9.92,
+      "open": 1291.37,
+      "preClose": 1250.66,
+      "mainNet": 57199864.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -264,10 +261,10 @@
       "open": 3365.8,
       "preClose": 3370.3,
       "mainNet": 264695423.0,
-      "rank": 5,
+      "rank": 6,
       "passed": 1,
       "qualified": false,
-      "score": 32.65,
+      "score": 32.3,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -287,10 +284,10 @@
       "open": 2046.35,
       "preClose": 2044.34,
       "mainNet": 224677568.0,
-      "rank": 6,
+      "rank": 8,
       "passed": 1,
       "qualified": false,
-      "score": 32.3,
+      "score": 31.6,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -310,10 +307,10 @@
       "open": 2046.35,
       "preClose": 2044.34,
       "mainNet": 224677568.0,
-      "rank": 7,
+      "rank": 9,
       "passed": 1,
       "qualified": false,
-      "score": 31.95,
+      "score": 31.25,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -333,10 +330,10 @@
       "open": 1109.98,
       "preClose": 1108.05,
       "mainNet": 20304782.0,
-      "rank": 8,
+      "rank": 10,
       "passed": 1,
       "qualified": false,
-      "score": 31.6,
+      "score": 30.9,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
