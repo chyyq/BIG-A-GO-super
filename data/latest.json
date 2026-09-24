@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-24T20:08:08.914372+08:00",
+    "generatedAt": "2026-09-24T20:16:38.973317+08:00",
     "tradingDate": "2026-09-24",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1599%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
         "note": "OK"
       },
       {
@@ -42,9 +42,12 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 93.71
+    "runtimeSeconds": 119.19
   },
   "market": {
     "recommendationCount": 0,
@@ -64,31 +67,6 @@
   },
   "boards": [
     {
-      "code": "BK1255",
-      "name": "林业Ⅱ",
-      "kind": "Industry board",
-      "price": 5182.62,
-      "pct": 5.83,
-      "amount": 3104052219.0,
-      "turnover": 14.09,
-      "open": 4912.74,
-      "preClose": 4897.34,
-      "mainNet": 638858531.0,
-      "rank": 2,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.5,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 2,
-      "bigUpCount": 2
-    },
-    {
       "code": "BK1599",
       "name": "其他医疗服务",
       "kind": "Industry board",
@@ -100,18 +78,17 @@
       "preClose": 4973.8,
       "mainNet": 201021872.0,
       "rank": 3,
-      "passed": 3,
+      "passed": 2,
       "qualified": false,
-      "score": 66.15,
+      "score": 49.75,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
       "amountRatio": 2.16,
-      "limitUpCount": 1,
-      "bigUpCount": 3
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1456",
@@ -242,6 +219,29 @@
       "passed": 1,
       "qualified": false,
       "score": 34.05,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1255",
+      "name": "林业Ⅱ",
+      "kind": "Industry board",
+      "price": 5182.62,
+      "pct": 5.83,
+      "amount": 3104052219.0,
+      "turnover": 14.09,
+      "open": 4912.74,
+      "preClose": 4897.34,
+      "mainNet": 638858531.0,
+      "rank": 2,
+      "passed": 1,
+      "qualified": false,
+      "score": 33.7,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
