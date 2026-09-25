@@ -1,45 +1,46 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-25T19:51:41.827061+08:00",
+    "generatedAt": "2026-09-25T20:02:36.317653+08:00",
     "tradingDate": "2026-09-25",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
-      {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
       {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
-        "note": "Previous successful source status retained during fallback."
+        "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
+      "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 22.92
+    "runtimeSeconds": 34.16
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 12,
+    "watchOnlyCount": 0,
+    "qualifiedBoardCount": 3,
     "monitor": {
       "emotionScore": 76,
       "marketGateScore": 3,
@@ -352,27 +353,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "当就业遇上AI，劳动力市场迎来哪些改变？技术本身不是最大障碍  6小时前",
-      "url": "https://www.yicai.com/news/103378271.html",
+      "source": "Eastmoney News",
+      "title": "全球市场：美股三大指数收盘涨跌不一 国际油价涨近3%",
+      "url": "https://finance.eastmoney.com/a/202609253884023123.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "道指跌近两百点，美债收益率再创二十余年新高，油价大涨，美联储官员接连“放鹰”随着美债收益率飙升，市场对美联储进一步加息的预期也在升温。  12小时前",
-      "url": "https://www.yicai.com/news/103378149.html",
+      "source": "Eastmoney News",
+      "title": "Meta智能体热潮点燃CPU行情",
+      "url": "https://topic.eastmoney.com/detail/mtzntdrcpu.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "光大证券：从防御到进攻 加息落地后的港美股成长与兑现主线",
+      "url": "https://finance.eastmoney.com/a/202609253884263578.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "北京官宣现房销售细则：新老项目划断、土地款可分期随着细则落地，市场观望情绪将得到缓解。  昨天 20:55",
-      "url": "https://www.yicai.com/news/103377931.html",
+      "source": "Eastmoney News",
+      "title": "中信建投证券黄文涛：人民币资产重估与投资中国是确定的",
+      "url": "https://finance.eastmoney.com/a/202609253884257226.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "华泰资产杨平：波动是价值发现的形式 更是长期资金的挑战和机遇",
+      "url": "https://finance.eastmoney.com/a/202609253884045242.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "利好来了！欧美股市全线拉升！美国、伊朗传出大消息",
+      "url": "https://finance.eastmoney.com/a/202609253884300448.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "“双节”后行情怎么看？反弹仍待四大变量验证",
+      "url": "https://finance.eastmoney.com/a/202609253884249645.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
