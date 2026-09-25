@@ -1,46 +1,45 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-25T19:42:25.888370+08:00",
+    "generatedAt": "2026-09-25T19:51:41.827061+08:00",
     "tradingDate": "2026-09-25",
-    "mode": "fast-snapshot",
-    "activeStrategies": [],
-    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
+    "mode": "cached-fallback",
     "sourceHealth": [
+      {
+        "name": "Historical cache",
+        "ok": true,
+        "url": "data/latest.json",
+        "note": "External sources failed; kept the last successful snapshot."
+      },
       {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
-        "note": "OK"
-      },
-      {
-        "name": "Eastmoney News",
-        "ok": true,
-        "url": "https://finance.eastmoney.com/a/cjjsp.html",
-        "note": "Optional news source OK"
+        "note": "Previous successful source status retained during fallback."
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "note": "Previous successful source status retained during fallback."
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "note": "Previous successful source status retained during fallback."
       }
     ],
     "errors": [
-      "Market monitor is RISK_OFF; no new buy recommendation generated."
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 42.34
+    "runtimeSeconds": 22.92
   },
   "market": {
     "recommendationCount": 0,
-    "watchOnlyCount": 0,
-    "qualifiedBoardCount": 3,
+    "qualifiedBoardCount": 12,
     "monitor": {
       "emotionScore": 76,
       "marketGateScore": 3,
