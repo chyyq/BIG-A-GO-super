@@ -1,45 +1,56 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-28T19:54:48.523242+08:00",
+    "generatedAt": "2026-09-28T19:58:18.702025+08:00",
     "tradingDate": "2026-09-28",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
-      {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1457%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://stock.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/news/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 22.68
+    "runtimeSeconds": 106.37
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 12,
+    "watchOnlyCount": 0,
+    "qualifiedBoardCount": 0,
     "monitor": {
       "emotionScore": 50,
       "marketGateScore": 0,
@@ -53,6 +64,31 @@
     }
   },
   "boards": [
+    {
+      "code": "BK1457",
+      "name": "厨房小家电",
+      "kind": "Industry board",
+      "price": 2132.58,
+      "pct": 2.66,
+      "amount": 1384157201.0,
+      "turnover": 2.47,
+      "open": 2106.06,
+      "preClose": 2077.38,
+      "mainNet": 132424742.0,
+      "rank": 1,
+      "passed": 3,
+      "qualified": false,
+      "score": 66.85,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 2,
+      "bigUpCount": 3
+    },
     {
       "code": "BK1029",
       "name": "汽车整车",
@@ -116,29 +152,6 @@
       "criteria": [
         "Board is near the top of today's movers"
       ],
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1457",
-      "name": "厨房小家电",
-      "kind": "Industry board",
-      "price": 2132.58,
-      "pct": 2.66,
-      "amount": 1384157201.0,
-      "turnover": 2.47,
-      "open": 2106.06,
-      "preClose": 2077.38,
-      "mainNet": 132424742.0,
-      "rank": 1,
-      "passed": 1,
-      "qualified": false,
-      "score": 34.05,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
       "limitUpCount": 0,
       "bigUpCount": 0
     },
@@ -330,30 +343,6 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "杨德龙：四季度有望迎来新一轮反弹行情",
-      "url": "https://finance.eastmoney.com/a/202609283885165893.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股三大指数集体收跌 汽车整车板块逆市走强",
-      "url": "https://finance.eastmoney.com/a/202609283885170096.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
-      "time": ""
-    },
-    {
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
@@ -361,20 +350,14 @@
     },
     {
       "source": "Yicai",
-      "title": "收盘｜沪指跌1.67% 网络安全股走强全市场超4500只个股下跌。  10分钟前",
-      "url": "https://www.yicai.com/news/103379697.html",
+      "title": "人民币走出独立行情，冲高之后四季度如何演绎？美联储加息，人民币为何不贬反升？汇率升值，A股企业损失会加剧吗？  1小时前",
+      "url": "https://www.yicai.com/news/103379909.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "中国葡萄酒市场，一边出清一边生长|快消栾谈重压之下，中国葡萄酒行业正在分化。  2小时前",
-      "url": "https://www.yicai.com/news/103379398.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "光模块概念股走低，“易中天” 市值跌超1700亿元中际旭创刚完成50亿元股份回购，但似乎未提振市场信心。  3小时前",
-      "url": "https://www.yicai.com/news/103379340.html",
+      "title": "连板股追踪丨A股今日共35只个股涨停 这只传媒股5连板一图速览今日连板股&gt;&gt;  3小时前",
+      "url": "https://www.yicai.com/news/103379874.html",
       "time": ""
     }
   ]
