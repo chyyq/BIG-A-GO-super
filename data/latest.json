@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-29T15:27:47.005549+08:00",
+    "generatedAt": "2026-09-29T19:30:27.336237+08:00",
     "tradingDate": "2026-09-29",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1298%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
         "note": "OK"
       },
       {
@@ -22,14 +22,14 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
@@ -41,9 +41,12 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 69.15
+    "runtimeSeconds": 78.76
   },
   "market": {
     "recommendationCount": 0,
@@ -62,31 +65,6 @@
     }
   },
   "boards": [
-    {
-      "code": "BK1304",
-      "name": "锂电专用设备",
-      "kind": "Industry board",
-      "price": 21597.1,
-      "pct": 7.17,
-      "amount": 6500219594.0,
-      "turnover": 4.33,
-      "open": 20354.0,
-      "preClose": 20152.94,
-      "mainNet": 765262176.0,
-      "rank": 2,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.5,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 3,
-      "bigUpCount": 9
-    },
     {
       "code": "BK1340",
       "name": "印制电路板",
@@ -246,7 +224,30 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 1
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1304",
+      "name": "锂电专用设备",
+      "kind": "Industry board",
+      "price": 21597.1,
+      "pct": 7.17,
+      "amount": 6500219594.0,
+      "turnover": 4.33,
+      "open": 20354.0,
+      "preClose": 20152.94,
+      "mainNet": 765262176.0,
+      "rank": 2,
+      "passed": 1,
+      "qualified": false,
+      "score": 33.7,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1298",
@@ -268,8 +269,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1296",
@@ -345,20 +346,8 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "A股突变！全天跳水大跌 背后四大原因曝光",
-      "url": "https://finance.eastmoney.com/a/202609283885198059.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "重磅来袭！亚洲三国突然出手！提振市场",
       "url": "https://finance.eastmoney.com/a/202609293886355833.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中一签浮盈超26万元！A股又见大肉签",
-      "url": "https://finance.eastmoney.com/a/202609293886105722.html",
       "time": ""
     },
     {
@@ -369,8 +358,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "国庆临近，持股还是持币？杨德龙：优质股可持股过节，假期重点看美股，四季度A股有望反弹｜宅男财经",
-      "url": "https://finance.eastmoney.com/a/202609293886421536.html",
+      "title": "中一签浮盈超26万元！A股又见大肉签",
+      "url": "https://finance.eastmoney.com/a/202609293886105722.html",
       "time": ""
     },
     {
@@ -381,8 +370,26 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "国庆临近，持股还是持币？杨德龙：优质股可持股过节，假期重点看美股，四季度A股有望反弹｜宅男财经",
+      "url": "https://finance.eastmoney.com/a/202609293886421536.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "东方财富证券开户",
       "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "挖掘服务消费新赛道，助力国际消费中心城市建设长三角各主力城市的消费市场正经历从“数量增长”向“质量提升”的转变，其中服务消费是最大公约数。  7分钟前",
+      "url": "https://www.yicai.com/news/103381651.html",
       "time": ""
     }
   ]
