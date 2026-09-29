@@ -1,45 +1,55 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-29T19:32:56.006086+08:00",
+    "generatedAt": "2026-09-29T19:36:58.750592+08:00",
     "tradingDate": "2026-09-29",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
-      {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://60.push2.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1304%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://stock.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/news/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 21.11
+    "runtimeSeconds": 101.74
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 12,
+    "watchOnlyCount": 0,
+    "qualifiedBoardCount": 0,
     "monitor": {
       "emotionScore": 50,
       "marketGateScore": 0,
@@ -53,6 +63,31 @@
     }
   },
   "boards": [
+    {
+      "code": "BK1304",
+      "name": "锂电专用设备",
+      "kind": "Industry board",
+      "price": 21597.1,
+      "pct": 7.17,
+      "amount": 6500219594.0,
+      "turnover": 4.33,
+      "open": 20354.0,
+      "preClose": 20152.94,
+      "mainNet": 765262176.0,
+      "rank": 2,
+      "passed": 3,
+      "qualified": false,
+      "score": 66.5,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 3,
+      "bigUpCount": 9
+    },
     {
       "code": "BK1340",
       "name": "印制电路板",
@@ -212,30 +247,7 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1304",
-      "name": "锂电专用设备",
-      "kind": "Industry board",
-      "price": 21597.1,
-      "pct": 7.17,
-      "amount": 6500219594.0,
-      "turnover": 4.33,
-      "open": 20354.0,
-      "preClose": 20152.94,
-      "mainNet": 765262176.0,
-      "rank": 2,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.7,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "bigUpCount": 1
     },
     {
       "code": "BK1298",
@@ -333,51 +345,27 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "重磅来袭！亚洲三国突然出手！提振市场",
-      "url": "https://finance.eastmoney.com/a/202609293886355833.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "重磅规划出炉！电池板块应声大涨 这12股业绩倍增可期(名单)",
-      "url": "https://finance.eastmoney.com/a/202609293886233767.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中一签浮盈超26万元！A股又见大肉签",
-      "url": "https://finance.eastmoney.com/a/202609293886105722.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股三大指数收涨 成交额仅1.42万亿创14个月地量 房地产板块大涨",
-      "url": "https://finance.eastmoney.com/a/202609293886431187.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "国庆临近，持股还是持币？杨德龙：优质股可持股过节，假期重点看美股，四季度A股有望反弹｜宅男财经",
-      "url": "https://finance.eastmoney.com/a/202609293886421536.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "source": "Yicai",
+      "title": "挖掘服务消费新赛道，助力国际消费中心城市建设长三角各主力城市的消费市场正经历从“数量增长”向“质量提升”的转变，其中服务消费是最大公约数。  13分钟前",
+      "url": "https://www.yicai.com/news/103381651.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "挖掘服务消费新赛道，助力国际消费中心城市建设长三角各主力城市的消费市场正经历从“数量增长”向“质量提升”的转变，其中服务消费是最大公约数。  7分钟前",
-      "url": "https://www.yicai.com/news/103381651.html",
+      "title": "三季度A股剧震与再平衡：AI“拉锯”持续，机构聚焦盈利验证“未来市场大概率呈现震荡上行、结构为主的格局，而非单边快速拉升。”  41分钟前",
+      "url": "https://www.yicai.com/news/103381535.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "黄金跌破4200美元创七周新低，A股黄金板块探底回升受高油价引发通胀担忧及美债收益率高企的双重压制，国际金价近期经历急挫后回升。  1小时前",
+      "url": "https://www.yicai.com/news/103381499.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共57只个股涨停 这只传媒股6连板汽车零部件板块雪龙集团4连板、襄阳轴承3连板。一图速览今日连板股&gt;&gt;  3小时前",
+      "url": "https://www.yicai.com/news/103381344.html",
       "time": ""
     }
   ]
