@@ -1,45 +1,44 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-30T20:35:44.036575+08:00",
+    "generatedAt": "2026-09-30T20:51:45.619239+08:00",
     "tradingDate": "2026-09-30",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
-      {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
       {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
-        "note": "Previous successful source status retained during fallback."
+        "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://www.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news/reference source"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 24.96
+    "errors": [],
+    "runtimeSeconds": 28.94
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 12,
+    "watchOnlyCount": 0,
+    "qualifiedBoardCount": 4,
     "monitor": {
       "emotionScore": 88,
       "marketGateScore": 4,
@@ -144,7 +143,7 @@
       "price": 9544.74,
       "pct": 4.22,
       "amount": 30144730703.0,
-      "turnover": 6.27,
+      "turnover": 6.28,
       "open": 9182.39,
       "preClose": 9158.36,
       "mainNet": 2228100720.0,
@@ -170,7 +169,7 @@
       "price": 135.68,
       "pct": 4.25,
       "amount": 7199946918.0,
-      "turnover": 9.25,
+      "turnover": 18.22,
       "open": 132.66,
       "preClose": 130.15,
       "mainNet": 211543568.0,
@@ -375,14 +374,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "2026年前三季度A股市场各大榜单出炉！",
-      "url": "https://finance.eastmoney.com/a/202609303887802159.html",
+      "title": "美国8月核心PCE环比增长0.2% 低于市场预期",
+      "url": "https://finance.eastmoney.com/a/202609303887868954.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "三季度收官！4000亿资金挪移 融资下降ETF抄底",
-      "url": "https://finance.eastmoney.com/a/202609303887810953.html",
+      "title": "今夜！多只A股利好来袭！多家A股公司披露大单",
+      "url": "https://finance.eastmoney.com/a/202609303887853914.html",
       "time": ""
     },
     {
