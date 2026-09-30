@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-09-30T15:13:01.288753+08:00",
+    "generatedAt": "2026-09-30T15:20:09.393101+08:00",
     "tradingDate": "2026-09-30",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -17,7 +17,7 @@
         "name": "Eastmoney News",
         "ok": true,
         "url": "https://finance.eastmoney.com/a/cjjsp.html",
-        "note": "Optional news source skipped; quote data is unaffected."
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
@@ -45,10 +45,9 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney News news skipped: The read operation timed out"
+      "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 133.35
+    "runtimeSeconds": 111.0
   },
   "market": {
     "recommendationCount": 0,
@@ -346,6 +345,36 @@
   "recommendations": [],
   "news": [
     {
+      "source": "Eastmoney News",
+      "title": "A股十年国庆假期“日历效应”透视 资金节前偏好消费与防御板块 上证指数节后首日7涨3跌",
+      "url": "https://finance.eastmoney.com/a/202609303886838088.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "沪指收涨0.31% 医药股走强 半导体板块跌幅居前",
+      "url": "https://finance.eastmoney.com/a/202609303887667475.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "收盘｜沪指涨0.31% 医药股领涨全市场超2500只个股上涨。  5分钟前",
+      "url": "https://www.yicai.com/news/103382948.html",
+      "time": ""
+    },
+    {
       "source": "Yicai",
       "title": "减持公告扎堆，算力芯片板块节前集体调整，芯原股份跌逾10%近段时间以来，算力产业链板块减持公告扎堆。  1小时前",
       "url": "https://www.yicai.com/news/103382750.html",
@@ -361,18 +390,6 @@
       "source": "Yicai",
       "title": "盘前必读丨央行调整完善若干货币政策工具；房贷贴息政策来了机构认为，科技板块四季度或迎修复。  7小时前",
       "url": "https://www.yicai.com/news/103382075.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "货币、财政齐发力，如何影响债牛？中美债市反向“狂飙”，市场在交易什么？  5小时前",
-      "url": "https://www.yicai.com/news/103381964.html",
       "time": ""
     }
   ]
