@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-01T21:49:15.123934+08:00",
+    "generatedAt": "2026-10-01T21:56:34.788084+08:00",
     "tradingDate": "2026-10-01",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 48.17
+    "runtimeSeconds": 41.91
   },
   "market": {
     "recommendationCount": 0,
@@ -349,6 +349,36 @@
   "recommendations": [],
   "news": [
     {
+      "source": "Eastmoney News",
+      "title": "涨了27倍的A股股王在山顶按下了减持键！股民直呼“业绩好也跑？”",
+      "url": "https://finance.eastmoney.com/a/202610013888010785.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "全球市场：美股三大指数收盘涨跌不一 道指跌近1% 微软第三季度累涨超37%",
+      "url": "https://finance.eastmoney.com/a/202610013887997084.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "今日！外围涨疯了 亚洲市场全线暴涨",
+      "url": "https://finance.eastmoney.com/a/202610013888230570.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "time": ""
+    },
+    {
       "source": "Yicai",
       "title": "晓数点｜一图速览9月A股月报四大指数9月均累计下跌，近岸蛋白问鼎9月最牛股，源杰科技成新“股王”，主力抛售浪潮信息&gt;&gt;  4小时前",
       "url": "https://www.yicai.com/news/103383687.html",
@@ -364,18 +394,6 @@
       "source": "Yicai",
       "title": "武汉发布“828”新政细则，首提保函置换监管资金机制武汉推出了多项本地化的弹性安排，平滑制度切换。  7小时前",
       "url": "https://www.yicai.com/news/103383600.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "房贷利率直降1%落地，专家警示“阴阳合同”风险央妈财爸联动发力！贴息新政能否撬动房贷市场止跌回升？  昨天 23:50",
-      "url": "https://www.yicai.com/news/103383286.html",
       "time": ""
     }
   ]
