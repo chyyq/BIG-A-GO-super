@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-01T15:44:53.618126+08:00",
+    "generatedAt": "2026-10-01T19:46:12.160354+08:00",
     "tradingDate": "2026-10-01",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 36.73
+    "runtimeSeconds": 42.78
   },
   "market": {
     "recommendationCount": 0,
@@ -143,7 +143,7 @@
       "price": 9544.74,
       "pct": 4.22,
       "amount": 30144730703.0,
-      "turnover": 6.27,
+      "turnover": 6.28,
       "open": 9182.39,
       "preClose": 9158.36,
       "mainNet": 2228100720.0,
@@ -356,14 +356,20 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "2026年前三季度A股市场各大榜单出炉！",
-      "url": "https://finance.eastmoney.com/a/202609303887802159.html",
+      "title": "全球市场：美股三大指数收盘涨跌不一 道指跌近1% 微软第三季度累涨超37%",
+      "url": "https://finance.eastmoney.com/a/202610013887997084.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "全球市场：美股三大指数收盘涨跌不一 道指跌近1% 微软第三季度累涨超37%",
-      "url": "https://finance.eastmoney.com/a/202610013887997084.html",
+      "title": "涨了27倍的A股股王在山顶按下了减持键！股民直呼“业绩好也跑？”",
+      "url": "https://finance.eastmoney.com/a/202610013888010785.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "今夜！多只A股利好来袭！多家A股公司披露大单",
+      "url": "https://finance.eastmoney.com/a/202609303887853914.html",
       "time": ""
     },
     {
@@ -380,20 +386,14 @@
     },
     {
       "source": "Yicai",
-      "title": "十一游客躲避人潮反向涌入小县城，年轻人流行奔县学手艺 县域旅游快速崛起，成为文旅市场的一大亮点。  1小时前",
+      "title": "晓数点｜一图速览9月A股月报四大指数9月均累计下跌，近岸蛋白问鼎9月最牛股，源杰科技成新“股王”，主力抛售浪潮信息&gt;&gt;  2小时前",
+      "url": "https://www.yicai.com/news/103383687.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "十一游客躲避人潮反向涌入小县城，年轻人流行奔县学手艺 县域旅游快速崛起，成为文旅市场的一大亮点。  5小时前",
       "url": "https://www.yicai.com/news/103383617.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "武汉发布“828”新政细则，首提保函置换监管资金机制武汉推出了多项本地化的弹性安排，平滑制度切换。  1小时前",
-      "url": "https://www.yicai.com/news/103383600.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     }
   ]
