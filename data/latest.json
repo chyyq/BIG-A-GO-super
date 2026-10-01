@@ -1,45 +1,44 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-01T21:16:15.672183+08:00",
+    "generatedAt": "2026-10-01T21:40:14.237755+08:00",
     "tradingDate": "2026-10-01",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
-      {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
       {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
-        "note": "Previous successful source status retained during fallback."
+        "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://stock.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/news/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 26.96
+    "errors": [],
+    "runtimeSeconds": 49.68
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 12,
+    "watchOnlyCount": 0,
+    "qualifiedBoardCount": 4,
     "monitor": {
       "emotionScore": 88,
       "marketGateScore": 4,
@@ -144,7 +143,7 @@
       "price": 9544.74,
       "pct": 4.22,
       "amount": 30144730703.0,
-      "turnover": 6.27,
+      "turnover": 6.28,
       "open": 9182.39,
       "preClose": 9158.36,
       "mainNet": 2228100720.0,
@@ -351,8 +350,8 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "美国8月PCE数据低于预期 市场削减美联储10月加息的押注",
-      "url": "https://finance.eastmoney.com/a/202609303887868954.html",
+      "title": "涨了27倍的A股股王在山顶按下了减持键！股民直呼“业绩好也跑？”",
+      "url": "https://finance.eastmoney.com/a/202610013888010785.html",
       "time": ""
     },
     {
@@ -363,14 +362,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "涨了27倍的A股股王在山顶按下了减持键！股民直呼“业绩好也跑？”",
-      "url": "https://finance.eastmoney.com/a/202610013888010785.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "今夜！多只A股利好来袭！多家A股公司披露大单",
-      "url": "https://finance.eastmoney.com/a/202609303887853914.html",
+      "title": "今日！外围涨疯了 亚洲市场全线暴涨",
+      "url": "https://finance.eastmoney.com/a/202610013888230570.html",
       "time": ""
     },
     {
@@ -387,14 +380,20 @@
     },
     {
       "source": "Yicai",
-      "title": "晓数点｜一图速览9月A股月报四大指数9月均累计下跌，近岸蛋白问鼎9月最牛股，源杰科技成新“股王”，主力抛售浪潮信息&gt;&gt;  2小时前",
+      "title": "晓数点｜一图速览9月A股月报四大指数9月均累计下跌，近岸蛋白问鼎9月最牛股，源杰科技成新“股王”，主力抛售浪潮信息&gt;&gt;  3小时前",
       "url": "https://www.yicai.com/news/103383687.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "十一游客躲避人潮反向涌入小县城，年轻人流行奔县学手艺 县域旅游快速崛起，成为文旅市场的一大亮点。  5小时前",
+      "title": "十一游客躲避人潮反向涌入小县城，年轻人流行奔县学手艺 县域旅游快速崛起，成为文旅市场的一大亮点。  7小时前",
       "url": "https://www.yicai.com/news/103383617.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "武汉发布“828”新政细则，首提保函置换监管资金机制武汉推出了多项本地化的弹性安排，平滑制度切换。  7小时前",
+      "url": "https://www.yicai.com/news/103383600.html",
       "time": ""
     }
   ]
