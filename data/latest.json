@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-02T15:18:44.250466+08:00",
+    "generatedAt": "2026-10-02T15:24:31.457026+08:00",
     "tradingDate": "2026-10-02",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 30.69
+    "runtimeSeconds": 43.3
   },
   "market": {
     "recommendationCount": 0,
@@ -143,7 +143,7 @@
       "price": 135.68,
       "pct": 4.25,
       "amount": 7199946918.0,
-      "turnover": 9.25,
+      "turnover": 18.22,
       "open": 132.66,
       "preClose": 130.15,
       "mainNet": 211543568.0,
@@ -355,51 +355,39 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "今日！外围涨疯了 亚洲市场全线暴涨",
-      "url": "https://finance.eastmoney.com/a/202610013888230570.html",
+      "source": "Yicai",
+      "title": "恒生科技指数连跌一年，累计跌幅近四成｜市场观察内地假期使得港股缺乏南向资金支撑。  16分钟前",
+      "url": "https://www.yicai.com/news/103383874.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "全球市场：美股三大指数小幅收涨 光通信板块领涨 国际油价涨近3%",
-      "url": "https://finance.eastmoney.com/a/202610023888301793.html",
+      "source": "Yicai",
+      "title": "全球央行艰难重启加息周期，这次有什么不同|海外市场月报许多机构实际上在减少美元资产配置的同时，增加对新兴市场资产的配置。  4小时前",
+      "url": "https://www.yicai.com/news/103383837.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "核聚变重大进展！存储龙头获爆买超92亿元！活跃资金三季度加仓股曝光",
-      "url": "https://finance.eastmoney.com/a/202610023888315811.html",
+      "source": "Yicai",
+      "title": "程实：全球变局中的中国机遇 | 国庆大咖谈2026年，AI逐渐从资本市场叙事转化为真实的资本形成。  4小时前",
+      "url": "https://www.yicai.com/news/103383834.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "10月金股出炉！通信板块热度抬升，有色金属、医药生物人气不减",
-      "url": "https://finance.eastmoney.com/a/202610013888231011.html",
+      "source": "Yicai",
+      "title": "晓数点｜一图速览9月A股月报四大指数9月均累计下跌，近岸蛋白问鼎9月最牛股，源杰科技成新“股王”，主力抛售浪潮信息&gt;&gt;  昨天 17:42",
+      "url": "https://www.yicai.com/news/103383687.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "全球央行艰难重启加息周期，这次有什么不同|海外市场月报",
-      "url": "https://finance.eastmoney.com/a/202610023888331826.html",
+      "source": "Yicai",
+      "title": "十一游客躲避人潮反向涌入小县城，年轻人流行奔县学手艺 县域旅游快速崛起，成为文旅市场的一大亮点。  昨天 14:06",
+      "url": "https://www.yicai.com/news/103383617.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "开源证券：大模型迭代拓展能力边界 应用落地兑现产业价值",
-      "url": "https://finance.eastmoney.com/a/202610023888317721.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "开源证券：算力供需缺口持续扩大 算力租赁行业景气度上行",
-      "url": "https://finance.eastmoney.com/a/202610023888317440.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券：AI链放量推动韩国出口继续攀升",
-      "url": "https://finance.eastmoney.com/a/202610023888317197.html",
+      "source": "Yicai",
+      "title": "武汉发布“828”新政细则，首提保函置换监管资金机制武汉推出了多项本地化的弹性安排，平滑制度切换。  昨天 14:02",
+      "url": "https://www.yicai.com/news/103383600.html",
       "time": ""
     }
   ]
