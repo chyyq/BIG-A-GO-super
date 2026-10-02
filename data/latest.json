@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-02T20:22:38.369411+08:00",
+    "generatedAt": "2026-10-02T20:35:59.481623+08:00",
     "tradingDate": "2026-10-02",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 29.99
+    "runtimeSeconds": 36.13
   },
   "market": {
     "recommendationCount": 0,
@@ -143,7 +143,7 @@
       "price": 135.68,
       "pct": 4.25,
       "amount": 7199946918.0,
-      "turnover": 9.25,
+      "turnover": 18.22,
       "open": 132.66,
       "preClose": 130.15,
       "mainNet": 211543568.0,
@@ -392,14 +392,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "美联储本月加不加息？美国9月非农今晚揭晓 全球市场严阵以待",
-      "url": "https://finance.eastmoney.com/a/202610023888345374.html",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
