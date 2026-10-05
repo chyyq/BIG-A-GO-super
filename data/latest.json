@@ -1,8 +1,8 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-05T23:18:04.010299+08:00",
-    "tradingDate": "2026-10-05",
+    "generatedAt": "2026-10-06T04:23:58.610407+08:00",
+    "tradingDate": "2026-10-06",
     "mode": "fast-snapshot",
     "activeStrategies": [],
     "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1500%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
       },
       {
@@ -32,187 +32,38 @@
         "note": "Optional news source OK"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 48.36
+    "errors": [
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response"
+    ],
+    "runtimeSeconds": 77.87
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 5,
+    "qualifiedBoardCount": 0,
     "monitor": {
-      "emotionScore": 88,
-      "marketGateScore": 4,
-      "marketGatePassed": true,
+      "emotionScore": 50,
+      "marketGateScore": 0,
+      "marketGatePassed": false,
       "hardVeto": false,
-      "riskLevel": "NORMAL",
-      "limitUpCount": 60,
-      "limitDownCount": 18,
-      "bigDownCount": 39,
-      "limitTouchCount": 63,
-      "brokenBoardCount": 3,
-      "brokenBoardRate": 0.048,
-      "breadthSampleSize": 200,
-      "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 4.72,
-      "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates."
+      "riskLevel": "CAUTION",
+      "limitUpCount": null,
+      "limitDownCount": null,
+      "brokenBoardRate": null,
+      "note": "Market monitor fell back to board strength."
     }
   },
   "boards": [
-    {
-      "code": "BK1596",
-      "name": "其他生物制品",
-      "kind": "Industry board",
-      "price": 8647.89,
-      "pct": 4.72,
-      "amount": 16655189728.0,
-      "turnover": 2.53,
-      "open": 8249.31,
-      "preClose": 8257.79,
-      "mainNet": 908747312.0,
-      "rank": 3,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.55,
-      "criteria": [
-        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": true,
-      "amountRatio": 1.0,
-      "limitUpCount": 4,
-      "bigUpCount": 12
-    },
-    {
-      "code": "BK1044",
-      "name": "生物制品",
-      "kind": "Industry board",
-      "price": 1092.64,
-      "pct": 4.53,
-      "amount": 23554642137.0,
-      "turnover": 2.39,
-      "open": 1046.35,
-      "preClose": 1045.27,
-      "mainNet": 1351955984.0,
-      "rank": 5,
-      "passed": 4,
-      "qualified": true,
-      "score": 81.85,
-      "criteria": [
-        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": true,
-      "amountRatio": 1.0,
-      "limitUpCount": 5,
-      "bigUpCount": 16
-    },
-    {
-      "code": "BK1063",
-      "name": "重组蛋白",
-      "kind": "Concept board",
-      "price": 1135.45,
-      "pct": 4.33,
-      "amount": 20733303895.0,
-      "turnover": 3.84,
-      "open": 1086.48,
-      "preClose": 1088.29,
-      "mainNet": 1166119264.0,
-      "rank": 7,
-      "passed": 4,
-      "qualified": true,
-      "score": 81.15,
-      "criteria": [
-        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": true,
-      "amountRatio": 1.0,
-      "limitUpCount": 2,
-      "bigUpCount": 9
-    },
-    {
-      "code": "BK1051",
-      "name": "昨日连板_含一字",
-      "kind": "Concept board",
-      "price": 135.68,
-      "pct": 4.25,
-      "amount": 7199946918.0,
-      "turnover": 18.22,
-      "open": 132.66,
-      "preClose": 130.15,
-      "mainNet": 211543568.0,
-      "rank": 8,
-      "passed": 4,
-      "qualified": true,
-      "score": 80.8,
-      "criteria": [
-        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": true,
-      "amountRatio": 1.0,
-      "limitUpCount": 6,
-      "bigUpCount": 6
-    },
-    {
-      "code": "BK1600",
-      "name": "医疗研发外包",
-      "kind": "Industry board",
-      "price": 9544.74,
-      "pct": 4.22,
-      "amount": 30144730703.0,
-      "turnover": 6.27,
-      "open": 9182.39,
-      "preClose": 9158.36,
-      "mainNet": 2228100720.0,
-      "rank": 10,
-      "passed": 4,
-      "qualified": true,
-      "score": 80.1,
-      "criteria": [
-        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": true,
-      "amountRatio": 1.0,
-      "limitUpCount": 2,
-      "bigUpCount": 7
-    },
-    {
-      "code": "BK1598",
-      "name": "疫苗",
-      "kind": "Industry board",
-      "price": 4508.35,
-      "pct": 4.64,
-      "amount": 5862502063.0,
-      "turnover": 3.52,
-      "open": 4342.18,
-      "preClose": 4308.38,
-      "mainNet": 422557520.0,
-      "rank": 4,
-      "passed": 3,
-      "qualified": false,
-      "score": 65.8,
-      "criteria": [
-        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": true,
-      "amountRatio": 1.0,
-      "limitUpCount": 1,
-      "bigUpCount": 4
-    },
     {
       "code": "BK1296",
       "name": "视频媒体",
@@ -235,7 +86,7 @@
       "continuous": true,
       "amountRatio": 1.0,
       "limitUpCount": 0,
-      "bigUpCount": 1
+      "bigUpCount": 0
     },
     {
       "code": "BK1500",
@@ -262,6 +113,78 @@
       "bigUpCount": 1
     },
     {
+      "code": "BK1596",
+      "name": "其他生物制品",
+      "kind": "Industry board",
+      "price": 8647.89,
+      "pct": 4.72,
+      "amount": 16655189728.0,
+      "turnover": 2.53,
+      "open": 8249.31,
+      "preClose": 8257.79,
+      "mainNet": 908747312.0,
+      "rank": 3,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.75,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1598",
+      "name": "疫苗",
+      "kind": "Industry board",
+      "price": 4508.35,
+      "pct": 4.64,
+      "amount": 5862502063.0,
+      "turnover": 3.52,
+      "open": 4342.18,
+      "preClose": 4308.38,
+      "mainNet": 422557520.0,
+      "rank": 4,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.4,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1044",
+      "name": "生物制品",
+      "kind": "Industry board",
+      "price": 1092.64,
+      "pct": 4.53,
+      "amount": 23554642137.0,
+      "turnover": 2.39,
+      "open": 1046.35,
+      "preClose": 1045.27,
+      "mainNet": 1351955984.0,
+      "rank": 5,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.05,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
       "code": "BK1518",
       "name": "种子",
       "kind": "Industry board",
@@ -282,8 +205,56 @@
       ],
       "continuous": true,
       "amountRatio": 1.0,
-      "limitUpCount": 1,
-      "bigUpCount": 2
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1063",
+      "name": "重组蛋白",
+      "kind": "Concept board",
+      "price": 1135.45,
+      "pct": 4.33,
+      "amount": 20733303895.0,
+      "turnover": 3.84,
+      "open": 1086.48,
+      "preClose": 1088.29,
+      "mainNet": 1166119264.0,
+      "rank": 7,
+      "passed": 2,
+      "qualified": false,
+      "score": 48.35,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1051",
+      "name": "昨日连板_含一字",
+      "kind": "Concept board",
+      "price": 135.68,
+      "pct": 4.25,
+      "amount": 7199946918.0,
+      "turnover": 18.22,
+      "open": 132.66,
+      "preClose": 130.15,
+      "mainNet": 211543568.0,
+      "rank": 8,
+      "passed": 2,
+      "qualified": false,
+      "score": 48.0,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1469",
@@ -300,6 +271,30 @@
       "passed": 2,
       "qualified": false,
       "score": 47.65,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1600",
+      "name": "医疗研发外包",
+      "kind": "Industry board",
+      "price": 9544.74,
+      "pct": 4.22,
+      "amount": 30144730703.0,
+      "turnover": 6.27,
+      "open": 9182.39,
+      "preClose": 9158.36,
+      "mainNet": 2228100720.0,
+      "rank": 10,
+      "passed": 2,
+      "qualified": false,
+      "score": 47.3,
       "criteria": [
         "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive"
