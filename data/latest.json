@@ -1,45 +1,44 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-05T23:05:16.061937+08:00",
+    "generatedAt": "2026-10-05T23:11:57.973418+08:00",
     "tradingDate": "2026-10-05",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
-      {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
       {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
-        "note": "Previous successful source status retained during fallback."
+        "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://stock.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/news/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 20.11
+    "errors": [],
+    "runtimeSeconds": 45.61
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 12,
+    "watchOnlyCount": 0,
+    "qualifiedBoardCount": 5,
     "monitor": {
       "emotionScore": 88,
       "marketGateScore": 4,
@@ -144,7 +143,7 @@
       "price": 135.68,
       "pct": 4.25,
       "amount": 7199946918.0,
-      "turnover": 9.25,
+      "turnover": 18.22,
       "open": 132.66,
       "preClose": 130.15,
       "mainNet": 211543568.0,
@@ -170,7 +169,7 @@
       "price": 9544.74,
       "pct": 4.22,
       "amount": 30144730703.0,
-      "turnover": 6.27,
+      "turnover": 6.28,
       "open": 9182.39,
       "preClose": 9158.36,
       "mainNet": 2228100720.0,
@@ -357,12 +356,6 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "A股这一赛道火了！“20cm”涨停后 康希诺紧急公告！",
-      "url": "https://finance.eastmoney.com/a/202610043888572567.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "外资巨头盯上这些A股！AI算力硬件链受青睐",
       "url": "https://finance.eastmoney.com/a/202610043888547838.html",
       "time": ""
@@ -375,8 +368,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "中外资机构：中美关系回暖 市场风险偏好或渐进修复 中美AI规则沟通深化 孕育新商机！",
-      "url": "https://finance.eastmoney.com/a/202610043888556179.html",
+      "title": "2026年诺贝尔生理学或医学奖揭晓 这些A股公司布局相关领域",
+      "url": "https://finance.eastmoney.com/a/202610053888672725.html",
       "time": ""
     },
     {
