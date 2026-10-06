@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-06T16:04:12.751670+08:00",
+    "generatedAt": "2026-10-06T16:05:33.774194+08:00",
     "tradingDate": "2026-10-06",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 44.12
+    "runtimeSeconds": 44.07
   },
   "market": {
     "recommendationCount": 0,
@@ -356,7 +356,7 @@
   "news": [
     {
       "source": "Yicai",
-      "title": "纳指再创收盘新高，硬盘股反弹、PTC大涨逾33%，国际油价跌近2%市场对本月继续加息的预期仍明显低于一周前。  8小时前",
+      "title": "纳指再创收盘新高，硬盘股反弹、PTC大涨逾33%，国际油价跌近2%市场对本月继续加息的预期仍明显低于一周前。  9小时前",
       "url": "https://www.yicai.com/news/103384612.html",
       "time": ""
     }
