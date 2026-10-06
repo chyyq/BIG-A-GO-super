@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-06T20:10:33.961795+08:00",
+    "generatedAt": "2026-10-06T20:12:27.907605+08:00",
     "tradingDate": "2026-10-06",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 52.77
+    "runtimeSeconds": 33.88
   },
   "market": {
     "recommendationCount": 0,
@@ -354,36 +354,6 @@
   ],
   "recommendations": [],
   "news": [
-    {
-      "source": "Eastmoney News",
-      "title": "全球市场：美股三大指数集体收涨 纳指涨超1%创收盘新高",
-      "url": "https://finance.eastmoney.com/a/202610063888706547.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "港股两大板块爆发！明星科网股普涨",
-      "url": "https://finance.eastmoney.com/a/202610063888763449.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "成交额跌破1.5万亿！四季度A股怎么走？十大券商最新策略来了",
-      "url": "https://finance.eastmoney.com/a/202610063888713852.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
-      "time": ""
-    },
     {
       "source": "Yicai",
       "title": "纳指再创收盘新高，硬盘股反弹、PTC大涨逾33%，国际油价跌近2%市场对本月继续加息的预期仍明显低于一周前。  13小时前",
