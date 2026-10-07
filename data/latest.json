@@ -1,45 +1,44 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-07T19:59:19.911291+08:00",
+    "generatedAt": "2026-10-07T20:06:19.086020+08:00",
     "tradingDate": "2026-10-07",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
-      {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
       {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
-        "note": "Previous successful source status retained during fallback."
+        "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 24.07
+    "errors": [],
+    "runtimeSeconds": 29.71
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 12,
+    "watchOnlyCount": 0,
+    "qualifiedBoardCount": 5,
     "monitor": {
       "emotionScore": 88,
       "marketGateScore": 4,
@@ -144,7 +143,7 @@
       "price": 135.68,
       "pct": 4.25,
       "amount": 7199946918.0,
-      "turnover": 18.22,
+      "turnover": 9.25,
       "open": 132.66,
       "preClose": 130.15,
       "mainNet": 211543568.0,
@@ -170,7 +169,7 @@
       "price": 9544.74,
       "pct": 4.22,
       "amount": 30144730703.0,
-      "turnover": 6.28,
+      "turnover": 6.27,
       "open": 9182.39,
       "preClose": 9158.36,
       "mainNet": 2228100720.0,
@@ -356,51 +355,21 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "全球市场：美股三大指数集体上涨 纳指、标普500指数创收盘新高",
-      "url": "https://finance.eastmoney.com/a/202610073888831027.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "纳指、英伟达连创新高！A股节后怎么走？",
-      "url": "https://finance.eastmoney.com/a/202610073888848892.html",
+      "source": "Yicai",
+      "title": "新高！美股三大股指全线上扬，芯片股走强，纳指、标普500再破纪录，中概股普涨，油价小幅上涨芯片股走强进一步推高了市场行情。  12小时前",
+      "url": "https://www.yicai.com/news/103384862.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "国庆假期后A股市场怎么走？十大券商策略来了",
-      "url": "https://finance.eastmoney.com/a/202610073888916279.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "“十一”假期海外股市表现分化，节后A股将如何开局？券商最新研判",
-      "url": "https://finance.eastmoney.com/a/202610073888912295.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "假期外盘多空交织，A股节后会迎来修复行情吗？",
-      "url": "https://finance.eastmoney.com/a/202610073888911255.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股能否开门红？券商集体研判10月行情，哪些板块有望率先启动？",
-      "url": "https://finance.eastmoney.com/a/202610073888900128.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "加息预期退坡！亚太股市分化，美股再创新高，A股节后怎么走？",
-      "url": "https://finance.eastmoney.com/a/202610073888898672.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "十大机构论市：节后A股有望“量价齐升”",
-      "url": "https://finance.eastmoney.com/a/202610073888915179.html",
+      "source": "Yicai",
+      "title": "纳指再创收盘新高，硬盘股反弹、PTC大涨逾33%，国际油价跌近2%市场对本月继续加息的预期仍明显低于一周前。  昨天 07:05",
+      "url": "https://www.yicai.com/news/103384612.html",
       "time": ""
     }
   ]
