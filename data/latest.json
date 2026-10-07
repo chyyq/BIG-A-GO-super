@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-07T21:11:01.464805+08:00",
+    "generatedAt": "2026-10-07T21:25:06.830989+08:00",
     "tradingDate": "2026-10-07",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 38.26
+    "runtimeSeconds": 42.43
   },
   "market": {
     "recommendationCount": 0,
@@ -362,13 +362,13 @@
     },
     {
       "source": "Yicai",
-      "title": "年内逾60家企业IPO折戟，创业板“钉子户”博华科技退场年内北交所终止审核的数量最多，占比达到58%。  34分钟前",
+      "title": "年内逾60家企业IPO折戟，创业板“钉子户”博华科技退场年内北交所终止审核的数量最多，占比达到58%。  48分钟前",
       "url": "https://www.yicai.com/news/103385131.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "新高！美股三大股指全线上扬，芯片股走强，纳指、标普500再破纪录，中概股普涨，油价小幅上涨芯片股走强进一步推高了市场行情。  13小时前",
+      "title": "新高！美股三大股指全线上扬，芯片股走强，纳指、标普500再破纪录，中概股普涨，油价小幅上涨芯片股走强进一步推高了市场行情。  14小时前",
       "url": "https://www.yicai.com/news/103384862.html",
       "time": ""
     }
