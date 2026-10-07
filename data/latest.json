@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-07T15:41:14.787384+08:00",
+    "generatedAt": "2026-10-07T19:56:28.376279+08:00",
     "tradingDate": "2026-10-07",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 35.23
+    "runtimeSeconds": 31.58
   },
   "market": {
     "recommendationCount": 0,
@@ -169,7 +169,7 @@
       "price": 9544.74,
       "pct": 4.22,
       "amount": 30144730703.0,
-      "turnover": 6.27,
+      "turnover": 6.28,
       "open": 9182.39,
       "preClose": 9158.36,
       "mainNet": 2228100720.0,
@@ -356,50 +356,50 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "港股两大板块爆发！明星科网股普涨",
-      "url": "https://finance.eastmoney.com/a/202610063888763449.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "全球市场：美股三大指数集体上涨 纳指、标普500指数创收盘新高",
       "url": "https://finance.eastmoney.com/a/202610073888831027.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "美股创新高，黄金石油震荡，节后A股如何走？",
-      "url": "https://finance.eastmoney.com/a/202610073888866845.html",
+      "title": "纳指、英伟达连创新高！A股节后怎么走？",
+      "url": "https://finance.eastmoney.com/a/202610073888848892.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "节后A股怎么走？多家券商最新研判出炉",
-      "url": "https://finance.eastmoney.com/a/202610073888862971.html",
+      "title": "国庆假期后A股市场怎么走？十大券商策略来了",
+      "url": "https://finance.eastmoney.com/a/202610073888916279.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "香港主要地产股业绩收官 机构称板块已步入盈利上行周期",
-      "url": "https://finance.eastmoney.com/a/202610073888860786.html",
+      "title": "“十一”假期海外股市表现分化，节后A股将如何开局？券商最新研判",
+      "url": "https://finance.eastmoney.com/a/202610073888912295.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "历史大数据揭秘 国庆节后A股这样走？这个冷门行业胜率最高",
-      "url": "https://finance.eastmoney.com/a/202610073888867525.html",
+      "title": "假期外盘多空交织，A股节后会迎来修复行情吗？",
+      "url": "https://finance.eastmoney.com/a/202610073888911255.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "title": "A股能否开门红？券商集体研判10月行情，哪些板块有望率先启动？",
+      "url": "https://finance.eastmoney.com/a/202610073888900128.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "title": "加息预期退坡！亚太股市分化，美股再创新高，A股节后怎么走？",
+      "url": "https://finance.eastmoney.com/a/202610073888898672.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "十大机构论市：节后A股有望“量价齐升”",
+      "url": "https://finance.eastmoney.com/a/202610073888915179.html",
       "time": ""
     }
   ]
