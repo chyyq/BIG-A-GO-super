@@ -1,45 +1,58 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-08T20:16:33.335481+08:00",
+    "generatedAt": "2026-10-08T21:17:59.533102+08:00",
     "tradingDate": "2026-10-08",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
-      {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
       {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
-        "note": "Previous successful source status retained during fallback."
+        "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://stock.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/news/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 21.08
+    "runtimeSeconds": 107.03
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 12,
+    "watchOnlyCount": 0,
+    "qualifiedBoardCount": 0,
     "monitor": {
       "emotionScore": 50,
       "marketGateScore": 0,
@@ -332,51 +345,39 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "重磅利好叠加技术突破 电池板块逆势大涨 行业高质量发展新周期将启(附股)",
-      "url": "https://finance.eastmoney.com/a/202610083889406887.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "十大券商策略：节后A股有望“量价齐升” 科技或重新占优",
-      "url": "https://finance.eastmoney.com/a/202610073888967740.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股三大指数集体收跌 电池板块逆市走强",
-      "url": "https://finance.eastmoney.com/a/202610083889577351.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "“科技+红利”双主线下A股结构性分化逻辑与可持续性思考",
-      "url": "https://finance.eastmoney.com/a/202610083889743954.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "传闻引发光芯片概念板块大幅下跌 多家A股公司回应",
-      "url": "https://finance.eastmoney.com/a/202610083889574327.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "title": "北交所公募产品密集上新，机构称预计注入最高135亿元增量资金随着主题基金陆续发售，北交所市场将迎来重要增量资金。  57分钟前",
+      "url": "https://www.yicai.com/news/103386611.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "政策红利集中兑现，武汉国庆楼市迎结构性回暖在武汉楼市，光谷板块是成交主力，远郊板块去库存压力大。  2小时前",
+      "url": "https://www.yicai.com/news/103386504.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "中国人民银行关于人民币汇率的政策立场中国实施的是以市场供求为基础、参考一篮子货币进行调节、有管理的浮动汇率制度。  3小时前",
+      "url": "https://www.yicai.com/news/103386403.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "从“看沙盘”到“看实景”，国庆黄金周新房市场回暖节前政策落地叠加开发商活动，带动了市场需求。  3小时前",
+      "url": "https://www.yicai.com/news/103386376.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "楼市“银十”序幕拉开，国庆二手房咨询量普涨得益于节前政策端的积极部署，国庆二手房市场热度升温。  3小时前",
+      "url": "https://www.yicai.com/news/103386387.html",
       "time": ""
     }
   ]
