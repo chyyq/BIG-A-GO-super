@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-08T21:17:59.533102+08:00",
+    "generatedAt": "2026-10-08T21:30:24.976834+08:00",
     "tradingDate": "2026-10-08",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -47,7 +47,7 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 107.03
+    "runtimeSeconds": 98.0
   },
   "market": {
     "recommendationCount": 0,
@@ -352,7 +352,7 @@
     },
     {
       "source": "Yicai",
-      "title": "北交所公募产品密集上新，机构称预计注入最高135亿元增量资金随着主题基金陆续发售，北交所市场将迎来重要增量资金。  57分钟前",
+      "title": "北交所公募产品密集上新，机构称预计注入最高135亿元增量资金随着主题基金陆续发售，北交所市场将迎来重要增量资金。  1小时前",
       "url": "https://www.yicai.com/news/103386611.html",
       "time": ""
     },
