@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-08T15:48:34.045096+08:00",
+    "generatedAt": "2026-10-08T15:53:40.902152+08:00",
     "tradingDate": "2026-10-08",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -47,7 +47,7 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 102.93
+    "runtimeSeconds": 106.82
   },
   "market": {
     "recommendationCount": 0,
@@ -388,7 +388,7 @@
     },
     {
       "source": "Yicai",
-      "title": "连板股追踪丨A股今日共45只个股涨停 新华传媒8连板固态电池板块上海洗霸、传艺科技等多股连板。一图速览今日连板股&gt;&gt;  20分钟前",
+      "title": "连板股追踪丨A股今日共45只个股涨停 新华传媒8连板固态电池板块上海洗霸、传艺科技等多股连板。一图速览今日连板股&gt;&gt;  33分钟前",
       "url": "https://www.yicai.com/news/103386111.html",
       "time": ""
     }
