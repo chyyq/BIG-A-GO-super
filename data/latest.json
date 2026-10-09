@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-09T20:04:44.599851+08:00",
+    "generatedAt": "2026-10-09T20:07:47.315389+08:00",
     "tradingDate": "2026-10-09",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1518%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
         "note": "OK"
       },
       {
@@ -43,17 +43,18 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 62.58
+    "runtimeSeconds": 81.41
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 1,
+    "qualifiedBoardCount": 0,
     "monitor": {
-      "emotionScore": 54,
-      "marketGateScore": 1,
+      "emotionScore": 50,
+      "marketGateScore": 0,
       "marketGatePassed": false,
       "hardVeto": false,
       "riskLevel": "CAUTION",
@@ -64,32 +65,6 @@
     }
   },
   "boards": [
-    {
-      "code": "BK1518",
-      "name": "种子",
-      "kind": "Industry board",
-      "price": 4969.64,
-      "pct": 7.78,
-      "amount": 6951679890.0,
-      "turnover": 12.05,
-      "open": 4623.65,
-      "preClose": 4610.71,
-      "mainNet": 807839376.0,
-      "rank": 3,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.55,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 1.81,
-      "limitUpCount": 3,
-      "bigUpCount": 8
-    },
     {
       "code": "BK1645",
       "name": "昨日打二板以上表现",
@@ -112,6 +87,30 @@
       ],
       "continuous": true,
       "amountRatio": 1.64,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1518",
+      "name": "种子",
+      "kind": "Industry board",
+      "price": 4969.64,
+      "pct": 7.78,
+      "amount": 6951679890.0,
+      "turnover": 12.05,
+      "open": 4623.65,
+      "preClose": 4610.71,
+      "mainNet": 807839376.0,
+      "rank": 3,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.75,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": 1.81,
       "limitUpCount": 0,
       "bigUpCount": 0
     },
