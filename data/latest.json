@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-09T20:07:47.315389+08:00",
+    "generatedAt": "2026-10-09T21:05:51.519149+08:00",
     "tradingDate": "2026-10-09",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1296%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
       },
       {
@@ -43,10 +43,9 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 81.41
+    "runtimeSeconds": 95.24
   },
   "market": {
     "recommendationCount": 0,
@@ -248,8 +247,8 @@
       ],
       "continuous": false,
       "amountRatio": 1.05,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK1298",
@@ -347,51 +346,21 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数探底回升 成交额超1.9万亿 传媒板块掀涨停潮",
-      "url": "https://finance.eastmoney.com/a/202610093891224941.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "午后大反攻！抄底资金进场！券商股、黄金股集体异动",
-      "url": "https://finance.eastmoney.com/a/202610093891114958.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "全球市场：纳指跌超1% 存储、半导体板块下挫 国际油价涨逾3%",
-      "url": "https://finance.eastmoney.com/a/202610093890057356.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "四大积极因素助力A股探底回升 10月风险偏好有望逐步修复",
-      "url": "https://finance.eastmoney.com/a/202610093891378061.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "管涛：人民币汇率由市场供求决定",
-      "url": "https://finance.eastmoney.com/a/202610093891321443.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "title": "连板股追踪丨A股今日共72只个股涨停 这只传媒股9连板固态电池板块紫竹高科4连板。一图速览今日连板股&gt;&gt;  5小时前",
+      "url": "https://www.yicai.com/news/103387724.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "收盘｜上证指数涨0.05% 传媒板块大涨全市场超3200只个股上涨。  5小时前",
+      "url": "https://www.yicai.com/news/103387696.html",
       "time": ""
     }
   ]
