@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-09T15:45:25.769063+08:00",
+    "generatedAt": "2026-10-09T15:52:47.448008+08:00",
     "tradingDate": "2026-10-09",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,20 +10,26 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1221%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
         "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
@@ -40,15 +46,15 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 194.25
+    "runtimeSeconds": 73.92
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 1,
+    "qualifiedBoardCount": 0,
     "monitor": {
-      "emotionScore": 54,
-      "marketGateScore": 1,
+      "emotionScore": 50,
+      "marketGateScore": 0,
       "marketGatePassed": false,
       "hardVeto": false,
       "riskLevel": "CAUTION",
@@ -60,30 +66,29 @@
   },
   "boards": [
     {
-      "code": "BK1221",
-      "name": "数字媒体",
-      "kind": "Industry board",
-      "price": 6717.07,
-      "pct": 6.76,
-      "amount": 10636697416.0,
-      "turnover": 6.42,
-      "open": 6285.79,
-      "preClose": 6291.53,
-      "mainNet": 1000306256.0,
+      "code": "BK1645",
+      "name": "昨日打二板以上表现",
+      "kind": "Concept board",
+      "price": 31478.15,
+      "pct": 6.77,
+      "amount": 8376083912.0,
+      "turnover": 13.71,
+      "open": 31063.57,
+      "preClose": 29480.86,
+      "mainNet": -224644896.0,
       "rank": 8,
-      "passed": 4,
-      "qualified": true,
-      "score": 80.8,
+      "passed": 3,
+      "qualified": false,
+      "score": 64.4,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Board amount expands at least 1.30x"
       ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 3,
-      "bigUpCount": 8
+      "continuous": true,
+      "amountRatio": 1.64,
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1518",
@@ -158,20 +163,20 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1448",
-      "name": "横向通用软件",
+      "code": "BK1221",
+      "name": "数字媒体",
       "kind": "Industry board",
-      "price": 6665.68,
-      "pct": 6.15,
-      "amount": 16089720606.0,
-      "turnover": 3.93,
-      "open": 6256.84,
-      "preClose": 6279.65,
-      "mainNet": 1019881024.0,
-      "rank": 10,
+      "price": 6717.07,
+      "pct": 6.76,
+      "amount": 10636697416.0,
+      "turnover": 6.42,
+      "open": 6285.79,
+      "preClose": 6291.53,
+      "mainNet": 1000306256.0,
+      "rank": 9,
       "passed": 2,
       "qualified": false,
-      "score": 47.3,
+      "score": 47.65,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -182,16 +187,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1617",
-      "name": "黄金",
+      "code": "BK1448",
+      "name": "横向通用软件",
       "kind": "Industry board",
-      "price": 6267.88,
-      "pct": 5.98,
-      "amount": 16025402806.0,
-      "turnover": 3.32,
-      "open": 5987.91,
-      "preClose": 5914.23,
-      "mainNet": 1384875424.0,
+      "price": 6665.68,
+      "pct": 6.15,
+      "amount": 16089720606.0,
+      "turnover": 3.93,
+      "open": 6256.84,
+      "preClose": 6279.65,
+      "mainNet": 1019881024.0,
       "rank": 11,
       "passed": 2,
       "qualified": false,
@@ -203,16 +208,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1289",
-      "name": "大众出版",
-      "kind": "Industry board",
-      "price": 1927.35,
-      "pct": 5.88,
-      "amount": 4833774805.0,
-      "turnover": 3.18,
-      "open": 1828.65,
-      "preClose": 1820.29,
-      "mainNet": 379052272.0,
+      "code": "BK1172",
+      "name": "AI语料",
+      "kind": "Concept board",
+      "price": 1082.8,
+      "pct": 6.07,
+      "amount": 19998015391.0,
+      "turnover": 4.41,
+      "open": 1022.29,
+      "preClose": 1020.88,
+      "mainNet": 1628981392.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -326,10 +331,10 @@
       "open": 3241.77,
       "preClose": 3211.22,
       "mainNet": 849066272.0,
-      "rank": 9,
+      "rank": 10,
       "passed": 1,
       "qualified": false,
-      "score": 31.25,
+      "score": 30.9,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -342,51 +347,45 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数集体收跌 电池板块逆市走强",
-      "url": "https://finance.eastmoney.com/a/202610083889577351.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "重磅利好叠加技术突破 电池板块逆势大涨 行业高质量发展新周期将启(附股)",
-      "url": "https://finance.eastmoney.com/a/202610083889406887.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "经历“大起大落”，A股四季度前景如何？",
-      "url": "https://finance.eastmoney.com/a/202610093890025132.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "如何看待节后A股调整？机构：海外研报系假设推演",
-      "url": "https://finance.eastmoney.com/a/202610083889786016.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "美股三大指数集体下跌 纳指跌超1% 光通信、存储板块走低 国际油价上涨",
-      "url": "https://finance.eastmoney.com/a/202610083889897037.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "title": "连板股追踪丨A股今日共72只个股涨停 这只传媒股9连板固态电池板块紫竹高科4连板。一图速览今日连板股&gt;&gt;  19分钟前",
+      "url": "https://www.yicai.com/news/103387724.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "收盘｜上证指数涨0.05% 传媒板块大涨全市场超3200只个股上涨。  33分钟前",
+      "url": "https://www.yicai.com/news/103387696.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "OpenAI营收预期差引发恐慌，算力硬件概念股全线回调A股算力硬件板块遭遇深度调整，产业基本面并未出现松动迹象。  1小时前",
+      "url": "https://www.yicai.com/news/103387484.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "滚动更新丨创业板指探底回升涨0.22%，影视股午后集体爆发沪深两市成交额1.9万亿，较上一个交易日放量2184亿。  5小时前",
+      "url": "https://www.yicai.com/news/103387190.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "A股四大指数集体低开，江淮汽车再度跌停盘面上，光芯片、覆铜板、玻纤板块调整。  6小时前",
+      "url": "https://www.yicai.com/news/103387026.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "盘前必读丨美股半导体、存储板块重挫；多家A股公司三季报预增机构认为，科技仍在寻底，能否企稳看三季报表现及美债拐点。  7小时前",
+      "url": "https://www.yicai.com/news/103386879.html",
       "time": ""
     }
   ]
