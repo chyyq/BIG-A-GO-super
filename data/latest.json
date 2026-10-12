@@ -1,45 +1,57 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-12T23:26:45.919381+08:00",
+    "generatedAt": "2026-10-12T23:50:49.921003+08:00",
     "tradingDate": "2026-10-12",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
-      {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
       {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1298%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
-        "note": "Previous successful source status retained during fallback."
+        "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://stock.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/news/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 18.71
+    "runtimeSeconds": 102.8
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 12,
+    "watchOnlyCount": 0,
+    "qualifiedBoardCount": 0,
     "monitor": {
       "emotionScore": 50,
       "marketGateScore": 0,
@@ -112,10 +124,10 @@
       "open": 12431.0,
       "preClose": 12447.7,
       "mainNet": 396616560.0,
-      "rank": 4,
+      "rank": 3,
       "passed": 2,
       "qualified": false,
-      "score": 49.4,
+      "score": 49.75,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -136,10 +148,10 @@
       "open": 3984.99,
       "preClose": 3902.78,
       "mainNet": 660237360.0,
-      "rank": 5,
+      "rank": 4,
       "passed": 2,
       "qualified": false,
-      "score": 49.05,
+      "score": 49.4,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -160,10 +172,10 @@
       "open": 2173.2,
       "preClose": 2149.79,
       "mainNet": 400124736.0,
-      "rank": 7,
+      "rank": 6,
       "passed": 2,
       "qualified": false,
-      "score": 48.35,
+      "score": 48.7,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -184,10 +196,10 @@
       "open": 3786.9,
       "preClose": 3729.84,
       "mainNet": 691458592.0,
-      "rank": 9,
+      "rank": 7,
       "passed": 2,
       "qualified": false,
-      "score": 47.65,
+      "score": 48.35,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -198,16 +210,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1297",
-      "name": "图片媒体",
+      "code": "BK1313",
+      "name": "风电零部件",
       "kind": "Industry board",
-      "price": 2830.16,
-      "pct": 3.78,
-      "amount": 799446445.0,
-      "turnover": 7.16,
-      "open": 2703.44,
-      "preClose": 2727.09,
-      "mainNet": 42405433.0,
+      "price": 2015.0,
+      "pct": 3.09,
+      "amount": 13120153782.0,
+      "turnover": 6.0,
+      "open": 1950.74,
+      "preClose": 1954.51,
+      "mainNet": 776999504.0,
       "rank": 11,
       "passed": 2,
       "qualified": false,
@@ -219,16 +231,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1519",
-      "name": "电动乘用车",
+      "code": "BK1300",
+      "name": "院线",
       "kind": "Industry board",
-      "price": 4245.76,
-      "pct": 3.13,
-      "amount": 5324091791.0,
-      "turnover": 1.55,
-      "open": 4125.16,
-      "preClose": 4117.02,
-      "mainNet": 353841856.0,
+      "price": 622.88,
+      "pct": 2.66,
+      "amount": 1077338425.0,
+      "turnover": 3.03,
+      "open": 603.81,
+      "preClose": 606.77,
+      "mainNet": 31221241.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -236,29 +248,6 @@
       "criteria": [
         "Board is near the top of today's movers"
       ],
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1645",
-      "name": "昨日打二板以上表现",
-      "kind": "Concept board",
-      "price": 32958.38,
-      "pct": 4.7,
-      "amount": 4711000304.0,
-      "turnover": 12.15,
-      "open": 32348.14,
-      "preClose": 31478.15,
-      "mainNet": -285419600.0,
-      "rank": 3,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.35,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": 0.7,
       "limitUpCount": 0,
       "bigUpCount": 0
     },
@@ -273,33 +262,10 @@
       "open": 1948.84,
       "preClose": 1927.35,
       "mainNet": 364476832.0,
-      "rank": 6,
+      "rank": 5,
       "passed": 1,
       "qualified": false,
-      "score": 32.3,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1675",
-      "name": "历史新高",
-      "kind": "Concept board",
-      "price": 1937.84,
-      "pct": 3.91,
-      "amount": 3052292375.0,
-      "turnover": 0.23,
-      "open": 1894.74,
-      "preClose": 1864.98,
-      "mainNet": 55038800.0,
-      "rank": 8,
-      "passed": 1,
-      "qualified": false,
-      "score": 31.6,
+      "score": 32.65,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -319,6 +285,52 @@
       "open": 2374.54,
       "preClose": 2350.06,
       "mainNet": 35647877.0,
+      "rank": 8,
+      "passed": 1,
+      "qualified": false,
+      "score": 31.6,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1297",
+      "name": "图片媒体",
+      "kind": "Industry board",
+      "price": 2830.16,
+      "pct": 3.78,
+      "amount": 799446445.0,
+      "turnover": 7.16,
+      "open": 2703.44,
+      "preClose": 2727.09,
+      "mainNet": 42405433.0,
+      "rank": 9,
+      "passed": 1,
+      "qualified": false,
+      "score": 31.25,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1519",
+      "name": "电动乘用车",
+      "kind": "Industry board",
+      "price": 4245.76,
+      "pct": 3.13,
+      "amount": 5324091791.0,
+      "turnover": 1.55,
+      "open": 4125.16,
+      "preClose": 4117.02,
+      "mainNet": 353841856.0,
       "rank": 10,
       "passed": 1,
       "qualified": false,
@@ -335,27 +347,51 @@
   "recommendations": [],
   "news": [
     {
+      "source": "Eastmoney News",
+      "title": "贵州茅台重夺A股“股王”！联讯仪器近一个月跌近30%",
+      "url": "https://finance.eastmoney.com/a/202610123892612789.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股三大指数收跌 成交额1.55万亿 影视板块逆市大涨",
+      "url": "https://finance.eastmoney.com/a/202610123892633328.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "十大券商策略：市场积极信号逐渐累积 把握好四季度做多窗口期",
+      "url": "https://finance.eastmoney.com/a/202610113892124764.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股缩量普跌、银行逆势护盘 本周如何布局？",
+      "url": "https://finance.eastmoney.com/a/202610123893011613.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美股三大指数走势分化 存储板块走弱 国际油价走高",
+      "url": "https://finance.eastmoney.com/a/202610123892910778.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "time": ""
+    },
+    {
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "两只A股前“股王”预告第三季度业绩，净利润暴涨源杰科技和联讯仪器下游包括光模块厂商。  12分钟前",
-      "url": "https://www.yicai.com/news/103390615.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "全球流动性拐点已至当前流动性收缩趋势已确立，真实经济强劲是主要驱动力，债券市场率先反映，股票估值开始调整，商品与中国相关硬资产仍具支撑。  3小时前",
-      "url": "https://www.yicai.com/news/103390374.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "需求旺季不涨反跌，碳酸锂价格失守11万元关口远期供需反转、市场悲观预期影响下，碳酸锂期货价格大幅下跌，行业加速高成本产能出清与洗牌。  3小时前",
-      "url": "https://www.yicai.com/news/103390335.html",
       "time": ""
     }
   ]
