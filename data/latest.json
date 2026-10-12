@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-12T15:51:27.232729+08:00",
+    "generatedAt": "2026-10-12T15:55:58.582616+08:00",
     "tradingDate": "2026-10-12",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
         "note": "OK"
       },
       {
@@ -44,10 +44,9 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 116.41
+    "runtimeSeconds": 88.12
   },
   "market": {
     "recommendationCount": 0,
@@ -125,10 +124,10 @@
       "open": 12431.0,
       "preClose": 12447.7,
       "mainNet": 396616560.0,
-      "rank": 3,
+      "rank": 4,
       "passed": 2,
       "qualified": false,
-      "score": 49.75,
+      "score": 49.4,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -149,10 +148,10 @@
       "open": 3984.99,
       "preClose": 3902.78,
       "mainNet": 660237360.0,
-      "rank": 4,
+      "rank": 5,
       "passed": 2,
       "qualified": false,
-      "score": 49.4,
+      "score": 49.05,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -173,10 +172,10 @@
       "open": 2173.2,
       "preClose": 2149.79,
       "mainNet": 400124736.0,
-      "rank": 6,
+      "rank": 7,
       "passed": 2,
       "qualified": false,
-      "score": 48.7,
+      "score": 48.35,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -197,10 +196,10 @@
       "open": 3786.9,
       "preClose": 3729.84,
       "mainNet": 691458592.0,
-      "rank": 7,
+      "rank": 9,
       "passed": 2,
       "qualified": false,
-      "score": 48.35,
+      "score": 47.65,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -211,16 +210,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1313",
-      "name": "风电零部件",
+      "code": "BK1297",
+      "name": "图片媒体",
       "kind": "Industry board",
-      "price": 2015.0,
-      "pct": 3.09,
-      "amount": 13120153782.0,
-      "turnover": 6.0,
-      "open": 1950.74,
-      "preClose": 1954.51,
-      "mainNet": 776999504.0,
+      "price": 2830.16,
+      "pct": 3.78,
+      "amount": 799446445.0,
+      "turnover": 7.16,
+      "open": 2703.44,
+      "preClose": 2727.09,
+      "mainNet": 42405433.0,
       "rank": 11,
       "passed": 2,
       "qualified": false,
@@ -232,16 +231,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1300",
-      "name": "院线",
+      "code": "BK1519",
+      "name": "电动乘用车",
       "kind": "Industry board",
-      "price": 622.88,
-      "pct": 2.66,
-      "amount": 1077338425.0,
-      "turnover": 3.03,
-      "open": 603.81,
-      "preClose": 606.77,
-      "mainNet": 31221241.0,
+      "price": 4245.76,
+      "pct": 3.13,
+      "amount": 5324091791.0,
+      "turnover": 1.55,
+      "open": 4125.16,
+      "preClose": 4117.02,
+      "mainNet": 353841856.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -249,6 +248,29 @@
       "criteria": [
         "Board is near the top of today's movers"
       ],
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1645",
+      "name": "昨日打二板以上表现",
+      "kind": "Concept board",
+      "price": 32958.38,
+      "pct": 4.7,
+      "amount": 4711000304.0,
+      "turnover": 12.15,
+      "open": 32348.14,
+      "preClose": 31478.15,
+      "mainNet": -285419600.0,
+      "rank": 3,
+      "passed": 1,
+      "qualified": false,
+      "score": 33.35,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": 0.7,
       "limitUpCount": 0,
       "bigUpCount": 0
     },
@@ -263,10 +285,33 @@
       "open": 1948.84,
       "preClose": 1927.35,
       "mainNet": 364476832.0,
-      "rank": 5,
+      "rank": 6,
       "passed": 1,
       "qualified": false,
-      "score": 32.65,
+      "score": 32.3,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1675",
+      "name": "历史新高",
+      "kind": "Concept board",
+      "price": 1937.84,
+      "pct": 3.91,
+      "amount": 3052292375.0,
+      "turnover": 0.23,
+      "open": 1894.74,
+      "preClose": 1864.98,
+      "mainNet": 55038800.0,
+      "rank": 8,
+      "passed": 1,
+      "qualified": false,
+      "score": 31.6,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -286,52 +331,6 @@
       "open": 2374.54,
       "preClose": 2350.06,
       "mainNet": 35647877.0,
-      "rank": 8,
-      "passed": 1,
-      "qualified": false,
-      "score": 31.6,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1297",
-      "name": "图片媒体",
-      "kind": "Industry board",
-      "price": 2830.16,
-      "pct": 3.78,
-      "amount": 799446445.0,
-      "turnover": 7.16,
-      "open": 2703.44,
-      "preClose": 2727.09,
-      "mainNet": 42405433.0,
-      "rank": 9,
-      "passed": 1,
-      "qualified": false,
-      "score": 31.25,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1519",
-      "name": "电动乘用车",
-      "kind": "Industry board",
-      "price": 4245.76,
-      "pct": 3.13,
-      "amount": 5324091791.0,
-      "turnover": 1.55,
-      "open": 4125.16,
-      "preClose": 4117.02,
-      "mainNet": 353841856.0,
       "rank": 10,
       "passed": 1,
       "qualified": false,
