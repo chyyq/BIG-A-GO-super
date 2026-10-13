@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-13T20:55:45.866628+08:00",
+    "generatedAt": "2026-10-13T20:58:54.593275+08:00",
     "tradingDate": "2026-10-13",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -22,18 +22,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 44.64
+    "runtimeSeconds": 35.16
   },
   "market": {
     "recommendationCount": 0,
@@ -348,21 +348,45 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "清晨集体跳水！股市“吹哨人”突然发声！",
+      "url": "https://finance.eastmoney.com/a/202610133893096930.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "单季4700亿元杠杆资金出逃，两融规模创新低千亿级的杠杆资金从哪些板块出逃？近一个半月，电子、通信、有色金属是融资资金净流出额最高的三大行业。  15分钟前",
-      "url": "https://www.yicai.com/news/103392109.html",
+      "source": "Eastmoney News",
+      "title": "A股突然全线拉升！发生了什么？",
+      "url": "https://finance.eastmoney.com/a/202610133893962818.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "科技股深V反攻、沪指再探3741点，双底能否撑起反弹行情？中际旭创年内涨幅跑输中国石油。  15分钟前",
-      "url": "https://www.yicai.com/news/103392108.html",
+      "source": "Eastmoney News",
+      "title": "美联储突发大消息！日韩股市闪崩",
+      "url": "https://finance.eastmoney.com/a/202610133893327494.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股三大指数震荡整理 电子元件板块掀涨停潮",
+      "url": "https://finance.eastmoney.com/a/202610133894110332.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "宽基ETF显著放量 大资金托底信号再现",
+      "url": "https://finance.eastmoney.com/a/202610133894110684.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "政策托底叠加企业盈利上行 A股中长期基本面持续增强",
+      "url": "https://finance.eastmoney.com/a/202610133894185329.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "科技股回调谁在卖出？受访险资重申“长钱长投” 不对短期市场波动作评价",
+      "url": "https://finance.eastmoney.com/a/202610133894226084.html",
       "time": ""
     }
   ]
