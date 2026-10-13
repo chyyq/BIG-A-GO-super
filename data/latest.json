@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-13T16:07:59.959708+08:00",
+    "generatedAt": "2026-10-13T16:16:27.752592+08:00",
     "tradingDate": "2026-10-13",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -33,7 +33,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 32.39
+    "runtimeSeconds": 28.37
   },
   "market": {
     "recommendationCount": 0,
@@ -367,6 +367,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "再现深“V”反转，沪指重回3800点 A股稳了吗？",
+      "url": "https://finance.eastmoney.com/a/202610133894155374.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "杨德龙：科技股持续调整打击市场信心 呼吁尽快出台真金白银救市措施",
       "url": "https://finance.eastmoney.com/a/202610133894120267.html",
       "time": ""
@@ -387,12 +393,6 @@
       "source": "Eastmoney News",
       "title": "宽基ETF显著放量 大资金托底信号再现",
       "url": "https://finance.eastmoney.com/a/202610133894110684.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
