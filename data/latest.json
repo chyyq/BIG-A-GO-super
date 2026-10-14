@@ -1,45 +1,56 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-14T18:29:32.074364+08:00",
+    "generatedAt": "2026-10-14T18:34:52.535462+08:00",
     "tradingDate": "2026-10-14",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
-      {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1298%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://stock.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/news/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 32.76
+    "runtimeSeconds": 65.84
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 12,
+    "watchOnlyCount": 0,
+    "qualifiedBoardCount": 0,
     "monitor": {
       "emotionScore": 50,
       "marketGateScore": 0,
@@ -74,8 +85,8 @@
       ],
       "continuous": false,
       "amountRatio": 1.37,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK1301",
@@ -332,15 +343,39 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "A股四大指数集体低开，光通信、传媒等板块调整盘面上，冰雪旅游、水产板块涨幅居前。  5小时前",
-      "url": "https://www.yicai.com/news/103392566.html",
+      "source": "Eastmoney News",
+      "title": "A股三大指数收跌 成交额1.43万亿 游戏板块逆市走强",
+      "url": "https://finance.eastmoney.com/a/202610143895414976.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "盘前必读丨美以领导人被曝商讨重启对伊军事行动；宝鼎科技前三季度净利预增最高超6倍机构认为，市场或仍维持底部震荡格局。  6小时前",
-      "url": "https://www.yicai.com/news/103392404.html",
+      "source": "Eastmoney News",
+      "title": "A股反弹又“熄火”磨底阶段考验耐心",
+      "url": "https://finance.eastmoney.com/a/202610143895503511.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "摩根资管：投资者对新兴市场债券与股票配置比例偏低",
+      "url": "https://finance.eastmoney.com/a/202610143895461164.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "加仓银行！北向资金持仓大“换血” 宁德时代仍是第一大持仓股",
+      "url": "https://finance.eastmoney.com/a/202610143895537327.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     },
     {
@@ -351,8 +386,8 @@
     },
     {
       "source": "Yicai",
-      "title": "追高科技后低位砍仓，谁是A股近期主力卖盘“根据我们对资金动向的观察，险资被动赎回是本轮核心卖盘。”  昨天 21:39",
-      "url": "https://www.yicai.com/news/103392207.html",
+      "title": "350亿英镑财政窟窿难填，英国又要对富人“开刀”？350亿英镑支出资金缺口让英国财政部不得不权衡各类增收手段。  1小时前",
+      "url": "https://www.yicai.com/news/103393514.html",
       "time": ""
     }
   ]
