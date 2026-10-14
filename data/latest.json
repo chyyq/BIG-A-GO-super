@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-14T19:41:15.651978+08:00",
+    "generatedAt": "2026-10-14T19:53:28.238240+08:00",
     "tradingDate": "2026-10-14",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -23,7 +23,7 @@
         "name": "10jqka",
         "ok": true,
         "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "note": "Optional news source skipped; quote data is unaffected."
       },
       {
         "name": "Yicai",
@@ -45,9 +45,10 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "10jqka news skipped: <urlopen error _ssl.c:999: The handshake operation timed out>"
     ],
-    "runtimeSeconds": 99.44
+    "runtimeSeconds": 105.31
   },
   "market": {
     "recommendationCount": 0,
