@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-14T20:17:11.132497+08:00",
+    "generatedAt": "2026-10-14T20:25:52.605139+08:00",
     "tradingDate": "2026-10-14",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://4.push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
         "note": "OK"
       },
       {
@@ -44,10 +44,9 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 105.32
+    "runtimeSeconds": 109.12
   },
   "market": {
     "recommendationCount": 0,
@@ -352,7 +351,7 @@
     },
     {
       "source": "Yicai",
-      "title": "创业板指近35%回撤背后：拥挤交易退潮，ETF却揽金676亿从36%到-10.5%：创业板三个月就高台回落，资金在指数端另寻锚点  33分钟前",
+      "title": "创业板指近35%回撤背后：拥挤交易退潮，ETF却揽金676亿从36%到-10.5%：创业板三个月就高台回落，资金在指数端另寻锚点  42分钟前",
       "url": "https://www.yicai.com/news/103393659.html",
       "time": ""
     },
