@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-14T18:39:40.601751+08:00",
+    "generatedAt": "2026-10-14T19:41:15.651978+08:00",
     "tradingDate": "2026-10-14",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -23,7 +23,7 @@
         "name": "10jqka",
         "ok": true,
         "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source skipped; quote data is unaffected."
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
@@ -45,10 +45,9 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "10jqka news skipped: <urlopen error _ssl.c:999: The handshake operation timed out>"
+      "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 77.97
+    "runtimeSeconds": 99.44
   },
   "market": {
     "recommendationCount": 0,
@@ -353,20 +352,26 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "银行股走强、科技股回调！A股 “跷跷板” 行情该如何解读？",
+      "url": "https://finance.eastmoney.com/a/202610143895591168.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "A股反弹又“熄火”磨底阶段考验耐心",
       "url": "https://finance.eastmoney.com/a/202610143895503511.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "摩根资管：投资者对新兴市场债券与股票配置比例偏低",
-      "url": "https://finance.eastmoney.com/a/202610143895461164.html",
+      "title": "加仓银行减持科技 三季度北向资金调仓路径曝光",
+      "url": "https://finance.eastmoney.com/a/202610143895588563.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "加仓银行！北向资金持仓大“换血” 宁德时代仍是第一大持仓股",
-      "url": "https://finance.eastmoney.com/a/202610143895537327.html",
+      "title": "科技板块遭遇“冰点时刻”？知名基金经理喊话：准备开始乐观了",
+      "url": "https://finance.eastmoney.com/a/202610143895598977.html",
       "time": ""
     },
     {
@@ -385,12 +390,6 @@
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "350亿英镑财政窟窿难填，英国又要对富人“开刀”？350亿英镑支出资金缺口让英国财政部不得不权衡各类增收手段。  1小时前",
-      "url": "https://www.yicai.com/news/103393514.html",
       "time": ""
     }
   ]
