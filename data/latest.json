@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-15T18:16:38.840326+08:00",
+    "generatedAt": "2026-10-15T18:23:13.934203+08:00",
     "tradingDate": "2026-10-15",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1347%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
         "note": "OK"
       },
       {
@@ -22,14 +22,14 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
@@ -42,9 +42,11 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 61.28
+    "runtimeSeconds": 121.19
   },
   "market": {
     "recommendationCount": 0,
@@ -221,8 +223,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 2
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1347",
@@ -341,51 +343,33 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "韩国金融监管机构就股市召开紧急会议：要求主动采取应对措施、保障市场稳定",
-      "url": "https://finance.eastmoney.com/a/202610153896792711.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "韩国股市又跌到熔断了",
-      "url": "https://finance.eastmoney.com/a/202610153896134995.html",
+      "source": "Yicai",
+      "title": "上新品种、扩开放、强风控，期货市场“十五五”有这些计划进一步完善期货期权品种布局，培育基础性战略性品种，扩大特定品种开放范围，严厉打击违法违规行为。  2小时前",
+      "url": "https://www.yicai.com/news/103395062.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数集体收跌 白酒与证券板块逆市上涨",
-      "url": "https://finance.eastmoney.com/a/202610153896876822.html",
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共36只个股涨停 这只影视股5连板影视板块慈文传媒收获5连板。一图速览今日连板股&gt;&gt;  3小时前",
+      "url": "https://www.yicai.com/news/103395019.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "双创指数大跌、地量再现 A股接下来怎么走？",
-      "url": "https://finance.eastmoney.com/a/202610153896139526.html",
+      "source": "Yicai",
+      "title": "收盘｜沪指跌1.59% 白酒板块活跃全市场超5100只个股下跌。  3小时前",
+      "url": "https://www.yicai.com/news/103394998.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "“绿泡泡”对决“红果果”：微信杀入短剧市场",
-      "url": "https://topic.eastmoney.com/detail/wxsrdjsz.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "博时基金市场异动陪伴",
-      "url": "https://finance.eastmoney.com/a/202610153896886443.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股市值“一哥”易主 长鑫科技市值两月内跌去1万亿",
-      "url": "https://finance.eastmoney.com/a/202610153896880486.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "source": "Yicai",
+      "title": "A股市值“一哥”易主，长鑫科技市值两月内跌去1万亿近两个月时间里，长鑫科技市值先是跌破4万亿元，又跌破3万亿元。  3小时前",
+      "url": "https://www.yicai.com/news/103394965.html",
       "time": ""
     }
   ]
