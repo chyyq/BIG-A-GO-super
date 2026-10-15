@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-15T18:23:13.934203+08:00",
+    "generatedAt": "2026-10-15T19:18:25.556809+08:00",
     "tradingDate": "2026-10-15",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -46,7 +46,7 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 121.19
+    "runtimeSeconds": 113.75
   },
   "market": {
     "recommendationCount": 0,
@@ -350,26 +350,14 @@
     },
     {
       "source": "Yicai",
-      "title": "上新品种、扩开放、强风控，期货市场“十五五”有这些计划进一步完善期货期权品种布局，培育基础性战略性品种，扩大特定品种开放范围，严厉打击违法违规行为。  2小时前",
+      "title": "第十二届上海国际自然保护周即将于10月17日启幕国际交流板块为本届活动重磅内容。  21分钟前",
+      "url": "https://www.yicai.com/news/103395390.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "上新品种、扩开放、强风控，期货市场“十五五”有这些计划进一步完善期货期权品种布局，培育基础性战略性品种，扩大特定品种开放范围，严厉打击违法违规行为。  3小时前",
       "url": "https://www.yicai.com/news/103395062.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共36只个股涨停 这只影视股5连板影视板块慈文传媒收获5连板。一图速览今日连板股&gt;&gt;  3小时前",
-      "url": "https://www.yicai.com/news/103395019.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "收盘｜沪指跌1.59% 白酒板块活跃全市场超5100只个股下跌。  3小时前",
-      "url": "https://www.yicai.com/news/103394998.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "A股市值“一哥”易主，长鑫科技市值两月内跌去1万亿近两个月时间里，长鑫科技市值先是跌破4万亿元，又跌破3万亿元。  3小时前",
-      "url": "https://www.yicai.com/news/103394965.html",
       "time": ""
     }
   ]
