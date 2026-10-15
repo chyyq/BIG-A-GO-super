@@ -1,45 +1,57 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-15T19:59:26.000109+08:00",
+    "generatedAt": "2026-10-15T20:09:26.027492+08:00",
     "tradingDate": "2026-10-15",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
-      {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://www.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 18.84
+    "runtimeSeconds": 104.08
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 12,
+    "watchOnlyCount": 0,
+    "qualifiedBoardCount": 0,
     "monitor": {
       "emotionScore": 50,
       "marketGateScore": 0,
@@ -78,16 +90,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1575",
-      "name": "白酒Ⅲ",
-      "kind": "Industry board",
-      "price": 4186.14,
-      "pct": 1.03,
-      "amount": 15762122472.0,
-      "turnover": 1.67,
-      "open": 4111.09,
-      "preClose": 4143.44,
-      "mainNet": 775621936.0,
+      "code": "BK1675",
+      "name": "历史新高",
+      "kind": "Concept board",
+      "price": 1959.74,
+      "pct": 1.07,
+      "amount": 9876982778.0,
+      "turnover": 0.18,
+      "open": 1922.07,
+      "preClose": 1938.93,
+      "mainNet": 295932160.0,
       "rank": 5,
       "passed": 2,
       "qualified": false,
@@ -97,13 +109,13 @@
         "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
-      "amountRatio": null,
+      "amountRatio": 3.24,
       "limitUpCount": 0,
       "bigUpCount": 0
     },
     {
-      "code": "BK1277",
-      "name": "白酒Ⅱ",
+      "code": "BK1575",
+      "name": "白酒Ⅲ",
       "kind": "Industry board",
       "price": 4186.14,
       "pct": 1.03,
@@ -126,16 +138,40 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1366",
-      "name": "证券Ⅲ",
+      "code": "BK1277",
+      "name": "白酒Ⅱ",
       "kind": "Industry board",
-      "price": 136241.12,
-      "pct": 0.32,
-      "amount": 29216558566.0,
-      "turnover": 0.98,
-      "open": 134400.45,
-      "preClose": 135800.2,
-      "mainNet": 232554576.0,
+      "price": 4186.14,
+      "pct": 1.03,
+      "amount": 15762122472.0,
+      "turnover": 1.67,
+      "open": 4111.09,
+      "preClose": 4143.44,
+      "mainNet": 775621936.0,
+      "rank": 7,
+      "passed": 2,
+      "qualified": false,
+      "score": 48.35,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1351",
+      "name": "印染",
+      "kind": "Industry board",
+      "price": 1549.14,
+      "pct": 0.49,
+      "amount": 914069288.0,
+      "turnover": 3.92,
+      "open": 1553.97,
+      "preClose": 1541.65,
+      "mainNet": 96314469.0,
       "rank": 11,
       "passed": 2,
       "qualified": false,
@@ -147,8 +183,8 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK0473",
-      "name": "证券Ⅱ",
+      "code": "BK1366",
+      "name": "证券Ⅲ",
       "kind": "Industry board",
       "price": 136241.12,
       "pct": 0.32,
@@ -247,10 +283,10 @@
       "open": 2239.17,
       "preClose": 2298.9,
       "mainNet": 271717856.0,
-      "rank": 8,
+      "rank": 9,
       "passed": 1,
       "qualified": false,
-      "score": 31.6,
+      "score": 31.25,
       "criteria": [
         "[SectorGate] Two-day top-10 or three-day top-20 continuity"
       ],
@@ -270,10 +306,10 @@
       "open": 3529.92,
       "preClose": 3523.91,
       "mainNet": 119280512.0,
-      "rank": 9,
+      "rank": 10,
       "passed": 1,
       "qualified": false,
-      "score": 31.25,
+      "score": 30.9,
       "criteria": [
         "[SectorGate] Board amount expands at least 1.30x"
       ],
@@ -293,31 +329,10 @@
       "open": 1354.68,
       "preClose": 1368.56,
       "mainNet": 10468524.0,
-      "rank": 7,
+      "rank": 8,
       "passed": 0,
       "qualified": false,
-      "score": 15.55,
-      "criteria": [],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1351",
-      "name": "印染",
-      "kind": "Industry board",
-      "price": 1549.14,
-      "pct": 0.49,
-      "amount": 914069288.0,
-      "turnover": 3.92,
-      "open": 1553.97,
-      "preClose": 1541.65,
-      "mainNet": 96314469.0,
-      "rank": 10,
-      "passed": 0,
-      "qualified": false,
-      "score": 14.5,
+      "score": 15.2,
       "criteria": [],
       "continuous": false,
       "amountRatio": null,
@@ -353,12 +368,6 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "Anthropic盈利破冰 国内AI应用多点落地 多只概念股获资金青睐(名单)",
-      "url": "https://finance.eastmoney.com/a/202610153896524847.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "“绿泡泡”对决“红果果”：微信杀入短剧市场",
       "url": "https://topic.eastmoney.com/detail/wxsrdjsz.html",
       "time": ""
@@ -373,6 +382,12 @@
       "source": "Eastmoney News",
       "title": "最后半小时 大资金加速进场！多只宽基ETF成交放量",
       "url": "https://finance.eastmoney.com/a/202610153897048450.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股增持回购潮再起：新易盛、天孚通信、佰维存储集体披露回购计划",
+      "url": "https://finance.eastmoney.com/a/202610153897060460.html",
       "time": ""
     }
   ]
