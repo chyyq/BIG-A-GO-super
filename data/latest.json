@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-16T19:25:15.708209+08:00",
+    "generatedAt": "2026-10-16T19:43:12.995840+08:00",
     "tradingDate": "2026-10-16",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1305%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
         "note": "OK"
       },
       {
@@ -46,7 +46,7 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 94.29
+    "runtimeSeconds": 80.06
   },
   "market": {
     "recommendationCount": 0,
@@ -208,16 +208,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1204",
-      "name": "国防军工",
-      "kind": "Industry board",
-      "price": 5245.32,
-      "pct": 4.46,
-      "amount": 58257384645.0,
-      "turnover": 2.73,
-      "open": 5090.77,
-      "preClose": 5021.55,
-      "mainNet": 2933651968.0,
+      "code": "BK0480",
+      "name": "航天航空",
+      "kind": "Concept board",
+      "price": 50092.03,
+      "pct": 4.51,
+      "amount": 26079130377.0,
+      "turnover": 2.57,
+      "open": 48473.0,
+      "preClose": 47930.94,
+      "mainNet": 1694501696.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -249,7 +249,7 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 1
+      "bigUpCount": 0
     },
     {
       "code": "BK1383",
