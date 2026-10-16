@@ -1,45 +1,58 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-16T18:10:39.309796+08:00",
+    "generatedAt": "2026-10-16T19:13:11.377078+08:00",
     "tradingDate": "2026-10-16",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "sourceHealth": [
-      {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
       {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
-        "note": "Previous successful source status retained during fallback."
+        "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://www.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 25.82
+    "runtimeSeconds": 88.75
   },
   "market": {
     "recommendationCount": 0,
-    "qualifiedBoardCount": 12,
+    "watchOnlyCount": 0,
+    "qualifiedBoardCount": 0,
     "monitor": {
       "emotionScore": 50,
       "marketGateScore": 0,
@@ -336,12 +349,6 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "最后半小时 大资金加速进场！多只宽基ETF成交放量",
-      "url": "https://finance.eastmoney.com/a/202610153897048450.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "美国9月PPI同比增长6.3% 远超市场预期",
       "url": "https://finance.eastmoney.com/a/202610153897120688.html",
       "time": ""
@@ -360,6 +367,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "A股三大指数涨跌不一 成交额不足1.6万亿 飞行汽车概念股大涨",
+      "url": "https://finance.eastmoney.com/a/202610163898350432.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "“绿泡泡”对决“红果果”：微信杀入短剧市场",
       "url": "https://topic.eastmoney.com/detail/wxsrdjsz.html",
       "time": ""
@@ -372,8 +385,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "亨通光电：前三季度净利润同比预增151%-168% 光通信市场需求增长、价格上涨",
-      "url": "https://finance.eastmoney.com/a/202610163898472352.html",
+      "title": "5000亿资金大换手！融资下降 宽基ETF进场",
+      "url": "https://finance.eastmoney.com/a/202610163898508473.html",
       "time": ""
     },
     {
