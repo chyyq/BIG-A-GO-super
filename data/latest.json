@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-16T19:43:12.995840+08:00",
+    "generatedAt": "2026-10-16T19:50:00.806748+08:00",
     "tradingDate": "2026-10-16",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
         "note": "OK"
       },
       {
@@ -46,7 +46,7 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 80.06
+    "runtimeSeconds": 100.92
   },
   "market": {
     "recommendationCount": 0,
