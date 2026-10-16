@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-16T19:50:00.806748+08:00",
+    "generatedAt": "2026-10-16T19:55:49.298404+08:00",
     "tradingDate": "2026-10-16",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1384%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
       },
       {
@@ -42,19 +42,17 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 100.92
+    "runtimeSeconds": 77.32
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 0,
+    "qualifiedBoardCount": 1,
     "monitor": {
-      "emotionScore": 50,
-      "marketGateScore": 0,
+      "emotionScore": 54,
+      "marketGateScore": 1,
       "marketGatePassed": false,
       "hardVeto": false,
       "riskLevel": "CAUTION",
@@ -65,6 +63,32 @@
     }
   },
   "boards": [
+    {
+      "code": "BK1384",
+      "name": "航空装备Ⅲ",
+      "kind": "Industry board",
+      "price": 4110.4,
+      "pct": 5.98,
+      "amount": 22017130337.0,
+      "turnover": 2.5,
+      "open": 3923.26,
+      "preClose": 3878.5,
+      "mainNet": 1754703408.0,
+      "rank": 2,
+      "passed": 4,
+      "qualified": true,
+      "score": 82.9,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Board amount expands at least 1.30x",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 5,
+      "bigUpCount": 15
+    },
     {
       "code": "BK1347",
       "name": "纺织鞋类制造",
@@ -87,30 +111,6 @@
       ],
       "continuous": true,
       "amountRatio": 1.56,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1384",
-      "name": "航空装备Ⅲ",
-      "kind": "Industry board",
-      "price": 4110.4,
-      "pct": 5.98,
-      "amount": 22017130337.0,
-      "turnover": 2.5,
-      "open": 3923.26,
-      "preClose": 3878.5,
-      "mainNet": 1754703408.0,
-      "rank": 2,
-      "passed": 2,
-      "qualified": false,
-      "score": 50.1,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
-      ],
-      "continuous": false,
-      "amountRatio": null,
       "limitUpCount": 0,
       "bigUpCount": 0
     },
@@ -249,7 +249,7 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 0
+      "bigUpCount": 1
     },
     {
       "code": "BK1383",
