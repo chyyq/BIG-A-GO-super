@@ -279,6 +279,100 @@ class StrategyV31Tests(unittest.TestCase):
         self.assertTrue(monitor["hardVeto"])
         self.assertEqual(monitor["riskLevel"], "RISK_OFF")
 
+    def test_rising_five_day_market_downgrades_one_day_stress_to_caution(self):
+        winners = [tail_quote(code=f"600{i:03d}", pct=9.9) for i in range(35)]
+        losers = [tail_quote(code=f"000{i:03d}", pct=-8.0) for i in range(70)]
+        trend = {"available": True, "level": "RISING", "gatePassed": True}
+
+        monitor = STRATEGY.build_market_monitor([*winners, *losers], [strong_board()], trend)
+
+        self.assertTrue(monitor["dailyStress"])
+        self.assertFalse(monitor["hardVeto"])
+        self.assertEqual(monitor["riskLevel"], "CAUTION")
+
+    def test_falling_five_day_market_and_daily_stress_blocks_entries(self):
+        winners = [tail_quote(code=f"600{i:03d}", pct=9.9) for i in range(35)]
+        losers = [tail_quote(code=f"000{i:03d}", pct=-8.0) for i in range(70)]
+        trend = {"available": True, "level": "FALLING", "gatePassed": False}
+
+        monitor = STRATEGY.build_market_monitor([*winners, *losers], [strong_board()], trend)
+
+        self.assertTrue(monitor["hardVeto"])
+        self.assertEqual(monitor["riskLevel"], "RISK_OFF")
+
+    def test_extreme_intraday_crash_still_blocks_a_rising_five_day_market(self):
+        losers = [tail_quote(code=f"000{i:03d}", pct=-9.9) for i in range(120)]
+        trend = {"available": True, "level": "RISING", "gatePassed": True}
+
+        monitor = STRATEGY.build_market_monitor(losers, [strong_board()], trend)
+
+        self.assertTrue(monitor["emergencyVeto"])
+        self.assertEqual(monitor["riskLevel"], "RISK_OFF")
+
+    def test_five_day_market_trend_uses_only_completed_sessions(self):
+        rows = [
+            {"date": "2026-10-09", "close": 100.0, "pct": 0.2},
+            {"date": "2026-10-12", "close": 101.0, "pct": 1.0},
+            {"date": "2026-10-13", "close": 100.8, "pct": -0.2},
+            {"date": "2026-10-14", "close": 102.0, "pct": 1.2},
+            {"date": "2026-10-15", "close": 103.0, "pct": 1.0},
+            {"date": "2026-10-16", "close": 104.0, "pct": 1.0},
+            {"date": "2026-10-19", "close": 90.0, "pct": -13.5},
+        ]
+        now = datetime(2026, 10, 19, 14, 20, tzinfo=STRATEGY.CN_TZ)
+
+        trend = STRATEGY.build_five_day_market_trend(
+            {"shanghai": rows, "shenzhen": rows},
+            now,
+        )
+
+        self.assertEqual(trend["level"], "RISING")
+        self.assertEqual(trend["indexes"]["shanghai"]["to"], "2026-10-16")
+        self.assertGreater(trend["averageReturnPct"], 0)
+
+    def test_delayed_entry_watch_requires_a_bounded_mid_stage_uptrend(self):
+        metrics = {
+            "historyAvailable": True,
+            "ma5Rising": True,
+            "priorMA5Rising": True,
+            "previousCloseAboveMA5": True,
+            "ma5AboveMA10": True,
+            "deviationMA5Pct": 4.0,
+            "gain5dPct": 8.0,
+            "gain10dPct": 16.0,
+        }
+
+        self.assertTrue(STRATEGY.delayed_entry_watch_eligible(metrics, 68, 20, 75, 80))
+        self.assertFalse(
+            STRATEGY.delayed_entry_watch_eligible({**metrics, "gain5dPct": 26.0}, 68, 20, 75, 80)
+        )
+
+    def test_rising_market_keeps_a_delayed_entry_watch_candidate(self):
+        item = {
+            "strategyTag": STRATEGY.STRATEGY_TAIL_MAIN,
+            "candidateStatus": "OBSERVE",
+            "delayedEntryWatch": True,
+            "riskPct": 5.0,
+        }
+        monitor = {"fiveDayTrend": {"level": "RISING"}}
+
+        self.assertTrue(STRATEGY.market_allows_candidate(item, monitor))
+
+    def test_observe_score_can_enter_as_delayed_entry_watch(self):
+        board = {**strong_board(), "score": 0}
+        item = STRATEGY.evaluate_stock_snapshot(
+            tail_quote(),
+            board,
+            {STRATEGY.STRATEGY_TAIL_MAIN},
+            datetime(2026, 10, 19, 14, 20, tzinfo=STRATEGY.CN_TZ),
+            {"emotionScore": 0, "riskLevel": "CAUTION", "marketGatePassed": True},
+        )
+
+        self.assertIsNotNone(item)
+        self.assertEqual(item["candidateStatus"], "OBSERVE")
+        self.assertTrue(item["delayedEntryWatch"])
+        self.assertEqual(item["recommendationMode"], "DELAYED_ENTRY_WATCH")
+
 
 if __name__ == "__main__":
     unittest.main()
