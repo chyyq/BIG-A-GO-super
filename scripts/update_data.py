@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import os
 import re
 import time
 from datetime import datetime, timedelta, timezone
@@ -81,6 +82,10 @@ def main() -> None:
     history = load_json(BOARD_HISTORY_PATH, {"items": []})
     previous = load_json(LATEST_PATH, {})
 
+    if os.environ.get("MIDNIGHT_EXPIRY", "").lower() == "true":
+        write_midnight_recommendation_reset(now, today, previous)
+        return
+
     boards = fetch_all_boards()
     if not boards:
         write_fallback(now, today, previous)
@@ -105,6 +110,11 @@ def main() -> None:
             five_day_market_trend = {**cached_trend, "cached": True}
     market_monitor = build_market_monitor(market_quotes, evaluated_boards, five_day_market_trend)
     recommendations = build_recommendations(recommendation_board_pool, now, am_top_quotes, market_monitor)
+    recommendations, recommendation_generated_at, recommendations_retained = recommendation_snapshot_for_output(
+        recommendations,
+        previous,
+        now,
+    )
     actionable_recommendations = [item for item in recommendations if item.get("actionable") is not False]
     no_recommendation_reason = None
     if not actionable_recommendations:
@@ -126,6 +136,8 @@ def main() -> None:
             "mode": "fast-snapshot",
             "activeStrategies": sorted(active_strategies),
             "noRecommendationReason": no_recommendation_reason,
+            "recommendationGeneratedAt": recommendation_generated_at,
+            "recommendationsRetained": recommendations_retained,
             "sourceHealth": source_list(),
             "errors": errors[:30],
             "runtimeSeconds": round(time.monotonic() - STARTED, 2),
@@ -145,9 +157,79 @@ def main() -> None:
     update_board_history(history, today, evaluated_boards)
 
 
+def recommendation_snapshot_for_output(
+    current: list[dict[str, Any]],
+    previous: dict[str, Any],
+    now: datetime,
+) -> tuple[list[dict[str, Any]], str | None, bool]:
+    if current:
+        return current[:MAX_RECOMMENDATIONS], now.isoformat(), False
+    if now.hour < 15:
+        return [], None, False
+
+    previous_meta = previous.get("meta", {})
+    if previous_meta.get("tradingDate") != now.strftime("%Y-%m-%d"):
+        return [], None, False
+    previous_recommendations = previous.get("recommendations", [])
+    if not previous_recommendations:
+        return [], None, False
+
+    source_time = previous_meta.get("recommendationGeneratedAt") or previous_meta.get("generatedAt")
+    if not recommendation_was_generated_before_close(source_time, now):
+        return [], None, False
+    return previous_recommendations[:MAX_RECOMMENDATIONS], source_time, True
+
+
+def recommendation_was_generated_before_close(value: Any, now: datetime) -> bool:
+    if not value:
+        return False
+    try:
+        generated_at = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
+        if generated_at.tzinfo is None:
+            generated_at = generated_at.replace(tzinfo=CN_TZ)
+        generated_at = generated_at.astimezone(CN_TZ)
+    except (TypeError, ValueError):
+        return False
+    return generated_at.date() == now.astimezone(CN_TZ).date() and generated_at.hour < 15
+
+
+def write_midnight_recommendation_reset(
+    now: datetime,
+    today: str,
+    previous: dict[str, Any],
+) -> None:
+    latest = {
+        **previous,
+        "meta": {
+            **previous.get("meta", {}),
+            "generatedAt": now.isoformat(),
+            "tradingDate": today,
+            "mode": "overnight-reset",
+            "activeStrategies": [],
+            "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
+            "recommendationGeneratedAt": None,
+            "recommendationsRetained": False,
+        },
+        "market": {
+            **previous.get("market", {}),
+            "recommendationCount": 0,
+            "watchOnlyCount": 0,
+        },
+        "recommendations": [],
+    }
+    write_json(LATEST_PATH, latest)
+
+
 def write_fallback(now: datetime, today: str, previous: dict[str, Any]) -> None:
     previous_boards = previous.get("boards", [])
-    previous_recs = previous.get("recommendations", [])
+    previous_meta = previous.get("meta", {})
+    same_day = previous_meta.get("tradingDate") == today
+    previous_recs = previous.get("recommendations", []) if same_day else []
+    recommendation_generated_at = (
+        previous_meta.get("recommendationGeneratedAt") or previous_meta.get("generatedAt")
+        if previous_recs
+        else None
+    )
     previous_news = previous.get("news", [])
     if previous_boards or previous_recs:
         mark_source(
@@ -163,12 +245,15 @@ def write_fallback(now: datetime, today: str, previous: dict[str, Any]) -> None:
             "generatedAt": now.isoformat(),
             "tradingDate": today,
             "mode": "cached-fallback" if (previous_boards or previous_recs) else "no-current-data",
+            "recommendationGeneratedAt": recommendation_generated_at,
+            "recommendationsRetained": bool(previous_recs),
             "sourceHealth": source_list(previous),
             "errors": (errors or ["No usable quote rows returned this run."])[:30],
             "runtimeSeconds": round(time.monotonic() - STARTED, 2),
         },
         "market": {
-            "recommendationCount": len(previous_recs),
+            "recommendationCount": sum(1 for item in previous_recs if item.get("actionable") is not False),
+            "watchOnlyCount": sum(1 for item in previous_recs if item.get("actionable") is False),
             "qualifiedBoardCount": len(previous_boards),
             "monitor": previous.get("market", {}).get("monitor", {}),
         },
