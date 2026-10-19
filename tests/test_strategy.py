@@ -272,6 +272,46 @@ class StrategyV31Tests(unittest.TestCase):
         night = datetime(2026, 7, 16, 20, 0, tzinfo=STRATEGY.CN_TZ)
         self.assertEqual(STRATEGY.active_strategy_windows(night), set())
 
+    def test_same_day_recommendations_are_retained_after_close(self):
+        recommendation = {"code": "000001", "actionable": True}
+        previous = {
+            "meta": {
+                "tradingDate": "2026-10-19",
+                "generatedAt": "2026-10-19T14:50:00+08:00",
+            },
+            "recommendations": [recommendation],
+        }
+
+        rows, generated_at, retained = STRATEGY.recommendation_snapshot_for_output(
+            [],
+            previous,
+            datetime(2026, 10, 19, 20, 0, tzinfo=STRATEGY.CN_TZ),
+        )
+
+        self.assertEqual(rows, [recommendation])
+        self.assertEqual(generated_at, "2026-10-19T14:50:00+08:00")
+        self.assertTrue(retained)
+
+    def test_recommendations_are_not_carried_into_the_next_day(self):
+        previous = {
+            "meta": {
+                "tradingDate": "2026-10-19",
+                "recommendationGeneratedAt": "2026-10-19T14:50:00+08:00",
+                "generatedAt": "2026-10-19T20:00:00+08:00",
+            },
+            "recommendations": [{"code": "000001", "actionable": True}],
+        }
+
+        rows, generated_at, retained = STRATEGY.recommendation_snapshot_for_output(
+            [],
+            previous,
+            datetime(2026, 10, 20, 0, 5, tzinfo=STRATEGY.CN_TZ),
+        )
+
+        self.assertEqual(rows, [])
+        self.assertIsNone(generated_at)
+        self.assertFalse(retained)
+
     def test_market_breadth_hard_veto_blocks_crash_state(self):
         winners = [tail_quote(code=f"600{i:03d}", pct=9.9) for i in range(35)]
         losers = [tail_quote(code=f"000{i:03d}", pct=-8.0) for i in range(70)]
