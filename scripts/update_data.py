@@ -64,6 +64,10 @@ SIMPLE_EXECUTION_SCORE_MIN = 65
 EXECUTION_TOLERANCE_SCORE_MIN = 60
 LEARNED_RECOVERY_PROXY_MAX = 70
 LEARNED_MA5_EXTENSION_MIN = 3.0
+DELAYED_ENTRY_MIN_SCORE = 64
+DELAYED_ENTRY_MAX_MA5_DEVIATION = 10.0
+DELAYED_ENTRY_MAX_GAIN_5D = 20.0
+DELAYED_ENTRY_MAX_GAIN_10D = 32.0
 
 errors: list[str] = []
 source_health: dict[str, dict[str, Any]] = {}
@@ -90,7 +94,16 @@ def main() -> None:
     recommendation_board_pool = select_recommendation_boards(evaluated_boards)
     am_top_quotes = fetch_all_a_shares() if STRATEGY_AM_TOP in active_strategies and remaining_seconds() > 35 else []
     market_quotes = fetch_market_breadth(am_top_quotes or None) if remaining_seconds() > 35 else []
-    market_monitor = build_market_monitor(market_quotes, evaluated_boards)
+    five_day_market_trend = fetch_five_day_market_trend(now) if remaining_seconds() > 20 else {}
+    if not five_day_market_trend.get("available"):
+        cached_trend = (
+            previous.get("market", {})
+            .get("monitor", {})
+            .get("fiveDayTrend", {})
+        )
+        if cached_trend.get("available"):
+            five_day_market_trend = {**cached_trend, "cached": True}
+    market_monitor = build_market_monitor(market_quotes, evaluated_boards, five_day_market_trend)
     recommendations = build_recommendations(recommendation_board_pool, now, am_top_quotes, market_monitor)
     actionable_recommendations = [item for item in recommendations if item.get("actionable") is not False]
     no_recommendation_reason = None
@@ -247,6 +260,14 @@ def enrich_tail_history(quote: dict[str, Any], now: datetime) -> dict[str, Any]:
 
 def fetch_daily_klines(code: str) -> list[dict[str, Any]]:
     secid = f"{1 if code.startswith('6') else 0}.{code}"
+    return fetch_daily_klines_by_secid(secid, code)
+
+
+def fetch_daily_klines_by_secid(
+    secid: str,
+    label: str,
+    limit: int = 16,
+) -> list[dict[str, Any]]:
     params = {
         "secid": secid,
         "ut": EASTMONEY_UT,
@@ -255,7 +276,7 @@ def fetch_daily_klines(code: str) -> list[dict[str, Any]]:
         "klt": "101",
         "fqt": "1",
         "end": "20500101",
-        "lmt": "16",
+        "lmt": str(limit),
     }
     url = "https://push2his.eastmoney.com/api/qt/stock/kline/get?" + parse.urlencode(params)
     try:
@@ -284,8 +305,108 @@ def fetch_daily_klines(code: str) -> list[dict[str, Any]]:
             mark_source("Eastmoney", True, url, "Quote snapshot and daily K-line history OK")
         return result
     except Exception as exc:
-        errors.append(f"Eastmoney daily K skipped for {code}: {short_error(exc)}")
+        errors.append(f"Eastmoney daily K skipped for {label}: {short_error(exc)}")
         return []
+
+
+def summarize_index_five_day_trend(
+    rows: list[dict[str, Any]],
+    now: datetime,
+) -> dict[str, Any]:
+    today = now.strftime("%Y-%m-%d")
+    completed = [row for row in rows if row.get("date") and row["date"] < today and row.get("close")]
+    window = completed[-5:]
+    if len(window) < 5:
+        return {"available": False, "sampleCount": len(window)}
+
+    closes = [float(row["close"]) for row in window]
+    previous_window = completed[-6:-1]
+    ma5 = sum(closes) / 5
+    previous_ma5 = (
+        sum(float(row["close"]) for row in previous_window) / 5
+        if len(previous_window) == 5
+        else None
+    )
+    return_pct = ((closes[-1] / closes[0]) - 1) * 100 if closes[0] else 0
+    positive_days = sum(1 for row in window if (row.get("pct") or 0) > 0)
+    return {
+        "available": True,
+        "sampleCount": 5,
+        "from": window[0]["date"],
+        "to": window[-1]["date"],
+        "returnPct": round2(return_pct),
+        "positiveDays": positive_days,
+        "ma5": round2(ma5),
+        "previousMa5": round2(previous_ma5),
+        "ma5Rising": previous_ma5 is None or ma5 >= previous_ma5,
+        "closeAboveMa5": closes[-1] >= ma5 * 0.995,
+    }
+
+
+def build_five_day_market_trend(
+    index_rows: dict[str, list[dict[str, Any]]],
+    now: datetime,
+) -> dict[str, Any]:
+    indexes = {
+        name: summarize_index_five_day_trend(rows, now)
+        for name, rows in index_rows.items()
+    }
+    valid = [item for item in indexes.values() if item.get("available")]
+    if not valid:
+        return {
+            "available": False,
+            "level": "UNKNOWN",
+            "gatePassed": None,
+            "score": None,
+            "indexes": indexes,
+        }
+
+    average_return = sum(item.get("returnPct") or 0 for item in valid) / len(valid)
+    rising_count = sum(item.get("ma5Rising") is True for item in valid)
+    above_count = sum(item.get("closeAboveMa5") is True for item in valid)
+    average_positive_days = sum(item.get("positiveDays") or 0 for item in valid) / len(valid)
+    trend_checks = [
+        average_return >= -1.0,
+        average_return >= 0,
+        rising_count >= 1,
+        rising_count == len(valid),
+        above_count >= 1,
+        average_positive_days >= 2,
+    ]
+    score = sum(trend_checks)
+    if score >= 5 and average_return >= 0:
+        level = "RISING"
+    elif score >= 3 and average_return >= -2.5:
+        level = "STABLE"
+    else:
+        level = "FALLING"
+    return {
+        "available": True,
+        "level": level,
+        "gatePassed": level != "FALLING",
+        "score": score,
+        "averageReturnPct": round2(average_return),
+        "averagePositiveDays": round2(average_positive_days),
+        "risingIndexCount": rising_count,
+        "aboveMa5IndexCount": above_count,
+        "indexes": indexes,
+    }
+
+
+def fetch_five_day_market_trend(now: datetime) -> dict[str, Any]:
+    index_specs = {
+        "shanghai": ("1.000001", "Shanghai Composite"),
+        "shenzhen": ("0.399001", "Shenzhen Component"),
+    }
+    index_rows = {
+        name: fetch_daily_klines_by_secid(secid, label, 10)
+        for name, (secid, label) in index_specs.items()
+    }
+    for name, (secid, label) in index_specs.items():
+        if not index_rows[name] and remaining_seconds() > 12:
+            time.sleep(0.25)
+            index_rows[name] = fetch_daily_klines_by_secid(secid, label, 10)
+    return build_five_day_market_trend(index_rows, now)
 
 
 def build_daily_metrics(
@@ -383,17 +504,35 @@ def project_amount_to_close(amount: float, now: datetime) -> float:
     return amount * min(2.0, 240 / max(30, elapsed))
 
 
-def build_market_monitor(stocks: list[dict[str, Any]], boards: list[dict[str, Any]]) -> dict[str, Any]:
+def build_market_monitor(
+    stocks: list[dict[str, Any]],
+    boards: list[dict[str, Any]],
+    five_day_trend: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    trend = five_day_trend or {
+        "available": False,
+        "level": "UNKNOWN",
+        "gatePassed": None,
+    }
     if not stocks:
         hot_boards = sum(1 for board in boards[:12] if (board.get("passed") or 0) >= 4)
         score = 50 + min(25, hot_boards * 4)
         market_gate_score = min(5, hot_boards)
+        trend_falling = trend.get("level") == "FALLING"
+        risk_level = (
+            "RISK_OFF"
+            if trend_falling and market_gate_score < 2
+            else "NORMAL"
+            if score >= 60 and market_gate_score >= 3 and trend.get("level") != "FALLING"
+            else "CAUTION"
+        )
         return {
             "emotionScore": clamp(score, 0, 100),
             "marketGateScore": market_gate_score,
-            "marketGatePassed": market_gate_score >= 3,
-            "hardVeto": False,
-            "riskLevel": "NORMAL" if score >= 60 and market_gate_score >= 3 else "CAUTION",
+            "marketGatePassed": risk_level != "RISK_OFF",
+            "hardVeto": risk_level == "RISK_OFF",
+            "riskLevel": risk_level,
+            "fiveDayTrend": trend,
             "limitUpCount": None,
             "limitDownCount": None,
             "brokenBoardRate": None,
@@ -416,7 +555,13 @@ def build_market_monitor(stocks: list[dict[str, Any]], boards: list[dict[str, An
         (top_board_pct or 0) >= 0 and big_down_count <= 50,
     ]
     market_gate_score = sum(market_checks)
-    hard_veto = broken_rate > 0.50 or limit_down_count >= 25 or big_down_count >= 70
+    daily_stress = broken_rate > 0.50 or limit_down_count >= 25 or big_down_count >= 70
+    emergency_veto = broken_rate > 0.65 or limit_down_count >= 45 or big_down_count >= 110
+    trend_level = trend.get("level") or "UNKNOWN"
+    if trend_level == "UNKNOWN":
+        hard_veto = daily_stress
+    else:
+        hard_veto = emergency_veto or (trend_level == "FALLING" and daily_stress)
 
     score = 50
     if limit_up_count >= 30:
@@ -442,16 +587,23 @@ def build_market_monitor(stocks: list[dict[str, Any]], boards: list[dict[str, An
     elif (top_board_pct or 0) < 0:
         score -= 8
     score = round(clamp(score, 0, 100), 1)
-    if hard_veto or market_gate_score < 3:
+    if hard_veto:
         risk_level = "RISK_OFF"
     else:
-        risk_level = "NORMAL" if score >= 60 else "CAUTION"
+        risk_level = (
+            "NORMAL"
+            if score >= 60 and market_gate_score >= 3 and trend_level in {"RISING", "UNKNOWN"}
+            else "CAUTION"
+        )
     return {
         "emotionScore": score,
         "marketGateScore": market_gate_score,
-        "marketGatePassed": market_gate_score >= 3 and not hard_veto,
+        "marketGatePassed": not hard_veto,
         "hardVeto": hard_veto,
         "riskLevel": risk_level,
+        "dailyStress": daily_stress,
+        "emergencyVeto": emergency_veto,
+        "fiveDayTrend": trend,
         "limitUpCount": limit_up_count,
         "limitDownCount": limit_down_count,
         "bigDownCount": big_down_count,
@@ -461,7 +613,7 @@ def build_market_monitor(stocks: list[dict[str, Any]], boards: list[dict[str, An
         "breadthSampleSize": len(stocks),
         "breadthMethod": "top-100 plus bottom-100 movers",
         "topBoardPct": round2(top_board_pct or 0),
-        "note": "RISK_OFF blocks new buys; CAUTION keeps only high-edge candidates.",
+        "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached.",
     }
 
 
@@ -659,15 +811,7 @@ def build_recommendations(
     )
     recommendations = diversify_recommendations(recommendations)
     if market_monitor and market_monitor.get("riskLevel") == "CAUTION":
-        recommendations = [
-            item
-            for item in recommendations
-            if item.get("strategyTag") == STRATEGY_AM_TOP
-            or (
-                item.get("candidateStatus") == "STRONG_CANDIDATE"
-                and (item.get("riskPct") or 99) <= 4.2
-            )
-        ]
+        recommendations = [item for item in recommendations if market_allows_candidate(item, market_monitor)]
     recommendations = prioritize_executable_recommendations(recommendations)
     recommendations = recommendations[:MAX_RECOMMENDATIONS]
 
@@ -692,6 +836,25 @@ def prioritize_executable_recommendations(items: list[dict[str, Any]]) -> list[d
         and item.get("executionMode") == "QUEUE_ONLY"
     ]
     return [*executable, *queue_only[:MAX_QUEUE_ONLY_LIMIT_UP_RECOMMENDATIONS]]
+
+
+def market_allows_candidate(item: dict[str, Any], market_monitor: dict[str, Any]) -> bool:
+    if item.get("strategyTag") == STRATEGY_AM_TOP:
+        return True
+    parsed_risk_pct = number(item.get("riskPct"))
+    risk_pct = parsed_risk_pct if parsed_risk_pct is not None else 99
+    status = item.get("candidateStatus")
+    delayed_watch = item.get("delayedEntryWatch") is True
+    trend_level = (market_monitor.get("fiveDayTrend") or {}).get("level") or "UNKNOWN"
+    if trend_level == "RISING":
+        return risk_pct <= 5.5 and (status in {"STRONG_CANDIDATE", "NORMAL_CANDIDATE"} or delayed_watch)
+    if trend_level == "STABLE":
+        return risk_pct <= (4.5 if delayed_watch else 4.8) and status in {
+            "STRONG_CANDIDATE",
+            "NORMAL_CANDIDATE",
+            "OBSERVE",
+        }
+    return status == "STRONG_CANDIDATE" and risk_pct <= 4.2
 
 
 def diversify_recommendations(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -794,6 +957,33 @@ def trend_persistence_ok(metrics: dict[str, Any]) -> bool:
     ]
     known = [flag for flag in flags if flag is not None]
     return len(known) < 2 or sum(flag is True for flag in known) >= 2
+
+
+def delayed_entry_watch_eligible(
+    metrics: dict[str, Any],
+    final_score: float,
+    crowding_score: float,
+    tolerance_score: float,
+    recovery_score: float,
+) -> bool:
+    deviation = number(metrics.get("deviationMA5Pct"))
+    gain5 = number(metrics.get("gain5dPct"))
+    gain10 = number(metrics.get("gain10dPct"))
+    return bool(
+        metrics.get("historyAvailable")
+        and final_score >= DELAYED_ENTRY_MIN_SCORE
+        and metrics.get("ma5Rising") is not False
+        and trend_persistence_ok(metrics)
+        and deviation is not None
+        and -3.0 <= deviation <= DELAYED_ENTRY_MAX_MA5_DEVIATION
+        and gain5 is not None
+        and 0 <= gain5 <= DELAYED_ENTRY_MAX_GAIN_5D
+        and gain10 is not None
+        and 0 <= gain10 <= DELAYED_ENTRY_MAX_GAIN_10D
+        and crowding_score < OCR_DOWNGRADE
+        and tolerance_score >= 65
+        and recovery_score >= 75
+    )
 
 
 def estimate_overnight_crowding_score(quote: dict[str, Any]) -> float:
@@ -1150,7 +1340,14 @@ def evaluate_stock_snapshot(
         if final_score >= 64
         else "REJECT"
     )
-    if candidate_status not in ("STRONG_CANDIDATE", "NORMAL_CANDIDATE"):
+    delayed_entry_watch = delayed_entry_watch_eligible(
+        metrics,
+        final_score,
+        crowding_score,
+        tolerance_score,
+        recovery_score,
+    )
+    if candidate_status not in ("STRONG_CANDIDATE", "NORMAL_CANDIDATE") and not delayed_entry_watch:
         return None
     initial_plan = (
         "PLAN_T"
@@ -1193,6 +1390,8 @@ def evaluate_stock_snapshot(
         **entry_feasibility,
         "strategyId": TAIL_STRATEGY_ID,
         "candidateStatus": candidate_status,
+        "recommendationMode": "DELAYED_ENTRY_WATCH" if delayed_entry_watch and candidate_status == "OBSERVE" else "STANDARD",
+        "delayedEntryWatch": delayed_entry_watch,
         "finalScore": final_score,
         "t1EdgeScore": t1_edge_score,
         "expectedReturnPct": round2(expected_return),
