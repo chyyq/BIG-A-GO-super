@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-19T20:55:50.985485+08:00",
+    "generatedAt": "2026-10-19T21:17:10.701202+08:00",
     "tradingDate": "2026-10-19",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -10,7 +10,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
         "note": "OK"
       },
       {
@@ -44,10 +44,9 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 113.05
+    "runtimeSeconds": 104.05
   },
   "market": {
     "recommendationCount": 0,
@@ -117,20 +116,20 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1408",
-      "name": "机器人",
-      "kind": "Industry board",
-      "price": 8319.85,
-      "pct": 2.9,
-      "amount": 8278778712.0,
-      "turnover": 2.17,
-      "open": 8047.13,
-      "preClose": 8085.06,
-      "mainNet": 787561248.0,
-      "rank": 9,
+      "code": "BK1145",
+      "name": "机器人执行器",
+      "kind": "Concept board",
+      "price": 1883.05,
+      "pct": 2.95,
+      "amount": 14176931095.0,
+      "turnover": 2.56,
+      "open": 1822.74,
+      "preClose": 1829.05,
+      "mainNet": 631848112.0,
+      "rank": 10,
       "passed": 2,
       "qualified": false,
-      "score": 47.65,
+      "score": 47.3,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -141,16 +140,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1500",
-      "name": "医美耗材",
+      "code": "BK1408",
+      "name": "机器人",
       "kind": "Industry board",
-      "price": 1407.62,
-      "pct": 2.58,
-      "amount": 515365075.0,
-      "turnover": 0.77,
-      "open": 1378.29,
-      "preClose": 1372.2,
-      "mainNet": 24131844.0,
+      "price": 8319.85,
+      "pct": 2.9,
+      "amount": 8278778712.0,
+      "turnover": 2.17,
+      "open": 8047.13,
+      "preClose": 8085.06,
+      "mainNet": 787561248.0,
       "rank": 11,
       "passed": 2,
       "qualified": false,
@@ -162,16 +161,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1423",
-      "name": "纺织化学制品",
+      "code": "BK1240",
+      "name": "厨卫电器",
       "kind": "Industry board",
-      "price": 1629.82,
-      "pct": 2.46,
-      "amount": 4236442345.0,
-      "turnover": 6.33,
-      "open": 1581.19,
-      "preClose": 1590.74,
-      "mainNet": 249489808.0,
+      "price": 5887.63,
+      "pct": 2.8,
+      "amount": 1472010984.0,
+      "turnover": 2.52,
+      "open": 5687.99,
+      "preClose": 5727.45,
+      "mainNet": 104402723.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -229,6 +228,29 @@
       "bigUpCount": 0
     },
     {
+      "code": "BK1675",
+      "name": "历史新高",
+      "kind": "Concept board",
+      "price": 1920.2,
+      "pct": 3.35,
+      "amount": 5748151431.0,
+      "turnover": 1.08,
+      "open": 1855.9,
+      "preClose": 1857.94,
+      "mainNet": 82332304.0,
+      "rank": 5,
+      "passed": 1,
+      "qualified": false,
+      "score": 32.65,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": 0.58,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
       "code": "BK1451",
       "name": "厨房电器",
       "kind": "Industry board",
@@ -239,10 +261,10 @@
       "open": 8322.93,
       "preClose": 8361.97,
       "mainNet": 80890050.0,
-      "rank": 5,
+      "rank": 6,
       "passed": 1,
       "qualified": false,
-      "score": 32.65,
+      "score": 32.3,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -262,10 +284,10 @@
       "open": 790.68,
       "preClose": 793.34,
       "mainNet": -9389667.0,
-      "rank": 6,
+      "rank": 7,
       "passed": 1,
       "qualified": false,
-      "score": 32.3,
+      "score": 31.95,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -285,10 +307,10 @@
       "open": 1060.08,
       "preClose": 1068.14,
       "mainNet": 39746893.0,
-      "rank": 7,
+      "rank": 8,
       "passed": 1,
       "qualified": false,
-      "score": 31.95,
+      "score": 31.6,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -308,33 +330,10 @@
       "open": 2673.01,
       "preClose": 2684.34,
       "mainNet": 145364672.0,
-      "rank": 8,
+      "rank": 9,
       "passed": 1,
       "qualified": false,
-      "score": 31.6,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1240",
-      "name": "厨卫电器",
-      "kind": "Industry board",
-      "price": 5887.63,
-      "pct": 2.8,
-      "amount": 1472010984.0,
-      "turnover": 2.52,
-      "open": 5687.99,
-      "preClose": 5727.45,
-      "mainNet": 104402723.0,
-      "rank": 10,
-      "passed": 1,
-      "qualified": false,
-      "score": 30.9,
+      "score": 31.25,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -354,7 +353,7 @@
     },
     {
       "source": "Yicai",
-      "title": "潘功胜：审慎评估人工智能对金融市场、货币政策影响，前瞻性做好政策准备人工智能热潮已成全球股市上涨主要动力之一。  42分钟前",
+      "title": "潘功胜：审慎评估人工智能对金融市场、货币政策影响，前瞻性做好政策准备人工智能热潮已成全球股市上涨主要动力之一。  1小时前",
       "url": "https://www.yicai.com/news/103399470.html",
       "time": ""
     },
