@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-20T18:19:59.754439+08:00",
+    "generatedAt": "2026-10-20T18:23:31.511500+08:00",
     "tradingDate": "2026-10-20",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,8 +12,8 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
-        "note": "Quote snapshot and daily K-line history OK"
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1295%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "note": "OK"
       },
       {
         "name": "Eastmoney News",
@@ -46,10 +46,13 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 88.46
+    "runtimeSeconds": 90.11
   },
   "market": {
     "recommendationCount": 0,
@@ -95,7 +98,8 @@
             "ma5Rising": false,
             "closeAboveMa5": false
           }
-        }
+        },
+        "cached": true
       },
       "limitUpCount": null,
       "limitDownCount": null,
@@ -150,8 +154,8 @@
       ],
       "continuous": true,
       "amountRatio": 1.3,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 2
     },
     {
       "code": "BK1500",
