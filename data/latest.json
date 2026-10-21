@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-21T20:09:04.952660+08:00",
+    "generatedAt": "2026-10-21T20:15:59.704546+08:00",
     "tradingDate": "2026-10-21",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,18 +24,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
-      "Eastmoney clist failed: HTTP 502",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
@@ -54,7 +54,7 @@
       "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 100.38
+    "runtimeSeconds": 111.33
   },
   "market": {
     "recommendationCount": 1,
@@ -784,27 +784,51 @@
   ],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "A股三大指数收跌 成交额不足1.5万亿 IT服务板块逆市走强",
+      "url": "https://finance.eastmoney.com/a/202610213902586860.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "法德利差再破150基点，法国国债正在被重新“开价”法国社会动荡叠加高债务、财政赤字及拥挤交易等多重因素，正触发市场对法国主权债的重新定价。  1小时前",
-      "url": "https://www.yicai.com/news/103402778.html",
+      "source": "Eastmoney News",
+      "title": "日韩股市直线拉升！两大存储巨头爆发",
+      "url": "https://finance.eastmoney.com/a/202610213902014577.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "法国金融市场拉响警报！贝森特首次表态：不会蔓延，但避险资金正回流美债法国10年期国债收益率曾升至4.963%，创下2002年以来的最高水平。  1小时前",
-      "url": "https://www.yicai.com/news/103402726.html",
+      "source": "Eastmoney News",
+      "title": "西部证券孙寅：主动ETF填补空白，先行赔付制度建设压实中介责任",
+      "url": "https://finance.eastmoney.com/a/202610213902780110.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "恒生科技指数跌破4000点｜市场观察行情反转需要超预期政策使得市场流动性改善。  2小时前",
-      "url": "https://www.yicai.com/news/103402658.html",
+      "source": "Eastmoney News",
+      "title": "恒生科技指数跌破4000点｜市场观察",
+      "url": "https://finance.eastmoney.com/a/202610213902741486.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中金公司李求索：资本市场中长期配置价值凸显",
+      "url": "https://finance.eastmoney.com/a/202610213902728155.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "上交所召开首批主动ETF市场动员会 引导中长期资金入市",
+      "url": "https://finance.eastmoney.com/a/202610213902772971.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
