@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-22T18:41:43.778865+08:00",
+    "generatedAt": "2026-10-22T19:39:20.549373+08:00",
     "tradingDate": "2026-10-22",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,8 +12,8 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
-        "note": "OK"
+        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
+        "note": "Quote snapshot and daily K-line history OK"
       },
       {
         "name": "Eastmoney News",
@@ -35,7 +35,6 @@
       }
     ],
     "errors": [
-      "Eastmoney clist failed: HTTP 502",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
@@ -48,12 +47,9 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response"
+      "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 82.08
+    "runtimeSeconds": 92.25
   },
   "market": {
     "recommendationCount": 0,
@@ -99,8 +95,7 @@
             "ma5Rising": false,
             "closeAboveMa5": false
           }
-        },
-        "cached": true
+        }
       },
       "limitUpCount": null,
       "limitDownCount": null,
@@ -379,14 +374,26 @@
   "news": [
     {
       "source": "Eastmoney News",
+      "title": "昨日重现！多只宽基ETF尾盘10分钟爆量 已有超2100亿资金借道“扫货”",
+      "url": "https://finance.eastmoney.com/a/202610223904060740.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "A股三大指数收跌 医疗美容与机器人板块逆市上涨",
       "url": "https://finance.eastmoney.com/a/202610223904049940.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "昨日重现！多只宽基ETF尾盘10分钟爆量 已有超2100亿资金借道“扫货”",
-      "url": "https://finance.eastmoney.com/a/202610223904060740.html",
+      "title": "德邦证券程强：A股整体估值已经进入合理区间 看好后续A股市场表现",
+      "url": "https://finance.eastmoney.com/a/202610223904316219.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "如何对冲AI风险？ 工行、建行齐创历史新高 | 权益市场日报",
+      "url": "https://finance.eastmoney.com/a/202610223904247864.html",
       "time": ""
     },
     {
@@ -403,20 +410,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "从扎堆到扎根，看一级市场的虚弱、失衡与价值重估",
-      "url": "https://finance.eastmoney.com/a/202610223903956348.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "沪指失守3700点 江浙地区有私募爆仓？",
-      "url": "https://finance.eastmoney.com/a/202610223904144760.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "title": "创业板指回到“10&#183;8” 成分股表现分化",
+      "url": "https://finance.eastmoney.com/a/202610223904307564.html",
       "time": ""
     }
   ]
