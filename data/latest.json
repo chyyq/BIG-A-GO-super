@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-27T20:30:47.986566+08:00",
+    "generatedAt": "2026-10-27T20:36:21.883142+08:00",
     "tradingDate": "2026-10-27",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,7 +12,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
         "note": "OK"
       },
       {
@@ -47,14 +47,13 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 96.06
+    "runtimeSeconds": 77.3
   },
   "market": {
     "recommendationCount": 0,
@@ -146,10 +145,34 @@
       "open": 2427.93,
       "preClose": 2437.56,
       "mainNet": 677354976.0,
-      "rank": 6,
+      "rank": 7,
       "passed": 2,
       "qualified": false,
-      "score": 48.7,
+      "score": 48.35,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1630",
+      "name": "昨日首板",
+      "kind": "Concept board",
+      "price": 8833.71,
+      "pct": 1.58,
+      "amount": 20995531988.0,
+      "turnover": 8.93,
+      "open": 8862.25,
+      "preClose": 8696.36,
+      "mainNet": -326194976.0,
+      "rank": 8,
+      "passed": 2,
+      "qualified": false,
+      "score": 48.0,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -170,16 +193,37 @@
       "open": 1631.19,
       "preClose": 1634.88,
       "mainNet": -158923392.0,
-      "rank": 7,
+      "rank": 9,
       "passed": 2,
       "qualified": false,
-      "score": 48.35,
+      "score": 47.65,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
       "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1030",
+      "name": "电机Ⅱ",
+      "kind": "Industry board",
+      "price": 2354.78,
+      "pct": 1.38,
+      "amount": 10638412756.0,
+      "turnover": 5.15,
+      "open": 2303.26,
+      "preClose": 2322.64,
+      "mainNet": 725130352.0,
+      "rank": 11,
+      "passed": 2,
+      "qualified": false,
+      "score": 37,
+      "criteria": [
+        "Board is near the top of today's movers"
+      ],
       "limitUpCount": 0,
       "bigUpCount": 0
     },
@@ -194,51 +238,6 @@
       "open": 4360.25,
       "preClose": 4375.36,
       "mainNet": 769581056.0,
-      "rank": 10,
-      "passed": 2,
-      "qualified": false,
-      "score": 47.3,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK0475",
-      "name": "银行Ⅱ",
-      "kind": "Industry board",
-      "price": 4433.97,
-      "pct": 1.34,
-      "amount": 37882823372.0,
-      "turnover": 0.35,
-      "open": 4360.25,
-      "preClose": 4375.36,
-      "mainNet": 769581056.0,
-      "rank": 11,
-      "passed": 2,
-      "qualified": false,
-      "score": 37,
-      "criteria": [
-        "Board is near the top of today's movers"
-      ],
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1552",
-      "name": "超市",
-      "kind": "Industry board",
-      "price": 1598.18,
-      "pct": 1.32,
-      "amount": 1948863910.0,
-      "turnover": 2.4,
-      "open": 1568.86,
-      "preClose": 1577.32,
-      "mainNet": 43461753.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -246,6 +245,29 @@
       "criteria": [
         "Board is near the top of today's movers"
       ],
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1099",
+      "name": "轮毂电机",
+      "kind": "Concept board",
+      "price": 991.61,
+      "pct": 2.43,
+      "amount": 1851990701.0,
+      "turnover": 3.6,
+      "open": 974.54,
+      "preClose": 968.08,
+      "mainNet": 177617043.0,
+      "rank": 2,
+      "passed": 1,
+      "qualified": false,
+      "score": 33.7,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
       "limitUpCount": 0,
       "bigUpCount": 0
     },
@@ -260,10 +282,10 @@
       "open": 1923.6,
       "preClose": 1935.74,
       "mainNet": 196023424.0,
-      "rank": 2,
+      "rank": 3,
       "passed": 1,
       "qualified": false,
-      "score": 33.7,
+      "score": 33.35,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -283,10 +305,10 @@
       "open": 1317.39,
       "preClose": 1316.83,
       "mainNet": 38360932.0,
-      "rank": 3,
+      "rank": 4,
       "passed": 1,
       "qualified": false,
-      "score": 33.35,
+      "score": 33.0,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -306,10 +328,10 @@
       "open": 422.19,
       "preClose": 424.98,
       "mainNet": -3736751.0,
-      "rank": 4,
+      "rank": 5,
       "passed": 1,
       "qualified": false,
-      "score": 33.0,
+      "score": 32.65,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -329,10 +351,10 @@
       "open": 1447.88,
       "preClose": 1447.87,
       "mainNet": 37344249.0,
-      "rank": 5,
+      "rank": 6,
       "passed": 1,
       "qualified": false,
-      "score": 32.65,
+      "score": 32.3,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -352,33 +374,10 @@
       "open": 2303.26,
       "preClose": 2322.64,
       "mainNet": 725130352.0,
-      "rank": 8,
+      "rank": 10,
       "passed": 1,
       "qualified": false,
-      "score": 31.6,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": 1.03,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1030",
-      "name": "电机Ⅱ",
-      "kind": "Industry board",
-      "price": 2354.78,
-      "pct": 1.38,
-      "amount": 10638412756.0,
-      "turnover": 5.15,
-      "open": 2303.26,
-      "preClose": 2322.64,
-      "mainNet": 725130352.0,
-      "rank": 9,
-      "passed": 1,
-      "qualified": false,
-      "score": 31.25,
+      "score": 30.9,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -656,51 +655,33 @@
   ],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数收跌 成交额不足1.5万亿 银行股逆市走强",
-      "url": "https://finance.eastmoney.com/a/202610273909730882.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "3万亿巨头创新高 总市值重回A股第一！银行股逆势走强 红利资产再获资金青睐",
-      "url": "https://finance.eastmoney.com/a/202610273909469584.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "兴业证券宏观首席段超团队：上半年全A每股收益增12.8% 人民币资产估值修复可期",
-      "url": "https://finance.eastmoney.com/a/202610273910227694.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "泰康基金宋仁杰：净资产和分红凸显估值吸引力，大盘蓝筹蕴藏A股扎实投资价值",
-      "url": "https://finance.eastmoney.com/a/202610273910261025.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "title": "Anthropic冲刺IPO，A股AI产业链为何“先涨后跌”后续行情能否升级为基本面重估仍取决于云巨头财报与国产模型迭代的实际表现。  5分钟前",
+      "url": "https://www.yicai.com/news/103411745.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "资金重回机器人：从“造身体”到“喂大脑”，物理AI新叙事浮现从硬件本体到数据基建，物理AI浪潮下的逻辑叙事  13分钟前",
+      "url": "https://www.yicai.com/news/103411729.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "财报解读｜泡泡玛特三季度收益同比降45%至50%，高管说法来了泡泡玛特 2026 年第三季度整体收益同比大幅下降，四大区域市场均出现显著下滑。  32分钟前",
+      "url": "https://www.yicai.com/news/103411691.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "财报解读｜有航运企业净利暴增224%！“航运超级周期”信号显现航运市场景气度回升已体现在多家企业前三季度利润表中。  2小时前",
+      "url": "https://www.yicai.com/news/103411492.html",
       "time": ""
     }
   ]
