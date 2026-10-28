@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-28T21:27:08.627612+08:00",
+    "generatedAt": "2026-10-28T21:33:56.497329+08:00",
     "tradingDate": "2026-10-28",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,7 +12,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1330%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
       },
       {
@@ -45,24 +45,21 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 73.88
+    "runtimeSeconds": 105.08
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 0,
+    "qualifiedBoardCount": 1,
     "monitor": {
-      "emotionScore": 50,
-      "marketGateScore": 0,
+      "emotionScore": 54,
+      "marketGateScore": 1,
       "marketGatePassed": false,
       "hardVeto": true,
       "riskLevel": "RISK_OFF",
@@ -122,17 +119,19 @@
       "preClose": 5487.19,
       "mainNet": 125132544.0,
       "rank": 2,
-      "passed": 2,
-      "qualified": false,
-      "score": 50.1,
+      "passed": 4,
+      "qualified": true,
+      "score": 82.9,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Board amount expands at least 1.30x",
+        "[SectorGate] Leaders have follow-through support"
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 2,
+      "bigUpCount": 20
     },
     {
       "code": "BK1600",
@@ -204,16 +203,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1438",
-      "name": "合成树脂",
-      "kind": "Industry board",
-      "price": 7971.85,
-      "pct": 4.9,
-      "amount": 5325762202.0,
-      "turnover": 4.67,
-      "open": 7660.09,
-      "preClose": 7599.79,
-      "mainNet": 400791456.0,
+      "code": "BK1145",
+      "name": "机器人执行器",
+      "kind": "Concept board",
+      "price": 2081.36,
+      "pct": 5.05,
+      "amount": 29466990305.0,
+      "turnover": 4.49,
+      "open": 1986.99,
+      "preClose": 1981.38,
+      "mainNet": 1719880976.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -244,8 +243,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 2
     },
     {
       "code": "BK1385",
@@ -414,12 +413,6 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "国金证券宋雪涛：系列改革为中国资产长期价值的释放夯实制度基础",
-      "url": "https://finance.eastmoney.com/a/202610283912492932.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "东方财富证券开户",
       "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
@@ -434,6 +427,12 @@
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "两融余额回撤6200亿，杠杆资金结构性换仓从3.03万亿到2.41万亿，融资余额已回吐年内全部增量。  15分钟前",
+      "url": "https://www.yicai.com/news/103413911.html",
       "time": ""
     }
   ]
