@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-29T15:29:29.613363+08:00",
+    "generatedAt": "2026-10-29T15:34:23.880481+08:00",
     "tradingDate": "2026-10-29",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -34,21 +34,32 @@
         "note": "Optional news source OK"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 39.09
+    "errors": [
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response"
+    ],
+    "runtimeSeconds": 78.17
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 3,
+    "qualifiedBoardCount": 0,
     "monitor": {
-      "emotionScore": 64,
-      "marketGateScore": 3,
+      "emotionScore": 50,
+      "marketGateScore": 0,
       "marketGatePassed": true,
       "hardVeto": false,
       "riskLevel": "CAUTION",
-      "dailyStress": true,
-      "emergencyVeto": false,
       "fiveDayTrend": {
         "available": true,
         "level": "STABLE",
@@ -85,45 +96,13 @@
           }
         }
       },
-      "limitUpCount": 41,
-      "limitDownCount": 36,
-      "bigDownCount": 100,
-      "limitTouchCount": 54,
-      "brokenBoardCount": 14,
-      "brokenBoardRate": 0.259,
-      "breadthSampleSize": 200,
-      "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 5.34,
-      "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached."
+      "limitUpCount": null,
+      "limitDownCount": null,
+      "brokenBoardRate": null,
+      "note": "Market monitor fell back to board strength."
     }
   },
   "boards": [
-    {
-      "code": "BK1645",
-      "name": "昨日打二板以上表现",
-      "kind": "Concept board",
-      "price": 39909.52,
-      "pct": 5.34,
-      "amount": 7105004006.0,
-      "turnover": 22.26,
-      "open": 40042.72,
-      "preClose": 37885.41,
-      "mainNet": 7925648.0,
-      "rank": 2,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.9,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 1.63,
-      "limitUpCount": 2,
-      "bigUpCount": 3
-    },
     {
       "code": "BK1385",
       "name": "航天装备Ⅲ",
@@ -136,19 +115,18 @@
       "preClose": 4112.22,
       "mainNet": 1000102768.0,
       "rank": 5,
-      "passed": 4,
-      "qualified": true,
-      "score": 81.85,
+      "passed": 3,
+      "qualified": false,
+      "score": 65.45,
       "criteria": [
         "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": true,
       "amountRatio": 2.46,
-      "limitUpCount": 1,
-      "bigUpCount": 3
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1232",
@@ -162,69 +140,18 @@
       "preClose": 4112.22,
       "mainNet": 1000102768.0,
       "rank": 6,
-      "passed": 4,
-      "qualified": true,
-      "score": 81.5,
+      "passed": 3,
+      "qualified": false,
+      "score": 65.1,
       "criteria": [
         "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": true,
       "amountRatio": 2.46,
-      "limitUpCount": 1,
-      "bigUpCount": 3
-    },
-    {
-      "code": "BK1051",
-      "name": "昨日连板_含一字",
-      "kind": "Concept board",
-      "price": 175.51,
-      "pct": 5.22,
-      "amount": 9937678269.0,
-      "turnover": 15.84,
-      "open": 177.34,
-      "preClose": 166.81,
-      "mainNet": 57252480.0,
-      "rank": 3,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.15,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 0.88,
-      "limitUpCount": 4,
-      "bigUpCount": 5
-    },
-    {
-      "code": "BK0816",
-      "name": "昨日连板",
-      "kind": "Concept board",
-      "price": 58.25,
-      "pct": 4.52,
-      "amount": 9883401509.0,
-      "turnover": 16.26,
-      "open": 58.95,
-      "preClose": 55.73,
-      "mainNet": 44113600.0,
-      "rank": 4,
-      "passed": 3,
-      "qualified": false,
-      "score": 65.8,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 0.99,
-      "limitUpCount": 3,
-      "bigUpCount": 4
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1347",
@@ -248,7 +175,31 @@
       "continuous": false,
       "amountRatio": 1.39,
       "limitUpCount": 0,
-      "bigUpCount": 1
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1645",
+      "name": "昨日打二板以上表现",
+      "kind": "Concept board",
+      "price": 39909.52,
+      "pct": 5.34,
+      "amount": 7105004006.0,
+      "turnover": 22.26,
+      "open": 40042.72,
+      "preClose": 37885.41,
+      "mainNet": 7925648.0,
+      "rank": 2,
+      "passed": 2,
+      "qualified": false,
+      "score": 50.1,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": 1.63,
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1611",
@@ -317,6 +268,52 @@
       "bigUpCount": 0
     },
     {
+      "code": "BK1051",
+      "name": "昨日连板_含一字",
+      "kind": "Concept board",
+      "price": 175.51,
+      "pct": 5.22,
+      "amount": 9937678269.0,
+      "turnover": 15.84,
+      "open": 177.34,
+      "preClose": 166.81,
+      "mainNet": 57252480.0,
+      "rank": 3,
+      "passed": 1,
+      "qualified": false,
+      "score": 33.35,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": 0.88,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK0816",
+      "name": "昨日连板",
+      "kind": "Concept board",
+      "price": 58.25,
+      "pct": 4.52,
+      "amount": 9883401509.0,
+      "turnover": 16.26,
+      "open": 58.95,
+      "preClose": 55.73,
+      "mainNet": 44113600.0,
+      "rank": 4,
+      "passed": 1,
+      "qualified": false,
+      "score": 33.0,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": 0.99,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
       "code": "BK1300",
       "name": "院线",
       "kind": "Industry board",
@@ -336,8 +333,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1376",
@@ -360,7 +357,7 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 1
+      "bigUpCount": 0
     },
     {
       "code": "BK1609",
@@ -383,7 +380,7 @@
       "continuous": false,
       "amountRatio": 1.1,
       "limitUpCount": 0,
-      "bigUpCount": 2
+      "bigUpCount": 0
     }
   ],
   "recommendations": [],
@@ -396,13 +393,13 @@
     },
     {
       "source": "Yicai",
-      "title": "连板股追踪丨A股今日共39只个股涨停 这只人形机器人概念股4连板AI漫剧概念股文投控股3连板。一图速览今日连板股&gt;&gt;  9分钟前",
+      "title": "连板股追踪丨A股今日共39只个股涨停 这只人形机器人概念股4连板AI漫剧概念股文投控股3连板。一图速览今日连板股&gt;&gt;  14分钟前",
       "url": "https://www.yicai.com/news/103415182.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "收盘｜创业板指跌4.45% 银行股表现强势沪深两市成交额1.56万亿，较上一个交易日缩量720亿。  9分钟前",
+      "title": "收盘｜创业板指跌4.45% 银行股表现强势沪深两市成交额1.56万亿，较上一个交易日缩量720亿。  15分钟前",
       "url": "https://www.yicai.com/news/103415151.html",
       "time": ""
     },
