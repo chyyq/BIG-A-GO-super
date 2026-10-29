@@ -1,48 +1,61 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-29T19:49:39.495347+08:00",
+    "generatedAt": "2026-10-29T20:49:24.995332+08:00",
     "tradingDate": "2026-10-29",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "recommendationGeneratedAt": null,
     "recommendationsRetained": false,
     "sourceHealth": [
       {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
-      {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
+        "note": "Quote snapshot and daily K-line history OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source skipped; quote data is unaffected."
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "10jqka news skipped: <urlopen error _ssl.c:999: The handshake operation timed out>"
     ],
-    "runtimeSeconds": 24.38
+    "runtimeSeconds": 102.08
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 12,
+    "qualifiedBoardCount": 0,
     "monitor": {
       "emotionScore": 50,
       "marketGateScore": 0,
@@ -83,8 +96,7 @@
             "ma5Rising": false,
             "closeAboveMa5": true
           }
-        },
-        "cached": true
+        }
       },
       "limitUpCount": null,
       "limitDownCount": null,
@@ -375,51 +387,33 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "历史时刻！A股市值“一哥”“二哥”再创新高 四大行总市值突破10万亿",
-      "url": "https://finance.eastmoney.com/a/202610293913527497.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数集体收跌 银行板块逆市走强",
-      "url": "https://finance.eastmoney.com/a/202610293913948829.html",
+      "source": "Yicai",
+      "title": "美的三季报观察：营收净利逆势双增 回购133亿成A股历史回购王依托大额回购回馈股东，加速布局AI与B端业务推进转型  7分钟前",
+      "url": "https://www.yicai.com/news/103416020.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "订单排到明年！工业母机行业景气度攀升 多只潜力股获资金关注(名单)",
-      "url": "https://finance.eastmoney.com/a/202610293913476340.html",
+      "source": "Yicai",
+      "title": "拉加德将提前卸任欧央行行长 欧洲市场人士作何评价？德拉吉曾以“不惜一切代价”的承诺捍卫欧元，拉加德将这一承诺视为己任。  11分钟前",
+      "url": "https://www.yicai.com/news/103415994.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股借调整降杠杆：两融余额回撤6200亿 融资盘整体风险可控",
-      "url": "https://finance.eastmoney.com/a/202610283912517425.html",
+      "source": "Yicai",
+      "title": "彭博全球首席经济学家：12月美联储也可能维持利率不变｜独家“沃什持有一种哲学观点，即美联储领导层应当保持沉默，多倾听市场的声音。”  1小时前",
+      "url": "https://www.yicai.com/news/103415804.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股回购增持潮持续升温 “分红+回购”回报体系加快形成",
-      "url": "https://finance.eastmoney.com/a/202610293914396028.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "甬兴证券刘荆：三季报彰显科技板块业绩兑现能力 立足基本面把握经济转型投资契机",
-      "url": "https://finance.eastmoney.com/a/202610293914196550.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东北证券策略首席张超越：盈利加速与估值出清共振，A股核心资产正步入战略配置“击球区”",
-      "url": "https://finance.eastmoney.com/a/202610293913681653.html",
+      "source": "Yicai",
+      "title": "国信证券：持续提升综合金融服务能力，夯实高质量发展根基  1小时前",
+      "url": "https://www.yicai.com/news/103415776.html",
       "time": ""
     }
   ]
