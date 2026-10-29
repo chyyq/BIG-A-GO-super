@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-29T15:42:02.709237+08:00",
+    "generatedAt": "2026-10-29T19:40:47.749921+08:00",
     "tradingDate": "2026-10-29",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,8 +12,8 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://82.push2.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1611%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
-        "note": "OK"
+        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
+        "note": "Quote snapshot and daily K-line history OK"
       },
       {
         "name": "Eastmoney News",
@@ -24,18 +24,19 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: HTTP 502",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
@@ -46,13 +47,9 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response"
+      "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 154.26
+    "runtimeSeconds": 72.68
   },
   "market": {
     "recommendationCount": 0,
@@ -98,8 +95,7 @@
             "ma5Rising": false,
             "closeAboveMa5": true
           }
-        },
-        "cached": true
+        }
       },
       "limitUpCount": null,
       "limitDownCount": null,
@@ -390,39 +386,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "历史时刻！A股市值“一哥”“二哥”再创新高 四大行总市值突破10万亿",
+      "url": "https://finance.eastmoney.com/a/202610293913527497.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共39只个股涨停 这只人形机器人概念股4连板AI漫剧概念股文投控股3连板。一图速览今日连板股&gt;&gt;  20分钟前",
-      "url": "https://www.yicai.com/news/103415182.html",
+      "source": "Eastmoney News",
+      "title": "A股三大指数集体收跌 银行板块逆市走强",
+      "url": "https://finance.eastmoney.com/a/202610293913948829.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜创业板指跌4.45% 银行股表现强势沪深两市成交额1.56万亿，较上一个交易日缩量720亿。  20分钟前",
-      "url": "https://www.yicai.com/news/103415151.html",
+      "source": "Eastmoney News",
+      "title": "订单排到明年！工业母机行业景气度攀升 多只潜力股获资金关注(名单)",
+      "url": "https://finance.eastmoney.com/a/202610293913476340.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "九大行动，21项任务！上海出台行动方案，推动中小企业高质量发展持续打造市场化、法治化、国际化一流营商环境。  3小时前",
-      "url": "https://www.yicai.com/news/103414748.html",
+      "source": "Eastmoney News",
+      "title": "A股借调整降杠杆：两融余额回撤6200亿 融资盘整体风险可控",
+      "url": "https://finance.eastmoney.com/a/202610283912517425.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "平台赋能精准风控 数智转型提质增效——盛京银行全面落地资金流信用信息共享平台应用  3小时前",
-      "url": "https://www.yicai.com/news/103414747.html",
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股四大指数集体低开，培育钻石、港口航运板块表现活跃盘面上，元件、CPO、PEEK材料、人形机器人概念跌幅居前。  6小时前",
-      "url": "https://www.yicai.com/news/103414327.html",
+      "source": "Eastmoney News",
+      "title": "A股回购增持潮持续升温 “分红+回购”回报体系加快形成",
+      "url": "https://finance.eastmoney.com/a/202610293914396028.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "甬兴证券刘荆：三季报彰显科技板块业绩兑现能力 立足基本面把握经济转型投资契机",
+      "url": "https://finance.eastmoney.com/a/202610293914196550.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东北证券策略首席张超越：盈利加速与估值出清共振，A股核心资产正步入战略配置“击球区”",
+      "url": "https://finance.eastmoney.com/a/202610293913681653.html",
       "time": ""
     }
   ]
