@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-29T15:15:26.708313+08:00",
+    "generatedAt": "2026-10-29T15:29:29.613363+08:00",
     "tradingDate": "2026-10-29",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -19,7 +19,7 @@
         "name": "Eastmoney News",
         "ok": true,
         "url": "https://finance.eastmoney.com/a/cjjsp.html",
-        "note": "Optional news source skipped; quote data is unaffected."
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
@@ -34,10 +34,8 @@
         "note": "Optional news source OK"
       }
     ],
-    "errors": [
-      "Eastmoney News news skipped: The read operation timed out"
-    ],
-    "runtimeSeconds": 48.2
+    "errors": [],
+    "runtimeSeconds": 39.09
   },
   "market": {
     "recommendationCount": 0,
@@ -398,6 +396,18 @@
     },
     {
       "source": "Yicai",
+      "title": "连板股追踪丨A股今日共39只个股涨停 这只人形机器人概念股4连板AI漫剧概念股文投控股3连板。一图速览今日连板股&gt;&gt;  9分钟前",
+      "url": "https://www.yicai.com/news/103415182.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "收盘｜创业板指跌4.45% 银行股表现强势沪深两市成交额1.56万亿，较上一个交易日缩量720亿。  9分钟前",
+      "url": "https://www.yicai.com/news/103415151.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
       "title": "九大行动，21项任务！上海出台行动方案，推动中小企业高质量发展持续打造市场化、法治化、国际化一流营商环境。  3小时前",
       "url": "https://www.yicai.com/news/103414748.html",
       "time": ""
@@ -412,12 +422,6 @@
       "source": "Yicai",
       "title": "A股四大指数集体低开，培育钻石、港口航运板块表现活跃盘面上，元件、CPO、PEEK材料、人形机器人概念跌幅居前。  5小时前",
       "url": "https://www.yicai.com/news/103414327.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "盘前必读丨美联储宣布维持利率不变；宇树科技上市后首份业绩出炉机构认为，行情仍偏预期驱动，板块带动效应尚未全面扩散。  7小时前",
-      "url": "https://www.yicai.com/news/103414157.html",
       "time": ""
     }
   ]
