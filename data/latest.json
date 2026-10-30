@@ -1,48 +1,57 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-10-30T19:35:43.406713+08:00",
+    "generatedAt": "2026-10-30T19:42:18.385492+08:00",
     "tradingDate": "2026-10-30",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "recommendationGeneratedAt": null,
     "recommendationsRetained": false,
     "sourceHealth": [
       {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
-      {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1277%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
+        "note": "Quote snapshot and daily K-line history OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 29.86
+    "runtimeSeconds": 106.75
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 12,
+    "qualifiedBoardCount": 2,
     "monitor": {
       "emotionScore": 58,
       "marketGateScore": 2,
@@ -83,8 +92,7 @@
             "ma5Rising": false,
             "closeAboveMa5": false
           }
-        },
-        "cached": true
+        }
       },
       "limitUpCount": null,
       "limitDownCount": null,
@@ -171,40 +179,40 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1606",
-      "name": "线下药店",
-      "kind": "Industry board",
-      "price": 3720.53,
-      "pct": 1.82,
-      "amount": 1904428613.0,
-      "turnover": 2.5,
-      "open": 3624.54,
-      "preClose": 3653.91,
-      "mainNet": 27553479.0,
-      "rank": 9,
+      "code": "BK0477",
+      "name": "酿酒概念",
+      "kind": "Concept board",
+      "price": 38793.09,
+      "pct": 2.74,
+      "amount": 27073631845.0,
+      "turnover": 2.01,
+      "open": 37479.46,
+      "preClose": 37757.75,
+      "mainNet": 2609963888.0,
+      "rank": 6,
       "passed": 2,
       "qualified": false,
-      "score": 47.65,
+      "score": 48.7,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
-      "amountRatio": 1.34,
+      "amountRatio": null,
       "limitUpCount": 0,
       "bigUpCount": 0
     },
     {
-      "code": "BK1482",
-      "name": "航运",
-      "kind": "Industry board",
-      "price": 1562.26,
-      "pct": 1.81,
-      "amount": 10731177643.0,
-      "turnover": 1.73,
-      "open": 1533.84,
-      "preClose": 1534.49,
-      "mainNet": -18816528.0,
+      "code": "BK0899",
+      "name": "CRO",
+      "kind": "Concept board",
+      "price": 2079.65,
+      "pct": 1.97,
+      "amount": 32477564468.0,
+      "turnover": 4.56,
+      "open": 2023.05,
+      "preClose": 2039.44,
+      "mainNet": 1871524176.0,
       "rank": 10,
       "passed": 2,
       "qualified": false,
@@ -219,16 +227,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK0727",
-      "name": "医疗服务",
-      "kind": "Industry board",
-      "price": 1358.81,
-      "pct": 1.58,
-      "amount": 34709655088.0,
-      "turnover": 4.37,
-      "open": 1323.57,
-      "preClose": 1337.67,
-      "mainNet": 1636131616.0,
+      "code": "BK0896",
+      "name": "白酒",
+      "kind": "Concept board",
+      "price": 1803.55,
+      "pct": 1.85,
+      "amount": 28036394536.0,
+      "turnover": 1.84,
+      "open": 1755.72,
+      "preClose": 1770.79,
+      "mainNet": 2608949376.0,
       "rank": 11,
       "passed": 2,
       "qualified": false,
@@ -240,16 +248,16 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK0450",
-      "name": "航运港口",
+      "code": "BK1606",
+      "name": "线下药店",
       "kind": "Industry board",
-      "price": 11990.88,
-      "pct": 1.5,
-      "amount": 13393438573.0,
-      "turnover": 0.98,
-      "open": 11804.92,
-      "preClose": 11813.21,
-      "mainNet": -35594144.0,
+      "price": 3720.53,
+      "pct": 1.82,
+      "amount": 1904428613.0,
+      "turnover": 2.5,
+      "open": 3624.54,
+      "preClose": 3653.91,
+      "mainNet": 27553479.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -317,10 +325,10 @@
       "open": 1709.44,
       "preClose": 1697.71,
       "mainNet": 295911958.0,
-      "rank": 6,
+      "rank": 7,
       "passed": 1,
       "qualified": false,
-      "score": 32.3,
+      "score": 31.95,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -340,10 +348,10 @@
       "open": 2065.37,
       "preClose": 2072.0,
       "mainNet": 113422665.0,
-      "rank": 7,
+      "rank": 8,
       "passed": 1,
       "qualified": false,
-      "score": 31.95,
+      "score": 31.6,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -363,10 +371,10 @@
       "open": 1675.5,
       "preClose": 1697.69,
       "mainNet": 49669164.0,
-      "rank": 8,
+      "rank": 9,
       "passed": 1,
       "qualified": false,
-      "score": 31.6,
+      "score": 31.25,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -379,45 +387,15 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "证监会：全力稳市场稳预期 持续提升资本市场韧性和信心",
-      "url": "https://finance.eastmoney.com/a/202610303916585451.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数集体收跌 白酒板块逆市大涨",
-      "url": "https://finance.eastmoney.com/a/202610303916404672.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "红利资产再成资金避风港 17只“绩优+高股息”个股浮出水面",
-      "url": "https://finance.eastmoney.com/a/202610303915225676.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "瑞银方锦聪：市场过度计价AI支出负担 低估潜在上行机会",
-      "url": "https://finance.eastmoney.com/a/202610303916565724.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "美股三大云厂商“交卷”，市场对AI定价逻辑变了",
-      "url": "https://finance.eastmoney.com/a/202610303916502658.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "建言中国资本市场｜曾刚：优化会计规则，疏通险资耐心资本的堵点",
-      "url": "https://finance.eastmoney.com/a/202610303916479872.html",
+      "source": "Yicai",
+      "title": "晓数点｜10月十大牛熊股出炉A股10月行情收官。  1小时前",
+      "url": "https://www.yicai.com/news/103418602.html",
       "time": ""
     }
   ]
