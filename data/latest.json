@@ -1,56 +1,64 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-02T23:35:04.369802+08:00",
+    "generatedAt": "2026-11-02T23:54:15.855458+08:00",
     "tradingDate": "2026-11-02",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "recommendationGeneratedAt": null,
     "recommendationsRetained": false,
     "sourceHealth": [
       {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
-      {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Quote snapshot and daily K-line history OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 33.3
+    "runtimeSeconds": 78.82
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 12,
+    "qualifiedBoardCount": 0,
     "monitor": {
-      "emotionScore": 81,
-      "marketGateScore": 3,
-      "marketGatePassed": true,
-      "hardVeto": false,
-      "riskLevel": "CAUTION",
-      "dailyStress": false,
-      "emergencyVeto": false,
+      "emotionScore": 50,
+      "marketGateScore": 0,
+      "marketGatePassed": false,
+      "hardVeto": true,
+      "riskLevel": "RISK_OFF",
       "fiveDayTrend": {
         "available": true,
         "level": "FALLING",
@@ -87,16 +95,10 @@
           }
         }
       },
-      "limitUpCount": 25,
-      "limitDownCount": 20,
-      "bigDownCount": 24,
-      "limitTouchCount": 29,
-      "brokenBoardCount": 4,
-      "brokenBoardRate": 0.138,
-      "breadthSampleSize": 200,
-      "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 10.58,
-      "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached."
+      "limitUpCount": null,
+      "limitDownCount": null,
+      "brokenBoardRate": null,
+      "note": "Market monitor fell back to board strength."
     }
   },
   "boards": [
@@ -112,19 +114,17 @@
       "preClose": 832.65,
       "mainNet": 2380532592.0,
       "rank": 4,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.2,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.4,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 9,
-      "bigUpCount": 21
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1221",
@@ -138,19 +138,17 @@
       "preClose": 6292.82,
       "mainNet": 1414730304.0,
       "rank": 6,
-      "passed": 4,
-      "qualified": true,
-      "score": 81.5,
+      "passed": 2,
+      "qualified": false,
+      "score": 48.7,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 5,
-      "bigUpCount": 12
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1299",
@@ -164,19 +162,17 @@
       "preClose": 3678.58,
       "mainNet": 848336624.0,
       "rank": 7,
-      "passed": 4,
-      "qualified": true,
-      "score": 81.15,
+      "passed": 2,
+      "qualified": false,
+      "score": 48.35,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 7,
-      "bigUpCount": 11
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1222",
@@ -190,19 +186,17 @@
       "preClose": 3495.6,
       "mainNet": 963849600.0,
       "rank": 8,
-      "passed": 4,
-      "qualified": true,
-      "score": 80.8,
+      "passed": 2,
+      "qualified": false,
+      "score": 48.0,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 7,
-      "bigUpCount": 14
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1301",
@@ -216,19 +210,17 @@
       "preClose": 1226.88,
       "mainNet": 1238436896.0,
       "rank": 9,
-      "passed": 4,
-      "qualified": true,
-      "score": 80.45,
+      "passed": 2,
+      "qualified": false,
+      "score": 47.65,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 7,
-      "bigUpCount": 23
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1046",
@@ -242,19 +234,17 @@
       "preClose": 1226.88,
       "mainNet": 1238436896.0,
       "rank": 10,
-      "passed": 4,
-      "qualified": true,
-      "score": 80.1,
+      "passed": 2,
+      "qualified": false,
+      "score": 47.3,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 7,
-      "bigUpCount": 23
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1151",
@@ -263,7 +253,7 @@
       "price": 1216.56,
       "pct": 8.84,
       "amount": 36623357519.0,
-      "turnover": 6.42,
+      "turnover": 6.16,
       "open": 1111.07,
       "preClose": 1117.8,
       "mainNet": 2775210096.0,
@@ -341,8 +331,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 2
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1298",
@@ -387,58 +377,52 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
+      "limitUpCount": 0,
+      "bigUpCount": 0
     }
   ],
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "刚刚全线拉升！抄底资金加速进场！外围突传利好",
-      "url": "https://finance.eastmoney.com/a/202611023918528994.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "央行将开展第三次证券、基金、保险公司互换便利操作 超30家机构表达初步意向",
-      "url": "https://finance.eastmoney.com/a/202611023918690284.html",
+      "source": "Yicai",
+      "title": "火线解读｜政策“组合拳”打出，机构看好A股估值修复“信心提振情绪，资金面面临改善，市场修复在路上。”  1小时前",
+      "url": "https://www.yicai.com/news/103422216.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "央行：将于11月3日开展证券、基金、保险公司互换便利操作 申请额度超1000亿",
-      "url": "https://finance.eastmoney.com/a/202611023918776293.html",
+      "source": "Yicai",
+      "title": "证监会力推“护盘式回购”，这些个股可重点关注今年前10月A股市场132只新股中，20余股存在IPO超募。  1小时前",
+      "url": "https://www.yicai.com/news/103422139.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "全球资产遭遇洗盘 国内市场迎来两场重磅会议",
-      "url": "https://finance.eastmoney.com/a/202611013917762083.html",
+      "source": "Yicai",
+      "title": "回购增持贷款转为长期制度安排，国新、诚通两大平台有望加仓哪些方向？从三季度持仓来看，能源板块在两大平台的持仓中扮演“压舱石”的角色  2小时前",
+      "url": "https://www.yicai.com/news/103422135.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "source": "Yicai",
+      "title": "一日两会托底市场！两大稳市工具升级，A股将迎千亿级增量资金股票回购增持专项再贷款由阶段性安排转为长期制度性安排，利率由1.25%降至1%。  2小时前",
+      "url": "https://www.yicai.com/news/103422096.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "华源证券查浩：市场具备充足的估值上修空间",
-      "url": "https://finance.eastmoney.com/a/202611023919027065.html",
+      "source": "Yicai",
+      "title": "利率降至1%！股票回购增持再贷款降息，阶段性安排转为长期制度利率降至1%，改善宏观资金价格信号，使低成本资金更顺畅地流向有真实回购需求的企业。  3小时前",
+      "url": "https://www.yicai.com/news/103422061.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "国信证券田地：经济向新向优 长期价值渐显",
-      "url": "https://finance.eastmoney.com/a/202611023918918673.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "平安基金权益投资总监神爱前：A股估值性价比提升 中长期投资回报极具吸引力",
-      "url": "https://finance.eastmoney.com/a/202611023918889546.html",
+      "source": "Yicai",
+      "title": "单月3900多亿资金涌入股票ETF，宽基悄然杀回吸金“C位”谁把宽基ETF推回舞台中央？  4小时前",
+      "url": "https://www.yicai.com/news/103421897.html",
       "time": ""
     }
   ]
