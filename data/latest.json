@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-03T22:01:04.165973+08:00",
+    "generatedAt": "2026-11-03T22:15:17.099105+08:00",
     "tradingDate": "2026-11-03",
     "mode": "cached-fallback",
     "recommendationGeneratedAt": null,
@@ -37,7 +37,7 @@
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 32.11
+    "runtimeSeconds": 29.44
   },
   "market": {
     "recommendationCount": 0,
