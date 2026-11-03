@@ -1,97 +1,155 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-03T22:41:06.388070+08:00",
-    "tradingDate": "2026-11-03",
-    "mode": "cached-fallback",
+    "generatedAt": "2026-11-04T03:15:35.874626+08:00",
+    "tradingDate": "2026-11-04",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "recommendationGeneratedAt": null,
     "recommendationsRetained": false,
     "sourceHealth": [
       {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
-      {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Quote snapshot and daily K-line history OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://www.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
+      "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 21.98
+    "runtimeSeconds": 32.3
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 12,
+    "qualifiedBoardCount": 0,
     "monitor": {
-      "emotionScore": 50,
-      "marketGateScore": 0,
+      "emotionScore": 64,
+      "marketGateScore": 3,
       "marketGatePassed": false,
       "hardVeto": true,
       "riskLevel": "RISK_OFF",
+      "dailyStress": true,
+      "emergencyVeto": false,
       "fiveDayTrend": {
         "available": true,
         "level": "FALLING",
         "gatePassed": false,
-        "score": 2,
-        "averageReturnPct": -1.18,
+        "score": 1,
+        "averageReturnPct": -3.59,
         "averagePositiveDays": 2.0,
         "risingIndexCount": 0,
-        "aboveMa5IndexCount": 1,
+        "aboveMa5IndexCount": 0,
         "indexes": {
           "shanghai": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-10-27",
-            "to": "2026-11-02",
-            "returnPct": -0.28,
+            "from": "2026-10-28",
+            "to": "2026-11-03",
+            "returnPct": -1.99,
             "positiveDays": 2,
-            "ma5": 3643.65,
-            "previousMa5": 3655.55,
+            "ma5": 3635.61,
+            "previousMa5": 3643.65,
             "ma5Rising": false,
-            "closeAboveMa5": true
+            "closeAboveMa5": false
           },
           "shenzhen": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-10-27",
-            "to": "2026-11-02",
-            "returnPct": -2.09,
+            "from": "2026-10-28",
+            "to": "2026-11-03",
+            "returnPct": -5.2,
             "positiveDays": 2,
-            "ma5": 11140.31,
-            "previousMa5": 11245.05,
+            "ma5": 11066.57,
+            "previousMa5": 11140.31,
             "ma5Rising": false,
             "closeAboveMa5": false
           }
         }
       },
-      "limitUpCount": null,
-      "limitDownCount": null,
-      "brokenBoardRate": null,
-      "note": "Market monitor fell back to board strength."
+      "limitUpCount": 59,
+      "limitDownCount": 26,
+      "bigDownCount": 100,
+      "limitTouchCount": 72,
+      "brokenBoardCount": 14,
+      "brokenBoardRate": 0.194,
+      "breadthSampleSize": 200,
+      "breadthMethod": "top-100 plus bottom-100 movers",
+      "topBoardPct": 3.76,
+      "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached."
     }
   },
   "boards": [
+    {
+      "code": "BK1306",
+      "name": "蓄电池及其他电池",
+      "kind": "Industry board",
+      "price": 1968.51,
+      "pct": 3.76,
+      "amount": 2036203971.0,
+      "turnover": 3.51,
+      "open": 1886.49,
+      "preClose": 1897.23,
+      "mainNet": 457965951.0,
+      "rank": 5,
+      "passed": 3,
+      "qualified": false,
+      "score": 65.45,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 3,
+      "bigUpCount": 3
+    },
+    {
+      "code": "BK1522",
+      "name": "其他运输设备",
+      "kind": "Industry board",
+      "price": 1779.62,
+      "pct": 3.27,
+      "amount": 936031232.0,
+      "turnover": 1.59,
+      "open": 1722.62,
+      "preClose": 1723.24,
+      "mainNet": 7733243.0,
+      "rank": 7,
+      "passed": 3,
+      "qualified": false,
+      "score": 64.75,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 2,
+      "bigUpCount": 2
+    },
     {
       "code": "BK1556",
       "name": "教育运营及其他",
@@ -104,15 +162,14 @@
       "preClose": 918.54,
       "mainNet": 23893272.0,
       "rank": 1,
-      "passed": 3,
+      "passed": 2,
       "qualified": false,
-      "score": 66.85,
+      "score": 50.45,
       "criteria": [
-        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
       ],
-      "continuous": true,
+      "continuous": false,
       "amountRatio": 1.54,
       "limitUpCount": 1,
       "bigUpCount": 1
@@ -129,15 +186,14 @@
       "preClose": 1293.65,
       "mainNet": -127403504.0,
       "rank": 4,
-      "passed": 3,
+      "passed": 2,
       "qualified": false,
-      "score": 65.8,
+      "score": 49.4,
       "criteria": [
-        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
       ],
-      "continuous": true,
+      "continuous": false,
       "amountRatio": 1.97,
       "limitUpCount": 0,
       "bigUpCount": 0
@@ -231,29 +287,6 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1306",
-      "name": "蓄电池及其他电池",
-      "kind": "Industry board",
-      "price": 1968.51,
-      "pct": 3.76,
-      "amount": 2036203971.0,
-      "turnover": 3.51,
-      "open": 1886.49,
-      "preClose": 1897.23,
-      "mainNet": 457965951.0,
-      "rank": 5,
-      "passed": 1,
-      "qualified": false,
-      "score": 32.65,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
       "code": "BK1499",
       "name": "医美服务",
       "kind": "Industry board",
@@ -274,30 +307,7 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1522",
-      "name": "其他运输设备",
-      "kind": "Industry board",
-      "price": 1779.62,
-      "pct": 3.27,
-      "amount": 936031232.0,
-      "turnover": 1.59,
-      "open": 1722.62,
-      "preClose": 1723.24,
-      "mainNet": 7733243.0,
-      "rank": 7,
-      "passed": 1,
-      "qualified": false,
-      "score": 31.95,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "bigUpCount": 1
     },
     {
       "code": "BK1509",
@@ -319,8 +329,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK1512",
@@ -343,7 +353,7 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 0
+      "bigUpCount": 2
     },
     {
       "code": "BK1511",
@@ -385,12 +395,6 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "证监会发布多项政策 全力稳市场稳预期 加快主动ETF建仓",
-      "url": "https://finance.eastmoney.com/a/202611033919181779.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "重磅利好 证监会打出稳市场组合拳 信息量很大",
       "url": "https://finance.eastmoney.com/a/202611033920171035.html",
       "time": ""
@@ -411,6 +415,12 @@
       "source": "Eastmoney News",
       "title": "证监会副主席李超：全力维护资本市场平稳运行 推动中长期资金入市规模和比例稳步提升",
       "url": "https://finance.eastmoney.com/a/202611033919845464.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中一签最多赚6.6万元 A股再现“肉签”",
+      "url": "https://finance.eastmoney.com/a/202611033919969373.html",
       "time": ""
     },
     {
