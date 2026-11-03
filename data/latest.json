@@ -1,56 +1,64 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-03T22:30:18.900710+08:00",
+    "generatedAt": "2026-11-03T22:35:31.715763+08:00",
     "tradingDate": "2026-11-03",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "recommendationGeneratedAt": null,
     "recommendationsRetained": false,
     "sourceHealth": [
       {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
-      {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Quote snapshot and daily K-line history OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://www.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 30.6
+    "runtimeSeconds": 99.63
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 12,
+    "qualifiedBoardCount": 0,
     "monitor": {
-      "emotionScore": 64,
-      "marketGateScore": 3,
+      "emotionScore": 50,
+      "marketGateScore": 0,
       "marketGatePassed": false,
       "hardVeto": true,
       "riskLevel": "RISK_OFF",
-      "dailyStress": true,
-      "emergencyVeto": false,
       "fiveDayTrend": {
         "available": true,
         "level": "FALLING",
@@ -87,16 +95,10 @@
           }
         }
       },
-      "limitUpCount": 59,
-      "limitDownCount": 26,
-      "bigDownCount": 100,
-      "limitTouchCount": 72,
-      "brokenBoardCount": 14,
-      "brokenBoardRate": 0.194,
-      "breadthSampleSize": 200,
-      "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 9.84,
-      "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached."
+      "limitUpCount": null,
+      "limitDownCount": null,
+      "brokenBoardRate": null,
+      "note": "Market monitor fell back to board strength."
     }
   },
   "boards": [
@@ -149,56 +151,6 @@
       "amountRatio": 1.97,
       "limitUpCount": 0,
       "bigUpCount": 0
-    },
-    {
-      "code": "BK1306",
-      "name": "蓄电池及其他电池",
-      "kind": "Industry board",
-      "price": 1968.51,
-      "pct": 3.76,
-      "amount": 2036203971.0,
-      "turnover": 3.51,
-      "open": 1886.49,
-      "preClose": 1897.23,
-      "mainNet": 457965951.0,
-      "rank": 5,
-      "passed": 3,
-      "qualified": false,
-      "score": 65.45,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 3,
-      "bigUpCount": 3
-    },
-    {
-      "code": "BK1522",
-      "name": "其他运输设备",
-      "kind": "Industry board",
-      "price": 1779.62,
-      "pct": 3.27,
-      "amount": 936031232.0,
-      "turnover": 1.59,
-      "open": 1722.62,
-      "preClose": 1723.24,
-      "mainNet": 7733243.0,
-      "rank": 7,
-      "passed": 3,
-      "qualified": false,
-      "score": 64.75,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 2,
-      "bigUpCount": 2
     },
     {
       "code": "BK0887",
@@ -289,6 +241,29 @@
       "bigUpCount": 0
     },
     {
+      "code": "BK1306",
+      "name": "蓄电池及其他电池",
+      "kind": "Industry board",
+      "price": 1968.51,
+      "pct": 3.76,
+      "amount": 2036203971.0,
+      "turnover": 3.51,
+      "open": 1886.49,
+      "preClose": 1897.23,
+      "mainNet": 457965951.0,
+      "rank": 5,
+      "passed": 1,
+      "qualified": false,
+      "score": 32.65,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
       "code": "BK1499",
       "name": "医美服务",
       "kind": "Industry board",
@@ -309,7 +284,30 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 1
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1522",
+      "name": "其他运输设备",
+      "kind": "Industry board",
+      "price": 1779.62,
+      "pct": 3.27,
+      "amount": 936031232.0,
+      "turnover": 1.59,
+      "open": 1722.62,
+      "preClose": 1723.24,
+      "mainNet": 7733243.0,
+      "rank": 7,
+      "passed": 1,
+      "qualified": false,
+      "score": 31.95,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1509",
@@ -331,8 +329,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1512",
@@ -355,7 +353,7 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 2
+      "bigUpCount": 0
     },
     {
       "code": "BK1511",
@@ -391,14 +389,26 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "央行：将于11月3日开展证券、基金、保险公司互换便利操作 申请额度超1000亿",
-      "url": "https://finance.eastmoney.com/a/202611023918776293.html",
+      "title": "证监会最新发声：全力维护资本市场平稳运行",
+      "url": "https://finance.eastmoney.com/a/202611033920242351.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
       "title": "证监会发布多项政策 全力稳市场稳预期 加快主动ETF建仓",
       "url": "https://finance.eastmoney.com/a/202611033919181779.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "重磅利好 证监会打出稳市场组合拳 信息量很大",
+      "url": "https://finance.eastmoney.com/a/202611033920171035.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股三大指数集体收跌 保险与稀土板块逆市走强",
+      "url": "https://finance.eastmoney.com/a/202611033920191875.html",
       "time": ""
     },
     {
@@ -415,20 +425,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "证监会有关部门负责人就近期稳市场稳预期相关工作答记者问",
-      "url": "https://finance.eastmoney.com/a/202611023918963448.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "924行情后首次！同日4只宽基ETF成交破百亿",
       "url": "https://finance.eastmoney.com/a/202611033920148153.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
       "time": ""
     }
   ]
