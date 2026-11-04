@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-04T21:15:21.764094+08:00",
+    "generatedAt": "2026-11-04T21:18:34.047049+08:00",
     "tradingDate": "2026-11-04",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,18 +24,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 33.17
+    "runtimeSeconds": 41.38
   },
   "market": {
     "recommendationCount": 0,
@@ -261,7 +261,7 @@
       "price": 942.43,
       "pct": 10.53,
       "amount": 59975244303.0,
-      "turnover": 4.21,
+      "turnover": 4.68,
       "open": 858.66,
       "preClose": 852.62,
       "mainNet": 5576054272.0,
@@ -386,7 +386,7 @@
       "price": 684.96,
       "pct": 9.85,
       "amount": 359146519158.0,
-      "turnover": 3.15,
+      "turnover": 3.89,
       "open": 625.37,
       "preClose": 623.53,
       "mainNet": 18643494656.0,
@@ -404,45 +404,33 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "重返2万亿！A股再现“大奇迹日” 双创吹响反攻号角！发生了什么？",
-      "url": "https://finance.eastmoney.com/a/202611043921918565.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "国务院关于金融工作情况的报告：实施好支持资本市场的货币政策工具 巩固完善资本市场稳市机制",
-      "url": "https://finance.eastmoney.com/a/202611043921034226.html",
+      "source": "Yicai",
+      "title": "A股迎来“大奇迹日”，后市怎么看｜市场观察在第一财经记者采访的业内人士看来，本周陆续出台的救市政策“组合拳”在周三终于引发质变，下午市场大幅反弹。  3分钟前",
+      "url": "https://www.yicai.com/news/103426268.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "创业板指大涨逾6% 科创50指数飙升近10% 成交额突破2万亿",
-      "url": "https://finance.eastmoney.com/a/202611043921903739.html",
+      "source": "Yicai",
+      "title": "世界旅游交易会中国展区规模创新高，中国冰雪游如何成为英国人的选项汉密尔顿认为，中国冰雪游要打开英国市场，最重要的是做好公众沟通和市场教育。  51分钟前",
+      "url": "https://www.yicai.com/news/103426085.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "source": "Yicai",
+      "title": "科技股领涨A股放量反弹，中信证券：多数板块估值收缩主要进程已完成“K型收敛、行情宽度拓展”可能是2027年市场最重要的特征  57分钟前",
+      "url": "https://www.yicai.com/news/103426107.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "招商证券李昊阳：稳市政策助力市场温和回升",
-      "url": "https://finance.eastmoney.com/a/202611043922168276.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "华泰证券张继强：稳市工具迈向长期制度安排 增量资金与中长期资金协同发力",
-      "url": "https://finance.eastmoney.com/a/202611043922167034.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东吴证券芦哲：大盘蓝筹配置价值再获重视",
-      "url": "https://finance.eastmoney.com/a/202611043921983221.html",
+      "source": "Yicai",
+      "title": "三季度国内运动鞋服市场分化：大众品牌失速，中高赛道依旧吃香2026 年三季度中国运动鞋服市场呈现显著分化。  1小时前",
+      "url": "https://www.yicai.com/news/103426024.html",
       "time": ""
     }
   ]
