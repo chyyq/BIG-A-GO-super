@@ -1,89 +1,87 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-04T22:53:21.766593+08:00",
-    "tradingDate": "2026-11-04",
-    "mode": "cached-fallback",
+    "generatedAt": "2026-11-05T03:31:17.517672+08:00",
+    "tradingDate": "2026-11-05",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "recommendationGeneratedAt": null,
     "recommendationsRetained": false,
     "sourceHealth": [
       {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
-      {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Quote snapshot and daily K-line history OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 27.29
+    "errors": [],
+    "runtimeSeconds": 32.33
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 12,
+    "qualifiedBoardCount": 10,
     "monitor": {
       "emotionScore": 81,
       "marketGateScore": 3,
       "marketGatePassed": true,
       "hardVeto": false,
-      "riskLevel": "CAUTION",
+      "riskLevel": "NORMAL",
       "dailyStress": false,
       "emergencyVeto": false,
       "fiveDayTrend": {
         "available": true,
-        "level": "FALLING",
-        "gatePassed": false,
-        "score": 1,
-        "averageReturnPct": -3.59,
+        "level": "RISING",
+        "gatePassed": true,
+        "score": 5,
+        "averageReturnPct": 1.36,
         "averagePositiveDays": 2.0,
-        "risingIndexCount": 0,
-        "aboveMa5IndexCount": 0,
+        "risingIndexCount": 1,
+        "aboveMa5IndexCount": 2,
         "indexes": {
           "shanghai": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-10-28",
-            "to": "2026-11-03",
-            "returnPct": -1.99,
+            "from": "2026-10-29",
+            "to": "2026-11-04",
+            "returnPct": 0.95,
             "positiveDays": 2,
-            "ma5": 3635.61,
-            "previousMa5": 3643.65,
-            "ma5Rising": false,
-            "closeAboveMa5": false
+            "ma5": 3636.55,
+            "previousMa5": 3635.61,
+            "ma5Rising": true,
+            "closeAboveMa5": true
           },
           "shenzhen": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-10-28",
-            "to": "2026-11-03",
-            "returnPct": -5.2,
+            "from": "2026-10-29",
+            "to": "2026-11-04",
+            "returnPct": 1.77,
             "positiveDays": 2,
-            "ma5": 11066.57,
-            "previousMa5": 11140.31,
+            "ma5": 11039.07,
+            "previousMa5": 11066.57,
             "ma5Rising": false,
-            "closeAboveMa5": false
+            "closeAboveMa5": true
           }
         }
       },
@@ -406,33 +404,45 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "重返2万亿！A股再现“大奇迹日” 双创吹响反攻号角！发生了什么？",
+      "url": "https://finance.eastmoney.com/a/202611043921918565.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股迎来“大奇迹日”，后市怎么看｜市场观察在第一财经记者采访的业内人士看来，本周陆续出台的救市政策“组合拳”在周三终于引发质变，下午市场大幅反弹。  3分钟前",
-      "url": "https://www.yicai.com/news/103426268.html",
+      "source": "Eastmoney News",
+      "title": "国务院关于金融工作情况的报告：实施好支持资本市场的货币政策工具 巩固完善资本市场稳市机制",
+      "url": "https://finance.eastmoney.com/a/202611043921034226.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "世界旅游交易会中国展区规模创新高，中国冰雪游如何成为英国人的选项汉密尔顿认为，中国冰雪游要打开英国市场，最重要的是做好公众沟通和市场教育。  51分钟前",
-      "url": "https://www.yicai.com/news/103426085.html",
+      "source": "Eastmoney News",
+      "title": "创业板指大涨逾6% 科创50指数飙升近10% 成交额突破2万亿",
+      "url": "https://finance.eastmoney.com/a/202611043921903739.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "科技股领涨A股放量反弹，中信证券：多数板块估值收缩主要进程已完成“K型收敛、行情宽度拓展”可能是2027年市场最重要的特征  57分钟前",
-      "url": "https://www.yicai.com/news/103426107.html",
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "三季度国内运动鞋服市场分化：大众品牌失速，中高赛道依旧吃香2026 年三季度中国运动鞋服市场呈现显著分化。  1小时前",
-      "url": "https://www.yicai.com/news/103426024.html",
+      "source": "Eastmoney News",
+      "title": "中国银河证券首席经济学家、研究院院长章俊： 可探索设立国家级战略投资基金 与平准基金形成功能互补",
+      "url": "https://finance.eastmoney.com/a/202611053922361765.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "【e公司观察】斩断信息特权套利链 筑牢A股价值投资沃土",
+      "url": "https://finance.eastmoney.com/a/202611043922329730.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "张雪机车校招工资是否合理，市场自会有结论",
+      "url": "https://finance.eastmoney.com/a/202611043922322534.html",
       "time": ""
     }
   ]
