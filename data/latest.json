@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-05T15:58:16.779704+08:00",
+    "generatedAt": "2026-11-05T16:13:33.834613+08:00",
     "tradingDate": "2026-11-05",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,18 +24,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 66.4
+    "runtimeSeconds": 39.16
   },
   "market": {
     "recommendationCount": 0,
@@ -235,7 +235,7 @@
       "price": 799.26,
       "pct": 6.06,
       "amount": 28260648272.0,
-      "turnover": 4.22,
+      "turnover": 4.19,
       "open": 757.42,
       "preClose": 753.6,
       "mainNet": 1187570080.0,
@@ -397,39 +397,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "增量资金集结待入市 26家券商宣布中标 已披露金额近600亿元！",
+      "url": "https://finance.eastmoney.com/a/202611043922305630.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜四大股指集体收涨 文化传媒、锂电池板块全天领涨全市场超4800只个股上涨。  41分钟前",
-      "url": "https://www.yicai.com/news/103427493.html",
+      "source": "Eastmoney News",
+      "title": "持续加仓！近5400亿“抄底资金”入场",
+      "url": "https://finance.eastmoney.com/a/202611043922300262.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "进博之约：读懂中美经贸的韧性与机遇美企持续深耕中国市场，既是对中国超大规模市场潜力和营商环境优化的认可，也印证了中美经贸互利共赢的本质没有改变。  4小时前",
-      "url": "https://www.yicai.com/news/103426992.html",
+      "source": "Eastmoney News",
+      "title": "国务院关于金融工作情况的报告：支持中央汇金公司发挥类平准基金作用 巩固完善资本市场稳市机制",
+      "url": "https://finance.eastmoney.com/a/202611053923339644.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "一夜大涨1.7万亿，苹果重回全球市值第一市场担心美国AI基础设施建设成本可能变得更高，美股多只数据中心或算力供应商相关个股下跌。  4小时前",
-      "url": "https://www.yicai.com/news/103426854.html",
+      "source": "Eastmoney News",
+      "title": "民主党横扫美国会两院！光伏板块迎政策暖风 产业链修复可期(名单)",
+      "url": "https://finance.eastmoney.com/a/202611053923296417.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "进博会前启用在华第二研发中心，达能的中国新战略开局中国市场的生意逻辑变了。  5小时前",
-      "url": "https://www.yicai.com/news/103426752.html",
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "滚动更新丨创业板指冲高回落涨0.87%，市场逾4800股上涨盘面上，银行板块午后迎来逢低买盘。  6小时前",
-      "url": "https://www.yicai.com/news/103426670.html",
+      "source": "Eastmoney News",
+      "title": "收评：创业板指冲高回落涨0.87% AI漫剧概念持续活跃",
+      "url": "https://finance.eastmoney.com/a/202611053923483964.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "财通证券徐近峰：资本市场改革持续显效 市场长期向好的制度基础进一步夯实",
+      "url": "https://finance.eastmoney.com/a/202611053923470668.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "华商基金张永志：国产算力等科技成长板块具备中长期配置价值",
+      "url": "https://finance.eastmoney.com/a/202611053923461811.html",
       "time": ""
     }
   ]
