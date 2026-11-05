@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-05T21:26:11.291220+08:00",
+    "generatedAt": "2026-11-05T21:28:23.218709+08:00",
     "tradingDate": "2026-11-05",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,8 +12,8 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
-        "note": "Quote snapshot and daily K-line history OK"
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "note": "OK"
       },
       {
         "name": "Eastmoney News",
@@ -34,8 +34,13 @@
         "note": "Optional news/reference source"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 62.98
+    "errors": [
+      "Eastmoney daily K skipped for Shanghai Composite: <urlopen error [Errno 101] Network is unreachable>",
+      "Eastmoney daily K skipped for Shenzhen Component: <urlopen error _ssl.c:1001: The handshake operation timed out>",
+      "Eastmoney daily K skipped for Shanghai Composite: <urlopen error [Errno 101] Network is unreachable>",
+      "Eastmoney daily K skipped for Shenzhen Component: <urlopen error _ssl.c:1001: The handshake operation timed out>"
+    ],
+    "runtimeSeconds": 79.17
   },
   "market": {
     "recommendationCount": 0,
@@ -83,7 +88,8 @@
             "ma5Rising": false,
             "closeAboveMa5": true
           }
-        }
+        },
+        "cached": true
       },
       "limitUpCount": 62,
       "limitDownCount": 2,
@@ -235,7 +241,7 @@
       "price": 799.26,
       "pct": 6.06,
       "amount": 28260648272.0,
-      "turnover": 4.22,
+      "turnover": 4.19,
       "open": 757.42,
       "preClose": 753.6,
       "mainNet": 1187570080.0,
@@ -434,14 +440,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "股市面面观丨量升价增，A股市场连涨两日",
-      "url": "https://finance.eastmoney.com/a/202611053923641146.html",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "东方财富证券陈果：A股大盘蓝筹股估值定价具备配置吸引力",
-      "url": "https://finance.eastmoney.com/a/202611053923684384.html",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
