@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-06T16:28:28.364030+08:00",
+    "generatedAt": "2026-11-06T21:09:36.420825+08:00",
     "tradingDate": "2026-11-06",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,8 +12,8 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1556%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
-        "note": "OK"
+        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
+        "note": "Quote snapshot and daily K-line history OK"
       },
       {
         "name": "Eastmoney News",
@@ -34,26 +34,21 @@
         "note": "Optional news/reference source"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 69.21
+    "errors": [],
+    "runtimeSeconds": 33.18
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
     "qualifiedBoardCount": 0,
     "monitor": {
-      "emotionScore": 50,
-      "marketGateScore": 0,
+      "emotionScore": 76,
+      "marketGateScore": 3,
       "marketGatePassed": true,
       "hardVeto": false,
-      "riskLevel": "CAUTION",
+      "riskLevel": "NORMAL",
+      "dailyStress": true,
+      "emergencyVeto": false,
       "fiveDayTrend": {
         "available": true,
         "level": "RISING",
@@ -88,13 +83,18 @@
             "ma5Rising": true,
             "closeAboveMa5": true
           }
-        },
-        "cached": true
+        }
       },
-      "limitUpCount": null,
-      "limitDownCount": null,
-      "brokenBoardRate": null,
-      "note": "Market monitor fell back to board strength."
+      "limitUpCount": 37,
+      "limitDownCount": 17,
+      "bigDownCount": 100,
+      "limitTouchCount": 53,
+      "brokenBoardCount": 16,
+      "brokenBoardRate": 0.302,
+      "breadthSampleSize": 200,
+      "breadthMethod": "top-100 plus bottom-100 movers",
+      "topBoardPct": 10.03,
+      "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached."
     }
   },
   "boards": [
@@ -105,7 +105,7 @@
       "price": 43930.04,
       "pct": 10.03,
       "amount": 2609949005.0,
-      "turnover": 16.22,
+      "turnover": 11.22,
       "open": 42603.13,
       "preClose": 39926.15,
       "mainNet": 59810080.0,
@@ -229,7 +229,7 @@
       "price": 190.45,
       "pct": 2.11,
       "amount": 31672646105.0,
-      "turnover": 15.6,
+      "turnover": 12.9,
       "open": 188.4,
       "preClose": 186.51,
       "mainNet": -547326720.0,
@@ -396,8 +396,20 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "中金公司、银河证券已在“互换便利”项下买入股票",
+      "url": "https://finance.eastmoney.com/a/202611063924788483.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "韩国财政部：将采取必要措施 避免股市脱离基本面过度波动",
       "url": "https://finance.eastmoney.com/a/202611063924135259.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股三大指数缩量收跌 银行等红利资产逆市上涨",
+      "url": "https://finance.eastmoney.com/a/202611063924777565.html",
       "time": ""
     },
     {
@@ -408,26 +420,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "杨德龙：隔夜美股大跌致亚太股市重挫 A股港股体现出一定的韧性",
-      "url": "https://finance.eastmoney.com/a/202611063924841352.html",
+      "title": "前海开源基金杨德龙：现阶段倾向适当乐观 关注六大板块投资机会",
+      "url": "https://finance.eastmoney.com/a/202611063925054588.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "富国基金王乐乐：新一轮行情驱动力，来自持仓轻且业绩大幅改善的方向",
-      "url": "https://finance.eastmoney.com/a/202611063924822643.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "金融街证券首席经济学家张一：国产替代是一笔“效率账”",
-      "url": "https://finance.eastmoney.com/a/202611063924800532.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股三大指数缩量收跌 银行等红利资产逆市上涨",
-      "url": "https://finance.eastmoney.com/a/202611063924777565.html",
+      "title": "中原证券首席经济学家邓淑斌：资本市场投融资综合改革进入协同推进新阶段",
+      "url": "https://finance.eastmoney.com/a/202611063924993680.html",
       "time": ""
     }
   ]
