@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-06T16:00:54.448512+08:00",
+    "generatedAt": "2026-11-06T16:17:04.681638+08:00",
     "tradingDate": "2026-11-06",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 26.0
+    "runtimeSeconds": 28.2
   },
   "market": {
     "recommendationCount": 0,
@@ -105,7 +105,7 @@
       "price": 43930.04,
       "pct": 10.03,
       "amount": 2609949005.0,
-      "turnover": 18.69,
+      "turnover": 16.22,
       "open": 42603.13,
       "preClose": 39926.15,
       "mainNet": 59810080.0,
@@ -229,7 +229,7 @@
       "price": 190.45,
       "pct": 2.11,
       "amount": 31672646105.0,
-      "turnover": 48.99,
+      "turnover": 15.6,
       "open": 188.4,
       "preClose": 186.51,
       "mainNet": -547326720.0,
@@ -408,6 +408,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "富国基金王乐乐：新一轮行情驱动力，来自持仓轻且业绩大幅改善的方向",
+      "url": "https://finance.eastmoney.com/a/202611063924822643.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "金融街证券首席经济学家张一：国产替代是一笔“效率账”",
       "url": "https://finance.eastmoney.com/a/202611063924800532.html",
       "time": ""
@@ -416,12 +422,6 @@
       "source": "Eastmoney News",
       "title": "国信证券吴信坤：科技板块业绩高增、蓝筹估值处低位，A股配置价值凸显",
       "url": "https://finance.eastmoney.com/a/202611063924776362.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信证券展望：2027年行情宽度有望拓展",
-      "url": "https://finance.eastmoney.com/a/202611063924773043.html",
       "time": ""
     },
     {
