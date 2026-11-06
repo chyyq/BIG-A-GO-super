@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-06T22:28:26.199522+08:00",
+    "generatedAt": "2026-11-06T22:32:08.718479+08:00",
     "tradingDate": "2026-11-06",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -34,21 +34,31 @@
         "note": "Optional news/reference source"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 36.04
+    "errors": [
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response"
+    ],
+    "runtimeSeconds": 108.48
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
     "qualifiedBoardCount": 0,
     "monitor": {
-      "emotionScore": 76,
-      "marketGateScore": 3,
+      "emotionScore": 50,
+      "marketGateScore": 0,
       "marketGatePassed": true,
       "hardVeto": false,
-      "riskLevel": "NORMAL",
-      "dailyStress": true,
-      "emergencyVeto": false,
+      "riskLevel": "CAUTION",
       "fiveDayTrend": {
         "available": true,
         "level": "RISING",
@@ -85,16 +95,10 @@
           }
         }
       },
-      "limitUpCount": 37,
-      "limitDownCount": 17,
-      "bigDownCount": 100,
-      "limitTouchCount": 53,
-      "brokenBoardCount": 16,
-      "brokenBoardRate": 0.302,
-      "breadthSampleSize": 200,
-      "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 10.03,
-      "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached."
+      "limitUpCount": null,
+      "limitDownCount": null,
+      "brokenBoardRate": null,
+      "note": "Market monitor fell back to board strength."
     }
   },
   "boards": [
@@ -105,7 +109,7 @@
       "price": 43930.04,
       "pct": 10.03,
       "amount": 2609949005.0,
-      "turnover": 33.52,
+      "turnover": 18.69,
       "open": 42603.13,
       "preClose": 39926.15,
       "mainNet": 59810080.0,
@@ -146,57 +150,7 @@
       "continuous": true,
       "amountRatio": 1.4,
       "limitUpCount": 0,
-      "bigUpCount": 1
-    },
-    {
-      "code": "BK1518",
-      "name": "种子",
-      "kind": "Industry board",
-      "price": 4212.17,
-      "pct": 4.64,
-      "amount": 5112514735.0,
-      "turnover": 10.38,
-      "open": 3975.73,
-      "preClose": 4025.36,
-      "mainNet": 284286000.0,
-      "rank": 3,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.15,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 2,
-      "bigUpCount": 3
-    },
-    {
-      "code": "BK1261",
-      "name": "种植业",
-      "kind": "Industry board",
-      "price": 2409.09,
-      "pct": 2.72,
-      "amount": 7939746112.0,
-      "turnover": 6.61,
-      "open": 2300.92,
-      "preClose": 2345.27,
-      "mainNet": 323068896.0,
-      "rank": 7,
-      "passed": 3,
-      "qualified": false,
-      "score": 64.75,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 3,
-      "bigUpCount": 4
+      "bigUpCount": 0
     },
     {
       "code": "BK1556",
@@ -229,7 +183,7 @@
       "price": 190.45,
       "pct": 2.11,
       "amount": 31672646105.0,
-      "turnover": 41.34,
+      "turnover": 48.99,
       "open": 188.4,
       "preClose": 186.51,
       "mainNet": -547326720.0,
@@ -265,6 +219,29 @@
       "bigUpCount": 0
     },
     {
+      "code": "BK1518",
+      "name": "种子",
+      "kind": "Industry board",
+      "price": 4212.17,
+      "pct": 4.64,
+      "amount": 5112514735.0,
+      "turnover": 10.38,
+      "open": 3975.73,
+      "preClose": 4025.36,
+      "mainNet": 284286000.0,
+      "rank": 3,
+      "passed": 1,
+      "qualified": false,
+      "score": 33.35,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
       "code": "BK1452",
       "name": "卫浴电器",
       "kind": "Industry board",
@@ -284,8 +261,8 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1510",
@@ -308,7 +285,7 @@
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 1
+      "bigUpCount": 0
     },
     {
       "code": "BK1587",
@@ -325,6 +302,29 @@
       "passed": 1,
       "qualified": false,
       "score": 32.3,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1261",
+      "name": "种植业",
+      "kind": "Industry board",
+      "price": 2409.09,
+      "pct": 2.72,
+      "amount": 7939746112.0,
+      "turnover": 6.61,
+      "open": 2300.92,
+      "preClose": 2345.27,
+      "mainNet": 323068896.0,
+      "rank": 7,
+      "passed": 1,
+      "qualified": false,
+      "score": 31.95,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
