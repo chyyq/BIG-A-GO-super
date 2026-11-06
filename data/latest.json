@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-06T16:17:04.681638+08:00",
+    "generatedAt": "2026-11-06T16:22:58.968613+08:00",
     "tradingDate": "2026-11-06",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 28.2
+    "runtimeSeconds": 31.12
   },
   "market": {
     "recommendationCount": 0,
@@ -105,7 +105,7 @@
       "price": 43930.04,
       "pct": 10.03,
       "amount": 2609949005.0,
-      "turnover": 16.22,
+      "turnover": 18.69,
       "open": 42603.13,
       "preClose": 39926.15,
       "mainNet": 59810080.0,
@@ -229,7 +229,7 @@
       "price": 190.45,
       "pct": 2.11,
       "amount": 31672646105.0,
-      "turnover": 15.6,
+      "turnover": 48.99,
       "open": 188.4,
       "preClose": 186.51,
       "mainNet": -547326720.0,
@@ -420,14 +420,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "国信证券吴信坤：科技板块业绩高增、蓝筹估值处低位，A股配置价值凸显",
-      "url": "https://finance.eastmoney.com/a/202611063924776362.html",
+      "title": "A股三大指数缩量收跌 银行等红利资产逆市上涨",
+      "url": "https://finance.eastmoney.com/a/202611063924777565.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数缩量收跌 银行等红利资产逆市上涨",
-      "url": "https://finance.eastmoney.com/a/202611063924777565.html",
+      "title": "中金公司、银河证券已在“互换便利”项下买入股票",
+      "url": "https://finance.eastmoney.com/a/202611063924788483.html",
       "time": ""
     }
   ]
