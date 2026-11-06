@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-06T21:09:36.420825+08:00",
+    "generatedAt": "2026-11-06T21:12:00.577558+08:00",
     "tradingDate": "2026-11-06",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,18 +24,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 33.18
+    "runtimeSeconds": 41.17
   },
   "market": {
     "recommendationCount": 0,
@@ -105,7 +105,7 @@
       "price": 43930.04,
       "pct": 10.03,
       "amount": 2609949005.0,
-      "turnover": 11.22,
+      "turnover": 9.07,
       "open": 42603.13,
       "preClose": 39926.15,
       "mainNet": 59810080.0,
@@ -229,7 +229,7 @@
       "price": 190.45,
       "pct": 2.11,
       "amount": 31672646105.0,
-      "turnover": 12.9,
+      "turnover": 24.44,
       "open": 188.4,
       "preClose": 186.51,
       "mainNet": -547326720.0,
@@ -383,51 +383,9 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "新华社：美国股市缘何暴跌",
-      "url": "https://finance.eastmoney.com/a/202611063924729138.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "全球市场：纳指大跌逾5% 费城半导体指数跌超12% AI产业链遭重挫",
-      "url": "https://finance.eastmoney.com/a/202611063923941036.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中金公司、银河证券已在“互换便利”项下买入股票",
-      "url": "https://finance.eastmoney.com/a/202611063924788483.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "韩国财政部：将采取必要措施 避免股市脱离基本面过度波动",
-      "url": "https://finance.eastmoney.com/a/202611063924135259.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股三大指数缩量收跌 银行等红利资产逆市上涨",
-      "url": "https://finance.eastmoney.com/a/202611063924777565.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "前海开源基金杨德龙：现阶段倾向适当乐观 关注六大板块投资机会",
-      "url": "https://finance.eastmoney.com/a/202611063925054588.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中原证券首席经济学家邓淑斌：资本市场投融资综合改革进入协同推进新阶段",
-      "url": "https://finance.eastmoney.com/a/202611063924993680.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     }
   ]
