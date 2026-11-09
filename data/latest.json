@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-09T16:26:33.598730+08:00",
+    "generatedAt": "2026-11-09T16:33:03.886134+08:00",
     "tradingDate": "2026-11-09",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 36.9
+    "runtimeSeconds": 34.72
   },
   "market": {
     "recommendationCount": 0,
@@ -426,8 +426,8 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "别太担忧AI股大跌？瑞银CEO：市场在修正过高预期 不必太关注“蓝色浪潮”",
-      "url": "https://finance.eastmoney.com/a/202611093926263343.html",
+      "title": "兴业证券市场策略首席吴峰：A股反弹修复开启，制度红利夯实市场底部",
+      "url": "https://finance.eastmoney.com/a/202611093926138446.html",
       "time": ""
     },
     {
