@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-10T00:53:41.712012+08:00",
+    "generatedAt": "2026-11-10T06:05:04.940156+08:00",
     "tradingDate": "2026-11-10",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,18 +24,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 35.23
+    "runtimeSeconds": 39.82
   },
   "market": {
     "recommendationCount": 0,
@@ -157,7 +157,7 @@
       "price": 9993.58,
       "pct": 5.29,
       "amount": 9776370834.0,
-      "turnover": 9.1,
+      "turnover": 4.91,
       "open": 10104.97,
       "preClose": 9491.87,
       "mainNet": 29251584.0,
@@ -183,7 +183,7 @@
       "price": 289.83,
       "pct": 4.54,
       "amount": 29173238862.0,
-      "turnover": 16.14,
+      "turnover": 10.88,
       "open": 289.64,
       "preClose": 277.23,
       "mainNet": -1275819520.0,
@@ -209,7 +209,7 @@
       "price": 261.12,
       "pct": 3.95,
       "amount": 30310452993.0,
-      "turnover": 16.02,
+      "turnover": 10.98,
       "open": 261.35,
       "preClose": 251.19,
       "mainNet": -1499154944.0,
@@ -400,51 +400,39 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "突然爆发！19分钟 20%涨停！A股迎来双重利好",
-      "url": "https://finance.eastmoney.com/a/202611093926106885.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股靠什么托举？这些重要变量正在集聚",
-      "url": "https://finance.eastmoney.com/a/202611093925775778.html",
+      "source": "Yicai",
+      "title": "猪价创10年新低，资金博弈周期拐点供给压力与生产效率提升仍在制约猪肉价格反弹空间。  昨天 22:22",
+      "url": "https://www.yicai.com/news/103433180.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "沪指小幅收涨 深成指与创业板指冲高回落 煤炭与机器人板块走强",
-      "url": "https://finance.eastmoney.com/a/202611093926213181.html",
+      "source": "Yicai",
+      "title": "约2/3订单缺口被新场景补上，外资在华场景扩容提速企业的扩容不是铺摊子，而是在旧板块放缓时，让新场景接住订单、迅速补位。  昨天 20:08",
+      "url": "https://www.yicai.com/news/103432976.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "source": "Yicai",
+      "title": "比亚迪上调今年海外销量预期近40%比亚迪董事长王传福今年曾称，未来公司希望做到国内和海外市场各自一半的份额。  昨天 19:27",
+      "url": "https://www.yicai.com/news/103432883.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "国常会部署重点工作 首提完善资本市场稳市机制",
-      "url": "https://topic.eastmoney.com/detail/gchstwszbscwsjz.html",
+      "source": "Yicai",
+      "title": "进博会的美妆馆：巨头把实验室搬进来，新面孔在窄门里找位置今天的中国不只是全球最大的消费市场，更是全球美妆前沿创新的风向标。  昨天 19:24",
+      "url": "https://www.yicai.com/news/103432845.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信建投、华泰、浙商出手买入！至少10家券商已进场 增量资金加速入市",
-      "url": "https://finance.eastmoney.com/a/202611093926433155.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "source": "Yicai",
+      "title": "财报解读｜航运巨头前三季度营收超3100亿，利润大涨股价却跌了资本市场为何“不买账”？  昨天 19:07",
+      "url": "https://www.yicai.com/news/103432797.html",
       "time": ""
     }
   ]
