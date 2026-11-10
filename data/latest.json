@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-10T16:47:52.905084+08:00",
+    "generatedAt": "2026-11-10T21:42:07.091978+08:00",
     "tradingDate": "2026-11-10",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,18 +24,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 37.17
+    "runtimeSeconds": 36.73
   },
   "market": {
     "recommendationCount": 0,
@@ -410,26 +410,32 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "【博时市场点评11月10日】指数震荡收涨，成交量有所上涨",
-      "url": "https://finance.eastmoney.com/a/202611103927322264.html",
+      "title": "中金公司李求索：外部扰动边际缓和后市场有望率先迎来估值修复",
+      "url": "https://finance.eastmoney.com/a/202611103927560559.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中国银河证券杨超：构建价值回报闭环 让市场形成内生稳定机制",
+      "url": "https://finance.eastmoney.com/a/202611103927559046.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "银河证券首席策略杨超：稳市政策衔接清晰，内生机制蓄势待发",
+      "url": "https://finance.eastmoney.com/a/202611103927560458.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美国10月CPI环比增长0.4% 高于市场预期 12月加息概率仍维持在100%",
+      "url": "https://finance.eastmoney.com/a/202611103927569095.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
       "title": "东方财富证券开户",
       "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     }
   ]
