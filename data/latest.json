@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-10T16:29:41.633979+08:00",
+    "generatedAt": "2026-11-10T16:40:56.005174+08:00",
     "tradingDate": "2026-11-10",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 35.4
+    "runtimeSeconds": 61.01
   },
   "market": {
     "recommendationCount": 0,
@@ -209,7 +209,7 @@
       "price": 1840.57,
       "pct": 6.73,
       "amount": 5369502212.0,
-      "turnover": 4.15,
+      "turnover": 0.05,
       "open": 1768.33,
       "preClose": 1724.43,
       "mainNet": 181952992.0,
@@ -234,7 +234,7 @@
       "price": 202.05,
       "pct": 5.95,
       "amount": 8284881130.0,
-      "turnover": 12.27,
+      "turnover": 27.08,
       "open": 200.81,
       "preClose": 190.7,
       "mainNet": -751384128.0,
@@ -259,7 +259,7 @@
       "price": 46649.85,
       "pct": 5.72,
       "amount": 5644310578.0,
-      "turnover": 36.81,
+      "turnover": 46.83,
       "open": 45199.98,
       "preClose": 44124.61,
       "mainNet": -359051456.0,
@@ -283,7 +283,7 @@
       "price": 1367.72,
       "pct": 5.48,
       "amount": 51439640513.0,
-      "turnover": 6.68,
+      "turnover": 6.92,
       "open": 1301.34,
       "preClose": 1296.64,
       "mainNet": 3164913408.0,
@@ -416,7 +416,7 @@
     },
     {
       "source": "Yicai",
-      "title": "A股四大指数集体高开，油气、海运等板块调整市场逾4800股上涨。  6小时前",
+      "title": "A股四大指数集体高开，油气、海运等板块调整市场逾4800股上涨。  7小时前",
       "url": "https://www.yicai.com/news/103433463.html",
       "time": ""
     },
