@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-10T22:45:04.855891+08:00",
+    "generatedAt": "2026-11-10T22:53:38.865556+08:00",
     "tradingDate": "2026-11-10",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,18 +24,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 33.63
+    "runtimeSeconds": 42.22
   },
   "market": {
     "recommendationCount": 0,
@@ -209,7 +209,7 @@
       "price": 1840.57,
       "pct": 6.73,
       "amount": 5369502212.0,
-      "turnover": 1.75,
+      "turnover": 0.04,
       "open": 1768.33,
       "preClose": 1724.43,
       "mainNet": 181952992.0,
@@ -234,7 +234,7 @@
       "price": 202.05,
       "pct": 5.95,
       "amount": 8284881130.0,
-      "turnover": 16.12,
+      "turnover": 13.51,
       "open": 200.81,
       "preClose": 190.7,
       "mainNet": -751384128.0,
@@ -259,7 +259,7 @@
       "price": 46649.85,
       "pct": 5.72,
       "amount": 5644310578.0,
-      "turnover": 30.02,
+      "turnover": 22.74,
       "open": 45199.98,
       "preClose": 44124.61,
       "mainNet": -359051456.0,
@@ -391,51 +391,33 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数收涨 创业板指涨1.46% 近4300只股上涨",
-      "url": "https://finance.eastmoney.com/a/202611103927273312.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "source": "Yicai",
+      "title": "票据利率持续“地板价”，信贷统计口径调整讨论升温近期市场已重新开始关注票据在统计口径上的信贷属性合理性。  47分钟前",
+      "url": "https://www.yicai.com/news/103435108.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "国常会部署重点工作 首提完善资本市场稳市机制",
-      "url": "https://topic.eastmoney.com/detail/gchstwszbscwsjz.html",
+      "source": "Yicai",
+      "title": "暴走“梧桐区”、围观新生代，跨国品牌沉浸式捕获消费新机遇品牌IP、创意产品、前沿趋势密集的进博会，也是跨国消费品牌汲取灵感、试水中国市场的重要平台。  1小时前",
+      "url": "https://www.yicai.com/news/103435009.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信建投董事长刘成：要充分认识市场波动，不被短期行情裹挟",
-      "url": "https://finance.eastmoney.com/a/202611103927642251.html",
+      "source": "Yicai",
+      "title": "奥迪全球CEO高德诺：任用本土管理者模式有望全球推广高德诺称，随着全球市场日益复杂，必须进一步推进本土化，任用熟悉本土市场的管理者是顺理成章的一步。  2小时前",
+      "url": "https://www.yicai.com/news/103434967.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "中信建投证券首席经济学家黄文涛：2027年资本市场有望整体保持向上，呈现股债汇三牛",
-      "url": "https://finance.eastmoney.com/a/202611103927606944.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "美国10月CPI环比增长0.4% 高于市场预期 12月加息概率仍维持在100%",
-      "url": "https://finance.eastmoney.com/a/202611103927569095.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "source": "Yicai",
+      "title": "外资思维反转，中国从研发“末站”变“首站”中国不只是全球企业的重要市场，更正在成为其配置区域资源、连接产业生态的关键节点。  2小时前",
+      "url": "https://www.yicai.com/news/103434857.html",
       "time": ""
     }
   ]
