@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-10T21:48:33.425624+08:00",
+    "generatedAt": "2026-11-10T22:45:04.855891+08:00",
     "tradingDate": "2026-11-10",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 38.14
+    "runtimeSeconds": 33.63
   },
   "market": {
     "recommendationCount": 0,
@@ -209,7 +209,7 @@
       "price": 1840.57,
       "pct": 6.73,
       "amount": 5369502212.0,
-      "turnover": 4.15,
+      "turnover": 1.75,
       "open": 1768.33,
       "preClose": 1724.43,
       "mainNet": 181952992.0,
@@ -234,7 +234,7 @@
       "price": 202.05,
       "pct": 5.95,
       "amount": 8284881130.0,
-      "turnover": 12.27,
+      "turnover": 16.12,
       "open": 200.81,
       "preClose": 190.7,
       "mainNet": -751384128.0,
@@ -259,7 +259,7 @@
       "price": 46649.85,
       "pct": 5.72,
       "amount": 5644310578.0,
-      "turnover": 36.81,
+      "turnover": 30.02,
       "open": 45199.98,
       "preClose": 44124.61,
       "mainNet": -359051456.0,
@@ -410,20 +410,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "中金公司李求索：外部扰动边际缓和后市场有望率先迎来估值修复",
-      "url": "https://finance.eastmoney.com/a/202611103927560559.html",
+      "title": "中信建投董事长刘成：要充分认识市场波动，不被短期行情裹挟",
+      "url": "https://finance.eastmoney.com/a/202611103927642251.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "中国银河证券杨超：构建价值回报闭环 让市场形成内生稳定机制",
-      "url": "https://finance.eastmoney.com/a/202611103927559046.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "银河证券首席策略杨超：稳市政策衔接清晰，内生机制蓄势待发",
-      "url": "https://finance.eastmoney.com/a/202611103927560458.html",
+      "title": "中信建投证券首席经济学家黄文涛：2027年资本市场有望整体保持向上，呈现股债汇三牛",
+      "url": "https://finance.eastmoney.com/a/202611103927606944.html",
       "time": ""
     },
     {
@@ -436,6 +430,12 @@
       "source": "Eastmoney News",
       "title": "东方财富证券开户",
       "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
