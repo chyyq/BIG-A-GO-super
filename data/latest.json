@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-11T22:40:02.643205+08:00",
+    "generatedAt": "2026-11-11T22:43:34.830044+08:00",
     "tradingDate": "2026-11-11",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,7 +12,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1295%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
       },
       {
@@ -24,18 +24,17 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
@@ -52,7 +51,7 @@
       "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 73.93
+    "runtimeSeconds": 125.91
   },
   "market": {
     "recommendationCount": 0,
@@ -129,8 +128,8 @@
       ],
       "continuous": true,
       "amountRatio": 1.16,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK1591",
@@ -392,51 +391,21 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "央行：用好债市非银大额赎回互换便利 维护股票、债券、外汇等金融市场平稳运行",
-      "url": "https://finance.eastmoney.com/a/202611113928506743.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美国10月CPI通胀再度超预期 市场押注美联储12月加息已成定局",
-      "url": "https://finance.eastmoney.com/a/202611103927655694.html",
+      "source": "Yicai",
+      "title": "加强整体性谋划、成体系推进、制度化解决！陈吉宁调研优化营商环境工作全力营造市场化、法治化、国际化一流营商环境。  1小时前",
+      "url": "https://www.yicai.com/news/103437038.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "突然直线涨停！30分钟 60亿主力资金涌入！啥情况？",
-      "url": "https://finance.eastmoney.com/a/202611113928252082.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股三大指数收涨 创业板指涨超3% 光模块概念爆发",
-      "url": "https://finance.eastmoney.com/a/202611113928354661.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "光收发器禁令落地阻力重重！光模块板块走势转强 多股获融资客抢筹(名单)",
-      "url": "https://finance.eastmoney.com/a/202611113928239257.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "美国10月CPI超预期 市场押注美联储12月加息",
-      "url": "https://topic.eastmoney.com/detail/mg10ytccyq.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "国常会部署重点工作 首提完善资本市场稳市机制",
-      "url": "https://topic.eastmoney.com/detail/gchstwszbscwsjz.html",
+      "source": "Yicai",
+      "title": "215万名经纪客户、483个交易单元同步变更，国联民生“双向法切”落地证券行业首例财富管理业务与自营业务双向法人切换落地。  2小时前",
+      "url": "https://www.yicai.com/news/103436749.html",
       "time": ""
     }
   ]
