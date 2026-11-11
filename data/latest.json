@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-11T16:18:05.581468+08:00",
+    "generatedAt": "2026-11-11T16:20:44.857913+08:00",
     "tradingDate": "2026-11-11",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,18 +24,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 38.19
+    "runtimeSeconds": 39.57
   },
   "market": {
     "recommendationCount": 0,
@@ -183,7 +183,7 @@
       "price": 3104.1,
       "pct": 5.33,
       "amount": 210942580111.0,
-      "turnover": 4.7,
+      "turnover": 4.71,
       "open": 2939.4,
       "preClose": 2946.91,
       "mainNet": 19090076416.0,
@@ -357,7 +357,7 @@
       "price": 15171.46,
       "pct": 4.48,
       "amount": 10310260031.0,
-      "turnover": 4.38,
+      "turnover": 4.36,
       "open": 14472.9,
       "preClose": 14520.75,
       "mainNet": 862963760.0,
@@ -398,51 +398,33 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "美国10月CPI通胀再度超预期 市场押注美联储12月加息已成定局",
-      "url": "https://finance.eastmoney.com/a/202611103927655694.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "突然直线涨停！30分钟 60亿主力资金涌入！啥情况？",
-      "url": "https://finance.eastmoney.com/a/202611113928252082.html",
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共85只个股涨停 机器人概念多股连板机器人概念股光洋股份、锋龙股份3连板。一图速览今日连板股&gt;&gt;  4分钟前",
+      "url": "https://www.yicai.com/news/103436376.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "光收发器禁令落地阻力重重！光模块板块走势转强 多股获融资客抢筹(名单)",
-      "url": "https://finance.eastmoney.com/a/202611113928239257.html",
+      "source": "Yicai",
+      "title": "收盘｜沪指涨0.46% 算力硬件概念爆发全市场超3500只个股上涨。  58分钟前",
+      "url": "https://www.yicai.com/news/103436240.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "source": "Yicai",
+      "title": "风光利用率连续三年回落，电力市场何以支撑高比例新能源消纳“十五五”时期电力市场建设必须更突出绿色价值实现和系统保障能力  2小时前",
+      "url": "https://www.yicai.com/news/103435911.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美国10月CPI超预期 市场押注美联储12月加息",
-      "url": "https://topic.eastmoney.com/detail/mg10ytccyq.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "国常会部署重点工作 首提完善资本市场稳市机制",
-      "url": "https://topic.eastmoney.com/detail/gchstwszbscwsjz.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "兴业证券段超：海外风险扰动不改资本市场长期向好",
-      "url": "https://finance.eastmoney.com/a/202611113928414690.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "一场券商策略会，看懂2027宏观大势、A股节奏与配置主线",
-      "url": "https://finance.eastmoney.com/a/202611113928269880.html",
+      "source": "Yicai",
+      "title": "余承东官宣华为子品牌“星芒”，首款手机瞄准AI市场华为正式宣布推出全新华为子品牌星芒，以应对激烈的存量竞争。  4小时前",
+      "url": "https://www.yicai.com/news/103435753.html",
       "time": ""
     }
   ]
