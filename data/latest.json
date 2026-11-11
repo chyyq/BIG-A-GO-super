@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-11T16:20:44.857913+08:00",
+    "generatedAt": "2026-11-11T20:54:04.196353+08:00",
     "tradingDate": "2026-11-11",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,31 +24,43 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 39.57
+    "errors": [
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response"
+    ],
+    "runtimeSeconds": 80.82
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 7,
+    "qualifiedBoardCount": 0,
     "monitor": {
-      "emotionScore": 100,
-      "marketGateScore": 5,
+      "emotionScore": 50,
+      "marketGateScore": 0,
       "marketGatePassed": true,
       "hardVeto": false,
       "riskLevel": "CAUTION",
-      "dailyStress": false,
-      "emergencyVeto": false,
       "fiveDayTrend": {
         "available": true,
         "level": "STABLE",
@@ -85,226 +97,13 @@
           }
         }
       },
-      "limitUpCount": 71,
-      "limitDownCount": 7,
-      "bigDownCount": 14,
-      "limitTouchCount": 72,
-      "brokenBoardCount": 1,
-      "brokenBoardRate": 0.014,
-      "breadthSampleSize": 200,
-      "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 7.19,
-      "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached."
+      "limitUpCount": null,
+      "limitDownCount": null,
+      "brokenBoardRate": null,
+      "note": "Market monitor fell back to board strength."
     }
   },
   "boards": [
-    {
-      "code": "BK1591",
-      "name": "通信网络设备及器件",
-      "kind": "Industry board",
-      "price": 11353.84,
-      "pct": 7.19,
-      "amount": 101664512702.0,
-      "turnover": 4.01,
-      "open": 10612.85,
-      "preClose": 10591.97,
-      "mainNet": 10474917888.0,
-      "rank": 2,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.9,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 3,
-      "bigUpCount": 19
-    },
-    {
-      "code": "BK1592",
-      "name": "通信线缆及配套",
-      "kind": "Industry board",
-      "price": 19285.88,
-      "pct": 6.04,
-      "amount": 24593357288.0,
-      "turnover": 6.82,
-      "open": 18159.63,
-      "preClose": 18187.19,
-      "mainNet": 2176739648.0,
-      "rank": 3,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.55,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 2,
-      "bigUpCount": 7
-    },
-    {
-      "code": "BK1128",
-      "name": "CPO概念",
-      "kind": "Concept board",
-      "price": 6626.39,
-      "pct": 5.83,
-      "amount": 215787956571.0,
-      "turnover": 3.24,
-      "open": 6261.6,
-      "preClose": 6261.38,
-      "mainNet": 20553658880.0,
-      "rank": 4,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.2,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 10,
-      "bigUpCount": 45
-    },
-    {
-      "code": "BK1136",
-      "name": "光通信模块",
-      "kind": "Concept board",
-      "price": 3104.1,
-      "pct": 5.33,
-      "amount": 210942580111.0,
-      "turnover": 4.71,
-      "open": 2939.4,
-      "preClose": 2946.91,
-      "mainNet": 19090076416.0,
-      "rank": 6,
-      "passed": 4,
-      "qualified": true,
-      "score": 81.5,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 11,
-      "bigUpCount": 50
-    },
-    {
-      "code": "BK0459",
-      "name": "元件",
-      "kind": "Industry board",
-      "price": 49485.34,
-      "pct": 4.9,
-      "amount": 98206480430.0,
-      "turnover": 6.07,
-      "open": 46978.24,
-      "preClose": 47174.98,
-      "mainNet": 8178702592.0,
-      "rank": 7,
-      "passed": 4,
-      "qualified": true,
-      "score": 81.15,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 5,
-      "bigUpCount": 30
-    },
-    {
-      "code": "BK0448",
-      "name": "通信设备",
-      "kind": "Industry board",
-      "price": 19785.92,
-      "pct": 4.82,
-      "amount": 140259919404.0,
-      "turnover": 4.41,
-      "open": 18866.42,
-      "preClose": 18875.77,
-      "mainNet": 13530310144.0,
-      "rank": 9,
-      "passed": 4,
-      "qualified": true,
-      "score": 80.45,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 8,
-      "bigUpCount": 32
-    },
-    {
-      "code": "BK1660",
-      "name": "光纤概念",
-      "kind": "Concept board",
-      "price": 960.12,
-      "pct": 4.71,
-      "amount": 146300585761.0,
-      "turnover": 2.32,
-      "open": 914.85,
-      "preClose": 916.97,
-      "mainNet": 13580491264.0,
-      "rank": 10,
-      "passed": 4,
-      "qualified": true,
-      "score": 80.1,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 8,
-      "bigUpCount": 29
-    },
-    {
-      "code": "BK1340",
-      "name": "印制电路板",
-      "kind": "Industry board",
-      "price": 10714.08,
-      "pct": 5.76,
-      "amount": 85666695000.0,
-      "turnover": 6.71,
-      "open": 10082.23,
-      "preClose": 10130.11,
-      "mainNet": 7213603328.0,
-      "rank": 5,
-      "passed": 3,
-      "qualified": false,
-      "score": 65.45,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 1.25,
-      "limitUpCount": 5,
-      "bigUpCount": 28
-    },
     {
       "code": "BK1295",
       "name": "其他数字媒体",
@@ -326,27 +125,102 @@
       ],
       "continuous": true,
       "amountRatio": 1.16,
-      "limitUpCount": 1,
-      "bigUpCount": 1
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
-      "code": "BK1536",
-      "name": "综合包装",
+      "code": "BK1591",
+      "name": "通信网络设备及器件",
       "kind": "Industry board",
-      "price": 1166.09,
-      "pct": 4.61,
-      "amount": 332407052.0,
-      "turnover": 2.36,
-      "open": 1114.22,
-      "preClose": 1114.69,
-      "mainNet": 40404457.0,
-      "rank": 11,
+      "price": 11353.84,
+      "pct": 7.19,
+      "amount": 101664512702.0,
+      "turnover": 4.01,
+      "open": 10612.85,
+      "preClose": 10591.97,
+      "mainNet": 10474917888.0,
+      "rank": 2,
       "passed": 2,
       "qualified": false,
-      "score": 37,
+      "score": 50.1,
       "criteria": [
-        "Board is near the top of today's movers"
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
       ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1592",
+      "name": "通信线缆及配套",
+      "kind": "Industry board",
+      "price": 19285.88,
+      "pct": 6.04,
+      "amount": 24593357288.0,
+      "turnover": 6.82,
+      "open": 18159.63,
+      "preClose": 18187.19,
+      "mainNet": 2176739648.0,
+      "rank": 3,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.75,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK0459",
+      "name": "元件",
+      "kind": "Industry board",
+      "price": 49485.34,
+      "pct": 4.9,
+      "amount": 98206480430.0,
+      "turnover": 6.07,
+      "open": 46978.24,
+      "preClose": 47174.98,
+      "mainNet": 8178702592.0,
+      "rank": 5,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.05,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK0448",
+      "name": "通信设备",
+      "kind": "Industry board",
+      "price": 19785.92,
+      "pct": 4.82,
+      "amount": 140259919404.0,
+      "turnover": 4.41,
+      "open": 18866.42,
+      "preClose": 18875.77,
+      "mainNet": 13530310144.0,
+      "rank": 7,
+      "passed": 2,
+      "qualified": false,
+      "score": 48.35,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": null,
       "limitUpCount": 0,
       "bigUpCount": 0
     },
@@ -361,6 +235,75 @@
       "open": 14472.9,
       "preClose": 14520.75,
       "mainNet": 862963760.0,
+      "rank": 9,
+      "passed": 2,
+      "qualified": false,
+      "score": 47.65,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1328",
+      "name": "集成电路封测",
+      "kind": "Industry board",
+      "price": 7012.87,
+      "pct": 4.3,
+      "amount": 13725046228.0,
+      "turnover": 4.18,
+      "open": 6682.0,
+      "preClose": 6723.77,
+      "mainNet": 749229408.0,
+      "rank": 10,
+      "passed": 2,
+      "qualified": false,
+      "score": 47.3,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1327",
+      "name": "分立器件",
+      "kind": "Industry board",
+      "price": 12109.18,
+      "pct": 4.22,
+      "amount": 15839651533.0,
+      "turnover": 2.69,
+      "open": 11602.94,
+      "preClose": 11618.35,
+      "mainNet": 1549953488.0,
+      "rank": 11,
+      "passed": 2,
+      "qualified": false,
+      "score": 37,
+      "criteria": [
+        "Board is near the top of today's movers"
+      ],
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1215",
+      "name": "通信",
+      "kind": "Industry board",
+      "price": 6632.81,
+      "pct": 4.01,
+      "amount": 151722629772.0,
+      "turnover": 1.7,
+      "open": 6370.23,
+      "preClose": 6377.25,
+      "mainNet": 13383342592.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -368,6 +311,29 @@
       "criteria": [
         "Board is near the top of today's movers"
       ],
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1340",
+      "name": "印制电路板",
+      "kind": "Industry board",
+      "price": 10714.08,
+      "pct": 5.76,
+      "amount": 85666695000.0,
+      "turnover": 6.71,
+      "open": 10082.23,
+      "preClose": 10130.11,
+      "mainNet": 7213603328.0,
+      "rank": 4,
+      "passed": 1,
+      "qualified": false,
+      "score": 33.0,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": 1.25,
       "limitUpCount": 0,
       "bigUpCount": 0
     },
@@ -382,6 +348,29 @@
       "open": 1427.22,
       "preClose": 1429.72,
       "mainNet": 45118742.0,
+      "rank": 6,
+      "passed": 1,
+      "qualified": false,
+      "score": 32.3,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": 0.96,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1536",
+      "name": "综合包装",
+      "kind": "Industry board",
+      "price": 1166.09,
+      "pct": 4.61,
+      "amount": 332407052.0,
+      "turnover": 2.36,
+      "open": 1114.22,
+      "preClose": 1114.69,
+      "mainNet": 40404457.0,
       "rank": 8,
       "passed": 1,
       "qualified": false,
@@ -390,41 +379,59 @@
         "[SectorGate] Tail rank remains top-15 positive"
       ],
       "continuous": false,
-      "amountRatio": 0.96,
-      "limitUpCount": 1,
-      "bigUpCount": 1
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
     }
   ],
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "美国10月CPI通胀再度超预期 市场押注美联储12月加息已成定局",
+      "url": "https://finance.eastmoney.com/a/202611103927655694.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共85只个股涨停 机器人概念多股连板机器人概念股光洋股份、锋龙股份3连板。一图速览今日连板股&gt;&gt;  4分钟前",
-      "url": "https://www.yicai.com/news/103436376.html",
+      "source": "Eastmoney News",
+      "title": "突然直线涨停！30分钟 60亿主力资金涌入！啥情况？",
+      "url": "https://finance.eastmoney.com/a/202611113928252082.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜沪指涨0.46% 算力硬件概念爆发全市场超3500只个股上涨。  58分钟前",
-      "url": "https://www.yicai.com/news/103436240.html",
+      "source": "Eastmoney News",
+      "title": "A股三大指数收涨 创业板指涨超3% 光模块概念爆发",
+      "url": "https://finance.eastmoney.com/a/202611113928354661.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "风光利用率连续三年回落，电力市场何以支撑高比例新能源消纳“十五五”时期电力市场建设必须更突出绿色价值实现和系统保障能力  2小时前",
-      "url": "https://www.yicai.com/news/103435911.html",
+      "source": "Eastmoney News",
+      "title": "光收发器禁令落地阻力重重！光模块板块走势转强 多股获融资客抢筹(名单)",
+      "url": "https://finance.eastmoney.com/a/202611113928239257.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "余承东官宣华为子品牌“星芒”，首款手机瞄准AI市场华为正式宣布推出全新华为子品牌星芒，以应对激烈的存量竞争。  4小时前",
-      "url": "https://www.yicai.com/news/103435753.html",
+      "source": "Eastmoney News",
+      "title": "央行：用好债市非银大额赎回互换便利 维护股票、债券、外汇等金融市场平稳运行",
+      "url": "https://finance.eastmoney.com/a/202611113928506743.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美国10月CPI超预期 市场押注美联储12月加息",
+      "url": "https://topic.eastmoney.com/detail/mg10ytccyq.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "国常会部署重点工作 首提完善资本市场稳市机制",
+      "url": "https://topic.eastmoney.com/detail/gchstwszbscwsjz.html",
       "time": ""
     }
   ]
