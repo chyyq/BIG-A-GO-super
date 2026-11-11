@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-11T16:02:51.780064+08:00",
+    "generatedAt": "2026-11-11T16:10:29.400284+08:00",
     "tradingDate": "2026-11-11",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 39.17
+    "runtimeSeconds": 40.07
   },
   "market": {
     "recommendationCount": 0,
@@ -435,14 +435,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "一场券商策略会，看懂2027宏观大势、A股节奏与配置主线",
-      "url": "https://finance.eastmoney.com/a/202611113928269880.html",
+      "title": "兴业证券段超：海外风险扰动不改资本市场长期向好",
+      "url": "https://finance.eastmoney.com/a/202611113928414690.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数收涨 创业板指涨超3% 光模块概念爆发",
-      "url": "https://finance.eastmoney.com/a/202611113928354661.html",
+      "title": "一场券商策略会，看懂2027宏观大势、A股节奏与配置主线",
+      "url": "https://finance.eastmoney.com/a/202611113928269880.html",
       "time": ""
     }
   ]
