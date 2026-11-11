@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-11T22:23:41.865517+08:00",
+    "generatedAt": "2026-11-11T22:37:17.970791+08:00",
     "tradingDate": "2026-11-11",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,7 +12,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=50&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=b%3ABK1295%2Bf%3A%2150&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
       },
       {
@@ -52,7 +52,7 @@
       "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 104.69
+    "runtimeSeconds": 136.28
   },
   "market": {
     "recommendationCount": 0,
@@ -129,8 +129,8 @@
       ],
       "continuous": true,
       "amountRatio": 1.16,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK1591",
@@ -181,54 +181,6 @@
       "bigUpCount": 0
     },
     {
-      "code": "BK1128",
-      "name": "CPO概念",
-      "kind": "Concept board",
-      "price": 6626.39,
-      "pct": 5.83,
-      "amount": 215787956571.0,
-      "turnover": 3.24,
-      "open": 6261.6,
-      "preClose": 6261.38,
-      "mainNet": 20553658880.0,
-      "rank": 4,
-      "passed": 2,
-      "qualified": false,
-      "score": 49.4,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1136",
-      "name": "光通信模块",
-      "kind": "Concept board",
-      "price": 3104.1,
-      "pct": 5.33,
-      "amount": 210942580111.0,
-      "turnover": 4.7,
-      "open": 2939.4,
-      "preClose": 2946.91,
-      "mainNet": 19090076416.0,
-      "rank": 6,
-      "passed": 2,
-      "qualified": false,
-      "score": 48.7,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
       "code": "BK0459",
       "name": "元件",
       "kind": "Industry board",
@@ -239,10 +191,10 @@
       "open": 46978.24,
       "preClose": 47174.98,
       "mainNet": 8178702592.0,
-      "rank": 7,
+      "rank": 5,
       "passed": 2,
       "qualified": false,
-      "score": 48.35,
+      "score": 49.05,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -263,61 +215,16 @@
       "open": 18866.42,
       "preClose": 18875.77,
       "mainNet": 13530310144.0,
-      "rank": 9,
+      "rank": 7,
       "passed": 2,
       "qualified": false,
-      "score": 47.65,
+      "score": 48.35,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1660",
-      "name": "光纤概念",
-      "kind": "Concept board",
-      "price": 960.12,
-      "pct": 4.71,
-      "amount": 146300585761.0,
-      "turnover": 2.32,
-      "open": 914.85,
-      "preClose": 916.97,
-      "mainNet": 13580491264.0,
-      "rank": 10,
-      "passed": 2,
-      "qualified": false,
-      "score": 47.3,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1536",
-      "name": "综合包装",
-      "kind": "Industry board",
-      "price": 1166.09,
-      "pct": 4.61,
-      "amount": 332407052.0,
-      "turnover": 2.36,
-      "open": 1114.22,
-      "preClose": 1114.69,
-      "mainNet": 40404457.0,
-      "rank": 11,
-      "passed": 2,
-      "qualified": false,
-      "score": 37,
-      "criteria": [
-        "Board is near the top of today's movers"
-      ],
       "limitUpCount": 0,
       "bigUpCount": 0
     },
@@ -332,6 +239,75 @@
       "open": 14472.9,
       "preClose": 14520.75,
       "mainNet": 862963760.0,
+      "rank": 9,
+      "passed": 2,
+      "qualified": false,
+      "score": 47.65,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1328",
+      "name": "集成电路封测",
+      "kind": "Industry board",
+      "price": 7012.87,
+      "pct": 4.3,
+      "amount": 13725046228.0,
+      "turnover": 4.18,
+      "open": 6682.0,
+      "preClose": 6723.77,
+      "mainNet": 749229408.0,
+      "rank": 10,
+      "passed": 2,
+      "qualified": false,
+      "score": 47.3,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1327",
+      "name": "分立器件",
+      "kind": "Industry board",
+      "price": 12109.18,
+      "pct": 4.22,
+      "amount": 15839651533.0,
+      "turnover": 2.69,
+      "open": 11602.94,
+      "preClose": 11618.35,
+      "mainNet": 1549953488.0,
+      "rank": 11,
+      "passed": 2,
+      "qualified": false,
+      "score": 37,
+      "criteria": [
+        "Board is near the top of today's movers"
+      ],
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1215",
+      "name": "通信",
+      "kind": "Industry board",
+      "price": 6632.81,
+      "pct": 4.01,
+      "amount": 151722629772.0,
+      "turnover": 1.7,
+      "open": 6370.23,
+      "preClose": 6377.25,
+      "mainNet": 13383342592.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -353,10 +329,10 @@
       "open": 10082.23,
       "preClose": 10130.11,
       "mainNet": 7213603328.0,
-      "rank": 5,
+      "rank": 4,
       "passed": 1,
       "qualified": false,
-      "score": 32.65,
+      "score": 33.0,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -376,6 +352,29 @@
       "open": 1427.22,
       "preClose": 1429.72,
       "mainNet": 45118742.0,
+      "rank": 6,
+      "passed": 1,
+      "qualified": false,
+      "score": 32.3,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": 0.96,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1536",
+      "name": "综合包装",
+      "kind": "Industry board",
+      "price": 1166.09,
+      "pct": 4.61,
+      "amount": 332407052.0,
+      "turnover": 2.36,
+      "open": 1114.22,
+      "preClose": 1114.69,
+      "mainNet": 40404457.0,
       "rank": 8,
       "passed": 1,
       "qualified": false,
@@ -384,7 +383,7 @@
         "[SectorGate] Tail rank remains top-15 positive"
       ],
       "continuous": false,
-      "amountRatio": 0.96,
+      "amountRatio": null,
       "limitUpCount": 0,
       "bigUpCount": 0
     }
@@ -393,14 +392,14 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "美国10月CPI通胀再度超预期 市场押注美联储12月加息已成定局",
-      "url": "https://finance.eastmoney.com/a/202611103927655694.html",
+      "title": "央行：用好债市非银大额赎回互换便利 维护股票、债券、外汇等金融市场平稳运行",
+      "url": "https://finance.eastmoney.com/a/202611113928506743.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "央行：用好债市非银大额赎回互换便利 维护股票、债券、外汇等金融市场平稳运行",
-      "url": "https://finance.eastmoney.com/a/202611113928506743.html",
+      "title": "美国10月CPI通胀再度超预期 市场押注美联储12月加息已成定局",
+      "url": "https://finance.eastmoney.com/a/202611103927655694.html",
       "time": ""
     },
     {
