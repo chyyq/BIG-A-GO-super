@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-12T23:01:28.820618+08:00",
+    "generatedAt": "2026-11-12T23:15:59.244026+08:00",
     "tradingDate": "2026-11-12",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,18 +24,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 37.4
+    "runtimeSeconds": 39.53
   },
   "market": {
     "recommendationCount": 0,
@@ -105,7 +105,7 @@
       "price": 49598.38,
       "pct": 4.15,
       "amount": 15976976429.0,
-      "turnover": 32.06,
+      "turnover": 55.1,
       "open": 49499.89,
       "preClose": 47622.45,
       "mainNet": -1633444832.0,
@@ -382,51 +382,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "证监会副主席刘浩凌：中国政府高度重视资本市场平稳健康发展 中国资产的安全、韧性和创新价值将持续凸显",
+      "url": "https://finance.eastmoney.com/a/202611123929347043.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "通胀冲击下欧元区高负债国主权债风险再定价，下一个“风暴眼”会是谁？“市场的焦点将转向那些债务高企且缺乏足够的政治能力来控制债务的国家。”  1小时前",
-      "url": "https://www.yicai.com/news/103438818.html",
+      "source": "Eastmoney News",
+      "title": "A股三大指数收跌 成交额超1.9万亿 地面兵装板块逆市走强",
+      "url": "https://finance.eastmoney.com/a/202611123929437342.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股回报端反超融资端，外资重新定价中国资产长期配置价值凸显，产业实力成关键考量。  1小时前",
-      "url": "https://www.yicai.com/news/103438819.html",
+      "source": "Eastmoney News",
+      "title": "午后！亚太市场大跳水！发生了什么？",
+      "url": "https://finance.eastmoney.com/a/202611123929422331.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "一财社论：完善流动性管理，防范化解金融风险强化央行的宏观审慎管理工具体系，保障整个金融市场的系统稳定性。  1小时前",
-      "url": "https://www.yicai.com/news/103438830.html",
+      "source": "Eastmoney News",
+      "title": "创业板年内最大上会项目来了！超聚变IPO迎考 拟募资80亿元",
+      "url": "https://finance.eastmoney.com/a/202611113928663090.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "科技股频频冲高回落，谁在借反弹离场？科技股修复行情仍待验证  2小时前",
-      "url": "https://www.yicai.com/news/103438573.html",
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "全球风险关注点切换、稳市工具加力实施，最新货政报告传递哪些信号？相较于此前对人工智能产业发展的关注，报告更加重视全球金融市场波动及财政可持续性问题。  2小时前",
-      "url": "https://www.yicai.com/news/103438700.html",
+      "source": "Eastmoney News",
+      "title": "年内创业板“募资王”来了",
+      "url": "https://topic.eastmoney.com/detail/nncxymzw.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "双11智能眼镜热度延续，千元级AR眼镜成热点今年双11，智能眼镜市场增速比去年同期有所放缓，行业从争夺尝鲜用户，走向争夺真实使用场景。  2小时前",
-      "url": "https://www.yicai.com/news/103438703.html",
+      "source": "Eastmoney News",
+      "title": "美国10月CPI超预期 市场押注美联储12月加息",
+      "url": "https://topic.eastmoney.com/detail/mg10ytccyq.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股明年怎么走？多家龙头券商最新研判“全球流动性环境的宽松，对于市场转牛尤为关键。”  2小时前",
-      "url": "https://www.yicai.com/news/103438650.html",
+      "source": "Eastmoney News",
+      "title": "华创证券首席经济学家张瑜：产业创新重构A股盈利结构 长期价值根基越扎越牢",
+      "url": "https://finance.eastmoney.com/a/202611123929901394.html",
       "time": ""
     }
   ]
