@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-12T16:26:24.087723+08:00",
+    "generatedAt": "2026-11-12T16:40:40.422039+08:00",
     "tradingDate": "2026-11-12",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,8 +12,8 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
-        "note": "Quote snapshot and daily K-line history OK"
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "note": "OK"
       },
       {
         "name": "Eastmoney News",
@@ -35,14 +35,17 @@
       }
     ],
     "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response"
+      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 44.43
+    "runtimeSeconds": 37.04
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 0,
+    "qualifiedBoardCount": 1,
     "monitor": {
       "emotionScore": 86,
       "marketGateScore": 3,
@@ -85,7 +88,8 @@
             "ma5Rising": true,
             "closeAboveMa5": true
           }
-        }
+        },
+        "cached": true
       },
       "limitUpCount": 39,
       "limitDownCount": 7,
@@ -95,11 +99,37 @@
       "brokenBoardRate": 0.25,
       "breadthSampleSize": 200,
       "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 2.7,
+      "topBoardPct": 4.15,
       "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached."
     }
   },
   "boards": [
+    {
+      "code": "BK1645",
+      "name": "昨日打二板以上表现",
+      "kind": "Concept board",
+      "price": 49598.38,
+      "pct": 4.15,
+      "amount": 15976976429.0,
+      "turnover": 23.4,
+      "open": 49499.89,
+      "preClose": 47622.45,
+      "mainNet": -1633444832.0,
+      "rank": 1,
+      "passed": 4,
+      "qualified": true,
+      "score": 83.25,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Board amount expands at least 1.30x",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": 3.87,
+      "limitUpCount": 4,
+      "bigUpCount": 5
+    },
     {
       "code": "BK1551",
       "name": "百货",
@@ -111,10 +141,10 @@
       "open": 2064.37,
       "preClose": 2071.72,
       "mainNet": 2389392.0,
-      "rank": 5,
+      "rank": 6,
       "passed": 3,
       "qualified": false,
-      "score": 65.45,
+      "score": 65.1,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
@@ -124,6 +154,31 @@
       "amountRatio": null,
       "limitUpCount": 3,
       "bigUpCount": 5
+    },
+    {
+      "code": "BK0967",
+      "name": "水产概念",
+      "kind": "Concept board",
+      "price": 908.27,
+      "pct": 1.74,
+      "amount": 7306938244.0,
+      "turnover": 5.0,
+      "open": 900.13,
+      "preClose": 892.75,
+      "mainNet": 474711328.0,
+      "rank": 8,
+      "passed": 3,
+      "qualified": false,
+      "score": 64.4,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 3,
+      "bigUpCount": 3
     },
     {
       "code": "BK1452",
@@ -136,10 +191,10 @@
       "open": 1621.29,
       "preClose": 1595.89,
       "mainNet": -278263616.0,
-      "rank": 4,
+      "rank": 5,
       "passed": 2,
       "qualified": false,
-      "score": 49.4,
+      "score": 49.05,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
@@ -148,6 +203,27 @@
       "amountRatio": 5.56,
       "limitUpCount": 1,
       "bigUpCount": 1
+    },
+    {
+      "code": "BK1255",
+      "name": "林业Ⅱ",
+      "kind": "Industry board",
+      "price": 4323.75,
+      "pct": 1.45,
+      "amount": 2842074257.0,
+      "turnover": 14.83,
+      "open": 4263.98,
+      "preClose": 4262.14,
+      "mainNet": 120791649.0,
+      "rank": 11,
+      "passed": 2,
+      "qualified": false,
+      "score": 37,
+      "criteria": [
+        "Board is near the top of today's movers"
+      ],
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1626",
@@ -160,51 +236,6 @@
       "open": 8344.18,
       "preClose": 8363.05,
       "mainNet": 58484496.0,
-      "rank": 10,
-      "passed": 2,
-      "qualified": false,
-      "score": 47.3,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
-      ],
-      "continuous": false,
-      "amountRatio": 1.53,
-      "limitUpCount": 0,
-      "bigUpCount": 1
-    },
-    {
-      "code": "BK1329",
-      "name": "集成电路制造",
-      "kind": "Industry board",
-      "price": 2861.51,
-      "pct": 1.19,
-      "amount": 18462834611.0,
-      "turnover": 3.07,
-      "open": 2827.68,
-      "preClose": 2827.85,
-      "mainNet": 884537920.0,
-      "rank": 11,
-      "passed": 2,
-      "qualified": false,
-      "score": 37,
-      "criteria": [
-        "Board is near the top of today's movers"
-      ],
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1360",
-      "name": "金融信息服务",
-      "kind": "Industry board",
-      "price": 4041.35,
-      "pct": 1.08,
-      "amount": 1184243258.0,
-      "turnover": 4.6,
-      "open": 4002.22,
-      "preClose": 3998.26,
-      "mainNet": 38168740.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -226,10 +257,10 @@
       "open": 615.58,
       "preClose": 615.2,
       "mainNet": 77203782.0,
-      "rank": 1,
+      "rank": 2,
       "passed": 1,
       "qualified": false,
-      "score": 34.05,
+      "score": 33.7,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -241,29 +272,6 @@
     {
       "code": "BK1382",
       "name": "地面兵装Ⅲ",
-      "kind": "Industry board",
-      "price": 3541.13,
-      "pct": 3.19,
-      "amount": 7195396793.0,
-      "turnover": 4.37,
-      "open": 3438.04,
-      "preClose": 3431.68,
-      "mainNet": 538147744.0,
-      "rank": 2,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.7,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 2
-    },
-    {
-      "code": "BK1229",
-      "name": "地面兵装Ⅱ",
       "kind": "Industry board",
       "price": 3541.13,
       "pct": 3.19,
@@ -285,6 +293,29 @@
       "bigUpCount": 2
     },
     {
+      "code": "BK1229",
+      "name": "地面兵装Ⅱ",
+      "kind": "Industry board",
+      "price": 3541.13,
+      "pct": 3.19,
+      "amount": 7195396793.0,
+      "turnover": 4.37,
+      "open": 3438.04,
+      "preClose": 3431.68,
+      "mainNet": 538147744.0,
+      "rank": 4,
+      "passed": 1,
+      "qualified": false,
+      "score": 33.0,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 1,
+      "bigUpCount": 2
+    },
+    {
       "code": "BK1260",
       "name": "渔业",
       "kind": "Industry board",
@@ -295,10 +326,10 @@
       "open": 932.4,
       "preClose": 932.06,
       "mainNet": 79158899.0,
-      "rank": 6,
+      "rank": 7,
       "passed": 1,
       "qualified": false,
-      "score": 32.3,
+      "score": 31.95,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -318,10 +349,10 @@
       "open": 6135.67,
       "preClose": 6062.25,
       "mainNet": 458670570.0,
-      "rank": 7,
+      "rank": 9,
       "passed": 1,
       "qualified": false,
-      "score": 31.95,
+      "score": 31.25,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -341,33 +372,10 @@
       "open": 4263.98,
       "preClose": 4262.14,
       "mainNet": 120791649.0,
-      "rank": 8,
+      "rank": 10,
       "passed": 1,
       "qualified": false,
-      "score": 31.6,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 1
-    },
-    {
-      "code": "BK1255",
-      "name": "林业Ⅱ",
-      "kind": "Industry board",
-      "price": 4323.75,
-      "pct": 1.45,
-      "amount": 2842074257.0,
-      "turnover": 14.83,
-      "open": 4263.98,
-      "preClose": 4262.14,
-      "mainNet": 120791649.0,
-      "rank": 9,
-      "passed": 1,
-      "qualified": false,
-      "score": 31.25,
+      "score": 30.9,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
@@ -393,6 +401,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "A股三大指数收跌 成交额超1.9万亿 地面兵装板块逆市走强",
+      "url": "https://finance.eastmoney.com/a/202611123929437342.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "央行发布2026年第三季度中国货币政策执行报告提出：加力实施支持资本市场两项货币政策工具",
       "url": "https://finance.eastmoney.com/a/202611123928811684.html",
       "time": ""
@@ -401,12 +415,6 @@
       "source": "Eastmoney News",
       "title": "年内创业板“募资王”来了！超聚变今日迎考 多只概念股业绩有望高增",
       "url": "https://finance.eastmoney.com/a/202611123929281169.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股三大指数收跌 成交额超1.9万亿 地面兵装板块逆市走强",
-      "url": "https://finance.eastmoney.com/a/202611123929437342.html",
       "time": ""
     },
     {
