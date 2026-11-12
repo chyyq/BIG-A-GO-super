@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-12T16:44:19.644701+08:00",
+    "generatedAt": "2026-11-12T16:47:32.966332+08:00",
     "tradingDate": "2026-11-12",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,7 +12,7 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://4.push2.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A2&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
         "note": "OK"
       },
       {
@@ -35,36 +35,25 @@
       }
     ],
     "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
       "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response"
     ],
-    "runtimeSeconds": 104.94
+    "runtimeSeconds": 32.56
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 0,
+    "qualifiedBoardCount": 1,
     "monitor": {
-      "emotionScore": 50,
-      "marketGateScore": 0,
+      "emotionScore": 86,
+      "marketGateScore": 3,
       "marketGatePassed": true,
       "hardVeto": false,
       "riskLevel": "CAUTION",
+      "dailyStress": true,
+      "emergencyVeto": false,
       "fiveDayTrend": {
         "available": true,
         "level": "STABLE",
@@ -102,13 +91,95 @@
         },
         "cached": true
       },
-      "limitUpCount": null,
-      "limitDownCount": null,
-      "brokenBoardRate": null,
-      "note": "Market monitor fell back to board strength."
+      "limitUpCount": 39,
+      "limitDownCount": 7,
+      "bigDownCount": 72,
+      "limitTouchCount": 52,
+      "brokenBoardCount": 13,
+      "brokenBoardRate": 0.25,
+      "breadthSampleSize": 200,
+      "breadthMethod": "top-100 plus bottom-100 movers",
+      "topBoardPct": 4.15,
+      "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached."
     }
   },
   "boards": [
+    {
+      "code": "BK1645",
+      "name": "昨日打二板以上表现",
+      "kind": "Concept board",
+      "price": 49598.38,
+      "pct": 4.15,
+      "amount": 15976976429.0,
+      "turnover": 55.1,
+      "open": 49499.89,
+      "preClose": 47622.45,
+      "mainNet": -1633444832.0,
+      "rank": 1,
+      "passed": 4,
+      "qualified": true,
+      "score": 83.25,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Board amount expands at least 1.30x",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": 3.87,
+      "limitUpCount": 4,
+      "bigUpCount": 5
+    },
+    {
+      "code": "BK1551",
+      "name": "百货",
+      "kind": "Industry board",
+      "price": 2127.72,
+      "pct": 2.7,
+      "amount": 7403285286.0,
+      "turnover": 3.84,
+      "open": 2064.37,
+      "preClose": 2071.72,
+      "mainNet": 2389392.0,
+      "rank": 6,
+      "passed": 3,
+      "qualified": false,
+      "score": 65.1,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 3,
+      "bigUpCount": 5
+    },
+    {
+      "code": "BK0967",
+      "name": "水产概念",
+      "kind": "Concept board",
+      "price": 908.27,
+      "pct": 1.74,
+      "amount": 7306938244.0,
+      "turnover": 5.0,
+      "open": 900.13,
+      "preClose": 892.75,
+      "mainNet": 474711328.0,
+      "rank": 8,
+      "passed": 3,
+      "qualified": false,
+      "score": 64.4,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": false,
+      "amountRatio": null,
+      "limitUpCount": 3,
+      "bigUpCount": 3
+    },
     {
       "code": "BK1452",
       "name": "卫浴电器",
@@ -120,16 +191,37 @@
       "open": 1621.29,
       "preClose": 1595.89,
       "mainNet": -278263616.0,
-      "rank": 4,
+      "rank": 5,
       "passed": 2,
       "qualified": false,
-      "score": 49.4,
+      "score": 49.05,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": false,
       "amountRatio": 5.56,
+      "limitUpCount": 1,
+      "bigUpCount": 1
+    },
+    {
+      "code": "BK1255",
+      "name": "林业Ⅱ",
+      "kind": "Industry board",
+      "price": 4323.75,
+      "pct": 1.45,
+      "amount": 2842074257.0,
+      "turnover": 14.83,
+      "open": 4263.98,
+      "preClose": 4262.14,
+      "mainNet": 120791649.0,
+      "rank": 11,
+      "passed": 2,
+      "qualified": false,
+      "score": 37,
+      "criteria": [
+        "Board is near the top of today's movers"
+      ],
       "limitUpCount": 0,
       "bigUpCount": 0
     },
@@ -144,51 +236,6 @@
       "open": 8344.18,
       "preClose": 8363.05,
       "mainNet": 58484496.0,
-      "rank": 10,
-      "passed": 2,
-      "qualified": false,
-      "score": 47.3,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
-      ],
-      "continuous": false,
-      "amountRatio": 1.53,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1329",
-      "name": "集成电路制造",
-      "kind": "Industry board",
-      "price": 2861.51,
-      "pct": 1.19,
-      "amount": 18462834611.0,
-      "turnover": 2.82,
-      "open": 2827.68,
-      "preClose": 2827.85,
-      "mainNet": 884537920.0,
-      "rank": 11,
-      "passed": 2,
-      "qualified": false,
-      "score": 37,
-      "criteria": [
-        "Board is near the top of today's movers"
-      ],
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1360",
-      "name": "金融信息服务",
-      "kind": "Industry board",
-      "price": 4041.35,
-      "pct": 1.08,
-      "amount": 1184243258.0,
-      "turnover": 4.6,
-      "open": 4002.22,
-      "preClose": 3998.26,
-      "mainNet": 38168740.0,
       "rank": 12,
       "passed": 2,
       "qualified": false,
@@ -210,29 +257,6 @@
       "open": 615.58,
       "preClose": 615.2,
       "mainNet": 77203782.0,
-      "rank": 1,
-      "passed": 1,
-      "qualified": false,
-      "score": 34.05,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1382",
-      "name": "地面兵装Ⅲ",
-      "kind": "Industry board",
-      "price": 3541.13,
-      "pct": 3.19,
-      "amount": 7195396793.0,
-      "turnover": 4.37,
-      "open": 3438.04,
-      "preClose": 3431.68,
-      "mainNet": 538147744.0,
       "rank": 2,
       "passed": 1,
       "qualified": false,
@@ -242,12 +266,12 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
-      "code": "BK1229",
-      "name": "地面兵装Ⅱ",
+      "code": "BK1382",
+      "name": "地面兵装Ⅲ",
       "kind": "Industry board",
       "price": 3541.13,
       "pct": 3.19,
@@ -265,31 +289,31 @@
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 2
     },
     {
-      "code": "BK1551",
-      "name": "百货",
+      "code": "BK1229",
+      "name": "地面兵装Ⅱ",
       "kind": "Industry board",
-      "price": 2127.72,
-      "pct": 2.7,
-      "amount": 7403285286.0,
-      "turnover": 3.84,
-      "open": 2064.37,
-      "preClose": 2071.72,
-      "mainNet": 2389392.0,
-      "rank": 5,
+      "price": 3541.13,
+      "pct": 3.19,
+      "amount": 7195396793.0,
+      "turnover": 4.37,
+      "open": 3438.04,
+      "preClose": 3431.68,
+      "mainNet": 538147744.0,
+      "rank": 4,
       "passed": 1,
       "qualified": false,
-      "score": 32.65,
+      "score": 33.0,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 2
     },
     {
       "code": "BK1260",
@@ -302,17 +326,17 @@
       "open": 932.4,
       "preClose": 932.06,
       "mainNet": 79158899.0,
-      "rank": 6,
+      "rank": 7,
       "passed": 1,
       "qualified": false,
-      "score": 32.3,
+      "score": 31.95,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK1509",
@@ -325,17 +349,17 @@
       "open": 6135.67,
       "preClose": 6062.25,
       "mainNet": 458670570.0,
-      "rank": 7,
+      "rank": 9,
       "passed": 1,
       "qualified": false,
-      "score": 31.95,
+      "score": 31.25,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
       "continuous": false,
       "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK1502",
@@ -348,40 +372,17 @@
       "open": 4263.98,
       "preClose": 4262.14,
       "mainNet": 120791649.0,
-      "rank": 8,
+      "rank": 10,
       "passed": 1,
       "qualified": false,
-      "score": 31.6,
+      "score": 30.9,
       "criteria": [
         "[SectorGate] Tail rank remains top-15 positive"
       ],
       "continuous": false,
       "amountRatio": null,
       "limitUpCount": 0,
-      "bigUpCount": 0
-    },
-    {
-      "code": "BK1255",
-      "name": "林业Ⅱ",
-      "kind": "Industry board",
-      "price": 4323.75,
-      "pct": 1.45,
-      "amount": 2842074257.0,
-      "turnover": 14.83,
-      "open": 4263.98,
-      "preClose": 4262.14,
-      "mainNet": 120791649.0,
-      "rank": 9,
-      "passed": 1,
-      "qualified": false,
-      "score": 31.25,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 0
+      "bigUpCount": 1
     }
   ],
   "recommendations": [],
