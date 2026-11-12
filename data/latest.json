@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-12T22:00:54.587619+08:00",
+    "generatedAt": "2026-11-12T23:01:28.820618+08:00",
     "tradingDate": "2026-11-12",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -34,22 +34,21 @@
         "note": "Optional news source OK"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 124.09
+    "errors": [],
+    "runtimeSeconds": 37.4
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
     "qualifiedBoardCount": 1,
     "monitor": {
-      "emotionScore": 54,
-      "marketGateScore": 1,
+      "emotionScore": 86,
+      "marketGateScore": 3,
       "marketGatePassed": true,
       "hardVeto": false,
       "riskLevel": "CAUTION",
+      "dailyStress": true,
+      "emergencyVeto": false,
       "fiveDayTrend": {
         "available": true,
         "level": "STABLE",
@@ -86,10 +85,16 @@
           }
         }
       },
-      "limitUpCount": null,
-      "limitDownCount": null,
-      "brokenBoardRate": null,
-      "note": "Market monitor fell back to board strength."
+      "limitUpCount": 39,
+      "limitDownCount": 7,
+      "bigDownCount": 72,
+      "limitTouchCount": 52,
+      "brokenBoardCount": 13,
+      "brokenBoardRate": 0.25,
+      "breadthSampleSize": 200,
+      "breadthMethod": "top-100 plus bottom-100 movers",
+      "topBoardPct": 4.15,
+      "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached."
     }
   },
   "boards": [
@@ -384,43 +389,43 @@
     },
     {
       "source": "Yicai",
-      "title": "通胀冲击下欧元区高负债国主权债风险再定价，下一个“风暴眼”会是谁？“市场的焦点将转向那些债务高企且缺乏足够的政治能力来控制债务的国家。”  10分钟前",
+      "title": "通胀冲击下欧元区高负债国主权债风险再定价，下一个“风暴眼”会是谁？“市场的焦点将转向那些债务高企且缺乏足够的政治能力来控制债务的国家。”  1小时前",
       "url": "https://www.yicai.com/news/103438818.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "A股回报端反超融资端，外资重新定价中国资产长期配置价值凸显，产业实力成关键考量。  10分钟前",
+      "title": "A股回报端反超融资端，外资重新定价中国资产长期配置价值凸显，产业实力成关键考量。  1小时前",
       "url": "https://www.yicai.com/news/103438819.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "一财社论：完善流动性管理，防范化解金融风险强化央行的宏观审慎管理工具体系，保障整个金融市场的系统稳定性。  10分钟前",
+      "title": "一财社论：完善流动性管理，防范化解金融风险强化央行的宏观审慎管理工具体系，保障整个金融市场的系统稳定性。  1小时前",
       "url": "https://www.yicai.com/news/103438830.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "科技股频频冲高回落，谁在借反弹离场？科技股修复行情仍待验证  1小时前",
+      "title": "科技股频频冲高回落，谁在借反弹离场？科技股修复行情仍待验证  2小时前",
       "url": "https://www.yicai.com/news/103438573.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "全球风险关注点切换、稳市工具加力实施，最新货政报告传递哪些信号？相较于此前对人工智能产业发展的关注，报告更加重视全球金融市场波动及财政可持续性问题。  1小时前",
+      "title": "全球风险关注点切换、稳市工具加力实施，最新货政报告传递哪些信号？相较于此前对人工智能产业发展的关注，报告更加重视全球金融市场波动及财政可持续性问题。  2小时前",
       "url": "https://www.yicai.com/news/103438700.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "双11智能眼镜热度延续，千元级AR眼镜成热点今年双11，智能眼镜市场增速比去年同期有所放缓，行业从争夺尝鲜用户，走向争夺真实使用场景。  1小时前",
+      "title": "双11智能眼镜热度延续，千元级AR眼镜成热点今年双11，智能眼镜市场增速比去年同期有所放缓，行业从争夺尝鲜用户，走向争夺真实使用场景。  2小时前",
       "url": "https://www.yicai.com/news/103438703.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "A股明年怎么走？多家龙头券商最新研判“全球流动性环境的宽松，对于市场转牛尤为关键。”  1小时前",
+      "title": "A股明年怎么走？多家龙头券商最新研判“全球流动性环境的宽松，对于市场转牛尤为关键。”  2小时前",
       "url": "https://www.yicai.com/news/103438650.html",
       "time": ""
     }
