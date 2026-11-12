@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-12T21:57:52.867458+08:00",
+    "generatedAt": "2026-11-12T22:00:54.587619+08:00",
     "tradingDate": "2026-11-12",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -34,21 +34,22 @@
         "note": "Optional news source OK"
       }
     ],
-    "errors": [],
-    "runtimeSeconds": 34.0
+    "errors": [
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response"
+    ],
+    "runtimeSeconds": 124.09
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
     "qualifiedBoardCount": 1,
     "monitor": {
-      "emotionScore": 86,
-      "marketGateScore": 3,
+      "emotionScore": 54,
+      "marketGateScore": 1,
       "marketGatePassed": true,
       "hardVeto": false,
       "riskLevel": "CAUTION",
-      "dailyStress": true,
-      "emergencyVeto": false,
       "fiveDayTrend": {
         "available": true,
         "level": "STABLE",
@@ -85,16 +86,10 @@
           }
         }
       },
-      "limitUpCount": 39,
-      "limitDownCount": 7,
-      "bigDownCount": 72,
-      "limitTouchCount": 52,
-      "brokenBoardCount": 13,
-      "brokenBoardRate": 0.25,
-      "breadthSampleSize": 200,
-      "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 4.15,
-      "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached."
+      "limitUpCount": null,
+      "limitDownCount": null,
+      "brokenBoardRate": null,
+      "note": "Market monitor fell back to board strength."
     }
   },
   "boards": [
@@ -105,7 +100,7 @@
       "price": 49598.38,
       "pct": 4.15,
       "amount": 15976976429.0,
-      "turnover": 56.06,
+      "turnover": 32.06,
       "open": 49499.89,
       "preClose": 47622.45,
       "mainNet": -1633444832.0,
@@ -156,7 +151,7 @@
       "price": 908.27,
       "pct": 1.74,
       "amount": 7306938244.0,
-      "turnover": 5.24,
+      "turnover": 5.0,
       "open": 900.13,
       "preClose": 892.75,
       "mainNet": 474711328.0,
@@ -389,19 +384,19 @@
     },
     {
       "source": "Yicai",
-      "title": "通胀冲击下欧元区高负债国主权债风险再定价，下一个“风暴眼”会是谁？“市场的焦点将转向那些债务高企且缺乏足够的政治能力来控制债务的国家。”  5分钟前",
+      "title": "通胀冲击下欧元区高负债国主权债风险再定价，下一个“风暴眼”会是谁？“市场的焦点将转向那些债务高企且缺乏足够的政治能力来控制债务的国家。”  10分钟前",
       "url": "https://www.yicai.com/news/103438818.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "A股回报端反超融资端，外资重新定价中国资产长期配置价值凸显，产业实力成关键考量。  5分钟前",
+      "title": "A股回报端反超融资端，外资重新定价中国资产长期配置价值凸显，产业实力成关键考量。  10分钟前",
       "url": "https://www.yicai.com/news/103438819.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "一财社论：完善流动性管理，防范化解金融风险强化央行的宏观审慎管理工具体系，保障整个金融市场的系统稳定性。  5分钟前",
+      "title": "一财社论：完善流动性管理，防范化解金融风险强化央行的宏观审慎管理工具体系，保障整个金融市场的系统稳定性。  10分钟前",
       "url": "https://www.yicai.com/news/103438830.html",
       "time": ""
     },
