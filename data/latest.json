@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-12T16:47:32.966332+08:00",
+    "generatedAt": "2026-11-12T21:56:09.995112+08:00",
     "tradingDate": "2026-11-12",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,8 +12,8 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
-        "note": "OK"
+        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
+        "note": "Quote snapshot and daily K-line history OK"
       },
       {
         "name": "Eastmoney News",
@@ -24,23 +24,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
-    "errors": [
-      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 32.56
+    "errors": [],
+    "runtimeSeconds": 48.09
   },
   "market": {
     "recommendationCount": 0,
@@ -88,8 +83,7 @@
             "ma5Rising": true,
             "closeAboveMa5": true
           }
-        },
-        "cached": true
+        }
       },
       "limitUpCount": 39,
       "limitDownCount": 7,
@@ -111,7 +105,7 @@
       "price": 49598.38,
       "pct": 4.15,
       "amount": 15976976429.0,
-      "turnover": 55.1,
+      "turnover": 67.57,
       "open": 49499.89,
       "preClose": 47622.45,
       "mainNet": -1633444832.0,
@@ -388,51 +382,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "央行：用好债市非银大额赎回互换便利 维护股票、债券、外汇等金融市场平稳运行",
-      "url": "https://finance.eastmoney.com/a/202611113928506743.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "证监会副主席刘浩凌：中国政府高度重视资本市场平稳健康发展 中国资产的安全、韧性和创新价值将持续凸显",
-      "url": "https://finance.eastmoney.com/a/202611123929347043.html",
+      "source": "Yicai",
+      "title": "通胀冲击下欧元区高负债国主权债风险再定价，下一个“风暴眼”会是谁？“市场的焦点将转向那些债务高企且缺乏足够的政治能力来控制债务的国家。”  5分钟前",
+      "url": "https://www.yicai.com/news/103438818.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数收跌 成交额超1.9万亿 地面兵装板块逆市走强",
-      "url": "https://finance.eastmoney.com/a/202611123929437342.html",
+      "source": "Yicai",
+      "title": "A股回报端反超融资端，外资重新定价中国资产长期配置价值凸显，产业实力成关键考量。  5分钟前",
+      "url": "https://www.yicai.com/news/103438819.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "央行发布2026年第三季度中国货币政策执行报告提出：加力实施支持资本市场两项货币政策工具",
-      "url": "https://finance.eastmoney.com/a/202611123928811684.html",
+      "source": "Yicai",
+      "title": "一财社论：完善流动性管理，防范化解金融风险强化央行的宏观审慎管理工具体系，保障整个金融市场的系统稳定性。  5分钟前",
+      "url": "https://www.yicai.com/news/103438830.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "年内创业板“募资王”来了！超聚变今日迎考 多只概念股业绩有望高增",
-      "url": "https://finance.eastmoney.com/a/202611123929281169.html",
+      "source": "Yicai",
+      "title": "科技股频频冲高回落，谁在借反弹离场？科技股修复行情仍待验证  1小时前",
+      "url": "https://www.yicai.com/news/103438573.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "source": "Yicai",
+      "title": "全球风险关注点切换、稳市工具加力实施，最新货政报告传递哪些信号？相较于此前对人工智能产业发展的关注，报告更加重视全球金融市场波动及财政可持续性问题。  1小时前",
+      "url": "https://www.yicai.com/news/103438700.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "年内创业板“募资王”来了",
-      "url": "https://topic.eastmoney.com/detail/nncxymzw.html",
+      "source": "Yicai",
+      "title": "双11智能眼镜热度延续，千元级AR眼镜成热点今年双11，智能眼镜市场增速比去年同期有所放缓，行业从争夺尝鲜用户，走向争夺真实使用场景。  1小时前",
+      "url": "https://www.yicai.com/news/103438703.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美国10月CPI超预期 市场押注美联储12月加息",
-      "url": "https://topic.eastmoney.com/detail/mg10ytccyq.html",
+      "source": "Yicai",
+      "title": "A股明年怎么走？多家龙头券商最新研判“全球流动性环境的宽松，对于市场转牛尤为关键。”  1小时前",
+      "url": "https://www.yicai.com/news/103438650.html",
       "time": ""
     }
   ]
