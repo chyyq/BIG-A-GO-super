@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-13T16:10:10.740903+08:00",
+    "generatedAt": "2026-11-13T16:30:17.832326+08:00",
     "tradingDate": "2026-11-13",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,9 +35,10 @@
       }
     ],
     "errors": [
+      "Eastmoney daily K skipped for Shenzhen Component: <urlopen error _ssl.c:1001: The handshake operation timed out>",
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 37.22
+    "runtimeSeconds": 42.75
   },
   "market": {
     "recommendationCount": 0,
