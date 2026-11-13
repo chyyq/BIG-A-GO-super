@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-13T22:46:16.034128+08:00",
+    "generatedAt": "2026-11-13T22:51:41.706325+08:00",
     "tradingDate": "2026-11-13",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -19,26 +19,25 @@
         "name": "Eastmoney News",
         "ok": true,
         "url": "https://finance.eastmoney.com/a/cjjsp.html",
-        "note": "Optional news source skipped; quote data is unaffected."
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
-      "Market monitor is RISK_OFF; no new buy recommendation generated.",
-      "Eastmoney News news skipped: The read operation timed out"
+      "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 44.64
+    "runtimeSeconds": 31.08
   },
   "market": {
     "recommendationCount": 0,
@@ -385,15 +384,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "A股三大指数收跌 影视板块逆市大涨 银行板块走强",
+      "url": "https://finance.eastmoney.com/a/202611133930659580.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "新型储能迈入市场化新阶段，“十五五”方案划定3亿千瓦发展目标新型储能的产业发展更看重对电力系统的保供调节能力，以及全生命周期的安全性和经济性。  1小时前",
-      "url": "https://www.yicai.com/news/103440392.html",
+      "source": "Eastmoney News",
+      "title": "A股明年怎么走？多家龙头券商最新研判",
+      "url": "https://finance.eastmoney.com/a/202611123929803838.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "年内创业板“募资王”来了",
+      "url": "https://topic.eastmoney.com/detail/nncxymzw.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美国10月CPI超预期 市场押注美联储12月加息",
+      "url": "https://topic.eastmoney.com/detail/mg10ytccyq.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "刘世锦：中国有潜力、有条件形成具有全球影响力和竞争力的消费市场竞争优势",
+      "url": "https://finance.eastmoney.com/a/202611133930884350.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美国10月PPI同比增长6.5% 低于市场预期",
+      "url": "https://finance.eastmoney.com/a/202611133930933912.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
