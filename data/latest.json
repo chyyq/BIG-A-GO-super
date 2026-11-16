@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-17T00:13:02.447948+08:00",
+    "generatedAt": "2026-11-17T00:19:40.995646+08:00",
     "tradingDate": "2026-11-17",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -37,7 +37,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 42.61
+    "runtimeSeconds": 31.76
   },
   "market": {
     "recommendationCount": 0,
@@ -107,7 +107,7 @@
       "price": 68.01,
       "pct": 5.41,
       "amount": 3257030994.0,
-      "turnover": 10.51,
+      "turnover": 19.44,
       "open": 67.33,
       "preClose": 64.52,
       "mainNet": -175052800.0,
@@ -395,21 +395,51 @@
   "recommendations": [],
   "news": [
     {
+      "source": "Eastmoney News",
+      "title": "港股逆市飙升！股市“吹哨人”最新发声！",
+      "url": "https://finance.eastmoney.com/a/202611163931651721.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股三大指数收跌 成交额不足1.5万亿 银行与保险板块逆市走强",
+      "url": "https://finance.eastmoney.com/a/202611163931755498.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "年内创业板“募资王”来了",
+      "url": "https://topic.eastmoney.com/detail/nncxymzw.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "股市急跌能预警吗？AI如何带动 “一人公司” 增长？数量经济学给出新答案",
+      "url": "https://finance.eastmoney.com/a/202611163932154429.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "time": ""
+    },
+    {
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "银行股批量创新高，哪些资金在布局？银行股估值相较历史水平已不算便宜。  昨天 21:00",
-      "url": "https://www.yicai.com/news/103442499.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "科技板块再遭重挫，多只重仓AI硬件的基金发清盘预警净值实际涨幅与持仓品种显著“错配”的情况，这意味着基金产品或在三季报披露后减仓了科技品种。  昨天 20:39",
-      "url": "https://www.yicai.com/news/103442478.html",
       "time": ""
     }
   ]
