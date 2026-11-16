@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-16T16:27:16.830061+08:00",
+    "generatedAt": "2026-11-16T16:32:14.653396+08:00",
     "tradingDate": "2026-11-16",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -37,7 +37,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 38.51
+    "runtimeSeconds": 29.39
   },
   "market": {
     "recommendationCount": 0,
@@ -107,7 +107,7 @@
       "price": 68.01,
       "pct": 5.41,
       "amount": 3257030994.0,
-      "turnover": 10.51,
+      "turnover": 4.85,
       "open": 67.33,
       "preClose": 64.52,
       "mainNet": -175052800.0,
@@ -395,7 +395,7 @@
     },
     {
       "source": "Yicai",
-      "title": "连板股追踪丨A股今日共33只个股涨停 这只机器人概念股4连板零售板块广百股份3连板。一图速览今日连板股&gt;&gt;  16分钟前",
+      "title": "连板股追踪丨A股今日共33只个股涨停 这只机器人概念股4连板零售板块广百股份3连板。一图速览今日连板股&gt;&gt;  21分钟前",
       "url": "https://www.yicai.com/news/103442076.html",
       "time": ""
     },
