@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-16T22:03:08.214342+08:00",
+    "generatedAt": "2026-11-16T23:32:59.286718+08:00",
     "tradingDate": "2026-11-16",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,8 +12,8 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
-        "note": "OK"
+        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
+        "note": "Quote snapshot and daily K-line history OK"
       },
       {
         "name": "Eastmoney News",
@@ -24,24 +24,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
-      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 35.26
+    "runtimeSeconds": 38.03
   },
   "market": {
     "recommendationCount": 0,
@@ -89,8 +85,7 @@
             "ma5Rising": false,
             "closeAboveMa5": false
           }
-        },
-        "cached": true
+        }
       },
       "limitUpCount": 37,
       "limitDownCount": 13,
@@ -112,7 +107,7 @@
       "price": 68.01,
       "pct": 5.41,
       "amount": 3257030994.0,
-      "turnover": 16.79,
+      "turnover": 19.44,
       "open": 67.33,
       "preClose": 64.52,
       "mainNet": -175052800.0,
@@ -393,51 +388,21 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "港股逆市飙升！股市“吹哨人”最新发声！",
-      "url": "https://finance.eastmoney.com/a/202611163931651721.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数收跌 成交额不足1.5万亿 银行与保险板块逆市走强",
-      "url": "https://finance.eastmoney.com/a/202611163931755498.html",
+      "source": "Yicai",
+      "title": "银行股批量创新高，哪些资金在布局？银行股估值相较历史水平已不算便宜。  2小时前",
+      "url": "https://www.yicai.com/news/103442499.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "年内创业板“募资王”来了",
-      "url": "https://topic.eastmoney.com/detail/nncxymzw.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "狂泻47％！创业板指再创年内新低，A股“市场底”到了吗？",
-      "url": "https://finance.eastmoney.com/a/202611163931950465.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "国联民生陶川：A股整体性价比持续抬升，业绩持续兑现的科技成长标的有望迎来盈利与估值共振",
-      "url": "https://finance.eastmoney.com/a/202611163931952540.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "盈利能力稳健！东方证券张陈：国产硬科技仍是中期主线",
-      "url": "https://finance.eastmoney.com/a/202611163931873128.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "source": "Yicai",
+      "title": "科技板块再遭重挫，多只重仓AI硬件的基金发清盘预警净值实际涨幅与持仓品种显著“错配”的情况，这意味着基金产品或在三季报披露后减仓了科技品种。  2小时前",
+      "url": "https://www.yicai.com/news/103442478.html",
       "time": ""
     }
   ]
