@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-17T17:43:38.154743+08:00",
+    "generatedAt": "2026-11-17T22:47:50.607100+08:00",
     "tradingDate": "2026-11-17",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -37,7 +37,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 38.04
+    "runtimeSeconds": 33.48
   },
   "market": {
     "recommendationCount": 0,
@@ -211,7 +211,7 @@
       "price": 10765.15,
       "pct": 2.49,
       "amount": 14466290684.0,
-      "turnover": 7.06,
+      "turnover": 12.18,
       "open": 10581.99,
       "preClose": 10503.22,
       "mainNet": -500022464.0,
@@ -262,7 +262,7 @@
       "price": 604.2,
       "pct": 4.09,
       "amount": 7419716378.0,
-      "turnover": 5.16,
+      "turnover": 10.69,
       "open": 578.43,
       "preClose": 580.48,
       "mainNet": 1086607216.0,
@@ -402,14 +402,26 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "A股三大指数收跌 成交额不足1.5万亿 光刻机概念股逆市走强",
+      "url": "https://finance.eastmoney.com/a/202611173932825433.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "部分宽基ETF尾盘放量 创业板ETF广发成交超50亿元创历史天量",
       "url": "https://finance.eastmoney.com/a/202611173932820497.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数收跌 成交额不足1.5万亿 光刻机概念股逆市走强",
-      "url": "https://finance.eastmoney.com/a/202611173932825433.html",
+      "title": "强美元将对股市亮出獠牙？华尔街嗅到危险气息",
+      "url": "https://finance.eastmoney.com/a/202611173932801484.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "英伟达财报会明早来袭：“后黄仁勋时代”首次大考 市场聚焦四大看点",
+      "url": "https://finance.eastmoney.com/a/202611173932835650.html",
       "time": ""
     },
     {
@@ -420,20 +432,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "瑞银吕子杰：AI长期趋势未改，但市场波动凸显多元配置重要性",
-      "url": "https://finance.eastmoney.com/a/202611173932899895.html",
+      "title": "A股底部震荡格局延续，当下如何布局？",
+      "url": "https://finance.eastmoney.com/a/202611173933215180.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "西南证券叶凡：资本市场改革显成效，市场长期成长潜力进一步增强",
-      "url": "https://finance.eastmoney.com/a/202611173932883379.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "英伟达财报会明早来袭：“后黄仁勋时代”首次大考 市场聚焦四大看点",
-      "url": "https://finance.eastmoney.com/a/202611173932835650.html",
+      "title": "创金合信基金魏凤春：“政策底”已现 A股风险收益比正在改善",
+      "url": "https://finance.eastmoney.com/a/202611173933170051.html",
       "time": ""
     }
   ]
