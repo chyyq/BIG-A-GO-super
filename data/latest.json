@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-18T00:29:47.840802+08:00",
+    "generatedAt": "2026-11-18T04:38:01.565911+08:00",
     "tradingDate": "2026-11-18",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -37,7 +37,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 38.93
+    "runtimeSeconds": 28.71
   },
   "market": {
     "recommendationCount": 0,
@@ -400,26 +400,26 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "A股三大指数收跌 成交额不足1.5万亿 光刻机概念股逆市走强",
-      "url": "https://finance.eastmoney.com/a/202611173932825433.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "英伟达财报会明早来袭：“后黄仁勋时代”首次大考 市场聚焦四大看点",
       "url": "https://finance.eastmoney.com/a/202611173932835650.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "部分宽基ETF尾盘放量 创业板ETF广发成交超50亿元创历史天量",
-      "url": "https://finance.eastmoney.com/a/202611173932820497.html",
+      "title": "A股三大指数收跌 成交额不足1.5万亿 光刻机概念股逆市走强",
+      "url": "https://finance.eastmoney.com/a/202611173932825433.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
       "title": "强美元将对股市亮出獠牙？华尔街嗅到危险气息",
       "url": "https://finance.eastmoney.com/a/202611173932801484.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "部分宽基ETF尾盘放量 创业板ETF广发成交超50亿元创历史天量",
+      "url": "https://finance.eastmoney.com/a/202611173932820497.html",
       "time": ""
     },
     {
