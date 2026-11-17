@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-17T22:52:09.224255+08:00",
+    "generatedAt": "2026-11-17T22:56:36.756585+08:00",
     "tradingDate": "2026-11-17",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,20 +24,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 37.47
+    "runtimeSeconds": 36.05
   },
   "market": {
     "recommendationCount": 0,
@@ -395,51 +395,39 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "利好来了！A股公司回购公告密集发布",
-      "url": "https://finance.eastmoney.com/a/202611163932150943.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数收跌 成交额不足1.5万亿 光刻机概念股逆市走强",
-      "url": "https://finance.eastmoney.com/a/202611173932825433.html",
+      "source": "Yicai",
+      "title": "从“走出去”到“扎下去”：外贸新三样出海，催生全球资金管理新考题 | 金融调研如何高效调度全球资金？  1小时前",
+      "url": "https://www.yicai.com/news/103444229.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "部分宽基ETF尾盘放量 创业板ETF广发成交超50亿元创历史天量",
-      "url": "https://finance.eastmoney.com/a/202611173932820497.html",
+      "source": "Yicai",
+      "title": "A股低价股增至107只，面值退市预警拉响低价股数量连续数月抬升，变化轨迹与指数回调、量能收缩基本同步。  1小时前",
+      "url": "https://www.yicai.com/news/103444184.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "强美元将对股市亮出獠牙？华尔街嗅到危险气息",
-      "url": "https://finance.eastmoney.com/a/202611173932801484.html",
+      "source": "Yicai",
+      "title": "电网建设需求释放 海外市场拓展提速 沪市电力设备企业经营发展亮点纷呈一批产业链龙头企业经营业绩稳步增长，部分公司盈利增速进一步提升。  1小时前",
+      "url": "https://www.yicai.com/news/103444147.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "英伟达财报会明早来袭：“后黄仁勋时代”首次大考 市场聚焦四大看点",
-      "url": "https://finance.eastmoney.com/a/202611173932835650.html",
+      "source": "Yicai",
+      "title": "打造全国REITs产品发行交易首选地丨上海资产管理协会主办 REITs发展交流会上海资管机构可发挥专业优势，推动优质项目与长期资金有效对接。  2小时前",
+      "url": "https://www.yicai.com/news/103444087.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股底部震荡格局延续，当下如何布局？",
-      "url": "https://finance.eastmoney.com/a/202611173933215180.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "创金合信基金魏凤春：“政策底”已现 A股风险收益比正在改善",
-      "url": "https://finance.eastmoney.com/a/202611173933170051.html",
+      "source": "Yicai",
+      "title": "攻守之势异也：中国企业出海诉讼的攻防之道与思维破局｜问海走向海外市场的程度越深，企业对诉讼的理解就越超出“打官司”本身。  3小时前",
+      "url": "https://www.yicai.com/news/103444007.html",
       "time": ""
     }
   ]
