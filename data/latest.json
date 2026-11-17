@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-17T17:39:21.866129+08:00",
+    "generatedAt": "2026-11-17T17:41:58.324709+08:00",
     "tradingDate": "2026-11-17",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,21 +24,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source skipped; quote data is unaffected."
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
-      "Market monitor is RISK_OFF; no new buy recommendation generated.",
-      "Yicai news skipped: The read operation timed out"
+      "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 47.67
+    "runtimeSeconds": 43.67
   },
   "market": {
     "recommendationCount": 0,
