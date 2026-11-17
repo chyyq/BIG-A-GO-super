@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-18T00:00:00.552441+08:00",
+    "generatedAt": "2026-11-18T00:19:09.824378+08:00",
     "tradingDate": "2026-11-18",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,8 +12,8 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
-        "note": "OK"
+        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
+        "note": "Quote snapshot and daily K-line history OK"
       },
       {
         "name": "Eastmoney News",
@@ -35,13 +35,9 @@
       }
     ],
     "errors": [
-      "Eastmoney daily K skipped for Shanghai Composite: <urlopen error _ssl.c:1001: The handshake operation timed out>",
-      "Eastmoney daily K skipped for Shenzhen Component: <urlopen error _ssl.c:1001: The handshake operation timed out>",
-      "Eastmoney daily K skipped for Shanghai Composite: <urlopen error _ssl.c:1001: The handshake operation timed out>",
-      "Eastmoney daily K skipped for Shenzhen Component: <urlopen error _ssl.c:1001: The handshake operation timed out>",
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 65.27
+    "runtimeSeconds": 33.81
   },
   "market": {
     "recommendationCount": 0,
@@ -59,38 +55,37 @@
         "available": true,
         "level": "FALLING",
         "gatePassed": false,
-        "score": 1,
-        "averageReturnPct": -3.28,
-        "averagePositiveDays": 2.0,
+        "score": 0,
+        "averageReturnPct": -4.6,
+        "averagePositiveDays": 1.0,
         "risingIndexCount": 0,
         "aboveMa5IndexCount": 0,
         "indexes": {
           "shanghai": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-11-10",
-            "to": "2026-11-16",
-            "returnPct": -1.67,
-            "positiveDays": 2,
-            "ma5": 3647.42,
-            "previousMa5": 3659.07,
+            "from": "2026-11-11",
+            "to": "2026-11-17",
+            "returnPct": -2.61,
+            "positiveDays": 1,
+            "ma5": 3631.59,
+            "previousMa5": 3647.42,
             "ma5Rising": false,
             "closeAboveMa5": false
           },
           "shenzhen": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-11-10",
-            "to": "2026-11-16",
-            "returnPct": -4.9,
-            "positiveDays": 2,
-            "ma5": 11097.77,
-            "previousMa5": 11188.71,
+            "from": "2026-11-11",
+            "to": "2026-11-17",
+            "returnPct": -6.6,
+            "positiveDays": 1,
+            "ma5": 10977.16,
+            "previousMa5": 11097.77,
             "ma5Rising": false,
             "closeAboveMa5": false
           }
-        },
-        "cached": true
+        }
       },
       "limitUpCount": 37,
       "limitDownCount": 74,
@@ -405,12 +400,6 @@
   "news": [
     {
       "source": "Eastmoney News",
-      "title": "利好来了！A股公司回购公告密集发布",
-      "url": "https://finance.eastmoney.com/a/202611163932150943.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
       "title": "A股三大指数收跌 成交额不足1.5万亿 光刻机概念股逆市走强",
       "url": "https://finance.eastmoney.com/a/202611173932825433.html",
       "time": ""
@@ -449,6 +438,12 @@
       "source": "Eastmoney News",
       "title": "创金合信基金魏凤春：“政策底”已现 A股风险收益比正在改善",
       "url": "https://finance.eastmoney.com/a/202611173933170051.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "深圳新思哲投资总经理徐温泉：A股核心资产处于底部区间",
+      "url": "https://finance.eastmoney.com/a/202611173933128336.html",
       "time": ""
     }
   ]
