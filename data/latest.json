@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-18T23:55:31.226528+08:00",
+    "generatedAt": "2026-11-18T23:58:44.775259+08:00",
     "tradingDate": "2026-11-18",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -37,7 +37,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 44.47
+    "runtimeSeconds": 83.4
   },
   "market": {
     "recommendationCount": 0,
@@ -107,7 +107,7 @@
       "price": 880.99,
       "pct": 3.62,
       "amount": 64642120650.0,
-      "turnover": 2.56,
+      "turnover": 2.57,
       "open": 855.79,
       "preClose": 850.25,
       "mainNet": 5117594112.0,
@@ -439,7 +439,7 @@
     },
     {
       "source": "Yicai",
-      "title": "上市次日股价便跌停，多只次新股累计跌幅超四成在A股市场回调背景下，多只次新股的股价涨势持续性较差。  2小时前",
+      "title": "上市次日股价便跌停，多只次新股累计跌幅超四成在A股市场回调背景下，多只次新股的股价涨势持续性较差。  昨天 20:58",
       "url": "https://www.yicai.com/news/103445621.html",
       "time": ""
     }
