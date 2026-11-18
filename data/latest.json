@@ -1,8 +1,8 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-18T23:58:44.775259+08:00",
-    "tradingDate": "2026-11-18",
+    "generatedAt": "2026-11-19T04:10:37.572851+08:00",
+    "tradingDate": "2026-11-19",
     "mode": "fast-snapshot",
     "activeStrategies": [],
     "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
@@ -37,12 +37,12 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 83.4
+    "runtimeSeconds": 38.01
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 5,
+    "qualifiedBoardCount": 6,
     "monitor": {
       "emotionScore": 64,
       "marketGateScore": 3,
@@ -56,7 +56,7 @@
         "level": "FALLING",
         "gatePassed": false,
         "score": 0,
-        "averageReturnPct": -4.6,
+        "averageReturnPct": -3.33,
         "averagePositiveDays": 1.0,
         "risingIndexCount": 0,
         "aboveMa5IndexCount": 0,
@@ -64,24 +64,24 @@
           "shanghai": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-11-11",
-            "to": "2026-11-17",
-            "returnPct": -2.61,
+            "from": "2026-11-12",
+            "to": "2026-11-18",
+            "returnPct": -1.86,
             "positiveDays": 1,
-            "ma5": 3631.59,
-            "previousMa5": 3647.42,
+            "ma5": 3613.03,
+            "previousMa5": 3631.59,
             "ma5Rising": false,
             "closeAboveMa5": false
           },
           "shenzhen": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-11-11",
-            "to": "2026-11-17",
-            "returnPct": -6.6,
+            "from": "2026-11-12",
+            "to": "2026-11-18",
+            "returnPct": -4.81,
             "positiveDays": 1,
-            "ma5": 10977.16,
-            "previousMa5": 11097.77,
+            "ma5": 10831.1,
+            "previousMa5": 10977.16,
             "ma5Rising": false,
             "closeAboveMa5": false
           }
@@ -95,11 +95,37 @@
       "brokenBoardRate": 0.164,
       "breadthSampleSize": 200,
       "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 3.62,
+      "topBoardPct": 4.52,
       "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached."
     }
   },
   "boards": [
+    {
+      "code": "BK1588",
+      "name": "通信工程及服务",
+      "kind": "Industry board",
+      "price": 2421.73,
+      "pct": 4.52,
+      "amount": 4779848236.0,
+      "turnover": 4.77,
+      "open": 2337.26,
+      "preClose": 2316.99,
+      "mainNet": 577936480.0,
+      "rank": 1,
+      "passed": 4,
+      "qualified": true,
+      "score": 83.25,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 4,
+      "bigUpCount": 5
+    },
     {
       "code": "BK1792",
       "name": "算力租赁",
@@ -107,7 +133,7 @@
       "price": 880.99,
       "pct": 3.62,
       "amount": 64642120650.0,
-      "turnover": 2.57,
+      "turnover": 2.56,
       "open": 855.79,
       "preClose": 850.25,
       "mainNet": 5117594112.0,
@@ -116,13 +142,13 @@
       "qualified": true,
       "score": 82.9,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 14,
       "bigUpCount": 36
     },
@@ -142,13 +168,13 @@
       "qualified": true,
       "score": 82.55,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 5,
       "bigUpCount": 8
     },
@@ -168,13 +194,13 @@
       "qualified": true,
       "score": 82.2,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 2,
       "bigUpCount": 11
     },
@@ -194,13 +220,13 @@
       "qualified": true,
       "score": 81.85,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 7,
       "bigUpCount": 20
     },
@@ -220,39 +246,14 @@
       "qualified": true,
       "score": 81.15,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 1,
-      "bigUpCount": 5
-    },
-    {
-      "code": "BK1588",
-      "name": "通信工程及服务",
-      "kind": "Industry board",
-      "price": 2421.73,
-      "pct": 4.52,
-      "amount": 4779848236.0,
-      "turnover": 4.77,
-      "open": 2337.26,
-      "preClose": 2316.99,
-      "mainNet": 577936480.0,
-      "rank": 1,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.85,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 4,
       "bigUpCount": 5
     },
     {
@@ -267,15 +268,16 @@
       "preClose": 1781.99,
       "mainNet": -121761984.0,
       "rank": 6,
-      "passed": 2,
+      "passed": 3,
       "qualified": false,
-      "score": 48.7,
+      "score": 65.1,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Board amount expands at least 1.30x"
       ],
-      "continuous": false,
-      "amountRatio": 2.06,
+      "continuous": true,
+      "amountRatio": 1.35,
       "limitUpCount": 1,
       "bigUpCount": 2
     },
@@ -291,15 +293,16 @@
       "preClose": 3867.59,
       "mainNet": 377443888.0,
       "rank": 8,
-      "passed": 2,
+      "passed": 3,
       "qualified": false,
-      "score": 48.0,
+      "score": 64.4,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 1,
       "bigUpCount": 3
     },
@@ -323,9 +326,33 @@
         "[SectorGate] Tail rank remains top-15 positive"
       ],
       "continuous": true,
-      "amountRatio": 1.01,
+      "amountRatio": 1.0,
       "limitUpCount": 0,
       "bigUpCount": 0
+    },
+    {
+      "code": "BK1453",
+      "name": "彩电",
+      "kind": "Industry board",
+      "price": 3819.94,
+      "pct": 2.48,
+      "amount": 1480304237.0,
+      "turnover": 1.74,
+      "open": 3739.32,
+      "preClose": 3727.47,
+      "mainNet": 253076137.0,
+      "rank": 10,
+      "passed": 2,
+      "qualified": false,
+      "score": 47.3,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 1
     },
     {
       "code": "BK0459",
@@ -368,69 +395,10 @@
       ],
       "limitUpCount": 0,
       "bigUpCount": 0
-    },
-    {
-      "code": "BK1453",
-      "name": "彩电",
-      "kind": "Industry board",
-      "price": 3819.94,
-      "pct": 2.48,
-      "amount": 1480304237.0,
-      "turnover": 1.74,
-      "open": 3739.32,
-      "preClose": 3727.47,
-      "mainNet": 253076137.0,
-      "rank": 10,
-      "passed": 1,
-      "qualified": false,
-      "score": 30.9,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 1
     }
   ],
   "recommendations": [],
   "news": [
-    {
-      "source": "Eastmoney News",
-      "title": "午后亚太市场集体拉升！美联储大佬最新发声",
-      "url": "https://finance.eastmoney.com/a/202611183933882478.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "九阳股份走出“天地板”行情 换手率超20%",
-      "url": "https://finance.eastmoney.com/a/202611183933900277.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "国金证券牟一凌：中国科技板块有望成为全球成长资金的避风港",
-      "url": "https://finance.eastmoney.com/a/202611183934268181.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券交易",
-      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
-      "time": ""
-    },
     {
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
@@ -441,6 +409,18 @@
       "source": "Yicai",
       "title": "上市次日股价便跌停，多只次新股累计跌幅超四成在A股市场回调背景下，多只次新股的股价涨势持续性较差。  昨天 20:58",
       "url": "https://www.yicai.com/news/103445621.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "概念炒作退潮：从连板涨停到连续跌停，谁在“倒V”行情中博弈机构席位“边买边卖”，游资上演“最后疯狂”。  昨天 20:56",
+      "url": "https://www.yicai.com/news/103445616.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "证监会回应“公募上报AI敞口”传闻，资本市场多措施围堵虚假信息资本市场对政策导向的极端敏感性，使得“借监管之名”的小作文更容易扰动市场  昨天 19:43",
+      "url": "https://www.yicai.com/news/103445509.html",
       "time": ""
     }
   ]
