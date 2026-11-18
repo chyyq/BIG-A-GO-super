@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-18T16:58:13.788540+08:00",
+    "generatedAt": "2026-11-18T17:02:38.371425+08:00",
     "tradingDate": "2026-11-18",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -37,7 +37,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 41.22
+    "runtimeSeconds": 41.75
   },
   "market": {
     "recommendationCount": 0,
@@ -107,7 +107,7 @@
       "price": 880.99,
       "pct": 3.62,
       "amount": 64642120650.0,
-      "turnover": 2.57,
+      "turnover": 2.56,
       "open": 855.79,
       "preClose": 850.25,
       "mainNet": 5117594112.0,
@@ -403,19 +403,19 @@
     },
     {
       "source": "Yicai",
-      "title": "浑水宣布做空英伟达，AI算力融资链条谁来托底？黄仁勋离任后，这本关于算力的“循环账簿”能否延续、由谁延续，将成为市场对英伟达进行重新定价的核心。  10分钟前",
+      "title": "浑水宣布做空英伟达，AI算力融资链条谁来托底？黄仁勋离任后，这本关于算力的“循环账簿”能否延续、由谁延续，将成为市场对英伟达进行重新定价的核心。  15分钟前",
       "url": "https://www.yicai.com/news/103445253.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "连板股追踪丨A股今日共43只个股涨停 多只算力股连板真视通、卡莱特等2连板。一图速览今日连板股&gt;&gt;  16分钟前",
+      "title": "连板股追踪丨A股今日共43只个股涨停 多只算力股连板真视通、卡莱特等2连板。一图速览今日连板股&gt;&gt;  20分钟前",
       "url": "https://www.yicai.com/news/103445308.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "科技板块估值调整，不妨一起看看这几件事  38分钟前",
+      "title": "科技板块估值调整，不妨一起看看这几件事  42分钟前",
       "url": "https://www.yicai.com/news/103445271.html",
       "time": ""
     },
