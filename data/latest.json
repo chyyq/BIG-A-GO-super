@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-19T23:56:19.820266+08:00",
+    "generatedAt": "2026-11-19T23:59:37.386602+08:00",
     "tradingDate": "2026-11-19",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,20 +24,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 45.81
+    "runtimeSeconds": 32.51
   },
   "market": {
     "recommendationCount": 0,
@@ -133,7 +133,7 @@
       "price": 213.08,
       "pct": 4.17,
       "amount": 11691017168.0,
-      "turnover": 21.43,
+      "turnover": 20.87,
       "open": 212.0,
       "preClose": 204.55,
       "mainNet": -1157144784.0,
@@ -185,7 +185,7 @@
       "price": 65.34,
       "pct": 1.87,
       "amount": 7304337894.0,
-      "turnover": 11.65,
+      "turnover": 18.84,
       "open": 65.42,
       "preClose": 64.14,
       "mainNet": -523437824.0,
@@ -388,21 +388,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "经济日报：稳资本市场意义重大",
+      "url": "https://finance.eastmoney.com/a/202611193934396946.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "携程加码入境游，这些跨境游细分赛道最具潜力出境游与入境游为全球旅游市场注入活力。  2小时前",
-      "url": "https://www.yicai.com/news/103447155.html",
+      "source": "Eastmoney News",
+      "title": "四大证券报齐发文：勿让“小作文”扰乱资本市场 官方及时发声稳预期",
+      "url": "https://finance.eastmoney.com/a/202611193934499755.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "Anthropic IPO募资规模超越SpaceX，看多看空者并存83美元发行价是市场给Anthropic出的第一道估值考题。  3小时前",
-      "url": "https://www.yicai.com/news/103447053.html",
+      "source": "Eastmoney News",
+      "title": "国产算力板块暴跌 业界称“三星开始穿透严查代工”的市场传闻不准确",
+      "url": "https://finance.eastmoney.com/a/202611193934935630.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "中信建投：2027年中国资本市场将整体保持向上",
+      "url": "https://finance.eastmoney.com/a/202611193935349673.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "A股利好来袭！龙头公司最新公告！上市公司回购动作密集",
+      "url": "https://finance.eastmoney.com/a/202611193935238461.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
       "time": ""
     }
   ]
