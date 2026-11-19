@@ -1,48 +1,48 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-19T17:17:27.230626+08:00",
+    "generatedAt": "2026-11-19T17:25:46.950877+08:00",
     "tradingDate": "2026-11-19",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "recommendationGeneratedAt": null,
     "recommendationsRetained": false,
     "sourceHealth": [
       {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
-      {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Quote snapshot and daily K-line history OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
+      "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 39.91
+    "runtimeSeconds": 28.95
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 12,
+    "qualifiedBoardCount": 4,
     "monitor": {
       "emotionScore": 49,
       "marketGateScore": 3,
@@ -388,39 +388,45 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "经济日报：稳资本市场意义重大",
+      "url": "https://finance.eastmoney.com/a/202611193934396946.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共28只个股涨停 算力概念多股连板算力概念股真视通、全筑股份3连板，华升股份2连板。一图速览今日连板股&gt;&gt;  45分钟前",
-      "url": "https://www.yicai.com/news/103446730.html",
+      "source": "Eastmoney News",
+      "title": "四大证券报齐发文：勿让“小作文”扰乱资本市场 官方及时发声稳预期",
+      "url": "https://finance.eastmoney.com/a/202611193934499755.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "收盘｜沪指跌0.28% 家用电器板块全天强势沪深两市成交额1.31万亿，较上一个交易日缩量646亿。  1小时前",
-      "url": "https://www.yicai.com/news/103446630.html",
+      "source": "Eastmoney News",
+      "title": "国产算力板块暴跌 业界称“三星开始穿透严查代工”的市场传闻不准确",
+      "url": "https://finance.eastmoney.com/a/202611193934935630.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "A股四大指数集体低开，燃气、电信板块逆势活跃盘面上，基本金属、传媒、光通信板块调整。  7小时前",
-      "url": "https://www.yicai.com/news/103446006.html",
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "盘前必读丨新一轮国资国企改革全面实施；行云科技再签AI词元跨境“大订单”机构认为，市场短期情绪与筹码压制，科技左侧磨底仍将延续。  8小时前",
-      "url": "https://www.yicai.com/news/103445857.html",
+      "source": "Eastmoney News",
+      "title": "华创证券首席经济学家张瑜：股票市场将进入盈利和估值的博弈期",
+      "url": "https://finance.eastmoney.com/a/202611193935081717.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "堪比互联网泡沫破灭和金融危机！美国科技股市盈率暴跌42%，转折点是否临近统计显示，本轮美股牛市出现大幅调整后反弹力度更强。  8小时前",
-      "url": "https://www.yicai.com/news/103445844.html",
+      "source": "Eastmoney News",
+      "title": "抄底资金涌入！6只宽基ETF成交额破百亿",
+      "url": "https://finance.eastmoney.com/a/202611193935035568.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
