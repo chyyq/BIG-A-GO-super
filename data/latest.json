@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-20T16:59:33.304357+08:00",
+    "generatedAt": "2026-11-20T17:06:37.228949+08:00",
     "tradingDate": "2026-11-20",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,20 +24,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 33.83
+    "runtimeSeconds": 43.91
   },
   "market": {
     "recommendationCount": 0,
@@ -314,7 +314,7 @@
       "price": 1725.59,
       "pct": 0.87,
       "amount": 12023974510.0,
-      "turnover": 0.08,
+      "turnover": 0.47,
       "open": 1710.04,
       "preClose": 1710.67,
       "mainNet": 372442336.0,
@@ -376,51 +376,45 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "沪指跌逾1% 上证50指数尾盘拉升 四大行创年内新高",
-      "url": "https://finance.eastmoney.com/a/202611203936062686.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "大宗商品全军覆没、全球股市步履蹒跚！一文读懂：市场在交易什么？",
-      "url": "https://finance.eastmoney.com/a/202611203935804411.html",
+      "source": "Yicai",
+      "title": "头部券商齐发声：政策加码创造企稳条件，看好大盘蓝筹、“出海”、AI等“未来的市场机会或体现在大盘蓝筹与国产科技上。”  22分钟前",
+      "url": "https://www.yicai.com/news/103448281.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "大资金入场！宽基ETF再度爆量 创业板ETF易方达半日成交破百亿",
-      "url": "https://finance.eastmoney.com/a/202611203935972820.html",
+      "source": "Yicai",
+      "title": "原奶价格反转，畜牧业与乳业的“价格谈判”僵住了原奶价格恢复上行，但市场博弈才刚开始。  37分钟前",
+      "url": "https://www.yicai.com/news/103448237.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "预售超百亿！GTA6发售引爆全球 游戏板块迎新催化(附股)",
-      "url": "https://finance.eastmoney.com/a/202611203935545555.html",
+      "source": "Yicai",
+      "title": "连板股追踪丨A股今日共30只个股涨停 真视通收获4连板一图速览今日连板股&gt;&gt;  47分钟前",
+      "url": "https://www.yicai.com/news/103448246.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "source": "Yicai",
+      "title": "多家头部公募发声：外部扰动逐步消化，A股有望迎估值修复窗口“短期的波动并未改变市场的内在韧性。”  1小时前",
+      "url": "https://www.yicai.com/news/103448125.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "华泰证券张继强：4个角度看A股中长期前景",
-      "url": "https://finance.eastmoney.com/a/202611203936135730.html",
+      "source": "Yicai",
+      "title": "收盘丨创业板指跌3.54% 半导体产业链调整沪深两市成交额1.42万亿，较上一个交易日放量1171亿。  1小时前",
+      "url": "https://www.yicai.com/news/103448103.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "沪指守住3500点 第10次罕见超跌信号再现！陈果：相信价值",
-      "url": "https://finance.eastmoney.com/a/202611203936061290.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中信建投证券首席经济学家黄文涛：资本市场终将回归基本面定价，震荡之中孕育长期配置机遇",
-      "url": "https://finance.eastmoney.com/a/202611203936110539.html",
+      "source": "Yicai",
+      "title": "英伟达交出超预期业绩，最新数据：沪深仅36家公司较多参与其供应链“部分公司涉及英伟达的业务占比没有市场想象的高，多数公司占比仅为个位数。”  3小时前",
+      "url": "https://www.yicai.com/news/103447916.html",
       "time": ""
     }
   ]
