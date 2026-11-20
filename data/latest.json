@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-20T23:28:03.092266+08:00",
+    "generatedAt": "2026-11-20T23:39:36.852193+08:00",
     "tradingDate": "2026-11-20",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,20 +24,20 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 32.8
+    "runtimeSeconds": 30.87
   },
   "market": {
     "recommendationCount": 0,
@@ -314,7 +314,7 @@
       "price": 1725.59,
       "pct": 0.87,
       "amount": 12023974510.0,
-      "turnover": 0.47,
+      "turnover": 0.08,
       "open": 1710.04,
       "preClose": 1710.67,
       "mainNet": 372442336.0,
@@ -376,27 +376,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "沪指跌逾1% 上证50指数尾盘拉升 四大行创年内新高",
+      "url": "https://finance.eastmoney.com/a/202611203936062686.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "小微盘股指数集体走出“七连跌” ETF资金流向为何分化小微盘为何突遇“逆风”？  1小时前",
-      "url": "https://www.yicai.com/news/103448798.html",
+      "source": "Eastmoney News",
+      "title": "大宗商品全军覆没、全球股市步履蹒跚！一文读懂：市场在交易什么？",
+      "url": "https://finance.eastmoney.com/a/202611203935804411.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "AI进化速递丨Anthropic IPO募集资金总额约为935亿美元腾讯WorkBuddy上线电脑操控能力……  2小时前",
-      "url": "https://www.yicai.com/news/103448720.html",
+      "source": "Eastmoney News",
+      "title": "大资金入场！宽基ETF再度爆量 创业板ETF易方达半日成交破百亿",
+      "url": "https://finance.eastmoney.com/a/202611203935972820.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "头部券商齐发声：政策加码创造企稳条件，看好大盘蓝筹、“出海”、AI等“未来的市场机会或体现在大盘蓝筹与国产科技上。”  6小时前",
-      "url": "https://www.yicai.com/news/103448281.html",
+      "source": "Eastmoney News",
+      "title": "预售超百亿！GTA6发售引爆全球 游戏板块迎新催化(附股)",
+      "url": "https://finance.eastmoney.com/a/202611203935545555.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "两部门联合公布4起编造传播资本市场虚假信息典型案例",
+      "url": "https://finance.eastmoney.com/a/202611203936137553.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "招商证券李昊阳：A股深度调整后结构性配置机会显现",
+      "url": "https://finance.eastmoney.com/a/202611203936510912.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "德邦证券程强：耐心资本成为确定性增量",
+      "url": "https://finance.eastmoney.com/a/202611203936490353.html",
       "time": ""
     }
   ]
