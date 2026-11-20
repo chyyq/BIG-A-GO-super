@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-20T16:54:02.444124+08:00",
+    "generatedAt": "2026-11-20T16:59:33.304357+08:00",
     "tradingDate": "2026-11-20",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -37,7 +37,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 34.46
+    "runtimeSeconds": 33.83
   },
   "market": {
     "recommendationCount": 0,
@@ -314,7 +314,7 @@
       "price": 1725.59,
       "pct": 0.87,
       "amount": 12023974510.0,
-      "turnover": 0.47,
+      "turnover": 0.08,
       "open": 1710.04,
       "preClose": 1710.67,
       "mainNet": 372442336.0,
@@ -383,14 +383,14 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "大资金入场！宽基ETF再度爆量 创业板ETF易方达半日成交破百亿",
-      "url": "https://finance.eastmoney.com/a/202611203935972820.html",
+      "title": "大宗商品全军覆没、全球股市步履蹒跚！一文读懂：市场在交易什么？",
+      "url": "https://finance.eastmoney.com/a/202611203935804411.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "大宗商品全军覆没、全球股市步履蹒跚！一文读懂：市场在交易什么？",
-      "url": "https://finance.eastmoney.com/a/202611203935804411.html",
+      "title": "大资金入场！宽基ETF再度爆量 创业板ETF易方达半日成交破百亿",
+      "url": "https://finance.eastmoney.com/a/202611203935972820.html",
       "time": ""
     },
     {
