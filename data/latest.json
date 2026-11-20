@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-20T23:42:38.333295+08:00",
+    "generatedAt": "2026-11-20T23:46:14.362002+08:00",
     "tradingDate": "2026-11-20",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -37,7 +37,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 28.16
+    "runtimeSeconds": 29.08
   },
   "market": {
     "recommendationCount": 0,
