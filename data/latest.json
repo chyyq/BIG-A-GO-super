@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-20T16:41:19.965773+08:00",
+    "generatedAt": "2026-11-20T16:54:02.444124+08:00",
     "tradingDate": "2026-11-20",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -37,7 +37,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 32.88
+    "runtimeSeconds": 34.46
   },
   "market": {
     "recommendationCount": 0,
@@ -407,6 +407,12 @@
     },
     {
       "source": "Eastmoney News",
+      "title": "华泰证券张继强：4个角度看A股中长期前景",
+      "url": "https://finance.eastmoney.com/a/202611203936135730.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
       "title": "沪指守住3500点 第10次罕见超跌信号再现！陈果：相信价值",
       "url": "https://finance.eastmoney.com/a/202611203936061290.html",
       "time": ""
@@ -415,12 +421,6 @@
       "source": "Eastmoney News",
       "title": "中信建投证券首席经济学家黄文涛：资本市场终将回归基本面定价，震荡之中孕育长期配置机遇",
       "url": "https://finance.eastmoney.com/a/202611203936110539.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "沪指探至3500.83点，第10次罕见超跌信号再现，关注结构性修复机会",
-      "url": "https://finance.eastmoney.com/a/202611203936110893.html",
       "time": ""
     }
   ]
