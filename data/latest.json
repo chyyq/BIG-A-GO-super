@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-20T22:24:55.131246+08:00",
+    "generatedAt": "2026-11-20T23:18:43.255216+08:00",
     "tradingDate": "2026-11-20",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -37,7 +37,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 36.69
+    "runtimeSeconds": 40.55
   },
   "market": {
     "recommendationCount": 0,
@@ -409,6 +409,12 @@
       "source": "Eastmoney News",
       "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
       "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "德邦证券程强：耐心资本成为确定性增量",
+      "url": "https://finance.eastmoney.com/a/202611203936490353.html",
       "time": ""
     },
     {
