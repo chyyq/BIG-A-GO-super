@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-20T22:20:03.450146+08:00",
+    "generatedAt": "2026-11-20T22:24:55.131246+08:00",
     "tradingDate": "2026-11-20",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -37,7 +37,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 39.74
+    "runtimeSeconds": 36.69
   },
   "market": {
     "recommendationCount": 0,
@@ -314,7 +314,7 @@
       "price": 1725.59,
       "pct": 0.87,
       "amount": 12023974510.0,
-      "turnover": 0.08,
+      "turnover": 0.47,
       "open": 1710.04,
       "preClose": 1710.67,
       "mainNet": 372442336.0,
@@ -415,12 +415,6 @@
       "source": "Eastmoney News",
       "title": "沪指终结日线6连阴，估值修复窗口何时开启？头部券商、基金密集发声",
       "url": "https://finance.eastmoney.com/a/202611203936365227.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "全球市场回调、A股尾盘拉升！头部券商发声：A股有望迎估值修复窗口",
-      "url": "https://finance.eastmoney.com/a/202611203936366569.html",
       "time": ""
     }
   ]
