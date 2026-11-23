@@ -1,8 +1,8 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-23T17:43:17.272333+08:00",
-    "tradingDate": "2026-11-23",
+    "generatedAt": "2026-11-24T00:22:14.704286+08:00",
+    "tradingDate": "2026-11-24",
     "mode": "fast-snapshot",
     "activeStrategies": [],
     "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
@@ -35,12 +35,12 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 34.05
+    "runtimeSeconds": 53.98
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 4,
+    "qualifiedBoardCount": 6,
     "monitor": {
       "emotionScore": 96,
       "marketGateScore": 4,
@@ -53,33 +53,33 @@
         "available": true,
         "level": "FALLING",
         "gatePassed": false,
-        "score": 0,
-        "averageReturnPct": -2.98,
-        "averagePositiveDays": 1.0,
+        "score": 1,
+        "averageReturnPct": -1.5,
+        "averagePositiveDays": 2.0,
         "risingIndexCount": 0,
         "aboveMa5IndexCount": 0,
         "indexes": {
           "shanghai": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-11-16",
-            "to": "2026-11-20",
-            "returnPct": -1.91,
-            "positiveDays": 1,
-            "ma5": 3577.28,
-            "previousMa5": 3597.39,
+            "from": "2026-11-17",
+            "to": "2026-11-23",
+            "returnPct": -1.27,
+            "positiveDays": 2,
+            "ma5": 3564.55,
+            "previousMa5": 3577.28,
             "ma5Rising": false,
             "closeAboveMa5": false
           },
           "shenzhen": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-11-16",
-            "to": "2026-11-20",
-            "returnPct": -4.06,
-            "positiveDays": 1,
-            "ma5": 10565.66,
-            "previousMa5": 10708.14,
+            "from": "2026-11-17",
+            "to": "2026-11-23",
+            "returnPct": -1.73,
+            "positiveDays": 2,
+            "ma5": 10518.38,
+            "previousMa5": 10565.66,
             "ma5Rising": false,
             "closeAboveMa5": false
           }
@@ -93,11 +93,63 @@
       "brokenBoardRate": 0.108,
       "breadthSampleSize": 200,
       "breadthMethod": "top-100 plus bottom-100 movers",
-      "topBoardPct": 9.54,
+      "topBoardPct": 10.0,
       "note": "Five-day index trend controls normal closure; a single weak day becomes CAUTION unless emergency stress is reached."
     }
   },
   "boards": [
+    {
+      "code": "BK0816",
+      "name": "昨日连板",
+      "kind": "Concept board",
+      "price": 68.61,
+      "pct": 10.0,
+      "amount": 3394554243.0,
+      "turnover": 28.21,
+      "open": 65.18,
+      "preClose": 62.37,
+      "mainNet": 277083568.0,
+      "rank": 3,
+      "passed": 4,
+      "qualified": true,
+      "score": 82.55,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 0.63,
+      "limitUpCount": 2,
+      "bigUpCount": 2
+    },
+    {
+      "code": "BK1645",
+      "name": "昨日打二板以上表现",
+      "kind": "Concept board",
+      "price": 47253.72,
+      "pct": 9.99,
+      "amount": 2659540154.0,
+      "turnover": 42.21,
+      "open": 44897.14,
+      "preClose": 42961.1,
+      "mainNet": -18749200.0,
+      "rank": 4,
+      "passed": 4,
+      "qualified": true,
+      "score": 82.2,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
+        "[SectorGate] Leaders have follow-through support"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 2,
+      "bigUpCount": 2
+    },
     {
       "code": "BK1408",
       "name": "机器人",
@@ -114,13 +166,13 @@
       "qualified": true,
       "score": 81.85,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 3,
       "bigUpCount": 20
     },
@@ -131,7 +183,7 @@
       "price": 1786.25,
       "pct": 7.88,
       "amount": 22600235126.0,
-      "turnover": 3.74,
+      "turnover": 3.73,
       "open": 1629.45,
       "preClose": 1655.83,
       "mainNet": 1828257296.0,
@@ -140,13 +192,13 @@
       "qualified": true,
       "score": 80.8,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 9,
       "bigUpCount": 32
     },
@@ -166,13 +218,13 @@
       "qualified": true,
       "score": 80.45,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 17,
       "bigUpCount": 50
     },
@@ -183,7 +235,7 @@
       "price": 327.06,
       "pct": 7.79,
       "amount": 30129762489.0,
-      "turnover": 14.14,
+      "turnover": 15.91,
       "open": 310.25,
       "preClose": 303.43,
       "mainNet": 286731008.0,
@@ -192,90 +244,40 @@
       "qualified": true,
       "score": 80.1,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 17,
       "bigUpCount": 22
     },
     {
-      "code": "BK1295",
-      "name": "其他数字媒体",
+      "code": "BK1300",
+      "name": "院线",
       "kind": "Industry board",
-      "price": 1578.08,
-      "pct": 14.16,
-      "amount": 3686359074.0,
-      "turnover": 23.52,
-      "open": 1389.96,
-      "preClose": 1382.35,
-      "mainNet": 136036608.0,
-      "rank": 2,
+      "price": 642.13,
+      "pct": 8.3,
+      "amount": 2174273295.0,
+      "turnover": 5.81,
+      "open": 575.73,
+      "preClose": 592.93,
+      "mainNet": 88974183.0,
+      "rank": 7,
       "passed": 3,
       "qualified": false,
-      "score": 66.5,
+      "score": 64.75,
       "criteria": [
         "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Board amount expands at least 1.30x"
+        "[SectorGate] Leaders have follow-through support"
       ],
       "continuous": true,
-      "amountRatio": 1.37,
+      "amountRatio": 1.0,
       "limitUpCount": 1,
-      "bigUpCount": 2
-    },
-    {
-      "code": "BK0816",
-      "name": "昨日连板",
-      "kind": "Concept board",
-      "price": 68.61,
-      "pct": 10.0,
-      "amount": 3394554243.0,
-      "turnover": 7.46,
-      "open": 65.18,
-      "preClose": 62.37,
-      "mainNet": 277083568.0,
-      "rank": 3,
-      "passed": 3,
-      "qualified": false,
-      "score": 66.15,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 0.46,
-      "limitUpCount": 2,
-      "bigUpCount": 2
-    },
-    {
-      "code": "BK1645",
-      "name": "昨日打二板以上表现",
-      "kind": "Concept board",
-      "price": 47253.72,
-      "pct": 9.99,
-      "amount": 2659540154.0,
-      "turnover": 5.02,
-      "open": 44897.14,
-      "preClose": 42961.1,
-      "mainNet": -18749200.0,
-      "rank": 4,
-      "passed": 3,
-      "qualified": false,
-      "score": 65.8,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 2,
-      "bigUpCount": 2
+      "bigUpCount": 4
     },
     {
       "code": "BK1296",
@@ -297,33 +299,57 @@
         "[SectorGate] Tail rank remains top-15 positive"
       ],
       "continuous": true,
-      "amountRatio": 1.22,
+      "amountRatio": 1.13,
       "limitUpCount": 0,
       "bigUpCount": 1
     },
     {
-      "code": "BK1300",
-      "name": "院线",
+      "code": "BK1295",
+      "name": "其他数字媒体",
       "kind": "Industry board",
-      "price": 642.13,
-      "pct": 8.3,
-      "amount": 2174273295.0,
-      "turnover": 5.81,
-      "open": 575.73,
-      "preClose": 592.93,
-      "mainNet": 88974183.0,
-      "rank": 7,
+      "price": 1578.08,
+      "pct": 14.16,
+      "amount": 3686359074.0,
+      "turnover": 23.52,
+      "open": 1389.96,
+      "preClose": 1382.35,
+      "mainNet": 136036608.0,
+      "rank": 2,
       "passed": 2,
       "qualified": false,
-      "score": 48.35,
+      "score": 50.1,
       "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Leaders have follow-through support"
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.22,
       "limitUpCount": 1,
-      "bigUpCount": 4
+      "bigUpCount": 2
+    },
+    {
+      "code": "BK1298",
+      "name": "文字媒体",
+      "kind": "Industry board",
+      "price": 2737.63,
+      "pct": 8.65,
+      "amount": 3154924512.0,
+      "turnover": 12.47,
+      "open": 2444.14,
+      "preClose": 2519.75,
+      "mainNet": 269603829.0,
+      "rank": 6,
+      "passed": 2,
+      "qualified": false,
+      "score": 48.7,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 2
     },
     {
       "code": "BK1222",
@@ -353,7 +379,7 @@
       "price": 252.97,
       "pct": 7.45,
       "amount": 71069311299.0,
-      "turnover": 28.59,
+      "turnover": 21.71,
       "open": 231.92,
       "preClose": 235.43,
       "mainNet": 3207135744.0,
@@ -366,29 +392,6 @@
       ],
       "limitUpCount": 0,
       "bigUpCount": 0
-    },
-    {
-      "code": "BK1298",
-      "name": "文字媒体",
-      "kind": "Industry board",
-      "price": 2737.63,
-      "pct": 8.65,
-      "amount": 3154924512.0,
-      "turnover": 12.47,
-      "open": 2444.14,
-      "preClose": 2519.75,
-      "mainNet": 269603829.0,
-      "rank": 6,
-      "passed": 1,
-      "qualified": false,
-      "score": 32.3,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 2
     }
   ],
   "recommendations": [],
@@ -401,32 +404,38 @@
     },
     {
       "source": "Yicai",
-      "title": "连板股追踪丨A股今日共152只个股涨停 这只算力股5连板算力概念股真视通收获5连板、荣联科技2连板。一图速览今日连板股&gt;&gt;  1小时前",
-      "url": "https://www.yicai.com/news/103450495.html",
+      "title": "黄仁勋回归，英伟达暴涨：华尔街究竟在为什么买单？市场重新定价的，首先是黄仁勋“缺席”的风险。  昨天 23:56",
+      "url": "https://www.yicai.com/news/103451106.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "A股放量拉升之后，板块如何加速轮动？｜市场观察周末推出稳定市场政策后A股低开高走。  1小时前",
-      "url": "https://www.yicai.com/news/103450480.html",
+      "title": "从辞职到复职仅11天：分析师称黄仁勋回归是董事会和市场的唯一选择英伟达董事会在黄仁勋辞职11天后一致投票恢复其总裁兼CEO及董事会成员职务。  昨天 23:09",
+      "url": "https://www.yicai.com/news/103451077.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "周末救市难抵“黑色星期一”！韩国股市跌破4800点，AI交易是否终结？今年以来，许多大型科技公司的估值已经因为盈利增速超过了股价涨幅而有所回落。  1小时前",
-      "url": "https://www.yicai.com/news/103450401.html",
+      "title": "上海试点“定额报销”将推向全国，医保支付标准扩围影响几何？以市场的手段推动仿制药替代和促使原研药持续降价。  昨天 22:07",
+      "url": "https://www.yicai.com/news/103450982.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "多重利好催化，宇树股价重回700元、人形机器人板块掀起涨停潮模型层面，GPT-6.2 Astra展现了更强的操作能力。  1小时前",
-      "url": "https://www.yicai.com/news/103450358.html",
+      "title": "主动ETF助力长钱入市，稳市组合拳催化A股修复政策是此轮反弹最核心催化，但并非唯一驱动因素。  昨天 21:13",
+      "url": "https://www.yicai.com/news/103450937.html",
       "time": ""
     },
     {
       "source": "Yicai",
-      "title": "收盘｜创业板指涨超3% AI应用端掀涨停浪潮全市场超4600只个股上涨，其中151只个股涨停。  2小时前",
-      "url": "https://www.yicai.com/news/103450327.html",
+      "title": "一财社论：明确稳市内涵，搭建长效机制用制度变革提高市场规范化发展，用制度的长效稳定机制护航市场健康发展。  昨天 20:11",
+      "url": "https://www.yicai.com/news/103450810.html",
+      "time": ""
+    },
+    {
+      "source": "Yicai",
+      "title": "推理时代，中国算力的机会在哪里推理并不总需要最先进的芯片，这意味着一个不必在最高端市场正面突破，也能参与竞争的机会。  昨天 19:32",
+      "url": "https://www.yicai.com/news/103450772.html",
       "time": ""
     }
   ]
