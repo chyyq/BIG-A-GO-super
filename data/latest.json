@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-24T00:32:54.488660+08:00",
+    "generatedAt": "2026-11-24T01:55:54.419585+08:00",
     "tradingDate": "2026-11-24",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -24,18 +24,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 47.62
+    "runtimeSeconds": 29.8
   },
   "market": {
     "recommendationCount": 0,
@@ -397,39 +397,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "A股重磅！监管明确两融风控细则 稳妥处置违约",
+      "url": "https://finance.eastmoney.com/a/202611233937278151.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "黄仁勋回归，英伟达暴涨：华尔街究竟在为什么买单？市场重新定价的，首先是黄仁勋“缺席”的风险。  昨天 23:56",
-      "url": "https://www.yicai.com/news/103451106.html",
+      "source": "Eastmoney News",
+      "title": "创业板指大涨超3% 超4600只股飘红 逾150只股涨停",
+      "url": "https://finance.eastmoney.com/a/202611233937232623.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "从辞职到复职仅11天：分析师称黄仁勋回归是董事会和市场的唯一选择英伟达董事会在黄仁勋辞职11天后一致投票恢复其总裁兼CEO及董事会成员职务。  昨天 23:09",
-      "url": "https://www.yicai.com/news/103451077.html",
+      "source": "Eastmoney News",
+      "title": "宇树跻身A股第三贵！人形机器人掀涨停潮 发生了什么？",
+      "url": "https://finance.eastmoney.com/a/202611233937126772.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "上海试点“定额报销”将推向全国，医保支付标准扩围影响几何？以市场的手段推动仿制药替代和促使原研药持续降价。  昨天 22:07",
-      "url": "https://www.yicai.com/news/103450982.html",
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "主动ETF助力长钱入市，稳市组合拳催化A股修复政策是此轮反弹最核心催化，但并非唯一驱动因素。  昨天 21:13",
-      "url": "https://www.yicai.com/news/103450937.html",
+      "source": "Eastmoney News",
+      "title": "韩国启动股市稳定基金救市",
+      "url": "https://topic.eastmoney.com/detail/hgqdgswdjjjs.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "一财社论：明确稳市内涵，搭建长效机制用制度变革提高市场规范化发展，用制度的长效稳定机制护航市场健康发展。  昨天 20:11",
-      "url": "https://www.yicai.com/news/103450810.html",
+      "source": "Eastmoney News",
+      "title": "稳市场稳预期 监管层“三箭齐发”",
+      "url": "https://topic.eastmoney.com/detail/sanjian3.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "稳市举措齐发力 券商板块配置价值凸显",
+      "url": "https://finance.eastmoney.com/a/202611243937743040.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "从“引水”到“疏渠”：稳市场政策组合拳接续发力",
+      "url": "https://finance.eastmoney.com/a/202611243937728857.html",
       "time": ""
     }
   ]
