@@ -1,48 +1,46 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-23T17:36:39.788485+08:00",
+    "generatedAt": "2026-11-23T17:41:41.168616+08:00",
     "tradingDate": "2026-11-23",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "recommendationGeneratedAt": null,
     "recommendationsRetained": false,
     "sourceHealth": [
       {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
-      {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Quote snapshot and daily K-line history OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://www.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news/reference source"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 26.32
+    "errors": [],
+    "runtimeSeconds": 38.5
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 12,
+    "qualifiedBoardCount": 4,
     "monitor": {
       "emotionScore": 96,
       "marketGateScore": 4,
@@ -133,7 +131,7 @@
       "price": 1786.25,
       "pct": 7.88,
       "amount": 22600235126.0,
-      "turnover": 3.77,
+      "turnover": 3.73,
       "open": 1629.45,
       "preClose": 1655.83,
       "mainNet": 1828257296.0,
@@ -185,7 +183,7 @@
       "price": 327.06,
       "pct": 7.79,
       "amount": 30129762489.0,
-      "turnover": 7.34,
+      "turnover": 15.91,
       "open": 310.25,
       "preClose": 303.43,
       "mainNet": 286731008.0,
@@ -236,7 +234,7 @@
       "price": 68.61,
       "pct": 10.0,
       "amount": 3394554243.0,
-      "turnover": 9.47,
+      "turnover": 28.21,
       "open": 65.18,
       "preClose": 62.37,
       "mainNet": 277083568.0,
@@ -261,7 +259,7 @@
       "price": 47253.72,
       "pct": 9.99,
       "amount": 2659540154.0,
-      "turnover": 6.81,
+      "turnover": 42.21,
       "open": 44897.14,
       "preClose": 42961.1,
       "mainNet": -18749200.0,
@@ -355,7 +353,7 @@
       "price": 252.97,
       "pct": 7.45,
       "amount": 71069311299.0,
-      "turnover": 33.04,
+      "turnover": 21.71,
       "open": 231.92,
       "preClose": 235.43,
       "mainNet": 3207135744.0,
