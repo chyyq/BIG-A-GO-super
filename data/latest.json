@@ -1,8 +1,8 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-24T19:34:40.176102+08:00",
-    "tradingDate": "2026-11-24",
+    "generatedAt": "2026-11-25T00:12:48.138521+08:00",
+    "tradingDate": "2026-11-25",
     "mode": "fast-snapshot",
     "activeStrategies": [],
     "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
@@ -24,18 +24,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 38.99
+    "runtimeSeconds": 41.47
   },
   "market": {
     "recommendationCount": 0,
@@ -53,35 +53,35 @@
         "available": true,
         "level": "FALLING",
         "gatePassed": false,
-        "score": 1,
-        "averageReturnPct": -1.5,
-        "averagePositiveDays": 2.0,
+        "score": 2,
+        "averageReturnPct": -1.65,
+        "averagePositiveDays": 2.5,
         "risingIndexCount": 0,
-        "aboveMa5IndexCount": 0,
+        "aboveMa5IndexCount": 2,
         "indexes": {
           "shanghai": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-11-17",
-            "to": "2026-11-23",
-            "returnPct": -1.27,
-            "positiveDays": 2,
-            "ma5": 3564.55,
-            "previousMa5": 3577.28,
+            "from": "2026-11-18",
+            "to": "2026-11-24",
+            "returnPct": -1.1,
+            "positiveDays": 3,
+            "ma5": 3557.31,
+            "previousMa5": 3564.55,
             "ma5Rising": false,
-            "closeAboveMa5": false
+            "closeAboveMa5": true
           },
           "shenzhen": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-11-17",
-            "to": "2026-11-23",
-            "returnPct": -1.73,
+            "from": "2026-11-18",
+            "to": "2026-11-24",
+            "returnPct": -2.21,
             "positiveDays": 2,
-            "ma5": 10518.38,
-            "previousMa5": 10565.66,
+            "ma5": 10475.39,
+            "previousMa5": 10518.38,
             "ma5Rising": false,
-            "closeAboveMa5": false
+            "closeAboveMa5": true
           }
         }
       },
@@ -121,7 +121,7 @@
         "[SectorGate] Leaders have follow-through support"
       ],
       "continuous": true,
-      "amountRatio": 3.56,
+      "amountRatio": 1.92,
       "limitUpCount": 4,
       "bigUpCount": 6
     },
@@ -148,7 +148,7 @@
         "[SectorGate] Leaders have follow-through support"
       ],
       "continuous": true,
-      "amountRatio": 4.54,
+      "amountRatio": 1.64,
       "limitUpCount": 30,
       "bigUpCount": 50
     },
@@ -168,13 +168,13 @@
       "qualified": true,
       "score": 81.5,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 10,
       "bigUpCount": 15
     },
@@ -194,13 +194,13 @@
       "qualified": true,
       "score": 81.15,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 32,
       "bigUpCount": 50
     },
@@ -220,13 +220,13 @@
       "qualified": true,
       "score": 80.1,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": 1.7,
+      "continuous": true,
+      "amountRatio": 1.26,
       "limitUpCount": 5,
       "bigUpCount": 7
     },
@@ -251,7 +251,103 @@
         "[SectorGate] Board amount expands at least 1.30x"
       ],
       "continuous": true,
-      "amountRatio": 1.57,
+      "amountRatio": 1.38,
+      "limitUpCount": 0,
+      "bigUpCount": 1
+    },
+    {
+      "code": "BK1620",
+      "name": "钴",
+      "kind": "Industry board",
+      "price": 738.28,
+      "pct": 11.5,
+      "amount": 1093404410.0,
+      "turnover": 7.32,
+      "open": 724.32,
+      "preClose": 662.12,
+      "mainNet": 116897005.0,
+      "rank": 1,
+      "passed": 2,
+      "qualified": false,
+      "score": 50.45,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 0,
+      "bigUpCount": 2
+    },
+    {
+      "code": "BK1542",
+      "name": "文化用品",
+      "kind": "Industry board",
+      "price": 2755.22,
+      "pct": 6.17,
+      "amount": 674240674.0,
+      "turnover": 1.9,
+      "open": 2726.02,
+      "preClose": 2595.0,
+      "mainNet": 39584705.0,
+      "rank": 3,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.75,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 1,
+      "bigUpCount": 2
+    },
+    {
+      "code": "BK1469",
+      "name": "涂料",
+      "kind": "Industry board",
+      "price": 687.08,
+      "pct": 5.98,
+      "amount": 223595009.0,
+      "turnover": 1.4,
+      "open": 657.94,
+      "preClose": 648.31,
+      "mainNet": 18299248.0,
+      "rank": 4,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.4,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
+      "limitUpCount": 0,
+      "bigUpCount": 1
+    },
+    {
+      "code": "BK1524",
+      "name": "汽车综合服务",
+      "kind": "Industry board",
+      "price": 1043.35,
+      "pct": 4.16,
+      "amount": 1151286124.0,
+      "turnover": 4.62,
+      "open": 1025.7,
+      "preClose": 1001.66,
+      "mainNet": 89400093.0,
+      "rank": 9,
+      "passed": 2,
+      "qualified": false,
+      "score": 47.65,
+      "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
+        "[SectorGate] Tail rank remains top-15 positive"
+      ],
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 0,
       "bigUpCount": 1
     },
@@ -296,148 +392,32 @@
       ],
       "limitUpCount": 0,
       "bigUpCount": 0
-    },
-    {
-      "code": "BK1620",
-      "name": "钴",
-      "kind": "Industry board",
-      "price": 738.28,
-      "pct": 11.5,
-      "amount": 1093404410.0,
-      "turnover": 7.32,
-      "open": 724.32,
-      "preClose": 662.12,
-      "mainNet": 116897005.0,
-      "rank": 1,
-      "passed": 1,
-      "qualified": false,
-      "score": 34.05,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 2
-    },
-    {
-      "code": "BK1542",
-      "name": "文化用品",
-      "kind": "Industry board",
-      "price": 2755.22,
-      "pct": 6.17,
-      "amount": 674240674.0,
-      "turnover": 1.9,
-      "open": 2726.02,
-      "preClose": 2595.0,
-      "mainNet": 39584705.0,
-      "rank": 3,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.35,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 1,
-      "bigUpCount": 2
-    },
-    {
-      "code": "BK1469",
-      "name": "涂料",
-      "kind": "Industry board",
-      "price": 687.08,
-      "pct": 5.98,
-      "amount": 223595009.0,
-      "turnover": 1.4,
-      "open": 657.94,
-      "preClose": 648.31,
-      "mainNet": 18299248.0,
-      "rank": 4,
-      "passed": 1,
-      "qualified": false,
-      "score": 33.0,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 1
-    },
-    {
-      "code": "BK1524",
-      "name": "汽车综合服务",
-      "kind": "Industry board",
-      "price": 1043.35,
-      "pct": 4.16,
-      "amount": 1151286124.0,
-      "turnover": 4.62,
-      "open": 1025.7,
-      "preClose": 1001.66,
-      "mainNet": 89400093.0,
-      "rank": 9,
-      "passed": 1,
-      "qualified": false,
-      "score": 31.25,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive"
-      ],
-      "continuous": false,
-      "amountRatio": null,
-      "limitUpCount": 0,
-      "bigUpCount": 1
     }
   ],
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "A股三大指数高开低走 能源金属板块涨幅居前",
-      "url": "https://finance.eastmoney.com/a/202611243938398040.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "全球市场：美股三大指数集体大涨 纳指涨超6% 英伟达暴涨逾30%",
-      "url": "https://finance.eastmoney.com/a/202611243937757635.html",
+      "source": "Yicai",
+      "title": "全球风险偏好回升，AI进入“算细账”时刻市场分析人士认为，后市主线仍在AI，但逻辑正从资本开支扩张转向回报、融资与执行能力。  昨天 21:19",
+      "url": "https://www.yicai.com/news/103452743.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
-      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "source": "Yicai",
+      "title": "A股光模块冲高回落，产业链确定性是否修复仍待验证人事变动并未带来新的AI基建的技术、需求或产品迭代  昨天 20:35",
+      "url": "https://www.yicai.com/news/103452664.html",
       "time": ""
     },
     {
-      "source": "Eastmoney News",
-      "title": "韩国启动股市稳定基金救市",
-      "url": "https://topic.eastmoney.com/detail/hgqdgswdjjjs.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "稳市场稳预期 监管层“三箭齐发”",
-      "url": "https://topic.eastmoney.com/detail/sanjian3.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "杨德龙：黄仁勋回归推动美股暴涨 A股有望同步大涨",
-      "url": "https://finance.eastmoney.com/a/202611243938454710.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "【博时市场点评11月24日】指数高开低走，成交量继续放大",
-      "url": "https://finance.eastmoney.com/a/202611243938454098.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "东方财富证券开户",
-      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "source": "Yicai",
+      "title": "英伟达杠杆产品一夜变脸，多空资金胜负互换时差、杠杆与情绪：谁在决定英伟达产品的价格？  昨天 20:16",
+      "url": "https://www.yicai.com/news/103452634.html",
       "time": ""
     }
   ]
