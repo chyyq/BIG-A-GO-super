@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-25T00:31:13.884658+08:00",
+    "generatedAt": "2026-11-25T01:29:33.128750+08:00",
     "tradingDate": "2026-11-25",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 38.6
+    "runtimeSeconds": 35.08
   },
   "market": {
     "recommendationCount": 0,
@@ -105,7 +105,7 @@
       "price": 71.7,
       "pct": 4.5,
       "amount": 19020453347.0,
-      "turnover": 286.11,
+      "turnover": 96.11,
       "open": 70.88,
       "preClose": 68.61,
       "mainNet": -843790912.0,
@@ -132,7 +132,7 @@
       "price": 340.66,
       "pct": 4.16,
       "amount": 136661094418.0,
-      "turnover": 50.22,
+      "turnover": 23.15,
       "open": 340.53,
       "preClose": 327.06,
       "mainNet": -1733042688.0,
@@ -159,7 +159,7 @@
       "price": 1440.74,
       "pct": 4.26,
       "amount": 72430421962.0,
-      "turnover": 19.11,
+      "turnover": 26.54,
       "open": 1425.89,
       "preClose": 1381.83,
       "mainNet": -2175332864.0,
@@ -185,7 +185,7 @@
       "price": 311.0,
       "pct": 4.16,
       "amount": 137613911760.0,
-      "turnover": 48.76,
+      "turnover": 22.43,
       "open": 311.32,
       "preClose": 298.58,
       "mainNet": -1771447808.0,
@@ -211,7 +211,7 @@
       "price": 237.34,
       "pct": 4.13,
       "amount": 19928074880.0,
-      "turnover": 117.09,
+      "turnover": 50.72,
       "open": 237.98,
       "preClose": 227.93,
       "mainNet": -906481648.0,
@@ -358,7 +358,7 @@
       "price": 12056.86,
       "pct": 4.08,
       "amount": 101660671539.0,
-      "turnover": 34.64,
+      "turnover": 14.78,
       "open": 12091.47,
       "preClose": 11584.37,
       "mainNet": 134594560.0,
@@ -397,27 +397,51 @@
   "recommendations": [],
   "news": [
     {
+      "source": "Eastmoney News",
+      "title": "A股三大指数高开低走 能源金属板块涨幅居前",
+      "url": "https://finance.eastmoney.com/a/202611243938398040.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "全球市场：美股三大指数集体大涨 纳指涨超6% 英伟达暴涨逾30%",
+      "url": "https://finance.eastmoney.com/a/202611243937757635.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "韩国启动股市稳定基金救市",
+      "url": "https://topic.eastmoney.com/detail/hgqdgswdjjjs.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "稳市场稳预期 监管层“三箭齐发”",
+      "url": "https://topic.eastmoney.com/detail/sanjian3.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "time": ""
+    },
+    {
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "全球风险偏好回升，AI进入“算细账”时刻市场分析人士认为，后市主线仍在AI，但逻辑正从资本开支扩张转向回报、融资与执行能力。  昨天 21:19",
-      "url": "https://www.yicai.com/news/103452743.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "A股光模块冲高回落，产业链确定性是否修复仍待验证人事变动并未带来新的AI基建的技术、需求或产品迭代  昨天 20:35",
-      "url": "https://www.yicai.com/news/103452664.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "英伟达杠杆产品一夜变脸，多空资金胜负互换时差、杠杆与情绪：谁在决定英伟达产品的价格？  昨天 20:16",
-      "url": "https://www.yicai.com/news/103452634.html",
       "time": ""
     }
   ]
