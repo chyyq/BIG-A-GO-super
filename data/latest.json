@@ -1,48 +1,46 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-24T19:33:39.950732+08:00",
+    "generatedAt": "2026-11-24T19:34:40.176102+08:00",
     "tradingDate": "2026-11-24",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "recommendationGeneratedAt": null,
     "recommendationsRetained": false,
     "sourceHealth": [
       {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
-      {
         "name": "Eastmoney",
         "ok": true,
         "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Quote snapshot and daily K-line history OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
-    "errors": [
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
-    ],
-    "runtimeSeconds": 27.24
+    "errors": [],
+    "runtimeSeconds": 38.99
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 12,
+    "qualifiedBoardCount": 5,
     "monitor": {
       "emotionScore": 100,
       "marketGateScore": 5,
@@ -395,21 +393,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "A股三大指数高开低走 能源金属板块涨幅居前",
+      "url": "https://finance.eastmoney.com/a/202611243938398040.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "深圳召开上市公司座谈会，鼓励开展回购增持工业富联、立讯精密、中兴通讯、中国平安、招商银行、中信证券、国信证券等参会。  1小时前",
-      "url": "https://www.yicai.com/news/103452432.html",
+      "source": "Eastmoney News",
+      "title": "全球市场：美股三大指数集体大涨 纳指涨超6% 英伟达暴涨逾30%",
+      "url": "https://finance.eastmoney.com/a/202611243937757635.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共64只个股涨停 这只PCB概念股4连板猪肉板块金新农3连板，小家电板块九阳股份2连板。一图速览今日连板股&gt;&gt;  3小时前",
-      "url": "https://www.yicai.com/news/103452229.html",
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "韩国启动股市稳定基金救市",
+      "url": "https://topic.eastmoney.com/detail/hgqdgswdjjjs.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "稳市场稳预期 监管层“三箭齐发”",
+      "url": "https://topic.eastmoney.com/detail/sanjian3.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "杨德龙：黄仁勋回归推动美股暴涨 A股有望同步大涨",
+      "url": "https://finance.eastmoney.com/a/202611243938454710.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "【博时市场点评11月24日】指数高开低走，成交量继续放大",
+      "url": "https://finance.eastmoney.com/a/202611243938454098.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
