@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-24T19:25:20.516115+08:00",
+    "generatedAt": "2026-11-24T19:29:36.536859+08:00",
     "tradingDate": "2026-11-24",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 46.48
+    "runtimeSeconds": 32.71
   },
   "market": {
     "recommendationCount": 0,
