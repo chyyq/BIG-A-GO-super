@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-26T01:28:55.280498+08:00",
+    "generatedAt": "2026-11-26T01:33:06.906812+08:00",
     "tradingDate": "2026-11-26",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -41,7 +41,7 @@
       "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 39.72
+    "runtimeSeconds": 28.27
   },
   "market": {
     "recommendationCount": 0,
