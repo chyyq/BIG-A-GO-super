@@ -1,9 +1,9 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-26T05:21:22.752438+08:00",
+    "generatedAt": "2026-11-26T07:56:46.006881+08:00",
     "tradingDate": "2026-11-26",
-    "mode": "fast-snapshot",
+    "mode": "overnight-reset",
     "activeStrategies": [],
     "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "recommendationGeneratedAt": null,
