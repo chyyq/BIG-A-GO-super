@@ -1,54 +1,70 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-25T18:10:12.061139+08:00",
+    "generatedAt": "2026-11-25T18:16:45.571302+08:00",
     "tradingDate": "2026-11-25",
-    "mode": "cached-fallback",
+    "mode": "fast-snapshot",
+    "activeStrategies": [],
+    "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
     "recommendationGeneratedAt": null,
     "recommendationsRetained": false,
     "sourceHealth": [
       {
-        "name": "Historical cache",
-        "ok": true,
-        "url": "data/latest.json",
-        "note": "External sources failed; kept the last successful snapshot."
-      },
-      {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
-        "note": "Previous successful source status retained during fallback."
+        "url": "https://push2delay.eastmoney.com/api/qt/clist/get?pn=1&pz=240&po=1&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A90%2Bt%3A3&fields=f12%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf62",
+        "note": "OK"
+      },
+      {
+        "name": "Eastmoney News",
+        "ok": true,
+        "url": "https://finance.eastmoney.com/a/cjjsp.html",
+        "note": "Optional news source OK"
       },
       {
         "name": "10jqka",
         "ok": true,
         "url": "https://stock.10jqka.com.cn/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
         "url": "https://www.yicai.com/news/",
-        "note": "Previous successful source status retained during fallback."
+        "note": "Optional news source OK"
       }
     ],
     "errors": [
       "Eastmoney clist failed: Remote end closed connection without response",
       "Eastmoney clist failed: Remote end closed connection without response",
-      "Eastmoney clist failed: Remote end closed connection without response"
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney clist failed: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
+      "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 29.14
+    "runtimeSeconds": 70.17
   },
   "market": {
     "recommendationCount": 0,
     "watchOnlyCount": 0,
-    "qualifiedBoardCount": 12,
+    "qualifiedBoardCount": 0,
     "monitor": {
-      "emotionScore": 58,
-      "marketGateScore": 2,
-      "marketGatePassed": true,
-      "hardVeto": false,
-      "riskLevel": "CAUTION",
+      "emotionScore": 50,
+      "marketGateScore": 0,
+      "marketGatePassed": false,
+      "hardVeto": true,
+      "riskLevel": "RISK_OFF",
       "fiveDayTrend": {
         "available": true,
         "level": "FALLING",
@@ -83,7 +99,8 @@
             "ma5Rising": false,
             "closeAboveMa5": true
           }
-        }
+        },
+        "cached": true
       },
       "limitUpCount": null,
       "limitDownCount": null,
@@ -92,58 +109,6 @@
     }
   },
   "boards": [
-    {
-      "code": "BK1514",
-      "name": "水产养殖",
-      "kind": "Industry board",
-      "price": 686.42,
-      "pct": 5.57,
-      "amount": 1626261758.0,
-      "turnover": 12.73,
-      "open": 649.74,
-      "preClose": 650.19,
-      "mainNet": 349343008.0,
-      "rank": 1,
-      "passed": 4,
-      "qualified": true,
-      "score": 83.25,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 1.46,
-      "limitUpCount": 2,
-      "bigUpCount": 2
-    },
-    {
-      "code": "BK1645",
-      "name": "昨日打二板以上表现",
-      "kind": "Concept board",
-      "price": 49837.67,
-      "pct": 3.46,
-      "amount": 12941033541.0,
-      "turnover": 31.2,
-      "open": 49270.05,
-      "preClose": 48173.15,
-      "mainNet": -604052672.0,
-      "rank": 3,
-      "passed": 4,
-      "qualified": true,
-      "score": 82.55,
-      "criteria": [
-        "[SectorGate] Tail rank remains top-15 positive",
-        "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
-        "[SectorGate] Leaders have follow-through support"
-      ],
-      "continuous": false,
-      "amountRatio": 4.87,
-      "limitUpCount": 4,
-      "bigUpCount": 4
-    },
     {
       "code": "BK1542",
       "name": "文化用品",
@@ -166,8 +131,56 @@
       ],
       "continuous": true,
       "amountRatio": 1.83,
-      "limitUpCount": 1,
-      "bigUpCount": 1
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1514",
+      "name": "水产养殖",
+      "kind": "Industry board",
+      "price": 686.42,
+      "pct": 5.57,
+      "amount": 1626261758.0,
+      "turnover": 12.73,
+      "open": 649.74,
+      "preClose": 650.19,
+      "mainNet": 349343008.0,
+      "rank": 1,
+      "passed": 2,
+      "qualified": false,
+      "score": 50.45,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": 1.46,
+      "limitUpCount": 0,
+      "bigUpCount": 0
+    },
+    {
+      "code": "BK1645",
+      "name": "昨日打二板以上表现",
+      "kind": "Concept board",
+      "price": 49837.67,
+      "pct": 3.46,
+      "amount": 12941033541.0,
+      "turnover": 31.2,
+      "open": 49270.05,
+      "preClose": 48173.15,
+      "mainNet": -604052672.0,
+      "rank": 3,
+      "passed": 2,
+      "qualified": false,
+      "score": 49.75,
+      "criteria": [
+        "[SectorGate] Tail rank remains top-15 positive",
+        "[SectorGate] Board amount expands at least 1.30x"
+      ],
+      "continuous": false,
+      "amountRatio": 4.87,
+      "limitUpCount": 0,
+      "bigUpCount": 0
     },
     {
       "code": "BK1510",
@@ -376,6 +389,42 @@
   "recommendations": [],
   "news": [
     {
+      "source": "Eastmoney News",
+      "title": "A股三大指数收跌 成交额不足1.4万亿 退税商店概念逆市走强",
+      "url": "https://finance.eastmoney.com/a/202611253939487357.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "韩国启动股市稳定基金救市",
+      "url": "https://topic.eastmoney.com/detail/hgqdgswdjjjs.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "稳市场稳预期 监管层“三箭齐发”",
+      "url": "https://topic.eastmoney.com/detail/sanjian3.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "time": ""
+    },
+    {
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
@@ -383,44 +432,8 @@
     },
     {
       "source": "Yicai",
-      "title": "华发股份拟将110亿股东借款转成永续债此次不发生资金实际划转。  56分钟前",
-      "url": "https://www.yicai.com/news/103453897.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "连板股追踪丨A股今日共58只个股涨停 这只猪肉股4连板一图速览今日连板股&gt;&gt;  1小时前",
-      "url": "https://www.yicai.com/news/103453893.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "收盘丨创业板指跌4.19% 物理AI概念股跌幅居前沪深两市成交额1.38万亿，较上一个交易日缩量2720亿。  2小时前",
-      "url": "https://www.yicai.com/news/103453747.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "美光股价较高点腰斩，超级存储周期还能走多远？市场正面临“2028年盈利悬崖”叙事的风险？  2小时前",
-      "url": "https://www.yicai.com/news/103453709.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "MLF连续净回笼，7 天逆回购月末补位释放何种信号跨月资金缺口更依赖短端投放予以对冲。  3小时前",
-      "url": "https://www.yicai.com/news/103453706.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "上市四日跌破发行价：Anthropic给美国AI热潮泼了盆冷水Anthropic正在成为AI资本市场的一块压力测试器。  3小时前",
-      "url": "https://www.yicai.com/news/103453434.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "独家谈判启动，比亚迪拟再买一家欧洲工厂中国车企在欧洲市场的本地化生产战略。  5小时前",
-      "url": "https://www.yicai.com/news/103453442.html",
+      "title": "ST人福研发了19年以上的新药宣告放弃，4亿资金打水漂了好不容易熬到了申请上市阶段，但过程并不顺利。  7分钟前",
+      "url": "https://www.yicai.com/news/103454004.html",
       "time": ""
     }
   ]
