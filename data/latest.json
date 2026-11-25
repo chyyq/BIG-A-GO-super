@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-26T01:38:20.944864+08:00",
+    "generatedAt": "2026-11-26T05:21:22.752438+08:00",
     "tradingDate": "2026-11-26",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,13 +35,13 @@
       }
     ],
     "errors": [
-      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
-      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shanghai Composite: <urlopen error _ssl.c:1001: The handshake operation timed out>",
+      "Eastmoney daily K skipped for Shenzhen Component: <urlopen error _ssl.c:1001: The handshake operation timed out>",
+      "Eastmoney daily K skipped for Shanghai Composite: <urlopen error _ssl.c:1001: The handshake operation timed out>",
+      "Eastmoney daily K skipped for Shenzhen Component: <urlopen error _ssl.c:1001: The handshake operation timed out>",
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 45.27
+    "runtimeSeconds": 66.22
   },
   "market": {
     "recommendationCount": 0,
@@ -394,27 +394,51 @@
   "recommendations": [],
   "news": [
     {
+      "source": "Eastmoney News",
+      "title": "A股三大指数收跌 成交额不足1.4万亿 退税商店概念逆市走强",
+      "url": "https://finance.eastmoney.com/a/202611253939487357.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "美股巨头财报大分化后，全市场都在等英伟达财报 | 对话美港探案",
+      "url": "https://finance.eastmoney.com/a/202608203846763215.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "韩国启动股市稳定基金救市",
+      "url": "https://topic.eastmoney.com/detail/hgqdgswdjjjs.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "稳市场稳预期 监管层“三箭齐发”",
+      "url": "https://topic.eastmoney.com/detail/sanjian3.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "三端合力夯实市场稳定底盘",
+      "url": "https://finance.eastmoney.com/a/202611263939938127.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券交易",
+      "url": "https://acttg.eastmoney.com/pub/pctg_hskh_act_dfcfzqjy_01_01_01_0",
+      "time": ""
+    },
+    {
       "source": "Yicai",
       "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
       "url": "https://www.yicai.com/topic/102892546/",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "四天8家A股公司“戴帽”！有的“摘帽”仅4个月再被ST多家公司被叠加实施风险警示。  昨天 21:19",
-      "url": "https://www.yicai.com/news/103454326.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "宁德时代股价大跌，机构称锂电盈利、排产预期承压整个电池板块今日大幅下挫。  昨天 19:31",
-      "url": "https://www.yicai.com/news/103454142.html",
-      "time": ""
-    },
-    {
-      "source": "Yicai",
-      "title": "高盛：2027年中国经济三大支撑因素显现，超配银行等五大板块“高盛当前的核心投资主线，是围绕持续演进的中国成长股版图进行布局。”  昨天 18:15",
-      "url": "https://www.yicai.com/news/103453988.html",
       "time": ""
     }
   ]
