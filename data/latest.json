@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-27T00:54:49.997119+08:00",
+    "generatedAt": "2026-11-27T01:10:42.095826+08:00",
     "tradingDate": "2026-11-27",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -37,7 +37,7 @@
     "errors": [
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 32.76
+    "runtimeSeconds": 39.49
   },
   "market": {
     "recommendationCount": 0,
@@ -107,7 +107,7 @@
       "price": 75.99,
       "pct": 6.58,
       "amount": 12703758751.0,
-      "turnover": 11.88,
+      "turnover": 16.91,
       "open": 71.46,
       "preClose": 71.3,
       "mainNet": -1061042864.0,
@@ -133,7 +133,7 @@
       "price": 252.87,
       "pct": 6.44,
       "amount": 22005012455.0,
-      "turnover": 13.09,
+      "turnover": 19.48,
       "open": 242.26,
       "preClose": 237.58,
       "mainNet": -1340937792.0,
@@ -379,7 +379,7 @@
       "price": 1784.78,
       "pct": 3.42,
       "amount": 8686262356.0,
-      "turnover": 4.22,
+      "turnover": 0.87,
       "open": 1723.35,
       "preClose": 1725.74,
       "mainNet": 372325280.0,
