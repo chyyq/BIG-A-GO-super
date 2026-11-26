@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-27T01:14:46.195104+08:00",
+    "generatedAt": "2026-11-27T01:20:29.168795+08:00",
     "tradingDate": "2026-11-27",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -12,8 +12,8 @@
       {
         "name": "Eastmoney",
         "ok": true,
-        "url": "https://push2his.eastmoney.com/api/qt/stock/kline/get?secid=0.399001&ut=bd1d9ddb04089700cf9c27f6f7426281&fields1=f1%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6&fields2=f51%2Cf52%2Cf53%2Cf54%2Cf55%2Cf56%2Cf57%2Cf58%2Cf59%2Cf60%2Cf61&klt=101&fqt=1&end=20500101&lmt=10",
-        "note": "Quote snapshot and daily K-line history OK"
+        "url": "https://push2.eastmoney.com/api/qt/clist/get?pn=1&pz=100&po=0&np=1&ut=bd1d9ddb04089700cf9c27f6f7426281&fltt=2&invt=2&fid=f3&fs=m%3A0%2Bt%3A6%2Cm%3A0%2Bt%3A80%2Cm%3A1%2Bt%3A2%2Cm%3A1%2Bt%3A23&fields=f12%2Cf13%2Cf14%2Cf2%2Cf3%2Cf4%2Cf5%2Cf6%2Cf7%2Cf8%2Cf10%2Cf15%2Cf16%2Cf17%2Cf18%2Cf20%2Cf21%2Cf62%2Cf66%2Cf100",
+        "note": "OK"
       },
       {
         "name": "Eastmoney News",
@@ -24,20 +24,24 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://stock.10jqka.com.cn/",
-        "note": "Optional news source OK"
+        "url": "https://www.10jqka.com.cn/",
+        "note": "Optional news/reference source"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/news/",
-        "note": "Optional news source OK"
+        "url": "https://www.yicai.com/",
+        "note": "Optional news/reference source"
       }
     ],
     "errors": [
+      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shanghai Composite: Remote end closed connection without response",
+      "Eastmoney daily K skipped for Shenzhen Component: Remote end closed connection without response",
       "Market monitor is RISK_OFF; no new buy recommendation generated."
     ],
-    "runtimeSeconds": 26.55
+    "runtimeSeconds": 40.62
   },
   "market": {
     "recommendationCount": 0,
@@ -85,7 +89,8 @@
             "ma5Rising": false,
             "closeAboveMa5": false
           }
-        }
+        },
+        "cached": true
       },
       "limitUpCount": 70,
       "limitDownCount": 25,
@@ -397,33 +402,51 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Yicai",
-      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
-      "url": "https://www.yicai.com/topic/102892546/",
+      "source": "Eastmoney News",
+      "title": "A股又出新概念？今天“金”字爆发",
+      "url": "https://finance.eastmoney.com/a/202611263940460913.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "全国统一电力市场迎来重大进展我国首笔西北—华东绿电联合交易正式落地。  昨天 22:43",
-      "url": "https://www.yicai.com/news/103455591.html",
+      "source": "Eastmoney News",
+      "title": "A股重磅！超4600亿元资金在路上！建行、工行、中行密集表态",
+      "url": "https://finance.eastmoney.com/a/202611253939893180.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "浙商证券：助力浙企出海、引导全球资本入浙，共筑AI时代跨境资管的“浙商连接器”  昨天 22:06",
-      "url": "https://www.yicai.com/news/103456067.html",
+      "source": "Eastmoney News",
+      "title": "A股三大指数涨跌不一 贵金属、元件、煤炭板块领涨",
+      "url": "https://finance.eastmoney.com/a/202611263940572011.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "一财社论：以市场化机制解决算力供给结构性矛盾导致当前出现低水平重复建设、地方一哄而上“抢入场券”，主要原因在于一些地方政府的扭曲激励。  昨天 21:41",
-      "url": "https://www.yicai.com/news/103456035.html",
+      "source": "Eastmoney News",
+      "title": "德邦证券：明年A股或呈N形宽幅震荡，科技板块调整接近尾声",
+      "url": "https://finance.eastmoney.com/a/202611263940906530.html",
       "time": ""
     },
     {
-      "source": "Yicai",
-      "title": "弱现实压制，锂价与锂电股同步创新低宁德时代再创阶段新低，远期供给预期主导板块定价。  昨天 20:55",
-      "url": "https://www.yicai.com/news/103455936.html",
+      "source": "Eastmoney News",
+      "title": "超配中国市场！摩根大通：AI超级周期仍在延续，看多2027年亚洲股市",
+      "url": "https://finance.eastmoney.com/a/202611263940926136.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "一财社论：以市场化机制解决算力供给结构性矛盾",
+      "url": "https://finance.eastmoney.com/a/202611263940887456.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "透视A股并购“爆雷”：大多栽在业绩对赌，风险埋在交割之后",
+      "url": "https://finance.eastmoney.com/a/202611263940828337.html",
+      "time": ""
+    },
+    {
+      "source": "Eastmoney News",
+      "title": "东方财富证券开户",
+      "url": "https://acttg.eastmoney.com/pub/web_kh_dcsy_dbtkwzl_01_01_01_0",
       "time": ""
     }
   ]
