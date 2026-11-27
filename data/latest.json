@@ -1,8 +1,8 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-27T23:39:16.298779+08:00",
-    "tradingDate": "2026-11-27",
+    "generatedAt": "2026-11-28T00:30:50.065098+08:00",
+    "tradingDate": "2026-11-28",
     "mode": "fast-snapshot",
     "activeStrategies": [],
     "noRecommendationReason": "OUTSIDE_STRATEGY_WINDOW",
@@ -24,18 +24,18 @@
       {
         "name": "10jqka",
         "ok": true,
-        "url": "https://www.10jqka.com.cn/",
-        "note": "Optional news/reference source"
+        "url": "https://stock.10jqka.com.cn/",
+        "note": "Optional news source OK"
       },
       {
         "name": "Yicai",
         "ok": true,
-        "url": "https://www.yicai.com/",
-        "note": "Optional news/reference source"
+        "url": "https://www.yicai.com/news/",
+        "note": "Optional news source OK"
       }
     ],
     "errors": [],
-    "runtimeSeconds": 56.92
+    "runtimeSeconds": 34.54
   },
   "market": {
     "recommendationCount": 0,
@@ -46,42 +46,42 @@
       "marketGateScore": 5,
       "marketGatePassed": true,
       "hardVeto": false,
-      "riskLevel": "CAUTION",
+      "riskLevel": "NORMAL",
       "dailyStress": false,
       "emergencyVeto": false,
       "fiveDayTrend": {
         "available": true,
-        "level": "FALLING",
-        "gatePassed": false,
-        "score": 1,
-        "averageReturnPct": -1.64,
-        "averagePositiveDays": 2.0,
-        "risingIndexCount": 0,
-        "aboveMa5IndexCount": 0,
+        "level": "RISING",
+        "gatePassed": true,
+        "score": 6,
+        "averageReturnPct": 2.68,
+        "averagePositiveDays": 3.0,
+        "risingIndexCount": 2,
+        "aboveMa5IndexCount": 2,
         "indexes": {
           "shanghai": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-11-20",
-            "to": "2026-11-26",
-            "returnPct": -1.61,
-            "positiveDays": 3,
-            "ma5": 3514.89,
-            "previousMa5": 3535.04,
-            "ma5Rising": false,
-            "closeAboveMa5": false
+            "from": "2026-11-23",
+            "to": "2026-11-27",
+            "returnPct": 1.91,
+            "positiveDays": 4,
+            "ma5": 3529.43,
+            "previousMa5": 3514.89,
+            "ma5Rising": true,
+            "closeAboveMa5": true
           },
           "shenzhen": {
             "available": true,
             "sampleCount": 5,
-            "from": "2026-11-20",
-            "to": "2026-11-26",
-            "returnPct": -1.68,
-            "positiveDays": 1,
-            "ma5": 10260.95,
-            "previousMa5": 10360.78,
-            "ma5Rising": false,
-            "closeAboveMa5": false
+            "from": "2026-11-23",
+            "to": "2026-11-27",
+            "returnPct": 3.44,
+            "positiveDays": 2,
+            "ma5": 10372.48,
+            "previousMa5": 10260.95,
+            "ma5Rising": true,
+            "closeAboveMa5": true
           }
         }
       },
@@ -114,13 +114,13 @@
       "qualified": true,
       "score": 83.25,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 20,
       "bigUpCount": 25
     },
@@ -140,13 +140,13 @@
       "qualified": true,
       "score": 82.9,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 19,
       "bigUpCount": 32
     },
@@ -166,13 +166,13 @@
       "qualified": true,
       "score": 82.55,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 3,
       "bigUpCount": 8
     },
@@ -192,13 +192,13 @@
       "qualified": true,
       "score": 82.2,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 17,
       "bigUpCount": 28
     },
@@ -218,13 +218,13 @@
       "qualified": true,
       "score": 81.85,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 8,
       "bigUpCount": 20
     },
@@ -244,13 +244,13 @@
       "qualified": true,
       "score": 81.5,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 46,
       "bigUpCount": 50
     },
@@ -270,13 +270,13 @@
       "qualified": true,
       "score": 81.15,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 32,
       "bigUpCount": 45
     },
@@ -296,13 +296,13 @@
       "qualified": true,
       "score": 80.8,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 11,
       "bigUpCount": 37
     },
@@ -322,13 +322,13 @@
       "qualified": true,
       "score": 80.45,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 11,
       "bigUpCount": 37
     },
@@ -348,13 +348,13 @@
       "qualified": true,
       "score": 80.1,
       "criteria": [
+        "[SectorGate] Two-day top-10 or three-day top-20 continuity",
         "[SectorGate] Tail rank remains top-15 positive",
         "[SectorGate] Limit-up ladder or 5%+ cohort exists",
-        "[SectorGate] Board amount expands at least 1.30x",
         "[SectorGate] Leaders have follow-through support"
       ],
-      "continuous": false,
-      "amountRatio": null,
+      "continuous": true,
+      "amountRatio": 1.0,
       "limitUpCount": 8,
       "bigUpCount": 13
     },
@@ -404,51 +404,9 @@
   "recommendations": [],
   "news": [
     {
-      "source": "Eastmoney News",
-      "title": "如何理解国常会对资本市场的最新定调？专家解读来了",
-      "url": "https://finance.eastmoney.com/a/202611273941634358.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "创业板指涨11.61% 科创50指数涨15.07% 超400只股涨停",
-      "url": "https://finance.eastmoney.com/a/202611273941649592.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "监管部门将全力维护资本市场平稳运行",
-      "url": "https://finance.eastmoney.com/a/202611273941582334.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "国常会一个月内两提资本市场史上首次 稳市内容涉及较多",
-      "url": "https://finance.eastmoney.com/a/202611273941587192.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "新华社：国常会关于资本市场部署释放五大鲜明信号",
-      "url": "https://finance.eastmoney.com/a/202611273941653520.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "中国银河证券杨超：稳市机制建设与制度改革协同推进",
-      "url": "https://finance.eastmoney.com/a/202611273942076197.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "广发证券郭磊：国常会新部署有助于市场形成“预期锚”“价值锚”“生态锚”“韧性锚”",
-      "url": "https://finance.eastmoney.com/a/202611273942068482.html",
-      "time": ""
-    },
-    {
-      "source": "Eastmoney News",
-      "title": "A股放量大涨公募密集发声：稳市政策组合拳扭转市场预期、大幅提振信心",
-      "url": "https://finance.eastmoney.com/a/202611273942029587.html",
+      "source": "Yicai",
+      "title": "公告臻选｜捕捉每日公告中的“黄金机会”告别信息过载，把握市场先机，捕捉每天公告中的“黄金机会”。  2025-11-03 14:49",
+      "url": "https://www.yicai.com/topic/102892546/",
       "time": ""
     }
   ]
