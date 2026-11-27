@@ -1,7 +1,7 @@
 {
   "meta": {
     "schemaVersion": 4,
-    "generatedAt": "2026-11-28T00:59:33.545257+08:00",
+    "generatedAt": "2026-11-28T04:52:05.567334+08:00",
     "tradingDate": "2026-11-28",
     "mode": "fast-snapshot",
     "activeStrategies": [],
@@ -35,7 +35,7 @@
       }
     ],
     "errors": [],
-    "runtimeSeconds": 34.68
+    "runtimeSeconds": 38.69
   },
   "market": {
     "recommendationCount": 0,
@@ -435,20 +435,20 @@
     },
     {
       "source": "Eastmoney News",
-      "title": "李强主持召开国务院常务会议 研究持续深化资本市场投融资综合改革工作",
-      "url": "https://finance.eastmoney.com/a/202611273941563415.html",
+      "title": "月内两提资本市场 国常会释放多重鲜明信号",
+      "url": "https://finance.eastmoney.com/a/202611283942118992.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "中国银河证券杨超：稳市机制建设与制度改革协同推进",
-      "url": "https://finance.eastmoney.com/a/202611273942076197.html",
+      "title": "央行：研究建立在特定情景下向非银机构提供流动性的机制性安排 发挥好两项支持资本市场的货币政策工具作用",
+      "url": "https://finance.eastmoney.com/a/202611273941893334.html",
       "time": ""
     },
     {
       "source": "Eastmoney News",
-      "title": "广发证券郭磊：国常会新部署有助于市场形成“预期锚”“价值锚”“生态锚”“韧性锚”",
-      "url": "https://finance.eastmoney.com/a/202611273942068482.html",
+      "title": "国常会罕见午间“明牌” 科技股应声起飞 大资金也在持续进场",
+      "url": "https://finance.eastmoney.com/a/202611273941691866.html",
       "time": ""
     }
   ]
